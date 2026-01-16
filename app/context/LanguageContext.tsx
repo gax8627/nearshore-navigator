@@ -15,32 +15,35 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     const [language, setLanguage] = useState<Language>('en');
 
     useEffect(() => {
-        const detectLanguage = async () => {
-            // 1. Check localStorage first
+        const detectLanguage = () => {
+            // 1. Check localStorage first (user preference takes priority)
             const storedLang = localStorage.getItem('app_lang') as Language;
-            if (storedLang) {
+            if (storedLang && (storedLang === 'en' || storedLang === 'es')) {
                 setLanguage(storedLang);
                 return;
             }
 
-            // 2. Check IP Location
-            try {
-                const response = await fetch('https://ipapi.co/json/');
-                const data = await response.json();
-                const spanishSpeakingCountries = ['MX', 'ES', 'AR', 'CO', 'PE', 'VE', 'CL', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY', 'GQ'];
+            // 2. Check browser language (privacy-friendly, no external API)
+            const browserLang = navigator.language || (navigator as Navigator & { userLanguage?: string }).userLanguage || 'en';
+            const primaryLang = browserLang.split('-')[0].toLowerCase();
 
-                if (spanishSpeakingCountries.includes(data.country_code)) {
-                    setLanguage('es');
-                } else {
-                    // 3. Fallback to browser language if IP check fails or isn't decisive
-                    const browserLang = navigator.language.split('-')[0];
-                    if (browserLang === 'es') {
-                        setLanguage('es');
-                    }
-                }
-            } catch (error) {
-                console.warn('Failed to detect location, defaulting to English', error);
+            // Spanish-speaking regions
+            if (primaryLang === 'es') {
+                setLanguage('es');
+                return;
             }
+
+            // 3. Check if browser region suggests Spanish
+            const browserRegion = browserLang.split('-')[1]?.toUpperCase();
+            const spanishSpeakingRegions = ['MX', 'ES', 'AR', 'CO', 'PE', 'VE', 'CL', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY'];
+
+            if (browserRegion && spanishSpeakingRegions.includes(browserRegion)) {
+                setLanguage('es');
+                return;
+            }
+
+            // 4. Default to English
+            setLanguage('en');
         };
 
         detectLanguage();
