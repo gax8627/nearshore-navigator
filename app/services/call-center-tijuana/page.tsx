@@ -1,27 +1,27 @@
+"use client";
+
 import Image from "next/image";
 import { LeadForm } from "@/components/LeadForm";
 import { Headset, Users, Clock, DollarSign, Globe, CheckCircle2 } from "lucide-react";
-
-export const metadata = {
-    title: "Call Center Solutions in Tijuana | BPO Services",
-    description: "Scale your customer support with 50,000+ bilingual agents in the Pacific Time Zone. Save 40-60% on BPO costs with nearshore call center services.",
-};
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function CallCenterPage() {
+    const { t } = useLanguage();
+
     const benefits = [
-        { icon: <DollarSign className="w-6 h-6" />, title: "40-60% Cost Savings", desc: "Reduce operational costs compared to US-based call centers while maintaining quality." },
-        { icon: <Users className="w-6 h-6" />, title: "50,000+ Bilingual Agents", desc: "Access a deep talent pool of English and Spanish speaking professionals." },
-        { icon: <Clock className="w-6 h-6" />, title: "Pacific Time Zone", desc: "Same working hours as California for real-time collaboration and oversight." },
-        { icon: <Globe className="w-6 h-6" />, title: "Cultural Alignment", desc: "Agents familiar with US culture and customer expectations." },
+        { icon: <DollarSign className="w-6 h-6" />, title: t('callCenterPage.costSavingsTitle'), desc: t('callCenterPage.costSavingsDesc') },
+        { icon: <Users className="w-6 h-6" />, title: t('callCenterPage.agentsTitle'), desc: t('callCenterPage.agentsDesc') },
+        { icon: <Clock className="w-6 h-6" />, title: t('callCenterPage.timezoneTitle'), desc: t('callCenterPage.timezoneDesc') },
+        { icon: <Globe className="w-6 h-6" />, title: t('callCenterPage.cultureTitle'), desc: t('callCenterPage.cultureDesc') },
     ];
 
     const services = [
-        "Inbound Customer Support",
-        "Outbound Sales & Lead Generation",
-        "Technical Support (Tier 1 & 2)",
-        "Back Office Processing",
-        "Chat & Email Support",
-        "Bilingual (EN/ES) Services",
+        t('callCenterPage.inboundSupport'),
+        t('callCenterPage.outboundSales'),
+        t('callCenterPage.techSupport'),
+        t('callCenterPage.backOffice'),
+        t('callCenterPage.chatEmail'),
+        t('callCenterPage.bilingual'),
     ];
 
     return (
@@ -41,13 +41,13 @@ export default function CallCenterPage() {
                 <div className="container mx-auto px-4 z-10 text-center">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
                         <Headset className="w-4 h-4" />
-                        BPO &amp; Call Center Services
+                        {t('callCenterPage.badge')}
                     </div>
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                        Call Center Solutions in <span className="text-green-300">Tijuana</span>
+                        {t('callCenterPage.heroTitle')} <span className="text-green-300">{t('callCenterPage.heroTitleHighlight')}</span>
                     </h1>
                     <p className="text-xl text-gray-100 max-w-2xl mx-auto">
-                        Scale your customer support operations with Tijuana&apos;s world-class bilingual workforce at a fraction of US costs.
+                        {t('callCenterPage.heroSubtitle')}
                     </p>
                 </div>
             </section>
@@ -58,7 +58,7 @@ export default function CallCenterPage() {
                     <div className="lg:col-span-2 space-y-12">
                         {/* Benefits Grid */}
                         <section>
-                            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Why Tijuana for BPO?</h2>
+                            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">{t('callCenterPage.whyTijuanaTitle')}</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {benefits.map((benefit) => (
                                     <div key={benefit.title} className="glass-card p-6">
@@ -74,7 +74,7 @@ export default function CallCenterPage() {
 
                         {/* Services List */}
                         <section>
-                            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Services We Connect You With</h2>
+                            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">{t('callCenterPage.servicesTitle')}</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {services.map((service) => (
                                     <div key={service} className="flex items-center gap-3">
@@ -87,23 +87,23 @@ export default function CallCenterPage() {
 
                         {/* Stats */}
                         <section className="bg-gray-50 dark:bg-gray-900/50 rounded-2xl p-8">
-                            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Tijuana BPO at a Glance</h2>
+                            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">{t('callCenterPage.glanceTitle')}</h2>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                                 <div>
                                     <p className="text-3xl font-bold text-primary-500">50K+</p>
-                                    <p className="text-sm text-gray-600 dark:text-gray-400">Bilingual Agents</p>
+                                    <p className="text-sm text-gray-600 dark:text-gray-400">{t('callCenterPage.bilingualAgents')}</p>
                                 </div>
                                 <div>
                                     <p className="text-3xl font-bold text-primary-500">40-60%</p>
-                                    <p className="text-sm text-gray-600 dark:text-gray-400">Cost Savings</p>
+                                    <p className="text-sm text-gray-600 dark:text-gray-400">{t('callCenterPage.costSavings')}</p>
                                 </div>
                                 <div>
                                     <p className="text-3xl font-bold text-primary-500">PST</p>
-                                    <p className="text-sm text-gray-600 dark:text-gray-400">Time Zone</p>
+                                    <p className="text-sm text-gray-600 dark:text-gray-400">{t('callCenterPage.timeZone')}</p>
                                 </div>
                                 <div>
                                     <p className="text-3xl font-bold text-primary-500">85%+</p>
-                                    <p className="text-sm text-gray-600 dark:text-gray-400">Agent Retention</p>
+                                    <p className="text-sm text-gray-600 dark:text-gray-400">{t('callCenterPage.agentRetention')}</p>
                                 </div>
                             </div>
                         </section>
@@ -113,8 +113,8 @@ export default function CallCenterPage() {
                     <div className="lg:col-span-1">
                         <div className="sticky top-28">
                             <LeadForm
-                                title="Get a BPO Consultation"
-                                subtitle="Tell us about your support needs and we&apos;ll connect you with vetted call center partners."
+                                title={t('callCenterPage.formTitle')}
+                                subtitle={t('callCenterPage.formSubtitle')}
                                 className="shadow-xl"
                             />
                         </div>

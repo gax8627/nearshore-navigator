@@ -56,7 +56,6 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
     const t = (path: string): string => {
         const keys = path.split('.');
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         let current: any = translations[language];
 
         for (const key of keys) {
@@ -67,7 +66,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
             current = current[key];
         }
 
-        return current;
+        return current as string;
     };
 
     return (
