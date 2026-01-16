@@ -1,0 +1,122 @@
+export type Language = 'en' | 'es';
+
+export const translations = {
+    en: {
+        nav: {
+            services: "Services",
+            insights: "Insights",
+            resources: "Resources",
+            about: "About",
+            contact: "Contact",
+            bookTour: "Book a Tour",
+        },
+        hero: {
+            title: "Industrial Nearshoring in Tijuana",
+            subtitle: "The premier gateway for US manufacturers expanding into Mexico. Access world-class infrastructure and a skilled workforce just 20 minutes from San Diego.",
+            cta_primary: "Book an Industrial Tour",
+            cta_secondary: "Get a Site Assessment",
+        },
+        stats: {
+            distance: "Distance from San Diego",
+            distance_val: "20 Minutes",
+            parks: "Industrial Parks",
+            workforce: "Manufacturing Workforce",
+            exports: "Export Value (Annual)",
+        },
+        services: {
+            title: "Comprehensive Nearshore Solutions",
+            subtitle: "We simplify your expansion into Mexico with end-to-end industrial support services.",
+            real_estate: "Industrial Real Estate",
+            real_estate_desc: "Find Class A industrial buildings, warehouses, and land for sale or lease in Tijuana's prime industrial parks.",
+            shelter: "Shelter Services",
+            shelter_desc: "Launch operations in as little as 90 days. We handle HR, legal, import/export, and compliance while you focus on production.",
+            contract: "Contract Manufacturing",
+            contract_desc: "Partner with established maquiladoras for electronics, medical devices, and aerospace manufacturing.",
+            logistics: "Distribution & Logistics",
+            logistics_desc: "Strategic 3PL and cross-docking solutions near the Otay Mesa and San Ysidro ports of entry.",
+            call_center: "Call Center Solutions",
+            call_center_desc: "Scale your support with 50,000+ bilingual agents in the Pacific Time Zone. Save 40-60% on BPO costs.",
+        },
+        footer: {
+            rights: "All rights reserved.",
+            description: "Your trusted partner for industrial nearshoring, shelter services, and manufacturing in Tijuana, Mexico.",
+            industrial_map: "Industrial Park Map",
+            privacy: "Privacy Policy",
+            terms: "Terms of Service",
+        },
+        howWeWork: {
+            title: "Your Path to Production",
+            subtitle: "A proven process to establish your Mexican operations efficiently.",
+            step1_title: "Assess & Plan",
+            step1_desc: "We analyze your project needs, from square footage to labor requirements.",
+            step2_title: "Visit & Select",
+            step2_desc: "Guided tours of industrial parks and potential shelter partners in Tijuana.",
+            step3_title: "Launch & Scale",
+            step3_desc: "Finalize contracts, secure permits, and begin your manufacturing operations.",
+        },
+        insights: {
+            title: "Market Insights",
+            subtitle: "Latest analysis on the Tijuana industrial market.",
+            viewAll: "View All Insights",
+        }
+    },
+    es: {
+        nav: {
+            services: "Servicios",
+            insights: "Perspectivas",
+            resources: "Recursos",
+            about: "Nosotros",
+            contact: "Contacto",
+            bookTour: "Agendar Visita",
+        },
+        hero: {
+            title: "Nearshoring Industrial en Tijuana",
+            subtitle: "La puerta de entrada principal para fabricantes que se expanden a México. Acceda a infraestructura de clase mundial y mano de obra calificada a solo 20 minutos de San Diego.",
+            cta_primary: "Agendar Visita Industrial",
+            cta_secondary: "Evaluación de Sitio",
+        },
+        stats: {
+            distance: "Distancia de San Diego",
+            distance_val: "20 Minutos",
+            parks: "Parques Industriales",
+            workforce: "Fuerza Laboral",
+            exports: "Valor de Exportación (Anual)",
+        },
+        services: {
+            title: "Soluciones Integrales de Nearshoring",
+            subtitle: "Simplificamos su expansión en México con servicios de soporte industrial de extremo a extremo.",
+            real_estate: "Inmobiliaria Industrial",
+            real_estate_desc: "Encuentre naves industriales, almacenes y terrenos Clase A en venta o renta en los mejores parques de Tijuana.",
+            shelter: "Servicios de Shelter",
+            shelter_desc: "Inicie operaciones en solo 90 días. Manejamos RR.HH., legal, import/export y cumplimiento mientras usted produce.",
+            contract: "Manufactura por Contrato",
+            contract_desc: "Asóciese con maquiladoras establecidas para manufactura electrónica, dispositivos médicos y aeroespacial.",
+            logistics: "Distribución y Logística",
+            logistics_desc: "Soluciones estratégicas 3PL y cross-docking cerca de las garitas de Otay Mesa y San Ysidro.",
+            call_center: "Soluciones de Call Center",
+            call_center_desc: "Escale su soporte con más de 50,000 agentes bilingües en la Zona Horaria del Pacífico. Ahorre 40-60% en costos de BPO.",
+        },
+        footer: {
+            rights: "Todos los derechos reservados.",
+            description: "Su socio de confianza para nearshoring industrial, servicios de shelter y manufactura en Tijuana, México.",
+            industrial_map: "Mapa de Parques Industriales",
+            privacy: "Política de Privacidad",
+            terms: "Términos de Servicio",
+        },
+        howWeWork: {
+            title: "Su Camino a la Producción",
+            subtitle: "Un proceso probado para establecer sus operaciones en México de manera eficiente.",
+            step1_title: "Evaluar y Planificar",
+            step1_desc: "Analizamos las necesidades de su proyecto, desde metros cuadrados hasta requerimientos laborales.",
+            step2_title: "Visitar y Seleccionar",
+            step2_desc: "Recorridos guiados por parques industriales y posibles socios shelter en Tijuana.",
+            step3_title: "Lanzar y Escalar",
+            step3_desc: "Finalizar contratos, obtener permisos e iniciar sus operaciones de manufactura.",
+        },
+        insights: {
+            title: "Perspectivas del Mercado",
+            subtitle: "Último análisis del mercado industrial de Tijuana.",
+            viewAll: "Ver Todas las Perspectivas",
+        }
+    }
+};

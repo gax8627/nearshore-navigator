@@ -1,0 +1,198 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/Button";
+import { useLanguage } from "@/app/context/LanguageContext";
+import { useTheme } from "@/app/context/ThemeContext";
+
+export function Navbar() {
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const pathname = usePathname();
+    const { language, setLanguage, t } = useLanguage();
+    const { theme, toggleTheme } = useTheme();
+
+    const navLinks = [
+        { name: t('nav.services'), href: "/services/industrial-real-estate-tijuana" },
+        { name: t('nav.insights'), href: "/insights" },
+        { name: t('nav.resources'), href: "/resources/tijuana-industrial-park-map" },
+        { name: t('nav.about'), href: "/about" },
+        { name: t('nav.contact'), href: "/contact" },
+    ];
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    return (
+        <>
+            <motion.nav
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.5 }}
+                className={cn(
+                    "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
+                    isScrolled
+                        ? "bg-white/70 dark:bg-gray-900/80 backdrop-blur-lg border-white/20 dark:border-gray-800 shadow-glass py-4"
+                        : "bg-transparent border-transparent py-6"
+                )}
+            >
+                <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
+                    <Link href="/" className="flex items-center gap-3 group">
+                        <div className="relative w-10 h-10 overflow-hidden rounded-lg shadow-sm group-hover:shadow-md transition-all">
+                            <Image
+                                src="/logo.png"
+                                alt="Nearshore Navigator Logo"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                        <span className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            Nearshore <span className="text-primary-500 group-hover:text-primary-400 transition-colors">Navigator</span>
+                        </span>
+                    </Link>
+
+                    {/* Desktop Nav */}
+                    <div className="hidden md:flex items-center gap-8">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                className={cn(
+                                    "text-sm font-medium transition-colors hover:text-primary-500",
+                                    pathname === link.href ? "text-primary-600 dark:text-primary-400" : "text-gray-600 dark:text-gray-300"
+                                )}
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
+
+                        {/* Language Toggle */}
+                        <div className="flex items-center divide-x divide-gray-300 dark:divide-gray-700 border border-gray-200 dark:border-gray-700 rounded-md overflow-hidden">
+                            <button
+                                onClick={() => setLanguage('en')}
+                                className={cn("px-2 py-1 text-xs font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition", language === 'en' ? 'bg-primary-50 text-primary-600 dark:bg-primary-900/20 dark:text-primary-400' : 'text-gray-500 dark:text-gray-400')}
+                            >
+                                EN
+                            </button>
+                            <button
+                                onClick={() => setLanguage('es')}
+                                className={cn("px-2 py-1 text-xs font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition", language === 'es' ? 'bg-primary-50 text-primary-600 dark:bg-primary-900/20 dark:text-primary-400' : 'text-gray-500 dark:text-gray-400')}
+                            >
+                                ES
+                            </button>
+                        </div>
+
+                        {/* Theme Toggle */}
+                        <button
+                            onClick={toggleTheme}
+                            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300 transition-colors"
+                            aria-label="Toggle Dark Mode"
+                        >
+                            <motion.div
+                                initial={false}
+                                animate={{ rotate: theme === 'light' ? 0 : 180 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+                            </motion.div>
+                        </button>
+
+                        <Link href="/contact">
+                            <Button variant="primary" size="sm">{t('nav.bookTour')}</Button>
+                        </Link>
+                    </div>
+
+                    {/* Mobile Toggle */}
+                    <button
+                        className="md:hidden p-2 text-gray-600 dark:text-gray-300"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        aria-expanded={isMobileMenuOpen}
+                        aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                    >
+                        <motion.div
+                            initial={false}
+                            animate={{ rotate: isMobileMenuOpen ? 90 : 0, scale: isMobileMenuOpen ? 1.1 : 1 }}
+                            transition={{ duration: 0.2 }}
+                        >
+                            {isMobileMenuOpen ? <X /> : <Menu />}
+                        </motion.div>
+                    </button>
+                </div>
+            </motion.nav>
+
+            {/* Mobile Menu */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="fixed top-[70px] left-0 right-0 bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 z-40 md:hidden overflow-hidden"
+                    >
+                        <div className="flex flex-col p-6 gap-4">
+                            {navLinks.map((link) => (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className="text-lg font-medium text-gray-800 dark:text-gray-100 py-2 border-b border-gray-100 dark:border-gray-800"
+                                >
+                                    {link.name}
+                                </Link>
+                            ))}
+
+                            <div className="flex items-center justify-between py-2">
+                                <span className="text-gray-600 dark:text-gray-400">Language</span>
+                                <div className="flex items-center gap-2">
+                                    <button
+                                        onClick={() => setLanguage('en')}
+                                        className={cn("px-3 py-1 rounded border text-sm font-medium", language === 'en' ? 'bg-primary-500 text-white border-primary-500' : 'border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-300')}
+                                    >
+                                        English
+                                    </button>
+                                    <button
+                                        onClick={() => setLanguage('es')}
+                                        className={cn("px-3 py-1 rounded border text-sm font-medium", language === 'es' ? 'bg-primary-500 text-white border-primary-500' : 'border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-300')}
+                                    >
+                                        Español
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center justify-between py-2">
+                                <span className="text-gray-600 dark:text-gray-400">Appearance</span>
+                                <button
+                                    onClick={toggleTheme}
+                                    className="flex items-center gap-2 text-sm font-medium text-gray-800 dark:text-gray-200"
+                                >
+                                    {theme === 'light' ? (
+                                        <>Dark Mode <Moon className="w-4 h-4" /></>
+                                    ) : (
+                                        <>Light Mode <Sun className="w-4 h-4" /></>
+                                    )}
+                                </button>
+                            </div>
+
+                            <div className="pt-2">
+                                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                                    <Button variant="primary" className="w-full">{t('nav.bookTour')}</Button>
+                                </Link>
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </>
+    );
+}
