@@ -1,45 +1,52 @@
-import Image from "next/image";
-import { SectionTitle } from "@/components/SectionTitle";
+"use client";
 
-export const metadata = {
-    title: "About Nearshore Navigator | Industrial Consulting",
-    description: "We are a team of cross-border experts helping international companies establish successful manufacturing operations in Tijuana.",
-};
+import Image from "next/image";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function AboutPage() {
-    return (
-        <div className="pb-20">
-            <section className="bg-gray-50 dark:bg-gray-900/50 py-20 px-4 transition-colors">
-                <div className="container mx-auto max-w-4xl text-center">
-                    <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Bridging the Border for Global Industry</h1>
-                    <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Nearshore Navigator was founded to demystify the process of expanding into Mexico. We believe that Tijuana is the premier manufacturing hub for the North American market, and our mission is to make accessing it simple, transparent, and efficient.
-                    </p>
-                </div>
-            </section>
+    const { t } = useLanguage();
 
-            <section className="container mx-auto px-4 py-16">
-                <SectionTitle title="Our Expertise" />
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div className="relative h-80 rounded-2xl overflow-hidden glass-card">
+    return (
+        <div className="py-20 bg-gray-50 dark:bg-gray-900/50 min-h-screen transition-colors">
+            <div className="container mx-auto px-4">
+                <div className="max-w-4xl mx-auto">
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">{t('about.title')}</h1>
+                    <p className="text-xl text-gray-600 dark:text-gray-300 mb-12">{t('about.subtitle')}</p>
+
+                    <div className="relative h-96 w-full rounded-2xl overflow-hidden mb-16 shadow-2xl">
                         <Image
-                            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=1200"
-                            alt="Our Team"
+                            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1600"
+                            alt="Nearshore Navigator Team"
                             fill
                             className="object-cover"
                         />
+                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent" />
                     </div>
-                    <div>
-                        <h3 className="text-2xl font-bold mb-4 dark:text-white">Local Knowledge, Global Standards</h3>
-                        <p className="text-gray-600 dark:text-gray-300 mb-4">
-                            Our team consists of industrial real estate brokers, shelter operations managers, and supply chain analysts who have lived and worked on both sides of the US-Mexico border.
-                        </p>
-                        <p className="text-gray-600 dark:text-gray-300">
-                            We understand the nuances of Mexican labor laws, import/export regulations (IMMEX), and the local industrial park landscape better than anyone else because we are on the ground every day.
-                        </p>
+
+                    <div className="prose prose-lg dark:prose-invert max-w-none space-y-12">
+                        <section className="glass-card p-8">
+                            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('about.mission_title')}</h2>
+                            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                {t('about.mission')}
+                            </p>
+                        </section>
+
+                        <section className="glass-card p-8">
+                            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('about.expertise_title')}</h2>
+                            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                {t('about.expertise')}
+                            </p>
+                        </section>
+
+                        <section className="glass-card p-8">
+                            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('about.team_title')}</h2>
+                            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                {t('about.team')}
+                            </p>
+                        </section>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
     );
 }

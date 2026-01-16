@@ -182,8 +182,8 @@ export default function Home() {
       </section>
 
       {/* Logos Placeholder */}
-      <section className="container mx-auto px-4 py-12 border-t border-gray-100">
-        <p className="text-center text-sm font-semibold text-gray-400 uppercase tracking-wider mb-8">Trusted by Global Leaders in Baja</p>
+      <section className="container mx-auto px-4 py-12 border-t border-gray-100 dark:border-gray-800">
+        <p className="text-center text-sm font-semibold text-gray-400 uppercase tracking-wider mb-8">{t('trustedBy')}</p>
         <div className="flex flex-wrap justify-center gap-12 opacity-50 grayscale">
           {[1, 2, 3, 4, 5].map((i) => (
             <div key={i} className="h-12 w-32 bg-gray-200 rounded animate-pulse" />

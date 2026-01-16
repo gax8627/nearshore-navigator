@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/Button";
 import { useLanguage } from "@/app/context/LanguageContext";
@@ -14,12 +14,21 @@ import { useTheme } from "@/app/context/ThemeContext";
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isServicesOpen, setIsServicesOpen] = useState(false);
+    const servicesRef = useRef<HTMLDivElement>(null);
     const pathname = usePathname();
     const { language, setLanguage, t } = useLanguage();
     const { theme, toggleTheme } = useTheme();
 
+    const serviceLinks = [
+        { name: t('services.real_estate'), href: "/services/industrial-real-estate-tijuana" },
+        { name: t('services.shelter'), href: "/services/shelter-services-tijuana" },
+        { name: t('services.contract'), href: "/services/contract-manufacturing-tijuana" },
+        { name: t('services.logistics'), href: "/services/distribution-centers-tijuana" },
+        { name: t('services.call_center'), href: "/services/call-center-tijuana" },
+    ];
+
     const navLinks = [
-        { name: t('nav.services'), href: "/services/industrial-real-estate-tijuana" },
         { name: t('nav.insights'), href: "/insights" },
         { name: t('nav.resources'), href: "/resources/tijuana-industrial-park-map" },
         { name: t('nav.about'), href: "/about" },
@@ -33,6 +42,19 @@ export function Navbar() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+                setIsServicesOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
+    const isServiceActive = pathname.startsWith("/services");
 
     return (
         <>
@@ -64,6 +86,50 @@ export function Navbar() {
 
                     {/* Desktop Nav */}
                     <div className="hidden md:flex items-center gap-8">
+                        {/* Services Dropdown */}
+                        <div ref={servicesRef} className="relative">
+                            <button
+                                onClick={() => setIsServicesOpen(!isServicesOpen)}
+                                className={cn(
+                                    "text-sm font-medium transition-colors hover:text-primary-500 flex items-center gap-1",
+                                    isServiceActive ? "text-primary-600 dark:text-primary-400" : "text-gray-600 dark:text-gray-300"
+                                )}
+                                aria-expanded={isServicesOpen}
+                                aria-haspopup="true"
+                            >
+                                {t('nav.services')}
+                                <ChevronDown className={cn("w-4 h-4 transition-transform", isServicesOpen && "rotate-180")} />
+                            </button>
+
+                            <AnimatePresence>
+                                {isServicesOpen && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: 10 }}
+                                        transition={{ duration: 0.2 }}
+                                        className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-100 dark:border-gray-800 py-2 overflow-hidden"
+                                    >
+                                        {serviceLinks.map((link) => (
+                                            <Link
+                                                key={link.href}
+                                                href={link.href}
+                                                onClick={() => setIsServicesOpen(false)}
+                                                className={cn(
+                                                    "block px-4 py-3 text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors",
+                                                    pathname === link.href
+                                                        ? "text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20"
+                                                        : "text-gray-700 dark:text-gray-300"
+                                                )}
+                                            >
+                                                {link.name}
+                                            </Link>
+                                        ))}
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+
                         {navLinks.map((link) => (
                             <Link
                                 key={link.href}
@@ -141,6 +207,40 @@ export function Navbar() {
                         className="fixed top-[70px] left-0 right-0 bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 z-40 md:hidden overflow-hidden"
                     >
                         <div className="flex flex-col p-6 gap-4">
+                            {/* Services Accordion */}
+                            <div className="border-b border-gray-100 dark:border-gray-800 pb-4">
+                                <button
+                                    onClick={() => setIsServicesOpen(!isServicesOpen)}
+                                    className="flex items-center justify-between w-full text-lg font-medium text-gray-800 dark:text-gray-100 py-2"
+                                >
+                                    {t('nav.services')}
+                                    <ChevronDown className={cn("w-5 h-5 transition-transform", isServicesOpen && "rotate-180")} />
+                                </button>
+                                <AnimatePresence>
+                                    {isServicesOpen && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            className="overflow-hidden"
+                                        >
+                                            <div className="pl-4 pt-2 space-y-2">
+                                                {serviceLinks.map((link) => (
+                                                    <Link
+                                                        key={link.href}
+                                                        href={link.href}
+                                                        onClick={() => setIsMobileMenuOpen(false)}
+                                                        className="block py-2 text-gray-600 dark:text-gray-400 hover:text-primary-500"
+                                                    >
+                                                        {link.name}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.href}
