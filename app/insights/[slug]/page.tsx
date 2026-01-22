@@ -1,10 +1,78 @@
 import Link from "next/link";
 import { Button } from "@/components/Button";
 import { ArrowLeft } from "lucide-react";
+import { getBlogPost, getAllBlogPosts } from "@/lib/blogContent";
+import { notFound } from "next/navigation";
+import Image from "next/image";
+
+// Generate static params for all blog posts
+export async function generateStaticParams() {
+    const posts = getAllBlogPosts();
+    return posts.map((post) => ({
+        slug: post.slug,
+    }));
+}
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
-    // Mock data - in a real app this would fetch based on slug
-    const title = params.slug.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+    const post = getBlogPost(params.slug);
+    
+    // If post doesn't exist, show 404
+    if (!post) {
+        notFound();
+    }
+
+    // Convert markdown-style content to HTML paragraphs
+    const renderContent = (content: string) => {
+        const lines = content.trim().split('\n');
+        const elements: JSX.Element[] = [];
+        let currentIndex = 0;
+
+        lines.forEach((line, index) => {
+            const trimmedLine = line.trim();
+            
+            if (trimmedLine.startsWith('## ')) {
+                elements.push(
+                    <h2 key={currentIndex++} className="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4">
+                        {trimmedLine.replace('## ', '')}
+                    </h2>
+                );
+            } else if (trimmedLine.startsWith('### ')) {
+                elements.push(
+                    <h3 key={currentIndex++} className="text-xl font-bold text-gray-900 dark:text-white mt-8 mb-3">
+                        {trimmedLine.replace('### ', '')}
+                    </h3>
+                );
+            } else if (trimmedLine.startsWith('- **')) {
+                elements.push(
+                    <li key={currentIndex++} className="ml-4 text-gray-600 dark:text-gray-300">
+                        {trimmedLine.replace('- ', '')}
+                    </li>
+                );
+            } else if (trimmedLine.startsWith('- ')) {
+                elements.push(
+                    <li key={currentIndex++} className="ml-4 text-gray-600 dark:text-gray-300">
+                        {trimmedLine.replace('- ', '')}
+                    </li>
+                );
+            } else if (trimmedLine.startsWith('1. ') || trimmedLine.startsWith('2. ') || trimmedLine.startsWith('3. ') || trimmedLine.startsWith('4. ') || trimmedLine.startsWith('5. ')) {
+                elements.push(
+                    <li key={currentIndex++} className="ml-4 text-gray-600 dark:text-gray-300 list-decimal">
+                        {trimmedLine.replace(/^\d\. /, '')}
+                    </li>
+                );
+            } else if (trimmedLine.startsWith('|')) {
+                // Skip table rows for now - they need special handling
+            } else if (trimmedLine.length > 0) {
+                elements.push(
+                    <p key={currentIndex++} className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                        {trimmedLine}
+                    </p>
+                );
+            }
+        });
+
+        return elements;
+    };
 
     return (
         <div className="container mx-auto px-4 py-20 max-w-4xl">
@@ -12,43 +80,54 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 <ArrowLeft className="w-4 h-4 mr-2" /> Back to Insights
             </Link>
 
-            <article className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-600 dark:prose-p:text-gray-300 prose-a:text-primary-600 dark:prose-a:text-primary-400">
-                <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight text-gray-900 dark:text-white">{title}</h1>
-                <div className="flex gap-4 text-sm text-gray-500 dark:text-gray-400 mb-12 border-b border-gray-100 dark:border-gray-800 pb-8">
-                    <span>Oct 24, 2025</span>
-                    <span>•</span>
-                    <span>5 min read</span>
-                    <span>•</span>
-                    <span className="text-primary-600 dark:text-primary-400 font-medium">Strategy Guide</span>
+            <article>
+                {/* Hero Image */}
+                <div className="relative h-64 md:h-96 w-full rounded-2xl overflow-hidden mb-8">
+                    <Image
+                        src={post.imageUrl}
+                        alt={`Featured image for article: ${post.title}`}
+                        fill
+                        className="object-cover"
+                        priority
+                    />
                 </div>
 
-                <p className="lead text-xl text-gray-700 dark:text-gray-300">
-                    This is a placeholder for the full article content. In a production environment, this would be populated by a CMS or Markdown file corresponding to the slug: <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-sm text-pink-600 dark:text-pink-400">{params.slug}</code>.
+                {/* Category & Tags */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">
+                        {post.category}
+                    </span>
+                    {post.tags.map(tag => (
+                        <span key={tag} className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-full text-sm">
+                            {tag}
+                        </span>
+                    ))}
+                </div>
+
+                {/* Title */}
+                <h1 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight text-gray-900 dark:text-white">
+                    {post.title}
+                </h1>
+
+                {/* Meta */}
+                <div className="flex gap-4 text-sm text-gray-500 dark:text-gray-400 mb-12 border-b border-gray-100 dark:border-gray-800 pb-8">
+                    <span>{post.date}</span>
+                    <span>•</span>
+                    <span>{post.readTime}</span>
+                </div>
+
+                {/* Excerpt */}
+                <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8 font-medium">
+                    {post.excerpt}
                 </p>
 
-                <h2 className="mt-12 text-2xl font-bold dark:text-white">Why Tijuana?</h2>
-                <p>
-                    Tijuana has established itself as the premier manufacturing hub for North America, specifically for the medical device, aerospace, and electronics sectors.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-
-                <figure className="my-12">
-                    <div className="bg-gray-200 dark:bg-gray-800 h-96 w-full rounded-xl flex items-center justify-center text-gray-400 dark:text-gray-500">
-                        Article Diagram / Image Placeholder
-                    </div>
-                    <figcaption className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">Figure 1.1: Cost comparison chart.</figcaption>
-                </figure>
-
-                <h2 className="text-2xl font-bold dark:text-white">Key Takeaways</h2>
-                <ul>
-                    <li>Proximity to California reduces logistics costs.</li>
-                    <li>Highly skilled labor force with decades of manufacturing heritage.</li>
-                    <li>Shelter programs offer rapid market entry.</li>
-                </ul>
+                {/* Content */}
+                <div className="prose prose-lg dark:prose-invert max-w-none">
+                    {renderContent(post.content)}
+                </div>
             </article>
 
+            {/* CTA */}
             <div className="mt-20 p-8 sm:p-12 bg-gray-50 dark:bg-gray-900/50 rounded-2xl border border-gray-100 dark:border-gray-800 text-center transition-colors">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Ready to learn more?</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">

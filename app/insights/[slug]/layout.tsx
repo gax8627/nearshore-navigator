@@ -1,23 +1,39 @@
 import { Metadata } from "next";
+import { getBlogPost } from "@/lib/blogContent";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    // Convert slug to title
-    const title = params.slug
-        .split("-")
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(" ");
+    const post = getBlogPost(params.slug);
+    
+    if (!post) {
+        return {
+            title: "Article Not Found",
+            description: "The requested article could not be found.",
+        };
+    }
 
     return {
-        title: `${title} | Nearshore Navigator Insights`,
-        description: `Read our expert analysis: ${title}. Learn about nearshoring, manufacturing, and industrial solutions in Tijuana.`,
+        title: post.title,
+        description: post.excerpt,
         openGraph: {
-            title: `${title} | Nearshore Navigator`,
-            description: `Expert insights on ${title.toLowerCase()} for manufacturing and nearshoring in Tijuana, Mexico.`,
-            type: "article",
+            title: post.title,
+            description: post.excerpt,
+            type: 'article',
+            publishedTime: post.date,
+            images: [post.imageUrl],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: post.title,
+            description: post.excerpt,
+            images: [post.imageUrl],
         },
     };
 }
 
-export default function BlogPostLayout({ children }: { children: React.ReactNode }) {
-    return <>{children}</>;
+export default function BlogLayout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
+    return children;
 }
