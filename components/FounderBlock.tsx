@@ -3,8 +3,10 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Check, ArrowRight, Calendar, MapPin } from "lucide-react"
+import { useLanguage } from "@/app/context/LanguageContext"
 
 export function FounderBlock() {
+  const { t } = useLanguage();
   return (
     <section className="py-24 bg-muted/30">
       <div className="container px-4 md:px-6">
@@ -88,9 +90,9 @@ export function FounderBlock() {
               </Link>
             </div>
             
-            <div className="pt-6 border-t font-medium italic text-muted-foreground relative">
-              <div className="absolute -left-4 top-4 text-6xl text-primary/10 select-none">&quot;</div>
-              My experience includes leadership work inside a market-entry environment—where execution, timelines, and operational detail matter.
+            <div className="pt-6 border-t font-medium italic text-muted-foreground relative pl-6">
+              <div className="absolute left-0 top-6 text-6xl text-primary/10 select-none">&quot;</div>
+              {t('aboutPage.founderQuote')}
             </div>
           </div>
         </div>
