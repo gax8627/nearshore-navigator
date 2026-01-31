@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 export function Footer() {
@@ -11,8 +12,15 @@ export function Footer() {
             <div className="container mx-auto px-4 md:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                     <div className="col-span-1 md:col-span-1">
-                        <Link href="/" className="text-xl font-bold tracking-tight">
-                            Nearshore <span className="text-primary-500">Navigator</span>
+                        <Link href="/" className="block group">
+                            <div className="relative w-40 h-10 transition-all group-hover:scale-105 duration-300">
+                                <Image
+                                    src="/logo-new.png"
+                                    alt="Nearshore Navigator Logo"
+                                    fill
+                                    className="object-contain brightness-0 invert opacity-90 group-hover:opacity-100"
+                                />
+                            </div>
                         </Link>
                         <p className="mt-4 text-gray-400 text-sm">
                             {t('footer.description')}

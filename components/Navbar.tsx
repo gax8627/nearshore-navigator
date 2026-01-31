@@ -70,18 +70,16 @@ export function Navbar() {
                 )}
             >
                 <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-                    <Link href="/" className="flex items-center gap-3 group">
-                        <div className="relative w-10 h-10 overflow-hidden rounded-lg shadow-sm group-hover:shadow-md transition-all">
+                    <Link href="/" className="flex items-center group">
+                        <div className="relative w-48 h-12 transition-all group-hover:scale-105 duration-300">
                             <Image
-                                src="/logo.png"
+                                src="/logo-new.png"
                                 alt="Nearshore Navigator Logo"
                                 fill
-                                className="object-cover"
+                                className="object-contain dark:brightness-110 dark:contrast-125"
+                                priority
                             />
                         </div>
-                        <span className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            Nearshore <span className="text-primary-500 group-hover:text-primary-400 transition-colors">Navigator</span>
-                        </span>
                     </Link>
 
                     {/* Desktop Nav */}
