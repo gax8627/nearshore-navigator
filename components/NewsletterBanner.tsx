@@ -2,13 +2,20 @@
 
 import { Button } from "@/components/Button";
 import { useLanguage } from "@/app/context/LanguageContext";
+import { motion } from "framer-motion";
 
 export function NewsletterBanner() {
   const { t } = useLanguage();
 
   return (
     <section className="container mx-auto px-4 mb-24">
-      <div className="relative overflow-hidden rounded-3xl bg-gray-900 border border-white/10 p-8 md:p-12 text-center md:text-left">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="relative overflow-hidden rounded-3xl bg-gray-900 border border-white/10 p-8 md:p-12 text-center md:text-left shadow-2xl"
+      >
         {/* Background Effects */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/20 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" />
@@ -39,7 +46,7 @@ export function NewsletterBanner() {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

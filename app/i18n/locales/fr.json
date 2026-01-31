@@ -1,0 +1,74 @@
+{
+    "nav": {
+        "services": "Services",
+        "insights": "Analyses",
+        "resources": "Ressources",
+        "about": "À Propos",
+        "contact": "Contact",
+        "bookTour": "Réserver une Visite"
+    },
+    "hero": {
+        "title": "Nearshoring Industriel à Baja",
+        "subtitle": "La passerelle de premier plan pour les fabricants américains s'installant au Mexique. Accédez à une infrastructure de classe mondiale et à une main-d'œuvre qualifiée à seulement 20 minutes de San Diego.",
+        "cta_primary": "Réserver une Visite Industrielle",
+        "cta_secondary": "Obtenir une Évaluation de Site"
+    },
+    "stats": {
+        "distance": "Distance de San Diego",
+        "distance_val": "20 Minutes",
+        "parks": "Parcs Industriels",
+        "workforce": "Main-d'œuvre Manufacturière",
+        "exports": "Valeur des Exportations (Annuelle)",
+        "borderWaiting": "attente à la frontière",
+        "classAvailable": "Classe A Disponible",
+        "manufacturingOps": "Ops de Fabrication",
+        "annualToUSA": "Annuel vers USA"
+    },
+    "services": {
+        "title": "Solutions de Nearshoring Complètes",
+        "subtitle": "Nous simplifions votre expansion au Mexique avec des services de support industriel de bout en bout.",
+        "real_estate": "Immobilier Industriel",
+        "real_estate_desc": "Trouvez des bâtiments industriels de classe A, des entrepôts et des terrains à vendre ou à louer dans les principaux parcs industriels de Basse-Californie.",
+        "shelter": "Services Shelter",
+        "shelter_desc": "Lancez vos opérations en seulement 90 jours. Nous gérons les RH, le juridique, l'import/export et la conformité pendant que vous vous concentrez sur la production.",
+        "contract": "Fabrication sous Contrat",
+        "contract_desc": "Associez-vous à des maquiladoras établies pour la fabrication d'électronique, de dispositifs médicaux et d'aéronautique.",
+        "logistics": "Distribution et Logistique",
+        "logistics_desc": "Solutions stratégiques de 3PL et de transbordement à proximité des ports d'entrée d'Otay Mesa et de San Ysidro.",
+        "call_center": "Solutions de Centre d'Appel",
+        "call_center_desc": "Passez à l'échelle supérieure avec plus de 50 000 agents bilingues dans le fuseau horaire du Pacifique. Économisez 40 à 60 % sur les coûts de BPO."
+    },
+    "footer": {
+        "rights": "Tous droits réservés.",
+        "description": "Votre partenaire de confiance pour le nearshoring industriel, les services shelter et la fabrication en Basse-Californie, Mexique.",
+        "industrial_map": "Carte des Parcs Industriels",
+        "privacy": "Politique de Confidentialité",
+        "terms": "Conditions d'Utilisation"
+    },
+    "howWeWork": {
+        "title": "Votre Chemin vers la Production",
+        "subtitle": "Un processus éprouvé pour établir vos opérations mexicaines efficacement.",
+        "step1_title": "Évaluer et Planifier",
+        "step1_desc": "Nous analysons les besoins de votre projet, de la surface au sol aux exigences de main-d'œuvre.",
+        "step2_title": "Visiter et Sélectionner",
+        "step2_desc": "Visites guidées des parcs industriels et des partenaires shelter potentiels en Basse-Californie.",
+        "step3_title": "Lancer et Évoluer",
+        "step3_desc": "Finalisez les contrats, obtenez les permis et commencez vos opérations de fabrication."
+    },
+    "about": {
+        "title": "À Propos de Nearshore Navigator",
+        "subtitle": "Votre partenaire de confiance pour l'expansion industrielle au Mexique",
+        "mission_title": "Notre Mission",
+        "mission": "Nous aidons les entreprises américaines à établir des opérations de fabrication réussies en Basse-Californie, au Mexique. Avec des décennies d'expérience combinée dans l'immobilier industriel, les services shelter et la logistique transfrontalière, nous sommes votre point de contact unique pour le succès du nearshoring.",
+        "founderQuote": "Mon expérience inclut un travail de leadership dans des environnements d'entrée sur le marché — où l'exécution, les délais et les détails opérationnels comptent.",
+        "founderTitle": "Conseils en nearshoring dirigés par des experts pour la Basse-Californie",
+        "founderName": "Denisse Martinez",
+        "founderBadge": "Fondatrice / Conseillère Principale",
+        "founderDescription": "Nous aidons les entreprises manufacturières à s'implanter en Basse-Californie grâce à un processus clair, une connaissance du marché local et un réseau de partenaires vérifiés. Selon vos besoins, notre soutien peut inclure la sélection de sites industriels, la mise en relation avec des partenaires de fabrication sous contrat ou une solution d'atterrissage en douceur plus rapide, afin que vous puissiez progresser avec confiance et moins de mauvaises surprises.",
+        "founderStat1": "Plus de 15 ans d'expérience dans l'accompagnement de l'expansion manufacturière transfrontalière",
+        "founderStat2": "A accompagné l'implantation de plus de 20 entreprises au Mexique dans divers secteurs industriels",
+        "founderStat3": "Un soutien pratique de l'évaluation aux visites, en passant par le due diligence et le lancement",
+        "ctaDiscovery": "Planifier un appel de découverte",
+        "ctaAssessment": "Demander une évaluation de site"
+    }
+}

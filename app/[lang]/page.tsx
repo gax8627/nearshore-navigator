@@ -56,38 +56,110 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
-        <motion.div style={{ y }} className="absolute inset-0 z-0">
+        <motion.div 
+            style={{ y }} 
+            className="absolute inset-0 z-0"
+        >
           <Image
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2600" // Modern Glass Building/City
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2600" 
             alt="Baja California Industrial Skyline"
             fill
-            className="object-cover"
+            className="object-cover scale-110"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/70 to-transparent" />
         </motion.div>
 
         <div className="container mx-auto px-4 z-10 relative">
-          <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-10 duration-1000">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+          <motion.div 
+            initial="hidden"
+            animate="visible"
+            variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                    opacity: 1,
+                    transition: {
+                        staggerChildren: 0.2,
+                        delayChildren: 0.3
+                    }
+                }
+            }}
+            className="max-w-3xl"
+          >
+            <motion.h1 
+                variants={{
+                    hidden: { opacity: 0, y: 30 },
+                    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
+                }}
+                className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl"
+            >
               {t('hero.title').split('Nearshoring')[0]} <span className="text-primary-500 text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-200">Nearshoring</span> {t('hero.title').split('Nearshoring')[1] || ''}
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl leading-relaxed shadow-black/50">
+            </motion.h1>
+            
+            <motion.p 
+                variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 }
+                }}
+                className="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl leading-relaxed drop-shadow-lg"
+            >
               {t('hero.subtitle')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact">
-                <Button size="lg" className="w-full sm:w-auto shadow-primary-500/50">{t('hero.cta_primary')}</Button>
+            </motion.p>
+            
+            <motion.div 
+                variants={{
+                    hidden: { opacity: 0, scale: 0.95 },
+                    visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 300, damping: 20 } }
+                }}
+                className="flex flex-col sm:flex-row gap-6"
+            >
+              <Link href="/contact" className="w-full sm:w-auto">
+                <Button 
+                    size="lg" 
+                    className="w-full sm:w-auto shadow-2xl shadow-primary-500/30 hover:scale-105 active:scale-95 transition-transform"
+                >
+                    {t('hero.cta_primary')}
+                </Button>
               </Link>
-              <Link href="/services/industrial-real-estate-tijuana">
-                <Button variant="glass" size="lg" className="w-full sm:w-auto">{t('hero.cta_secondary')}</Button>
+              <Link href="/services/industrial-real-estate-tijuana" className="w-full sm:w-auto">
+                <Button 
+                    variant="glass" 
+                    size="lg" 
+                    className="w-full sm:w-auto border-white/20 hover:bg-white/10 hover:scale-105 active:scale-95 transition-all"
+                >
+                    {t('hero.cta_secondary')}
+                </Button>
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
-        {/* Floating Abstract Element */}
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-primary-500/20 rounded-full blur-[100px] animate-float" />
+        {/* Decorative elements */}
+        <motion.div 
+            animate={{ 
+                scale: [1, 1.2, 1],
+                opacity: [0.1, 0.2, 0.1],
+            }}
+            transition={{ 
+                duration: 8, 
+                repeat: Infinity,
+                ease: "easeInOut" 
+            }}
+            className="absolute -bottom-24 -right-24 w-96 h-96 bg-primary-500/20 rounded-full blur-[100px] pointer-events-none" 
+        />
+        <motion.div 
+            animate={{ 
+                scale: [1, 1.3, 1],
+                opacity: [0.05, 0.1, 0.05],
+            }}
+            transition={{ 
+                duration: 12, 
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2
+            }}
+            className="absolute -top-24 -left-24 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" 
+        />
       </section>
 
       {/* Stats Section */}

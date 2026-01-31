@@ -1,0 +1,74 @@
+{
+    "nav": {
+        "services": "Dienste",
+        "insights": "Analysen",
+        "resources": "Ressourcen",
+        "about": "Über uns",
+        "contact": "Kontakt",
+        "bookTour": "Tour Buchen"
+    },
+    "hero": {
+        "title": "Industrielles Nearshoring in Baja",
+        "subtitle": "Das führende Tor für US-Hersteller, die nach Mexiko expandieren. Zugang zu erstklassiger Infrastruktur und qualifizierten Arbeitskräften, nur 20 Minuten von San Diego entfernt.",
+        "cta_primary": "Industrietour Buchen",
+        "cta_secondary": "Standortbewertung Erhalten"
+    },
+    "stats": {
+        "distance": "Entfernung von San Diego",
+        "distance_val": "20 Minuten",
+        "parks": "Industrieparks",
+        "workforce": "Produktionsmitarbeiter",
+        "exports": "Exportwert (jährlich)",
+        "borderWaiting": "Grenzwartezeit",
+        "classAvailable": "Klasse A Verfügbar",
+        "manufacturingOps": "Produktionsabläufe",
+        "annualToUSA": "Jährlich in die USA"
+    },
+    "services": {
+        "title": "Umfassende Nearshore-Lösungen",
+        "subtitle": "Wir vereinfachen Ihre Expansion nach Mexiko mit durchgängigen industriellen Unterstützungsdiensten.",
+        "real_estate": "Industrieimmobilien",
+        "real_estate_desc": "Finden Sie Industriegebäude der Klasse A, Lagerhallen und Grundstücke zum Verkauf oder zur Miete in den besten Industrieparks von Baja California.",
+        "shelter": "Shelter-Dienste",
+        "shelter_desc": "Starten Sie den Betrieb in nur 90 Tagen. Wir kümmern uns um Personalwesen, Recht, Import/Export und Compliance, während Sie sich auf die Produktion konzentrieren.",
+        "contract": "Auftragsfertigung",
+        "contract_desc": "Partnern Sie mit etablierten Maquiladoras für Elektronik-, Medizintechnik- und Luftfahrtfertigung.",
+        "logistics": "Distribution & Logistik",
+        "logistics_desc": "Strategische 3PL- und Cross-Docking-Lösungen in der Nähe der Häfen von Otay Mesa und San Ysidro.",
+        "call_center": "Call-Center-Lösungen",
+        "call_center_desc": "Skalieren Sie Ihren Support mit über 50.000 zweisprachigen Agenten in der pazifischen Zeitzone. Sparen Sie 40-60% bei BPO-Kosten."
+    },
+    "footer": {
+        "rights": "Alle Rechte vorbehalten.",
+        "description": "Ihr vertrauenswürdiger Partner für industrielles Nearshoring, Shelter-Dienste und Fertigung in Baja California, Mexiko.",
+        "industrial_map": "Industriepark-Karte",
+        "privacy": "Datenschutzerklärung",
+        "terms": "Nutzungsbedingungen"
+    },
+    "howWeWork": {
+        "title": "Ihr Weg zur Produktion",
+        "subtitle": "Ein bewährter Prozess, um Ihre mexikanischen Betriebe effizient aufzubauen.",
+        "step1_title": "Bewerten & Planen",
+        "step1_desc": "Wir analysieren Ihre Projektanforderungen, von der Quadratmeterzahl bis zum Arbeitskräftebedarf.",
+        "step2_title": "Besuchen & Auswählen",
+        "step2_desc": "Geführte Touren durch Industrieparks und potenzielle Shelter-Partner in Baja California.",
+        "step3_title": "Starten & Skalieren",
+        "step3_desc": "Verträge abschließen, Genehmigungen sichern und mit der Fertigung beginnen."
+    },
+    "about": {
+        "title": "Über Nearshore Navigator",
+        "subtitle": "Ihr vertrauenswürdiger Partner für industrielle Expansion in Mexiko",
+        "mission_title": "Unsere Mission",
+        "mission": "Wir helfen US-Unternehmen, erfolgreiche Fertigungsbetriebe in Baja California, Mexiko, aufzubauen. Mit jahrzehntelanger Erfahrung in Industrieimmobilien, Shelter-Diensten und grenzüberschreitender Logistik sind wir Ihr zentraler Ansprechpartner für Nearshoring-Erfolg.",
+        "founderQuote": "Meine Erfahrung umfasst Führungstätigkeiten in Markteintrittsumgebungen — wo Ausführung, Zeitpläne und operative Details zählen.",
+        "founderTitle": "Expertengeführte Nearshoring-Beratung für Baja California",
+        "founderName": "Denisse Martinez",
+        "founderBadge": "Gründerin / Leitende Beraterin",
+        "founderDescription": "Wir helfen produzierenden Unternehmen bei der Expansion nach Baja California mit einem klaren Prozess, lokalem Marktverständnis und einem geprüften Netzwerk. Je nach Ihren Anforderungen kann die Unterstützung die Auswahl von Industriestandorten, die Suche nach Partnern für die Auftragsfertigung oder eine schnellere Soft-Landing-Route umfassen – damit Sie mit Zuversicht und weniger Überraschungen vorankommen.",
+        "founderStat1": "15+ Jahre Unterstützung bei der grenzüberschreitenden Produktionserweiterung",
+        "founderStat2": "Unterstützung beim Aufbau von mehr als 20 Unternehmen in Mexiko in verschiedenen Branchen",
+        "founderStat3": "Praxisnahe Unterstützung von der Bewertung über Besichtigungen bis hin zur Due Diligence und dem Startmomentum",
+        "ctaDiscovery": "Discovery Call vereinbaren",
+        "ctaAssessment": "Standortbewertung anfordern"
+    }
+}

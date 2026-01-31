@@ -18,7 +18,11 @@
         "distance_val": "20 Minutos",
         "parks": "Parques Industriales",
         "workforce": "Fuerza Laboral",
-        "exports": "Valor de Exportación (Anual)"
+        "exports": "Valor de Exportación (Anual)",
+        "borderWaiting": "espera en frontera",
+        "classAvailable": "Clase A Disponible",
+        "manufacturingOps": "Ops de Manufactura",
+        "annualToUSA": "Anual a EE.UU."
     },
     "services": {
         "title": "Soluciones Integrales de Nearshoring",
@@ -65,7 +69,16 @@
         "expertise": "Nuestro equipo reúne experiencia en inmobiliaria industrial, derecho laboral mexicano, cumplimiento aduanero y comercial, y operaciones de manufactura. Hemos ayudado a docenas de empresas — desde Fortune 500 hasta startups innovadoras — a navegar las complejidades de manufactura en México.",
         "team_title": "Nuestro Equipo",
         "team": "Basados tanto en San Diego como en Baja California, nuestro equipo bilingüe comprende los matices de hacer negocios en ambos lados de la frontera. No somos solo consultores, somos sus socios en el crecimiento.",
-        "founderQuote": "Mi experiencia incluye trabajo de liderazgo en entornos de entrada al mercado, donde la ejecución, los plazos y los detalles operativos importan."
+        "founderQuote": "Mi experiencia incluye trabajo de liderazgo en entornos de entrada al mercado, donde la ejecución, los plazos y los detalles operativos importan.",
+        "founderTitle": "Guía de nearshoring dirigida por expertos para Baja California",
+        "founderName": "Denisse Martinez",
+        "founderBadge": "Fundadora / Asesora Principal",
+        "founderDescription": "Ayudamos a las empresas de manufactura a expandirse en Baja California con un proceso claro, conocimiento del mercado local y una red verificada que lo respalda. Dependiendo de sus necesidades, el apoyo puede incluir la selección de sitios industriales, el emparejamiento con socios de manufactura por contrato o una ruta de aterrizaje suave más rápida, para que avance con confianza y menos sorpresas.",
+        "founderStat1": "Más de 15 años apoyando la expansión de la manufactura transfronteriza",
+        "founderStat2": "Apoyó la creación de más de 20 empresas en México en múltiples industrias",
+        "founderStat3": "Apoyo práctico desde la evaluación hasta las visitas, el due diligence y el impulso del lanzamiento",
+        "ctaDiscovery": "Programar una llamada de descubrimiento",
+        "ctaAssessment": "Solicitar una evaluación de ubicación"
     },
     "contact": {
         "title": "Contáctenos",

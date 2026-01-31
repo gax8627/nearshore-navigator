@@ -7,7 +7,7 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 // In a stricter setup, we would infer this from the JSON schema.
 type Translations = any;
 
-export type Language = 'en' | 'es';
+export type Language = 'en' | 'es' | 'fr' | 'de' | 'ja' | 'zh' | 'ko' | 'it' | 'pt' | 'ru';
 
 type LanguageContextType = {
     language: Language;
@@ -18,10 +18,17 @@ type LanguageContextType = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-    const [language, setLanguage] = useState<Language>('en');
+export const LanguageProvider = ({ children, lang }: { children: ReactNode, lang?: Language }) => {
+    const [language, setLanguage] = useState<Language>(lang || 'en');
     const [translations, setTranslations] = useState<Translations>({});
     const [loading, setLoading] = useState<boolean>(true);
+
+    // Update language when lang prop changes (from URL params)
+    useEffect(() => {
+        if (lang && lang !== language) {
+            handleSetLanguage(lang);
+        }
+    }, [lang]);
 
     // Function to load translation files dynamically
     const loadTranslations = async (lang: Language) => {
@@ -31,52 +38,59 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
             setTranslations(localeData.default || localeData);
         } catch (error) {
             console.error(`Failed to load translations for ${lang}`, error);
-            // Fallback to English if loading fails? Or keep current state.
-            // For now, let's just log.
+            // If loading fails, fallback to English
+            if (lang !== 'en') {
+                const enData = await import(`../i18n/locales/en.json`);
+                setTranslations(enData.default || enData);
+            }
         } finally {
             setLoading(false);
         }
     };
 
-    // Initial load and language detection
+    // Initial load and language detection (only if lang prop is not provided)
     useEffect(() => {
         const detectLanguage = async () => {
+            if (lang) {
+                await loadTranslations(lang);
+                return;
+            }
+
             let targetLang: Language = 'en';
 
             // 1. Check localStorage first
             const storedLang = localStorage.getItem('app_lang') as Language;
-            if (storedLang && (storedLang === 'en' || storedLang === 'es')) {
+            if (storedLang) {
                 targetLang = storedLang;
-                setLanguage(targetLang);
-                await loadTranslations(targetLang);
-                return;
-            }
+            } else {
+                // 2. IP Geolocation as primary fallback
+                try {
+                    const response = await fetch('https://ipapi.co/json/');
+                    const data = await response.json();
+                    const country = data.country_code;
 
-            // 2. IP Geolocation as primary fallback
-            try {
-                // Fetch country from IP
-                const response = await fetch('https://ipapi.co/json/');
-                const data = await response.json();
-                const country = data.country_code; // Returns 2-letter country code like 'MX', 'US'
+                    const spanishSpeakingCountries = [
+                        'MX', 'ES', 'AR', 'CO', 'PE', 'VE', 'CL', 'EC', 'GT', 'CU', 
+                        'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY', 'GQ'
+                    ];
 
-                // List of Spanish-speaking countries (LATAM + Spain)
-                const spanishSpeakingCountries = [
-                    'MX', 'ES', 'AR', 'CO', 'PE', 'VE', 'CL', 'EC', 'GT', 'CU', 
-                    'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY', 'GQ'
-                ];
-
-                if (spanishSpeakingCountries.includes(country)) {
-                    targetLang = 'es';
-                }
-            } catch (error) {
-                console.warn('Geolocation failed, falling back to browser language:', error);
-                
-                // 3. Browser detection fallback
-                const browserLang = navigator.language || (navigator as Navigator & { userLanguage?: string }).userLanguage || 'en';
-                const primaryLang = browserLang.split('-')[0].toLowerCase();
-
-                if (primaryLang === 'es') {
-                    targetLang = 'es';
+                    if (spanishSpeakingCountries.includes(country)) {
+                        targetLang = 'es';
+                    } else if (country === 'FR') {
+                        targetLang = 'fr';
+                    } else if (country === 'DE') {
+                        targetLang = 'de';
+                    } else if (country === 'JP') {
+                        targetLang = 'ja';
+                    } else if (country === 'CN') {
+                        targetLang = 'zh';
+                    } else if (country === 'KR') {
+                        targetLang = 'ko';
+                    }
+                } catch (error) {
+                    console.warn('Geolocation failed, falling back to browser language:', error);
+                    const browserLang = navigator.language.split('-')[0].toLowerCase() as Language;
+                    targetLang = browserLang;
                 }
             }
 
@@ -85,7 +99,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         };
 
         detectLanguage();
-    }, []);
+    }, [lang]);
 
     const handleSetLanguage = async (lang: Language) => {
         setLanguage(lang);

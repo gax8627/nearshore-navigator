@@ -13,15 +13,39 @@ interface LeadFormProps {
 
 export function LeadForm({ title, subtitle, className }: LeadFormProps) {
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
     const { t } = useLanguage();
 
     const formTitle = title || t('form.title');
     const formSubtitle = subtitle || t('form.subtitle');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Simulate submission
-        setTimeout(() => setSubmitted(true), 1000);
+        setLoading(true);
+        setError(null);
+
+        const formData = new FormData(e.currentTarget);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                setSubmitted(true);
+            } else {
+                const errorData = await response.json();
+                setError(errorData.error || 'Something went wrong. Please try again.');
+            }
+        } catch (err) {
+            setError('Failed to connect to the server. Please check your connection.');
+        } finally {
+            setLoading(false);
+        }
     };
 
     if (submitted) {
@@ -48,11 +72,17 @@ export function LeadForm({ title, subtitle, className }: LeadFormProps) {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Honeypot field - hidden from users */}
+                <div className="hidden" aria-hidden="true">
+                    <input type="text" name="honeypot" tabIndex={-1} autoComplete="off" />
+                </div>
+
                 <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{t('form.name')}</label>
                     <input
                         type="text"
                         id="name"
+                        name="name"
                         required
                         className="w-full px-4 py-3 rounded-lg bg-white/50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-800 outline-none transition-all"
                         placeholder={t('form.name_placeholder')}
@@ -64,6 +94,7 @@ export function LeadForm({ title, subtitle, className }: LeadFormProps) {
                     <input
                         type="text"
                         id="company"
+                        name="company"
                         required
                         className="w-full px-4 py-3 rounded-lg bg-white/50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-800 outline-none transition-all"
                         placeholder={t('form.company_placeholder')}
@@ -75,6 +106,7 @@ export function LeadForm({ title, subtitle, className }: LeadFormProps) {
                     <input
                         type="email"
                         id="email"
+                        name="email"
                         required
                         className="w-full px-4 py-3 rounded-lg bg-white/50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-800 outline-none transition-all"
                         placeholder={t('form.email_placeholder')}
@@ -86,6 +118,7 @@ export function LeadForm({ title, subtitle, className }: LeadFormProps) {
                     <input
                         type="tel"
                         id="phone"
+                        name="phone"
                         className="w-full px-4 py-3 rounded-lg bg-white/50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-800 outline-none transition-all"
                         placeholder={t('form.phone_placeholder')}
                     />
@@ -95,14 +128,38 @@ export function LeadForm({ title, subtitle, className }: LeadFormProps) {
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{t('form.message')}</label>
                     <textarea
                         id="message"
+                        name="message"
                         rows={3}
+                        required
                         className="w-full px-4 py-3 rounded-lg bg-white/50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-800 outline-none transition-all"
                         placeholder={t('form.message_placeholder')}
                     ></textarea>
                 </div>
 
-                <Button variant="primary" className="w-full mt-2" size="lg">
-                    {t('form.submit')}
+                {error && (
+                    <motion.p
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        className="text-sm text-red-500 font-medium"
+                    >
+                        {error}
+                    </motion.p>
+                )}
+
+                <Button 
+                    variant="primary" 
+                    className="w-full mt-2" 
+                    size="lg"
+                    disabled={loading}
+                >
+                    {loading ? (
+                        <span className="flex items-center gap-2">
+                            <span className="w-4 h-4 border-2 border-white/20 border-t-white rounded-full animate-spin" />
+                            Sending...
+                        </span>
+                    ) : (
+                        t('form.submit')
+                    )}
                 </Button>
             </form>
         </div>

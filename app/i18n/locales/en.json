@@ -18,7 +18,11 @@
         "distance_val": "20 Minutes",
         "parks": "Industrial Parks",
         "workforce": "Manufacturing Workforce",
-        "exports": "Export Value (Annual)"
+        "exports": "Export Value (Annual)",
+        "borderWaiting": "border-waiting",
+        "classAvailable": "Class A Available",
+        "manufacturingOps": "Manufacturing Ops",
+        "annualToUSA": "Annual to USA"
     },
     "services": {
         "title": "Comprehensive Nearshore Solutions",
@@ -65,7 +69,16 @@
         "expertise": "Our team brings together expertise in industrial real estate, Mexican labor law, customs and trade compliance, and manufacturing operations. We've helped dozens of companies — from Fortune 500 enterprises to innovative startups — navigate the complexities of manufacturing in Mexico.",
         "team_title": "Our Team",
         "team": "Based in both San Diego and Baja California, our bilingual team understands the nuances of doing business on both sides of the border. We're not just consultants — we're your partners in growth.",
-        "founderQuote": "My experience includes leadership work in market-entry environments—where execution, timelines, and operational details matter."
+        "founderQuote": "My experience includes leadership work in market-entry environments—where execution, timelines, and operational details matter.",
+        "founderTitle": "Expert-led nearshoring guidance for Baja California",
+        "founderName": "Denisse Martinez",
+        "founderBadge": "Founder / Lead Advisor",
+        "founderDescription": "We help manufacturing companies expand into Baja California with a clear process, local market insight, and a vetted network behind you. Depending on your needs, support can include industrial site selection, contract manufacturing partner matching, or a faster soft-landing route—so you move forward with confidence and fewer surprises.",
+        "founderStat1": "15+ years supporting cross-border manufacturing expansion",
+        "founderStat2": "Supported the setup of 20+ companies in Mexico across multiple industries",
+        "founderStat3": "Hands-on support from evaluation to visits, due diligence, and launch momentum",
+        "ctaDiscovery": "Schedule a Discovery Call",
+        "ctaAssessment": "Request a Location Assessment"
     },
     "contact": {
         "title": "Contact Us",

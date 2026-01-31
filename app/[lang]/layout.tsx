@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
+import '../globals.css'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { LanguageProvider } from '@/app/context/LanguageContext'
@@ -96,16 +96,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  params: { lang: string }
 }) {
+  const lang = params.lang as any;
+
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang={lang} className="scroll-smooth">
       <head>
         <SchemaMarkup />
       </head>
       <body className={inter.className}>
-        <LanguageProvider>
+        <LanguageProvider lang={lang}>
           <ThemeProvider>
             <div className="flex flex-col min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
               <Navbar />

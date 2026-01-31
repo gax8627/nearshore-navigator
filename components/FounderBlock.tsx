@@ -15,15 +15,15 @@ export function FounderBlock() {
             <div className="relative h-[400px] lg:h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/denisse-1.jpg"
-                alt="Denisse Martinez - Founder & Lead Advisor"
+                alt={`${t('about.founderName')} - ${t('about.founderBadge')}`}
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 text-white p-4">
-                <div className="text-2xl font-bold">Denisse Martinez</div>
-                <div className="text-white/80 font-medium">Founder & Lead Advisor</div>
+                <div className="text-2xl font-bold">{t('about.founderName')}</div>
+                <div className="text-white/80 font-medium">{t('about.founderBadge')}</div>
               </div>
             </div>
             {/* Decorative element */}
@@ -33,15 +33,15 @@ export function FounderBlock() {
 
           <div className="space-y-8">
             <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80">
-              Founder / Lead Advisor
+              {t('about.founderBadge')}
             </div>
             
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Expert-led nearshoring guidance for Baja California
+              {t('about.founderTitle')}
             </h2>
             
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We help manufacturing companies expand into Baja California with a clear process, local market insight, and a vetted network behind you. Depending on your needs, support can include industrial site selection, contract manufacturing partner matching, or a faster soft-landing route—so you move forward with confidence and fewer surprises.
+              {t('about.founderDescription')}
             </p>
 
             <div className="space-y-4">
@@ -50,7 +50,7 @@ export function FounderBlock() {
                   <Check className="h-4 w-4 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">15+ years supporting cross-border manufacturing expansion</h3>
+                  <h3 className="font-semibold">{t('about.founderStat1')}</h3>
                 </div>
               </div>
               
@@ -59,7 +59,7 @@ export function FounderBlock() {
                   <Check className="h-4 w-4 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Supported the setup of 20+ companies in Mexico across multiple industries</h3>
+                  <h3 className="font-semibold">{t('about.founderStat2')}</h3>
                 </div>
               </div>
               
@@ -68,7 +68,7 @@ export function FounderBlock() {
                   <Check className="h-4 w-4 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Hands-on support from evaluation to visits, due diligence, and launch momentum</h3>
+                  <h3 className="font-semibold">{t('about.founderStat3')}</h3>
                 </div>
               </div>
             </div>
@@ -79,20 +79,20 @@ export function FounderBlock() {
                 className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
               >
                 <Calendar className="mr-2 h-4 w-4" />
-                Schedule a Discovery Call
+                {t('about.ctaDiscovery')}
               </Link>
               <Link
                 href="/assessment"
                 className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
               >
                 <MapPin className="mr-2 h-4 w-4" />
-                Request a Location Assessment
+                {t('about.ctaAssessment')}
               </Link>
             </div>
             
-            <div className="pt-6 border-t font-medium italic text-muted-foreground relative pl-10">
-              <div className="absolute left-0 top-6 text-6xl text-primary/10 select-none">&quot;</div>
-              {t('about.founderQuote')}
+            <div className="pt-6 border-t font-medium italic text-muted-foreground relative pl-12">
+              <div className="absolute left-0 top-4 text-7xl text-primary/10 select-none leading-none">&quot;</div>
+              <p className="relative z-10">{t('about.founderQuote')}</p>
             </div>
           </div>
         </div>
