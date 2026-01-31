@@ -17,6 +17,13 @@ export default function AboutPage() {
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
+  const geoRef = useRef(null);
+  const { scrollYProgress: geoScrollY } = useScroll({
+    target: geoRef,
+    offset: ["start end", "end start"]
+  });
+  const geoY = useTransform(geoScrollY, [0, 1], ["-20%", "20%"]);
+
   return (
     <div ref={containerRef} className="pb-20 overflow-hidden">
         {/* Parallax Hero */}
@@ -203,15 +210,15 @@ export default function AboutPage() {
         </section>
 
         {/* Geography */}
-        <section className="py-24 bg-gray-900 text-white relative">
-            <div className="absolute inset-0 z-0 opacity-30">
+        <section ref={geoRef} className="py-24 bg-gray-900 text-white relative overflow-hidden">
+            <motion.div style={{ y: geoY }} className="absolute inset-0 z-0 opacity-30">
                  <Image
-                    src="/images/denisse-3.jpg" // Using generic or map image if available, falling back to Denisse 3 as placeholder or abstract
+                    src="/images/denisse-3.jpg"
                     alt="Baja California Map"
                     fill
                     className="object-cover mix-blend-overlay"
                 />
-            </div>
+            </motion.div>
             <div className="container mx-auto px-4 relative z-10 text-center">
                  <h2 className="text-3xl md:text-5xl font-bold mb-6">Serving all of Baja California</h2>
                  <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">

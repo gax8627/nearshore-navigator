@@ -10,7 +10,7 @@ export function FounderBlock() {
       <div className="container px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           <div className="relative order-last lg:order-first">
-            <div className="relative h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative h-[400px] lg:h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/denisse-1.jpg"
                 alt="Denisse Martinez - Founder & Lead Advisor"

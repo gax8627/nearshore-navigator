@@ -47,15 +47,37 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
             const storedLang = localStorage.getItem('app_lang') as Language;
             if (storedLang && (storedLang === 'en' || storedLang === 'es')) {
                 targetLang = storedLang;
-            } else {
-                // 2. Browser detection
+                setLanguage(targetLang);
+                await loadTranslations(targetLang);
+                return;
+            }
+
+            // 2. IP Geolocation as primary fallback
+            try {
+                // Fetch country from IP
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                const country = data.country_code; // Returns 2-letter country code like 'MX', 'US'
+
+                // List of Spanish-speaking countries (LATAM + Spain)
+                const spanishSpeakingCountries = [
+                    'MX', 'ES', 'AR', 'CO', 'PE', 'VE', 'CL', 'EC', 'GT', 'CU', 
+                    'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY', 'GQ'
+                ];
+
+                if (spanishSpeakingCountries.includes(country)) {
+                    targetLang = 'es';
+                }
+            } catch (error) {
+                console.warn('Geolocation failed, falling back to browser language:', error);
+                
+                // 3. Browser detection fallback
                 const browserLang = navigator.language || (navigator as Navigator & { userLanguage?: string }).userLanguage || 'en';
                 const primaryLang = browserLang.split('-')[0].toLowerCase();
 
                 if (primaryLang === 'es') {
                     targetLang = 'es';
                 }
-                // (Additional region logic can remain here if needed from previous implementation)
             }
 
             setLanguage(targetLang);
