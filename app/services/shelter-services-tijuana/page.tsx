@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { LeadForm } from "@/components/LeadForm";
+import { FounderBlock } from "@/components/FounderBlock";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function ShelterServicesPage() {
@@ -29,6 +30,50 @@ export default function ShelterServicesPage() {
             </section>
 
             <div className="container mx-auto px-4 py-16">
+                {/* Strategy Section (New) */}
+                <div className="mb-20">
+                    <div className="bg-primary-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
+                        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <h2 className="text-3xl font-bold mb-4">{t('shelterPage.strategyTitle')}</h2>
+                                <p className="text-lg text-primary-100 mb-8">{t('shelterPage.strategySubtitle')}</p>
+                                <div className="space-y-4">
+                                    <div className="flex gap-4">
+                                        <div className="w-2 h-full min-h-[40px] bg-primary-500 rounded-full" />
+                                        <div>
+                                            <h3 className="font-bold text-lg">{t('shelterPage.modelFitTitle')}</h3>
+                                            <p className="text-sm text-gray-300">{t('shelterPage.modelFitDesc')}</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <div className="w-2 h-full min-h-[40px] bg-primary-500 rounded-full" />
+                                        <div>
+                                            <h3 className="font-bold text-lg">{t('shelterPage.inshoringTitle')}</h3>
+                                            <p className="text-sm text-gray-300">{t('shelterPage.inshoringDesc')}</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <div className="w-2 h-full min-h-[40px] bg-primary-500 rounded-full" />
+                                        <div>
+                                            <h3 className="font-bold text-lg">{t('shelterPage.complianceTitle')}</h3>
+                                            <p className="text-sm text-gray-300">{t('shelterPage.complianceDesc')}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="relative h-80 rounded-xl overflow-hidden border-4 border-white/10 shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+                                <Image 
+                                    src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1200" 
+                                    alt="Strategic Consulting" 
+                                    fill 
+                                    className="object-cover" 
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     <div className="lg:col-span-2">
                         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">{t('shelterPage.whatIsShelterTitle')}</h2>
@@ -82,6 +127,9 @@ export default function ShelterServicesPage() {
                     </div>
                 </div>
             </div>
+
+            {/* Founder Block */}
+            <FounderBlock />
         </div>
     );
 }

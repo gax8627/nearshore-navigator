@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function WhatsAppButton() {
     const phoneNumber = "526641237199"; // Updated to real number
-    const message = "Hello, I am interested in industrial nearshoring in Tijuana.";
+    const message = "Hello, I am interested in industrial nearshoring in Baja California.";
     const link = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     return (

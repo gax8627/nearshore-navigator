@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { LeadForm } from "@/components/LeadForm";
 import { Headset, Users, Clock, DollarSign, Globe, CheckCircle2 } from "lucide-react";
+import { FounderBlock } from "@/components/FounderBlock";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function CallCenterPage() {
@@ -121,6 +122,9 @@ export default function CallCenterPage() {
                     </div>
                 </div>
             </div>
+
+            {/* Founder Block */}
+            <FounderBlock />
         </div>
     );
 }

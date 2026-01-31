@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { LeadForm } from "@/components/LeadForm";
 import { CheckCircle2 } from "lucide-react";
+import { FounderBlock } from "@/components/FounderBlock";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function IndustrialRealEstatePage() {
@@ -31,7 +32,7 @@ export default function IndustrialRealEstatePage() {
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=2000"
-                        alt="Tijuana Warehouse"
+                        alt="Baja California Warehouse"
                         fill
                         className="object-cover"
                         priority
@@ -46,7 +47,37 @@ export default function IndustrialRealEstatePage() {
                 </div>
             </section>
 
-            <div className="container mx-auto px-4 -mt-20 relative z-20">
+            {/* Strategy Section (New) */}
+            <section className="container mx-auto px-4 -mt-24 relative z-20 mb-12">
+                <div className="bg-gradient-to-br from-blue-900 to-gray-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl border border-white/10 overflow-hidden relative">
+                    {/* Background decoration */}
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-[100px] -mr-32 -mt-32" />
+                    
+                    <div className="relative z-10">
+                        <div className="max-w-3xl mb-12">
+                            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('realEstatePage.strategyTitle')}</h2>
+                            <p className="text-xl text-gray-300">{t('realEstatePage.strategySubtitle')}</p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div className="glass-card bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                                <h3 className="text-xl font-bold text-primary-400 mb-3">{t('realEstatePage.utilityTitle')}</h3>
+                                <p className="text-gray-300 text-sm">{t('realEstatePage.utilityDesc')}</p>
+                            </div>
+                            <div className="glass-card bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                                <h3 className="text-xl font-bold text-primary-400 mb-3">{t('realEstatePage.comparativeTitle')}</h3>
+                                <p className="text-gray-300 text-sm">{t('realEstatePage.comparativeDesc')}</p>
+                            </div>
+                            <div className="glass-card bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                                <h3 className="text-xl font-bold text-primary-400 mb-3">{t('realEstatePage.tenantTitle')}</h3>
+                                <p className="text-gray-300 text-sm">{t('realEstatePage.tenantDesc')}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div className="container mx-auto px-4 relative z-20">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     {/* Main Content */}
                     <div className="lg:col-span-2 space-y-12 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl rounded-2xl p-8 shadow-glass border border-white/20 dark:border-gray-800">
@@ -121,6 +152,9 @@ export default function IndustrialRealEstatePage() {
                     </div>
                 </div>
             </div>
+
+            {/* Founder Block */}
+            <FounderBlock />
         </div>
     );
 }

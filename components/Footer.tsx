@@ -43,7 +43,7 @@ export function Footer() {
                     <div>
                         <h4 className="font-semibold mb-4 text-gray-100">{t('nav.contact')}</h4>
                         <ul className="space-y-2 text-sm text-gray-300">
-                            <li>Tijuana, Baja California, MX</li>
+                            <li>Baja California, MX</li>
                             <li>San Diego, California, US</li>
                             <li><a href="mailto:info@nearshorenavigator.com" className="hover:text-primary-400" aria-label="Send email to Nearshore Navigator">info@nearshorenavigator.com</a></li>
                         </ul>

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { LeadForm } from "@/components/LeadForm";
 import { CheckCircle2, Truck, Globe, Clock, DollarSign, Package } from "lucide-react";
+import { FounderBlock } from "@/components/FounderBlock";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function DistributionPage() {
@@ -40,7 +41,7 @@ export default function DistributionPage() {
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="https://images.unsplash.com/photo-1566576912906-600aceebca9b?auto=format&fit=crop&q=80&w=2000"
-                        alt="Distribution center with trucks and loading docks in Tijuana"
+                        alt="Distribution center with trucks and loading docks in Baja California"
                         fill
                         className="object-cover"
                         priority
@@ -172,6 +173,9 @@ export default function DistributionPage() {
                     </div>
                 </div>
             </div>
+
+            {/* Founder Block */}
+            <FounderBlock />
         </div>
     );
 }

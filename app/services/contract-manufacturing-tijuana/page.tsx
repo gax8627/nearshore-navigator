@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { LeadForm } from "@/components/LeadForm";
 import { Factory, Shield, Award, Users } from "lucide-react";
+import { FounderBlock } from "@/components/FounderBlock";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function ContractManufacturingPage() {
@@ -64,6 +65,31 @@ export default function ContractManufacturingPage() {
                     <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                         {t('contractPage.heroSubtitle')}
                     </p>
+                </div>
+            </section>
+
+            {/* Matchmaking Strategy (New) */}
+            <section className="container mx-auto px-4 -mt-16 relative z-20 mb-20">
+                <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100 dark:border-gray-700">
+                     <div className="text-center max-w-3xl mx-auto mb-12">
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{t('contractPage.strategyTitle')}</h2>
+                        <p className="text-lg text-gray-600 dark:text-gray-300">{t('contractPage.strategySubtitle')}</p>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="p-6 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                            <h3 className="text-xl font-bold text-primary-600 dark:text-primary-400 mb-3">{t('contractPage.capabilityTitle')}</h3>
+                            <p className="text-gray-600 dark:text-gray-400 text-sm">{t('contractPage.capabilityDesc')}</p>
+                        </div>
+                        <div className="p-6 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                            <h3 className="text-xl font-bold text-primary-600 dark:text-primary-400 mb-3">{t('contractPage.roadmapTitle')}</h3>
+                            <p className="text-gray-600 dark:text-gray-400 text-sm">{t('contractPage.roadmapDesc')}</p>
+                        </div>
+                        <div className="p-6 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                            <h3 className="text-xl font-bold text-primary-600 dark:text-primary-400 mb-3">{t('contractPage.safeguardsTitle')}</h3>
+                            <p className="text-gray-600 dark:text-gray-400 text-sm">{t('contractPage.safeguardsDesc')}</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -180,6 +206,9 @@ export default function ContractManufacturingPage() {
                     />
                 </div>
             </div>
+
+            {/* Founder Block */}
+            <FounderBlock />
         </div>
     );
 }

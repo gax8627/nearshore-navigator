@@ -8,6 +8,8 @@ import { StatsGrid } from "@/components/StatsGrid";
 import { ServiceCard } from "@/components/ServiceCard";
 import { BlogCard } from "@/components/BlogCard";
 import { Warehouse, Globe2, Cog, Truck, Headset } from "lucide-react"; // Import icons
+import { NewsletterBanner } from "@/components/NewsletterBanner";
+import { FounderBlock } from "@/components/FounderBlock";
 
 import { useLanguage } from "@/app/context/LanguageContext";
 
@@ -16,7 +18,7 @@ export default function Home() {
 
   const featuredPosts = [
     {
-      title: "Nearshoring in Tijuana: A Guide for US Companies",
+      title: "Nearshoring in Baja California: A Guide for US Companies",
       excerpt: "Everything you need to know about setting up operations in Mexico's manufacturing hub.",
       date: "Oct 24, 2025",
       slug: "nearshoring-in-tijuana-guide-for-us-companies",
@@ -24,15 +26,15 @@ export default function Home() {
       tags: ["Guide", "Strategy"],
     },
     {
-      title: "Tijuana vs Asia: Manufacturing Cost Comparison",
-      excerpt: "Analyze the total landed cost benefits of manufacturing in Tijuana versus traditional Asian hubs.",
+      title: "Baja California vs Asia: Manufacturing Cost Comparison",
+      excerpt: "Analyze the total landed cost benefits of manufacturing in Baja California versus traditional Asian hubs.",
       date: "Nov 12, 2025",
       slug: "tijuana-vs-asia-manufacturing-cost-comparison",
       imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800", // Factory/Manufacturing
       tags: ["Cost Analysis", "Economics"],
     },
     {
-      title: "How Shelter Services Work in Tijuana",
+      title: "How Shelter Services Work in Baja California",
       excerpt: "Understanding the shelter model: the fastest, lowest-risk way to start manufacturing in Mexico.",
       date: "Dec 05, 2025",
       slug: "how-shelter-services-work-in-tijuana",
@@ -49,7 +51,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2600" // Modern Glass Building/City
-            alt="Tijuana Industrial Skyline"
+            alt="Baja California Industrial Skyline"
             fill
             className="object-cover"
             priority
@@ -180,6 +182,12 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      {/* Founder Block */}
+      <FounderBlock />
+
+      {/* Newsletter Banner */}
+      <NewsletterBanner />
 
       {/* Logos Placeholder */}
       <section className="container mx-auto px-4 py-12 border-t border-gray-100 dark:border-gray-800">

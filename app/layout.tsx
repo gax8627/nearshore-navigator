@@ -22,10 +22,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://nearshorenavigator.com'),
   title: {
-    default: 'Nearshore Navigator | Industrial Manufacturing in Tijuana, Mexico',
+    default: 'Nearshore Navigator | Industrial Manufacturing in Baja California, Mexico',
     template: '%s | Nearshore Navigator'
   },
-  description: 'Your partner for industrial nearshoring, shelter services, and contract manufacturing in Tijuana, Mexico. Access Class A industrial buildings, bilingual workforce, and 40-60% cost savings just 20 minutes from San Diego.',
+  description: 'Your partner for industrial nearshoring, shelter services, and contract manufacturing in Baja California, Mexico. Access Class A industrial buildings, bilingual workforce, and 40-60% cost savings just 20 minutes from San Diego.',
   keywords: [
     'nearshoring tijuana',
     'manufacturing mexico',
@@ -52,21 +52,21 @@ export const metadata: Metadata = {
     alternateLocale: 'es_MX',
     url: 'https://nearshorenavigator.com',
     siteName: 'Nearshore Navigator',
-    title: 'Nearshore Navigator | Industrial Manufacturing in Tijuana',
-    description: 'Your partner for industrial nearshoring, shelter services, and contract manufacturing in Tijuana, Mexico.',
+    title: 'Nearshore Navigator | Industrial Manufacturing in Baja California',
+    description: 'Your partner for industrial nearshoring, shelter services, and contract manufacturing in Baja California, Mexico.',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Nearshore Navigator - Industrial Manufacturing in Tijuana',
+        alt: 'Nearshore Navigator - Industrial Manufacturing in Baja California',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nearshore Navigator | Industrial Manufacturing in Tijuana',
-    description: 'Your partner for industrial nearshoring, shelter services, and contract manufacturing in Tijuana, Mexico.',
+    title: 'Nearshore Navigator | Industrial Manufacturing in Baja California',
+    description: 'Your partner for industrial nearshoring, shelter services, and contract manufacturing in Baja California, Mexico.',
     images: ['/og-image.png'],
   },
   robots: {
