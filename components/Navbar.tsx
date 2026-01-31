@@ -71,12 +71,12 @@ export function Navbar() {
             >
                 <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
                     <Link href="/" className="flex items-center group">
-                        <div className="relative w-48 h-12 transition-all group-hover:scale-105 duration-300">
+                        <div className="relative w-36 md:w-48 h-10 md:h-12 transition-all group-hover:scale-105 duration-300">
                             <Image
                                 src="/logo-new.png"
                                 alt="Nearshore Navigator Logo"
                                 fill
-                                className="object-contain dark:brightness-110 dark:contrast-125"
+                                className="object-contain dark:brightness-[1.2] dark:contrast-[1.1] dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.1)]"
                                 priority
                             />
                         </div>

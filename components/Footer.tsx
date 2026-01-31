@@ -13,16 +13,16 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                     <div className="col-span-1 md:col-span-1">
                         <Link href="/" className="block group">
-                            <div className="relative w-40 h-10 transition-all group-hover:scale-105 duration-300">
+                            <div className="relative w-36 md:w-44 h-10 transition-all group-hover:scale-105 duration-300">
                                 <Image
                                     src="/logo-new.png"
                                     alt="Nearshore Navigator Logo"
                                     fill
-                                    className="object-contain brightness-0 invert opacity-90 group-hover:opacity-100"
+                                    className="object-contain brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity"
                                 />
                             </div>
                         </Link>
-                        <p className="mt-4 text-gray-400 text-sm">
+                        <p className="mt-6 text-gray-400 text-sm leading-relaxed">
                             {t('footer.description')}
                         </p>
                     </div>
