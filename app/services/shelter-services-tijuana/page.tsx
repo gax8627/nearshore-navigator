@@ -1,17 +1,26 @@
 "use client";
 
 import Image from "next/image";
+import { useRef } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
 import { LeadForm } from "@/components/LeadForm";
 import { FounderBlock } from "@/components/FounderBlock";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function ShelterServicesPage() {
     const { t } = useLanguage();
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
     return (
-        <div className="pb-20">
+        <div ref={containerRef} className="pb-20 overflow-hidden">
             <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 z-0">
+                <motion.div style={{ y }} className="absolute inset-0 z-0">
                     <Image
                         src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000"
                         alt="Team Strategy"
@@ -20,7 +29,7 @@ export default function ShelterServicesPage() {
                         priority
                     />
                     <div className="absolute inset-0 bg-primary-900/80 mix-blend-multiply" />
-                </div>
+                </motion.div>
                 <div className="container mx-auto px-4 z-10 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">{t('shelterPage.heroTitle')} <span className="text-green-300">{t('shelterPage.heroTitleHighlight')}</span></h1>
                     <p className="text-xl text-gray-100 max-w-2xl mx-auto">

@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { useRef } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
 import { LeadForm } from "@/components/LeadForm";
 import { CheckCircle2 } from "lucide-react";
 import { FounderBlock } from "@/components/FounderBlock";
@@ -8,6 +10,13 @@ import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function IndustrialRealEstatePage() {
     const { t } = useLanguage();
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
     const features = [
         t('realEstatePage.classA'),
@@ -26,10 +35,10 @@ export default function IndustrialRealEstatePage() {
     ];
 
     return (
-        <div className="pb-20">
+        <div ref={containerRef} className="pb-20 overflow-hidden">
             {/* Hero */}
             <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 z-0">
+                <motion.div style={{ y }} className="absolute inset-0 z-0">
                     <Image
                         src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=2000"
                         alt="Baja California Warehouse"
@@ -38,7 +47,7 @@ export default function IndustrialRealEstatePage() {
                         priority
                     />
                     <div className="absolute inset-0 bg-gray-900/80" />
-                </div>
+                </motion.div>
                 <div className="container mx-auto px-4 z-10 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">{t('realEstatePage.heroTitle')} <span className="text-primary-500">{t('realEstatePage.heroTitleHighlight')}</span></h1>
                     <p className="text-xl text-gray-200 max-w-2xl mx-auto">

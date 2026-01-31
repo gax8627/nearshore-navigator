@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { useRef } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
 import { LeadForm } from "@/components/LeadForm";
 import { Factory, Shield, Award, Users } from "lucide-react";
 import { FounderBlock } from "@/components/FounderBlock";
@@ -8,6 +10,13 @@ import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function ContractManufacturingPage() {
     const { t } = useLanguage();
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
     const industries = [
         {
@@ -51,11 +60,13 @@ export default function ContractManufacturingPage() {
     ];
 
     return (
-        <div className="pb-20">
+        <div ref={containerRef} className="pb-20 overflow-hidden">
             {/* Hero */}
-            <section className="bg-gray-900 py-24 text-center text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
-                <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-gray-900" />
+            <section className="bg-gray-900 py-24 text-center text-white relative overflow-hidden h-[60vh] flex items-center justify-center">
+                <motion.div style={{ y }} className="absolute inset-0 z-0">
+                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-gray-900" />
+                </motion.div>
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
                         <Factory className="w-4 h-4" />

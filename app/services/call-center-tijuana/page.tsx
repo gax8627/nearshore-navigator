@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { useRef } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
 import { LeadForm } from "@/components/LeadForm";
 import { Headset, Users, Clock, DollarSign, Globe, CheckCircle2 } from "lucide-react";
 import { FounderBlock } from "@/components/FounderBlock";
@@ -8,6 +10,13 @@ import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function CallCenterPage() {
     const { t } = useLanguage();
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
     const benefits = [
         { icon: <DollarSign className="w-6 h-6" />, title: t('callCenterPage.costSavingsTitle'), desc: t('callCenterPage.costSavingsDesc') },
@@ -26,10 +35,10 @@ export default function CallCenterPage() {
     ];
 
     return (
-        <div className="pb-20">
+        <div ref={containerRef} className="pb-20 overflow-hidden">
             {/* Hero */}
             <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 z-0">
+                <motion.div style={{ y }} className="absolute inset-0 z-0">
                     <Image
                         src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&q=80&w=2000"
                         alt="Call center agents providing customer support"
@@ -38,7 +47,7 @@ export default function CallCenterPage() {
                         priority
                     />
                     <div className="absolute inset-0 bg-primary-900/80 mix-blend-multiply" />
-                </div>
+                </motion.div>
                 <div className="container mx-auto px-4 z-10 text-center">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
                         <Headset className="w-4 h-4" />

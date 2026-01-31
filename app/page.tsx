@@ -10,11 +10,19 @@ import { BlogCard } from "@/components/BlogCard";
 import { Warehouse, Globe2, Cog, Truck, Headset } from "lucide-react"; // Import icons
 import { NewsletterBanner } from "@/components/NewsletterBanner";
 import { FounderBlock } from "@/components/FounderBlock";
-
+import { useRef } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function Home() {
   const { t } = useLanguage();
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   const featuredPosts = [
     {
@@ -44,11 +52,11 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col gap-24 pb-20 overflow-hidden">
+    <div ref={containerRef} className="flex flex-col gap-24 pb-20 overflow-hidden">
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
+        <motion.div style={{ y }} className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2600" // Modern Glass Building/City
             alt="Baja California Industrial Skyline"
@@ -57,7 +65,7 @@ export default function Home() {
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-transparent" />
-        </div>
+        </motion.div>
 
         <div className="container mx-auto px-4 z-10 relative">
           <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-10 duration-1000">
