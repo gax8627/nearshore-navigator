@@ -90,9 +90,9 @@ export function FounderBlock() {
               </Link>
             </div>
             
-            <div className="pt-6 border-t font-medium italic text-muted-foreground relative pl-6">
+            <div className="pt-6 border-t font-medium italic text-muted-foreground relative pl-10">
               <div className="absolute left-0 top-6 text-6xl text-primary/10 select-none">&quot;</div>
-              {t('aboutPage.founderQuote')}
+              {t('about.founderQuote')}
             </div>
           </div>
         </div>
