@@ -21,18 +21,18 @@ export function Navbar() {
     const { theme, toggleTheme } = useTheme();
 
     const serviceLinks = [
-        { name: t('services.real_estate'), href: "/services/industrial-real-estate-baja" },
-        { name: t('services.shelter'), href: "/services/shelter-services-tijuana" },
-        { name: t('services.contract'), href: "/services/contract-manufacturing-tijuana" },
-        { name: t('services.logistics'), href: "/services/distribution-centers-tijuana" },
-        { name: t('services.call_center'), href: "/services/call-center-tijuana" },
+        { name: t('services.real_estate'), href: `/${language}/services/industrial-real-estate-baja` },
+        { name: t('services.shelter'), href: `/${language}/services/shelter-services-tijuana` },
+        { name: t('services.contract'), href: `/${language}/services/contract-manufacturing-tijuana` },
+        { name: t('services.logistics'), href: `/${language}/services/distribution-centers-tijuana` },
+        { name: t('services.call_center'), href: `/${language}/services/call-center-tijuana` },
     ];
 
     const navLinks = [
-        { name: t('nav.insights'), href: "/insights" },
-        { name: t('nav.resources'), href: "/resources/tijuana-industrial-park-map" },
-        { name: t('nav.about'), href: "/about" },
-        { name: t('nav.contact'), href: "/contact" },
+        { name: t('nav.insights'), href: `/${language}/insights` },
+        { name: t('nav.resources'), href: `/${language}/resources/tijuana-industrial-park-map` },
+        { name: t('nav.about'), href: `/${language}/about` },
+        { name: t('nav.contact'), href: `/${language}/contact` },
     ];
 
     useEffect(() => {
@@ -70,7 +70,7 @@ export function Navbar() {
                 )}
             >
                 <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-                    <Link href="/" className="flex items-center group">
+                    <Link href={`/${language}`} className="flex items-center group">
                         <div className="relative w-36 md:w-48 h-10 md:h-12 transition-all group-hover:scale-105 duration-300">
                             <Image
                                 src="/logo-new.png"
@@ -172,7 +172,7 @@ export function Navbar() {
                             </motion.div>
                         </button>
 
-                        <Link href="/assessment">
+                        <Link href={`/${language}/assessment`}>
                             <Button variant="primary" size="sm">{t('nav.bookTour')}</Button>
                         </Link>
                     </div>
@@ -283,7 +283,7 @@ export function Navbar() {
                             </div>
 
                             <div className="pt-2">
-                                <Link href="/assessment" onClick={() => setIsMobileMenuOpen(false)}>
+                                <Link href={`/${language}/assessment`} onClick={() => setIsMobileMenuOpen(false)}>
                                     <Button variant="primary" className="w-full">{t('nav.bookTour')}</Button>
                                 </Link>
                             </div>

@@ -15,7 +15,7 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -37,7 +37,7 @@ export default function Home() {
       title: "Baja California vs Asia: Manufacturing Cost Comparison",
       excerpt: "Analyze the total landed cost benefits of manufacturing in Baja California versus traditional Asian hubs.",
       date: "Nov 12, 2025",
-      slug: "tijuana-vs-asia-manufacturing-cost-comparison",
+      slug: `/${language}/insights/tijuana-vs-asia-manufacturing-cost-comparison`,
       imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800", // Factory/Manufacturing
       tags: ["Cost Analysis", "Economics"],
     },
@@ -45,11 +45,16 @@ export default function Home() {
       title: "How Shelter Services Work in Baja California",
       excerpt: "Understanding the shelter model: the fastest, lowest-risk way to start manufacturing in Mexico.",
       date: "Dec 05, 2025",
-      slug: "how-shelter-services-work-in-tijuana",
+      slug: `/${language}/insights/how-shelter-services-work-in-tijuana`,
       imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800", // Consulting/Planning
       tags: ["Shelter", "Legal"],
     },
   ];
+
+  const filteredFeaturedPosts = featuredPosts.map(post => ({
+    ...post,
+    slug: `/${language}/insights/${post.slug.split('/').pop()}`
+  }));
 
   const homeSchema = {
     "@context": "https://schema.org",
@@ -147,7 +152,7 @@ export default function Home() {
                 }}
                 className="flex flex-col sm:flex-row gap-6"
             >
-              <Link href="/contact" className="w-full sm:w-auto">
+              <Link href={`/${language}/contact`} className="w-full sm:w-auto">
                 <Button 
                     size="lg" 
                     className="w-full sm:w-auto shadow-2xl shadow-primary-500/30 hover:scale-105 active:scale-95 transition-transform"
@@ -155,7 +160,7 @@ export default function Home() {
                     {t('hero.cta_primary')}
                 </Button>
               </Link>
-              <Link href="/assessment" className="w-full sm:w-auto">
+              <Link href={`/${language}/assessment`} className="w-full sm:w-auto">
                 <Button 
                     variant="glass" 
                     size="lg" 
@@ -205,7 +210,7 @@ export default function Home() {
             <ServiceCard
               title={t('services.real_estate')}
               description={t('services.real_estate_desc')}
-              href="/services/industrial-real-estate-baja"
+              href={`/${language}/services/industrial-real-estate-baja`}
               icon={<Warehouse className="w-6 h-6" />}
             />
           </div>
@@ -213,7 +218,7 @@ export default function Home() {
             <ServiceCard
               title={t('services.shelter')}
               description={t('services.shelter_desc')}
-              href="/services/shelter-services-tijuana"
+              href={`/${language}/services/shelter-services-tijuana`}
               icon={<Globe2 className="w-6 h-6" />}
             />
           </div>
@@ -221,7 +226,7 @@ export default function Home() {
             <ServiceCard
               title={t('services.contract')}
               description={t('services.contract_desc')}
-              href="/services/contract-manufacturing-tijuana"
+              href={`/${language}/services/contract-manufacturing-tijuana`}
               icon={<Cog className="w-6 h-6" />}
             />
           </div>
@@ -229,7 +234,7 @@ export default function Home() {
             <ServiceCard
               title={t('services.logistics')}
               description={t('services.logistics_desc')}
-              href="/services/distribution-centers-tijuana"
+              href={`/${language}/services/distribution-centers-tijuana`}
               icon={<Truck className="w-6 h-6" />}
             />
           </div>
@@ -237,7 +242,7 @@ export default function Home() {
             <ServiceCard
               title={t('services.call_center')}
               description={t('services.call_center_desc')}
-              href="/services/call-center-tijuana"
+              href={`/${language}/services/call-center-tijuana`}
               icon={<Headset className="w-6 h-6" />}
             />
           </div>
@@ -286,19 +291,19 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{t('insights.title')}</h2>
             <p className="text-gray-600 dark:text-gray-300">{t('insights.subtitle')}</p>
           </div>
-          <Link href="/insights" className="hidden md:block">
+          <Link href={`/${language}/insights`} className="hidden md:block">
             <Button variant="outline">{t('insights.viewAll')}</Button>
           </Link>
         </div>
-
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {featuredPosts.map((post) => (
+          {filteredFeaturedPosts.map((post) => (
             <BlogCard key={post.slug} post={post} />
           ))}
         </div>
 
         <div className="mt-8 text-center md:hidden">
-          <Link href="/insights">
+          <Link href={`/${language}/insights`}>
             <Button variant="outline">{t('insights.viewAll')}</Button>
           </Link>
         </div>

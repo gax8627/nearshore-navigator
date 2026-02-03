@@ -8,6 +8,7 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { ServiceCard } from "@/components/ServiceCard";
 import { LeadForm } from "@/components/LeadForm";
 import { CheckCircle2, Warehouse, Globe2, Cog, Truck, Headset, MapPin } from "lucide-react";
+import { useLanguage } from "@/app/context/LanguageContext";
 import { getLocation, SERVICES } from "@/app/constants/seo-data";
 
 // Map string icon names to components
@@ -24,6 +25,7 @@ type Props = {
 };
 
 export default function CityOverviewClient({ city }: Props) {
+  const { language } = useLanguage();
   const location = getLocation(city);
 
   if (!location) {
@@ -98,7 +100,7 @@ export default function CityOverviewClient({ city }: Props) {
                                     key={service.slug}
                                     title={service.title}
                                     description={service.description}
-                                    href={`/locations/${location.slug}/${service.slug}`}
+                                    href={`/${language}/locations/${location.slug}/${service.slug}`}
                                     icon={<Icon className="w-6 h-6" />}
                                 />
                             );

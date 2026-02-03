@@ -14,13 +14,9 @@ type Props = {
 };
 
 export default function ServiceLocationClient({ city, serviceId }: Props) {
-  const { t } = useLanguage();
-  const location = getLocation(city);
-  const service = getService(serviceId);
-
-  if (!location || !service) {
-    return null;
-  }
+  const { t, language } = useLanguage();
+  const location = getLocation(city)!;
+  const service = getService(serviceId)!;
 
   // Dynamic content generation
   const title = `${service.title} in ${location.name}`;
@@ -179,7 +175,7 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
                     {LOCATIONS.filter(l => l.slug !== city).slice(0, 6).map((loc) => (
                         <Link 
                             key={loc.slug} 
-                            href={`/locations/${loc.slug}/${serviceId}`}
+                            href={`/${language}/locations/${loc.slug}/${serviceId}`}
                             className="flex items-center gap-3 p-3 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700 hover:bg-white/60 dark:hover:bg-gray-800/60 transition-colors group"
                         >
                             <div className="bg-primary-100 dark:bg-primary-900/30 p-2 rounded-full group-hover:bg-primary-200 dark:group-hover:bg-primary-900/50 transition-colors">
