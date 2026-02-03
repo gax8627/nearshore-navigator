@@ -65,7 +65,7 @@ export default function ContractManufacturingPage() {
             <section className="bg-gray-900 py-24 text-center text-white relative overflow-hidden h-[60vh] flex items-center justify-center">
                 <motion.div style={{ y }} className="absolute inset-0 z-0">
                     <Image 
-                        src="https://images.unsplash.com/photo-1565514020176-8568e4c76742?auto=format&fit=crop&q=80&w=2000"
+                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2000"
                         alt="Advanced Manufacturing Facility"
                         fill
                         className="object-cover"

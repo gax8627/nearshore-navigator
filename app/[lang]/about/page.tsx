@@ -30,14 +30,14 @@ export default function AboutPage() {
         <div className="relative h-[80vh] flex items-center justify-center overflow-hidden">
             <motion.div style={{ y }} className="absolute inset-0 z-0 h-[125%] -top-[12.5%]">
                 <Image
-                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=2560"
-                    alt="Strategic Planning Team"
+                    src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?auto=format&fit=crop&q=80&w=2560"
+                    alt="Strategic Advisory in Baja California"
                     fill
                     className="object-cover object-center"
                     priority
                 />
-                <div className="absolute inset-0 bg-gray-900/50" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent" />
+                <div className="absolute inset-0 bg-gray-900/70" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
             </motion.div>
             
             <div className="container mx-auto px-4 z-10 text-center relative">
@@ -213,12 +213,12 @@ export default function AboutPage() {
 
         {/* Geography */}
         <section ref={geoRef} className="py-24 bg-gray-900 text-white relative overflow-hidden">
-            <motion.div style={{ y: geoY }} className="absolute inset-0 z-0 opacity-30">
+            <motion.div style={{ y: geoY }} className="absolute inset-0 z-0 opacity-40">
                  <Image
-                    src="/images/denisse-3.jpg"
-                    alt="Baja California Map"
+                    src="https://images.unsplash.com/photo-1544033527-b192daee1f5b?auto=format&fit=crop&q=80&w=2000"
+                    alt="Baja California Coastal Landscape"
                     fill
-                    className="object-cover mix-blend-overlay"
+                    className="object-cover"
                 />
             </motion.div>
             <div className="container mx-auto px-4 relative z-10 text-center">

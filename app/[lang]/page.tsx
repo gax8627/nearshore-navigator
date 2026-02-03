@@ -180,38 +180,48 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, staggerChildren: 0.1 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
+            className="flex flex-wrap justify-center gap-6"
         >
-          <ServiceCard
-            title={t('services.real_estate')}
-            description={t('services.real_estate_desc')}
-            href="/services/industrial-real-estate-baja"
-            icon={<Warehouse className="w-6 h-6" />}
-          />
-          <ServiceCard
-            title={t('services.shelter')}
-            description={t('services.shelter_desc')}
-            href="/services/shelter-services-tijuana"
-            icon={<Globe2 className="w-6 h-6" />}
-          />
-          <ServiceCard
-            title={t('services.contract')}
-            description={t('services.contract_desc')}
-            href="/services/contract-manufacturing-tijuana"
-            icon={<Cog className="w-6 h-6" />}
-          />
-          <ServiceCard
-            title={t('services.logistics')}
-            description={t('services.logistics_desc')}
-            href="/services/distribution-centers-tijuana"
-            icon={<Truck className="w-6 h-6" />}
-          />
-          <ServiceCard
-            title={t('services.call_center')}
-            description={t('services.call_center_desc')}
-            href="/services/call-center-tijuana"
-            icon={<Headset className="w-6 h-6" />}
-          />
+          <div className="w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] xl:w-[calc(20%-1.5rem)] min-w-[300px] flex-grow xl:flex-grow-0">
+            <ServiceCard
+              title={t('services.real_estate')}
+              description={t('services.real_estate_desc')}
+              href="/services/industrial-real-estate-baja"
+              icon={<Warehouse className="w-6 h-6" />}
+            />
+          </div>
+          <div className="w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] xl:w-[calc(20%-1.5rem)] min-w-[300px] flex-grow xl:flex-grow-0">
+            <ServiceCard
+              title={t('services.shelter')}
+              description={t('services.shelter_desc')}
+              href="/services/shelter-services-tijuana"
+              icon={<Globe2 className="w-6 h-6" />}
+            />
+          </div>
+          <div className="w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] xl:w-[calc(20%-1.5rem)] min-w-[300px] flex-grow xl:flex-grow-0">
+            <ServiceCard
+              title={t('services.contract')}
+              description={t('services.contract_desc')}
+              href="/services/contract-manufacturing-tijuana"
+              icon={<Cog className="w-6 h-6" />}
+            />
+          </div>
+          <div className="w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] xl:w-[calc(20%-1.5rem)] min-w-[300px] flex-grow xl:flex-grow-0">
+            <ServiceCard
+              title={t('services.logistics')}
+              description={t('services.logistics_desc')}
+              href="/services/distribution-centers-tijuana"
+              icon={<Truck className="w-6 h-6" />}
+            />
+          </div>
+          <div className="w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] xl:w-[calc(20%-1.5rem)] min-w-[300px] flex-grow xl:flex-grow-0">
+            <ServiceCard
+              title={t('services.call_center')}
+              description={t('services.call_center_desc')}
+              href="/services/call-center-tijuana"
+              icon={<Headset className="w-6 h-6" />}
+            />
+          </div>
         </motion.div>
       </section>
 
