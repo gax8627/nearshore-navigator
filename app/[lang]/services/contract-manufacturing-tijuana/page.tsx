@@ -68,7 +68,7 @@ export default function ContractManufacturingPage() {
                         src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2000"
                         alt="Advanced Manufacturing Facility"
                         fill
-                        className="object-cover"
+                        className="object-cover premium-image-filter"
                         priority
                     />
                     <div className="absolute inset-0 bg-gray-900/60" />

@@ -6,7 +6,7 @@ import { Check, ArrowRight, Calendar, MapPin } from "lucide-react"
 import { useLanguage } from "@/app/context/LanguageContext"
 
 export function FounderBlock() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   return (
     <section className="py-24 bg-muted/30">
       <div className="container px-4 md:px-6">
@@ -76,14 +76,14 @@ export function FounderBlock() {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
-                href="/contact"
+                href={`/${language}/contact`}
                 className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
               >
                 <Calendar className="mr-2 h-4 w-4" />
                 {t('about.ctaDiscovery')}
               </Link>
               <Link
-                href="/assessment"
+                href={`/${language}/assessment`}
                 className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
               >
                 <MapPin className="mr-2 h-4 w-4" />

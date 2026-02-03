@@ -52,7 +52,7 @@ export default function DistributionPage() {
                         src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000"
                         alt="Distribution center with trucks and loading docks in Baja California"
                         fill
-                        className="object-cover"
+                        className="object-cover premium-image-filter"
                         priority
                     />
                     <div className="absolute inset-0 bg-gray-900/60" />

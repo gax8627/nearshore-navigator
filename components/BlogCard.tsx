@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 interface BlogPost {
     title: string;
@@ -14,8 +15,11 @@ interface BlogPost {
 }
 
 export function BlogCard({ post }: { post: BlogPost }) {
+    const { language } = useLanguage();
+    const href = post.slug.startsWith('/') ? post.slug : `/${language}/insights/${post.slug}`;
+
     return (
-        <Link href={`/insights/${post.slug}`} className="group block h-full">
+        <Link href={href} className="group block h-full">
             <motion.article
                 initial="rest"
                 whileHover="hover"

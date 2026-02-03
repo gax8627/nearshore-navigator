@@ -7,8 +7,10 @@ import { useRef } from "react";
 import { Button } from "@/components/Button";
 import { FounderBlock } from "@/components/FounderBlock";
 import { CheckCircle2, MapPin, Factory, Users, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function AboutPage() {
+  const { language } = useLanguage();
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -143,7 +145,7 @@ export default function AboutPage() {
                         <p className="text-gray-600 dark:text-gray-300 mb-6">
                             Shortlisting facility options that fit your requirements, coordinating productive site tours, building decision-ready comparisons, and supporting negotiation steps.
                         </p>
-                        <Link href="/services/industrial-real-estate-baja" className="text-blue-600 font-semibold hover:underline flex items-center gap-2">
+                        <Link href={`/${language}/services/industrial-real-estate-baja`} className="text-blue-600 font-semibold hover:underline flex items-center gap-2">
                             Learn more <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>
@@ -156,7 +158,7 @@ export default function AboutPage() {
                         <p className="text-gray-600 dark:text-gray-300 mb-6">
                             We help you start correctly: define requirements, connect with qualified vendors, and drive evaluation and follow-up so the process doesn’t stall.
                         </p>
-                        <Link href="/services/contract-manufacturing-tijuana" className="text-green-600 font-semibold hover:underline flex items-center gap-2">
+                        <Link href={`/${language}/services/contract-manufacturing-tijuana`} className="text-green-600 font-semibold hover:underline flex items-center gap-2">
                             Learn more <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>
@@ -169,7 +171,7 @@ export default function AboutPage() {
                         <p className="text-gray-600 dark:text-gray-300 mb-6">
                             For when speed matters. We help you assess whether this route fits your goals and timeline, then connect you with vetted options aligned to your needs.
                         </p>
-                        <Link href="/services/shelter-services-tijuana" className="text-purple-600 font-semibold hover:underline flex items-center gap-2">
+                        <Link href={`/${language}/services/shelter-services-tijuana`} className="text-purple-600 font-semibold hover:underline flex items-center gap-2">
                             Learn more <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>
@@ -227,7 +229,7 @@ export default function AboutPage() {
                     We support projects across Baja California. The right location depends on what you need—labor profile, border strategy, infrastructure, supplier adjacency, operating model, and timeline. Our job is to help you align those variables and make a smart decision faster.
                  </p>
                  <div className="flex justify-center gap-4">
-                    <Link href="/contact">
+                     <Link href={`/${language}/contact`}>
                         <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100">Let’s map your best path</Button>
                     </Link>
                  </div>
@@ -242,10 +244,10 @@ export default function AboutPage() {
                     Tell us what you’re building and when you need to be operational. We’ll help you identify the smartest starting point—and the next steps to move forward.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                     <Link href="/contact">
+                     <Link href={`/${language}/contact`}>
                         <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100 shadow-xl">Schedule a Discovery Call</Button>
                     </Link>
-                    <Link href="/contact">
+                    <Link href={`/${language}/contact`}>
                         <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">Request a Location Assessment</Button>
                     </Link>
                 </div>

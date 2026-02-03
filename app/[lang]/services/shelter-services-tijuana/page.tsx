@@ -25,12 +25,24 @@ export default function ShelterServicesPage() {
                         src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000"
                         alt="Team Strategy"
                         fill
-                        className="object-cover"
+                        className="object-cover premium-image-filter"
                         priority
                     />
                     <div className="absolute inset-0 bg-gray-900/70" />
                 </motion.div>
                 <div className="container mx-auto px-4 z-10 text-center">
+                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
+                        <motion.div
+                            initial={{ rotate: -10 }}
+                            animate={{ rotate: 0 }}
+                            className="bg-primary-500 rounded-full p-1"
+                        >
+                            <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                            </svg>
+                        </motion.div>
+                        {t('shelterPage.heroTitleHighlight')} Authorized
+                    </div>
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">{t('shelterPage.heroTitle')} <span className="text-green-300">{t('shelterPage.heroTitleHighlight')}</span></h1>
                     <p className="text-xl text-gray-100 max-w-2xl mx-auto">
                         {t('shelterPage.heroSubtitle')}
@@ -40,29 +52,29 @@ export default function ShelterServicesPage() {
 
             <div className="container mx-auto px-4 py-16">
                 {/* Strategy Section (New) */}
-                <div className="mb-20">
-                    <div className="bg-primary-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+                <div className="mb-20 -mt-24 relative z-20">
+                    <div className="bg-primary-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden shadow-2xl">
                         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
                         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div>
                                 <h2 className="text-3xl font-bold mb-4">{t('shelterPage.strategyTitle')}</h2>
                                 <p className="text-lg text-primary-100 mb-8">{t('shelterPage.strategySubtitle')}</p>
                                 <div className="space-y-4">
-                                    <div className="flex gap-4">
+                                    <div className="flex gap-4 p-4 glass-card bg-white/5 border-white/10">
                                         <div className="w-2 h-full min-h-[40px] bg-primary-500 rounded-full" />
                                         <div>
                                             <h3 className="font-bold text-lg">{t('shelterPage.modelFitTitle')}</h3>
                                             <p className="text-sm text-gray-300">{t('shelterPage.modelFitDesc')}</p>
                                         </div>
                                     </div>
-                                    <div className="flex gap-4">
+                                    <div className="flex gap-4 p-4 glass-card bg-white/5 border-white/10">
                                         <div className="w-2 h-full min-h-[40px] bg-primary-500 rounded-full" />
                                         <div>
                                             <h3 className="font-bold text-lg">{t('shelterPage.inshoringTitle')}</h3>
                                             <p className="text-sm text-gray-300">{t('shelterPage.inshoringDesc')}</p>
                                         </div>
                                     </div>
-                                    <div className="flex gap-4">
+                                    <div className="flex gap-4 p-4 glass-card bg-white/5 border-white/10">
                                         <div className="w-2 h-full min-h-[40px] bg-primary-500 rounded-full" />
                                         <div>
                                             <h3 className="font-bold text-lg">{t('shelterPage.complianceTitle')}</h3>

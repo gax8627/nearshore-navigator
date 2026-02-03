@@ -43,7 +43,7 @@ export default function CallCenterPage() {
                         src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&q=80&w=2000"
                         alt="Call center agents providing customer support"
                         fill
-                        className="object-cover"
+                        className="object-cover premium-image-filter"
                         priority
                     />
                     <div className="absolute inset-0 bg-gray-900/70" />
@@ -67,8 +67,8 @@ export default function CallCenterPage() {
                     {/* Main Content */}
                     <div className="lg:col-span-2 space-y-12">
                         {/* Benefits Grid */}
-                        <section>
-                            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">{t('callCenterPage.whyTijuanaTitle')}</h2>
+                        <section className="-mt-24 relative z-20">
+                            <h2 className="text-3xl font-bold text-white mb-8 drop-shadow-md">{t('callCenterPage.whyTijuanaTitle')}</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {benefits.map((benefit) => (
                                     <div key={benefit.title} className="glass-card p-6">

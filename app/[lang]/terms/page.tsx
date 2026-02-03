@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function TermsPage() {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
 
     return (
         <div className="pb-20 overflow-hidden">
@@ -85,7 +85,7 @@ export default function TermsPage() {
             </div>
 
             <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
-                <Link href="/" className="text-primary-600 dark:text-primary-400 hover:underline">
+                <Link href={`/${language}`} className="text-primary-600 dark:text-primary-400 hover:underline">
                     {t('terms.backToHome')}
                 </Link>
             </div>

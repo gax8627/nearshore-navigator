@@ -82,8 +82,9 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
           <div className="absolute inset-0 bg-gray-900/60" />
         </div>
         <div className="container mx-auto px-4 z-10 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 backdrop-blur-md border border-primary-500/30 text-primary-300 mb-8">
-                <span className="text-sm font-bold tracking-wider uppercase">{location.name} Industrial Hub</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white mb-8">
+                <MapPin className="w-4 h-4 text-primary-400" />
+                <span className="text-sm font-medium">{location.name} Industrial Hub</span>
             </div>
           <h1 className="text-3xl md:text-6xl font-bold text-white mb-6">
             {service.title} in <span className="text-primary-500">{location.name}</span>
