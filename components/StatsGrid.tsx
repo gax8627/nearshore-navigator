@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView, useSpring, useTransform } from "framer-motion";
 import { useLanguage } from "@/app/context/LanguageContext";
+import { useEffect, useRef } from "react";
 
 export function StatsGrid() {
     const { t } = useLanguage();
@@ -34,7 +35,7 @@ export function StatsGrid() {
                         {stat.label}
                     </dt>
                     <dd className="relative text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-2 tracking-tight">
-                        {stat.value}
+                        <CountUp value={stat.value} />
                     </dd>
                     <p className="relative text-sm font-medium text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-300 transition-colors">
                         {stat.sub}
@@ -44,3 +45,31 @@ export function StatsGrid() {
         </div>
     );
 }
+
+function CountUp({ value }: { value: string }) {
+    const numberMatch = value.match(/\d+/);
+    const number = numberMatch ? parseInt(numberMatch[0]) : 0;
+    const prefix = value.split(number.toString())[0] || "";
+    const suffix = value.split(number.toString())[1] || "";
+    
+const ref = useRef(null);
+    const inView = useInView(ref, { once: true, margin: "-50px" });
+    const spring = useSpring(0, { stiffness: 50, damping: 20, duration: 2000 });
+    const displayValue = useTransform(spring, (current) => Math.round(current));
+
+    useEffect(() => {
+        if (inView) {
+            spring.set(number);
+        }
+    }, [inView, number, spring]);
+
+    return (
+        <span ref={ref}>
+            {prefix}
+            <motion.span>{displayValue}</motion.span>
+            {suffix}
+        </span>
+    );
+}
+
+

@@ -88,12 +88,27 @@ export default function Home() {
           >
             <motion.h1 
                 variants={{
-                    hidden: { opacity: 0, y: 30 },
-                    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
                 }}
-                className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight drop-shadow-2xl"
+                aria-label={t('hero.title')}
+                className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight drop-shadow-2xl flex flex-wrap gap-x-4 max-w-4xl"
             >
-              {t('hero.title').split('Nearshoring')[0]} <span className="text-primary-500 text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-200">Nearshoring</span> {t('hero.title').split('Nearshoring')[1] || ''}
+              {t('hero.title').split(' ').map((word, i) => {
+                const isHighlight = word.toLowerCase().includes('nearshoring');
+                return (
+                  <motion.span
+                    key={i}
+                    variants={{
+                        hidden: { opacity: 0, y: 50, rotate: 5 },
+                        visible: { opacity: 1, y: 0, rotate: 0, transition: { type: "spring", stiffness: 100, damping: 20 } }
+                    }}
+                    className={isHighlight ? "text-primary-500 text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-200" : ""}
+                  >
+                    {word}
+                  </motion.span>
+                )
+              })}
             </motion.h1>
             
             <motion.p 
