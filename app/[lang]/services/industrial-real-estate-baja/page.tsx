@@ -46,7 +46,7 @@ export default function IndustrialRealEstatePage() {
                         className="object-cover"
                         priority
                     />
-                    <div className="absolute inset-0 bg-gray-900/80" />
+                    <div className="absolute inset-0 bg-gray-900/60" />
                 </motion.div>
                 <div className="container mx-auto px-4 z-10 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">{t('realEstatePage.heroTitle')} <span className="text-primary-500">{t('realEstatePage.heroTitleHighlight')}</span></h1>

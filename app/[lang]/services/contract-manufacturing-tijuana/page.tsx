@@ -68,10 +68,10 @@ export default function ContractManufacturingPage() {
                         src="https://images.unsplash.com/photo-1565514020176-8568e4c76742?auto=format&fit=crop&q=80&w=2000"
                         alt="Advanced Manufacturing Facility"
                         fill
-                        className="object-cover opacity-60 mix-blend-overlay"
+                        className="object-cover"
                         priority
                     />
-                    <div className="absolute inset-0 bg-gray-900/80" />
+                    <div className="absolute inset-0 bg-gray-900/60" />
                 </motion.div>
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
