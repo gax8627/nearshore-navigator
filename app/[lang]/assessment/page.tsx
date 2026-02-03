@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { LeadForm } from "@/components/LeadForm";
 import { FounderBlock } from "@/components/FounderBlock";
 import { useLanguage } from "@/app/context/LanguageContext";
@@ -17,24 +18,39 @@ export default function AssessmentPage() {
     ];
 
     return (
-        <div className="pt-32 pb-20">
-            <div className="container mx-auto px-4">
-                <div className="max-w-4xl mx-auto text-center mb-16">
+        <div className="pb-20 overflow-hidden">
+            {/* Hero Section */}
+            <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <Image
+                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2000"
+                        alt="Manufacturing Cost Analysis"
+                        fill
+                        className="object-cover premium-image-filter"
+                        priority
+                    />
+                    <div className="absolute inset-0 bg-gray-900/70" />
+                </div>
+
+                <div className="container mx-auto px-4 z-10 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 bg-primary-50 dark:bg-primary-900/20 px-4 py-2 rounded-full text-primary-600 dark:text-primary-400 text-sm font-bold mb-6"
+                        className="inline-flex items-center gap-2 bg-primary-500/20 backdrop-blur-md px-4 py-2 rounded-full text-primary-200 text-sm font-bold mb-6 border border-primary-500/30"
                     >
                         <ClipboardCheck className="w-4 h-4" />
                         Complimentary Market Evaluation
                     </motion.div>
-                    <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-                        Baja California <span className="text-primary-500 text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-300">Site Assessment</span>
+                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                        Baja California <span className="text-primary-400">Site Assessment</span>
                     </h1>
-                    <p className="text-xl text-gray-600 dark:text-gray-400">
+                    <p className="text-xl text-gray-200 max-w-2xl mx-auto">
                         Stop guessing about Mexico. Get a data-backed evaluation of how your manufacturing or logistics operation will perform in Baja California.
                     </p>
                 </div>
+            </section>
+
+            <div className="container mx-auto px-4 mt-20">
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
                     <motion.div
@@ -42,7 +58,7 @@ export default function AssessmentPage() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.2 }}
                     >
-                        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">What your assessment covers:</h2>
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">What your assessment covers:</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {factors.map((factor, i) => (
                                 <div key={i} className="glass-card p-6 border border-gray-100 dark:border-gray-800">

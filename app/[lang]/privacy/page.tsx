@@ -1,15 +1,34 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function PrivacyPage() {
     const { t } = useLanguage();
 
     return (
-        <div className="container mx-auto px-4 py-20 max-w-4xl">
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">{t('privacy.title')}</h1>
-            <p className="text-gray-600 dark:text-gray-300 mb-8">{t('privacy.lastUpdated')}</p>
+        <div className="pb-20 overflow-hidden">
+            {/* Hero Section */}
+            <section className="relative h-[40vh] flex items-center justify-center overflow-hidden mb-12">
+                <div className="absolute inset-0 z-0">
+                    <Image
+                        src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2000"
+                        alt="Privacy Policy"
+                        fill
+                        className="object-cover premium-image-filter"
+                        priority
+                    />
+                    <div className="absolute inset-0 bg-gray-900/80" />
+                </div>
+
+                <div className="container mx-auto px-4 z-10 text-center">
+                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{t('privacy.title')}</h1>
+                    <p className="text-gray-300">{t('privacy.lastUpdated')}</p>
+                </div>
+            </section>
+
+            <div className="container mx-auto px-4 max-w-4xl">
 
             <div className="prose prose-lg dark:prose-invert max-w-none space-y-8">
                 <section>
@@ -64,5 +83,6 @@ export default function PrivacyPage() {
                 </Link>
             </div>
         </div>
+    </div>
     );
 }

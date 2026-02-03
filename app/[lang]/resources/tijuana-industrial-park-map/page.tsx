@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/Button";
+import Image from "next/image";
 import { Check } from "lucide-react";
 import { useState } from "react";
 
@@ -13,14 +14,35 @@ export default function ResourceMapPage() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50 dark:bg-gray-900/50 flex items-center justify-center p-4 transition-colors">
-            <div className="container mx-auto max-w-6xl w-full">
-                <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2">
+        <div className="pb-20 overflow-hidden">
+            {/* Hero Section */}
+            <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <Image
+                        src="https://images.unsplash.com/photo-1586717791821-3f44a563cc4c?auto=format&fit=crop&q=80&w=2000"
+                        alt="Tijuana Industrial Park Map"
+                        fill
+                        className="object-cover premium-image-filter"
+                        priority
+                    />
+                    <div className="absolute inset-0 bg-gray-900/70" />
+                </div>
+
+                <div className="container mx-auto px-4 z-10 text-center">
+                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Tijuana Industrial Map</h1>
+                    <p className="text-xl text-gray-200 max-w-2xl mx-auto">
+                        Get high-resolution access to the layout of Tijuana's major industrial clusters. Essential for site selection planning.
+                    </p>
+                </div>
+            </section>
+
+            <div className="container mx-auto px-4 mt-20">
+                <div className="max-w-6xl mx-auto bg-white dark:bg-gray-900 rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2">
                     <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
                         <span className="text-primary-600 dark:text-primary-400 font-bold uppercase tracking-wider text-sm mb-4">Free Resource</span>
-                        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Download the 2026 Tijuana Industrial Park Map</h1>
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Download the 2026 Map</h2>
                         <p className="text-gray-600 dark:text-gray-300 mb-8 text-lg">
-                            Get high-resolution access to the layout of Tijuana&apos;s major industrial clusters. Essential for site selection planning.
+                            Ensure your site selection team has the most updated zoning data for Tijuana's top industrial zones: Otay, El Florido, and Pacifico.
                         </p>
 
                         <div className="space-y-4 mb-8">
