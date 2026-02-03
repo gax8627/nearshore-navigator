@@ -28,15 +28,16 @@ export default function AboutPage() {
     <div ref={containerRef} className="pb-20 overflow-hidden">
         {/* Parallax Hero */}
         <div className="relative h-[80vh] flex items-center justify-center overflow-hidden">
-            <motion.div style={{ y }} className="absolute inset-0 z-0">
+            <motion.div style={{ y }} className="absolute inset-0 z-0 h-[125%] -top-[12.5%]">
                 <Image
                     src="/images/denisse-2.jpg"
                     alt="About Nearshore Navigator"
                     fill
-                    className="object-cover object-top"
+                    className="object-cover object-center"
                     priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/40 to-gray-900" />
+                <div className="absolute inset-0 bg-gray-900/50" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent" />
             </motion.div>
             
             <div className="container mx-auto px-4 z-10 text-center relative">
@@ -44,15 +45,16 @@ export default function AboutPage() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
+                    className="max-w-4xl mx-auto"
                 >
-                    <span className="inline-block py-1 px-3 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 text-sm font-semibold mb-6">
+                    <span className="inline-block py-1.5 px-4 rounded-full bg-primary-500/20 backdrop-blur-md text-primary-200 border border-primary-500/30 text-sm font-bold tracking-wider uppercase mb-8">
                         About Nearshore Navigator
                     </span>
-                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
                         Local leadership.<br />
-                        <span className="text-primary-400">Partner-powered</span> execution.
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Partner-powered</span> execution.
                     </h1>
-                    <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-light">
                         Built for manufacturers entering Baja California. We provide structured guidance, practical options, and the right introductions so your expansion doesn’t stall in uncertainty.
                     </p>
                 </motion.div>

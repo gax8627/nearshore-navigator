@@ -19,7 +19,7 @@
         "parks": "Industrial Parks",
         "workforce": "Manufacturing Workforce",
         "exports": "Export Value (Annual)",
-        "borderWaiting": "border-waiting",
+        "borderWaiting": "Border Wait Time",
         "classAvailable": "Class A Available",
         "manufacturingOps": "Manufacturing Ops",
         "annualToUSA": "Annual to USA"

@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { LOCATIONS, SERVICES } from '@/app/constants/seo-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://nearshorenavigator.com'
@@ -105,6 +106,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
     ]
+
+    // Programmatic Pages: Locations
+    LOCATIONS.forEach(city => {
+        // City Overview
+        routes.push({
+            url: `${baseUrl}/locations/${city.slug}`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        })
+
+        // Service Pages per Location
+        SERVICES.forEach(service => {
+            routes.push({
+                url: `${baseUrl}/locations/${city.slug}/${service.slug}`,
+                lastModified: new Date(),
+                changeFrequency: 'monthly',
+                priority: 0.9,
+            })
+        })
+    })
 
     return routes
 }

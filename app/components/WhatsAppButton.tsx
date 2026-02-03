@@ -26,7 +26,7 @@ export default function WhatsAppButton() {
             >
                 <MessageCircle className="w-8 h-8" />
             </motion.div>
-            <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 ease-in-out text-sm font-semibold">
+            <span className="max-w-0 overflow-hidden whitespace-nowrap sm:group-hover:max-w-xs sm:group-hover:ml-2 transition-all duration-300 ease-in-out text-sm font-semibold">
                 Chat with us
             </span>
         </motion.a>
