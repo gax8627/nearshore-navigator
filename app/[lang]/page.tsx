@@ -136,7 +136,7 @@ export default function Home() {
                     {t('hero.cta_primary')}
                 </Button>
               </Link>
-              <Link href="/services/industrial-real-estate-tijuana" className="w-full sm:w-auto">
+              <Link href="/services/industrial-real-estate-baja" className="w-full sm:w-auto">
                 <Button 
                     variant="glass" 
                     size="lg" 
@@ -149,7 +149,6 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Decorative elements */}
         <motion.div 
             animate={{ 
                 scale: [1, 1.2, 1],
@@ -161,19 +160,6 @@ export default function Home() {
                 ease: "easeInOut" 
             }}
             className="absolute -bottom-24 -right-24 w-96 h-96 bg-primary-500/20 rounded-full blur-[100px] pointer-events-none" 
-        />
-        <motion.div 
-            animate={{ 
-                scale: [1, 1.3, 1],
-                opacity: [0.05, 0.1, 0.05],
-            }}
-            transition={{ 
-                duration: 12, 
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 2
-            }}
-            className="absolute -top-24 -left-24 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" 
         />
       </section>
 
@@ -194,12 +180,12 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, staggerChildren: 0.1 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr"
+            className="flex flex-wrap justify-center gap-6"
         >
           <ServiceCard
             title={t('services.real_estate')}
             description={t('services.real_estate_desc')}
-            href="/services/industrial-real-estate-tijuana"
+            href="/services/industrial-real-estate-baja"
             icon={<Warehouse className="w-6 h-6" />}
           />
           <ServiceCard
@@ -240,7 +226,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16 relative">
             {/* Connecting Line (Desktop) */}
-            <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gray-200 dark:bg-gray-700 -z-10 transition-colors" />
+            <motion.div 
+                animate={{ backgroundPosition: ["0% 50%", "100% 50%"] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                style={{ backgroundSize: "200% 100%" }}
+                className="hidden md:block absolute top-12 left-[16%] right-[16%] h-1 bg-gradient-to-r from-gray-200 via-primary-500 to-gray-200 dark:from-gray-800 dark:via-primary-500 dark:to-gray-800 -z-10 rounded-full opacity-50" 
+            />
 
             {[
               { step: "01", title: t('howWeWork.step1_title'), desc: t('howWeWork.step1_desc') },
@@ -293,10 +284,13 @@ export default function Home() {
       {/* Logos Placeholder */}
       <section className="container mx-auto px-4 py-12 border-t border-gray-100 dark:border-gray-800">
         <p className="text-center text-sm font-semibold text-gray-400 uppercase tracking-wider mb-8">{t('trustedBy')}</p>
-        <div className="flex flex-wrap justify-center gap-12 opacity-50 grayscale">
-          {[1, 2, 3, 4, 5].map((i) => (
-            <div key={i} className="h-12 w-32 bg-gray-200 rounded animate-pulse" />
-          ))}
+        <div className="flex flex-wrap justify-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+             {/* Simple Text Placeholders for "Trusted By" */}
+             <div className="text-xl font-black text-gray-800 dark:text-gray-200 tracking-tighter">GLOBAL<span className="text-primary-500">MFG</span></div>
+             <div className="text-xl font-bold text-gray-800 dark:text-gray-200 italic">MedDevice<span className="font-light">Inc</span></div>
+             <div className="text-xl font-bold text-gray-800 dark:text-gray-200">AERO<span className="text-primary-500">SPACE</span></div>
+             <div className="text-xl font-black text-gray-800 dark:text-gray-200 tracking-widest">LOGISTIX</div>
+             <div className="text-xl font-bold text-gray-800 dark:text-gray-200 flex items-center gap-1"><div className="w-4 h-4 bg-primary-500 rounded-full"/>TECHCORE</div>
         </div>
       </section>
     </div>

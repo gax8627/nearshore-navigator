@@ -28,7 +28,7 @@ export default function ShelterServicesPage() {
                         className="object-cover"
                         priority
                     />
-                    <div className="absolute inset-0 bg-primary-900/80 mix-blend-multiply" />
+                    <div className="absolute inset-0 bg-gray-900/70" />
                 </motion.div>
                 <div className="container mx-auto px-4 z-10 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">{t('shelterPage.heroTitle')} <span className="text-green-300">{t('shelterPage.heroTitleHighlight')}</span></h1>
@@ -124,6 +124,35 @@ export default function ShelterServicesPage() {
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                    
+                     {/* FAQ Section */}
+                    <div className="lg:col-span-2 mt-12">
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Shelter Services FAQ</h3>
+                         <div className="space-y-4">
+                                {[
+                                    { q: "What exactly is a Shelter Service in Mexico?", a: "A Shelter Service allows foreign companies to manufacture in Mexico without establishing their own legal entity. The Shelter plays the legal role of the manufacturer of record, handling compliance, HR, and taxes, while you control production." },
+                                    { q: "How fast can we start operations under a Shelter?", a: "Typically, operations can begin in as little as 90 days. Since the legal entity is already established, you bypass the lengthy incorporation and permitting phase." },
+                                    { q: "Do I lose control of my production process?", a: "No. You retain full control over your manufacturing process, quality control, trademarks, and intellectual property. The Shelter only manages the administrative and legal burden." },
+                                    { q: "Can we transition out of a Shelter later?", a: "Yes. Most Shelter agreements include a 'Graduation' clause, allowing you to transfer employees and assets to your own Mexican entity once you are ready to stand alone (usually after 1-3 years)." },
+                                    { q: "Who hires the employees?", a: "The Shelter hires the employees legally, but you select them. You define the profiles, conduct interviews, and set salaries. We handle the payroll and labor liability." },
+                                    { q: "Is my Intellectual Property (IP) safe?", a: "Absolutely. Mexico has strong IP protections under USMCA. Furthermore, since the Shelter does not direct your production, your trade secrets remain strictly within your operational control." },
+                                    { q: "What acts does the Shelter handle specifically?", a: "We handle Import/Export (IMMEX) permits, IVA (VAT) certification, Labor contracts, Payroll, Social Security (IMSS), and Environmental health & safety (EHS) compliance." },
+                                    { q: "Is a Shelter more expensive than standalone?", a: "Initially, a Shelter has a fee, but it is often cheaper than the overhead of establishing a full legal, HR, and accounting department in Mexico for a small-to-mid-sized operation." },
+                                    { q: "Can I use Shelter services for a small operation?", a: "Yes. Shelter services are scalable. We support operations ranging from 15 employees to 500+ employees." },
+                                    { q: "Do you provide the facility as well?", a: "We can help you find a facility (Industrial Real Estate), but the lease is typically signed by you or facilitated through us. The facility cost is separate from the Shelter administrative fee." }
+                                ].map((faq, i) => (
+                                    <details key={i} className="group p-4 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700 open:bg-white/60 dark:open:bg-gray-800/60 transition-colors">
+                                        <summary className="font-semibold text-gray-900 dark:text-white cursor-pointer list-none flex justify-between items-center">
+                                            {faq.q}
+                                            <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                                        </summary>
+                                        <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">
+                                            {faq.a}
+                                        </p>
+                                    </details>
+                                ))}
+                            </div>
                     </div>
 
                     <div className="lg:col-span-1">

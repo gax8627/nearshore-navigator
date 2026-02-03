@@ -17,6 +17,7 @@ export function FounderBlock() {
                 src="/images/denisse-1.jpg"
                 alt={`${t('about.founderName')} - ${t('about.founderBadge')}`}
                 fill
+                quality={100}
                 className="object-cover object-top"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />

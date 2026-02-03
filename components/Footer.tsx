@@ -30,7 +30,7 @@ export function Footer() {
                     <div>
                         <h4 className="font-semibold mb-4 text-gray-100">{t('nav.services')}</h4>
                         <ul className="space-y-2 text-sm text-gray-300">
-                            <li><Link href="/services/industrial-real-estate-tijuana" className="hover:text-primary-400">{t('services.real_estate')}</Link></li>
+                            <li><Link href="/services/industrial-real-estate-baja" className="hover:text-primary-400">{t('services.real_estate')}</Link></li>
                             <li><Link href="/services/shelter-services-tijuana" className="hover:text-primary-400">{t('services.shelter')}</Link></li>
                             <li><Link href="/services/contract-manufacturing-tijuana" className="hover:text-primary-400">{t('services.contract')}</Link></li>
                             <li><Link href="/services/distribution-centers-tijuana" className="hover:text-primary-400">{t('services.logistics')}</Link></li>

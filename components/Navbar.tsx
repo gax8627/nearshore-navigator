@@ -21,7 +21,7 @@ export function Navbar() {
     const { theme, toggleTheme } = useTheme();
 
     const serviceLinks = [
-        { name: t('services.real_estate'), href: "/services/industrial-real-estate-tijuana" },
+        { name: t('services.real_estate'), href: "/services/industrial-real-estate-baja" },
         { name: t('services.shelter'), href: "/services/shelter-services-tijuana" },
         { name: t('services.contract'), href: "/services/contract-manufacturing-tijuana" },
         { name: t('services.logistics'), href: "/services/distribution-centers-tijuana" },

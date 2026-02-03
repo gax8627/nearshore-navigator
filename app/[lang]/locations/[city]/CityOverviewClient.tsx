@@ -39,10 +39,10 @@ export default function CityOverviewClient({ city }: Props) {
             src={location.image}
             alt={`${location.name} Industrial Landscape`}
             fill
-            className="object-cover"
+            className="object-cover premium-image-filter"
             priority
           />
-          <div className="absolute inset-0 bg-gray-900/80" />
+          <div className="absolute inset-0 bg-gray-900/60" />
         </div>
 
         <div className="container mx-auto px-4 z-10 text-center">

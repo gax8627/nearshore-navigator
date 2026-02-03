@@ -64,8 +64,14 @@ export default function ContractManufacturingPage() {
             {/* Hero */}
             <section className="bg-gray-900 py-24 text-center text-white relative overflow-hidden h-[60vh] flex items-center justify-center">
                 <motion.div style={{ y }} className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-gray-900" />
+                    <Image 
+                        src="https://images.unsplash.com/photo-1565514020176-8568e4c76742?auto=format&fit=crop&q=80&w=2000"
+                        alt="Advanced Manufacturing Facility"
+                        fill
+                        className="object-cover opacity-60 mix-blend-overlay"
+                        priority
+                    />
+                    <div className="absolute inset-0 bg-gray-900/80" />
                 </motion.div>
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
@@ -168,43 +174,29 @@ export default function ContractManufacturingPage() {
                 {/* FAQ */}
                 <section className="mb-20">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{t('contractPage.faqTitle')}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <details className="group p-4 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700">
-                            <summary className="font-semibold text-gray-900 dark:text-white cursor-pointer list-none flex justify-between items-center">
-                                {t('contractPage.faq1Question')}
-                                <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
-                            </summary>
-                            <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">
-                                {t('contractPage.faq1Answer')}
-                            </p>
-                        </details>
-                        <details className="group p-4 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700">
-                            <summary className="font-semibold text-gray-900 dark:text-white cursor-pointer list-none flex justify-between items-center">
-                                {t('contractPage.faq2Question')}
-                                <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
-                            </summary>
-                            <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">
-                                {t('contractPage.faq2Answer')}
-                            </p>
-                        </details>
-                        <details className="group p-4 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700">
-                            <summary className="font-semibold text-gray-900 dark:text-white cursor-pointer list-none flex justify-between items-center">
-                                {t('contractPage.faq3Question')}
-                                <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
-                            </summary>
-                            <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">
-                                {t('contractPage.faq3Answer')}
-                            </p>
-                        </details>
-                        <details className="group p-4 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700">
-                            <summary className="font-semibold text-gray-900 dark:text-white cursor-pointer list-none flex justify-between items-center">
-                                {t('contractPage.faq4Question')}
-                                <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
-                            </summary>
-                            <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">
-                                {t('contractPage.faq4Answer')}
-                            </p>
-                        </details>
+                    <div className="space-y-4">
+                        {[
+                            { q: t('contractPage.faq1Question'), a: t('contractPage.faq1Answer') },
+                            { q: t('contractPage.faq2Question'), a: t('contractPage.faq2Answer') },
+                            { q: t('contractPage.faq3Question'), a: t('contractPage.faq3Answer') },
+                            { q: t('contractPage.faq4Question'), a: t('contractPage.faq4Answer') },
+                            { q: "Do you own the factories?", a: "We work with a vetted network of Contract Manufacturers (CMs). We do not own the factories, but we perform the due diligence to ensure they meet your quality and capacity standards." },
+                            { q: "What is the minimum order quantity (MOQ)?", a: "MOQs vary by manufacturer and product type. However, contract manufacturing is generally best suited for companies looking to scale production beyond initial prototyping." },
+                            { q: "How do you handle Quality Control (QC)?", a: "QC is handled on two levels: the CM's internal ISO certifications and our external audits. We can also facilitate third-party inspections before shipment." },
+                            { q: "Can I bring my own raw materials?", a: "Yes. This is often called 'consignment'. You can ship key components from the US or Asia to Mexico tax-free (via IMMEX) for assembly." },
+                            { q: "Does contract manufacturing protect my IP?", a: "Yes. We ensure strict NDAs are signed before any drawings are shared. Mexico's IP laws are robust and aligned with US standards." },
+                            { q: "Who manages the logistics?", a: "Typically, the CM sets the product Ex-Works (at the factory door). We can connect you with logistics partners to handle the export/import process to your US warehouse." }
+                        ].map((faq, i) => (
+                            <details key={i} className="group p-4 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700 open:bg-white/60 dark:open:bg-gray-800/60 transition-colors">
+                                <summary className="font-semibold text-gray-900 dark:text-white cursor-pointer list-none flex justify-between items-center">
+                                    {faq.q}
+                                    <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                                </summary>
+                                <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">
+                                    {faq.a}
+                                </p>
+                            </details>
+                        ))}
                     </div>
                 </section>
 

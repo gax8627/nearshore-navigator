@@ -51,7 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
         // Service pages
         {
-            url: `${baseUrl}/services/industrial-real-estate-tijuana`,
+            url: `${baseUrl}/services/industrial-real-estate-baja`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.9,

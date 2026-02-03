@@ -143,7 +143,7 @@ export default function AboutPage() {
                         <p className="text-gray-600 dark:text-gray-300 mb-6">
                             Shortlisting facility options that fit your requirements, coordinating productive site tours, building decision-ready comparisons, and supporting negotiation steps.
                         </p>
-                        <Link href="/services/industrial-real-estate-tijuana" className="text-blue-600 font-semibold hover:underline flex items-center gap-2">
+                        <Link href="/services/industrial-real-estate-baja" className="text-blue-600 font-semibold hover:underline flex items-center gap-2">
                             Learn more <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>

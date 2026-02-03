@@ -46,7 +46,7 @@ export default function CallCenterPage() {
                         className="object-cover"
                         priority
                     />
-                    <div className="absolute inset-0 bg-primary-900/80 mix-blend-multiply" />
+                    <div className="absolute inset-0 bg-gray-900/70" />
                 </motion.div>
                 <div className="container mx-auto px-4 z-10 text-center">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
@@ -96,7 +96,7 @@ export default function CallCenterPage() {
                         </section>
 
                         {/* Stats */}
-                        <section className="bg-gray-50 dark:bg-gray-900/50 rounded-2xl p-8">
+                        <section className="bg-gray-50 dark:bg-gray-900/50 rounded-2xl p-8 mb-12">
                             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">{t('callCenterPage.glanceTitle')}</h2>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                                 <div>
@@ -115,6 +115,35 @@ export default function CallCenterPage() {
                                     <p className="text-3xl font-bold text-primary-500">85%+</p>
                                     <p className="text-sm text-gray-600 dark:text-gray-400">{t('callCenterPage.agentRetention')}</p>
                                 </div>
+                            </div>
+                        </section>
+
+                         {/* FAQ Section */}
+                        <section>
+                            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Call Center Solutions FAQ</h3>
+                             <div className="space-y-4">
+                                {[
+                                    { q: "How much can I save by outsourcing to Tijuana?", a: "You can expect to save 40-60% on fully loaded labor costs compared to the US, while maintaining similar time zones and cultural alignment." },
+                                    { q: "Are the agents truly bilingual?", a: "Yes. Tijuana has the largest population of English-speaking agents in Latin America, many of whom are bicultural 'pochos' spread across the border, ensuring near-native accent neutrality." },
+                                    { q: "What is the turnover rate compared to other regions?", a: "While call centers notoriously have high turnover, Tijuana averages 5-10% monthly turnover, which is significantly lower than the 15-20% often seen in US centers." },
+                                    { q: "Do you offer omnichannel support (Chat/Email)?", a: "Yes. Our centers are equipped for voice, email, live chat, and social media moderation support." },
+                                    { q: "Is the technology infrastructure reliable?", a: "Tijuana's contact centers are interconnected with the same fiber backbone as San Diego. We guarantee 99.99% uptime with redundant ISP connections." },
+                                    { q: "Can we start with a small team?", a: "Yes. We offer pilot programs starting with as few as 5 seats to prove the concept before scaling." },
+                                    { q: "How long does it take to launch?", a: "Typically, we can recruit, train, and go live within 4-6 weeks from contract signing." },
+                                    { q: "Is data security handled properly?", a: "Yes. Our partner facilities are PCI-DSS and HIPAA compliant, with strict physical and digital security protocols (clean desk policy, biometric access, etc.)." },
+                                    { q: "What industries do you serve?", a: "We have deep experience in Tech Support, Healthcare (Patient scheduling), E-commerce (Customer Service), and Financial Services (Collections)." },
+                                    { q: "Do you provide dedicated or shared agents?", a: "We primarily focus on Dedicated Agents who are trained specifically on your brand and SOPs, ensuring higher quality than shared pools." }
+                                ].map((faq, i) => (
+                                    <details key={i} className="group p-4 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700 open:bg-white/60 dark:open:bg-gray-800/60 transition-colors">
+                                        <summary className="font-semibold text-gray-900 dark:text-white cursor-pointer list-none flex justify-between items-center">
+                                            {faq.q}
+                                            <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                                        </summary>
+                                        <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">
+                                            {faq.a}
+                                        </p>
+                                    </details>
+                                ))}
                             </div>
                         </section>
                     </div>

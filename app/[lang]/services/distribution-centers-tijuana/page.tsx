@@ -49,13 +49,13 @@ export default function DistributionPage() {
             <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
                 <motion.div style={{ y }} className="absolute inset-0 z-0">
                     <Image
-                        src="https://images.unsplash.com/photo-1566576912906-600aceebca9b?auto=format&fit=crop&q=80&w=2000"
+                        src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000"
                         alt="Distribution center with trucks and loading docks in Baja California"
                         fill
                         className="object-cover"
                         priority
                     />
-                    <div className="absolute inset-0 bg-blue-900/80 mix-blend-multiply" />
+                    <div className="absolute inset-0 bg-blue-900/70 mix-blend-multiply" />
                 </motion.div>
                 <div className="container mx-auto px-4 z-10 text-center">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
@@ -139,33 +139,28 @@ export default function DistributionPage() {
                         <section>
                             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{t('distributionPage.faqTitle')}</h3>
                             <div className="space-y-4">
-                                <details className="group p-4 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700">
-                                    <summary className="font-semibold text-gray-900 dark:text-white cursor-pointer list-none flex justify-between items-center">
-                                        {t('distributionPage.faq1Question')}
-                                        <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
-                                    </summary>
-                                    <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">
-                                        {t('distributionPage.faq1Answer')}
-                                    </p>
-                                </details>
-                                <details className="group p-4 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700">
-                                    <summary className="font-semibold text-gray-900 dark:text-white cursor-pointer list-none flex justify-between items-center">
-                                        {t('distributionPage.faq2Question')}
-                                        <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
-                                    </summary>
-                                    <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">
-                                        {t('distributionPage.faq2Answer')}
-                                    </p>
-                                </details>
-                                <details className="group p-4 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700">
-                                    <summary className="font-semibold text-gray-900 dark:text-white cursor-pointer list-none flex justify-between items-center">
-                                        {t('distributionPage.faq3Question')}
-                                        <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
-                                    </summary>
-                                    <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">
-                                        {t('distributionPage.faq3Answer')}
-                                    </p>
-                                </details>
+                                {[
+                                    { q: t('distributionPage.faq1Question'), a: t('distributionPage.faq1Answer') },
+                                    { q: t('distributionPage.faq2Question'), a: t('distributionPage.faq2Answer') },
+                                    { q: t('distributionPage.faq3Question'), a: t('distributionPage.faq3Answer') },
+                                    { q: "What is 'Section 321' fulfillment?", a: "Section 321 allows US-bound shipments valued under $800 to enter duty-free. By fulfilling from Tijuana, you can save massively on tariffs while maintaining US domestic shipping speeds." },
+                                    { q: "Do you handle Reverse Logistics (Returns)?", a: "Yes. Returns can be consolidated in Tijuana, inspected, and either restocked, refurbished, or disposed of, often at a fraction of the cost of handling returns in the US." },
+                                    { q: "How fast is shipping to California?", a: "We are 20 minutes from the border. Shipments can cross in the morning and be injected into USPS/UPS/FedEx hubs in San Diego by the afternoon for same-day or next-day delivery to California/West Coast." },
+                                    { q: "Do you offer bonded warehousing?", a: "Yes. Bonded warehouses allow you to store goods in Mexico without paying import duties/taxes for up to 18 months, paying only when they leave the facility." },
+                                    { q: "Can you handle perishables (Cold Chain)?", a: "Yes, we have access to cold-storage facilities suitable for food, medical, and aerospace chemical storage, with backup power generators." },
+                                    { q: "What is Cross-Docking?", a: "Cross-docking involves unloading materials from an incoming truck and loading them directly onto outbound trucks, with little or no storage in between. This speeds up the supply chain." },
+                                    { q: "Is inventory visible in real-time?", a: "Absolutley. Our WMS (Warehouse Management System) provides real-time visibility into stock levels, inbound shipments, and order status via a secure web portal." }
+                                ].map((faq, i) => (
+                                    <details key={i} className="group p-4 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700 open:bg-white/60 dark:open:bg-gray-800/60 transition-colors">
+                                        <summary className="font-semibold text-gray-900 dark:text-white cursor-pointer list-none flex justify-between items-center">
+                                            {faq.q}
+                                            <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                                        </summary>
+                                        <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">
+                                            {faq.a}
+                                        </p>
+                                    </details>
+                                ))}
                             </div>
                         </section>
                     </div>
