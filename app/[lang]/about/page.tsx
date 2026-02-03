@@ -30,8 +30,8 @@ export default function AboutPage() {
         <div className="relative h-[80vh] flex items-center justify-center overflow-hidden">
             <motion.div style={{ y }} className="absolute inset-0 z-0 h-[125%] -top-[12.5%]">
                 <Image
-                    src="/images/denisse-2.jpg"
-                    alt="About Nearshore Navigator"
+                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=2560"
+                    alt="Strategic Planning Team"
                     fill
                     className="object-cover object-center"
                     priority

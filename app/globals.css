@@ -18,9 +18,12 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
+  background: linear-gradient(
+      to bottom,
       transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
   min-height: 100vh;
 }
 
@@ -31,6 +34,10 @@ body {
 
   .glass-card {
     @apply bg-glass-gradient dark:bg-dark-glass-gradient backdrop-blur-lg border border-white/10 dark:border-white/5 shadow-glass rounded-xl;
+  }
+
+  .premium-image-filter {
+    filter: sepia(10%) hue-rotate(190deg) saturate(90%) contrast(105%);
   }
 
   .text-balance {

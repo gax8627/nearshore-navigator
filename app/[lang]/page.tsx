@@ -64,7 +64,7 @@ export default function Home() {
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2600" 
             alt="Baja California Industrial Skyline"
             fill
-            className="object-cover scale-110"
+            className="object-cover scale-110 premium-image-filter"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/70 to-transparent" />
@@ -91,7 +91,7 @@ export default function Home() {
                     hidden: { opacity: 0, y: 30 },
                     visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
                 }}
-                className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl"
+                className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight drop-shadow-2xl"
             >
               {t('hero.title').split('Nearshoring')[0]} <span className="text-primary-500 text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-200">Nearshoring</span> {t('hero.title').split('Nearshoring')[1] || ''}
             </motion.h1>
@@ -174,7 +174,13 @@ export default function Home() {
           subtitle={t('services.subtitle')}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
+        <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, staggerChildren: 0.1 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr"
+        >
           <ServiceCard
             title={t('services.real_estate')}
             description={t('services.real_estate_desc')}
@@ -205,7 +211,7 @@ export default function Home() {
             href="/services/call-center-tijuana"
             icon={<Headset className="w-6 h-6" />}
           />
-        </div>
+        </motion.div>
       </section>
 
       {/* How We Work */}

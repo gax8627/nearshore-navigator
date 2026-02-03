@@ -27,15 +27,16 @@ export function StatsGrid() {
                     }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="glass-card p-8 text-center bg-white/40 dark:bg-gray-800/40 backdrop-blur-md border-white/40 dark:border-gray-700 shadow-xl hover:shadow-2xl hover:bg-white/60 dark:hover:bg-gray-800/60 transition-all duration-300 group"
+                    className="relative overflow-hidden p-8 text-center bg-white/40 dark:bg-gray-800/40 backdrop-blur-xl border border-white/20 dark:border-gray-700 rounded-2xl shadow-glass hover:shadow-glass-hover hover:-translate-y-1 transition-all duration-300 group"
                 >
-                    <dt className="text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-widest mb-4 group-hover:scale-110 transition-transform">
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent dark:from-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <dt className="relative text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-widest mb-4 group-hover:tracking-[0.2em] transition-all duration-300">
                         {stat.label}
                     </dt>
-                    <dd className="text-4xl font-black text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors inline-block mb-2">
+                    <dd className="relative text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-2 tracking-tight">
                         {stat.value}
                     </dd>
-                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                    <p className="relative text-sm font-medium text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-300 transition-colors">
                         {stat.sub}
                     </p>
                 </motion.div>
