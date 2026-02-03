@@ -172,7 +172,7 @@ export function Navbar() {
                             </motion.div>
                         </button>
 
-                        <Link href="/contact">
+                        <Link href="/assessment">
                             <Button variant="primary" size="sm">{t('nav.bookTour')}</Button>
                         </Link>
                     </div>
@@ -283,7 +283,7 @@ export function Navbar() {
                             </div>
 
                             <div className="pt-2">
-                                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                                <Link href="/assessment" onClick={() => setIsMobileMenuOpen(false)}>
                                     <Button variant="primary" className="w-full">{t('nav.bookTour')}</Button>
                                 </Link>
                             </div>

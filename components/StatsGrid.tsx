@@ -52,13 +52,13 @@ function CountUp({ value }: { value: string }) {
     const prefix = value.split(number.toString())[0] || "";
     const suffix = value.split(number.toString())[1] || "";
     
-const ref = useRef(null);
-    const inView = useInView(ref, { once: true, margin: "-50px" });
-    const spring = useSpring(0, { stiffness: 50, damping: 20, duration: 2000 });
+    const ref = useRef(null);
+    const inView = useInView(ref, { once: true, amount: 0.1 });
+    const spring = useSpring(0, { stiffness: 40, damping: 20 });
     const displayValue = useTransform(spring, (current) => Math.round(current));
 
     useEffect(() => {
-        if (inView) {
+        if (inView && number > 0) {
             spring.set(number);
         }
     }, [inView, number, spring]);

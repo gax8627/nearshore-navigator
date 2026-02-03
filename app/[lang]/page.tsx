@@ -67,7 +67,7 @@ export default function Home() {
             className="object-cover scale-110 premium-image-filter"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/100 via-gray-900/90 to-gray-900/70" />
         </motion.div>
 
         <div className="container mx-auto px-4 z-10 relative">
@@ -136,7 +136,7 @@ export default function Home() {
                     {t('hero.cta_primary')}
                 </Button>
               </Link>
-              <Link href="/services/industrial-real-estate-baja" className="w-full sm:w-auto">
+              <Link href="/assessment" className="w-full sm:w-auto">
                 <Button 
                     variant="glass" 
                     size="lg" 
@@ -180,7 +180,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, staggerChildren: 0.1 }}
-            className="flex flex-wrap justify-center gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
         >
           <ServiceCard
             title={t('services.real_estate')}
