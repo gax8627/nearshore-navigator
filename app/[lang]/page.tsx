@@ -51,8 +51,27 @@ export default function Home() {
     },
   ];
 
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Nearshore Navigator - Baja California",
+    "description": "Expert industrial nearshoring and shelter services in Baja California, Mexico.",
+    "url": "https://nearshorenavigator.com",
+    "telephone": "+52-664-123-7199",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tijuana",
+      "addressRegion": "Baja California",
+      "addressCountry": "MX"
+    }
+  };
+
   return (
     <div ref={containerRef} className="flex flex-col gap-24 pb-20 overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}

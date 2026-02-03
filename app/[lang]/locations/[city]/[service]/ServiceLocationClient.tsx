@@ -24,10 +24,55 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
 
   // Dynamic content generation
   const title = `${service.title} in ${location.name}`;
-  const subtitle = `World-class ${service.title.toLowerCase()} solutions in ${location.name}, ${location.state}. Capitalize on ${location.name}'s strategic advantages.`;
+  const subtitle = `Comprehensive ${service.title.toLowerCase()} solutions tailored for the ${location.name} industrial market. Leverage ${location.name}'s ${location.stats.proximity} and a workforce of ${location.stats.laborForce} to optimize your nearshoring strategy.`;
+
+  const faqs = [
+    {
+      q: `What makes ${location.name} ideal for ${service.title.toLowerCase()}?`,
+      a: `${location.name} is a strategic hub in ${location.state} with ${location.stats.proximity}. For ${service.title.toLowerCase()}, it offers ${location.advantages[0]} and ${location.advantages[1]}, making it a top choice for international manufacturers.`
+    },
+    {
+      q: `How does Nearshore Navigator support ${service.title.toLowerCase()} in ${location.name}?`,
+      a: `We provide boots-on-the-ground expertise in ${location.name}. Our services include site selection, compliance auditing, and connecting you with the best ${service.title.toLowerCase()} partners in ${location.state}.`
+    },
+    {
+      q: `What are the key industrial advantages of ${location.name}?`,
+      a: `${location.name} offers ${location.advantages.join(', ')}. These factors contribute to a robust ecosystem for companies utilizing ${service.title.toLowerCase()} to serve the North American market.`
+    },
+    {
+      q: `Can I combine ${service.title.toLowerCase()} with other services in ${location.name}?`,
+      a: `Absolutely. Many clients in ${location.name} integrate ${service.title.toLowerCase()} with shelter operations or distribution center management to create a seamless supply chain.`
+    }
+  ];
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `${service.title} in ${location.name}`,
+    "provider": {
+      "@type": "Organization",
+      "name": "Nearshore Navigator",
+      "url": "https://nearshorenavigator.com"
+    },
+    "serviceType": service.title,
+    "areaServed": {
+      "@type": "City",
+      "name": location.name,
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": location.state,
+        "addressCountry": "MX"
+      }
+    },
+    "description": subtitle
+  };
 
   return (
     <div className="pb-20 overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
       {/* Hero */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -42,7 +87,7 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
         </div>
         <div className="container mx-auto px-4 z-10 text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 backdrop-blur-md border border-primary-500/30 text-primary-300 mb-8">
-                <span className="text-sm font-bold tracking-wider uppercase">Strategic Location</span>
+                <span className="text-sm font-bold tracking-wider uppercase">{location.name} Industrial Hub</span>
             </div>
           <h1 className="text-3xl md:text-6xl font-bold text-white mb-6">
             {service.title} in <span className="text-primary-500">{location.name}</span>
@@ -61,13 +106,13 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
             {/* Key Benefits */}
             <section>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Why {location.name} for {service.title}?
+                Critical Advantages of {location.name} for {service.title}
               </h2>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-                Establishing {service.title.toLowerCase()} operations in {location.name} offers profound competitive advantages. 
-                From {location.stats.proximity} to a skilled workforce of {location.stats.laborForce}, {location.name} is positioned
-                to support your growth.
-              </p>
+              <div className="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-8">
+                <p>
+                  Operating in {location.name} provides immediate access to {location.stats.proximity}. With a population of {location.stats.population} and a mature industrial base, companies utilizing {service.title.toLowerCase()} can expect high operational efficiency and significant cost advantages.
+                </p>
+              </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {location.advantages.map((item) => (
@@ -82,30 +127,24 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
             {/* Service Details */}
             <section>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                    Comprehensive {service.title} Solutions
+                    Our {service.title} Expertise in {location.name}
                 </h3>
                 <div className="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-300">
                     <p>
-                        We provide end-to-end support for your {service.title.toLowerCase()} needs in {location.name}.
-                        Whether you are looking to expand, relocate, or optimize your existing operations, our team 
-                        leverages deep local expertise in {location.state} to deliver results.
+                        Our mission in {location.name} is to bridge the gap between US requirements and Mexican execution. For {service.title.toLowerCase()}, this means:
                     </p>
                     <ul className="grid grid-cols-1 gap-4 mt-6 not-prose">
                         <li className="flex items-center gap-3">
                             <ArrowRight className="w-4 h-4 text-primary-500" />
-                            <span>Site selection and feasibility analysis in {location.name}</span>
+                            <span>Navigating the local {location.name} real estate or labor market.</span>
                         </li>
                         <li className="flex items-center gap-3">
                             <ArrowRight className="w-4 h-4 text-primary-500" />
-                            <span>Legal and regulatory compliance in {location.country}</span>
+                            <span>Ensuring compliance with ${location.state} and federal regulations.</span>
                         </li>
                         <li className="flex items-center gap-3">
                             <ArrowRight className="w-4 h-4 text-primary-500" />
-                            <span>Vendor and supply chain coordination</span>
-                        </li>
-                         <li className="flex items-center gap-3">
-                            <ArrowRight className="w-4 h-4 text-primary-500" />
-                            <span>Local talent acquisition and labor management</span>
+                            <span>Mitigating risk through vetted local partnerships.</span>
                         </li>
                     </ul>
                 </div>
@@ -113,30 +152,21 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
 
             {/* FAQ */}
             <section>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Frequently Asked Questions
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                FAQs: {service.title} in {location.name}
               </h3>
               <div className="space-y-4">
-                <details className="group p-4 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700 open:bg-white/60 dark:open:bg-gray-800/60 transition-colors">
-                  <summary className="font-semibold text-gray-900 dark:text-white cursor-pointer list-none flex justify-between items-center">
-                    Is it safe to operate in {location.name}?
-                    <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
-                  </summary>
-                  <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">
-                    Yes, {location.name} is a major industrial hub with thousands of international companies operating securely. 
-                    Industrial parks in {location.name} feature enhanced security protocols, and we work with trusted partners to ensure safe operations.
-                  </p>
-                </details>
-                <details className="group p-4 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700 open:bg-white/60 dark:open:bg-gray-800/60 transition-colors">
-                  <summary className="font-semibold text-gray-900 dark:text-white cursor-pointer list-none flex justify-between items-center">
-                    What are the labor costs in {location.name}?
-                    <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
-                  </summary>
-                  <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">
-                    Labor costs in {location.name} are significantly lower than in the US, typically offering 50-70% savings. 
-                    However, costs vary by skill level. {location.name} offers a good balance of cost and high skill availability, especially in manufacturing and engineering.
-                  </p>
-                </details>
+                {faqs.map((faq, i) => (
+                  <details key={i} className="group p-4 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700 open:bg-white/60 dark:open:bg-gray-800/60 transition-colors">
+                    <summary className="font-semibold text-gray-900 dark:text-white cursor-pointer list-none flex justify-between items-center">
+                      {faq.q}
+                      <span className="text-primary-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm leading-relaxed">
+                      {faq.a}
+                    </p>
+                  </details>
+                ))}
               </div>
             </section>
 
