@@ -23,15 +23,9 @@ export const LanguageProvider = ({ children, lang }: { children: ReactNode, lang
     const [translations, setTranslations] = useState<Translations>({});
     const [loading, setLoading] = useState<boolean>(true);
 
-    // Update language when lang prop changes (from URL params)
-    useEffect(() => {
-        if (lang && lang !== language) {
-            handleSetLanguage(lang);
-        }
-    }, [lang]);
 
     // Function to load translation files dynamically
-    const loadTranslations = async (lang: Language) => {
+    const loadTranslations = React.useCallback(async (lang: Language) => {
         setLoading(true);
         try {
             const localeData = await import(`../i18n/locales/${lang}.json`);
@@ -46,7 +40,20 @@ export const LanguageProvider = ({ children, lang }: { children: ReactNode, lang
         } finally {
             setLoading(false);
         }
-    };
+    }, []);
+
+    const handleSetLanguage = React.useCallback(async (lang: Language) => {
+        setLanguage(lang);
+        localStorage.setItem('app_lang', lang);
+        await loadTranslations(lang);
+    }, [loadTranslations]);
+
+    // Update language when lang prop changes (from URL params)
+    useEffect(() => {
+        if (lang && lang !== language) {
+            handleSetLanguage(lang);
+        }
+    }, [lang, language, handleSetLanguage]);
 
     // Initial load and language detection (only if lang prop is not provided)
     useEffect(() => {
@@ -99,13 +106,7 @@ export const LanguageProvider = ({ children, lang }: { children: ReactNode, lang
         };
 
         detectLanguage();
-    }, [lang]);
-
-    const handleSetLanguage = async (lang: Language) => {
-        setLanguage(lang);
-        localStorage.setItem('app_lang', lang);
-        await loadTranslations(lang);
-    };
+    }, [lang, loadTranslations]);
 
     const t = (path: string): string => {
         if (loading || !translations) return ""; // Return empty or a loading placeholder

@@ -31,7 +31,7 @@ export default function ResourceMapPage() {
                 <div className="container mx-auto px-4 z-10 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Tijuana Industrial Map</h1>
                     <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-                        Get high-resolution access to the layout of Tijuana's major industrial clusters. Essential for site selection planning.
+                        Get high-resolution access to the layout of Tijuana&apos;s major industrial clusters. Essential for site selection planning.
                     </p>
                 </div>
             </section>
@@ -42,7 +42,7 @@ export default function ResourceMapPage() {
                         <span className="text-primary-600 dark:text-primary-400 font-bold uppercase tracking-wider text-sm mb-4">Free Resource</span>
                         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Download the 2026 Map</h2>
                         <p className="text-gray-600 dark:text-gray-300 mb-8 text-lg">
-                            Ensure your site selection team has the most updated zoning data for Tijuana's top industrial zones: Otay, El Florido, and Pacifico.
+                            Ensure your site selection team has the most updated zoning data for Tijuana&apos;s top industrial zones: Otay, El Florido, and Pacifico.
                         </p>
 
                         <div className="space-y-4 mb-8">
