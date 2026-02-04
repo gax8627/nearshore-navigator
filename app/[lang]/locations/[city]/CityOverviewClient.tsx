@@ -39,7 +39,7 @@ export default function CityOverviewClient({ city }: Props) {
         <div className="absolute inset-0 z-0">
           <Image
             src={location.image}
-            alt={`${location.name} Industrial Landscape`}
+            alt={`Industrial Real Estate and Manufacturing in ${location.name}, ${location.state} - Nearshore Navigator`}
             fill
             className="object-cover premium-image-filter"
             priority

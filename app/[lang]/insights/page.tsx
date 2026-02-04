@@ -18,7 +18,7 @@ export default function InsightsPage() {
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&q=80&w=2000"
-                        alt="Nearshore Insights and Analysis"
+                        alt="Nearshore Manufacturing Insights and Analysis - Baja California Blog"
                         fill
                         className="object-cover premium-image-filter"
                         priority

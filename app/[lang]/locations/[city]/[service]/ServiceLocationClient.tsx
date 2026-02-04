@@ -74,7 +74,7 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
         <div className="absolute inset-0 z-0">
           <Image
             src={location.image}
-            alt={`${service.title} in ${location.name}`}
+            alt={`${service.title} Solutions in ${location.name}, ${location.state} - Nearshore Navigator Industrial Hub`}
             fill
             className="object-cover premium-image-filter"
             priority

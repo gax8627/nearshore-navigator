@@ -33,7 +33,7 @@ export default function AboutPage() {
             <motion.div style={{ y }} className="absolute inset-0 z-0 h-[125%] -top-[12.5%]">
                 <Image
                     src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?auto=format&fit=crop&q=80&w=2560"
-                    alt="Strategic Advisory in Baja California"
+                    alt="Industrial Strategic Advisory and Nearshoring in Baja California - Nearshore Navigator"
                     fill
                     className="object-cover object-center"
                     priority
@@ -218,7 +218,7 @@ export default function AboutPage() {
             <motion.div style={{ y: geoY }} className="absolute inset-0 z-0 opacity-40">
                  <Image
                     src="https://images.unsplash.com/photo-1577962917762-a9b0c735d4ba?auto=format&fit=crop&q=80&w=2000&v=2"
-                    alt="Baja California Coastal Landscape"
+                    alt="Baja California Coastal Landscape - Nearshore Navigator Industrial Network"
                     fill
                     className="object-cover"
                 />

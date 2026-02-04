@@ -35,7 +35,7 @@ export function BlogPost({ post }: { post: BlogPostType }) {
         <div className="relative w-full h-[400px] rounded-xl overflow-hidden mb-8">
             <Image
                 src={post.imageUrl}
-                alt={post.title}
+                alt={`${post.title} - Nearshore Navigator Industrial Insight`}
                 fill
                 className="object-cover"
                 priority
