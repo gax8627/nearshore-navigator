@@ -78,7 +78,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
       />
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen pt-24 md:pt-0 md:h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
         <motion.div 
             style={{ y }} 
@@ -116,7 +116,7 @@ export default function Home() {
                     visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
                 }}
                 aria-label={t('hero.title')}
-                className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight drop-shadow-2xl flex flex-wrap gap-x-4 max-w-4xl"
+                className="text-4xl sm:text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight drop-shadow-2xl flex flex-wrap gap-x-3 md:gap-x-4 max-w-4xl"
             >
               {t('hero.title').split(' ').map((word, i) => {
                 const isHighlight = word.toLowerCase().includes('nearshoring');
