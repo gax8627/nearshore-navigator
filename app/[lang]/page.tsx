@@ -188,9 +188,9 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="container mx-auto px-4 -mt-32 relative z-20">
+      {/* <section className="container mx-auto px-4 -mt-32 relative z-20">
         <StatsGrid />
-      </section>
+      </section> */}
 
       {/* Services Overview */}
       <section className="container mx-auto px-4">
