@@ -24,20 +24,20 @@ export function StatsGrid() {
 }
 
 function StatCard({ stat, index }: { stat: { label: string; value: string; sub: string }; index: number }) {
-    const [isInView, setIsInView] = useState(false);
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, amount: 0.2 });
 
     return (
         <motion.div
+            ref={ref}
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            onViewportEnter={() => setIsInView(true)}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileHover={{ 
                 scale: 1.05, 
                 y: -5,
                 transition: { type: "spring", stiffness: 400, damping: 20 }
             }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            viewport={{ once: true }}
             className="relative overflow-hidden p-8 text-center bg-white/40 dark:bg-gray-800/40 backdrop-blur-xl border border-white/20 dark:border-gray-700 rounded-2xl shadow-glass hover:shadow-glass-hover hover:-translate-y-1 transition-all duration-300 group"
         >
             <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent dark:from-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -56,23 +56,38 @@ function StatCard({ stat, index }: { stat: { label: string; value: string; sub: 
 
 function CountUp({ value, trigger }: { value: string; trigger: boolean }) {
     const numberMatch = value.match(/\d+/);
-    const number = numberMatch ? parseInt(numberMatch[0]) : 0;
-    const prefix = value.split(number.toString())[0] || "";
-    const suffix = value.split(number.toString())[1] || "";
+    const target = numberMatch ? parseInt(numberMatch[0]) : 0;
+    const prefix = value.split(target.toString())[0] || "";
+    const suffix = value.split(target.toString())[1] || "";
     
-    const spring = useSpring(0, { stiffness: 40, damping: 20 });
-    const displayValue = useTransform(spring, (current) => Math.round(current));
+    const [current, setCurrent] = useState(0);
 
     useEffect(() => {
-        if (trigger && number > 0) {
-            spring.set(number);
+        if (trigger && target > 0) {
+            let startTime: number | null = null;
+            const duration = 2000; // ms
+
+            const animate = (timestamp: number) => {
+                if (!startTime) startTime = timestamp;
+                const progress = Math.min((timestamp - startTime) / duration, 1);
+                // click-feel easing
+                const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                
+                setCurrent(Math.round(target * ease));
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                }
+            };
+            
+            requestAnimationFrame(animate);
         }
-    }, [trigger, number, spring]);
+    }, [trigger, target]);
 
     return (
         <span>
             {prefix}
-            <motion.span>{displayValue}</motion.span>
+            <motion.span>{current}</motion.span>
             {suffix}
         </span>
     );

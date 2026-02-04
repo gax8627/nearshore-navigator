@@ -11,6 +11,14 @@ export default function ResourceMapPage() {
     const handleDownload = (e: React.FormEvent) => {
         e.preventDefault();
         setDownloaded(true);
+        
+        // Trigger PDF download
+        const link = document.createElement('a');
+        link.href = '/tijuana-industrial-park-map-2026.pdf';
+        link.download = 'Tijuana-Industrial-Park-Map-2026.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     };
 
     return (
@@ -19,7 +27,7 @@ export default function ResourceMapPage() {
             <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="https://images.unsplash.com/photo-1586717791821-3f44a563cc4c?auto=format&fit=crop&q=80&w=2000"
+                        src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&q=80&w=2000&v=2"
                         alt="Tijuana Industrial Park Map"
                         fill
                         className="object-cover premium-image-filter"
