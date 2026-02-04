@@ -218,9 +218,10 @@ export default function AboutPage() {
             <motion.div style={{ y: geoY }} className="absolute inset-0 z-0 opacity-40">
                  <Image
                     src="/images/baja-landscape.jpg"
-                    alt="Industrial Logistics and Manufacturing Hub in Baja California - Nearshore Navigator Industrial Network"
+                    alt="Baja California Industrial Infrastructure - Nearshore Navigator Strategic Network"
                     fill
                     className="object-cover"
+                    quality={100}
                 />
             </motion.div>
             <div className="container mx-auto px-4 relative z-10 text-center">
