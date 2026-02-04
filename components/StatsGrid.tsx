@@ -39,7 +39,7 @@ function StatCard({ stat, index }: { stat: { label: string; value: string; sub: 
                 transition: { type: "spring", stiffness: 400, damping: 20 }
             }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="relative overflow-hidden p-8 text-center bg-white/40 dark:bg-gray-800/40 backdrop-blur-xl border border-white/20 dark:border-gray-700 rounded-2xl shadow-glass hover:shadow-glass-hover hover:-translate-y-1 transition-all duration-300 group w-full h-full flex flex-col justify-center items-center"
+            className="relative overflow-hidden p-8 text-center bg-white/40 dark:bg-gray-800/40 backdrop-blur-xl border border-white/20 dark:border-gray-700 rounded-2xl shadow-glass hover:shadow-glass-hover hover:-translate-y-1 transition-all duration-300 group w-full h-full flex flex-col items-center justify-start gap-4"
         >
             <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent dark:from-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <dt className="relative text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-widest mb-4 group-hover:tracking-[0.2em] transition-all duration-300">
