@@ -5,20 +5,15 @@ import Image from "next/image";
 import { Check } from "lucide-react";
 import { useState } from "react";
 
-export default function ResourceMapPage() {
+export default function ResourceMapPage({ params }: { params: { lang: string } }) {
     const [downloaded, setDownloaded] = useState(false);
 
     const handleDownload = (e: React.FormEvent) => {
         e.preventDefault();
         setDownloaded(true);
         
-        // Trigger PDF download
-        const link = document.createElement('a');
-        link.href = '/tijuana-industrial-park-map-2026.pdf';
-        link.download = 'Tijuana-Industrial-Park-Map-2026.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        // Redirect to the printable questionnaire page
+        window.location.href = `/${params.lang}/resources/questionnaire`;
     };
 
     return (
