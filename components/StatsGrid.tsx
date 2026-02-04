@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView, useSpring, useTransform } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { useEffect, useRef, useState } from "react";
 
@@ -15,9 +15,9 @@ export function StatsGrid() {
     ];
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
-                <StatCard key={stat.label} stat={stat} index={index} />
+                <StatCard key={index} stat={stat} index={index} />
             ))}
         </div>
     );
@@ -32,22 +32,16 @@ function StatCard({ stat, index }: { stat: { label: string; value: string; sub: 
             ref={ref}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            whileHover={{ 
-                scale: 1.05, 
-                y: -5,
-                transition: { type: "spring", stiffness: 400, damping: 20 }
-            }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="relative overflow-hidden p-8 text-center bg-white/40 dark:bg-gray-800/40 backdrop-blur-xl border border-white/20 dark:border-gray-700 rounded-2xl shadow-glass hover:shadow-glass-hover hover:-translate-y-1 transition-all duration-300 group w-full h-full flex flex-col items-center justify-start gap-4"
+            className="p-6 text-center bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700"
         >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent dark:from-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <dt className="relative text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-widest mb-4 group-hover:tracking-[0.2em] transition-all duration-300 min-h-[3rem] flex items-end justify-center">
+            <p className="text-xs font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-2">
                 {stat.label}
-            </dt>
-            <dd className="relative text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-2 tracking-tight">
+            </p>
+            <p className="text-4xl font-bold text-gray-900 dark:text-white mb-1">
                 <CountUp value={stat.value} trigger={isInView} />
-            </dd>
-            <p className="relative text-sm font-medium text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-300 transition-colors">
+            </p>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
                 {stat.sub}
             </p>
         </motion.div>
@@ -65,12 +59,11 @@ function CountUp({ value, trigger }: { value: string; trigger: boolean }) {
     useEffect(() => {
         if (trigger && target > 0) {
             let startTime: number | null = null;
-            const duration = 2000; // ms
+            const duration = 2000;
 
             const animate = (timestamp: number) => {
                 if (!startTime) startTime = timestamp;
                 const progress = Math.min((timestamp - startTime) / duration, 1);
-                // click-feel easing
                 const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
                 
                 setCurrent(Math.round(target * ease));
@@ -86,11 +79,7 @@ function CountUp({ value, trigger }: { value: string; trigger: boolean }) {
 
     return (
         <span>
-            {prefix}
-            <motion.span>{current}</motion.span>
-            {suffix}
+            {prefix}{current}{suffix}
         </span>
     );
 }
-
-
