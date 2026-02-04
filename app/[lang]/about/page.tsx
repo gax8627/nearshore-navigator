@@ -217,8 +217,8 @@ export default function AboutPage() {
         <section ref={geoRef} className="py-24 bg-gray-900 text-white relative overflow-hidden">
             <motion.div style={{ y: geoY }} className="absolute inset-0 z-0 opacity-40">
                  <Image
-                    src="/images/baja-landscape.png"
-                    alt="Industrial Real Estate and Manufacturing Hub in Baja California - Nearshore Navigator Industrial Network"
+                    src="/images/baja-landscape.jpg"
+                    alt="Industrial Logistics and Manufacturing Hub in Baja California - Nearshore Navigator Industrial Network"
                     fill
                     className="object-cover"
                 />
