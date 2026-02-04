@@ -95,14 +95,14 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params
 }: {
   children: React.ReactNode,
-  params: { lang: string }
+  params: Promise<{ lang: string }>
 }) {
-  const lang = params.lang as any;
+  const { lang } = await params;
 
   return (
     <html lang={lang} className="scroll-smooth">
@@ -110,7 +110,7 @@ export default function RootLayout({
         <SchemaMarkup />
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>
-        <LanguageProvider lang={lang}>
+        <LanguageProvider lang={lang as any}>
           <ThemeProvider>
             <div className="flex flex-col min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
               <Navbar />

@@ -1,39 +1,22 @@
 import { Metadata } from "next";
-import { getBlogPost } from "@/lib/blogContent";
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const post = getBlogPost(params.slug);
-    
-    if (!post) {
-        return {
-            title: "Article Not Found",
-            description: "The requested article could not be found.",
-        };
-    }
-
-    return {
-        title: post.title,
-        description: post.excerpt,
-        openGraph: {
-            title: post.title,
-            description: post.excerpt,
-            type: 'article',
-            publishedTime: post.date,
-            images: [post.imageUrl],
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title: post.title,
-            description: post.excerpt,
-            images: [post.imageUrl],
-        },
-    };
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  // This layout wrapper might be redundant if metadata is handled in page.tsx, 
+  // keeping it minimal or removing if unused. 
+  // Assuming it's a layout wrapper for the blog post content.
+  return {};
 }
 
-export default function BlogLayout({
-    children,
+export default async function Layout({
+  children,
+  params,
 }: {
-    children: React.ReactNode;
+  children: React.ReactNode;
+  params: Promise<{ slug: string }>;
 }) {
-    return children;
+  return (
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-24 pb-12">
+      {children}
+    </div>
+  );
 }

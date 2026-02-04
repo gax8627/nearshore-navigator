@@ -6,40 +6,9 @@ export const metadata = {
     description: "Guides, news, and analysis on manufacturing and industrial real estate in Baja California.",
 };
 
-const posts = [
-    {
-        title: "Nearshoring in Baja California: A Guide for US Companies",
-        excerpt: "Everything you need to know about setting up operations in Mexico's manufacturing hub.",
-        date: "Oct 24, 2025",
-        slug: "nearshoring-in-tijuana-guide-for-us-companies",
-        imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
-        tags: ["Guide", "Strategy"],
-    },
-    {
-        title: "Baja California vs Asia: Manufacturing Cost Comparison",
-        excerpt: "Analyze the total landed cost benefits of manufacturing in Baja California versus traditional Asian hubs.",
-        date: "Nov 12, 2025",
-        slug: "tijuana-vs-asia-manufacturing-cost-comparison",
-        imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
-        tags: ["Cost Analysis", "Economics"],
-    },
-    {
-        title: "How Shelter Services Work in Baja California",
-        excerpt: "Understanding the shelter model: the fastest, lowest-risk way to start manufacturing in Mexico.",
-        date: "Dec 05, 2025",
-        slug: "how-shelter-services-work-in-tijuana",
-        imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
-        tags: ["Shelter", "Legal"],
-    },
-    {
-        title: "Industrial Parks Map Overview 2026",
-        excerpt: "A deep dive into the top industrial zones: Otay, El Florido, and Pacifico.",
-        date: "Jan 10, 2026",
-        slug: "industrial-parks-in-tijuana-map-and-overview",
-        imageUrl: "https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&q=80&w=800",
-        tags: ["Real Estate", "Maps"],
-    }
-];
+import { BLOG_POSTS } from "@/app/constants/blog-data";
+
+const posts = BLOG_POSTS;
 
 export default function InsightsPage() {
     return (

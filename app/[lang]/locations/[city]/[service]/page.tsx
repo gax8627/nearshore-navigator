@@ -3,16 +3,17 @@ import { getLocation, getService } from "@/app/constants/seo-data";
 import ServiceLocationClient from "./ServiceLocationClient";
 
 type Props = {
-  params: {
+  params: Promise<{
     lang: string;
     city: string;
     service: string;
-  };
+  }>;
 };
 
 export async function generateMetadata({ params }: Props) {
-  const location = getLocation(params.city);
-  const service = getService(params.service);
+  const { lang, city, service: serviceParam } = await params;
+  const location = getLocation(city);
+  const service = getService(serviceParam);
   
   if (!location || !service) return {};
 
@@ -26,18 +27,19 @@ export async function generateMetadata({ params }: Props) {
     title: titles[0],
     description: `Expert ${service.title.toLowerCase()} services in ${location.name}, ${location.state}. ${location.description}. We provide full support for ${service.title.toLowerCase()} including site selection and local compliance.`,
     alternates: {
-      canonical: `https://nearshorenavigator.com/${params.lang}/locations/${params.city}/${params.service}`
+      canonical: `https://nearshorenavigator.com/${lang}/locations/${city}/${serviceParam}`
     }
   };
 }
 
-export default function ServiceLocationPage({ params }: Props) {
-  const location = getLocation(params.city);
-  const service = getService(params.service);
+export default async function ServiceLocationPage({ params }: Props) {
+  const { city, service: serviceParam } = await params;
+  const location = getLocation(city);
+  const service = getService(serviceParam);
 
   if (!location || !service) {
     notFound();
   }
 
-  return <ServiceLocationClient city={params.city} serviceId={params.service} />;
+  return <ServiceLocationClient city={city} serviceId={serviceParam} />;
 }

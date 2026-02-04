@@ -3,28 +3,34 @@ import { getLocation } from "@/app/constants/seo-data";
 import CityOverviewClient from "./CityOverviewClient";
 
 type Props = {
-  params: {
+  params: Promise<{
     lang: string;
     city: string;
-  };
+  }>;
 };
 
 export async function generateMetadata({ params }: Props) {
-  const location = getLocation(params.city);
+  const { lang, city } = await params;
+  const location = getLocation(city);
+  
   if (!location) return {};
 
   return {
-    title: `Manufacturing in ${location.name} | Nearshore Navigator`,
-    description: `Explore manufacturing opportunities in ${location.name}, ${location.state}. ${location.description}`,
+    title: `Manufacturing in ${location.name}, ${location.state} | Nearshore Navigator`,
+    description: `Complete guide to industrial manufacturing in ${location.name}. Access ${location.name}'s skilled workforce, industrial parks, and proximity to major US markets.`,
+    alternates: {
+      canonical: `https://nearshorenavigator.com/${lang}/locations/${city}`
+    }
   };
 }
 
-export default function CityOverviewPage({ params }: Props) {
-  const location = getLocation(params.city);
+export default async function CityPage({ params }: Props) {
+  const { city } = await params;
+  const location = getLocation(city);
 
   if (!location) {
     notFound();
   }
 
-  return <CityOverviewClient city={params.city} />;
+  return <CityOverviewClient city={city} />;
 }

@@ -30,7 +30,7 @@ export default function Home() {
       excerpt: "Everything you need to know about setting up operations in Mexico's manufacturing hub.",
       date: "Oct 24, 2025",
       slug: "nearshoring-in-tijuana-guide-for-us-companies",
-      imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800", // Warehouse/Logistics
+      imageUrl: "/images/warehouse.jpg", // Warehouse/Logistics
       tags: ["Guide", "Strategy"],
     },
     {
@@ -38,7 +38,7 @@ export default function Home() {
       excerpt: "Analyze the total landed cost benefits of manufacturing in Baja California versus traditional Asian hubs.",
       date: "Nov 12, 2025",
       slug: `/${language}/insights/tijuana-vs-asia-manufacturing-cost-comparison`,
-      imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800", // Factory/Manufacturing
+      imageUrl: "/images/factory-worker.jpg", // Factory/Manufacturing
       tags: ["Cost Analysis", "Economics"],
     },
     {
@@ -46,7 +46,7 @@ export default function Home() {
       excerpt: "Understanding the shelter model: the fastest, lowest-risk way to start manufacturing in Mexico.",
       date: "Dec 05, 2025",
       slug: `/${language}/insights/how-shelter-services-work-in-tijuana`,
-      imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800", // Consulting/Planning
+      imageUrl: "/images/consulting.jpg", // Consulting/Planning
       tags: ["Shelter", "Legal"],
     },
   ];

@@ -28,13 +28,8 @@ export async function POST(req: Request) {
     //   text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\nMessage: ${message}`,
     // });
 
-    console.log('Sending email to denisse@nearshorenavigator.com:', {
-      name,
-      company,
-      email,
-      phone,
-      message,
-    });
+    // Email would be sent here using Resend, SendGrid, or similar service
+    // For production: await resend.emails.send({ ... })
 
     // For now, we simulate a successful send
     return NextResponse.json({ success: true }, { status: 200 });
