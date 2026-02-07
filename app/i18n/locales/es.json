@@ -8,7 +8,7 @@
         "bookTour": "Agendar Visita"
     },
     "hero": {
-        "title": "Nearshoring Industrial en Baja California",
+        "title": "Manufactura y Logística en Tijuana",
         "subtitle": "La puerta de entrada principal para fabricantes que se expanden a México. Acceda a infraestructura de clase mundial y mano de obra calificada a solo 20 minutos de San Diego.",
         "cta_primary": "Agendar Visita Industrial",
         "cta_secondary": "Evaluación de Sitio"
@@ -29,8 +29,7 @@
         "subtitle": "Simplificamos su expansión en México con servicios de soporte industrial de extremo a extremo.",
         "real_estate": "Inmobiliaria Industrial",
         "real_estate_desc": "Encuentre naves industriales, almacenes y terrenos Clase A en venta o renta en los mejores parques de Baja California.",
-        "shelter": "Servicios de Shelter",
-        "shelter_desc": "Inicie operaciones en solo 90 días. Manejamos RR.HH., legal, import/export y cumplimiento mientras usted produce.",
+
         "contract": "Manufactura por Contrato",
         "contract_desc": "Asóciese con maquiladoras establecidas para manufactura electrónica, dispositivos médicos y aeroespacial.",
         "logistics": "Distribución y Logística",
@@ -40,7 +39,7 @@
     },
     "footer": {
         "rights": "Todos los derechos reservados.",
-        "description": "Su socio de confianza para nearshoring industrial, servicios de shelter y manufactura en Baja California, México.",
+        "description": "Su socio de confianza para nearshoring industrial y manufactura en Baja California, México.",
         "industrial_map": "Mapa de Parques Industriales",
         "privacy": "Política de Privacidad",
         "terms": "Términos de Servicio"
@@ -51,7 +50,7 @@
         "step1_title": "Evaluar y Planificar",
         "step1_desc": "Analizamos las necesidades de su proyecto, desde metros cuadrados hasta requerimientos laborales.",
         "step2_title": "Visitar y Seleccionar",
-        "step2_desc": "Recorridos guiados por parques industriales y posibles socios shelter en Baja California.",
+        "step2_desc": "Recorridos guiados por parques industriales y posibles socios en Baja California.",
         "step3_title": "Lanzar y Escalar",
         "step3_desc": "Finalizar contratos, obtener permisos e iniciar sus operaciones de manufactura."
     },
@@ -64,7 +63,7 @@
         "title": "Sobre Nearshore Navigator",
         "subtitle": "Su socio de confianza para la expansión industrial en México",
         "mission_title": "Nuestra Misión",
-        "mission": "Ayudamos a empresas estadounidenses a establecer operaciones de manufactura exitosas en Baja California, México. Con décadas de experiencia combinada en inmobiliaria industrial, servicios de shelter y logística transfronteriza, somos su punto único de contacto para el éxito del nearshoring.",
+        "mission": "Ayudamos a empresas estadounidenses a establecer operaciones de manufactura exitosas en Baja California, México. Con décadas de experiencia combinada en inmobiliaria industrial y logística transfronteriza, somos su punto único de contacto para el éxito del nearshoring.",
         "expertise_title": "Nuestra Experiencia",
         "expertise": "Nuestro equipo reúne experiencia en inmobiliaria industrial, derecho laboral mexicano, cumplimiento aduanero y comercial, y operaciones de manufactura. Hemos ayudado a docenas de empresas — desde Fortune 500 hasta startups innovadoras — a navegar las complejidades de manufactura en México.",
         "team_title": "Nuestro Equipo",
@@ -236,39 +235,7 @@
         "safeguardsTitle": "Salvaguardas de Calidad y PI",
         "safeguardsDesc": "Actuamos como sus ojos locales, gestionando precios, corridas piloto y auditorías de rutina."
     },
-    "shelterPage": {
-        "heroTitle": "Servicios de Shelter en",
-        "heroTitleHighlight": "Baja California",
-        "heroSubtitle": "La forma más rápida y segura de iniciar manufactura en México sin establecer una entidad legal.",
-        "whatIsShelterTitle": "¿Qué es una Empresa Shelter?",
-        "whatIsShelterText": "Un Servicio de Shelter actúa como su entidad legal en México. Manejamos todas las tareas administrativas, legales, de recursos humanos y cumplimiento. Usted retiene 100% de control sobre sus procesos de producción, calidad y propiedad intelectual. Es una solución \"plug-and-play\" para manufactura.",
-        "comparisonTitle": "Shelter vs. Entidad Independiente",
-        "feature": "Característica",
-        "shelterService": "Servicio Shelter",
-        "standalone": "Entidad Independiente",
-        "startupTime": "Tiempo de Arranque",
-        "shelter90Days": "90 Días",
-        "standalone6Months": "6-12 Meses",
-        "legalLiability": "Responsabilidad Legal",
-        "shelterLiability": "Shelter asume responsabilidad",
-        "standaloneLiability": "Usted asume 100% responsabilidad",
-        "hrRecruiting": "RR.HH. y Reclutamiento",
-        "included": "Incluido",
-        "yourResponsibility": "Su Responsabilidad",
-        "exitStrategy": "Estrategia de Salida",
-        "simpleExit": "Simple (30-60 días)",
-        "complexLiquidation": "Liquidación Compleja",
-        "formTitle": "Hablar con un Asesor de Shelter",
-        "formSubtitle": "Obtenga un análisis de costos gratuito comparando Shelter vs. Independiente.",
-        "strategyTitle": "El Modelo de Coordinación Shelter",
-        "strategySubtitle": "Actuamos como su asesor neutral, ayudándole a seleccionar el socio y modelo correcto.",
-        "modelFitTitle": "Asesoría de Ajuste de Modelo",
-        "modelFitDesc": "Le ayudamos a decidir entre Shelter Dedicado (velocidad) y Entidad Independiente (control), o modelos híbridos.",
-        "inshoringTitle": "Inshoring de Bajo Riesgo",
-        "inshoringDesc": "Para PyMEs: Use el programa IMMEX existente de un socio para saltar los 6-12 meses de configuración.",
-        "complianceTitle": "Soft-Landing y Cumplimiento",
-        "complianceDesc": "Coordinamos lo 'Burocrático y Formal'—Notarios, Poderes Legales y permisos—para que usted no tenga que hacerlo."
-    },
+
     "realEstatePage": {
         "heroTitle": "Bienes Raíces Industriales en",
         "heroTitleHighlight": "Baja California",

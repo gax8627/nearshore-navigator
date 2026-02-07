@@ -22,7 +22,7 @@ export function Navbar() {
 
     const serviceLinks = [
         { name: t('services.real_estate'), href: `/${language}/services/industrial-real-estate-baja` },
-        { name: t('services.shelter'), href: `/${language}/services/shelter-services-tijuana` },
+
         { name: t('services.contract'), href: `/${language}/services/contract-manufacturing-tijuana` },
         { name: t('services.logistics'), href: `/${language}/services/distribution-centers-tijuana` },
         { name: t('services.call_center'), href: `/${language}/services/call-center-tijuana` },

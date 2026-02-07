@@ -318,12 +318,7 @@ export const SERVICES: Service[] = [
     description: "Find Class A industrial space, built-to-suit options, and warehouse leasing.",
     icon: "Warehouse"
   },
-  {
-    slug: "shelter-services",
-    title: "Shelter Services",
-    description: "Start manufacturing quickly under an existing legal entity to minimize risk.",
-    icon: "Globe2"
-  },
+
   {
     slug: "contract-manufacturing",
     title: "Contract Manufacturing",

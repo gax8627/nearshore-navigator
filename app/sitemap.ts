@@ -68,12 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.9,
         },
-        {
-            url: `${baseUrl}/services/shelter-services-tijuana`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
+
         {
             url: `${baseUrl}/services/contract-manufacturing-tijuana`,
             lastModified: new Date(),
@@ -105,12 +100,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'yearly',
             priority: 0.7,
         },
-        {
-            url: `${baseUrl}/insights/how-shelter-services-work-in-tijuana`,
-            lastModified: new Date(),
-            changeFrequency: 'yearly',
-            priority: 0.7,
-        },
+
         {
             url: `${baseUrl}/insights/industrial-parks-in-tijuana-map-and-overview`,
             lastModified: new Date(),

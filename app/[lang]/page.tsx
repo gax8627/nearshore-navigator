@@ -41,14 +41,7 @@ export default function Home() {
       imageUrl: "/images/factory-worker.jpg", // Factory/Manufacturing
       tags: ["Cost Analysis", "Economics"],
     },
-    {
-      title: "How Shelter Services Work in Baja California",
-      excerpt: "Understanding the shelter model: the fastest, lowest-risk way to start manufacturing in Mexico.",
-      date: "Dec 05, 2025",
-      slug: `/${language}/insights/how-shelter-services-work-in-tijuana`,
-      imageUrl: "/images/consulting.jpg", // Consulting/Planning
-      tags: ["Shelter", "Legal"],
-    },
+
   ];
 
   const filteredFeaturedPosts = featuredPosts.map(post => ({
@@ -214,14 +207,7 @@ export default function Home() {
               icon={<Warehouse className="w-6 h-6" />}
             />
           </div>
-          <div className="w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] xl:w-[calc(20%-1.5rem)] min-w-[300px] flex-grow xl:flex-grow-0">
-            <ServiceCard
-              title={t('services.shelter')}
-              description={t('services.shelter_desc')}
-              href={`/${language}/services/shelter-services-tijuana`}
-              icon={<Globe2 className="w-6 h-6" />}
-            />
-          </div>
+
           <div className="w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] xl:w-[calc(20%-1.5rem)] min-w-[300px] flex-grow xl:flex-grow-0">
             <ServiceCard
               title={t('services.contract')}

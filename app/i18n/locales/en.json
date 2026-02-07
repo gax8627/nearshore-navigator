@@ -8,7 +8,7 @@
         "bookTour": "Book a Tour"
     },
     "hero": {
-        "title": "Tijuana Shelter Services & Baja Manufacturing",
+        "title": "Tijuana Manufacturing & Logistics",
         "subtitle": "The premier gateway for US manufacturers expanding into Mexico. Access world-class infrastructure and a skilled workforce just 20 minutes from San Diego.",
         "cta_primary": "Book an Industrial Tour",
         "cta_secondary": "Get a Site Assessment"
@@ -29,8 +29,7 @@
         "subtitle": "We simplify your expansion into Mexico with end-to-end industrial support services.",
         "real_estate": "Industrial Real Estate",
         "real_estate_desc": "Find Class A industrial buildings, warehouses, and land for sale or lease in Baja California's prime industrial parks.",
-        "shelter": "Shelter Services",
-        "shelter_desc": "Launch operations in as little as 90 days. We handle HR, legal, import/export, and compliance while you focus on production.",
+
         "contract": "Contract Manufacturing",
         "contract_desc": "Partner with established maquiladoras for electronics, medical devices, and aerospace manufacturing.",
         "logistics": "Distribution & Logistics",
@@ -51,7 +50,7 @@
         "step1_title": "Assess & Plan",
         "step1_desc": "We analyze your project needs, from square footage to labor requirements.",
         "step2_title": "Visit & Select",
-        "step2_desc": "Guided tours of industrial parks and potential shelter partners in Baja California.",
+        "step2_desc": "Guided tours of industrial parks and potential partners in Baja California.",
         "step3_title": "Launch & Scale",
         "step3_desc": "Finalize contracts, secure permits, and begin your manufacturing operations."
     },
@@ -64,7 +63,7 @@
         "title": "About Nearshore Navigator",
         "subtitle": "Your trusted partner for industrial expansion in Mexico",
         "mission_title": "Our Mission",
-        "mission": "We help US companies establish successful manufacturing operations in Baja California, Mexico. With decades of combined experience in industrial real estate, shelter services, and cross-border logistics, we are your single point of contact for nearshoring success.",
+        "mission": "We help US companies establish successful manufacturing operations in Baja California, Mexico. With decades of combined experience in industrial real estate and cross-border logistics, we are your single point of contact for nearshoring success.",
         "expertise_title": "Our Expertise",
         "expertise": "Our team brings together expertise in industrial real estate, Mexican labor law, customs and trade compliance, and manufacturing operations. We've helped dozens of companies — from Fortune 500 enterprises to innovative startups — navigate the complexities of manufacturing in Mexico.",
         "team_title": "Our Team",
@@ -236,39 +235,7 @@
         "safeguardsTitle": "IP & Quality Safeguards",
         "safeguardsDesc": "We act as your local eyes and ears, managing pricing, pilot runs, and routine audits to ensure US standards."
     },
-    "shelterPage": {
-        "heroTitle": "Shelter Services in",
-        "heroTitleHighlight": "Baja California",
-        "heroSubtitle": "The fastest, safest way to start manufacturing in Mexico without establishing a legal entity.",
-        "whatIsShelterTitle": "What is a Shelter Company?",
-        "whatIsShelterText": "A Shelter Service acts as your legal entity in Mexico. We handle all the administrative, legal, human resources, and compliance tasks. You retain 100% control over your production processes, quality, and intellectual property. It's a \"plug-and-play\" solution for manufacturing.",
-        "comparisonTitle": "Shelter vs. Standalone Entity",
-        "feature": "Feature",
-        "shelterService": "Shelter Service",
-        "standalone": "Standalone Entity",
-        "startupTime": "Start-up Time",
-        "shelter90Days": "90 Days",
-        "standalone6Months": "6-12 Months",
-        "legalLiability": "Legal Liability",
-        "shelterLiability": "Shelter assumes liability",
-        "standaloneLiability": "You assume 100% liability",
-        "hrRecruiting": "HR & Recruiting",
-        "included": "Included",
-        "yourResponsibility": "Your Responsibility",
-        "exitStrategy": "Exit Strategy",
-        "simpleExit": "Simple (30-60 days)",
-        "complexLiquidation": "Complex Liquidation",
-        "formTitle": "Talk to a Shelter Advisor",
-        "formSubtitle": "Get a free cost analysis comparing Shelter vs. Standalone.",
-        "strategyTitle": "The Shelter Coordination Model",
-        "strategySubtitle": "We act as your neutral advisor, helping you select the right partner and model—whether it's a dedicated shelter, standalone entity, or a risk-averse 'inshoring' solution.",
-        "modelFitTitle": "Model Fit Advisory",
-        "modelFitDesc": "We help you decide between Dedicated Shelter (speed) and Standalone (control), or hybrid models.",
-        "inshoringTitle": "Risk-Averse Inshoring",
-        "inshoringDesc": "For SMEs: Use a partner's existing IMMEX program to skip the 6-12 month setup and avoid labor VAT.",
-        "complianceTitle": "Soft-Landing & Compliance",
-        "complianceDesc": "We coordinate the 'Bureaucratic and Formal'—Notaries, Power of Attorney, and permits—so you don't have to."
-    },
+
     "realEstatePage": {
         "heroTitle": "Industrial Real Estate in",
         "heroTitleHighlight": "Baja California",
