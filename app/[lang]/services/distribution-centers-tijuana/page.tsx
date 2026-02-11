@@ -88,7 +88,7 @@ export default function DistributionPage() {
                         {/* Benefits Grid */}
                         <section>
                             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">{t('distributionPage.whyTijuanaTitle')}</h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                                 {benefits.map((benefit) => (
                                     <div key={benefit.title} className="glass-card p-6">
                                         <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 mb-4">
@@ -99,6 +99,23 @@ export default function DistributionPage() {
                                     </div>
                                 ))}
                             </div>
+                            
+                            <motion.div 
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                className="bg-primary-600 text-white p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl"
+                            >
+                                <div>
+                                    <h3 className="text-xl font-bold mb-2">{t('distributionPage.guideCTA')}</h3>
+                                    <p className="text-primary-100">{t('distributionPage.guideDesc')}</p>
+                                </div>
+                                <a 
+                                    href={`/${t('lang')}/services/distribution-centers-tijuana/section-321-guide`}
+                                    className="bg-white text-primary-600 px-6 py-3 rounded-lg font-bold hover:bg-primary-50 transition-colors whitespace-nowrap"
+                                >
+                                    Fulfillment & Section 321 Guide
+                                </a>
+                            </motion.div>
                         </section>
 
                         {/* Strategic Location */}

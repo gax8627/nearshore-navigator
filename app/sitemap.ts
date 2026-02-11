@@ -107,6 +107,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'yearly',
             priority: 0.7,
         },
+        {
+            url: `${baseUrl}/services/distribution-centers-tijuana/section-321-guide`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
     ]
 
     // Programmatic Pages: Locations

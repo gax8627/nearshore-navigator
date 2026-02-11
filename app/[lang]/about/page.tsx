@@ -53,11 +53,11 @@ export default function AboutPage() {
                         About Nearshore Navigator
                     </span>
                     <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
-                        Local leadership.<br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Partner-powered</span> execution.
+                        {t('about.heroTitle1')}<br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">{t('about.heroTitle2')}</span> {t('about.heroTitle3')}
                     </h1>
                     <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-light">
-                        Built for manufacturers entering Baja California. We provide structured guidance, practical options, and the right introductions so your expansion doesn’t stall in uncertainty.
+                        {t('about.heroSubtitle')}
                     </p>
                 </motion.div>
             </div>
@@ -167,12 +167,12 @@ export default function AboutPage() {
                         <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center text-purple-600 dark:text-purple-400 mb-6">
                             <MapPin className="w-7 h-7" />
                         </div>
-                        <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Soft-landing pathways</h3>
+                        <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">{t('about.softLandingTitle')}</h3>
                         <p className="text-gray-600 dark:text-gray-300 mb-6">
-                            For when speed matters. We help you assess whether this route fits your goals and timeline, then connect you with vetted options aligned to your needs.
+                            {t('about.softLandingDesc')}
                         </p>
-                        <Link href={`/${language}/services/shelter-services-tijuana`} className="text-purple-600 font-semibold hover:underline flex items-center gap-2">
-                            Learn more <ArrowRight className="w-4 h-4" />
+                        <Link href={`/${language}/contact`} className="text-purple-600 font-semibold hover:underline flex items-center gap-2">
+                            Request Assessment <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>
                 </div>

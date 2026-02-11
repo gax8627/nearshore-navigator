@@ -68,6 +68,21 @@ export const BLOG_POSTS: BlogPost[] = [
         <h2>El Florido</h2>
         <p>Large land reserves, home to massive campuses for Samsung and Coca-Cola.</p>
       `
+  },
+  {
+      title: "The $6B Investment: Mexico's 2025 Nearshoring Boom",
+      excerpt: "Why 2025 is the most critical year for industrial expansion and the upcoming 2026 USMCA review.",
+      date: "Feb 11, 2026",
+      slug: "mexico-2025-nearshoring-boom-usmca-review",
+      imageUrl: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=800",
+      tags: ["Market Report", "Investment"],
+      content: `
+        <p>Investment in industrial parks across Mexico is projected to reach US $6 billion in 2025. This surge is driven by global companies de-risking from Asia and the strategic necessity of the North American market.</p>
+        <h2>The 2026 USMCA Horizon</h2>
+        <p>With the required review of the T-MEC (USMCA) agreement approaching in 2026, companies are moving now to solidify their presence in the North American manufacturing hub.</p>
+        <h2>Infrastructure Evolution</h2>
+        <p>Growth focuses on energy-efficient parks and expanded logistics capabilities in cities like Tijuana and Monterrey.</p>
+      `
   }
 ];
 

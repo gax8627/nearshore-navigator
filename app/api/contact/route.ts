@@ -32,7 +32,32 @@ export async function POST(req: Request) {
     // For production: await resend.emails.send({ ... })
 
     // For now, we simulate a successful send
-    return NextResponse.json({ success: true }, { status: 200 });
+    const { scoreLead } = await import('@/lib/lead-scoring');
+    const leadScore = scoreLead({ name, company, email, message });
+
+    console.log(`New Lead Scored: ${leadScore.category} (${leadScore.score} pts) - ${company}`);
+    console.log(`Tags: ${leadScore.tags.join(', ')}`);
+
+    // Lead Intelligence & Real-time Notifications
+    const { notifyLead } = await import('@/lib/notifications');
+    await notifyLead({
+      name: name || 'Anonymous',
+      email,
+      company: company || 'N/A',
+      score: leadScore.score,
+      category: leadScore.category,
+      tags: leadScore.tags
+    });
+
+    return NextResponse.json({ 
+      success: true, 
+      leadInfo: {
+        category: leadScore.category,
+        score: leadScore.score,
+        tags: leadScore.tags,
+        routing: leadScore.category === 'High' ? 'Executive' : 'Standard'
+      }
+    }, { status: 200 });
   } catch (error) {
     console.error('Contact form error:', error);
     return NextResponse.json(

@@ -9,9 +9,9 @@ export function StatsGrid() {
 
     const stats = [
         { label: t('stats.distance'), value: "20 Minutes", sub: t('stats.borderWaiting') },
-        { label: t('stats.parks'), value: "65+", sub: t('stats.classAvailable') },
+        { label: t('stats.parks'), value: "70+", sub: t('stats.classAvailable') },
         { label: t('stats.workforce'), value: "260k+", sub: t('stats.manufacturingOps') },
-        { label: t('stats.exports'), value: "$50B+", sub: t('stats.annualToUSA') },
+        { label: t('stats.exports'), value: "$52B+", sub: t('stats.annualToUSA') },
     ];
 
     return (

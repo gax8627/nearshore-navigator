@@ -51,11 +51,11 @@ export default function IndustrialRealEstatePage() {
                 <div className="container mx-auto px-4 z-10 text-center">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
                         <Warehouse className="w-4 h-4 text-primary-400" />
-                        Class A Industrial Space
+                        70+ Class A Industrial Parks
                     </div>
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">{t('realEstatePage.heroTitle')} <span className="text-primary-500">{t('realEstatePage.heroTitleHighlight')}</span></h1>
                     <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-                        {t('realEstatePage.heroSubtitle')}
+                        Access over 75 million square feet of industrial inventory in Mexico's most critical border manufacturing hub.
                     </p>
                 </div>
             </section>
