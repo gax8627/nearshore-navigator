@@ -8,10 +8,11 @@
         "bookTour": "Book a Tour"
     },
     "hero": {
-        "title": "Tijuana Manufacturing & Logistics",
-        "subtitle": "The premier gateway for US manufacturers expanding into Mexico. Access world-class infrastructure and a skilled workforce just 20 minutes from San Diego.",
-        "cta_primary": "Book an Industrial Tour",
-        "cta_secondary": "Get a Site Assessment"
+        "title": "Baja Industrial Roadmap",
+        "titleHighlight": "Navigator",
+        "subtitle": "Objective brokerage and strategic matchmaking. We connect US manufacturers with world-class facilities and vetted partners across Baja California.",
+        "cta_primary": "Map Your Expansion",
+        "cta_secondary": "Get Broker Audit"
     },
     "stats": {
         "distance": "Distance from San Diego",
@@ -337,5 +338,13 @@
         "step4Desc": "Processed via specialized lanes and handed over to US carriers in San Diego.",
         "formTitle": "Section 321 Consultation",
         "formSubtitle": "Schedule a call to discuss your 2026 de minimis strategy and alternative routing."
+    },
+    "broker": {
+        "advisorTitle": "Objective Advisor",
+        "advisorDesc": "We don't own the buildings; we navigate the market to find you the perfect fit.",
+        "matchmakingTitle": "Expert Matchmaking",
+        "matchmakingDesc": "Connecting you with vetted CMs and shelter providers based on performance data.",
+        "networkTitle": "Vetted Network",
+        "networkDesc": "Direct access to 70+ industrial parks and top-tier logistics operators."
     }
 }

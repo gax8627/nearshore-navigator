@@ -8,17 +8,11 @@
         "bookTour": "预约参观"
     },
     "hero": {
-        "title": "墨西哥下加州工业近岸外包",
-        "subtitle": "美国制造商向墨西哥扩张的首选门户。在距离圣地亚哥仅 20 分钟路程的地方，获取世界级的设施和熟练的劳动力。",
-        "cta_primary": "预约工厂参观",
-        "cta_secondary": "获取选址评估",
-        "industry_spotlight": "行业专业知识",
-        "med_device": "医疗器械",
-        "med_device_desc": "ISO 13485 环境及 I-III 类组件组装网络。",
-        "aerospace": "航空航天与国防",
-        "aerospace_desc": "AS9100 认证的精密加工和 MRO 枢纽。",
-        "electronics": "高端电子产品",
-        "electronics_desc": "多品种、小批量 SMT 生产线及复杂 PCB 组装伙伴。"
+        "title": "下加州工业路线图",
+        "titleHighlight": "领航者",
+        "subtitle": "客观的经纪与战略匹配。我们将美国制造商与下加州世界级设施和经过验证的合作伙伴联系起来。",
+        "cta_primary": "规划您的扩张",
+        "cta_secondary": "获取经纪审计"
     },
     "stats": {
         "distance": "距离圣地亚哥",
@@ -341,5 +335,13 @@
         "step4Desc": "通过专门通道处理并在圣地亚哥移交给美国承运人。",
         "formTitle": "Section 321 咨询",
         "formSubtitle": "预约电话会议，讨论您的 2026 最低限额豁免策略和替代方案。"
+    },
+    "broker": {
+        "advisorTitle": "客观顾问",
+        "advisorDesc": "我们不拥有建筑；我们为您在市场中寻找最完美的匹配。",
+        "matchmakingTitle": "专家匹配",
+        "matchmakingDesc": "根据绩效数据将您 with 经过验证的 CM 和 Shelter 服务商联系起来。",
+        "networkTitle": "经验证的网络",
+        "networkDesc": "直接对接 70 多个工业园区和顶级物流运营商。"
     }
 }

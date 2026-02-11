@@ -7,7 +7,7 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { StatsGrid } from "@/components/StatsGrid";
 import { ServiceCard } from "@/components/ServiceCard";
 import { BlogCard } from "@/components/BlogCard";
-import { Warehouse, Globe2, Cog, Truck, Headset } from "lucide-react"; // Import icons
+import { Warehouse, Globe2, Cog, Truck, Headset, Users } from "lucide-react"; // Import icons
 import { NewsletterBanner } from "@/components/NewsletterBanner";
 import { FounderBlock } from "@/components/FounderBlock";
 import { useRef } from "react";
@@ -111,21 +111,26 @@ export default function Home() {
                 aria-label={t('hero.title')}
                 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight drop-shadow-2xl flex flex-wrap gap-x-3 md:gap-x-4 max-w-4xl"
             >
-              {t('hero.title').split(' ').map((word, i) => {
-                const isHighlight = word.toLowerCase().includes('nearshoring');
-                return (
+              {t('hero.title').split(' ').map((word, i) => (
                   <motion.span
                     key={i}
                     variants={{
                         hidden: { opacity: 0, y: 50, rotate: 5 },
                         visible: { opacity: 1, y: 0, rotate: 0, transition: { type: "spring", stiffness: 100, damping: 20 } }
                     }}
-                    className={isHighlight ? "text-primary-500 text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-200" : ""}
                   >
                     {word}
                   </motion.span>
-                )
-              })}
+              ))}
+              <motion.span
+                  variants={{
+                      hidden: { opacity: 0, y: 50, rotate: 5 },
+                      visible: { opacity: 1, y: 0, rotate: 0, transition: { type: "spring", stiffness: 100, damping: 20 } }
+                  }}
+                  className="text-primary-500 text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-200"
+              >
+                  {t('hero.titleHighlight')}
+              </motion.span>
             </motion.h1>
             
             <motion.p 
@@ -133,7 +138,7 @@ export default function Home() {
                     hidden: { opacity: 0, y: 20 },
                     visible: { opacity: 1, y: 0 }
                 }}
-                className="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl leading-relaxed drop-shadow-lg"
+                className="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl leading-relaxed font-light drop-shadow-lg"
             >
               {t('hero.subtitle')}
             </motion.p>
@@ -180,8 +185,32 @@ export default function Home() {
         />
       </section>
 
+      {/* Broker Value Proposition */}
+      <section className="container mx-auto px-4 relative z-20 -mt-12">
+        <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
+            {[
+                { title: t('broker.advisorTitle'), desc: t('broker.advisorDesc'), icon: <Globe2 className="text-primary-500" /> },
+                { title: t('broker.matchmakingTitle'), desc: t('broker.matchmakingDesc'), icon: <Users className="text-primary-500" /> },
+                { title: t('broker.networkTitle'), desc: t('broker.networkDesc'), icon: <Warehouse className="text-primary-500" /> }
+            ].map((item, i) => (
+                <div key={i} className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl p-8 rounded-3xl border border-white/20 dark:border-gray-700/50 shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div className="w-12 h-12 bg-primary-500/10 rounded-2xl flex items-center justify-center mb-6">
+                        {item.icon}
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">{item.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed italic">"{item.desc}"</p>
+                </div>
+            ))}
+        </motion.div>
+      </section>
+
       {/* Stats Section */}
-      <section className="container mx-auto px-4 relative z-20">
+      <section className="container mx-auto px-4">
         <StatsGrid />
       </section>
 

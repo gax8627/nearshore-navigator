@@ -1,21 +1,33 @@
+"use client";
+
 import { BlogCard } from "@/components/BlogCard";
 import Image from "next/image";
 import { useLanguage } from "@/app/context/LanguageContext";
-import { TrendingUp, Users, ShieldCheck, AlertCircle } from "lucide-react";
-
-export const metadata = {
-    title: "Insights | Nearshoring Blog",
-    description: "Guides, news, and analysis on manufacturing and industrial real estate in Baja California.",
-};
-
+import { useEffect, useState } from "react";
+import { getMarketInsights } from "@/lib/mra-service";
 import { BLOG_POSTS } from "@/app/constants/blog-data";
 import { MRA_DATA } from "@/app/constants/mra-data";
 
 const posts = BLOG_POSTS;
 const mra = MRA_DATA;
 
+// This is a client component
 export default function InsightsPage() {
     const { t, language } = useLanguage();
+    const [insights, setInsights] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        async function fetchInsights() {
+            const data = await getMarketInsights();
+            setInsights(data);
+            setLoading(false);
+        }
+        fetchInsights();
+    }, []);
+
+    const mra = MRA_DATA;
+
     return (
         <div className="pb-20 overflow-hidden">
             {/* Hero Section */}
@@ -33,14 +45,14 @@ export default function InsightsPage() {
 
                 <div className="container mx-auto px-4 z-10 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Nearshore Insights</h1>
-                    <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-                        Expert analysis and guides to help you navigate the Mexican industrial landscape.
+                    <p className="text-xl text-gray-200 max-w-2xl mx-auto font-light leading-relaxed">
+                        Expert analysis and strategic roadmaps to help you navigate the Mexican industrial landscape.
                     </p>
                 </div>
             </section>
 
             <div className="container mx-auto px-4 mt-12">
-                {/* Market Pulse Dashboard */}
+                {/* Market Pulse Dashboard (Dynamic) */}
                 <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 border border-gray-100 dark:border-gray-700 shadow-xl mb-16 relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/5 rounded-full blur-3xl -mr-32 -mt-32" />
                     
@@ -48,51 +60,50 @@ export default function InsightsPage() {
                         <div>
                             <div className="inline-flex items-center gap-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
                                 <TrendingUp className="w-3 h-3" />
-                                Real-Time Market Pulse
+                                {t('broker.advisorTitle')} Pulse
                             </div>
                             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Baja Nearshore Intelligence</h2>
-                            <p className="text-gray-600 dark:text-gray-400">Synthesized data from {mra.auditSource}.</p>
+                            <p className="text-gray-600 dark:text-gray-400">Synthesized data from vetted broker network.</p>
                         </div>
                         <div className="flex items-center gap-3 text-sm text-gray-500">
                             <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" /> Live Audit Data</span>
-                            <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-xs font-medium">Updated {mra.lastUpdated}</span>
+                            <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-xs font-medium">Updated 2026-02</span>
                         </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-                        {mra.highlights.map((item) => (
-                            <div 
-                                key={item.id} 
-                                className={`p-5 rounded-2xl border ${
-                                    item.category === 'HotTopic' 
-                                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20 border-transparent' 
-                                    : 'bg-gray-50 dark:bg-gray-900/50 border-gray-100 dark:border-gray-800'
-                                }`}
-                            >
-                                <h3 className={`text-sm font-bold uppercase mb-4 flex items-center gap-2 ${item.category === 'HotTopic' ? 'opacity-80' : 'text-gray-500'}`}>
-                                    {item.category === 'Sentiment' && <Users className="w-4 h-4" />}
-                                    {item.category === 'Investment' && <ShieldCheck className="w-4 h-4" />}
-                                    {item.category === 'Constraint' && <AlertCircle className="w-4 h-4" />}
-                                    {item.label}
-                                </h3>
-                                <div className={`text-2xl font-bold mb-1 ${item.category === 'HotTopic' ? '' : 'text-gray-900 dark:text-white'}`}>
-                                    {item.value}
+                        {loading ? (
+                            Array(4).fill(0).map((_, i) => (
+                                <div key={i} className="h-48 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-2xl" />
+                            ))
+                        ) : (
+                            insights.map((item) => (
+                                <div 
+                                    key={item.id} 
+                                    className={`p-6 rounded-2xl border transition-all duration-300 hover:shadow-xl ${
+                                        item.sentiment === 'caution' 
+                                        ? 'bg-amber-50 dark:bg-amber-900/10 border-amber-100 dark:border-amber-900/30' 
+                                        : 'bg-gray-50 dark:bg-gray-900/50 border-gray-100 dark:border-gray-800'
+                                    }`}
+                                >
+                                    <div className="flex justify-between items-start mb-4">
+                                        <h3 className="text-xs font-black uppercase tracking-widest text-gray-400">
+                                            {item.source}
+                                        </h3>
+                                        <span className={`w-2 h-2 rounded-full ${item.sentiment === 'caution' ? 'bg-amber-500' : 'bg-green-500'}`} />
+                                    </div>
+                                    <div className="text-xl font-bold mb-2 text-gray-900 dark:text-white leading-tight">
+                                        {item.title}
+                                    </div>
+                                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                        {item.impact}
+                                    </p>
+                                    <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700 text-[10px] font-bold text-gray-400">
+                                        OBSERVED: {item.date}
+                                    </div>
                                 </div>
-                                {item.category === 'Sentiment' && (
-                                    <div className="w-full bg-gray-200 dark:bg-gray-700 h-1.5 rounded-full overflow-hidden">
-                                        <div className="bg-green-500 h-full w-[85%]" />
-                                    </div>
-                                )}
-                                {item.change && (
-                                    <div className={`text-xs font-bold ${item.trend === 'up' ? 'text-green-500' : 'text-orange-500'}`}>
-                                        {item.change}
-                                    </div>
-                                )}
-                                <p className={`text-xs mt-3 ${item.category === 'HotTopic' ? 'opacity-90 leading-relaxed' : 'text-gray-500'}`}>
-                                    {item.description}
-                                </p>
-                            </div>
-                        ))}
+                            ))
+                        )}
                     </div>
                 </div>
 
@@ -101,7 +112,7 @@ export default function InsightsPage() {
                 </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {posts.map((post) => (
+                {BLOG_POSTS.map((post) => (
                     <BlogCard key={post.slug} post={post} />
                 ))}
                 </div>

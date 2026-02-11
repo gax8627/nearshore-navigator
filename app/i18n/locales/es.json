@@ -8,17 +8,11 @@
         "bookTour": "Reservar Tour"
     },
     "hero": {
-        "title": "Manufactura y Logística en Tijuana",
-        "subtitle": "La puerta de entrada principal para fabricantes de EE. UU. que se expanden a México. Acceda a infraestructura de clase mundial y una fuerza laboral calificada a solo 20 minutos de San Diego.",
-        "cta_primary": "Reservar un Tour Industrial",
-        "cta_secondary": "Obtener Evaluación de Sitio",
-        "industry_spotlight": "Especialización por Industria",
-        "med_device": "Dispositivos Médicos",
-        "med_device_desc": "Entornos ISO 13485 y red de ensamblaje Clase I-III.",
-        "aerospace": "Aeroespacial y Defensa",
-        "aerospace_desc": "Centro de mecanizado de precisión y MRO certificado AS9100.",
-        "electronics": "Electrónica de Alta Gama",
-        "electronics_desc": "Líneas SMT de alta mezcla y socios de ensamblaje de PCB complejos."
+        "title": "Hoja de Ruta Industrial",
+        "titleHighlight": "Navegador",
+        "subtitle": "Corretaje objetivo y emparejamiento estratégico. Conectamos fabricantes de EE. UU. con instalaciones de clase mundial y socios verificados en Baja California.",
+        "cta_primary": "Mapear su Expansión",
+        "cta_secondary": "Obtener Auditoría de Bróker"
     },
     "stats": {
         "distance": "Distancia desde San Diego",
@@ -339,5 +333,13 @@
         "step4Desc": "Procesado a través de carriles especializados y entregado a transportistas de EE. UU. en San Diego.",
         "formTitle": "Consulta de Sección 321",
         "formSubtitle": "Programe una llamada para discutir su estrategia de de minimis 2026 y rutas alternativas."
+    },
+    "broker": {
+        "advisorTitle": "Asesor Objetivo",
+        "advisorDesc": "No somos dueños de los edificios; navegamos el mercado para encontrarle el ajuste perfecto.",
+        "matchmakingTitle": "Matchmaking Experto",
+        "matchmakingDesc": "Conectándolo con CMs verificados y proveedores de shelter basados en datos de desempeño.",
+        "networkTitle": "Red Verificada",
+        "networkDesc": "Acceso directo a más de 70 parques industriales y operadores logísticos de primer nivel."
     }
 }

@@ -10,7 +10,7 @@ import { CheckCircle2, MapPin, Factory, Users, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function AboutPage() {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -50,7 +50,7 @@ export default function AboutPage() {
                     className="max-w-4xl mx-auto"
                 >
                     <span className="inline-block py-1.5 px-4 rounded-full bg-primary-500/20 backdrop-blur-md text-primary-200 border border-primary-500/30 text-sm font-bold tracking-wider uppercase mb-8">
-                        About Nearshore Navigator
+                        {t('broker.advisorTitle')} | Nearshore Navigator
                     </span>
                     <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
                         {t('about.heroTitle1')}<br />
