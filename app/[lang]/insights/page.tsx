@@ -3,6 +3,7 @@
 import { BlogCard } from "@/components/BlogCard";
 import Image from "next/image";
 import { useLanguage } from "@/app/context/LanguageContext";
+import { TrendingUp } from "lucide-react";
 import { useEffect, useState } from "react";
 import { getMarketInsights } from "@/lib/mra-service";
 import { BLOG_POSTS } from "@/app/constants/blog-data";
