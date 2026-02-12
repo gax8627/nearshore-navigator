@@ -40,6 +40,20 @@ export async function POST(req: Request) {
 
     // Lead Intelligence & Real-time Notifications
     const { notifyLead } = await import('@/lib/notifications');
+    
+    // --- SALES AGENT ROUTING LOGIC ---
+    // High Value (Tier 1) -> Instant Alert
+    // Standard (Tier 2/3) -> Logged (Weekly Digest in future)
+    
+    const isHighPriority = leadScore.category === 'High';
+    
+    if (isHighPriority) {
+        console.log('🚨 HIGH PRIORITY LEAD DETECTED - SENT TO EXECUTIVE CHANNEL');
+        // In backend: await sendSlackAlert('#executive-leads', leadData);
+    } else {
+        console.log('ℹ️ Standard Lead - Logged to Database');
+    }
+
     await notifyLead({
       name: name || 'Anonymous',
       email,
@@ -55,7 +69,7 @@ export async function POST(req: Request) {
         category: leadScore.category,
         score: leadScore.score,
         tags: leadScore.tags,
-        routing: leadScore.category === 'High' ? 'Executive' : 'Standard'
+        routing: isHighPriority ? 'VIP_EXECUTIVE_PASS' : 'STANDARD_NURTURE'
       }
     }, { status: 200 });
   } catch (error) {

@@ -32,7 +32,7 @@ export default function Section321Guide() {
                         {t('s321.regulatoryAlert')}
                     </motion.div>
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                        {t('s321.heroTitle')} <span className="text-blue-400">{t('s321.heroTitleHighlight')}</span>
+                        {t('s321.heroTitle')} <span className="text-blue-400">Distribution Center Guide</span>
                     </h1>
                     <p className="text-xl text-gray-200 max-w-2xl mx-auto">
                         {t('s321.heroSubtitle')}
@@ -93,7 +93,7 @@ export default function Section321Guide() {
                         </section>
 
                         <section>
-                            <h2 className="text-3xl font-bold mb-6">{t('s321.processTitle')}</h2>
+                            <h2 className="text-3xl font-bold mb-6">The Section 321 Distribution Process</h2>
                             <div className="space-y-8">
                                 {[
                                     { step: 1, title: t('s321.step1Title'), desc: t('s321.step1Desc') },

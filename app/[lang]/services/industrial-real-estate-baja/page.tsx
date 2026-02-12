@@ -69,7 +69,14 @@ export default function IndustrialRealEstatePage() {
                     <div className="relative z-10">
                         <div className="max-w-3xl mb-12">
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('realEstatePage.strategyTitle')}</h2>
-                            <p className="text-xl text-gray-300">{t('realEstatePage.strategySubtitle')}</p>
+                            <p className="text-xl text-gray-300 mb-6">{t('realEstatePage.strategySubtitle')}</p>
+                            <a 
+                                href="/en/services/distribution-centers-tijuana/section-321-guide" 
+                                className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 font-bold transition-colors group"
+                            >
+                                Exploring B2C? View our Section 321 Distribution Guide
+                                <span className="group-hover:translate-x-1 transition-transform">→</span>
+                            </a>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

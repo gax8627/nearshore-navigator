@@ -5,14 +5,40 @@ import { LeadForm } from "@/components/LeadForm";
 import { FounderBlock } from "@/components/FounderBlock";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { motion } from "framer-motion";
-import { ClipboardCheck, Target, BarChart3, ShieldCheck } from "lucide-react";
+import { ClipboardCheck, Target, BarChart3, ShieldCheck, Zap } from "lucide-react";
+import { useEffect, useState } from "react";
+import { getCFERates, CFERate } from "@/lib/cfe-service";
 
 export default function AssessmentPage() {
     const { t } = useLanguage();
+    const [cfeRates, setCfeRates] = useState<CFERate[]>([]);
+
+    useEffect(() => {
+        getCFERates().then(setCfeRates);
+    }, []);
 
     const factors = [
         { icon: <Target className="w-6 h-6" />, title: "Operational Fit", desc: "We evaluate your space, power, and labor requirements against current Baja market availability." },
-        { icon: <BarChart3 className="w-6 h-6" />, title: "Cost Modeling", desc: "Detailed comparison of labor, electricity, and lease rates vs. your current US or Asian operations." },
+        { 
+            icon: <BarChart3 className="w-6 h-6" />, 
+            title: "Cost Modeling", 
+            desc: t('assessment.costModelingDesc'),
+            extra: cfeRates.length > 0 && (
+                <div className="mt-3 bg-blue-500/10 border border-blue-500/20 rounded-lg p-3">
+                    <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase tracking-wider mb-2">
+                        <Zap className="w-3 h-3" /> {t('assessment.liveData')}
+                    </div>
+                    <div className="space-y-1">
+                        {cfeRates.map((r, idx) => (
+                            <div key={idx} className="flex justify-between text-xs">
+                                <span className="text-gray-500 dark:text-gray-400">{r.category.split(' ')[0]}</span>
+                                <span className="font-mono font-bold text-gray-900 dark:text-white">${r.rate} {r.currency}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )
+        },
         { icon: <ClipboardCheck className="w-6 h-6" />, title: "Risk Assessment", desc: "Identifying potential regulatory, logistics, or infrastructure bottlenecks for your specific industry." },
         { icon: <ShieldCheck className="w-6 h-6" />, title: "Compliance Audit", desc: "Ensuring your business model aligns with IMMEX, Section 321, or other applicable Mexican trade laws." }
     ];
@@ -67,6 +93,7 @@ export default function AssessmentPage() {
                                     </div>
                                     <h3 className="font-bold text-gray-900 dark:text-white mb-2">{factor.title}</h3>
                                     <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{factor.desc}</p>
+                                    {factor.extra}
                                 </div>
                             ))}
                         </div>

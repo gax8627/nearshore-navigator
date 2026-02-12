@@ -113,6 +113,10 @@
         "success_title": "Thank You!",
         "success_message": "We've received your inquiry. A Nearshore Navigator expert will contact you shortly."
     },
+    "assessment": {
+        "liveData": "Live CFE Industrial Rates",
+        "costModelingDesc": "Detailed comparison of labor, real-time CFE electricity, and lease rates vs. your current operations."
+    },
     "trustedBy": "Trusted by Global Leaders in Baja",
     "privacy": {
         "title": "Privacy Policy",
@@ -313,8 +317,8 @@
         "regulatoryAlert": "2026 Regulatory Update",
         "heroTitle": "Section 321",
         "heroTitleHighlight": "Master Guide",
-        "heroSubtitle": "Navigate the 2025 de minimis suspension and discover compliant alternative fulfillment strategies in Mexico.",
-        "whatIsTitle": "The 2026 Landscape",
+        "heroSubtitle": "Navigate the 2025 de minimis suspension and discover compliant Section 321 distribution strategies in Mexico.",
+        "whatIsTitle": "Section 321 Distribution in 2026",
         "whatIsDesc": "Section 321 has historically been a massive advantage for e-commerce. However, recent US Customs suspensions have changed the rules. Understanding the pivot to IMMEX and Bonded strategies is now mandatory for cost-effective fulfillment.",
         "suspensionTitle": "August 2025 Suspension Notice",
         "suspensionDesc": "CBP has fully suspended Section 321 de minimis for commercial shipments. All B2C entries now require full customs processing, making 'Alternative Routing' the new standard.",
