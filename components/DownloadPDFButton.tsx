@@ -31,14 +31,30 @@ export function DownloadPDFButton() {
             Need a file to email? Download the generated PDF directly.
         </p>
         
-        <PDFDownloadLink document={<QuestionnairePDF />} fileName="Nearshore_Navigator_Questionnaire_2026.pdf">
-            {({ loading }: { loading: boolean }) => (
-                <Button className="w-full" disabled={loading}>
-                     <Download className="w-4 h-4 mr-2" />
-                     {loading ? 'Generating Document...' : 'Download PDF File'}
-                </Button>
-            )}
-        </PDFDownloadLink>
+        <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex-1">
+                <PDFDownloadLink document={<QuestionnairePDF />} fileName="Nearshore_Navigator_Questionnaire_2026.pdf">
+                    {({ loading }: { loading: boolean }) => (
+                        <Button className="w-full" disabled={loading}>
+                            <Download className="w-4 h-4 mr-2" />
+                            {loading ? 'Generating PDF...' : 'Download PDF File'}
+                        </Button>
+                    )}
+                </PDFDownloadLink>
+            </div>
+            <div className="flex-1">
+                <a 
+                    href="/documents/Nearshore_Navigator_Questionnaire_2026.docx" 
+                    download
+                    className="block w-full"
+                >
+                    <Button variant="secondary" className="w-full">
+                        <FileText className="w-4 h-4 mr-2" />
+                        Download Word File
+                    </Button>
+                </a>
+            </div>
+        </div>
     </div>
   );
 }
