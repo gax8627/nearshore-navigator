@@ -4,12 +4,12 @@ import Image from "next/image";
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { LeadForm } from "@/components/LeadForm";
-import { CheckCircle2, Truck, Globe, Clock, DollarSign, Package } from "lucide-react";
+import { CheckCircle2, Truck, Globe, Clock, DollarSign, Package, ArrowRight } from "lucide-react";
 import { FounderBlock } from "@/components/FounderBlock";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function DistributionPage() {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -110,10 +110,27 @@ export default function DistributionPage() {
                                     <p className="text-primary-100">{t('distributionPage.guideDesc')}</p>
                                 </div>
                                 <a 
-                                    href={`/${t('lang')}/services/distribution-centers-tijuana/section-321-guide`}
+                                    href={`/${language}/services/distribution-centers-tijuana/section-321-guide`}
                                     className="bg-white text-primary-600 px-6 py-3 rounded-lg font-bold hover:bg-primary-50 transition-colors whitespace-nowrap"
                                 >
                                     Fulfillment & Section 321 Guide
+                                </a>
+                            </motion.div>
+
+                            <motion.div 
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                className="bg-gray-900 text-white p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl border border-gray-800"
+                            >
+                                <div>
+                                    <h3 className="text-xl font-bold mb-2 text-blue-400">{t('distributionPage.questionnaireCTA')}</h3>
+                                    <p className="text-gray-400">{t('distributionPage.questionnaireDesc')}</p>
+                                </div>
+                                <a 
+                                    href={`/${language}/resources/questionnaire`}
+                                    className="bg-primary-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-primary-700 transition-colors whitespace-nowrap flex items-center gap-2"
+                                >
+                                    Launch Virtual Assessment <ArrowRight className="w-4 h-4" />
                                 </a>
                             </motion.div>
                         </section>
