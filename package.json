@@ -9,18 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/google": "^3.0.29",
     "@react-pdf/renderer": "^4.3.2",
+    "@tavily/core": "^0.7.1",
+    "ai": "^6.0.89",
     "clsx": "^2.1.1",
     "csv-parse": "^6.1.0",
     "csv-stringify": "^6.6.0",
     "docx": "^9.5.1",
     "framer-motion": "^12.26.2",
+    "inngest": "^3.52.0",
     "lucide-react": "^0.562.0",
     "next": "^16.1.6",
     "puppeteer": "^24.36.1",
     "react": "^18",
     "react-dom": "^18",
-    "tailwind-merge": "^3.4.0"
+    "tailwind-merge": "^3.4.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@types/node": "^20",
