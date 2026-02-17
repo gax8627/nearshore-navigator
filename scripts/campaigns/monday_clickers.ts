@@ -64,9 +64,17 @@ function wrapHtml(content: string, ctaText: string, ctaUrl: string) {
           <!-- Main Card Shell -->
           <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 640px; border-radius: 32px; overflow: hidden; border: 1px solid ${glassBorder};" bgcolor="${glassBg}">
             <!-- Passive Motion: Liquid Accent top GIF -->
+            <!-- Passive Motion: Liquid Accent top (CSS Gradient + Animation Fallback) -->
             <tr>
-              <td height="12" bgcolor="${primaryGreen}" style="background-color: ${primaryGreen};">
-                <img src="${liquidGif}" width="640" height="12" style="display: block; width: 100%; height: 12px; border: 0;" alt="" />
+              <td height="12" bgcolor="${primaryGreen}" style="background: linear-gradient(90deg, ${primaryGreen} 0%, ${primaryGreen} 40%, #ffffff 50%, ${primaryGreen} 60%, ${primaryGreen} 100%); background-size: 200% 100%; animation: scan 3s linear infinite;">
+                <!-- Fallback for clients stripping CSS -->
+                <div style="height: 12px; width: 100%; background-color: ${primaryGreen}; opacity: 0; display: none;">&nbsp;</div>
+                <style>
+                  @keyframes scan {
+                    0% { background-position: 200% 0; }
+                    100% { background-position: -200% 0; }
+                  }
+                </style>
               </td>
             </tr>
             
