@@ -1,0 +1,9 @@
+{
+  "monthly_limit": 5000,
+  "usage": [
+    {
+      "month": "2026-02",
+      "count": 0
+    }
+  ]
+}
