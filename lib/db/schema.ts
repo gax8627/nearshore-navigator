@@ -28,6 +28,20 @@ export const leads = pgTable('leads', {
   score: integer('score').default(0),
   category: varchar('category', { length: 50 }).default('Standard'), // High, Standard, Low
   tags: text('tags').notNull().default('[]'),
+  source: varchar('source', { length: 50 }).default('website'), // website, csv_upload, manual
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+});
+
+// ─── Campaigns ───────────────────────────────────────────────
+export const campaigns = pgTable('campaigns', {
+  id: serial('id').primaryKey(),
+  name: varchar('name', { length: 255 }).notNull(),
+  subject: varchar('subject', { length: 500 }).notNull(),
+  content: text('content').notNull(),
+  status: varchar('status', { length: 50 }).notNull().default('draft'), // draft, sent
+  segment: varchar('segment', { length: 50 }).notNull().default('all'),
+  stats: text('stats').notNull().default('{"sent":0,"opened":0,"clicked":0}'),
+  sentAt: timestamp('sent_at'),
   createdAt: timestamp('created_at').notNull().defaultNow(),
 });
 
@@ -36,3 +50,5 @@ export type Post = typeof posts.$inferSelect;
 export type NewPost = typeof posts.$inferInsert;
 export type Lead = typeof leads.$inferSelect;
 export type NewLead = typeof leads.$inferInsert;
+export type Campaign = typeof campaigns.$inferSelect;
+export type NewCampaign = typeof campaigns.$inferInsert;

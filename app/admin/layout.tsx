@@ -8,7 +8,7 @@ import { LayoutDashboard, FileText, Users, Settings, Shield, LogOut } from "luci
 const navItems = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
   { label: "Posts", href: "/admin/posts", icon: FileText },
-  { label: "Leads", href: "/admin/leads", icon: Users },
+  { label: "CRM & Leads", href: "/admin/crm", icon: Users },
   { label: "Settings", href: "/admin/settings", icon: Settings },
 ];
 
