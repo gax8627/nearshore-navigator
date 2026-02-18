@@ -59,7 +59,8 @@ export const brevo = {
     sender?: { email: string; name?: string };
     scheduledAt?: string;
   }) {
-    if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
+    const apiKey = process.env.BREVO_API_KEY;
+    if (!apiKey) throw new Error('BREVO_API_KEY not configured');
 
     const defaultSender = { email: 'denisse@nearshorenavigator.com', name: 'Denisse Gastelum' };
 
@@ -77,7 +78,7 @@ export const brevo = {
     const response = await fetch(`${BREVO_API_URL}/smtp/email`, {
       method: 'POST',
       headers: {
-        'api-key': BREVO_API_KEY,
+        'api-key': apiKey,
         'Content-Type': 'application/json',
         'Accept': 'application/json',
       },
