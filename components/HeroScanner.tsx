@@ -44,10 +44,10 @@ export const HeroScanner = ({ src, alt }: HeroScannerProps) => {
 
   // Data nodes positioning and labels
   const dataNodes = [
-    { top: "25%", left: "40%", label: "Structural Sync: 99.8%", value: "32.42° N, 117.03° W" },
-    { top: "45%", left: "60%", label: "Baja Industrial Hub", value: "Class A Distribution" },
-    { top: "60%", left: "30%", label: "Grid Capacity: Verified", value: "115kV Substation" },
-    { top: "75%", left: "70%", label: "Logistics Latency: <15ms", value: "Border Connection: Direct" },
+    { top: "30%", left: "20%", label: "Solar Array: Active", value: "Generating 4.2MW" },
+    { top: "50%", left: "55%", label: "Class A Warehousing", value: "Occupancy: Available" },
+    { top: "65%", left: "25%", label: "Logistics Hub", value: "Truck Bays: 42" },
+    { top: "40%", left: "80%", label: "Grid Connectivity", value: "Substation: Direct" },
   ];
 
   return (

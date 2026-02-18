@@ -78,8 +78,8 @@ export default function HomeClient() {
             className="absolute inset-0 z-0"
         >
           <HeroScanner 
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2600"
-            alt="Baja California Industrial Skyline"
+            src="https://images.unsplash.com/photo-1565514020125-62d22a578a08?auto=format&fit=crop&q=80&w=2600"
+            alt="Tijuana Industrial Park Aerial View with Solar Panels"
           />
         </motion.div>
 

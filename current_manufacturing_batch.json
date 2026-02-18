@@ -1,0 +1,72 @@
+[
+  {
+    "id": "208541000060239984",
+    "name": "Bill Farley",
+    "company": "ChemDiv",
+    "email": "bf@chemdiv.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060237827",
+    "name": "Bheema Paraselli",
+    "company": "Chemveda Life Sciences",
+    "email": "bheema@chemvedals.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279232",
+    "name": "Gregory Gosch",
+    "company": "ChromaCode",
+    "email": "ggosch@genecehealth.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060247678",
+    "name": "Malini Rajagopalan",
+    "company": "ChromaCode",
+    "email": "mrajagopalan@chromacode.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060237222",
+    "name": "William Hergonson",
+    "company": "Coast Calibration",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279184",
+    "name": "Bret Christensen",
+    "company": "DermTech",
+    "email": "bret.christensen@dermtech.com",
+    "industry": "Medical Devices & Equipment"
+  },
+  {
+    "id": "208541000060272551",
+    "name": "Bana Dio",
+    "company": "DermTech",
+    "email": "",
+    "industry": "Medical Devices & Equipment"
+  },
+  {
+    "id": "208541000060252133",
+    "name": "Allen Bryce",
+    "company": "Differentiated Therapeutics",
+    "email": "bryce@dxtherapeutics.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060242030",
+    "name": "Bryce Allen",
+    "company": "Differentiated Therapeutics",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060237826",
+    "name": "Victor Esch",
+    "company": "DNAe",
+    "email": "",
+    "industry": "Medical Devices & Equipment"
+  }
+]

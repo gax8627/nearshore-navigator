@@ -1,0 +1,106 @@
+[
+  {
+    "email": "adam@abs-solutions.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-12T17:00:17.653+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "jacqueline.shea@inovio.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-12T16:53:57.348+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "mgresser@wildcatdiscovery.com",
+    "firstName": "Mark",
+    "lastName": "Gresser",
+    "company": "Wildcat Discovery Technologies",
+    "industry": "Research & Development",
+    "lastInteraction": "2026-02-12T16:53:06.903+01:00"
+  },
+  {
+    "email": "spelletier@evofem.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-12T16:51:19.672+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "lkirkpatrick@ensysce.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-12T17:17:17.178+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "ariell.ortega@bionano.com",
+    "firstName": "Ariell",
+    "lastName": "Ortega",
+    "company": "BioNano Genomics",
+    "industry": "Research & Development",
+    "lastInteraction": "2026-02-12T16:40:36.367+01:00"
+  },
+  {
+    "email": "ssaint@betabionics.com",
+    "firstName": "Sean",
+    "lastName": "Saint",
+    "company": "Beta Bionics",
+    "industry": "Research & Development",
+    "lastInteraction": "2026-02-12T16:39:14.804+01:00"
+  },
+  {
+    "email": "sarah@aviditybio.com",
+    "firstName": "Sarah",
+    "lastName": "Boyce",
+    "company": "Avidity Biosciences",
+    "industry": "Research & Development",
+    "lastInteraction": "2026-02-12T16:38:18.001+01:00"
+  },
+  {
+    "email": "jprzybylek@activcareliving.com",
+    "firstName": "Jeremy",
+    "lastName": "Przybylek",
+    "company": "ActivCare Living",
+    "industry": "Hospitals & Physicians Clinics",
+    "lastInteraction": "2026-02-12T16:34:47.964+01:00"
+  },
+  {
+    "email": "egonzalez@activcareliving.com",
+    "firstName": "Espy",
+    "lastName": "Gonzalez",
+    "company": "ActivCare Living",
+    "industry": "Hospitals & Physicians Clinics",
+    "lastInteraction": "2026-02-12T16:36:35.382+01:00"
+  },
+  {
+    "email": "jmares@activcareliving.com",
+    "firstName": "Jennifer",
+    "lastName": "Mares",
+    "company": "ActivCare Living",
+    "industry": "Hospitals & Physicians Clinics",
+    "lastInteraction": "2026-02-12T16:36:34.508+01:00"
+  },
+  {
+    "email": "renee@activcareliving.com",
+    "firstName": "Renee",
+    "lastName": "Barnard",
+    "company": "ActivCare Living",
+    "industry": "Hospitals & Physicians Clinics",
+    "lastInteraction": "2026-02-12T16:35:06.034+01:00"
+  },
+  {
+    "email": "rcox@epirium.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-12T17:22:20.234+01:00",
+    "missingDetails": true
+  }
+]

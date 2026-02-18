@@ -1,0 +1,62 @@
+[
+  {
+    "id": "208541000060252177",
+    "name": "Arthur Reese",
+    "company": "3E L J Enterprises",
+    "email": ""
+  },
+  {
+    "id": "208541000060237211",
+    "name": "Greg Jacobs",
+    "company": "ActivCare Living",
+    "email": ""
+  },
+  {
+    "id": "208541000060276195",
+    "name": "John Boodhansingh",
+    "company": "Amada Senior Care",
+    "email": "john.b@amadaseniorcare.com"
+  },
+  {
+    "id": "208541000060259698",
+    "name": "Lawson Macartney",
+    "company": "Ambrx",
+    "email": "lawson.macartney@ambrx.com"
+  },
+  {
+    "id": "208541000060259652",
+    "name": "Daniel O’Connor",
+    "company": "Ambrx",
+    "email": "daniel.oconnor@ambrx.com"
+  },
+  {
+    "id": "208541000060279202",
+    "name": "William Rice",
+    "company": "Aptose Biosciences",
+    "email": "william.rice@aptose.com"
+  },
+  {
+    "id": "208541000060279607",
+    "name": "Laurie Edwards-Tate",
+    "company": "At Your Home Familycare",
+    "email": "laurie@edwards-tate.com"
+  },
+  {
+    "id": "208541000060239993",
+    "name": "Sarah Boyce",
+    "company": "Avidity Biosciences",
+    "email": "sarah@aviditybio.com"
+  },
+  {
+    "id": "208541000060309100",
+    "name": "Meghan Redfield",
+    "company": "Axsome Therapeutics",
+    "email": "mredfield@axsome.com"
+  },
+  {
+    "id": "208541000060279239",
+    "name": "Sean Saint",
+    "company": "Beta Bionics",
+    "email": "ssaint@betabionics.com"
+  }
+]

@@ -1,0 +1,117 @@
+Reading file: /Users/gax8627/Downloads/leads/Leads_2026_02_17.xlsx
+
+✅ File Loaded Successfully
+Total Rows: 45047
+
+Columns detected:
+0: Record Id
+1: Is Converted
+2: Lead Owner.id
+3: Lead Owner
+4: Company
+5: First Name
+6: Last Name
+7: Title
+8: Email
+9: Phone
+10: Mobile
+11: Website
+12: Lead Source
+13: Industry
+14: No. of Employees
+15: Created By.id
+16: Created By
+17: Modified By.id
+18: Modified By
+19: Created Time
+20: Modified Time
+21: Lead Name
+22: Street
+23: City
+24: State
+25: Zip Code
+26: Country
+27: Description
+28: Email Opt Out
+29: Salutation
+30: ID/Status
+31: Referred By
+32: Last Activity Time
+33: Describe the process
+34: Products to be manufactured in Mexico
+35: Number of Direct Unskilled Workers
+36: Number of Direct Skilled Workers
+37: Number of Indirect Workers
+38: Number of Management Workers
+39: Estimated electrical power requirements (Kw/hr)
+40: Action Items
+41: Call to action
+42: Associations name
+43: CPI programs
+44: Phone Ext
+45: Campaign name
+46: Linkedin
+47: Other industry
+48: Result Campaigns
+49: Assign to Campaign
+50: Arizona Initiative
+51: Annual Sales
+52: Event Name
+53: Trade Show Name
+54: Triggered by / Interaction
+55: Marketing Touch 1
+56: Building Size (sq. ft.)
+57: 4 - Sales F/U - Sorry I missed you
+58: 1 - Introduction / Attract attention
+59: Converted Date Time
+60: 2 - Cost Analysis Offer
+61: 3 - Industry White Paper / Fact Sheet
+62: 5 - CPI Services offer
+63: First Visit
+64: Visitor Score
+65: Referrer
+66: Average Time Spent (Minutes)
+67: Most Recent Visit
+68: First Page Visited
+69: Number Of Chats
+70: Days Visited
+71: Attendees_Number
+72: 1 - Thank for Downloading / Introduction
+73: Mask Type
+74: Needed by date
+75: Lead Conversion Time
+76: Unsubscribed Mode
+77: Unsubscribed Time
+78: Converted Account.id
+79: Converted Account
+80: Converted Contact.id
+81: Converted Contact
+82: Converted Deal.id
+83: Converted Deal
+84: Receiving Newsletters
+85: 6 - Getting Event's Invites
+86: Cost Analysis Sent
+87: Cost Analysis Requested
+88: Linked In Accepted
+89: Linked In Requested
+90: Called L/VM
+91: Called Connected
+92: Linked In DM Responded
+93: Linked In DM Sent
+94: Change Log Time
+95: Locked
+96: Last Enriched Time
+97: Enrich Status
+98: Landing page
+99: Requested date
+100: Connected To.module
+101: Connected To.id
+
+Key Column Index Check:
+ - Email: 8
+ - First Name: 5
+ - Company: 4
+ - Industry: 13
+ - State: 24
+ - Country: 26
+ - Lead Status: NOT FOUND

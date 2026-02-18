@@ -1,0 +1,428 @@
+{
+  "denissem@co-production.net": {
+    "status": "opened",
+    "history": [
+      {
+        "type": "opened",
+        "date": "2026-02-12T17:19:33.776+01:00",
+        "subject": "meeting",
+        "messageId": "<202602121333.73910207521@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T17:19:33.776+01:00"
+  },
+  "adam@abs-solutions.com": {
+    "status": "clicked",
+    "history": [
+      {
+        "type": "clicked",
+        "date": "2026-02-12T17:00:17.653+01:00",
+        "subject": "meeting",
+        "messageId": "<202602121337.46657758575@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-02-12T17:00:17.172+01:00",
+        "subject": "meeting",
+        "messageId": "<202602121337.46657758575@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T17:00:17.653+01:00"
+  },
+  "kgottesdiener@primemedicine.com": {
+    "status": "opened",
+    "history": [
+      {
+        "type": "opened",
+        "date": "2026-02-12T17:00:07.794+01:00",
+        "subject": "Operational Scalability for Prime Editing",
+        "messageId": "<202602121551.34494386533@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T17:00:07.794+01:00"
+  },
+  "jacqueline.shea@inovio.com": {
+    "status": "clicked",
+    "history": [
+      {
+        "type": "clicked",
+        "date": "2026-02-12T16:53:57.348+01:00",
+        "subject": "Manufacturing Support for Inovio's DNA Medicines",
+        "messageId": "<202602121551.91155432373@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:53:31.211+01:00",
+        "subject": "Manufacturing Support for Inovio's DNA Medicines",
+        "messageId": "<202602121551.91155432373@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:53:57.348+01:00"
+  },
+  "jaballi@exagen.com": {
+    "status": "opened",
+    "history": [
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:52:31.108+01:00",
+        "subject": "Scaling Diagnostics Operations for Exagen",
+        "messageId": "<202602121551.27871697875@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:52:31.108+01:00"
+  },
+  "ccollard@herontx.com": {
+    "status": "opened",
+    "history": [
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:52:21.247+01:00",
+        "subject": "Supply Chain Resilience for Heron",
+        "messageId": "<202602121551.31860820049@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:52:21.247+01:00"
+  },
+  "mgresser@wildcatdiscovery.com": {
+    "status": "clicked",
+    "history": [
+      {
+        "type": "clicked",
+        "date": "2026-02-12T16:53:06.903+01:00",
+        "subject": "Accelerating Ops for Wildcat Discovery",
+        "messageId": "<202602121551.57051583971@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:51:39.577+01:00",
+        "subject": "Accelerating Ops for Wildcat Discovery",
+        "messageId": "<202602121551.57051583971@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:53:06.903+01:00"
+  },
+  "spelletier@evofem.com": {
+    "status": "clicked",
+    "history": [
+      {
+        "type": "clicked",
+        "date": "2026-02-12T16:51:28.099+01:00",
+        "subject": "Commercial Operations Support for Phexxi",
+        "messageId": "<202602121551.39417043980@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "clicked",
+        "date": "2026-02-12T16:51:19.672+01:00",
+        "subject": "Commercial Operations Support for Phexxi",
+        "messageId": "<202602121551.39417043980@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:51:18.022+01:00",
+        "subject": "Commercial Operations Support for Phexxi",
+        "messageId": "<202602121551.39417043980@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:51:19.672+01:00"
+  },
+  "lkirkpatrick@ensysce.com": {
+    "status": "clicked",
+    "history": [
+      {
+        "type": "clicked",
+        "date": "2026-02-12T17:17:17.179+01:00",
+        "subject": "Operational Support for Ensysce’s TAAP Platform",
+        "messageId": "<202602121551.42217758798@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "clicked",
+        "date": "2026-02-12T17:17:17.178+01:00",
+        "subject": "Operational Support for Ensysce’s TAAP Platform",
+        "messageId": "<202602121551.42217758798@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:51:15.335+01:00",
+        "subject": "Operational Support for Ensysce’s TAAP Platform",
+        "messageId": "<202602121551.42217758798@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T17:17:17.178+01:00"
+  },
+  "bryce@dxtherapeutics.com": {
+    "status": "opened",
+    "history": [
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:49:59.437+01:00",
+        "subject": "Operational Support for Differentiated Therapeutics",
+        "messageId": "<202602121548.63703867043@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:49:59.437+01:00"
+  },
+  "bherrera@bionano.com": {
+    "status": "opened",
+    "history": [
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:40:18.667+01:00",
+        "subject": "Product Operations Efficiency for BioNano",
+        "messageId": "<202602121539.96828242332@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:40:18.667+01:00"
+  },
+  "ariell.ortega@bionano.com": {
+    "status": "clicked",
+    "history": [
+      {
+        "type": "clicked",
+        "date": "2026-02-12T16:40:36.367+01:00",
+        "subject": "Scaling Support for BioNano's OGM Adoption",
+        "messageId": "<202602121539.26487285038@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:40:15.257+01:00",
+        "subject": "Scaling Support for BioNano's OGM Adoption",
+        "messageId": "<202602121539.26487285038@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:40:36.367+01:00"
+  },
+  "ssaint@betabionics.com": {
+    "status": "clicked",
+    "history": [
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:39:24.282+01:00",
+        "subject": "Supply Chain & Ops Support for Beta Bionics",
+        "messageId": "<202602121538.64002406622@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "clicked",
+        "date": "2026-02-12T16:39:14.804+01:00",
+        "subject": "Supply Chain & Ops Support for Beta Bionics",
+        "messageId": "<202602121538.64002406622@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:38:08.694+01:00",
+        "subject": "Supply Chain & Ops Support for Beta Bionics",
+        "messageId": "<202602121538.64002406622@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:39:14.804+01:00"
+  },
+  "mredfield@axsome.com": {
+    "status": "opened",
+    "history": [
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:38:07.424+01:00",
+        "subject": "Marketing Operations Support for Axsome",
+        "messageId": "<202602121537.43017898020@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:38:07.424+01:00"
+  },
+  "sarah@aviditybio.com": {
+    "status": "clicked",
+    "history": [
+      {
+        "type": "clicked",
+        "date": "2026-02-12T16:39:03.170+01:00",
+        "subject": "Operational Efficiency for Avidity's RNA Revolution",
+        "messageId": "<202602121537.11711147554@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "clicked",
+        "date": "2026-02-12T16:39:02.474+01:00",
+        "subject": "Operational Efficiency for Avidity's RNA Revolution",
+        "messageId": "<202602121537.11711147554@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "clicked",
+        "date": "2026-02-12T16:38:18.001+01:00",
+        "subject": "Operational Efficiency for Avidity's RNA Revolution",
+        "messageId": "<202602121537.11711147554@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:38:06.345+01:00",
+        "subject": "Operational Efficiency for Avidity's RNA Revolution",
+        "messageId": "<202602121537.11711147554@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:38:18.001+01:00"
+  },
+  "jprzybylek@activcareliving.com": {
+    "status": "clicked",
+    "history": [
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:37:09.555+01:00",
+        "subject": "Marketing Operations Support for ActivCare",
+        "messageId": "<202602121534.84102765958@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "clicked",
+        "date": "2026-02-12T16:36:43.774+01:00",
+        "subject": "Marketing Operations Support for ActivCare",
+        "messageId": "<202602121534.84102765958@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "clicked",
+        "date": "2026-02-12T16:34:47.964+01:00",
+        "subject": "Marketing Operations Support for ActivCare",
+        "messageId": "<202602121534.84102765958@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:34:26.892+01:00",
+        "subject": "Marketing Operations Support for ActivCare",
+        "messageId": "<202602121534.84102765958@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:34:47.964+01:00"
+  },
+  "egonzalez@activcareliving.com": {
+    "status": "clicked",
+    "history": [
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:36:47.156+01:00",
+        "subject": "Supporting ActivCare's Outreach Efforts",
+        "messageId": "<202602121534.78811709854@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "clicked",
+        "date": "2026-02-12T16:36:35.382+01:00",
+        "subject": "Supporting ActivCare's Outreach Efforts",
+        "messageId": "<202602121534.78811709854@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:34:30.378+01:00",
+        "subject": "Supporting ActivCare's Outreach Efforts",
+        "messageId": "<202602121534.78811709854@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:36:35.382+01:00"
+  },
+  "jmares@activcareliving.com": {
+    "status": "clicked",
+    "history": [
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:36:46.012+01:00",
+        "subject": "Sales Operations Efficiency for ActivCare",
+        "messageId": "<202602121534.16305510469@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "clicked",
+        "date": "2026-02-12T16:36:34.508+01:00",
+        "subject": "Sales Operations Efficiency for ActivCare",
+        "messageId": "<202602121534.16305510469@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:34:31.422+01:00",
+        "subject": "Sales Operations Efficiency for ActivCare",
+        "messageId": "<202602121534.16305510469@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:36:34.508+01:00"
+  },
+  "renee@activcareliving.com": {
+    "status": "clicked",
+    "history": [
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:36:45.523+01:00",
+        "subject": "Operational Support for ActivCare's Mission",
+        "messageId": "<202602121534.27136131612@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "clicked",
+        "date": "2026-02-12T16:36:33.442+01:00",
+        "subject": "Operational Support for ActivCare's Mission",
+        "messageId": "<202602121534.27136131612@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "clicked",
+        "date": "2026-02-12T16:35:06.034+01:00",
+        "subject": "Operational Support for ActivCare's Mission",
+        "messageId": "<202602121534.27136131612@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:34:40.740+01:00",
+        "subject": "Operational Support for ActivCare's Mission",
+        "messageId": "<202602121534.27136131612@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:35:06.034+01:00"
+  },
+  "alorenzana@absihc.com": {
+    "status": "opened",
+    "history": [
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:32:07.253+01:00",
+        "subject": "Streamlining ABS's Administrative Workflows",
+        "messageId": "<202602121531.89021800451@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:32:07.253+01:00"
+  },
+  "kevin@activcareliving.com": {
+    "status": "opened",
+    "history": [
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:30:38.805+01:00",
+        "subject": "Scalable Staffing & Operations for ActivCare's Memory Care Communities",
+        "messageId": "<202602121528.98863653561@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:28:38.120+01:00",
+        "subject": "Scalable Staffing & Operations for ActivCare's Memory Care Communities",
+        "messageId": "<202602121528.98863653561@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:28:38.120+01:00"
+  },
+  "zli@adarx.com": {
+    "status": "opened",
+    "history": [
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:30:15.117+01:00",
+        "subject": "Operational Efficiency for ADARx's RNA Pipeline",
+        "messageId": "<202602121528.84550604187@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-02-12T16:28:40.812+01:00",
+        "subject": "Operational Efficiency for ADARx's RNA Pipeline",
+        "messageId": "<202602121528.84550604187@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T16:28:40.812+01:00"
+  },
+  "rcox@epirium.com": {
+    "status": "clicked",
+    "history": [
+      {
+        "type": "clicked",
+        "date": "2026-02-12T17:22:20.234+01:00",
+        "subject": "Operational Strategy for Epirium",
+        "messageId": "<202602121551.51502186214@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-02-12T17:22:20.234+01:00"
+  }
+}

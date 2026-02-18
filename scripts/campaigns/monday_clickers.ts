@@ -12,16 +12,20 @@ import { hasEmailBudget, incrementEmailUsage, getEmailBudget } from '../../lib/e
 const CLICKERS_FILE = path.join(process.cwd(), 'segmented_leads/high_intent_clickers.json');
 const CSV_DIR = path.join(process.cwd(), 'segmented_leads');
 
-// Helper to get next Monday at 9 AM
-function getNextMonday() {
+// Helper to get the next optimal send time (Brevo limit: max 3 days in advance)
+function getOptimalSendTime() {
   const d = new Date();
-  d.setDate(d.getDate() + ((1 + 7 - d.getDay()) % 7)); // Next Monday
-  d.setHours(9, 0, 0, 0); // 9 AM
-  
-  // If today is Monday and it's past 9am, move to next week
-  if (d.getTime() < Date.now()) {
-    d.setDate(d.getDate() + 7);
+  const day = d.getDay(); // 0 = Sun, 1 = Mon, ..., 6 = Sat
+
+  // If Friday (5), Saturday (6), or Sunday (0) -> Schedule for Monday
+  if (day === 5 || day === 6 || day === 0) {
+     d.setDate(d.getDate() + ((1 + 7 - day) % 7));
+  } else {
+     // Mon-Thu -> Schedule for Tomorrow
+     d.setDate(d.getDate() + 1);
   }
+
+  d.setHours(9, 0, 0, 0); // 9 AM local time
   return d.toISOString();
 }
 
@@ -206,7 +210,7 @@ async function main() {
   }
 
   const clickers = JSON.parse(fs.readFileSync(CLICKERS_FILE, 'utf-8'));
-  const scheduledTime = getNextMonday();
+  const scheduledTime = getOptimalSendTime();
 
   console.log(`Processing ${clickers.length} clicks from your logs...`);
 

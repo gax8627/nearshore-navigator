@@ -1,0 +1,731 @@
+Found 104 remaining manufacturing leads.
+[
+  {
+    "id": "208541000060239984",
+    "name": "Bill Farley",
+    "company": "ChemDiv",
+    "email": "bf@chemdiv.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060237827",
+    "name": "Bheema Paraselli",
+    "company": "Chemveda Life Sciences",
+    "email": "bheema@chemvedals.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279232",
+    "name": "Gregory Gosch",
+    "company": "ChromaCode",
+    "email": "ggosch@genecehealth.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060247678",
+    "name": "Malini Rajagopalan",
+    "company": "ChromaCode",
+    "email": "mrajagopalan@chromacode.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060237222",
+    "name": "William Hergonson",
+    "company": "Coast Calibration",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279587",
+    "name": "Tree Alexander",
+    "company": "EAG Laboratories",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060251081",
+    "name": "Mitchell Stuart",
+    "company": "EAG Laboratories",
+    "email": "stuartmitchell@eurofinseag.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060241640",
+    "name": "Eric Graves",
+    "company": "EAG Laboratories",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060273315",
+    "name": "Eva Frankel",
+    "company": "ELEMENT BIOSCIENCES",
+    "email": "eva.frankel@elembio.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060273267",
+    "name": "Rachel Moore",
+    "company": "ELEMENT BIOSCIENCES",
+    "email": "rachel.moore@elembio.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060273230",
+    "name": "Molly He",
+    "company": "ELEMENT BIOSCIENCES",
+    "email": "molly.he@elembio.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060234924",
+    "name": "Rosita Bajari",
+    "company": "ELEMENT BIOSCIENCES",
+    "email": "rosita.bajari@elembio.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060242102",
+    "name": "Lee Min",
+    "company": "EONE Diagnomics Genome Center",
+    "email": "mlee@edgc.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060242097",
+    "name": "Sungmin Cho",
+    "company": "EONE Diagnomics Genome Center",
+    "email": "sungmin.cho@edgc.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060242076",
+    "name": "Bob Zhang",
+    "company": "Epigenic Therapeutics",
+    "email": "bob.zhang@epigenictx.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060252166",
+    "name": "Joshua Grass",
+    "company": "Escient Pharmaceuticals",
+    "email": "jgrass@escientpharma.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060230068",
+    "name": "Ahmed Naguib",
+    "company": "Exact Sciences",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060242059",
+    "name": "Zoë Freedman",
+    "company": "Flow With Zo",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279220",
+    "name": "Karen Ferrell",
+    "company": "Genomic Life",
+    "email": "karen.ferrell@genomiclife.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060276786",
+    "name": "Amy Hulting",
+    "company": "Genomic Life",
+    "email": "amy.hulting@genomiclife.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060252113",
+    "name": "Daniel Ellman",
+    "company": "Gerber Goldschmidt Group",
+    "email": "dmellman@gerberatl.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279224",
+    "name": "Thomas Miller",
+    "company": "Iambic Therapeutics",
+    "email": "thomas@iambic.ai",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060309116",
+    "name": "Kennen Sisco",
+    "company": "Illumina",
+    "email": "ksisco@illumina.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060309108",
+    "name": "Candyce Covington",
+    "company": "Illumina",
+    "email": "ccovington@illumina.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060282726",
+    "name": "Chee Seng",
+    "company": "Illumina",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279259",
+    "name": "Tatum McIsaac",
+    "company": "Illumina",
+    "email": "tmcisaac@illumina.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279180",
+    "name": "Jacob Thaysen",
+    "company": "Illumina",
+    "email": "jthaysen@illumina.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060272589",
+    "name": "Huey Chua",
+    "company": "Illumina",
+    "email": "hueyeng.chua@illumina.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060251058",
+    "name": "Hana Arjan",
+    "company": "Illumina",
+    "email": "harjan@illumina.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060247669",
+    "name": "Kc Wilder",
+    "company": "Illumina",
+    "email": "kwilder@illumina.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060247619",
+    "name": "John Picuri",
+    "company": "Illumina",
+    "email": "jpicuri@illumina.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060242744",
+    "name": "Bernadette Ezeabikwa",
+    "company": "Illumina",
+    "email": "bezeabikwa@illumina.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060234918",
+    "name": "Patrick Costa",
+    "company": "Illumina",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060234889",
+    "name": "Daniel Saisho",
+    "company": "Illumina",
+    "email": "dsaisho@illumina.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060276157",
+    "name": "Katherine Seals",
+    "company": "INOVIO",
+    "email": "katherine.seals@inovio.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060276154",
+    "name": "Richard Kim",
+    "company": "INOVIO",
+    "email": "richard.kim@inovio.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060309107",
+    "name": "Peter Duncan",
+    "company": "Integrated DNA Technologies",
+    "email": "pduncan@idtdna.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060251104",
+    "name": "Jane Naimi",
+    "company": "Interpreta",
+    "email": "jane.naimi@interpreta.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279200",
+    "name": "Kevin Forrest",
+    "company": "Kate Therapeutics",
+    "email": "kforrest@katetherapeutics.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060273218",
+    "name": "Nima Farzan",
+    "company": "Kinnate Biopharma",
+    "email": "nima@kinnate.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060252058",
+    "name": "Mark Bowers",
+    "company": "Ligand Pharmaceuticals",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060242055",
+    "name": "Ken Fredericks",
+    "company": "Ligand Pharmaceuticals",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279183",
+    "name": "Brian Culley",
+    "company": "Lineage Cell Therapeutics",
+    "email": "bculley@lineagecell.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060239976",
+    "name": "Leszek Lisowski",
+    "company": "Logicbio Therapeutics",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060252165",
+    "name": "James Besser",
+    "company": "Modular Medical",
+    "email": "jeb@modular-medical.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060242665",
+    "name": "Jake Moss",
+    "company": "Moss Research",
+    "email": "jake@mossresearch.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279593",
+    "name": "Amy Winslow",
+    "company": "NanoImaging Services",
+    "email": "awinslow@nanoimagingservices.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060234344",
+    "name": "Quoc Nguyen",
+    "company": "NeurAccel Biosciences",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279204",
+    "name": "Matthew Foehr",
+    "company": "OmniAb",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060234341",
+    "name": "Kenneth Grant",
+    "company": "Optios",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060230108",
+    "name": "Michael Reminger",
+    "company": "Pacific Business Management",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060241042",
+    "name": "Stephen Thein",
+    "company": "Pacific Research Network",
+    "email": "sthein@prnsd.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060276784",
+    "name": "Sonia Tomina",
+    "company": "Pardes Biosciences",
+    "email": "sonia@pardesbio.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279189",
+    "name": "Alejandro Bernal",
+    "company": "PetDx",
+    "email": "abernal@petdx.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060234325",
+    "name": "Ajay Wakhloo",
+    "company": "Prometheus Biosciences",
+    "email": "ajay.wakhloo@lahey.org",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060276782",
+    "name": "Karen Weaver",
+    "company": "ProSciento",
+    "email": "karen.weaver@prosciento.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060259611",
+    "name": "Marcus Hompesch",
+    "company": "ProSciento",
+    "email": "marcus.hompesch@prosciento.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060242731",
+    "name": "Mark Brolaski",
+    "company": "Qiagen",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279216",
+    "name": "Michael Dudley",
+    "company": "Qpex Biopharma",
+    "email": "mdudley@qpexbio.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279264",
+    "name": "Ken Song",
+    "company": "RayzeBio",
+    "email": "ksong@rayzebio.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060242762",
+    "name": "Greg Kirby",
+    "company": "Replay Holdings",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060234320",
+    "name": "Edward Holmes",
+    "company": "Sanford Consortium for Regenerative Medicine",
+    "email": "eholmes@sanfordconsortium.org",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060242057",
+    "name": "John Reed",
+    "company": "Sanford-Burnham Prebys Medical Discovery Institute",
+    "email": "jreed@burnham.org",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060309114",
+    "name": "Janice Collins",
+    "company": "Scripps Research",
+    "email": "collins.janice@scrippshealth.org",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279263",
+    "name": "Kevin Hirsch",
+    "company": "Scripps Research",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279217",
+    "name": "Tom Gammiere",
+    "company": "Scripps Research",
+    "email": "tgammiere@scripps.org",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060247622",
+    "name": "Laura Dennison",
+    "company": "Scripps Research",
+    "email": "dennison.laura@scrippshealth.org",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060242108",
+    "name": "Pavla Hook",
+    "company": "Scripps Research",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060239966",
+    "name": "Peter Schultz",
+    "company": "Scripps Research",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279198",
+    "name": "Dorota Shortell",
+    "company": "Simplexity Product Development",
+    "email": "dshortell@simplexitypd.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060273284",
+    "name": "Jeff Hixson",
+    "company": "Simplexity Product Development",
+    "email": "jeff.hixson@simplexitypd.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060230113",
+    "name": "Steve Filippo",
+    "company": "SRC",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279908",
+    "name": "Thomas Chang",
+    "company": "Sunbio",
+    "email": "thomas@sunbiogroup.com",
+    "industry": "Hospitals & Physicians Clinics"
+  },
+  {
+    "id": "208541000060282757",
+    "name": "Awhina Horne",
+    "company": "Therapeutics",
+    "email": "",
+    "industry": "Hospitals & Physicians Clinics"
+  },
+  {
+    "id": "208541000060279633",
+    "name": "Anup Tilak",
+    "company": "Therapeutics",
+    "email": "",
+    "industry": "Hospitals & Physicians Clinics"
+  },
+  {
+    "id": "208541000060276113",
+    "name": "Daniel Piacquadio",
+    "company": "Therapeutics",
+    "email": "danp@therapeuticsinc.com",
+    "industry": "Hospitals & Physicians Clinics"
+  },
+  {
+    "id": "208541000060259074",
+    "name": "Kurt Graves",
+    "company": "Therapeutics",
+    "email": "",
+    "industry": "Hospitals & Physicians Clinics"
+  },
+  {
+    "id": "208541000060252103",
+    "name": "China DRIVE Du",
+    "company": "Therapeutics",
+    "email": "",
+    "industry": "Hospitals & Physicians Clinics"
+  },
+  {
+    "id": "208541000060252067",
+    "name": "Martin Jacko",
+    "company": "Therapeutics",
+    "email": "martin.jacko@aperturetx.com",
+    "industry": "Hospitals & Physicians Clinics"
+  },
+  {
+    "id": "208541000060242032",
+    "name": "Kenneth Yang",
+    "company": "Therapeutics",
+    "email": "",
+    "industry": "Hospitals & Physicians Clinics"
+  },
+  {
+    "id": "208541000060242029",
+    "name": "Jon Zhang",
+    "company": "Therapeutics",
+    "email": "",
+    "industry": "Hospitals & Physicians Clinics"
+  },
+  {
+    "id": "208541000060239980",
+    "name": "Charlie Hong",
+    "company": "Therapeutics",
+    "email": "",
+    "industry": "Hospitals & Physicians Clinics"
+  },
+  {
+    "id": "208541000060239960",
+    "name": "Amy Liu",
+    "company": "Therapeutics",
+    "email": "",
+    "industry": "Hospitals & Physicians Clinics"
+  },
+  {
+    "id": "208541000060234332",
+    "name": "Michael Pierschbacher",
+    "company": "Therapeutics",
+    "email": "",
+    "industry": "Hospitals & Physicians Clinics"
+  },
+  {
+    "id": "208541000060230125",
+    "name": "Cecilia Macias",
+    "company": "Therapeutics",
+    "email": "cmacias@therapeuticsinc.com",
+    "industry": "Hospitals & Physicians Clinics"
+  },
+  {
+    "id": "208541000060230069",
+    "name": "Peter Melton",
+    "company": "Therapeutics",
+    "email": "",
+    "industry": "Hospitals & Physicians Clinics"
+  },
+  {
+    "id": "208541000060309109",
+    "name": "Rik Basi",
+    "company": "Thermo Fisher Scientific",
+    "email": "rik.basi@thermofisher.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060273280",
+    "name": "Lambert Ninteman",
+    "company": "Thermo Fisher Scientific",
+    "email": "lambert.ninteman@thermofisher.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060273252",
+    "name": "Margaret Cogan",
+    "company": "Thermo Fisher Scientific",
+    "email": "margaret.cogan@thermofisher.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060251068",
+    "name": "Clarissa Juckem",
+    "company": "Thermo Fisher Scientific",
+    "email": "clarissa.juckem@thermofisher.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060247676",
+    "name": "Paige Gourley",
+    "company": "Thermo Fisher Scientific",
+    "email": "paige.gourley@thermofisher.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060237793",
+    "name": "Jerry Lee",
+    "company": "True Diagnostics",
+    "email": "jerry@truediag.com",
+    "industry": "Hospitals & Physicians Clinics"
+  },
+  {
+    "id": "208541000060247703",
+    "name": "Sammy Farah",
+    "company": "Turnstone Biologics",
+    "email": "sammy.farah@turnstonebio.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060309094",
+    "name": "Brian Lange",
+    "company": "Twist Bioscience",
+    "email": "blange@twistbioscience.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279231",
+    "name": "Raju Mohan",
+    "company": "Ventyx Biosciences",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060252175",
+    "name": "Michael Yang",
+    "company": "ViaCyte",
+    "email": "myang@viacyte.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279650",
+    "name": "Mark Rothera",
+    "company": "Viracta Therapeutics",
+    "email": "mrothera@viracta.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060252134",
+    "name": "Antonio Romañach",
+    "company": "Viracta Therapeutics",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060239965",
+    "name": "Antonio Romañach",
+    "company": "Viracta Therapeutics",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060239963",
+    "name": "Antonio Romañach",
+    "company": "Viracta Therapeutics",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060239957",
+    "name": "Antonio Romañach",
+    "company": "Viracta Therapeutics",
+    "email": "",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060279177",
+    "name": "Oliver Fetzer",
+    "company": "Viridos",
+    "email": "ofetzer@viridos.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060276131",
+    "name": "Mary Poggi",
+    "company": "Viridos",
+    "email": "mpoggi@viridos.com",
+    "industry": "Research & Development"
+  },
+  {
+    "id": "208541000060259616",
+    "name": "Mark Gresser",
+    "company": "Wildcat Discovery Technologies",
+    "email": "mgresser@wildcatdiscovery.com",
+    "industry": "Research & Development"
+  }
+]

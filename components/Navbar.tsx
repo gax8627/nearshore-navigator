@@ -83,7 +83,7 @@ export function Navbar() {
                     </Link>
 
                     {/* Desktop Nav */}
-                    <div className="hidden md:flex items-center gap-8">
+                    <div className="hidden lg:flex items-center gap-8">
                         {/* Services Dropdown */}
                         <div ref={servicesRef} className="relative">
                             <button
@@ -179,7 +179,7 @@ export function Navbar() {
 
                     {/* Mobile Toggle */}
                     <button
-                        className="md:hidden p-2 text-gray-600 dark:text-gray-300"
+                        className="lg:hidden p-2 text-gray-600 dark:text-gray-300"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         aria-expanded={isMobileMenuOpen}
                         aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -202,7 +202,7 @@ export function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="fixed top-[70px] left-0 right-0 bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 z-40 md:hidden overflow-hidden"
+                        className="fixed top-[70px] left-0 right-0 bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 z-40 lg:hidden overflow-hidden"
                     >
                         <div className="flex flex-col p-6 gap-4">
                             {/* Services Accordion */}
