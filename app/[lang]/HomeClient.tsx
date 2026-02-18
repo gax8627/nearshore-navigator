@@ -11,12 +11,13 @@ import { Warehouse, Globe2, Cog, Truck, Headset, Users } from "lucide-react";
 import { NewsletterBanner } from "@/components/NewsletterBanner";
 import { FounderBlock } from "@/components/FounderBlock";
 import { HeroScanner } from "@/components/HeroScanner";
-import { useRef } from "react";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useRef, useState, useCallback } from "react";
+import { useScroll, useTransform, motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function HomeClient() {
   const { t, language } = useLanguage();
+  const [videoEnded, setVideoEnded] = useState(false);
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -24,6 +25,10 @@ export default function HomeClient() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
+  const handleVideoEnd = useCallback(() => {
+    setVideoEnded(true);
+  }, []);
 
   const featuredPosts = [
     {
@@ -72,19 +77,48 @@ export default function HomeClient() {
       />
       {/* Hero Section */}
       <section className="relative min-h-screen pt-24 md:pt-0 md:h-[90vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
+        {/* Background: Video → Last Frame → Scanner */}
         <motion.div 
             style={{ y }} 
             className="absolute inset-0 z-0"
         >
+          {/* Phase 1: Drone Video */}
+          <AnimatePresence>
+            {!videoEnded && (
+              <motion.div
+                className="absolute inset-0 z-10"
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+              >
+                <video
+                  autoPlay
+                  muted
+                  playsInline
+                  onEnded={handleVideoEnd}
+                  className="w-full h-full object-cover"
+                  poster="/images/hero-last-frame.jpg"
+                >
+                  <source src="/videos/hero-drone.webm" type="video/webm" />
+                  <source src="/videos/hero-drone.mp4" type="video/mp4" />
+                </video>
+                {/* Gradient overlays on video */}
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900/70" />
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Phase 2+3: Last frame + HeroScanner (always mounted, revealed when video fades) */}
           <HeroScanner 
-            src="https://images.unsplash.com/photo-1565514020125-62d22a578a08?auto=format&fit=crop&q=80&w=2600"
-            alt="Tijuana Industrial Park Aerial View with Solar Panels"
+            src="/images/hero-last-frame.jpg"
+            alt="Tijuana Industrial Park Aerial View"
+            active={videoEnded}
           />
         </motion.div>
 
         <div className="container mx-auto px-4 z-10 relative">
           <motion.div 
+            key={t('hero.title')}
             initial="hidden"
             animate="visible"
             variants={{

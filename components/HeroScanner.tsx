@@ -7,14 +7,17 @@ import { motion, useAnimation, AnimatePresence } from "framer-motion";
 interface HeroScannerProps {
   src: string;
   alt: string;
+  active?: boolean; // When true, start the scan animation. Defaults to true for backwards compat.
 }
 
-export const HeroScanner = ({ src, alt }: HeroScannerProps) => {
+export const HeroScanner = ({ src, alt, active = true }: HeroScannerProps) => {
   const controls = useAnimation();
   const [isScanned, setIsScanned] = useState(false);
   const [activeNodes, setActiveNodes] = useState<number[]>([]);
 
   useEffect(() => {
+    if (!active) return;
+
     const sequence = async () => {
       // Start slightly delayed
       await new Promise(resolve => setTimeout(resolve, 800));
@@ -35,19 +38,21 @@ export const HeroScanner = ({ src, alt }: HeroScannerProps) => {
 
     // Trigger data nodes at specific intervals matched to scan progress
     const nodeTimings = [1200, 1800, 2400, 3000];
-    nodeTimings.forEach((ms, i) => {
+    const timers = nodeTimings.map((ms, i) =>
         setTimeout(() => {
             setActiveNodes(prev => [...prev, i]);
-        }, ms);
-    });
-  }, [controls]);
+        }, ms)
+    );
 
-  // Data nodes positioning and labels
+    return () => timers.forEach(clearTimeout);
+  }, [controls, active]);
+
+  // Data nodes positioned on warehouse rooftops in the aerial image
   const dataNodes = [
-    { top: "30%", left: "20%", label: "Solar Array: Active", value: "Generating 4.2MW" },
-    { top: "50%", left: "55%", label: "Class A Warehousing", value: "Occupancy: Available" },
-    { top: "65%", left: "25%", label: "Logistics Hub", value: "Truck Bays: 42" },
-    { top: "40%", left: "80%", label: "Grid Connectivity", value: "Substation: Direct" },
+    { top: "72%", left: "22%", label: "Warehouse A-1", value: "Class A · 120,000 sqft" },
+    { top: "70%", left: "68%", label: "Distribution Hub", value: "42 Dock Doors · Active" },
+    { top: "42%", left: "35%", label: "Manufacturing Zone", value: "ISO 13485 Certified" },
+    { top: "45%", left: "72%", label: "Logistics Center", value: "Cross-dock · 24/7 Ops" },
   ];
 
   return (
