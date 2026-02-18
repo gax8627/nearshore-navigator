@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Upload, Mail, Users, Plus, FileText, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { Upload, Mail, Users, Plus, FileText, Send, CheckCircle, AlertCircle, Loader2, User } from "lucide-react";
 import Link from "next/link";
 import { SendersManager } from "@/components/admin/SendersManager";
@@ -28,8 +27,7 @@ export default function CrmPage() {
 
   const fetchData = async () => {
     try {
-      const [leadsRes, campaignsRes] = await Promise.all([
-        fetch("/api/admin/leads"),
+      const [leadsRes, campaignsRes, sendersRes] = await Promise.all([
         fetch("/api/admin/leads"),
         fetch("/api/admin/crm/campaigns"),
         fetch("/api/admin/crm/senders")
@@ -231,7 +229,6 @@ export default function CrmPage() {
                     </button>
                 </div>
             </form>
-        </div>
         </div>
       ) : activeTab === "senders" ? (
         <SendersManager />
