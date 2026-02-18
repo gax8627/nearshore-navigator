@@ -151,8 +151,8 @@ export default function LeadsPage() {
           <div className="p-12 text-center text-gray-500">Loading leads...</div>
         ) : error ? (
           <div className="p-12 text-center">
-            <p className="text-yellow-400 text-sm mb-2">⚠️ Database not connected</p>
-            <p className="text-gray-500 text-sm">Connect Vercel Postgres to view leads.</p>
+            <p className="text-red-500 text-sm mb-2">⚠️ Error: {error}</p>
+            <p className="text-gray-500 text-sm">Check console for details.</p>
           </div>
         ) : filtered.length === 0 ? (
           <div className="p-12 text-center">
