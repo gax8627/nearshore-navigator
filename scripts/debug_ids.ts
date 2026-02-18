@@ -15,7 +15,7 @@ async function main() {
 
   const processedIds = JSON.parse(fs.readFileSync(processedPath, 'utf-8'));
   
-  const zhenLiRecord = records.find((r: any) => r['Last Name'] === 'Li' && r['First Name'] === 'Zhen');
+  const zhenLiRecord: any = records.find((r: any) => r['Last Name'] === 'Li' && r['First Name'] === 'Zhen');
   if (zhenLiRecord) {
     console.log(`Zhen Li ID from CSV: '${zhenLiRecord['Lead Id']}'`);
     console.log(`Is in processedIds? ${processedIds.includes(zhenLiRecord['Lead Id'])}`);
