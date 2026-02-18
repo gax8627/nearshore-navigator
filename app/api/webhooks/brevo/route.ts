@@ -33,18 +33,29 @@ export async function POST(req: Request) {
     const { campaigns } = await import('@/lib/db/schema');
     const { eq, sql } = await import('drizzle-orm');
 
+    const { leads } = await import('@/lib/db/schema');
+
     // Fetch current stats
     const [campaign] = await db.select().from(campaigns).where(eq(campaigns.id, campaignId));
     
     if (campaign) {
-        const stats = JSON.parse(campaign.stats);
+        let stats = JSON.parse(campaign.stats);
         
         if (eventType === 'opened') {
             stats.opened = (stats.opened || 0) + 1;
-        } else if (eventType === 'click' || eventType === 'clicked') { // Brevo uses 'click' or 'clicked' depending on version, usually 'click' in transactional? Docs say 'click'
+        } else if (eventType === 'click' || eventType === 'clicked') {
             stats.clicked = (stats.clicked || 0) + 1;
-        } else if (eventType === 'delivered') {
-            // stats.delivered = (stats.delivered || 0) + 1; // We track 'sent' initially, 'delivered' confirms format
+        } else if (['hard_bounce', 'soft_bounce', 'blocked', 'spam', 'invalid_email'].includes(eventType)) {
+            // Handle Bounce: Mark Lead as Bounced
+            console.log(`Bounce detected for ${event.email}: ${eventType}`);
+            
+            // Find lead by email
+            const [lead] = await db.select().from(leads).where(eq(leads.email, event.email));
+            if (lead) {
+                await db.update(leads)
+                    .set({ status: 'bounced', tags: JSON.stringify([...JSON.parse(lead.tags || '[]'), 'bounced']) })
+                    .where(eq(leads.id, lead.id));
+            }
         }
 
         await db.update(campaigns)
