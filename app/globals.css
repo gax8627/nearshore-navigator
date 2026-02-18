@@ -33,7 +33,7 @@ body {
   }
 
   .glass-card {
-    @apply bg-glass-gradient dark:bg-dark-glass-gradient backdrop-blur-lg border border-white/10 dark:border-white/5 shadow-glass rounded-xl;
+    @apply bg-slate-900/50 backdrop-blur-lg border border-white/10 shadow-xl rounded-xl;
   }
 
   .premium-image-filter {
@@ -42,5 +42,37 @@ body {
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Animations */
+  .animate-in {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+  }
+
+  .fade-in {
+    animation-name: fadeIn;
+  }
+
+  .slide-in-from-bottom-4 {
+    animation-name: slideInBottom;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInBottom {
+    from {
+      transform: translateY(1rem);
+    }
+    to {
+      transform: translateY(0);
+    }
   }
 }
