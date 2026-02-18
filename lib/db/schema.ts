@@ -32,6 +32,15 @@ export const leads = pgTable('leads', {
   createdAt: timestamp('created_at').notNull().defaultNow(),
 });
 
+// ─── Senders ─────────────────────────────────────────────────
+export const senders = pgTable('senders', {
+  id: serial('id').primaryKey(),
+  name: varchar('name', { length: 255 }).notNull(),
+  email: varchar('email', { length: 255 }).notNull(), // Must be verified in Brevo
+  isDefault: boolean('is_default').default(false),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+});
+
 // ─── Campaigns ───────────────────────────────────────────────
 export const campaigns = pgTable('campaigns', {
   id: serial('id').primaryKey(),
@@ -41,6 +50,7 @@ export const campaigns = pgTable('campaigns', {
   status: varchar('status', { length: 50 }).notNull().default('draft'), // draft, sent
   segment: varchar('segment', { length: 50 }).notNull().default('all'),
   template: varchar('template', { length: 50 }).notNull().default('standard'), // standard, liquid_glass
+  senderId: integer('sender_id'), // Optional, defaults to env var if null
   stats: text('stats').notNull().default('{"sent":0,"opened":0,"clicked":0}'),
   sentAt: timestamp('sent_at'),
   createdAt: timestamp('created_at').notNull().defaultNow(),
@@ -53,3 +63,5 @@ export type Lead = typeof leads.$inferSelect;
 export type NewLead = typeof leads.$inferInsert;
 export type Campaign = typeof campaigns.$inferSelect;
 export type NewCampaign = typeof campaigns.$inferInsert;
+export type Sender = typeof senders.$inferSelect;
+export type NewSender = typeof senders.$inferInsert;

@@ -16,7 +16,7 @@ export async function POST(req: Request) {
     }
 
     const { db } = await import('@/lib/db');
-    const { leads, campaigns } = await import('@/lib/db/schema');
+    const { leads, campaigns, senders } = await import('@/lib/db/schema');
     const { eq } = await import('drizzle-orm');
 
     // 1. Fetch Campaign
@@ -27,6 +27,15 @@ export async function POST(req: Request) {
 
     if (campaign.status === 'sent') {
       return NextResponse.json({ error: 'Campaign already sent' }, { status: 400 });
+    }
+
+    // 1.5 Fetch Sender (Optional)
+    let sender = undefined;
+    if (campaign.senderId) {
+        const [senderRecord] = await db.select().from(senders).where(eq(senders.id, campaign.senderId));
+        if (senderRecord) {
+            sender = { email: senderRecord.email, name: senderRecord.name };
+        }
     }
 
     // 2. Fetch Leads by Segment
@@ -60,6 +69,7 @@ export async function POST(req: Request) {
         try {
             await brevo.sendEmail({
                 to: [{ email: lead.email, name: lead.name }],
+                sender: sender, // Pass dynamic sender
                 subject: campaign.subject,
                 htmlContent: campaign.template === 'liquid_glass' 
                     ? wrapLiquidGlass(campaign.content, "View Details", "https://nearshorenavigator.com")

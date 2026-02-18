@@ -2,12 +2,15 @@
 
 import { useState, useEffect } from "react";
 import { Upload, Mail, Users, Plus, FileText, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Upload, Mail, Users, Plus, FileText, Send, CheckCircle, AlertCircle, Loader2, User } from "lucide-react";
 import Link from "next/link";
+import { SendersManager } from "@/components/admin/SendersManager";
 
 export default function CrmPage() {
   const [activeTab, setActiveTab] = useState("overview");
   const [stats, setStats] = useState({ leads: 0, campaigns: 0 });
   const [campaigns, setCampaigns] = useState<any[]>([]);
+  const [senders, setSenders] = useState<any[]>([]); // For dropdown
   const [loading, setLoading] = useState(true);
 
   // Upload State
@@ -17,7 +20,7 @@ export default function CrmPage() {
 
   // New Campaign State
   const [showCampaignModal, setShowCampaignModal] = useState(false);
-  const [newCampaign, setNewCampaign] = useState({ name: "", subject: "", content: "", segment: "all", template: "standard" });
+  const [newCampaign, setNewCampaign] = useState({ name: "", subject: "", content: "", segment: "all", template: "standard", senderId: "" });
 
   useEffect(() => {
     fetchData();
@@ -27,16 +30,20 @@ export default function CrmPage() {
     try {
       const [leadsRes, campaignsRes] = await Promise.all([
         fetch("/api/admin/leads"),
-        fetch("/api/admin/crm/campaigns")
+        fetch("/api/admin/leads"),
+        fetch("/api/admin/crm/campaigns"),
+        fetch("/api/admin/crm/senders")
       ]);
       const leadsData = await leadsRes.json();
       const campaignsData = await campaignsRes.json();
+      const sendersData = await sendersRes.json();
 
       setStats({
         leads: leadsData.leads?.length || 0,
         campaigns: campaignsData.campaigns?.length || 0
       });
       setCampaigns(campaignsData.campaigns || []);
+      setSenders(sendersData.senders || []);
     } catch (error) {
       console.error("Failed to load CRM data");
     } finally {
@@ -87,7 +94,7 @@ export default function CrmPage() {
       });
       if (res.ok) {
         setShowCampaignModal(false);
-        setNewCampaign({ name: "", subject: "", content: "", segment: "all", template: "standard" });
+        setNewCampaign({ name: "", subject: "", content: "", segment: "all", template: "standard", senderId: "" });
         fetchData();
       } else {
         alert("Failed to create campaign");
@@ -126,6 +133,13 @@ export default function CrmPage() {
            <p className="text-gray-400 mt-1">Manage leads and email campaigns</p>
         </div>
         <div className="flex gap-2">
+            <button 
+                onClick={() => setActiveTab("senders")}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeTab === "senders" ? "bg-primary-500 text-white" : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`}
+            >
+                <User className="w-4 h-4 inline-block mr-2" />
+                 identities
+            </button>
             <button 
                 onClick={() => setActiveTab("upload")}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeTab === "upload" ? "bg-primary-500 text-white" : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`}
@@ -218,6 +232,9 @@ export default function CrmPage() {
                 </div>
             </form>
         </div>
+        </div>
+      ) : activeTab === "senders" ? (
+        <SendersManager />
       ) : (
         <div className="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden">
             <div className="p-6 border-b border-gray-800">
@@ -299,6 +316,19 @@ export default function CrmPage() {
                             value={newCampaign.subject}
                             onChange={e => setNewCampaign({...newCampaign, subject: e.target.value})}
                         />
+                    </div>
+                    <div>
+                        <label className="block text-sm text-gray-400 mb-1">From Sender</label>
+                        <select 
+                            className="w-full bg-gray-800 border-gray-700 rounded-lg px-3 py-2 text-white"
+                            value={newCampaign.senderId}
+                            onChange={e => setNewCampaign({...newCampaign, senderId: e.target.value})}
+                        >
+                            <option value="">Default (Denisse)</option>
+                            {senders.map(s => (
+                                <option key={s.id} value={s.id}>{s.name} ({s.email})</option>
+                            ))}
+                        </select>
                     </div>
                     <div>
                         <label className="block text-sm text-gray-400 mb-1">Segment</label>

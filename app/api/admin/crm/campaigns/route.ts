@@ -40,6 +40,7 @@ export async function POST(req: Request) {
       content,
       segment: segment || 'all',
       template: body.template || 'standard',
+      senderId: body.senderId ? parseInt(body.senderId) : null,
       status: 'draft',
     }).returning();
 
