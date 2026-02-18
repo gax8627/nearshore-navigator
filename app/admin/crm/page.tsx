@@ -9,61 +9,9 @@ export default function CrmPage() {
   const [activeTab, setActiveTab] = useState("overview");
   const [stats, setStats] = useState({ leads: 0, campaigns: 0 });
   const [campaigns, setCampaigns] = useState<any[]>([]);
-  const [leads, setLeads] = useState<any[]>([]); // Store leads
   const [senders, setSenders] = useState<any[]>([]); 
   const [loading, setLoading] = useState(true);
-  const [researching, setResearching] = useState<number | null>(null); // Track researching lead ID
-
   // ... existing upload state ...
-
-  const handleResearch = async (lead: any) => {
-    if (!lead.email) return;
-    setResearching(lead.id);
-    try {
-        const res = await fetch("/api/admin/ai/research-lead", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email: lead.email }),
-        });
-        const data = await res.json();
-        if (data.result) {
-            alert(`Research Complete:\nIndustry: ${data.result.industry}\nSize: ${data.result.size}\nSummary: ${data.result.summary}`);
-            // In a real app, we'd update the DB and local state here
-        } else {
-            alert("No data found");
-        }
-    } catch (e) {
-        alert("Research failed");
-    } finally {
-        setResearching(null);
-    }
-  };
-
-  const handleSmartReply = async (lead: any) => {
-    const intent = prompt("What is your goal? (book_meeting, send_info, objection_handling)");
-    if (!intent) return;
-
-    try {
-        const res = await fetch("/api/admin/ai/smart-reply", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ 
-                leadName: lead.name, 
-                leadCompany: lead.company,
-                lastMessage: lead.message,
-                intent 
-            }),
-        });
-        const data = await res.json();
-        if (data.reply) {
-            // Copy to clipboard or show modal
-            navigator.clipboard.writeText(data.reply);
-            alert("Draft copied to clipboard:\n\n" + data.reply);
-        }
-    } catch (e) {
-        alert("Reply generation failed");
-    }
-  };
 
   // Upload State
   const [file, setFile] = useState<File | null>(null);
@@ -93,7 +41,6 @@ export default function CrmPage() {
         leads: leadsData.leads?.length || 0,
         campaigns: campaignsData.campaigns?.length || 0
       });
-      setLeads(leadsData.leads || []);
       setCampaigns(campaignsData.campaigns || []);
       setSenders(sendersData.senders || []);
     } catch (error) {
@@ -185,13 +132,6 @@ export default function CrmPage() {
            <p className="text-gray-400 mt-1">Manage leads and email campaigns</p>
         </div>
         <div className="flex gap-2">
-            <button 
-                onClick={() => setActiveTab("leads")}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeTab === "leads" ? "bg-primary-500 text-white" : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`}
-            >
-                <Users className="w-4 h-4 inline-block mr-2" />
-                 Leads
-            </button>
             <button 
                 onClick={() => setActiveTab("senders")}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeTab === "senders" ? "bg-primary-500 text-white" : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`}
@@ -290,68 +230,6 @@ export default function CrmPage() {
                     </button>
                 </div>
             </form>
-        </div>
-      ) : activeTab === "leads" ? (
-        <div className="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden">
-            <div className="p-6 border-b border-gray-800">
-                <h3 className="text-lg font-semibold text-white">Leads Database</h3>
-            </div>
-            <table className="w-full">
-                <thead>
-                    <tr className="border-b border-gray-800 text-left">
-                        <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Lead</th>
-                        <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Status</th>
-                        <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Tags</th>
-                        <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">AI Agents</th>
-                    </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-800">
-                    {leads.map((lead) => (
-                        <tr key={lead.id} className="hover:bg-gray-800/50">
-                            <td className="px-6 py-4">
-                                <p className="text-sm font-medium text-white">{lead.name}</p>
-                                <p className="text-xs text-gray-400">{lead.company}</p>
-                                <p className="text-xs text-gray-500">{lead.email}</p>
-                            </td>
-                            <td className="px-6 py-4">
-                                <span className={`text-xs px-2 py-1 rounded-full ${
-                                    lead.status === 'new' ? 'bg-blue-500/20 text-blue-400' :
-                                    lead.status === 'bounced' ? 'bg-red-500/20 text-red-400' :
-                                    'bg-gray-700 text-gray-300'
-                                }`}>
-                                    {lead.status}
-                                </span>
-                            </td>
-                            <td className="px-6 py-4">
-                                <div className="flex flex-wrap gap-1">
-                                    {JSON.parse(lead.tags || '[]').map((t: string, i: number) => (
-                                        <span key={i} className="text-[10px] px-1.5 py-0.5 bg-gray-800 text-gray-400 rounded border border-gray-700">{t}</span>
-                                    ))}
-                                </div>
-                            </td>
-                            <td className="px-6 py-4">
-                                <div className="flex gap-2">
-                                    <button 
-                                        onClick={() => handleResearch(lead)}
-                                        disabled={researching === lead.id}
-                                        className="p-1.5 bg-indigo-500/10 text-indigo-400 rounded hover:bg-indigo-500/20 transition-colors"
-                                        title="Research Lead"
-                                    >
-                                        {researching === lead.id ? <Loader2 className="w-4 h-4 animate-spin" /> : <Users className="w-4 h-4" />}
-                                    </button>
-                                    <button 
-                                        onClick={() => handleSmartReply(lead)}
-                                        className="p-1.5 bg-purple-500/10 text-purple-400 rounded hover:bg-purple-500/20 transition-colors"
-                                        title="Smart Reply"
-                                    >
-                                        <Send className="w-4 h-4" />
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
         </div>
       ) : activeTab === "senders" ? (
         <SendersManager />

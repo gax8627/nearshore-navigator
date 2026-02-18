@@ -18,9 +18,9 @@ import { AdminSidenav } from "@/components/admin/AdminSidenav";
 
 function AdminShell({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-emerald-500/30">
-      {/* Background Ambience */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
+    <div className="flex min-h-screen bg-gray-50 dark:bg-slate-950 text-slate-900 dark:text-slate-200 font-sans selection:bg-primary-500/30">
+      {/* Background Ambience (Dark Mode Only) */}
+      <div className="fixed inset-0 z-0 pointer-events-none opacity-0 dark:opacity-100 transition-opacity duration-300">
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-3xl" />
       </div>
@@ -32,10 +32,10 @@ function AdminShell({ children }: { children: React.ReactNode }) {
         {/* Scrollable Content Area */}
         <main className="flex-1 ml-72 min-h-screen relative">
             {/* Top Glass Header */}
-            <header className="sticky top-0 z-40 px-8 py-4 backdrop-blur-md bg-slate-950/50 border-b border-white/5 flex items-center justify-between">
-                <h2 className="text-sm font-medium text-slate-400">Back Office Control Center</h2>
+            <header className="sticky top-0 z-40 px-8 py-4 backdrop-blur-md bg-white/50 dark:bg-slate-950/50 border-b border-gray-200 dark:border-white/5 flex items-center justify-between">
+                <h2 className="text-sm font-medium text-slate-500 dark:text-slate-400">Back Office Control Center</h2>
                 <div className="flex items-center gap-4">
-                    <button className="px-3 py-1.5 text-xs font-semibold bg-emerald-500/10 text-emerald-400 rounded-full border border-emerald-500/20 hover:bg-emerald-500/20 transition-all">
+                    <button className="px-3 py-1.5 text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-full border border-emerald-500/20 hover:bg-emerald-500/20 transition-all">
                         System Online
                     </button>
                 </div>
