@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import { brevo } from '../lib/brevo';
-import dotenv from 'dotenv';
 
 // Manually load .env.local
 const envPath = path.join(process.cwd(), '.env.local');
