@@ -40,6 +40,8 @@ export async function POST(req: Request) {
       email: r.email || r.Email || '',
       company: r.company || r.Company || '',
       phone: r.phone || r.Phone || '',
+      category: r.category || r.Category || r.Industry || r.industry || 'Standard',
+      tags: r.tags || r.Tags || r.keywords || '[]',
       source: source,
       status: 'new',
     })).filter((l: any) => l.email); // Must have email

@@ -93,6 +93,7 @@ export default function LeadsPage() {
             <thead>
                 <tr className="border-b border-gray-200 dark:border-gray-800 text-left bg-gray-50 dark:bg-gray-800/50">
                     <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Lead</th>
+                    <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Category</th>
                     <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Status</th>
                     <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Tags</th>
                     <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">AI Agents</th>
@@ -105,6 +106,11 @@ export default function LeadsPage() {
                             <p className="text-sm font-medium text-slate-800 dark:text-white">{lead.name}</p>
                             <p className="text-xs text-slate-500 dark:text-gray-400">{lead.company}</p>
                             <p className="text-xs text-slate-400 dark:text-gray-500">{lead.email}</p>
+                        </td>
+                        <td className="px-6 py-4">
+                           <span className="text-xs font-medium px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-slate-600 dark:text-slate-300 border border-gray-200 dark:border-gray-700">
+                               {lead.category || 'Standard'}
+                           </span>
                         </td>
                         <td className="px-6 py-4">
                             <span className={`text-xs px-2 py-1 rounded-full border ${
