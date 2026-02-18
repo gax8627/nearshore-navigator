@@ -39,6 +39,7 @@ export async function POST(req: Request) {
       subject,
       content,
       segment: segment || 'all',
+      template: body.template || 'standard',
       status: 'draft',
     }).returning();
 

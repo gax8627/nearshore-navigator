@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { auth } from '@clerk/nextjs/server';
 import { brevo } from '@/lib/brevo';
+import { wrapLiquidGlass } from '@/lib/templates/liquid-glass';
 
 export async function POST(req: Request) {
   try {
@@ -60,7 +61,10 @@ export async function POST(req: Request) {
             await brevo.sendEmail({
                 to: [{ email: lead.email, name: lead.name }],
                 subject: campaign.subject,
-                htmlContent: campaign.content,
+                htmlContent: campaign.template === 'liquid_glass' 
+                    ? wrapLiquidGlass(campaign.content, "View Details", "https://nearshorenavigator.com")
+                    : campaign.content,
+                tags: [`campaign_${campaignId}`]
             });
             sentCount++;
             // Rate limit slightly

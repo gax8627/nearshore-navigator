@@ -17,7 +17,7 @@ export default function CrmPage() {
 
   // New Campaign State
   const [showCampaignModal, setShowCampaignModal] = useState(false);
-  const [newCampaign, setNewCampaign] = useState({ name: "", subject: "", content: "", segment: "all" });
+  const [newCampaign, setNewCampaign] = useState({ name: "", subject: "", content: "", segment: "all", template: "standard" });
 
   useEffect(() => {
     fetchData();
@@ -87,7 +87,7 @@ export default function CrmPage() {
       });
       if (res.ok) {
         setShowCampaignModal(false);
-        setNewCampaign({ name: "", subject: "", content: "", segment: "all" });
+        setNewCampaign({ name: "", subject: "", content: "", segment: "all", template: "standard" });
         fetchData();
       } else {
         alert("Failed to create campaign");
@@ -313,7 +313,18 @@ export default function CrmPage() {
                         </select>
                     </div>
                     <div>
-                        <label className="block text-sm text-gray-400 mb-1">Content (HTML)</label>
+                        <label className="block text-sm text-gray-400 mb-1">Email Design</label>
+                        <select 
+                            className="w-full bg-gray-800 border-gray-700 rounded-lg px-3 py-2 text-white"
+                            value={newCampaign.template}
+                            onChange={e => setNewCampaign({...newCampaign, template: e.target.value})}
+                        >
+                            <option value="standard">Standard (Plain/HTML)</option>
+                            <option value="liquid_glass">✨ Premium Liquid Glass</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label className="block text-sm text-gray-400 mb-1">Content (Body)</label>
                         <textarea 
                             className="w-full bg-gray-800 border-gray-700 rounded-lg px-3 py-2 text-white h-32"
                             value={newCampaign.content}

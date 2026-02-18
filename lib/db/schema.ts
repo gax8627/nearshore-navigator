@@ -40,6 +40,7 @@ export const campaigns = pgTable('campaigns', {
   content: text('content').notNull(),
   status: varchar('status', { length: 50 }).notNull().default('draft'), // draft, sent
   segment: varchar('segment', { length: 50 }).notNull().default('all'),
+  template: varchar('template', { length: 50 }).notNull().default('standard'), // standard, liquid_glass
   stats: text('stats').notNull().default('{"sent":0,"opened":0,"clicked":0}'),
   sentAt: timestamp('sent_at'),
   createdAt: timestamp('created_at').notNull().defaultNow(),

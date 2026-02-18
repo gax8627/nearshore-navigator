@@ -55,9 +55,9 @@ export const brevo = {
   }: {
     to: { email: string; name?: string }[];
     subject: string;
-    htmlContent: string;
     sender?: { email: string; name?: string };
     scheduledAt?: string;
+    tags?: string[];
   }) {
     const apiKey = process.env.BREVO_API_KEY;
     if (!apiKey) throw new Error('BREVO_API_KEY not configured');
@@ -69,6 +69,7 @@ export const brevo = {
       to,
       subject,
       htmlContent,
+      tags: tags || [], 
     };
 
     if (scheduledAt) {
