@@ -5,8 +5,14 @@ import { google } from '@ai-sdk/google';
 import { z } from 'zod';
 import { brevo } from '@/lib/brevo';
 
-// Initialize Tavily
-const tvly = tavily({ apiKey: process.env.TAVILY_API_KEY || '' });
+// Lazy-initialize Tavily to avoid build-time errors when API key is not set
+let _tvly: ReturnType<typeof tavily> | null = null;
+function getTavily() {
+  if (!_tvly) {
+    _tvly = tavily({ apiKey: process.env.TAVILY_API_KEY || '' });
+  }
+  return _tvly;
+}
 
 // Define the event Schema
 type ProspectingEvent = {
@@ -150,8 +156,8 @@ export const prospectingAgent = inngest.createFunction(
         const personQuery = `Find role, background, and professional skills for ${lead.name} at ${lead.company}.`;
         
         const [companyRes, personRes] = await Promise.all([
-          tvly.search(companyQuery, { search_depth: 'advanced' }),
-          tvly.search(personQuery, { search_depth: 'advanced' })
+          getTavily().search(companyQuery, { search_depth: 'advanced' }),
+          getTavily().search(personQuery, { search_depth: 'advanced' })
         ]);
 
         return { company: companyRes, person: personRes };
