@@ -77,8 +77,8 @@ export default function TermsPage() {
                     <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('terms.section7_title')}</h2>
                     <p className="text-gray-600 dark:text-gray-300">
                         {t('terms.section7_text')}{" "}
-                        <a href="mailto:info@nearshorenavigator.com" className="text-primary-600 dark:text-primary-400 hover:underline">
-                            info@nearshorenavigator.com
+                        <a href="mailto:denisse@nearshorenavigator.com" className="text-primary-600 dark:text-primary-400 hover:underline">
+                            denisse@nearshorenavigator.com
                         </a>
                     </p>
                 </section>

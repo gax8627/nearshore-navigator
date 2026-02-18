@@ -71,7 +71,7 @@ export function Navbar() {
             >
                 <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
                     <Link href={`/${language}`} className="flex items-center group">
-                        <div className="relative w-36 md:w-48 h-10 md:h-12 transition-all group-hover:scale-105 duration-300">
+                        <div className="relative w-44 md:w-60 h-12 md:h-16 transition-all group-hover:scale-105 duration-300">
                             <Image
                                 src="/images/nearshore-logo-brand.png"
                                 alt="Nearshore Navigator Logo"

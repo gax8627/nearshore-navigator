@@ -45,7 +45,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-gray-900 dark:text-white">{t('contact.email')}</h3>
-                                    <a href="mailto:info@nearshorenavigator.com" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">info@nearshorenavigator.com</a>
+                                    <a href="mailto:denisse@nearshorenavigator.com" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">denisse@nearshorenavigator.com</a>
                                 </div>
                             </div>
 
