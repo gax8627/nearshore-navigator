@@ -43,7 +43,7 @@ async function main() {
             trim: true
         });
 
-        for (const record of records) {
+        for (const record of records as any[]) {
             // Normalize keys (some CSVs have different headers)
             const email = record['Email'] || record['email'] || record['Business Email'];
             if (email) {
