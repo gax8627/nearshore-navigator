@@ -152,8 +152,8 @@ async function main() {
     const bodyHtml = wrapHtml(`
       <p>Hi ${t.firstName},</p>
       <p>I saw you were looking into nearshore operational support for **${t.company}**.</p>
-      <p>I'm putting together a shortlist of Mexico-based teams that specialize in **biotech logistics and clean-room assembly**. Would you like me to send that over so you can review their ISO certifications and capabilities?</p>
-      <p>No need for a call yet—just thought this might be useful for your 2026 supply chain planning.</p>
+      <p>I'm putting together a shortlist of Mexico-based teams that specialize in **contract manufacturing and clean-room assembly**. Would you like me to send that over so you can review their ISO certifications and capabilities?</p>
+      <p>No need for a call yet—just thought this might be useful for your 2026 production planning.</p>
     `, "Book 15min Strategy Session", "https://calendly.com/denisse-nearshorenavigator/30min");
 
     console.log(`[${i+1}/${batch.length}] To: ${t.email} (${t.company}) | Ind: ${t.industry}`);
