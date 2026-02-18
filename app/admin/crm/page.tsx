@@ -97,6 +97,27 @@ export default function CrmPage() {
     }
   };
 
+  const handleSendCampaign = async (campaignId: number) => {
+    if (!confirm("Are you sure you want to send this campaign to all leads in the segment?")) return;
+    
+    try {
+        const res = await fetch("/api/admin/crm/campaigns/send", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ campaignId }),
+        });
+        const data = await res.json();
+        if (res.ok) {
+            alert(`Campaign queued! Sent ${data.sent} emails.`);
+            fetchData();
+        } else {
+            alert(`Failed: ${data.error}`);
+        }
+    } catch (err) {
+        alert("Error sending campaign");
+    }
+  };
+
   return (
     <div>
       <div className="flex items-center justify-between mb-8">
@@ -237,7 +258,15 @@ export default function CrmPage() {
                                 </td>
                                 <td className="px-6 py-4 text-sm text-gray-300">{c.segment}</td>
                                 <td className="px-6 py-4 text-xs text-gray-500">
-                                    {c.sentAt ? new Date(c.sentAt).toLocaleDateString() : '-'}
+                                    {c.sentAt ? new Date(c.sentAt).toLocaleDateString() : (
+                                        <button 
+                                            onClick={() => handleSendCampaign(c.id)}
+                                            className="flex items-center gap-1 text-primary-400 hover:text-primary-300 transition-colors"
+                                        >
+                                            <Send className="w-3 h-3" />
+                                            Send Now
+                                        </button>
+                                    )}
                                 </td>
                             </tr>
                         ))}
