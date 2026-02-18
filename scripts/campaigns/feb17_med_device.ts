@@ -148,6 +148,7 @@ async function main() {
     const t = batch[i];
     
     // Cold Outreach Template
+    const subject = `Nearshore support for ${t.company}'s pipeline?`;
     const bodyHtml = wrapHtml(`
       <p>Hi ${t.firstName},</p>
       <p>If you’re evaluating contract manufacturing or supplier alternatives closer to the U.S., I’d like to offer a free, no-obligation consultation to map realistic options in Mexico.</p>
