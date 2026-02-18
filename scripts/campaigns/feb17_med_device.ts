@@ -88,9 +88,9 @@ function wrapHtml(content: string, ctaText: string, ctaUrl: string) {
                 </table>
 
                 <!-- Bottom Footer -->
-                <div style="margin-top: 48px; text-align: center; font-family: Helvetica, sans-serif; font-size: 11px; color: #475569; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">
-                  Industrial Expansion &bull; 2025 Strategic Hub &bull; Unsubscribe
-                </div>
+                  <div style="margin-top: 48px; text-align: center; font-family: Helvetica, sans-serif; font-size: 11px; color: #475569; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">
+                    Industrial Expansion &bull; 2025 Strategic Hub &bull; <a href="mailto:denisse@nearshorenavigator.com?subject=Unsubscribe" style="color: #475569; text-decoration: none;">Unsubscribe</a>
+                  </div>
               </td>
             </tr>
           </table>

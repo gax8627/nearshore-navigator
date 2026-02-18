@@ -9,11 +9,15 @@ function isDbConfigured() {
 export async function GET() {
   try {
     const { userId } = await auth();
+    console.log(`[API] GET /leads - UserId: ${userId}`);
+    
     if (!userId) {
+      console.log('[API] Unauthorized: No userId');
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
     if (!isDbConfigured()) {
+      console.error('[API] DB Config Missing');
       return NextResponse.json({ error: 'Database not configured', leads: [] }, { status: 200 });
     }
 
@@ -21,10 +25,13 @@ export async function GET() {
     const { leads } = await import('@/lib/db/schema');
     const { desc } = await import('drizzle-orm');
 
+    console.log('[API] Querying leads...');
     const allLeads = await db.select().from(leads).orderBy(desc(leads.createdAt));
+    console.log(`[API] Found ${allLeads.length} leads`);
+    
     return NextResponse.json({ leads: allLeads });
   } catch (error) {
-    console.error('Error fetching leads:', error);
+    console.error('[API] Error fetching leads:', error);
     return NextResponse.json({ error: 'Failed to fetch leads', leads: [] }, { status: 500 });
   }
 }

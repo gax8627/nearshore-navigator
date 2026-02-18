@@ -13,7 +13,7 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // ─── Admin Routes ────────────────────────────────────────
-  if (pathname.startsWith('/admin')) {
+  if (pathname.startsWith('/admin') || pathname.startsWith('/api/admin')) {
     // If Clerk is configured, use Clerk auth
     if (isClerkConfigured) {
       try {
