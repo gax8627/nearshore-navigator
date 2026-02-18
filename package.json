@@ -12,6 +12,7 @@
   "dependencies": {
     "@ai-sdk/google": "^3.0.29",
     "@clerk/nextjs": "^6.37.5",
+    "@google/generative-ai": "^0.24.1",
     "@react-pdf/renderer": "^4.3.2",
     "@tavily/core": "^0.7.1",
     "@vercel/postgres": "^0.10.0",
