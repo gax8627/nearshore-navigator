@@ -2,10 +2,10 @@
  * Seed script: Migrate hardcoded BLOG_POSTS → Postgres `posts` table
  * Run: npx tsx scripts/seed-posts.ts
  */
-import 'dotenv/config';
+
 import { sql } from '@vercel/postgres';
 import { drizzle } from 'drizzle-orm/vercel-postgres';
-import * as schema from '../lib/db/schema';
+import * as schema from '@/lib/db/schema';
 
 const db = drizzle(sql, { schema });
 

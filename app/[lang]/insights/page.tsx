@@ -31,7 +31,10 @@ export default function InsightsPage() {
                 if (res.ok) {
                     const data = await res.json();
                     if (data.posts && data.posts.length > 0) {
-                        setBlogPosts(data.posts);
+                        setBlogPosts(data.posts.map((p: any) => ({
+                            ...p,
+                            tags: typeof p.tags === 'string' ? JSON.parse(p.tags) : p.tags
+                        })));
                     }
                 }
             } catch (err) {

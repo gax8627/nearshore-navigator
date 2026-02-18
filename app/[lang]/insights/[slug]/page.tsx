@@ -43,9 +43,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     
     if (res.ok) {
       const data = await res.json();
-      if (data.post) {
-        post = data.post;
-      }
+        if (data.post) {
+          post = {
+            ...data.post,
+            tags: typeof data.post.tags === 'string' ? JSON.parse(data.post.tags) : data.post.tags
+          };
+        }
     }
   } catch (error) {
     console.warn(`Failed to fetch post ${slug} from API, using fallback.`);
