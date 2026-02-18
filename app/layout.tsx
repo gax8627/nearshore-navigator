@@ -1,8 +1,19 @@
 import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
+import { Providers } from '@/components/providers';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' });
+
+export const metadata = {
+  title: 'Nearshore Navigator',
+  description: 'Your guide to nearshore manufacturing.',
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
+};
 
 export default function RootLayout({
   children,
@@ -12,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
