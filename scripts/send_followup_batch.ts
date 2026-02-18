@@ -44,13 +44,22 @@ async function main() {
   const records = parse(fs.readFileSync(csvPath, 'utf-8'), { columns: true, skip_empty_lines: true });
 
   // Map logic
-  const leadMap = new Map(records.map((r: any) => [r['Lead Id'], r]));
+  interface Lead {
+    'Lead Id': string;
+    'Email': string;
+    'First Name': string;
+    'Last Name': string;
+    'Company': string;
+    [key: string]: any;
+  }
+
+  const leadMap = new Map<string, Lead>(records.map((r: any) => [r['Lead Id'], r]));
 
   // 2. Identify Candidates (Processed but not Followed Up)
   const candidates = processedIds
     .filter(id => !followupHistory.includes(id))
     .map(id => leadMap.get(id))
-    .filter(lead => lead && lead['Email']);
+    .filter((lead): lead is Lead => !!(lead && lead['Email']));
 
   console.log(`Found ${candidates.length} candidates for follow-up.`);
 
