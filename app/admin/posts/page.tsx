@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FileText, Plus, Edit, Trash2, Eye, EyeOff } from "lucide-react";
@@ -23,7 +23,7 @@ export default function PostsListPage() {
   const [error, setError] = useState<string | null>(null);
 
   // Fetch posts on mount
-  useState(() => {
+  useEffect(() => {
     fetch("/api/admin/posts")
       .then((r) => {
         if (!r.ok) throw new Error("Failed to fetch");
@@ -37,7 +37,7 @@ export default function PostsListPage() {
         setError(err.message);
         setLoading(false);
       });
-  });
+  }, []);
 
   const handleDelete = async (id: number) => {
     if (!confirm("Are you sure you want to delete this post?")) return;

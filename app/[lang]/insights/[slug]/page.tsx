@@ -34,7 +34,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  let post = getPostBySlug(slug);
+
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/posts/${slug}`, {
+      next: { revalidate: 60 },
+    });
+    
+    if (res.ok) {
+      const data = await res.json();
+      if (data.post) {
+        post = data.post;
+      }
+    }
+  } catch (error) {
+    console.warn(`Failed to fetch post ${slug} from API, using fallback.`);
+  }
 
   if (!post) {
     notFound();

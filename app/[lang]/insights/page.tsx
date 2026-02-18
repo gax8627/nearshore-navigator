@@ -16,15 +16,31 @@ const mra = MRA_DATA;
 export default function InsightsPage() {
     const { t, language } = useLanguage();
     const [insights, setInsights] = useState<any[]>([]);
+    const [blogPosts, setBlogPosts] = useState<any[]>(BLOG_POSTS);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        async function fetchInsights() {
-            const data = await getMarketInsights();
-            setInsights(data);
-            setLoading(false);
+        async function fetchData() {
+            try {
+                // Fetch market insights
+                const insightsData = await getMarketInsights();
+                setInsights(insightsData);
+
+                // Fetch blog posts
+                const res = await fetch('/api/posts');
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.posts && data.posts.length > 0) {
+                        setBlogPosts(data.posts);
+                    }
+                }
+            } catch (err) {
+                console.error("Failed to fetch data:", err);
+            } finally {
+                setLoading(false);
+            }
         }
-        fetchInsights();
+        fetchData();
     }, []);
 
     const mra = MRA_DATA;
@@ -113,7 +129,7 @@ export default function InsightsPage() {
                 </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {BLOG_POSTS.map((post) => (
+                {blogPosts.map((post) => (
                     <BlogCard key={post.slug} post={post} />
                 ))}
                 </div>

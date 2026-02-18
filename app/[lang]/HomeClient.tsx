@@ -11,7 +11,7 @@ import { Warehouse, Globe2, Cog, Truck, Headset, Users } from "lucide-react";
 import { NewsletterBanner } from "@/components/NewsletterBanner";
 import { FounderBlock } from "@/components/FounderBlock";
 import { HeroScanner } from "@/components/HeroScanner";
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 import { useScroll, useTransform, motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/app/context/LanguageContext";
 
@@ -30,7 +30,7 @@ export default function HomeClient() {
     setVideoEnded(true);
   }, []);
 
-  const featuredPosts = [
+  const [featuredPosts, setFeaturedPosts] = useState([
     {
       title: "Nearshoring in Baja California: A Guide for US Companies",
       excerpt: "Everything you need to know about setting up operations in Mexico's manufacturing hub.",
@@ -43,11 +43,31 @@ export default function HomeClient() {
       title: "Baja California vs Asia: Manufacturing Cost Comparison",
       excerpt: "Analyze the total landed cost benefits of manufacturing in Baja California versus traditional Asian hubs.",
       date: "Nov 12, 2025",
-      slug: `/${language}/insights/tijuana-vs-asia-manufacturing-cost-comparison`,
+      slug: "tijuana-vs-asia-manufacturing-cost-comparison",
       imageUrl: "/images/factory-worker.jpg",
       tags: ["Cost Analysis", "Economics"],
     },
-  ];
+  ]);
+
+  useEffect(() => {
+    async function fetchFeatured() {
+        try {
+            const res = await fetch('/api/posts?limit=3');
+            if (res.ok) {
+                const data = await res.json();
+                if (data.posts && data.posts.length > 0) {
+                    setFeaturedPosts(data.posts.map((p: any) => ({
+                        ...p,
+                        tags: typeof p.tags === 'string' ? JSON.parse(p.tags) : p.tags
+                    })));
+                }
+            }
+        } catch (e) {
+            console.error("Failed to fetch featured posts");
+        }
+    }
+    fetchFeatured();
+  }, []);
 
   const filteredFeaturedPosts = featuredPosts.map(post => ({
     ...post,
