@@ -91,7 +91,7 @@ export default function ProspectingPage() {
            <ul className="list-disc ml-5 mt-1 space-y-1">
              <li>Agents search the web for contact info.</li>
              <li>AI verifies the data and confidence level.</li>
-             <li>Verified leads (>70% confidence) are added to Brevo.</li>
+             <li>Verified leads (&gt;70% confidence) are added to Brevo.</li>
              <li>An introductory email is sent automatically.</li>
            </ul>
         </div>
