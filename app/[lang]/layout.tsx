@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Space_Grotesk } from 'next/font/google'
 import '../globals.css'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
@@ -7,9 +6,6 @@ import { LanguageProvider } from '@/app/context/LanguageContext'
 import { ThemeProvider } from '@/app/context/ThemeContext'
 import WhatsAppButton from '@/app/components/WhatsAppButton'
 import { SchemaMarkup } from '@/components/SchemaMarkup'
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' })
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -103,7 +99,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function RootLayout({
+export default async function LangLayout({
   children,
   params
 }: {
@@ -113,24 +109,21 @@ export default async function RootLayout({
   const { lang } = await params;
 
   return (
-    <html lang={lang} className="scroll-smooth">
-      <head>
-        <SchemaMarkup />
-      </head>
-      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>
-        <LanguageProvider lang={lang as any}>
-          <ThemeProvider>
-            <div className="flex flex-col min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-              <Navbar />
-              <main className="flex-grow pt-[80px]">
-                {children}
-              </main>
-              <Footer />
-              <WhatsAppButton />
-            </div>
-          </ThemeProvider>
-        </LanguageProvider>
-      </body>
-    </html>
+    <LanguageProvider lang={lang as any}>
+      <ThemeProvider>
+        <head>
+          <SchemaMarkup />
+        </head>
+        <div className="flex flex-col min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+          <Navbar />
+          <main className="flex-grow pt-[80px]">
+            {children}
+          </main>
+          <Footer />
+          <WhatsAppButton />
+        </div>
+      </ThemeProvider>
+    </LanguageProvider>
   )
 }
+
