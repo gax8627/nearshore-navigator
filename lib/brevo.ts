@@ -55,6 +55,7 @@ export const brevo = {
   }: {
     to: { email: string; name?: string }[];
     subject: string;
+    htmlContent: string;
     sender?: { email: string; name?: string };
     scheduledAt?: string;
     tags?: string[];
