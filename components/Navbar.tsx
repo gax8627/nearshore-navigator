@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -17,6 +17,7 @@ export function Navbar() {
     const [isServicesOpen, setIsServicesOpen] = useState(false);
     const servicesRef = useRef<HTMLDivElement>(null);
     const pathname = usePathname();
+    const router = useRouter();
     const { language, setLanguage, t } = useLanguage();
     const { theme, toggleTheme } = useTheme();
 
@@ -144,13 +145,29 @@ export function Navbar() {
                         {/* Language Toggle */}
                         <div className="flex items-center divide-x divide-gray-300 dark:divide-gray-700 border border-gray-200 dark:border-gray-700 rounded-md overflow-hidden">
                             <button
-                                onClick={() => setLanguage('en')}
+                                onClick={() => {
+                                    const segments = pathname.split('/');
+                                    if (segments.length > 1) {
+                                        segments[1] = 'en';
+                                        router.push(segments.join('/'));
+                                    } else {
+                                        router.push('/en');
+                                    }
+                                }}
                                 className={cn("px-2 py-1 text-xs font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition", language === 'en' ? 'bg-primary-50 text-primary-600 dark:bg-primary-900/20 dark:text-primary-400' : 'text-gray-500 dark:text-gray-400')}
                             >
                                 EN
                             </button>
                             <button
-                                onClick={() => setLanguage('es')}
+                                onClick={() => {
+                                    const segments = pathname.split('/');
+                                    if (segments.length > 1) {
+                                        segments[1] = 'es';
+                                        router.push(segments.join('/'));
+                                    } else {
+                                        router.push('/es');
+                                    }
+                                }}
                                 className={cn("px-2 py-1 text-xs font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition", language === 'es' ? 'bg-primary-50 text-primary-600 dark:bg-primary-900/20 dark:text-primary-400' : 'text-gray-500 dark:text-gray-400')}
                             >
                                 ES
