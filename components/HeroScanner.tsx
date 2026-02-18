@@ -49,10 +49,10 @@ export const HeroScanner = ({ src, alt, active = true }: HeroScannerProps) => {
 
   // Data nodes positioned on warehouse rooftops in the aerial image
   const dataNodes = [
-    { top: "72%", left: "22%", label: "Warehouse A-1", value: "Class A · 120,000 sqft" },
+    { top: "55%", left: "18%", label: "Warehouse A-1", value: "Class A · 120,000 sqft" },
     { top: "70%", left: "68%", label: "Distribution Hub", value: "42 Dock Doors · Active" },
     { top: "42%", left: "35%", label: "Manufacturing Zone", value: "ISO 13485 Certified" },
-    { top: "45%", left: "72%", label: "Logistics Center", value: "Cross-dock · 24/7 Ops" },
+    { top: "38%", left: "62%", label: "Logistics Center", value: "Cross-dock · 24/7 Ops" },
   ];
 
   return (
