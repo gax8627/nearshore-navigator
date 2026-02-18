@@ -46,7 +46,7 @@ function wrapHtml(content: string, ctaText: string, ctaUrl: string) {
                 <table border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 48px;">
                   <tr>
                     <td>
-                      <img src="https://nearshorenavigator.com/images/nearshore-logo-brand.jpg" alt="Nearshore Navigator" width="200" style="display: block; width: 200px; height: auto;" />
+                      <img src="https://nearshorenavigator.com/images/nearshore-logo-brand.png" alt="Nearshore Navigator" width="200" style="display: block; width: 200px; height: auto;" />
                     </td>
                   </tr>
                 </table>
