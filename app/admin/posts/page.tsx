@@ -25,8 +25,11 @@ export default function PostsListPage() {
   // Fetch posts on mount
   useEffect(() => {
     fetch("/api/admin/posts")
-      .then((r) => {
-        if (!r.ok) throw new Error("Failed to fetch");
+      .then(async (r) => {
+        if (!r.ok) {
+           const text = await r.text();
+           throw new Error(`Failed to fetch: ${r.status} ${r.statusText} - ${text.substring(0, 50)}`);
+        }
         return r.json();
       })
       .then((data) => {

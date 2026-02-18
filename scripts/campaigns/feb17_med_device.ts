@@ -148,13 +148,20 @@ async function main() {
     const t = batch[i];
     
     // Cold Outreach Template
-    const subject = `Nearshore support for ${t.company}'s pipeline?`;
     const bodyHtml = wrapHtml(`
       <p>Hi ${t.firstName},</p>
-      <p>I saw you were looking into nearshore operational support for **${t.company}**.</p>
-      <p>I'm putting together a shortlist of Mexico-based teams that specialize in **contract manufacturing and clean-room assembly**. Would you like me to send that over so you can review their ISO certifications and capabilities?</p>
-      <p>No need for a call yet—just thought this might be useful for your 2026 production planning.</p>
-    `, "Book 15min Strategy Session", "https://calendly.com/denisse-nearshorenavigator/30min");
+      <p>If you’re evaluating contract manufacturing or supplier alternatives closer to the U.S., I’d like to offer a free, no-obligation consultation to map realistic options in Mexico.</p>
+      
+      <p>In a 20–30 minute call, we can cover:</p>
+      <ul style="padding-left: 20px; list-style-position: inside;">
+        <li>What you manufacture + key requirements (quality, certifications, volumes)</li>
+        <li>The best-fit regions in Mexico for your product and logistics</li>
+        <li>Typical timelines, costs, and common risks (and how to avoid them)</li>
+        <li>Next steps to shortlist capable contract manufacturers</li>
+      </ul>
+
+      <p>If it’s helpful, reply with “Mexico” and a couple of times that work this week, and I’ll send a calendar invite.</p>
+    `, "Book Strategy Call Now", "https://calendly.com/denisse-nearshorenavigator/30min");
 
     console.log(`[${i+1}/${batch.length}] To: ${t.email} (${t.company}) | Ind: ${t.industry}`);
 

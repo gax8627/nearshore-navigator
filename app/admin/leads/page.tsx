@@ -15,10 +15,12 @@ export default function LeadsPage() {
   const fetchLeads = async () => {
     try {
       const res = await fetch("/api/admin/leads");
+      if (!res.ok) throw new Error(`Failed to fetch: ${res.status}`);
       const data = await res.json();
       setLeads(data.leads || []);
     } catch (error) {
-      console.error("Failed to load leads");
+      console.error("Failed to load leads", error);
+      alert("Failed to load leads. Please check console or refresh.");
     } finally {
       setLoading(false);
     }
