@@ -172,9 +172,9 @@ export function Navbar() {
                             </motion.div>
                         </button>
 
-                        <Link href={`/${language}/assessment`}>
-                            <Button variant="primary" size="sm">{t('nav.bookTour')}</Button>
-                        </Link>
+                        <a href="https://calendly.com/denisse-nearshorenavigator/30min" target="_blank" rel="noopener noreferrer">
+                            <Button variant="primary" size="sm">Book a Call</Button>
+                        </a>
                     </div>
 
                     {/* Mobile Toggle */}

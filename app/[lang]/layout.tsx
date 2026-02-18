@@ -26,6 +26,11 @@ export const metadata: Metadata = {
     default: 'Nearshore Navigator | Industrial Manufacturing in Baja California, Mexico',
     template: '%s | Nearshore Navigator'
   },
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
   description: 'Your partner for industrial nearshoring, shelter services, and contract manufacturing in Baja California, Mexico. Access Class A industrial buildings, bilingual workforce, and 40-60% cost savings just 20 minutes from San Diego.',
   keywords: [
     'nearshoring tijuana',

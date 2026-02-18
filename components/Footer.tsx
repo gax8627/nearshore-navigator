@@ -15,10 +15,10 @@ export function Footer() {
                         <Link href={`/${language}`} className="block group">
                             <div className="relative w-36 md:w-44 h-10 transition-all group-hover:scale-105 duration-300">
                                 <Image
-                                    src="/logo-new.png"
+                                    src="/images/nearshore-logo-brand.png"
                                     alt="Nearshore Navigator Logo"
                                     fill
-                                    className="object-contain brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity"
+                                    className="object-contain opacity-80 group-hover:opacity-100 transition-opacity"
                                 />
                             </div>
                         </Link>
@@ -54,7 +54,7 @@ export function Footer() {
                         <ul className="space-y-2 text-sm text-gray-300">
                             <li>Baja California, MX</li>
                             <li>San Diego, California, US</li>
-                            <li><a href="mailto:info@nearshorenavigator.com" className="hover:text-primary-400" aria-label="Send email to Nearshore Navigator">info@nearshorenavigator.com</a></li>
+                            <li><a href="mailto:denisse@nearshorenavigator.com" className="hover:text-primary-400" aria-label="Send email to Nearshore Navigator">denisse@nearshorenavigator.com</a></li>
                         </ul>
                     </div>
                 </div>
