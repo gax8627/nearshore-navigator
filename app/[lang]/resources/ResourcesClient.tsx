@@ -70,7 +70,7 @@ export default function ResourcesClient() {
             <section className="relative h-[40vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-gray-900 text-white">
                  <div className="absolute inset-0 z-0 opacity-100">
                     <Image
-                        src="https://images.unsplash.com/photo-1454165833767-027ffea9e778?auto=format&fit=crop&q=80&w=2000"
+                        src="/images/industrial-park-hero.jpg"
                         alt="Expansion Strategy and Tools"
                         fill
                         className="object-cover premium-image-filter"
