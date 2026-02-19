@@ -1,97 +1,57 @@
 import { NextResponse } from 'next/server';
 
-// Helper: Check if DB is configured
 function isDbConfigured() {
   return !!(process.env.POSTGRES_URL || process.env.POSTGRES_URL_NON_POOLING);
 }
 
 export async function POST(req: Request) {
-  try {
-    const body = await req.json();
-    const { name, company, email, phone, message, honeypot } = body;
+    try {
+        const body = await req.json();
+        const { name, email, company, phone, message, honeypot } = body;
 
-    // Honeypot bot protection
-    if (honeypot) {
-      console.warn('Bot detected via honeypot field');
-      return NextResponse.json({ success: true }, { status: 200 }); // Silent fail for bots
+        // Honeypot check
+        if (honeypot) {
+            console.log('[Contact API] Honeypot field filled. Rejecting silently.');
+            // Return success to fool bots
+            return NextResponse.json({ success: true });
+        }
+
+        // Basic validation
+        if (!name || !email) {
+            return NextResponse.json(
+                { error: 'Name and Email are required.' },
+                { status: 400 }
+            );
+        }
+
+        console.log(`[Contact API] Received lead: ${email}`);
+
+        // DB Insertion
+        if (isDbConfigured()) {
+            const { db } = await import('@/lib/db');
+            const { leads } = await import('@/lib/db/schema');
+            
+            await db.insert(leads).values({
+                name,
+                email,
+                company: company || '',
+                phone: phone || '',
+                message: message || '',
+                source: 'website_contact_form'
+            });
+            console.log('[Contact API] Saved to database.');
+        } else {
+            console.warn('[Contact API] Database not configured. Lead data:', { name, email, company });
+            // In dev mode without DB, we still return success to the UI
+        }
+
+        return NextResponse.json({ success: true });
+
+    } catch (error) {
+        console.error('[Contact API] Error processing request:', error);
+        return NextResponse.json(
+            { error: 'Internal server error.' },
+            { status: 500 }
+        );
     }
-
-    // Basic validation
-    if (!name || !email || !message) {
-      return NextResponse.json(
-        { error: 'Missing required fields' },
-        { status: 400 }
-      );
-    }
-
-    // Lead Scoring
-    const { scoreLead } = await import('@/lib/lead-scoring');
-    const leadScore = scoreLead({ name, company, email, message });
-
-    console.log(`New Lead Scored: ${leadScore.category} (${leadScore.score} pts) - ${company}`);
-    console.log(`Tags: ${leadScore.tags.join(', ')}`);
-
-    // ─── Save Lead to Database ─────────────────────────────
-    if (isDbConfigured()) {
-      try {
-        const { db } = await import('@/lib/db');
-        const { leads } = await import('@/lib/db/schema');
-
-        await db.insert(leads).values({
-          name: name || 'Anonymous',
-          email,
-          company: company || 'N/A',
-          phone: phone || '',
-          message: message || '',
-          status: 'new',
-          score: leadScore.score,
-          category: leadScore.category,
-          tags: JSON.stringify(leadScore.tags),
-        });
-
-        console.log('✅ Lead saved to database');
-      } catch (dbError) {
-        console.error('⚠️ Failed to save lead to DB (continuing):', dbError);
-        // Don't block the response if DB save fails
-      }
-    } else {
-      console.log('ℹ️ Database not configured — lead not persisted');
-    }
-
-    // Lead Intelligence & Real-time Notifications
-    const { notifyLead } = await import('@/lib/notifications');
-    
-    const isHighPriority = leadScore.category === 'High';
-    
-    if (isHighPriority) {
-        console.log('🚨 HIGH PRIORITY LEAD DETECTED - SENT TO EXECUTIVE CHANNEL');
-    } else {
-        console.log('ℹ️ Standard Lead - Logged to Database');
-    }
-
-    await notifyLead({
-      name: name || 'Anonymous',
-      email,
-      company: company || 'N/A',
-      score: leadScore.score,
-      category: leadScore.category,
-      tags: leadScore.tags
-    });
-
-    return NextResponse.json({ 
-      success: true, 
-      leadInfo: {
-        category: leadScore.category,
-        score: leadScore.score,
-        tags: leadScore.tags,
-        routing: isHighPriority ? 'VIP_EXECUTIVE_PASS' : 'STANDARD_NURTURE'
-      }
-    }, { status: 200 });
-  } catch (error) {
-    console.error('Contact form error:', error);
-    return NextResponse.json(
-      { error: 'Failed to send message' },
-      { status: 500 }
-    );
-  }
 }

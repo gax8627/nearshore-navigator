@@ -15,11 +15,37 @@ export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isServicesOpen, setIsServicesOpen] = useState(false);
+    const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
     const servicesRef = useRef<HTMLDivElement>(null);
+    const langRef = useRef<HTMLDivElement>(null);
     const pathname = usePathname();
     const router = useRouter();
     const { language, setLanguage, t } = useLanguage();
     const { theme, toggleTheme } = useTheme();
+
+    const languages = [
+        { code: 'en', label: 'English', flag: '🇺🇸' },
+        { code: 'es', label: 'Español', flag: '🇲🇽' },
+        { code: 'fr', label: 'Français', flag: '🇫🇷' },
+        { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
+        { code: 'ja', label: '日本語', flag: '🇯🇵' },
+        { code: 'zh', label: '中文', flag: '🇨🇳' },
+        { code: 'ko', label: '한국어', flag: '🇰🇷' },
+    ];
+
+    const currentLang = languages.find(l => l.code === language) || languages[0];
+
+    const handleLanguageChange = (newLang: string) => {
+        // Set cookie for middleware persistence (1 year)
+        document.cookie = `NEXT_LOCALE=${newLang}; path=/; max-age=31536000; SameSite=Lax`;
+        
+        // Update context and redirect
+        setLanguage(newLang as any);
+        const newPath = pathname.replace(`/${language}`, `/${newLang}`);
+        router.push(newPath);
+        setIsLangMenuOpen(false);
+        setIsMobileMenuOpen(false);
+    };
 
     const serviceLinks = [
         { name: t('services.real_estate'), href: `/${language}/services/industrial-real-estate-baja` },
@@ -52,11 +78,14 @@ export function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Close dropdown when clicking outside
+    // Close dropdowns when clicking outside
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
                 setIsServicesOpen(false);
+            }
+            if (langRef.current && !langRef.current.contains(event.target as Node)) {
+                setIsLangMenuOpen(false);
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
@@ -150,36 +179,44 @@ export function Navbar() {
                             </Link>
                         ))}
 
-                        {/* Language Toggle */}
-                        <div className="flex items-center divide-x divide-gray-300 dark:divide-gray-700 border border-gray-200 dark:border-gray-700 rounded-md overflow-hidden">
+                        {/* Language Dropdown */}
+                        <div ref={langRef} className="relative">
                             <button
-                                onClick={() => {
-                                    const segments = pathname.split('/');
-                                    if (segments.length > 1) {
-                                        segments[1] = 'en';
-                                        router.push(segments.join('/'));
-                                    } else {
-                                        router.push('/en');
-                                    }
-                                }}
-                                className={cn("px-2 py-1 text-xs font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition", language === 'en' ? 'bg-primary-50 text-primary-600 dark:bg-primary-900/20 dark:text-primary-400' : 'text-gray-500 dark:text-gray-400')}
+                                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                                className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-sm font-medium"
                             >
-                                EN
+                                <span>{currentLang.flag}</span>
+                                <span className="hidden xl:inline">{currentLang.code.toUpperCase()}</span>
+                                <ChevronDown className="w-3 h-3 text-gray-500" />
                             </button>
-                            <button
-                                onClick={() => {
-                                    const segments = pathname.split('/');
-                                    if (segments.length > 1) {
-                                        segments[1] = 'es';
-                                        router.push(segments.join('/'));
-                                    } else {
-                                        router.push('/es');
-                                    }
-                                }}
-                                className={cn("px-2 py-1 text-xs font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition", language === 'es' ? 'bg-primary-50 text-primary-600 dark:bg-primary-900/20 dark:text-primary-400' : 'text-gray-500 dark:text-gray-400')}
-                            >
-                                ES
-                            </button>
+
+                            <AnimatePresence>
+                                {isLangMenuOpen && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: 10 }}
+                                        transition={{ duration: 0.2 }}
+                                        className="absolute top-full right-0 mt-2 w-40 bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-100 dark:border-gray-800 py-2 overflow-hidden"
+                                    >
+                                        {languages.map((lang) => (
+                                            <button
+                                                key={lang.code}
+                                                onClick={() => handleLanguageChange(lang.code)}
+                                                className={cn(
+                                                    "w-full text-left px-4 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex items-center gap-2",
+                                                    language === lang.code
+                                                        ? "text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20"
+                                                        : "text-gray-700 dark:text-gray-300"
+                                                )}
+                                            >
+                                                <span>{lang.flag}</span>
+                                                <span>{lang.label}</span>
+                                            </button>
+                                        ))}
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </div>
 
                         {/* Theme Toggle */}
@@ -275,21 +312,24 @@ export function Navbar() {
                                 </Link>
                             ))}
 
-                            <div className="flex items-center justify-between py-2">
-                                <span className="text-gray-600 dark:text-gray-400">Language</span>
-                                <div className="flex items-center gap-2">
-                                    <button
-                                        onClick={() => setLanguage('en')}
-                                        className={cn("px-3 py-1 rounded border text-sm font-medium", language === 'en' ? 'bg-primary-500 text-white border-primary-500' : 'border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-300')}
-                                    >
-                                        English
-                                    </button>
-                                    <button
-                                        onClick={() => setLanguage('es')}
-                                        className={cn("px-3 py-1 rounded border text-sm font-medium", language === 'es' ? 'bg-primary-500 text-white border-primary-500' : 'border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-300')}
-                                    >
-                                        Español
-                                    </button>
+                            <div className="border-t border-gray-100 dark:border-gray-800 pt-4">
+                                <span className="block text-gray-500 dark:text-gray-400 text-sm font-medium mb-3 px-1">Select Language</span>
+                                <div className="grid grid-cols-2 gap-2">
+                                    {languages.map((lang) => (
+                                        <button
+                                            key={lang.code}
+                                            onClick={() => handleLanguageChange(lang.code)}
+                                            className={cn(
+                                                "px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-2 border transition-colors",
+                                                language === lang.code 
+                                                    ? "bg-primary-50 dark:bg-primary-900/20 border-primary-200 dark:border-primary-800 text-primary-700 dark:text-primary-300" 
+                                                    : "border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+                                            )}
+                                        >
+                                            <span>{lang.flag}</span>
+                                            <span>{lang.label}</span>
+                                        </button>
+                                    ))}
                                 </div>
                             </div>
 

@@ -80,6 +80,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.6,
             alternates: getAlternates('/resources/questionnaire'),
         },
+        {
+            url: `${baseUrl}/en/resources`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
+            alternates: getAlternates('/resources'),
+        },
+        {
+            url: `${baseUrl}/en/resources/brochure`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+            alternates: getAlternates('/resources/brochure'),
+        },
         // Service pages
         {
             url: `${baseUrl}/en/services/industrial-real-estate-baja`,

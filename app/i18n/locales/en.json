@@ -400,5 +400,30 @@
         "q34": "What is the period for which you require our services?",
         "q35": "Can we offer you quotes for transportation? What are the addresses?",
         "q36": "What Annex 24 system do you use?"
+    },
+    "resources": {
+       "title": "Industrial Resources & Tools",
+       "subtitle": "Essential calculators, maps, and guides for your Mexico expansion.",
+       "mapTitle": "Tijuana Industrial Map",
+       "assessmentTitle": "Cost Estimator & Assessment",
+       "questionnaireTitle": "3PL / Logistics Questionnaire",
+       "brochureTitle": "Nearshore Brochure"
+    },
+    "brochure": {
+       "title": "Nearshore Navigator",
+       "subtitle": "Your Strategic Partner for Manufacturing in Baja California",
+       "whyBaja": "Why Baja California?",
+       "proximity": "Proximity to USA",
+       "proximityDesc": "Just 20 minutes from San Diego, enabling executive oversight and JIT logistics.",
+       "labor": "Skilled Workforce",
+       "laborDesc": "Access to over 700,000 manufacturing workers with aerospace, medical device, and electronics experience.",
+       "infrastructure": "World-Class Infrastructure",
+       "infrastructureDesc": "Over 70 industrial parks with Class A buildings, high-speed fiber, and reliable utilities.",
+       "services": "Our Core Services",
+       "realEstate": "Industrial Real Estate",
+       "shelter": "Shelter Services",
+       "mfg": "Contract Manufacturing",
+       "contact": "Contact Us",
+       "download": "Download PDF"
     }
 }

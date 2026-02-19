@@ -46,7 +46,6 @@ export default function CallCenterPage() {
                         className="object-cover premium-image-filter"
                         priority
                     />
-                    <div className="absolute inset-0 bg-gray-900/70" />
                 </motion.div>
                 <div className="container mx-auto px-4 z-10 text-center">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">

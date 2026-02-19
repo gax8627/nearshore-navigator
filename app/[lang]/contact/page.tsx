@@ -20,7 +20,6 @@ export default function ContactPage() {
                         className="object-cover premium-image-filter"
                         priority
                     />
-                    <div className="absolute inset-0 bg-gray-900/70" />
                 </div>
 
                 <div className="container mx-auto px-4 z-10 text-center">
@@ -55,7 +54,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-gray-900 dark:text-white">{t('contact.phone')}</h3>
-                                    <p className="text-gray-600 dark:text-gray-300">+1 (619) 555-0123</p>
+                                    <p className="text-gray-600 dark:text-gray-300">+52 664 123 7199</p>
                                     <p className="text-xs text-gray-400 dark:text-gray-500">{t('contact.hours')}</p>
                                 </div>
                             </div>

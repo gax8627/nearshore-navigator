@@ -5,7 +5,8 @@
         "resources": "リソース",
         "about": "Nearshore Navigatorについて",
         "contact": "お問い合わせ",
-        "bookTour": "ツアーを予約する"
+        "bookTour": "ツアーを予約する",
+        "assessment": "Assessment"
     },
     "hero": {
         "title": "バハ産業ロードマップ",
@@ -188,7 +189,9 @@
         "guideCTA": "セクション321修士ガイドを見る",
         "guideDesc": "ティフアナで注文を処理することで、関税を最大25%節約。 ",
         "formTitle": "物流見積もりを依頼する",
-        "formSubtitle": "バハ・カリフォルニアの吟味された3PLおよび配送パートナーとつながります。"
+        "formSubtitle": "バハ・カリフォルニアの吟味された3PLおよび配送パートナーとつながります。",
+        "questionnaireCTA": "Start 3PL Assessment",
+        "questionnaireDesc": "Complete our 36-point operational questionnaire to receive a customized logistics proposal."
     },
     "contractPage": {
         "badge": "マキラドーラ・パートナー",
@@ -343,5 +346,82 @@
         "matchmakingDesc": "実績データに基づいて、検証済みのCMやシェルタープロバイダーとお客様を結びつけます。",
         "networkTitle": "検証済みネットワーク",
         "networkDesc": "70以上の工業団地やトップクラスの物流業者へ直接アクセスできます。"
+    },
+    "resources": {
+        "title": "Industrial Resources & Tools",
+        "subtitle": "Essential calculators, maps, and guides for your Mexico expansion.",
+        "mapTitle": "Tijuana Industrial Map",
+        "assessmentTitle": "Cost Estimator & Assessment",
+        "questionnaireTitle": "3PL / Logistics Questionnaire",
+        "brochureTitle": "Nearshore Brochure"
+    },
+    "brochure": {
+        "title": "Nearshore Navigator",
+        "subtitle": "Your Strategic Partner for Manufacturing in Baja California",
+        "whyBaja": "Why Baja California?",
+        "proximity": "Proximity to USA",
+        "proximityDesc": "Just 20 minutes from San Diego, enabling executive oversight and JIT logistics.",
+        "labor": "Skilled Workforce",
+        "laborDesc": "Access to over 700,000 manufacturing workers with aerospace, medical device, and electronics experience.",
+        "infrastructure": "World-Class Infrastructure",
+        "infrastructureDesc": "Over 70 industrial parks with Class A buildings, high-speed fiber, and reliable utilities.",
+        "services": "Our Core Services",
+        "realEstate": "Industrial Real Estate",
+        "shelter": "Shelter Services",
+        "mfg": "Contract Manufacturing",
+        "contact": "Contact Us",
+        "download": "Download PDF"
+    },
+    "assessment": {
+        "liveData": "Live CFE Industrial Rates",
+        "costModelingDesc": "Detailed comparison of labor, real-time CFE electricity, and lease rates vs. your current operations."
+    },
+    "trustedBy": "Trusted by Global Leaders in Baja",
+    "questionnaire": {
+        "title": "3PL Operation Questionnaire",
+        "subtitle": "Confidential Assessment",
+        "intro": "Please provide the following information to help us understand your operation requirements.",
+        "sec1_title": "1. Operational Basics",
+        "q1": "How many square feet do you need for your operation?",
+        "q2": "What kind of products would you be moving with us?",
+        "q3": "What is the presentation of the product we will be receiving? (standard pallets, bulk, bags, packages, etc.)",
+        "q4": "Please provide the dimensions in inches of the packages or pallets we will be receiving (length, width, height).",
+        "q5": "What is the average weight in pounds of the pallets?",
+        "sec2_title": "2. Inventory & Handling",
+        "q6": "What are the tariff fractions of the products we would be storing?",
+        "q7": "Are any of the products Hazmat?",
+        "q8": "How many levels can the pallets be stacked one on top of the other?",
+        "q9": "How many orders are we going to process per day?",
+        "q10": "How many pieces does a typical order consist of?",
+        "q11": "Are we going to do virtual transfers or are we going to do home extension?",
+        "q12": "Explain the process you need to be carried out within the Distribution Center. (Attach diagram/doc if needed)",
+        "sec3_title": "3. Systems & Communication",
+        "q13": "How will you transmit the orders to us?",
+        "q14": "What is the order management system you use?",
+        "q15": "How often would you be transmitting the orders to us?",
+        "q16": "What would be the order transmission protocol? (AS2, FTP, SFTP, Mail, OTHER)",
+        "q17": "What will be the content of the transmission? (EDI ANSI X12, PLAIN TEXT CSV/TAB/PIPE)",
+        "q18": "Please provide an example of the commands you would transmit to us for testing.",
+        "sec4_title": "4. Volume & Capacity",
+        "q19": "Do you have an estimate of the number of personnel required?",
+        "q20": "Do you have an estimate of the number of pallets positions to store?",
+        "q21": "How many trailer loads will we receive per week?",
+        "q22": "How many pallets will fit in each trailer load?",
+        "q23": "How many orders or units will we be shipping per day?",
+        "sec5_title": "5. Logistics & Additional Info",
+        "q24": "Are there any current operations we can visit?",
+        "q25": "How many part numbers go on an average order?",
+        "q26": "How many SKU's do you handle in total? (Attach catalog if possible)",
+        "q27": "How many units/cartons fit on a standard 40\"x48\"x60\" pallet?",
+        "q28": "Do you need special equipment? (sewing machines, cutting machines, etc.)",
+        "q29": "What are the destinations we would be shipping to?",
+        "q30": "What is the company that owns the merchandise?",
+        "q31": "Which company would we bill for our services?",
+        "sec6_title": "6. Value, Insurance & Transport",
+        "q32": "What would be the total value of the merchandise to be held?",
+        "q33": "Do you agree to extend your policy to insure the merchandise?",
+        "q34": "What is the period for which you require our services?",
+        "q35": "Can we offer you quotes for transportation? What are the addresses?",
+        "q36": "What Annex 24 system do you use?"
     }
 }

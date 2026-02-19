@@ -71,7 +71,6 @@ export default function ContractClient() {
                         className="object-cover premium-image-filter"
                         priority
                     />
-                    <div className="absolute inset-0 bg-gray-900/60" />
                 </motion.div>
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">

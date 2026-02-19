@@ -9,6 +9,39 @@ const isClerkConfigured = !!(
   process.env.CLERK_SECRET_KEY
 );
 
+// Helper to match locales from Accept-Language header
+function getPreferredLocale(request: NextRequest): string | undefined {
+  // 1. Check for cookie first (User Preference)
+  const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value;
+  if (cookieLocale && locales.includes(cookieLocale)) {
+    return cookieLocale;
+  }
+
+  // 2. Check Accept-Language header
+  const acceptLanguage = request.headers.get('accept-language');
+  if (!acceptLanguage) return undefined;
+
+  // Simple parser for Accept-Language: "en-US,en;q=0.9,es;q=0.8"
+  // We split by comma, then sort by quality if present, but for simplicity
+  // we'll just take the first supported one we find in the list.
+  // A robust parser would sort by 'q' values.
+  const preferredLocales = acceptLanguage.split(',').map(lang => {
+    const [locale, q] = lang.split(';');
+    return { locale: locale.trim(), q: q ? parseFloat(q.split('=')[1]) : 1.0 };
+  }).sort((a, b) => b.q - a.q);
+
+  for (const { locale } of preferredLocales) {
+    // Check exact match (e.g. "fr")
+    if (locales.includes(locale)) return locale;
+    
+    // Check base language (e.g. "fr-CA" -> "fr")
+    const baseLocale = locale.split('-')[0];
+    if (locales.includes(baseLocale)) return baseLocale;
+  }
+
+  return undefined;
+}
+
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -57,7 +90,9 @@ export async function middleware(request: NextRequest) {
 
   // Redirect if there is no locale
   if (pathnameIsMissingLocale) {
-    const locale = 'en';
+    // Detect preferred locale
+    const locale = getPreferredLocale(request) || 'en';
+    
     return NextResponse.redirect(
       new URL(
         `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,

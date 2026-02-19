@@ -38,7 +38,6 @@ export default function AboutClient() {
                     className="object-cover object-center"
                     priority
                 />
-                <div className="absolute inset-0 bg-gray-900/70" />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
             </motion.div>
             
@@ -143,9 +142,51 @@ export default function AboutClient() {
             </div>
         </section>
 
-        {/* Founder Block (Who We Are) */}
-        <section className="border-y border-gray-100 dark:border-gray-800">
-             <FounderBlock />
+        {/* Leadership Section */}
+        <section className="py-24 bg-white dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
+            <div className="container mx-auto px-4">
+                <div className="flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto">
+                    <div className="w-full md:w-1/3 flex justify-center">
+                        <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
+                            {/* Placeholder for Denisse's Photo */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center text-gray-400 dark:text-gray-500">
+                                <span className="text-center px-4 text-sm">Add Denisse Martinez Photo Here</span>
+                            </div>
+                            {/* If photo exists: <Image src="/images/denisse-martinez.jpg" alt="Denisse Martinez" fill className="object-cover" /> */}
+                        </div>
+                    </div>
+                    <div className="w-full md:w-2/3">
+                        <div className="inline-flex items-center gap-2 bg-primary-50 dark:bg-primary-900/10 text-primary-700 dark:text-primary-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                             Leadership
+                        </div>
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                            Denisse Martinez
+                        </h2>
+                        <h3 className="text-lg text-primary-600 dark:text-primary-400 font-semibold mb-6">
+                            Director of Marketing & Business Development
+                        </h3>
+                        <div className="prose dark:prose-invert text-gray-600 dark:text-gray-300 leading-relaxed">
+                            <p>
+                                With over a decade of experience driving economic development and manufacturing growth in the Cali-Baja region, Denisse brings a strategic, data-driven approach to nearshoring.
+                            </p>
+                            <p>
+                                Having partnered with industry leaders like <strong>Co-Production International</strong> and <strong>Call Center Services International</strong>, she understands that successful expansion isn't just about finding a building—it's about building a sustainable operation. Her expertise spans economic development marketing, site selection analysis, and navigating the cross-border cultural landscape.
+                            </p>
+                            <p>
+                                At Nearshore Navigator, Denisse leads with a "client-first" philosophy, ensuring that every recommendation is backed by ground-truth data and aligned with your long-term business goals.
+                            </p>
+                        </div>
+                        <div className="mt-8 flex gap-4">
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors">
+                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                            <a href={`/${language}/contact`} className="text-primary-600 font-semibold hover:underline">
+                                Connect with Denisse &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         {/* What We Do */}
