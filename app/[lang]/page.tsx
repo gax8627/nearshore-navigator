@@ -7,5 +7,17 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <HomeClient />;
+  return (
+    <>
+      {/*
+       * SSR-only H1 for Googlebot – visually hidden but present in initial HTML.
+       * HomeClient renders the animated visual heading; this ensures crawlers
+       * always see the primary keyword-bearing heading without client-side JS.
+       */}
+      <h1 className="sr-only">
+        Nearshore Navigator – Your Trusted Partner for Manufacturing in Baja California, Mexico
+      </h1>
+      <HomeClient />
+    </>
+  );
 }

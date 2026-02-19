@@ -74,27 +74,8 @@ export default function HomeClient() {
     slug: `/${language}/insights/${post.slug.split('/').pop()}`
   }));
 
-  const homeSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Nearshore Navigator - Baja California",
-    "description": "Expert industrial nearshoring and shelter services in Baja California, Mexico.",
-    "url": "https://nearshorenavigator.com",
-    "telephone": "+52-664-123-7199",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Tijuana",
-      "addressRegion": "Baja California",
-      "addressCountry": "MX"
-    }
-  };
-
   return (
     <div ref={containerRef} className="flex flex-col gap-24 pb-20 overflow-hidden">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
-      />
       {/* Hero Section */}
       <section className="relative min-h-screen pt-24 md:pt-0 md:h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Background: Video → Last Frame → Scanner */}
@@ -264,6 +245,9 @@ export default function HomeClient() {
         <StatsGrid />
       </section>
 
+      {/* Founder Block – moved above services for trust-first conversion flow */}
+      <FounderBlock />
+
       {/* Services Overview */}
       <section className="container mx-auto px-4">
         <SectionTitle
@@ -374,24 +358,8 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* Founder Block */}
-      <FounderBlock />
-
       {/* Newsletter Banner */}
       <NewsletterBanner />
-
-      {/* Logos Placeholder */}
-      <section className="container mx-auto px-4 py-12 border-t border-gray-100 dark:border-gray-800">
-        <p className="text-center text-sm font-semibold text-gray-400 uppercase tracking-wider mb-8">{t('trustedBy')}</p>
-        <div className="flex flex-wrap justify-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-             {/* Simple Text Placeholders for "Trusted By" */}
-             <div className="text-xl font-black text-gray-800 dark:text-gray-200 tracking-tighter">GLOBAL<span className="text-primary-500">MFG</span></div>
-             <div className="text-xl font-bold text-gray-800 dark:text-gray-200 italic">MedDevice<span className="font-light">Inc</span></div>
-             <div className="text-xl font-bold text-gray-800 dark:text-gray-200">AERO<span className="text-primary-500">SPACE</span></div>
-             <div className="text-xl font-black text-gray-800 dark:text-gray-200 tracking-widest">LOGISTIX</div>
-             <div className="text-xl font-bold text-gray-800 dark:text-gray-200 flex items-center gap-1"><div className="w-4 h-4 bg-primary-500 rounded-full"/>TECHCORE</div>
-        </div>
-      </section>
     </div>
   );
 }

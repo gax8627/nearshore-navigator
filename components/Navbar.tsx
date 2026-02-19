@@ -31,17 +31,25 @@ export function Navbar() {
 
     const navLinks = [
         { name: t('nav.insights'), href: `/${language}/insights` },
+        { name: t('nav.assessment'), href: `/${language}/assessment` },
         { name: t('nav.resources'), href: `/${language}/resources/tijuana-industrial-park-map` },
         { name: t('nav.about'), href: `/${language}/about` },
         { name: t('nav.contact'), href: `/${language}/contact` },
     ];
 
     useEffect(() => {
+        let ticking = false;
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    setIsScrolled(window.scrollY > 20);
+                    ticking = false;
+                });
+                ticking = true;
+            }
         };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     // Close dropdown when clicking outside

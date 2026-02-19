@@ -86,10 +86,11 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: '/',
+    canonical: 'https://nearshorenavigator.com/en',
     languages: {
-      'en-US': '/',
-      'es-MX': '/',
+      'en-US': 'https://nearshorenavigator.com/en',
+      'es-MX': 'https://nearshorenavigator.com/es',
+      'x-default': 'https://nearshorenavigator.com/en',
     },
   },
   verification: {
@@ -113,10 +114,24 @@ export default async function LangLayout({
       <ThemeProvider>
         <head>
           <SchemaMarkup />
+          {/* Preload hero poster image for LCP improvement */}
+          <link
+            rel="preload"
+            as="image"
+            href="/images/hero-last-frame.jpg"
+            fetchPriority="high"
+          />
         </head>
         <div className="flex flex-col min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+          {/* Skip to content – keyboard accessibility */}
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-white focus:text-gray-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-xl focus:font-semibold focus:outline-none focus:ring-2 focus:ring-primary-500"
+          >
+            Skip to main content
+          </a>
           <Navbar />
-          <main className="flex-grow pt-[80px]">
+          <main id="main-content" className="flex-grow pt-[80px]">
             {children}
           </main>
           <Footer />

@@ -8,7 +8,7 @@ export default function SchemaMarkup() {
         "description": "Your partner for industrial nearshoring, shelter services, and contract manufacturing in Tijuana, Mexico.",
         "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+1-619-555-0123",
+            "telephone": "+52-664-123-7199",
             "contactType": "sales",
             "availableLanguage": ["English", "Spanish"]
         },
@@ -39,6 +39,7 @@ export default function SchemaMarkup() {
         "@id": "https://nearshorenavigator.com/#tijuana-office",
         "url": "https://nearshorenavigator.com",
         "telephone": "+52-664-123-7199",
+        "email": "denisse@nearshorenavigator.com",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Tijuana",

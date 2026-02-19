@@ -161,6 +161,12 @@ export function LeadForm({ title, subtitle, className }: LeadFormProps) {
                         t('form.submit')
                     )}
                 </Button>
+                <p className="text-xs text-gray-400 dark:text-gray-500 text-center mt-3 flex items-center justify-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                    </svg>
+                    We'll respond within 24 hours. Your details are never shared or sold.
+                </p>
             </form>
         </div>
     );
