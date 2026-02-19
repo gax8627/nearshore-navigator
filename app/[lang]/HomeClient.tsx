@@ -112,7 +112,7 @@ export default function HomeClient() {
           {/* Phase 2+3: Last frame + HeroScanner (always mounted, revealed when video fades) */}
           <HeroScanner 
             src="/images/hero-last-frame.jpg"
-            alt="Tijuana Industrial Park Aerial View"
+            alt={t('home.heroImageAlt')}
             active={videoEnded}
           />
         </motion.div>
@@ -149,6 +149,7 @@ export default function HomeClient() {
                         hidden: { opacity: 0, y: 50, rotate: 5 },
                         visible: { opacity: 1, y: 0, rotate: 0, transition: { type: "spring", stiffness: 100, damping: 20 } }
                     }}
+                    className={word.toLowerCase().includes('baja') ? "text-primary-500 text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-200" : ""}
                   >
                     {word}
                   </motion.span>
