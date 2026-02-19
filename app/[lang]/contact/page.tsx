@@ -73,7 +73,49 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                        <LeadForm className="shadow-2xl" />
+                        <LeadForm source="contact_page" className="shadow-2xl" />
+                    </div>
+                </div>
+
+                {/* New Content Sections */}
+                <div className="max-w-5xl mx-auto mt-24 grid md:grid-cols-2 gap-12 border-t border-gray-100 dark:border-gray-800 pt-16">
+                    <div>
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">What to expect</h3>
+                        <p className="text-gray-600 dark:text-gray-300 mb-6">
+                            We don't do high-pressure sales. Our goal is to determine if Baja California is the right strategic fit for your operation.
+                        </p>
+                        <ul className="space-y-4">
+                            <li className="flex gap-3">
+                                <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold text-xs">1</div>
+                                <span className="text-gray-700 dark:text-gray-200">A 30-minute discovery call to map your requirements.</span>
+                            </li>
+                            <li className="flex gap-3">
+                                <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold text-xs">2</div>
+                                <span className="text-gray-700 dark:text-gray-200">Preliminary cost modeling and site availability check.</span>
+                            </li>
+                            <li className="flex gap-3">
+                                <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold text-xs">3</div>
+                                <span className="text-gray-700 dark:text-gray-200">Introduction to vetted partners (Shelters, Legal, Construction).</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                         <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Visit Us</h3>
+                         <p className="text-gray-600 dark:text-gray-300 mb-6">
+                            Nothing beats seeing the infrastructure on the ground. We regularly host guided industrial tours for executives.
+                         </p>
+                         <div className="aspect-video relative rounded-2xl overflow-hidden mb-6">
+                            <Image 
+                                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
+                                alt="Executive Tour of Tijuana Industrial Parks"
+                                fill
+                                className="object-cover"
+                            />
+                         </div>
+                         <p className="text-sm text-gray-500 italic">
+                            * Tours are available for qualified manufacturing projects. Mention your interest in the contact form.
+                         </p>
                     </div>
                 </div>
             </div>

@@ -60,6 +60,8 @@ export default function InsightsPage() {
                         className="object-cover premium-image-filter"
                         priority
                     />
+                    <div className="absolute inset-0 bg-gray-900/40 z-[1]" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-gray-900/40 z-[1]" />
                 </div>
 
                 <div className="container mx-auto px-4 z-10 text-center">

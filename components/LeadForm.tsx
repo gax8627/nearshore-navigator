@@ -8,10 +8,11 @@ import { useLanguage } from "@/app/context/LanguageContext";
 interface LeadFormProps {
     title?: string;
     subtitle?: string;
+    source?: string;
     className?: string;
 }
 
-export function LeadForm({ title, subtitle, className }: LeadFormProps) {
+export function LeadForm({ title, subtitle, source, className }: LeadFormProps) {
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -26,7 +27,10 @@ export function LeadForm({ title, subtitle, className }: LeadFormProps) {
         setError(null);
 
         const formData = new FormData(e.currentTarget);
-        const data = Object.fromEntries(formData.entries());
+        const data = {
+            ...Object.fromEntries(formData.entries()),
+            source: source || 'website_contact_form'
+        };
 
         try {
             const response = await fetch('/api/contact', {
@@ -65,7 +69,7 @@ export function LeadForm({ title, subtitle, className }: LeadFormProps) {
     }
 
     return (
-        <div className={`glass-card p-8 ${className}`}>
+        <div className={`glass-card p-10 md:p-12 ${className} border-white/40 dark:border-white/5`}>
             <div className="mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{formTitle}</h3>
                 <p className="text-gray-600 dark:text-gray-300 mt-2">{formSubtitle}</p>

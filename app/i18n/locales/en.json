@@ -6,7 +6,12 @@
         "resources": "Resources",
         "about": "About",
         "contact": "Contact",
-        "bookTour": "Book a Tour"
+        "bookTour": "Book a Tour",
+        "bookCall": "Book a Call",
+        "selectLanguage": "Select Language",
+        "appearance": "Appearance",
+        "darkMode": "Dark Mode",
+        "lightMode": "Light Mode"
     },
     "hero": {
         "title": "Baja Industrial Roadmap",
@@ -405,9 +410,26 @@
        "title": "Industrial Resources & Tools",
        "subtitle": "Essential calculators, maps, and guides for your Mexico expansion.",
        "mapTitle": "Tijuana Industrial Map",
+       "mapDesc": "Interactive map of all major industrial parks in Tijuana, including infrastructure specs and tenant lists.",
        "assessmentTitle": "Cost Estimator & Assessment",
+       "assessmentDesc": "Get a data-backed analysis of your potential operating costs in Mexico (Labor, Real Estate, Utilities).",
        "questionnaireTitle": "3PL / Logistics Questionnaire",
-       "brochureTitle": "Nearshore Brochure"
+       "questionnaireDesc": "A comprehensive scoping tool to define your logistics requirements for shelter or 3PL partners.",
+       "brochureTitle": "Nearshore Brochure",
+       "brochureDesc": "Download our comprehensive guide to manufacturing in Baja California using Nearshore Navigator.",
+       "insightsTitle": "Market Insights",
+       "insightsDesc": "Latest trends, wage data, and regulatory updates from the border region.",
+       "heroBadge": "Knowledge Hub",
+       "heroTitle": "Tools for Your",
+       "heroTitleHighlight": "Expansion",
+       "heroDesc": "Calculators, maps, and guides to help you navigate the Baja California industrial landscape with confidence.",
+       "ctaViewMap": "View Map",
+       "ctaStartAssessment": "Start Assessment",
+       "ctaLaunchTool": "Launch Tool",
+       "ctaDownload": "View & Download",
+       "ctaReadInsights": "Read Insights",
+       "latestIntelligence": "Latest Intelligence",
+       "latestIntelligenceDesc": "Expert analysis and strategic guides to help you navigate the nearshoring landscape."
     },
     "brochure": {
        "title": "Nearshore Navigator",

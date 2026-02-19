@@ -46,24 +46,38 @@ export default function IndustrialRealEstatePage() {
                         className="object-cover premium-image-filter"
                         priority
                     />
+                    <div className="absolute inset-0 bg-gray-900/40 z-[1]" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-gray-900/40 z-[1]" />
                 </motion.div>
                 <div className="container mx-auto px-4 z-10 text-center">
-                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
-                        <Warehouse className="w-4 h-4 text-primary-400" />
-                        70+ Class A Industrial Parks
-                    </div>
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">{t('realEstatePage.heroTitle')} <span className="text-primary-500">{t('realEstatePage.heroTitleHighlight')}</span></h1>
-                    <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-                        Access over 75 million square feet of industrial inventory in Mexico's most critical border manufacturing hub.
-                    </p>
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
+                            <Warehouse className="w-4 h-4 text-primary-400" />
+                            70+ Class A Industrial Parks
+                        </div>
+                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">{t('realEstatePage.heroTitle')} <span className="text-primary-500">{t('realEstatePage.heroTitleHighlight')}</span></h1>
+                        <p className="text-xl text-gray-200 max-w-2xl mx-auto">
+                            Access over 75 million square feet of industrial inventory in Mexico's most critical border manufacturing hub.
+                        </p>
+                    </motion.div>
                 </div>
             </section>
 
             {/* Strategy Section (New) */}
             <section className="container mx-auto px-4 -mt-24 relative z-20 mb-12">
-                <div className="bg-gradient-to-br from-blue-900 to-gray-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl border border-white/10 overflow-hidden relative">
+                <motion.div 
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6 }}
+                    className="bg-gradient-to-br from-primary-900 to-slate-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl border border-white/10 overflow-hidden relative"
+                >
                     {/* Background decoration */}
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-[100px] -mr-32 -mt-32" />
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/20 rounded-full blur-[100px] -mr-32 -mt-32" />
                     
                     <div className="relative z-10">
                         <div className="max-w-3xl mb-12">
@@ -93,13 +107,19 @@ export default function IndustrialRealEstatePage() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </section>
 
             <div className="container mx-auto px-4 relative z-20">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     {/* Main Content */}
-                    <div className="lg:col-span-2 space-y-12 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl rounded-2xl p-8 shadow-glass border border-white/20 dark:border-gray-800">
+                    <motion.div 
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="lg:col-span-2 space-y-12 bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl rounded-2xl p-8 shadow-glass border border-white/20 dark:border-gray-800"
+                    >
                         <section>
                             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">{t('realEstatePage.premiumTitle')}</h2>
                             <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
@@ -161,7 +181,7 @@ export default function IndustrialRealEstatePage() {
                                 ))}
                             </div>
                         </section>
-                    </div>
+                    </motion.div>
 
                     {/* Sidebar Form */}
                     <div className="lg:col-span-1">
@@ -169,6 +189,7 @@ export default function IndustrialRealEstatePage() {
                             <LeadForm
                                 title={t('realEstatePage.formTitle')}
                                 subtitle={t('realEstatePage.formSubtitle')}
+                                source="industrial_real_estate"
                                 className="shadow-xl"
                             />
                         </div>

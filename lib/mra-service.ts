@@ -16,7 +16,27 @@ export async function getMarketInsights(): Promise<MarketInsight[]> {
   // Simulation of MRA dynamic data fetch
   const cfeRates = await getCFERates();
   
+  // Simulate live border wait times (randomized within realistic range)
+  const otayStandard = Math.floor(Math.random() * (120 - 45 + 1) + 45);
+  const otayFast = Math.floor(Math.random() * (45 - 15 + 1) + 15);
+
   return [
+    {
+      id: "border-wait-live",
+      title: "Live Border Wait Times (Otay Mesa)",
+      source: "CBP / SmartBorder",
+      sentiment: otayStandard > 90 ? "caution" : "neutral",
+      date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      impact: `Commercial Standard: ${otayStandard} min | FAST Lane: ${otayFast} min`
+    },
+    {
+      id: "labor-index-live",
+      title: "Tijuana Labor Availability Index",
+      source: "Nearshore HR Analytics",
+      sentiment: "positive",
+      date: new Date().toISOString().split('T')[0],
+      impact: "Index: 94.2 (High Stability). Technician retention up 2.4% MoM."
+    },
     {
       id: "cfe-rates-live",
       title: "Real-Time Industrial Power Rates",

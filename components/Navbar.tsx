@@ -235,7 +235,7 @@ export function Navbar() {
                         </button>
 
                         <a href="https://calendly.com/denisse-nearshorenavigator/30min" target="_blank" rel="noopener noreferrer">
-                            <Button variant="primary" size="sm">Book a Call</Button>
+                            <Button variant="primary" size="sm">{t('nav.bookCall')}</Button>
                         </a>
                     </div>
 
@@ -313,7 +313,7 @@ export function Navbar() {
                             ))}
 
                             <div className="border-t border-gray-100 dark:border-gray-800 pt-4">
-                                <span className="block text-gray-500 dark:text-gray-400 text-sm font-medium mb-3 px-1">Select Language</span>
+                                <span className="block text-gray-500 dark:text-gray-400 text-sm font-medium mb-3 px-1">{t('nav.selectLanguage') || 'Select Language'}</span>
                                 <div className="grid grid-cols-2 gap-2">
                                     {languages.map((lang) => (
                                         <button
@@ -334,15 +334,15 @@ export function Navbar() {
                             </div>
 
                             <div className="flex items-center justify-between py-2">
-                                <span className="text-gray-600 dark:text-gray-400">Appearance</span>
+                                <span className="text-gray-600 dark:text-gray-400">{t('nav.appearance') || 'Appearance'}</span>
                                 <button
                                     onClick={toggleTheme}
                                     className="flex items-center gap-2 text-sm font-medium text-gray-800 dark:text-gray-200"
                                 >
                                     {theme === 'light' ? (
-                                        <>Dark Mode <Moon className="w-4 h-4" /></>
+                                        <>{t('nav.darkMode') || 'Dark Mode'} <Moon className="w-4 h-4" /></>
                                     ) : (
-                                        <>Light Mode <Sun className="w-4 h-4" /></>
+                                        <>{t('nav.lightMode') || 'Light Mode'} <Sun className="w-4 h-4" /></>
                                     )}
                                 </button>
                             </div>

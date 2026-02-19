@@ -33,11 +33,11 @@ body {
   }
 
   .glass-card {
-    @apply bg-slate-900/50 backdrop-blur-lg border border-white/10 shadow-xl rounded-xl;
+    @apply bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl border border-white/40 dark:border-white/5 shadow-2xl rounded-3xl transition-all duration-300;
   }
 
   .premium-image-filter {
-    filter: sepia(10%) hue-rotate(190deg) saturate(90%) contrast(105%);
+    filter: contrast(110%) brightness(90%) saturate(110%);
   }
 
   .text-balance {

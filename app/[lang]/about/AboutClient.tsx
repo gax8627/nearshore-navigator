@@ -65,7 +65,13 @@ export default function AboutClient() {
         {/* Why It Exists */}
         <section className="py-24 bg-white dark:bg-gray-900">
             <div className="container mx-auto px-4">
-                <div className="max-w-4xl mx-auto">
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="max-w-4xl mx-auto"
+                >
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
                             Turning <span className="text-primary-600">“we want Mexico”</span> into a clear next step
@@ -76,7 +82,13 @@ export default function AboutClient() {
                     </div>
 
                     <div className="grid gap-8 md:grid-cols-2">
-                        <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700">
+                        <motion.div 
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                            className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700"
+                        >
                             <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">The Common Struggle</h3>
                             <p className="text-gray-600 dark:text-gray-300 mb-6">
                                 Nearshoring decisions often get stuck after the initial excitement—when the real questions show up:
@@ -92,8 +104,14 @@ export default function AboutClient() {
                                     <span className="text-red-500 font-bold">?</span> Lease, Shelter, or Contract?
                                 </li>
                             </ul>
-                        </div>
-                        <div className="bg-primary-50 dark:bg-primary-900/10 p-8 rounded-2xl border border-primary-100 dark:border-primary-900/50">
+                        </motion.div>
+                        <motion.div 
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.4 }}
+                            className="bg-primary-50 dark:bg-primary-900/10 p-8 rounded-2xl border border-primary-100 dark:border-primary-900/50"
+                        >
                             <h3 className="text-xl font-bold mb-4 text-primary-700 dark:text-primary-400">Our Approach</h3>
                             <p className="text-gray-700 dark:text-gray-200 mb-6">
                                 We’re not a directory and we’re not “one-size-fits-all.” Every project has different constraints.
@@ -112,11 +130,17 @@ export default function AboutClient() {
                                     Logistics & Risk Tolerance
                                 </li>
                             </ul>
-                        </div>
+                        </motion.div>
                     </div>
 
                     {/* Tier 2 / High Growth Section (Persona Agent Fix) */}
-                    <div className="mt-12 bg-gray-900 text-white p-8 rounded-2xl border border-gray-700 relative overflow-hidden">
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="mt-12 bg-gray-900 text-white p-8 rounded-2xl border border-gray-700 relative overflow-hidden"
+                    >
                         <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/20 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none" />
                         <div className="relative z-10">
                             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
@@ -137,8 +161,8 @@ export default function AboutClient() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </div>
         </section>
 
@@ -146,17 +170,28 @@ export default function AboutClient() {
         <section className="py-24 bg-white dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto">
-                    <div className="w-full md:w-1/3 flex justify-center">
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="w-full md:w-1/3 flex justify-center"
+                    >
                         <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
-                            {/* Placeholder for Denisse's Photo */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center text-gray-400 dark:text-gray-500">
-                                <span className="text-center px-4 text-sm">Add Denisse Martinez Photo Here</span>
-                            </div>
-                            {/* If photo exists: <Image src="/images/denisse-martinez.jpg" alt="Denisse Martinez" fill className="object-cover" /> */}
+                            <Image 
+                                src="/images/denisse-1.jpg" 
+                                alt="Denisse Martinez" 
+                                fill 
+                                className="object-cover" 
+                            />
                         </div>
-                    </div>
-                    <div className="w-full md:w-2/3">
-                        <div className="inline-flex items-center gap-2 bg-primary-50 dark:bg-primary-900/10 text-primary-700 dark:text-primary-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                    </motion.div>
+                    <motion.div 
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="w-full md:w-2/3"
+                    >
+                        <div className="inline-flex items-center gap-2 bg-primary-5 dark:bg-primary-900/10 text-primary-700 dark:text-primary-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
                              Leadership
                         </div>
                         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
@@ -184,7 +219,7 @@ export default function AboutClient() {
                                 Connect with Denisse &rarr;
                             </a>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
@@ -192,54 +227,67 @@ export default function AboutClient() {
         {/* What We Do */}
         <section className="py-24 bg-gray-50 dark:bg-gray-900/50">
             <div className="container mx-auto px-4">
-                <div className="text-center max-w-3xl mx-auto mb-16">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center max-w-3xl mx-auto mb-16"
+                >
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
                         A practical toolkit for expansion
                     </h2>
                     <p className="text-xl text-gray-600 dark:text-gray-300">
                         Companies don’t all enter Mexico the same way. We help you evaluate the best route—and support the steps that turn the decision into a launch.
                     </p>
-                </div>
+                </motion.div>
 
                 <div className="grid md:grid-cols-3 gap-8">
-                    <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition-transform duration-300">
-                        <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6">
-                            <Factory className="w-7 h-7" />
-                        </div>
-                        <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Industrial Real Estate & Site Selection</h3>
-                        <p className="text-gray-600 dark:text-gray-300 mb-6">
-                            Shortlisting facility options that fit your requirements, coordinating productive site tours, building decision-ready comparisons, and supporting negotiation steps.
-                        </p>
-                        <Link href={`/${language}/services/industrial-real-estate-baja`} className="text-blue-600 font-semibold hover:underline flex items-center gap-2">
-                            Learn more <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </div>
-
-                    <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition-transform duration-300">
-                        <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center text-green-600 dark:text-green-400 mb-6">
-                            <Users className="w-7 h-7" />
-                        </div>
-                        <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Contract Manufacturing Partner Matching</h3>
-                        <p className="text-gray-600 dark:text-gray-300 mb-6">
-                            We help you start correctly: define requirements, connect with qualified vendors, and drive evaluation and follow-up so the process doesn’t stall.
-                        </p>
-                        <Link href={`/${language}/services/contract-manufacturing-tijuana`} className="text-green-600 font-semibold hover:underline flex items-center gap-2">
-                            Learn more <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </div>
-
-                    <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition-transform duration-300">
-                        <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center text-purple-600 dark:text-purple-400 mb-6">
-                            <MapPin className="w-7 h-7" />
-                        </div>
-                        <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">{t('about.softLandingTitle')}</h3>
-                        <p className="text-gray-600 dark:text-gray-300 mb-6">
-                            {t('about.softLandingDesc')}
-                        </p>
-                        <Link href={`/${language}/contact`} className="text-purple-600 font-semibold hover:underline flex items-center gap-2">
-                            Request Assessment <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </div>
+                    {[
+                        { 
+                            icon: <Factory className="w-7 h-7" />, 
+                            title: "Industrial Real Estate & Site Selection", 
+                            desc: "Shortlisting facility options that fit your requirements, coordinating productive site tours, building decision-ready comparisons, and supporting negotiation steps.",
+                            link: `/${language}/services/industrial-real-estate-baja`,
+                            cta: "Learn more",
+                            color: "blue"
+                        },
+                        { 
+                            icon: <Users className="w-7 h-7" />, 
+                            title: "Contract Manufacturing Partner Matching", 
+                            desc: "We help you start correctly: define requirements, connect with qualified vendors, and drive evaluation and follow-up so the process doesn’t stall.",
+                            link: `/${language}/services/contract-manufacturing-tijuana`,
+                            cta: "Learn more",
+                            color: "green"
+                        },
+                        { 
+                            icon: <MapPin className="w-7 h-7" />, 
+                            title: t('about.softLandingTitle'), 
+                            desc: t('about.softLandingDesc'),
+                            link: `/${language}/contact`,
+                            cta: "Request Assessment",
+                            color: "purple"
+                        }
+                    ].map((item, index) => (
+                        <motion.div 
+                            key={index}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition-transform duration-300"
+                        >
+                            <div className={`w-14 h-14 bg-${item.color}-100 dark:bg-${item.color}-900/30 rounded-xl flex items-center justify-center text-${item.color}-600 dark:text-${item.color}-400 mb-6`}>
+                                {item.icon}
+                            </div>
+                            <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">{item.title}</h3>
+                            <p className="text-gray-600 dark:text-gray-300 mb-6">
+                                {item.desc}
+                            </p>
+                            <Link href={item.link} className={`text-${item.color}-600 font-semibold hover:underline flex items-center gap-2`}>
+                                {item.cta} <ArrowRight className="w-4 h-4" />
+                            </Link>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>
@@ -247,11 +295,16 @@ export default function AboutClient() {
         {/* How We Work */}
         <section className="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
             <div className="container mx-auto px-4 relative z-10">
-                <div className="text-center mb-16">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
+                >
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
                         A no-BS process that keeps projects moving
                     </h2>
-                </div>
+                </motion.div>
 
                 <div className="max-w-4xl mx-auto space-y-8">
                     {[
@@ -261,7 +314,14 @@ export default function AboutClient() {
                         { step: "Visits & Due Diligence", desc: "Structured agendas, comparisons, decision support" },
                         { step: "Next Steps", desc: "Introductions and support to move into execution" }
                     ].map((item, i) => (
-                        <div key={i} className="flex items-center gap-6 p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700">
+                        <motion.div 
+                            key={i} 
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1 }}
+                            className="flex items-center gap-6 p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700"
+                        >
                             <div className="w-12 h-12 rounded-full bg-primary-600 text-white flex items-center justify-center font-bold text-xl shrink-0">
                                 {i + 1}
                             </div>
@@ -269,11 +329,16 @@ export default function AboutClient() {
                                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">{item.step}</h3>
                                 <p className="text-gray-600 dark:text-gray-300">{item.desc}</p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                    <div className="text-center pt-8 text-xl font-semibold text-primary-600">
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ delay: 0.5 }}
+                        className="text-center pt-8 text-xl font-semibold text-primary-600"
+                    >
                         You stay in control. We bring structure, realism, and momentum.
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

@@ -55,47 +55,74 @@ export default function DistributionPage() {
                         className="object-cover premium-image-filter"
                         priority
                     />
+                    <div className="absolute inset-0 bg-gray-900/40 z-[1]" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-gray-900/40 z-[1]" />
                 </motion.div>
                 <div className="container mx-auto px-4 z-10 text-center">
-                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
-                        <Package className="w-4 h-4" />
-                        {t('distributionPage.badge')}
-                    </div>
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                        {t('distributionPage.heroTitle')} <span className="text-blue-300">{t('distributionPage.heroTitleHighlight')}</span>
-                    </h1>
-                    <p className="text-xl text-gray-100 max-w-2xl mx-auto">
-                        {t('distributionPage.heroSubtitle')}
-                    </p>
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
+                            <Package className="w-4 h-4" />
+                            {t('distributionPage.badge')}
+                        </div>
+                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                            {t('distributionPage.heroTitle')} <span className="text-blue-300">{t('distributionPage.heroTitleHighlight')}</span>
+                        </h1>
+                        <p className="text-xl text-gray-100 max-w-2xl mx-auto">
+                            {t('distributionPage.heroSubtitle')}
+                        </p>
+                    </motion.div>
                 </div>
             </section>
 
             <div className="container mx-auto px-4 py-16">
                 {/* Stats Bar */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 -mt-24 relative z-10">
-                    {stats.map((stat) => (
-                        <div key={stat.label} className="glass-card p-6 text-center">
+                    {stats.map((stat, index) => (
+                        <motion.div 
+                            key={stat.label} 
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.5 + (index * 0.1) }}
+                            className="glass-card p-6 text-center"
+                        >
                             <p className="text-3xl md:text-4xl font-bold text-primary-500">{stat.value}</p>
                             <p className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     {/* Main Content */}
-                    <div className="lg:col-span-2 space-y-12">
+                    <motion.div 
+                         initial={{ opacity: 0, x: -20 }}
+                         whileInView={{ opacity: 1, x: 0 }}
+                         viewport={{ once: true }}
+                         transition={{ duration: 0.6 }}
+                         className="lg:col-span-2 space-y-12"
+                    >
                         {/* Benefits Grid */}
                         <section>
                             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">{t('distributionPage.whyTijuanaTitle')}</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                                {benefits.map((benefit) => (
-                                    <div key={benefit.title} className="glass-card p-6">
+                                {benefits.map((benefit, index) => (
+                                    <motion.div 
+                                        key={benefit.title} 
+                                        initial={{ opacity: 0, y: 10 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.1 }}
+                                        className="glass-card p-6"
+                                    >
                                         <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 mb-4">
                                             {benefit.icon}
                                         </div>
                                         <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{benefit.title}</h3>
                                         <p className="text-gray-600 dark:text-gray-300 text-sm">{benefit.desc}</p>
-                                    </div>
+                                    </motion.div>
                                 ))}
                             </div>
                             
@@ -136,7 +163,11 @@ export default function DistributionPage() {
 
                         {/* Strategic Location */}
                         <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                            <div>
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                            >
                                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">{t('distributionPage.strategicTitle')}</h2>
                                 <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                                     {t('distributionPage.strategicText1')}
@@ -144,26 +175,38 @@ export default function DistributionPage() {
                                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                                     {t('distributionPage.strategicText2')}
                                 </p>
-                            </div>
-                            <div className="relative h-80 w-full rounded-2xl overflow-hidden shadow-2xl">
+                            </motion.div>
+                            <motion.div 
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                className="relative h-80 w-full rounded-2xl overflow-hidden shadow-2xl"
+                            >
                                 <Image
                                     src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&q=80&w=1200"
                                     alt="Cross-border logistics at Otay Mesa"
                                     fill
                                     className="object-cover"
                                 />
-                            </div>
+                            </motion.div>
                         </section>
 
                         {/* Services List */}
                         <section>
                             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">{t('distributionPage.availableServicesTitle')}</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {services.map((service) => (
-                                    <div key={service} className="flex items-center gap-3">
+                                {services.map((service, index) => (
+                                    <motion.div 
+                                        key={service} 
+                                        initial={{ opacity: 0, x: -10 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.05 }}
+                                        className="flex items-center gap-3"
+                                    >
                                         <CheckCircle2 className="w-5 h-5 text-primary-500 flex-shrink-0" />
                                         <span className="text-gray-700 dark:text-gray-300">{service}</span>
-                                    </div>
+                                    </motion.div>
                                 ))}
                             </div>
                         </section>
@@ -196,7 +239,7 @@ export default function DistributionPage() {
                                 ))}
                             </div>
                         </section>
-                    </div>
+                    </motion.div>
 
                     {/* Sidebar Form */}
                     <div className="lg:col-span-1">
@@ -204,6 +247,7 @@ export default function DistributionPage() {
                             <LeadForm
                                 title={t('distributionPage.formTitle')}
                                 subtitle={t('distributionPage.formSubtitle')}
+                                source="distribution_center"
                                 className="shadow-xl"
                             />
                         </div>

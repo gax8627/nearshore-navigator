@@ -133,8 +133,13 @@ export default function BrochureClient() {
                                 "We help you align your operational needs with the reality of the Baja market to ensure a successful long-term investment."
                             </p>
                          </div>
-                         <div className="w-20 h-20 bg-blue-800 rounded-full flex items-center justify-center border-2 border-blue-400">
-                             <span className="text-xs text-center text-blue-200">Photo<br/>Placeholder</span>
+                         <div className="w-20 h-20 bg-blue-800 rounded-full flex items-center justify-center border-2 border-blue-400 overflow-hidden relative">
+                             <Image 
+                                src="/images/denisse-1.jpg" 
+                                alt="Denisse Martinez" 
+                                fill 
+                                className="object-cover" 
+                            />
                          </div>
                     </div>
                 </div>

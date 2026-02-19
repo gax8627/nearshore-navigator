@@ -158,7 +158,10 @@
         "mapTitle": "Tijuana Industrial Map",
         "assessmentTitle": "Cost Estimator & Assessment",
         "questionnaireTitle": "3PL / Logistics Questionnaire",
-        "brochureTitle": "Nearshore Brochure"
+        "brochureTitle": "Nearshore Brochure",
+        "ctaReadInsights": "Analysen",
+        "latestIntelligence": "Neueste Erkenntnisse",
+        "latestIntelligenceDesc": "Expertenanalysen und strategische Leitfäden, die Ihnen helfen, sich in der Nearshoring-Landschaft zurechtzufinden."
     },
     "brochure": {
         "title": "Nearshore Navigator",

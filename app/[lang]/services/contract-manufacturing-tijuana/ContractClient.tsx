@@ -71,67 +71,109 @@ export default function ContractClient() {
                         className="object-cover premium-image-filter"
                         priority
                     />
+                    <div className="absolute inset-0 bg-gray-900/40 z-[1]" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-gray-900/40 z-[1]" />
                 </motion.div>
                 <div className="container mx-auto px-4 relative z-10">
-                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
-                        <Factory className="w-4 h-4" />
-                        {t('contractPage.badge')}
-                    </div>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6">{t('contractPage.heroTitle')} <span className="text-primary-400">{t('contractPage.heroTitleHighlight')}</span></h1>
-                    <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                        {t('contractPage.heroSubtitle')}
-                    </p>
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
+                            <Factory className="w-4 h-4" />
+                            {t('contractPage.badge')}
+                        </div>
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6">{t('contractPage.heroTitle')} <span className="text-primary-400">{t('contractPage.heroTitleHighlight')}</span></h1>
+                        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                            {t('contractPage.heroSubtitle')}
+                        </p>
+                    </motion.div>
                 </div>
             </section>
 
             {/* Matchmaking Strategy (New) */}
             <section className="container mx-auto px-4 -mt-16 relative z-20 mb-20">
-                <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100 dark:border-gray-700">
+                <motion.div 
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6 }}
+                    className="glass-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100 dark:border-gray-700"
+                >
                      <div className="text-center max-w-3xl mx-auto mb-12">
                         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{t('contractPage.strategyTitle')}</h2>
                         <p className="text-lg text-gray-600 dark:text-gray-300">{t('contractPage.strategySubtitle')}</p>
                     </div>
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="p-6 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                        <div className="p-6 bg-gray-50 dark:bg-gray-900 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors border border-transparent hover:border-gray-100 dark:hover:border-gray-700 shadow-sm hover:shadow-md">
                             <h3 className="text-xl font-bold text-primary-600 dark:text-primary-400 mb-3">{t('contractPage.capabilityTitle')}</h3>
                             <p className="text-gray-600 dark:text-gray-400 text-sm">{t('contractPage.capabilityDesc')}</p>
                         </div>
-                        <div className="p-6 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                        <div className="p-6 bg-gray-50 dark:bg-gray-900 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors border border-transparent hover:border-gray-100 dark:hover:border-gray-700 shadow-sm hover:shadow-md">
                             <h3 className="text-xl font-bold text-primary-600 dark:text-primary-400 mb-3">{t('contractPage.roadmapTitle')}</h3>
                             <p className="text-gray-600 dark:text-gray-400 text-sm">{t('contractPage.roadmapDesc')}</p>
                         </div>
-                        <div className="p-6 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                        <div className="p-6 bg-gray-50 dark:bg-gray-900 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors border border-transparent hover:border-gray-100 dark:hover:border-gray-700 shadow-sm hover:shadow-md">
                             <h3 className="text-xl font-bold text-primary-600 dark:text-primary-400 mb-3">{t('contractPage.safeguardsTitle')}</h3>
                             <p className="text-gray-600 dark:text-gray-400 text-sm">{t('contractPage.safeguardsDesc')}</p>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </section>
 
             <div className="container mx-auto px-4 py-16">
                 {/* Benefits Grid */}
                 <section className="mb-20">
-                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">{t('contractPage.whyContractTitle')}</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {benefits.map((benefit) => (
-                            <div key={benefit.title} className="glass-card p-6 text-center">
-                                <div className="w-14 h-14 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center text-primary-600 dark:text-primary-400 mx-auto mb-4">
-                                    {benefit.icon}
-                                </div>
-                                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{benefit.title}</h3>
-                                <p className="text-gray-600 dark:text-gray-300 text-sm">{benefit.desc}</p>
-                            </div>
-                        ))}
-                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">{t('contractPage.whyContractTitle')}</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {benefits.map((benefit, index) => (
+                                <motion.div 
+                                    key={benefit.title} 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    className="glass-card p-6 text-center hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800"
+                                >
+                                    <div className="w-14 h-14 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center text-primary-600 dark:text-primary-400 mx-auto mb-4">
+                                        {benefit.icon}
+                                    </div>
+                                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{benefit.title}</h3>
+                                    <p className="text-gray-600 dark:text-gray-300 text-sm">{benefit.desc}</p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
                 </section>
 
                 {/* Industries */}
                 <section className="mb-20">
-                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center">{t('contractPage.industriesTitle')}</h2>
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center"
+                    >
+                        {t('contractPage.industriesTitle')}
+                    </motion.h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {industries.map((ind) => (
-                            <div key={ind.name} className="glass-card overflow-hidden group flex flex-col md:flex-row">
+                        {industries.map((ind, index) => (
+                            <motion.div 
+                                key={ind.name} 
+                                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                className="glass-card overflow-hidden group flex flex-col md:flex-row shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-800"
+                            >
                                 <div className="h-48 md:h-auto md:w-48 relative overflow-hidden flex-shrink-0">
                                     <Image src={ind.img} alt={ind.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
                                 </div>
@@ -146,28 +188,34 @@ export default function ContractClient() {
                                         ))}
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </section>
 
                 {/* Process */}
-                <section className="mb-20 bg-gray-50 dark:bg-gray-900/50 rounded-3xl p-8 md:p-12">
-                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center">{t('contractPage.processTitle')}</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                        {process.map((item, i) => (
-                            <div key={item.step} className="text-center relative">
-                                {i < process.length - 1 && (
-                                    <div className="hidden md:block absolute top-6 left-[60%] right-0 h-0.5 bg-gray-200 dark:bg-gray-700" />
-                                )}
-                                <div className="w-12 h-12 bg-primary-500 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4 relative z-10">
-                                    {item.step}
+                <section className="mb-20 bg-gray-50 dark:bg-gray-900/50 rounded-3xl p-8 md:p-12 relative overflow-hidden border border-gray-100 dark:border-gray-800">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center">{t('contractPage.processTitle')}</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                            {process.map((item, i) => (
+                                <div key={item.step} className="text-center relative">
+                                    {i < process.length - 1 && (
+                                        <div className="hidden md:block absolute top-6 left-[60%] right-0 h-0.5 bg-gray-200 dark:bg-gray-700" />
+                                    )}
+                                    <div className="w-12 h-12 bg-primary-500 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4 relative z-10 shadow-lg shadow-primary-500/30">
+                                        {item.step}
+                                    </div>
+                                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+                                    <p className="text-gray-600 dark:text-gray-300 text-sm">{item.desc}</p>
                                 </div>
-                                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
-                                <p className="text-gray-600 dark:text-gray-300 text-sm">{item.desc}</p>
-                            </div>
-                        ))}
-                    </div>
+                            ))}
+                        </div>
+                    </motion.div>
                 </section>
 
                 {/* FAQ */}
@@ -204,6 +252,7 @@ export default function ContractClient() {
                     <LeadForm
                         title={t('contractPage.formTitle')}
                         subtitle={t('contractPage.formSubtitle')}
+                        source="contract_manufacturing"
                         className="shadow-2xl"
                     />
                 </div>

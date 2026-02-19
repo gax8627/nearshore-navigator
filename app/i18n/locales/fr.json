@@ -6,7 +6,7 @@
         "about": "À propos",
         "contact": "Contact",
         "bookTour": "Réserver une visite",
-        "assessment": "Assessment"
+        "assessment": "Évaluation"
     },
     "hero": {
         "title": "Nearshoring Industriel à Baja",
@@ -158,7 +158,10 @@
         "mapTitle": "Tijuana Industrial Map",
         "assessmentTitle": "Cost Estimator & Assessment",
         "questionnaireTitle": "3PL / Logistics Questionnaire",
-        "brochureTitle": "Nearshore Brochure"
+        "brochureTitle": "Nearshore Brochure",
+        "ctaReadInsights": "Analyses",
+        "latestIntelligence": "Dernières Analyses",
+        "latestIntelligenceDesc": "Analyses d'experts et guides stratégiques pour vous aider à naviguer dans le paysage du nearshoring."
     },
     "brochure": {
         "title": "Nearshore Navigator",

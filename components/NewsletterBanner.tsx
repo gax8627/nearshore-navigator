@@ -14,7 +14,7 @@ export function NewsletterBanner() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="relative overflow-hidden rounded-3xl bg-gray-900 border border-white/10 p-8 md:p-12 text-center md:text-left shadow-2xl"
+        className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900 border border-white/10 p-8 md:p-14 text-center md:text-left shadow-2xl shadow-primary-500/5 group"
       >
         {/* Background Effects */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
