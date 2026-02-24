@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
-import { db } from '@/lib/db';
-import { leads } from '@/lib/db/schema';
-import { eq, and, sql } from 'drizzle-orm';
+import { db } from '../lib/db';
+import { leads } from '../lib/db/schema';
+import { eq } from 'drizzle-orm';
 
 // Manually load .env.local
 const envPath = path.join(process.cwd(), '.env.local');
@@ -16,37 +16,27 @@ if (fs.existsSync(envPath)) {
   });
 }
 
-const BATCH_SIZE = 100;
-
 async function main() {
-  console.log(`🚀 Triggering AI Agents for next batch (${BATCH_SIZE} leads)...`);
+  console.log(`🔄 Re-triggering AI Agents for leads in "queued" status...`);
 
-  // 1. Fetch Candidates (Status = 'new', Source = 'migration_script' or Tagged 'feb17_campaign')
-  // We'll prioritize 'tier1' tags if possible, but let's just grab 'new'.
   const candidates = await db.select()
     .from(leads)
-    .where(and(
-      eq(leads.status, 'new'),
-      sql`tags::text ILIKE '%Machine-shop%'` // Filter for Contract Manufacturing
-    ))
-    .limit(BATCH_SIZE);
+    .where(eq(leads.status, 'queued'));
 
   if (candidates.length === 0) {
-    console.log('⚠️ No new leads found.');
+    console.log('⚠️ No queued leads found.');
     process.exit(0);
   }
 
-  console.log(`found ${candidates.length} leads.`);
+  console.log(`Found ${candidates.length} queued leads.`);
 
-  // 2. Map to API format
   const payload = candidates.map(l => ({
     name: l.name,
     company: l.company,
     email: l.email,
-    website: '' // We might need website from DB if available, or let Agent research it
+    website: '' 
   }));
 
-  // 3. Call API
   console.log('📡 Sending to Agent API (http://localhost:3000/api/agents/prospecting)...');
   try {
     const response = await fetch('http://localhost:3000/api/agents/prospecting', {
@@ -56,16 +46,7 @@ async function main() {
     });
 
     if (response.ok) {
-        console.log('✅ Agent triggered successfully.');
-        
-        // 4. Update Status in DB
-        console.log('📝 Updating Lead Status to "queued"...');
-        const ids = candidates.map(c => c.id);
-        
-        await db.update(leads)
-            .set({ status: 'queued' })
-            .where(sql`id IN ${ids}`);
-            
+        console.log('✅ Backlog re-triggered successfully.');
         console.log('🎉 Done.');
     } else {
         console.error('❌ API Error:', await response.text());

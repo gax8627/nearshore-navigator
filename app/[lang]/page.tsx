@@ -1,10 +1,16 @@
+import { getDictionary } from '../i18n/get-dictionary';
 import HomeClient from "./HomeClient";
 import { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Nearshore Navigator | Industrial Manufacturing In Baja California',
-  description: 'Strategic advisory for US companies expanding to Mexico. We connect you with verified contract manufacturers and industrial real estate in Tijuana and Baja California.',
-};
+export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await props.params;
+  const dict = await getDictionary(lang);
+  
+  return {
+    title: dict.home?.metaTitle || 'Nearshore Navigator | Industrial Manufacturing In Baja California',
+    description: dict.home?.metaDescription || 'Strategic advisory for US companies expanding to Mexico.',
+  };
+}
 
 export default function Home() {
   return (

@@ -4,6 +4,9 @@ import { generateObject } from 'ai';
 import { google } from '@ai-sdk/google';
 import { z } from 'zod';
 import { brevo } from '@/lib/brevo';
+import { db } from '@/lib/db';
+import { leads as leadsTable } from '@/lib/db/schema';
+import { eq } from 'drizzle-orm';
 
 // Lazy-initialize Tavily to avoid build-time errors when API key is not set
 let _tvly: ReturnType<typeof tavily> | null = null;
@@ -265,6 +268,14 @@ export const prospectingAgent = inngest.createFunction(
             subject: 'meeting',
             scheduledAt: scheduledAt,
             htmlContent: emailContent.htmlBody,
+          });
+
+          // Step 5: Update Database Status
+          await step.run(`update-db-${leadKey}`, async () => {
+            console.log(`[ProspectingAgent] Updating status for ${lead.email} to "contacted"...`);
+            await db.update(leadsTable)
+              .set({ status: 'contacted' })
+              .where(eq(leadsTable.email, verifiedLead.email!));
           });
         });
       } else {

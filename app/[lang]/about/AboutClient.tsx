@@ -74,10 +74,10 @@ export default function AboutClient() {
                 >
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
-                            Turning <span className="text-primary-600">“we want Mexico”</span> into a clear next step
+                            {t('aboutPage.mainHeading')}
                         </h2>
                         <p className="text-xl text-gray-600 dark:text-gray-300">
-                            Nearshore Navigator exists to make decisions easier: grounded guidance, steady follow-through, and execution support that matches your reality.
+                            {t('aboutPage.mainSub')}
                         </p>
                     </div>
 
@@ -89,19 +89,19 @@ export default function AboutClient() {
                             transition={{ delay: 0.2 }}
                             className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700"
                         >
-                            <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">The Common Struggle</h3>
+                            <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">{t('aboutPage.struggleTitle')}</h3>
                             <p className="text-gray-600 dark:text-gray-300 mb-6">
-                                Nearshoring decisions often get stuck after the initial excitement—when the real questions show up:
+                                {t('aboutPage.struggleDesc')}
                             </p>
                             <ul className="space-y-3">
                                 <li className="flex gap-3 text-gray-600 dark:text-gray-300">
-                                    <span className="text-red-500 font-bold">?</span> Where in Baja should we be?
+                                    <span className="text-red-500 font-bold">?</span> {t('aboutPage.struggleList1')}
                                 </li>
                                 <li className="flex gap-3 text-gray-600 dark:text-gray-300">
-                                    <span className="text-red-500 font-bold">?</span> What will the cost structure look like?
+                                    <span className="text-red-500 font-bold">?</span> {t('aboutPage.struggleList2')}
                                 </li>
                                 <li className="flex gap-3 text-gray-600 dark:text-gray-300">
-                                    <span className="text-red-500 font-bold">?</span> Lease, Shelter, or Contract?
+                                    <span className="text-red-500 font-bold">?</span> {t('aboutPage.struggleList3')}
                                 </li>
                             </ul>
                         </motion.div>
@@ -112,22 +112,22 @@ export default function AboutClient() {
                             transition={{ delay: 0.4 }}
                             className="bg-primary-50 dark:bg-primary-900/10 p-8 rounded-2xl border border-primary-100 dark:border-primary-900/50"
                         >
-                            <h3 className="text-xl font-bold mb-4 text-primary-700 dark:text-primary-400">Our Approach</h3>
+                            <h3 className="text-xl font-bold mb-4 text-primary-700 dark:text-primary-400">{t('aboutPage.approachTitle')}</h3>
                             <p className="text-gray-700 dark:text-gray-200 mb-6">
-                                We’re not a directory and we’re not “one-size-fits-all.” Every project has different constraints.
+                                {t('aboutPage.approachDesc')}
                             </p>
                             <ul className="space-y-3">
                                 <li className="flex gap-3 text-gray-700 dark:text-gray-200">
                                     <CheckCircle2 className="w-5 h-5 text-primary-600" />
-                                    Timeline & Footprint Analysis
+                                    {t('aboutPage.approachList1')}
                                 </li>
                                 <li className="flex gap-3 text-gray-700 dark:text-gray-200">
                                     <CheckCircle2 className="w-5 h-5 text-primary-600" />
-                                    Labor & Certification Needs
+                                    {t('aboutPage.approachList2')}
                                 </li>
                                 <li className="flex gap-3 text-gray-700 dark:text-gray-200">
                                     <CheckCircle2 className="w-5 h-5 text-primary-600" />
-                                    Logistics & Risk Tolerance
+                                    {t('aboutPage.approachList3')}
                                 </li>
                             </ul>
                         </motion.div>
@@ -144,20 +144,20 @@ export default function AboutClient() {
                         <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/20 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none" />
                         <div className="relative z-10">
                             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                                <span className="bg-primary-500 text-xs px-2 py-1 rounded uppercase tracking-wider">For Growing Manufacturers</span>
-                                The "Tier 2" Reality Check
+                                <span className="bg-primary-500 text-xs px-2 py-1 rounded uppercase tracking-wider">{t('aboutPage.tier2Badge')}</span>
+                                {t('aboutPage.tier2Title')}
                             </h3>
                             <p className="text-gray-300 mb-6">
-                                Are you a mid-sized supplier feeling the squeeze? Big enough to need Mexico, but too lean to carry a 20-person launch team?
+                                {t('aboutPage.tier2Desc')}
                             </p>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h4 className="font-bold text-primary-400 mb-2">The Trap</h4>
-                                    <p className="text-sm text-gray-400">Trying to "copy-paste" a GM/Ford style expansion without their budget creates administrative chaos.</p>
+                                    <h4 className="font-bold text-primary-400 mb-2">{t('aboutPage.trapTitle')}</h4>
+                                    <p className="text-sm text-gray-400">{t('aboutPage.trapDesc')}</p>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-primary-400 mb-2">The Fix</h4>
-                                    <p className="text-sm text-gray-400">We structure "Shelter" agreements that let you own the equipment and process, while someone else handles the HR/Import headaches.</p>
+                                    <h4 className="font-bold text-primary-400 mb-2">{t('aboutPage.fixTitle')}</h4>
+                                    <p className="text-sm text-gray-400">{t('aboutPage.fixDesc')}</p>
                                 </div>
                             </div>
                         </div>
@@ -192,23 +192,23 @@ export default function AboutClient() {
                         className="w-full md:w-2/3"
                     >
                         <div className="inline-flex items-center gap-2 bg-primary-5 dark:bg-primary-900/10 text-primary-700 dark:text-primary-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
-                             Leadership
+                             {t('aboutPage.leadershipBadge')}
                         </div>
                         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                            Denisse Martinez
+                            {t('aboutPage.denisseName')}
                         </h2>
                         <h3 className="text-lg text-primary-600 dark:text-primary-400 font-semibold mb-6">
-                            Director of Marketing & Business Development
+                            {t('aboutPage.denisseTitle')}
                         </h3>
                         <div className="prose dark:prose-invert text-gray-600 dark:text-gray-300 leading-relaxed">
                             <p>
-                                With over a decade of experience driving economic development and manufacturing growth in the Cali-Baja region, Denisse brings a strategic, data-driven approach to nearshoring.
+                                {t('aboutPage.denisseBio1')}
                             </p>
                             <p>
-                                Having partnered with industry leaders like <strong>Co-Production International</strong> and <strong>Call Center Services International</strong>, she understands that successful expansion isn't just about finding a building—it's about building a sustainable operation. Her expertise spans economic development marketing, site selection analysis, and navigating the cross-border cultural landscape.
+                                {t('aboutPage.denisseBio2')}
                             </p>
                             <p>
-                                At Nearshore Navigator, Denisse leads with a "client-first" philosophy, ensuring that every recommendation is backed by ground-truth data and aligned with your long-term business goals.
+                                {t('aboutPage.denisseBio3')}
                             </p>
                         </div>
                         <div className="mt-8 flex gap-4">
@@ -216,7 +216,7 @@ export default function AboutClient() {
                                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                             </a>
                             <a href={`/${language}/contact`} className="text-primary-600 font-semibold hover:underline">
-                                Connect with Denisse &rarr;
+                                {t('aboutPage.connect')} &rarr;
                             </a>
                         </div>
                     </motion.div>
@@ -234,10 +234,10 @@ export default function AboutClient() {
                     className="text-center max-w-3xl mx-auto mb-16"
                 >
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
-                        A practical toolkit for expansion
+                        {t('aboutPage.toolkitTitle')}
                     </h2>
                     <p className="text-xl text-gray-600 dark:text-gray-300">
-                        Companies don’t all enter Mexico the same way. We help you evaluate the best route—and support the steps that turn the decision into a launch.
+                        {t('aboutPage.toolkitDesc')}
                     </p>
                 </motion.div>
 
@@ -245,26 +245,26 @@ export default function AboutClient() {
                     {[
                         { 
                             icon: <Factory className="w-7 h-7" />, 
-                            title: "Industrial Real Estate & Site Selection", 
-                            desc: "Shortlisting facility options that fit your requirements, coordinating productive site tours, building decision-ready comparisons, and supporting negotiation steps.",
+                            title: t('aboutPage.cardRealEstateTitle'), 
+                            desc: t('aboutPage.cardRealEstateDesc'),
                             link: `/${language}/services/industrial-real-estate-baja`,
-                            cta: "Learn more",
+                            cta: t('aboutPage.cardCtaLearnMore'),
                             color: "blue"
                         },
                         { 
                             icon: <Users className="w-7 h-7" />, 
-                            title: "Contract Manufacturing Partner Matching", 
-                            desc: "We help you start correctly: define requirements, connect with qualified vendors, and drive evaluation and follow-up so the process doesn’t stall.",
+                            title: t('aboutPage.cardContractTitle'), 
+                            desc: t('aboutPage.cardContractDesc'),
                             link: `/${language}/services/contract-manufacturing-tijuana`,
-                            cta: "Learn more",
+                            cta: t('aboutPage.cardCtaLearnMore'),
                             color: "green"
                         },
                         { 
                             icon: <MapPin className="w-7 h-7" />, 
-                            title: t('about.softLandingTitle'), 
-                            desc: t('about.softLandingDesc'),
+                            title: t('aboutPage.cardSoftLandingTitle'), 
+                            desc: t('aboutPage.cardSoftLandingDesc'),
                             link: `/${language}/contact`,
-                            cta: "Request Assessment",
+                            cta: t('aboutPage.cardCtaRequest'),
                             color: "purple"
                         }
                     ].map((item, index) => (
@@ -302,17 +302,17 @@ export default function AboutClient() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
-                        A no-BS process that keeps projects moving
+                        {t('aboutPage.processTitle')}
                     </h2>
                 </motion.div>
 
                 <div className="max-w-4xl mx-auto space-y-8">
                     {[
-                        { step: "Discovery", desc: "Goals, footprint, requirements, timeline" },
-                        { step: "Assessment", desc: "The most practical route for your situation" },
-                        { step: "Shortlist & Plan", desc: "Clear options with tradeoffs explained" },
-                        { step: "Visits & Due Diligence", desc: "Structured agendas, comparisons, decision support" },
-                        { step: "Next Steps", desc: "Introductions and support to move into execution" }
+                        { step: t('aboutPage.step1Title'), desc: t('aboutPage.step1Desc') },
+                        { step: t('aboutPage.step2Title'), desc: t('aboutPage.step2Desc') },
+                        { step: t('aboutPage.step3Title'), desc: t('aboutPage.step3Desc') },
+                        { step: t('aboutPage.step4Title'), desc: t('aboutPage.step4Desc') },
+                        { step: t('aboutPage.step5Title'), desc: t('aboutPage.step5Desc') }
                     ].map((item, i) => (
                         <motion.div 
                             key={i} 
@@ -337,7 +337,7 @@ export default function AboutClient() {
                         transition={{ delay: 0.5 }}
                         className="text-center pt-8 text-xl font-semibold text-primary-600"
                     >
-                        You stay in control. We bring structure, realism, and momentum.
+                        {t('aboutPage.controlText')}
                     </motion.div>
                 </div>
             </div>
@@ -355,13 +355,13 @@ export default function AboutClient() {
                 />
             </motion.div>
             <div className="container mx-auto px-4 relative z-10 text-center">
-                 <h2 className="text-3xl md:text-5xl font-bold mb-6">Serving all of Baja California</h2>
+                 <h2 className="text-3xl md:text-5xl font-bold mb-6">{t('aboutPage.bajaTitle')}</h2>
                  <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
-                    We support projects across Baja California. The right location depends on what you need—labor profile, border strategy, infrastructure, supplier adjacency, operating model, and timeline. Our job is to help you align those variables and make a smart decision faster.
+                    {t('aboutPage.bajaDesc')}
                  </p>
                  <div className="flex justify-center gap-4">
                      <Link href={`/${language}/contact`}>
-                        <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100">Let’s map your best path</Button>
+                        <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100">{t('aboutPage.mapBtn')}</Button>
                     </Link>
                  </div>
             </div>
@@ -370,16 +370,16 @@ export default function AboutClient() {
         {/* Final CTA */}
         <section className="py-24 bg-primary-600 text-white text-center">
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6">Let’s map your best path into Baja California</h2>
+                <h2 className="text-3xl md:text-5xl font-bold mb-6">{t('aboutPage.finalTitle')}</h2>
                 <p className="text-xl max-w-2xl mx-auto mb-10 opacity-90">
-                    Tell us what you’re building and when you need to be operational. We’ll help you identify the smartest starting point—and the next steps to move forward.
+                    {t('aboutPage.finalDesc')}
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                      <Link href={`/${language}/contact`}>
-                        <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100 shadow-xl">Schedule a Discovery Call</Button>
+                        <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100 shadow-xl">{t('aboutPage.scheduleBtn')}</Button>
                     </Link>
                     <Link href={`/${language}/contact`}>
-                        <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">Request a Location Assessment</Button>
+                        <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">{t('aboutPage.assessmentBtn')}</Button>
                     </Link>
                 </div>
             </div>

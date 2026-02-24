@@ -1,49 +1,36 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        remotePatterns: [
-            {
-                protocol: 'https',
-                hostname: 'images.unsplash.com',
-                port: '',
-                pathname: '/**',
-            },
-        ],
-    },
-    // Security headers
-    async headers() {
+    async redirects() {
         return [
+            // Legacy / Misspelled URLs from GSC
             {
-                source: '/:path*',
-                headers: [
-                    {
-                        key: 'X-DNS-Prefetch-Control',
-                        value: 'on',
-                    },
-                    {
-                        key: 'X-Frame-Options',
-                        value: 'DENY',
-                    },
-                    {
-                        key: 'X-Content-Type-Options',
-                        value: 'nosniff',
-                    },
-                    {
-                        key: 'Referrer-Policy',
-                        value: 'strict-origin-when-cross-origin',
-                    },
-                    {
-                        key: 'Permissions-Policy',
-                        value: 'camera=(), microphone=(), geolocation=()',
-                    },
-                    {
-                        key: 'X-XSS-Protection',
-                        value: '1; mode=block',
-                    },
-                ],
+                source: '/contact-accuracy-questionnaire',
+                destination: '/en/resources/questionnaire',
+                permanent: true,
             },
-        ];
-    },
+            {
+                source: '/location/entry-node/third-pary-logistics-services',
+                destination: '/en/services/distribution-centers-tijuana',
+                permanent: true,
+            },
+            {
+                source: '/location/questionnaire/product-service-needs',
+                destination: '/en/resources/questionnaire',
+                permanent: true,
+            },
+            {
+                source: '/location/marketing-assets',
+                destination: '/en/resources',
+                permanent: true,
+            },
+            // Direct mapping for singular location to plural locations if needed
+            {
+                source: '/location/:slug',
+                destination: '/en/locations/:slug',
+                permanent: true,
+            }
+        ]
+    }
 };
 
 export default nextConfig;

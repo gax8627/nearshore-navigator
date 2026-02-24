@@ -14,8 +14,8 @@ export const metadata = {
     apple: '/icon.png',
   },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 };
 
