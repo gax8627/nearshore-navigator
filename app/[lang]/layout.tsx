@@ -104,16 +104,14 @@ export default async function LangLayout({
   return (
     <LanguageProvider lang={lang as any}>
       <ThemeProvider>
-        <head>
-          <SchemaMarkup />
-          {/* Preload hero poster image for LCP improvement */}
-          <link
-            rel="preload"
-            as="image"
-            href="/images/hero-last-frame.jpg"
-            fetchPriority="high"
-          />
-        </head>
+        <SchemaMarkup />
+        {/* Preload hero poster image for LCP improvement */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero-last-frame.jpg"
+          fetchPriority="high"
+        />
         <div className="flex flex-col min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
           {/* Skip to content – keyboard accessibility */}
           <a

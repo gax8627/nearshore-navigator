@@ -51,7 +51,7 @@ export default function InsightsPage() {
     return (
         <div className="pb-20 overflow-hidden">
             {/* Hero Section */}
-            <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+            <section className="relative min-h-[50vh] py-32 flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&q=80&w=2000"

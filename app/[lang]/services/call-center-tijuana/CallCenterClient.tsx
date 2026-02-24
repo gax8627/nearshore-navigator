@@ -37,7 +37,7 @@ export default function CallCenterPage() {
     return (
         <div ref={containerRef} className="pb-20 overflow-hidden">
             {/* Hero */}
-            <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+            <section className="relative min-h-[60vh] py-32 flex items-center justify-center overflow-hidden">
                 <motion.div style={{ y }} className="absolute inset-0 z-0">
                     <Image
                         src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&q=80&w=2000"
