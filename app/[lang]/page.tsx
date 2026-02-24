@@ -9,6 +9,19 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   return {
     title: dict.home?.metaTitle || 'Nearshore Navigator | Industrial Manufacturing In Baja California',
     description: dict.home?.metaDescription || 'Strategic advisory for US companies expanding to Mexico.',
+    alternates: {
+      canonical: `https://nearshorenavigator.com/${lang}`,
+      languages: {
+        'en': 'https://nearshorenavigator.com/en',
+        'es': 'https://nearshorenavigator.com/es',
+        'fr': 'https://nearshorenavigator.com/fr',
+        'de': 'https://nearshorenavigator.com/de',
+        'ja': 'https://nearshorenavigator.com/ja',
+        'zh': 'https://nearshorenavigator.com/zh',
+        'ko': 'https://nearshorenavigator.com/ko',
+        'x-default': 'https://nearshorenavigator.com/en',
+      }
+    }
   };
 }
 

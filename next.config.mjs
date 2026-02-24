@@ -23,6 +23,11 @@ const nextConfig = {
                 destination: '/en/resources',
                 permanent: true,
             },
+            {
+                source: '/company/name',
+                destination: '/en',
+                permanent: true,
+            },
             // Direct mapping for singular location to plural locations if needed
             {
                 source: '/location/:slug',

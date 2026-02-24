@@ -85,14 +85,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  alternates: {
-    canonical: 'https://nearshorenavigator.com/en',
-    languages: {
-      'en-US': 'https://nearshorenavigator.com/en',
-      'es-MX': 'https://nearshorenavigator.com/es',
-      'x-default': 'https://nearshorenavigator.com/en',
-    },
-  },
   verification: {
     // Add your verification codes here
     // google: 'your-google-verification-code',
