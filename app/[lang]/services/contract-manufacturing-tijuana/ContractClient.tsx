@@ -43,6 +43,18 @@ export default function ContractClient() {
             desc: t('contractPage.automotiveDesc'),
             certifications: ["IATF 16949", "ISO 14001", "VDA 6.3"],
         },
+        {
+            name: t('contractPage.furniture'),
+            img: "https://images.unsplash.com/photo-1533090138077-0f6664d1c255?auto=format&fit=crop&q=80&w=800",
+            desc: t('contractPage.furnitureDesc'),
+            certifications: ["Commercial Furniture", "Wood/Metal Fab", "Packaging Design"],
+        },
+        {
+            name: t('contractPage.cnc'),
+            img: "https://images.unsplash.com/photo-1565439366436-1c098583fbdb?auto=format&fit=crop&q=80&w=800",
+            desc: t('contractPage.cncDesc'),
+            certifications: ["Lathe/Milling", "AS9100D", "Tight-Tolerance"],
+        },
     ];
 
     const benefits = [
@@ -164,6 +176,14 @@ export default function ContractClient() {
                     >
                         {t('contractPage.industriesTitle')}
                     </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center text-gray-600 dark:text-gray-300 max-w-3xl mx-auto -mt-6 mb-12"
+                    >
+                        {t('contractPage.regionsSubtitle')}
+                    </motion.p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {industries.map((ind, index) => (
                             <motion.div 
