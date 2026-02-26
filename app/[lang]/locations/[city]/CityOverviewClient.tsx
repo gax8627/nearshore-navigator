@@ -7,7 +7,7 @@ import { Button } from "@/components/Button";
 import { SectionTitle } from "@/components/SectionTitle";
 import { ServiceCard } from "@/components/ServiceCard";
 import { LeadForm } from "@/components/LeadForm";
-import { CheckCircle2, Warehouse, Globe2, Cog, Truck, Headset, MapPin } from "lucide-react";
+import { CheckCircle2, Warehouse, Globe2, Cog, Truck, Headset, MapPin, ChevronRight, Home } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { getLocation, SERVICES } from "@/app/constants/seo-data";
 
@@ -44,6 +44,32 @@ export default function CityOverviewClient({ city }: Props) {
             className="object-cover premium-image-filter"
             priority
           />
+        </div>
+
+        {/* Breadcrumbs */}
+        <div className="absolute top-8 left-0 right-0 z-20 container mx-auto px-4">
+            <nav className="flex" aria-label="Breadcrumb">
+                <ol className="inline-flex items-center space-x-1 md:space-x-3 text-sm text-gray-300">
+                    <li className="inline-flex items-center">
+                        <Link href={`/${language}`} className="inline-flex items-center hover:text-white transition-colors">
+                            <Home className="w-4 h-4 mr-2" />
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <div className="flex items-center">
+                            <ChevronRight className="w-4 h-4 mx-1" />
+                            <span className="text-gray-400">Locations</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="flex items-center">
+                            <ChevronRight className="w-4 h-4 mx-1" />
+                            <span className="text-white font-medium" aria-current="page">{location.name}</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
         </div>
 
         <div className="container mx-auto px-4 z-10 text-center">

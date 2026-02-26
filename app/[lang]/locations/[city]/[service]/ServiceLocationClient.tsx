@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { LeadForm } from "@/components/LeadForm";
 import { FounderBlock } from "@/components/FounderBlock";
-import { CheckCircle2, ArrowRight, MapPin } from "lucide-react";
+import { CheckCircle2, ArrowRight, MapPin, ChevronRight, Home } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { getLocation, getService, LOCATIONS } from "@/app/constants/seo-data";
 
@@ -80,6 +80,35 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
             priority
           />
         </div>
+        
+        {/* Breadcrumbs */}
+        <div className="absolute top-8 left-0 right-0 z-20 container mx-auto px-4">
+            <nav className="flex" aria-label="Breadcrumb">
+                <ol className="inline-flex items-center space-x-1 md:space-x-3 text-sm text-gray-300">
+                    <li className="inline-flex items-center">
+                        <Link href={`/${language}`} className="inline-flex items-center hover:text-white transition-colors">
+                            <Home className="w-4 h-4 mr-2" />
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <div className="flex items-center">
+                            <ChevronRight className="w-4 h-4 mx-1" />
+                            <Link href={`/${language}/locations/${city}`} className="hover:text-white transition-colors">
+                                {location.name}
+                            </Link>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="flex items-center">
+                            <ChevronRight className="w-4 h-4 mx-1" />
+                            <span className="text-white font-medium" aria-current="page">{service.title}</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
         <div className="container mx-auto px-4 z-10 text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white mb-8">
                 <MapPin className="w-4 h-4 text-primary-400" />
