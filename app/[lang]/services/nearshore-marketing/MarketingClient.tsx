@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/app/context/LanguageContext';
 import { Database, Bot, PenTool, BarChart3, Clock, CheckCircle2, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { LeadForm } from '@/components/LeadForm';
 
 export default function MarketingClient() {
@@ -60,7 +61,14 @@ export default function MarketingClient() {
             {/* Hero Section */}
             <section className="relative bg-teal-900 border-b border-teal-800 text-white overflow-hidden py-24">
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-gradient-to-br from-teal-900 via-teal-900 to-black/80 z-10" />
+                    <Image 
+                        src="/images/hero/marketing_hero.png"
+                        alt="Marketing Strategy Session"
+                        fill
+                        className="object-cover object-center opacity-40 mix-blend-luminosity"
+                        priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-teal-900/90 via-teal-900/80 to-black/90 z-10" />
                     {/* Abstract background pattern representing data/automation */}
                     <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
                 </div>
@@ -73,7 +81,7 @@ export default function MarketingClient() {
                         className="max-w-3xl"
                     >
                         <div className="inline-flex items-center space-x-2 bg-teal-800/50 rounded-full px-4 py-1.5 mb-6 border border-teal-700/50 backdrop-blur-sm">
-                            <span className="flex h-2 w-2 rounded-full bg-teal-400 animate-pulse"></span>
+                            <span className="flex h-2 w-2 rounded-full bg-teal-400"></span>
                             <span className="text-sm font-medium text-teal-100">{t('marketingPage.badge') || 'Marketing Operations & Growth'}</span>
                         </div>
                         <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight">
@@ -88,7 +96,7 @@ export default function MarketingClient() {
                         
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Link href="#contact" className="bg-teal-500 hover:bg-teal-400 text-white font-semibold py-4 px-8 rounded-lg shadow-lg shadow-teal-500/30 transition-all flex justify-center items-center group">
-                                Deploy Your OS
+                                Start Transformation
                                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </Link>
                         </div>
@@ -157,13 +165,11 @@ export default function MarketingClient() {
                         <div className="w-full md:w-1/2">
                             <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-xl border border-teal-100 dark:border-teal-900 border-t-4 border-t-teal-500 sticky top-32">
                                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                                    {t('marketingPage.pricingTitle') || 'Straightforward Retainer'}
+                                    {t('marketingPage.pricingTitle') || 'Customized Growth Plans'}
                                 </h3>
-                                <div className="text-4xl font-extrabold text-teal-600 dark:text-teal-400 mb-4 mt-6">
-                                    $3,450 <span className="text-lg text-gray-500 font-medium">/ month</span>
-                                </div>
-                                <p className="text-gray-600 dark:text-gray-400 mb-8 border-b border-gray-100 dark:border-gray-800 pb-8">
-                                    {t('marketingPage.pricingDesc') || 'No hidden fees. Includes all software architecture, AI agent deployment, and ongoing optimization.'}
+                                
+                                <p className="text-gray-600 dark:text-gray-400 mb-8 border-b border-gray-100 dark:border-gray-800 pb-8 mt-4">
+                                    {t('marketingPage.pricingDesc') || 'Tailored to your specific needs. Includes comprehensive strategy, system deployment, and ongoing optimization.'}
                                 </p>
                                 
                                 <ul className="space-y-4 mb-8">
@@ -173,7 +179,7 @@ export default function MarketingClient() {
                                     </li>
                                     <li className="flex items-center text-gray-700 dark:text-gray-300">
                                         <CheckCircle2 className="w-5 h-5 text-teal-500 mr-3 flex-shrink-0" />
-                                        <span>Automated LinkedIn Content Pipeline</span>
+                                        <span>Consistent Content Pipeline</span>
                                     </li>
                                     <li className="flex items-center text-gray-700 dark:text-gray-300">
                                         <CheckCircle2 className="w-5 h-5 text-teal-500 mr-3 flex-shrink-0" />
