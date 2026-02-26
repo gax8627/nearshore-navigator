@@ -1,4 +1,4 @@
-import { pgTable, serial, text, timestamp, boolean, integer, varchar } from 'drizzle-orm/pg-core';
+import { pgTable, serial, text, timestamp, boolean, integer, varchar, index } from 'drizzle-orm/pg-core';
 
 // ─── Blog Posts ───────────────────────────────────────────────
 export const posts = pgTable('posts', {
@@ -30,6 +30,11 @@ export const leads = pgTable('leads', {
   tags: text('tags').notNull().default('[]'),
   source: varchar('source', { length: 50 }).default('website'), // website, csv_upload, manual
   createdAt: timestamp('created_at').notNull().defaultNow(),
+}, (table) => {
+  return {
+    emailIdx: index('leads_email_idx').on(table.email),
+    createdAtIdx: index('leads_created_at_idx').on(table.createdAt)
+  };
 });
 
 // ─── Senders ─────────────────────────────────────────────────
@@ -56,6 +61,21 @@ export const campaigns = pgTable('campaigns', {
   createdAt: timestamp('created_at').notNull().defaultNow(),
 });
 
+// ─── Social Content Drafts ─────────────────────────────────────
+export const socialDrafts = pgTable('social_drafts', {
+  id: serial('id').primaryKey(),
+  postId: integer('post_id').references(() => posts.id, { onDelete: 'cascade' }).notNull(),
+  content: text('content').notNull(),
+  status: varchar('status', { length: 50 }).notNull().default('pending'), // pending, approved, scheduled, posted
+  scheduledFor: timestamp('scheduled_for'),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+  updatedAt: timestamp('updated_at').notNull().defaultNow(),
+}, (table) => {
+  return {
+    postIdIdx: index('social_drafts_post_id_idx').on(table.postId)
+  };
+});
+
 // ─── Type Exports ─────────────────────────────────────────────
 export type Post = typeof posts.$inferSelect;
 export type NewPost = typeof posts.$inferInsert;
@@ -65,3 +85,5 @@ export type Campaign = typeof campaigns.$inferSelect;
 export type NewCampaign = typeof campaigns.$inferInsert;
 export type Sender = typeof senders.$inferSelect;
 export type NewSender = typeof senders.$inferInsert;
+export type SocialDraft = typeof socialDrafts.$inferSelect;
+export type NewSocialDraft = typeof socialDrafts.$inferInsert;

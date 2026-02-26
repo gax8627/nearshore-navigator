@@ -53,6 +53,7 @@ export function Navbar() {
         { name: t('services.contract'), href: `/${language}/services/contract-manufacturing-tijuana` },
         { name: t('services.logistics'), href: `/${language}/services/distribution-centers-tijuana` },
         { name: t('services.call_center'), href: `/${language}/services/call-center-tijuana` },
+        { name: t('services.marketing'), href: `/${language}/services/nearshore-marketing` },
     ];
 
     const navLinks = [

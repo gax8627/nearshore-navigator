@@ -47,7 +47,9 @@
         "logistics": "Distribution & Logistics",
         "logistics_desc": "Strategic 3PL and cross-docking solutions near the Otay Mesa and San Ysidro ports of entry.",
         "call_center": "Call Center Solutions",
-        "call_center_desc": "Scale your support with 50,000+ bilingual agents in the Pacific Time Zone. Save 40-60% on BPO costs."
+        "call_center_desc": "Scale your support with 50,000+ bilingual agents in the Pacific Time Zone. Save 40-60% on BPO costs.",
+        "marketing": "Marketing Operations",
+        "marketing_desc": "B2B growth system. CRM setup, lead enrichment, and AI-driven LinkedIn content generation."
     },
     "footer": {
         "rights": "All rights reserved.",
@@ -514,5 +516,31 @@
         "finalDesc": "Tell us what you’re building and when you need to be operational. We’ll help you identify the smartest starting point—and the next steps to move forward.",
         "scheduleBtn": "Schedule a Discovery Call",
         "assessmentBtn": "Request a Location Assessment"
+    },
+    "marketingPage": {
+        "badge": "Marketing Operations & Growth",
+        "heroTitle": "Nearshore Marketing",
+        "heroTitleHighlight": "OS",
+        "heroSubtitle": "A complete B2B growth system installed directly into your business. We build the engine that captures demand, enriches leads, and scales your authority with AI.",
+        "whyMarketingTitle": "Why Nearshore Marketing OS?",
+        "crmTitle": "Automated CRM Routing",
+        "crmDesc": "Stop manually entering data. Every inbound lead is automatically structured, scored, and synced to your database.",
+        "aiTitle": "AI Lead Enrichment",
+        "aiDesc": "Our system researches every incoming domain instantly, attaching company size and industry data before you even make a call.",
+        "contentTitle": "Autonomous Content Engine",
+        "contentDesc": "Publish a blog, and our AI instantly drafts 3 targeted LinkedIn posts for your review. Complete social authority on autopilot.",
+        "reportingTitle": "Transparent Reporting",
+        "reportingDesc": "Live dashboards showing your active pipeline value, new lead velocity, and agent performance.",
+        "pricingTitle": "Straightforward Retainer",
+        "pricingDesc": "$3,450/month. No hidden fees. Includes all software architecture, AI agent deployment, and ongoing optimization.",
+        "timelineTitle": "30/60/90 Day Implementation",
+        "day30Title": "Day 30: Foundation",
+        "day30Desc": "CRM audit, lead capture standardization, and initial AI enrichment agents deployed.",
+        "day60Title": "Day 60: Authority",
+        "day60Desc": "LinkedIn automation live, lead magnet funnels active, and content approval queues established.",
+        "day90Title": "Day 90: Scale",
+        "day90Desc": "Live marketing dashboards, full pipeline visibility, and iterative campaign optimization.",
+        "formTitle": "Deploy Your Marketing OS",
+        "formSubtitle": "Book a discovery call to see if the Nearshore Marketing OS is the right fit for your growth goals."
     }
 }

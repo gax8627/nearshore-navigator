@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 
 import { brevo } from '@/lib/brevo';
+import { inngest } from '@/lib/inngest/client';
 
 function isDbConfigured() {
   return !!(process.env.POSTGRES_URL || process.env.POSTGRES_URL_NON_POOLING);
@@ -9,7 +10,7 @@ function isDbConfigured() {
 export async function POST(req: Request) {
     try {
         const body = await req.json();
-        const { name, email, company, phone, message, source, honeypot } = body;
+        const { name, email, company, phone, message, source, honeypot, cfToken } = body;
 
         // Honeypot check
         if (honeypot) {
@@ -26,6 +27,34 @@ export async function POST(req: Request) {
             );
         }
 
+        // CAPTCHA Verification
+        if (!process.env.TURNSTILE_SECRET_KEY) {
+            console.warn('[Contact API] TURNSTILE_SECRET_KEY is missing. Skipping CAPTCHA verification.');
+        } else if (!cfToken) {
+            return NextResponse.json(
+                { error: 'Security token missing. Please try again.' },
+                { status: 400 }
+            );
+        } else {
+            const formData = new URLSearchParams();
+            formData.append('secret', process.env.TURNSTILE_SECRET_KEY);
+            formData.append('response', cfToken);
+
+            const cfResponse = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+                method: 'POST',
+                body: formData,
+            });
+            const cfData = await cfResponse.json();
+
+            if (!cfData.success) {
+                console.warn('[Contact API] CAPTCHA verification failed:', cfData);
+                return NextResponse.json(
+                    { error: 'Security check failed. Please refresh and try again.' },
+                    { status: 400 }
+                );
+            }
+        }
+
         console.log(`[Contact API] Received lead: ${email}`);
 
         // DB Insertion
@@ -33,15 +62,22 @@ export async function POST(req: Request) {
             const { db } = await import('@/lib/db');
             const { leads } = await import('@/lib/db/schema');
             
-            await db.insert(leads).values({
+            const [newLead] = await db.insert(leads).values({
                 name,
                 email,
                 company: company || '',
                 phone: phone || '',
                 message: message || '',
                 source: source || 'website_contact_form'
-            });
+            }).returning({ id: leads.id });
             console.log('[Contact API] Saved to database.');
+
+            // Trigger Inngest background job
+            await inngest.send({
+                name: 'lead.created',
+                data: { leadId: newLead.id, email, name, company, source }
+            });
+            console.log('[Contact API] Triggered Inngest lead.created event.');
         } else {
             console.warn('[Contact API] Database not configured. Lead data:', { name, email, company, source });
         }

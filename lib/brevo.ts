@@ -256,5 +256,31 @@ export const brevo = {
     }
 
     return data;
+  },
+
+  /**
+   * Get campaigns
+   */
+  async getCampaigns({ limit = 5 }: { limit?: number }) {
+    if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
+
+    const params = new URLSearchParams();
+    if (limit) params.append('limit', limit.toString());
+
+    const response = await fetch(`${BREVO_API_URL}/emailCampaigns?${params.toString()}`, {
+      method: 'GET',
+      headers: {
+        'api-key': BREVO_API_KEY,
+        'Accept': 'application/json',
+      },
+    });
+
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+       console.warn('Brevo getCampaigns warning:', data);
+    }
+
+    return data;
   }
 };

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/Button";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/app/context/LanguageContext";
+import { Turnstile } from '@marsidev/react-turnstile';
 
 interface LeadFormProps {
     title?: string;
@@ -16,6 +17,7 @@ export function LeadForm({ title, subtitle, source, className }: LeadFormProps) 
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [cfToken, setCfToken] = useState<string>("");
     const { t } = useLanguage();
 
     const formTitle = title || t('form.title');
@@ -26,10 +28,17 @@ export function LeadForm({ title, subtitle, source, className }: LeadFormProps) 
         setLoading(true);
         setError(null);
 
+        if (!cfToken) {
+            setError("Please complete the security check.");
+            setLoading(false);
+            return;
+        }
+
         const formData = new FormData(e.currentTarget);
         const data = {
             ...Object.fromEntries(formData.entries()),
-            source: source || 'website_contact_form'
+            source: source || 'website_contact_form',
+            cfToken 
         };
 
         try {
@@ -149,6 +158,13 @@ export function LeadForm({ title, subtitle, source, className }: LeadFormProps) 
                         {error}
                     </motion.p>
                 )}
+
+                <div className="flex justify-center my-4">
+                    <Turnstile 
+                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'} 
+                        onSuccess={setCfToken}
+                    />
+                </div>
 
                 <Button 
                     variant="primary" 
