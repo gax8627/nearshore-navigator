@@ -61,8 +61,8 @@ export async function POST(req: Request) {
     let sentCount = 0;
     
     // Limit to 20 for safety in this initial version unless user confirms
-    // const LIMIT = 20; 
-    // targetLeads = targetLeads.slice(0, LIMIT);
+    const LIMIT = 20; 
+    targetLeads = targetLeads.slice(0, LIMIT);
 
     for (const lead of targetLeads) {
         if (!lead.email) continue;

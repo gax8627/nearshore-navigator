@@ -1,9 +1,7 @@
 import { NextResponse } from 'next/server';
 import { auth } from '@clerk/nextjs/server';
-import { GoogleGenerativeAI } from '@google/generative-ai';
-
-// Initialize Gemini
-const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_GENERATIVE_AI_API_KEY;
+import { google } from '@ai-sdk/google';
+import { generateText } from 'ai';
 
 export async function POST(req: Request) {
   try {
@@ -12,25 +10,16 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    if (!apiKey) {
-      return NextResponse.json({ 
-        error: 'Gemini API Key not configured', 
-        details: 'Please add GEMINI_API_KEY to your environment variables.' 
-      }, { status: 503 });
-    }
-
     const { topic, count = 3 } = await req.json();
     const prompt = `Generate ${count} engaging blog post ideas about "${topic || 'Industrial Manufacturing in Mexico'}". 
     Focus on trends, cost savings, and logistics. 
     Format the response as a JSON array of objects with 'title' and 'excerpt' keys. 
     Do not include markdown formatting like \`\`\`json. Just the raw JSON.`;
 
-    const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
-
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = response.text();
+    const { text } = await generateText({
+      model: google('gemini-1.5-pro-latest'),
+      prompt: prompt,
+    });
 
     // Clean up potential markdown formatting if Gemini adds it despite prompt
     const cleanedText = text.replace(/```json/g, '').replace(/```/g, '').trim();

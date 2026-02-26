@@ -27,11 +27,29 @@ function StatCard({
   );
 }
 
+import { db } from "@/lib/db";
+import { posts, leads } from "@/lib/db/schema";
+import { sql } from "drizzle-orm";
+
 export default async function AdminDashboard() {
-  // TODO: Fetch real data from DB when connected
+  // Fetch real data from DB
+  const [postStats] = await db
+    .select({
+      total: sql<number>`count(*)`,
+      published: sql<number>`count(*) filter (where ${posts.published} = true)`
+    })
+    .from(posts);
+
+  const [leadStats] = await db
+    .select({
+      total: sql<number>`count(*)`,
+      new: sql<number>`count(*) filter (where ${leads.status} = 'new')`
+    })
+    .from(leads);
+
   const stats = {
-    posts: { total: 4, published: 4 },
-    leads: { total: 0, new: 0 },
+    posts: { total: postStats?.total || 0, published: postStats?.published || 0 },
+    leads: { total: leadStats?.total || 0, new: leadStats?.new || 0 },
   };
 
   return (
