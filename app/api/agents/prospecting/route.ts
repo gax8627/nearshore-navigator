@@ -1,8 +1,14 @@
 import { NextResponse } from 'next/server';
 import { inngest } from '@/lib/inngest/client';
+import { auth } from '@clerk/nextjs/server';
 
 export async function POST(req: Request) {
   try {
+    const { userId } = await auth();
+    if (!userId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const { leads, listId } = await req.json();
 
     if (!leads || !Array.isArray(leads)) {

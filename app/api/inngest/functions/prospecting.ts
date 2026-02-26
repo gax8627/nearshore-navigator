@@ -4,6 +4,7 @@ import { generateObject } from 'ai';
 import { google } from '@ai-sdk/google';
 import { z } from 'zod';
 import { brevo } from '@/lib/brevo';
+import { wrapHtml } from '@/lib/email-templates/outreach';
 import { db } from '@/lib/db';
 import { leads as leadsTable } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
@@ -21,10 +22,12 @@ function getTavily() {
 type ProspectingEvent = {
   name: 'prospecting/start-campaign';
   data: {
+    campaignType?: 'marketing' | 'manufacturing';
     leads: {
       name: string; // Contact Person
       company: string;
       website?: string;
+      email?: string;
     }[];
     listId?: number; // Optional Brevo List ID
   };
@@ -150,7 +153,25 @@ export const prospectingAgent = inngest.createFunction(
 
     for (const lead of leads) {
       console.log(`[ProspectingAgent] Processing lead: ${lead.name} (${lead.company})`);
+      if (!lead.email) {
+        console.log(`[ProspectingAgent] Skipping ${lead.name} - No email provided in CSV.`);
+        continue;
+      }
+
       const leadKey = `${lead.company}-${lead.name}`.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase().slice(0, 40);
+
+      // Check DB to prevent double-emailing
+      const alreadyContacted = await step.run(`check-idempotency-${leadKey}`, async () => {
+         const record = await db.query.leads.findFirst({
+           where: eq(leadsTable.email, lead.email!)
+         });
+         return record?.status === 'contacted';
+      });
+
+      if (alreadyContacted) {
+         console.log(`[ProspectingAgent] Skipping ${lead.name} - Already marked 'contacted' in DB.`);
+         continue;
+      }
 
       // Step 1: Deep Research (Company + Person)
       const researchData = await step.run(`research-${leadKey}`, async () => {
@@ -159,79 +180,68 @@ export const prospectingAgent = inngest.createFunction(
         const personQuery = `Find role, background, and professional skills for ${lead.name} at ${lead.company}.`;
         
         const [companyRes, personRes] = await Promise.all([
-          getTavily().search(companyQuery, { search_depth: 'advanced' }),
-          getTavily().search(personQuery, { search_depth: 'advanced' })
+          getTavily().search(companyQuery, { search_depth: 'basic' }),
+          getTavily().search(personQuery, { search_depth: 'basic' })
         ]);
 
-        return { company: companyRes, person: personRes };
+        // Severely truncate the results so the Inngest local state doesn't bloat and crash Next.js API routes!
+        const companyStr = companyRes.results?.map(r => r.content).join('\\n').slice(0, 3000) || 'No company data found.';
+        const personStr = personRes.results?.map(r => r.content).join('\\n').slice(0, 1500) || 'No person data found.';
+
+        return { company: companyStr, person: personStr };
       });
 
-      // Step 2: Analysis & Verification
-      const verifiedLead = await step.run(`verify-${leadKey}`, async () => {
+      // Step 2 & 3: United AI Analysis & Email Drafting
+      // Bypasses the 20/day limit by doing the analysis and drafting in ONE single AI call
+      const emailContent = await step.run(`draft-email-${leadKey}`, async () => {
         try {
-          console.log(`[ProspectingAgent] Calling Gemini for ${leadKey}...`);
-          const { object } = await generateObject({
-            model: google('gemini-flash-lite-latest'),
-            schema: z.object({
-              firstName: z.string(),
-              lastName: z.string(),
-              email: z.string().email().optional(),
-              companyName: z.string(),
-              jobTitle: z.string().optional(),
-              location: z.string().describe("City, Country or Region"),
-              timezone: z.string().describe("IANA Timezone ID (e.g. America/New_York)"),
-              skills: z.array(z.string()).describe("Professional skills, technologies, or expertise found"),
-              companySummary: z.string().describe("Brief 1-sentence summary of what the company does"),
-              confidence: z.number().describe('Confidence score 0-100'),
-            }),
-            prompt: `
-              Analyze the research data for ${lead.name} at ${lead.company}.
-              
-              Company Data: ${JSON.stringify(researchData.company)}
-              Person Data: ${JSON.stringify(researchData.person)}
-              
-              1. Extract the contact details (Email is critical).
-              2. Infer the timezone from location.
-              3. Extract key technical or professional skills.
-            `,
-          });
-          return object;
-        } catch (error: any) {
-          console.error(`[ProspectingAgent] Gemini Verification ERROR for ${lead.company}:`, error?.message || error);
-          throw error; // Re-throw for Inngest retry logic
-        }
-      });
+          const isMarketing = event.data.campaignType !== 'manufacturing';
+          
+          const promptGoal = isMarketing
+            ? 'Prospecting for Denisse Martinez, a Fractional Marketing Consultant who helps manufacturers and industrial companies grow through targeted, à la carte marketing services — like LinkedIn outreach campaigns, CRM setup, SEO audits, or industry-specific content creation. She works alongside their existing team as a part-time marketing director.'
+            : 'Prospecting for Contract Manufacturing Services (offering high-quality, cost-effective manufacturing solutions in Mexico).';
 
-      // Step 3: AI Email Drafting ("Redactar")
-      // User request: "use skills to humanize the email", "don't personalized email" (meaning don't be creepy, be relevant).
-      if (verifiedLead.email && verifiedLead.confidence > 70) {
-        const emailContent = await step.run(`draft-email-${leadKey}`, async () => {
-          try {
-            console.log(`[ProspectingAgent] Drafting email for ${leadKey}...`);
+          const promptInstructions = isMarketing
+            ? `- Write the email in a warm, casual, consultant-to-peer tone. You are Denisse Martinez, a marketing consultant — NOT a vendor or agency. Do NOT lie and claim we have spoken before. Jump straight into the value.
+                - Use very simple, easy-to-understand words.
+                - Based on the research, pick ONE specific à la carte service that would be most relevant to their business and pitch it concretely. Choose from: LinkedIn outreach campaigns, CRM audit & setup, industry blog content, email campaigns, SEO optimization, or social media management.
+                - Frame it as "I work alongside your team" — emphasize that you embed with them as their part-time marketing director, not that you replace their people.
+                - HUMANIZATION: Reference their specific industry, products, or tech stack from the research to show you understand their world.
+                - Do NOT mention their location or city.
+                - End by asking if they're open to a quick 15-minute call to discuss. DO NOT include any HTML links or Calendly URLs in your text. The template already provides a button below your text.
+                - Sign off as "Denisse Martinez, Fractional Marketing Consultant".`
+            : `- "Redact" (Write) the email content in a human, professional tone. Only write the body paragraphs, do NOT write the subject here.
+                - HUMANIZATION: Mention their specific skills or industry context from the provided research to show relevance.
+                - Do NOT mention their location or city (it can feel creepy).
+                - Do NOT be overly "salesy". Be direct but warm.
+                - End by asking if they are open to a strategy call. DO NOT include any HTML links or Calendly URLs in your text. The template already provides a button below your text.
+                - Sign off as "Denisse Martinez".`;
+
+            console.log(`[ProspectingAgent] Drafting email & analyzing ${leadKey}...`);
             const { object } = await generateObject({
-              model: google('gemini-flash-lite-latest'),
+              model: google('gemini-2.5-flash'),
               schema: z.object({
+                firstName: z.string(),
+                lastName: z.string(),
+                skills: z.array(z.string()).describe("Professional skills or technologies discovered in the research"),
                 subject: z.string(),
                 htmlBody: z.string(),
               }),
               prompt: `
-                Draft a cold outreach email to ${verifiedLead.firstName} from Denisse Martinez (Nearshore Navigator).
+                Analyze the research data and draft a cold outreach email to ${lead.name} from Denisse Martinez (Nearshore Navigator).
                 
-                Goal: Prospecting for Contract Manufacturing Services.
-                Link: https://calendly.com/denisse-nearshorenavigator/30min?month=2026-02
+                Product/Goal: ${promptGoal}
                 
                 Context: 
-                - Prospect: ${verifiedLead.firstName} (${verifiedLead.jobTitle}) at ${verifiedLead.companyName}.
-                - Skills/Tech: ${verifiedLead.skills.join(', ')}.
-                - Company: ${verifiedLead.companySummary}.
+                - Prospect: ${lead.name} at ${lead.company}.
+                - Research on Company: ${JSON.stringify(researchData.company)}
+                - Research on Person: ${JSON.stringify(researchData.person)}
                 
                 Instructions:
-                - "Redact" (Write) the email in a human, professional tone.
-                - HUMANIZATION: Mention their specific skills or industry context to show relevance.
-                - Do NOT mention their location or city (it can feel creepy).
-                - Do NOT be overly "salesy". Be direct but warm.
-                - Include the Calendly link for a booking.
-                - Sign off as "Denisse Martinez".
+                1. Extract the person's first and last name from '${lead.name}'.
+                2. Identify their professional skills from the research text to populate the 'skills' array.
+                3. Follow exactly these tone instructions for the email draft:
+                ${promptInstructions}
               `
             });
             return object;
@@ -239,54 +249,57 @@ export const prospectingAgent = inngest.createFunction(
             console.error(`[ProspectingAgent] Gemini Drafting ERROR for ${lead.company}:`, error?.message || error);
             throw error;
           }
-        });
+      });
 
-        // Step 4: Sync to Brevo & Schedule
+      // Step 4: Sync to Brevo & Schedule
         await step.run(`sync-brevo-${leadKey}`, async () => {
-          console.log(`[ProspectingAgent] Syncing ${verifiedLead.firstName} ${verifiedLead.lastName} to Brevo...`);
+          console.log(`[ProspectingAgent] Syncing ${emailContent.firstName} ${emailContent.lastName} to Brevo...`);
           // Add Contact
           await brevo.createContact({
-            email: verifiedLead.email!,
+            email: lead.email!,
             attributes: {
-              FIRSTNAME: verifiedLead.firstName,
-              LASTNAME: verifiedLead.lastName,
-              COMPANY: verifiedLead.companyName,
-              JOB_TITLE: verifiedLead.jobTitle || '',
-              CITY: verifiedLead.location, 
-              NOTES: `Skills: ${verifiedLead.skills.join(', ')}\nTimezone: ${verifiedLead.timezone}`,
+              FIRSTNAME: emailContent.firstName,
+              LASTNAME: emailContent.lastName,
+              COMPANY: lead.company,
+              NOTES: `Skills: ${emailContent.skills.join(', ')}`,
             },
             listIds: listId ? [listId] : [], 
             updateEnabled: true,
           });
           
           // Schedule (8am Local Time)
-          const scheduledAt = getNext8AM(verifiedLead.timezone);
+          // Default to America/Chicago since timezone inference was removed
+          const scheduledAt = getNext8AM('America/Chicago');
 
           // Send
-          await brevo.sendEmail({
-            to: [{ email: verifiedLead.email!, name: `${verifiedLead.firstName} ${verifiedLead.lastName}` }],
-            subject: 'meeting',
-            scheduledAt: scheduledAt,
-            htmlContent: emailContent.htmlBody,
-          });
+          const finalHtml = wrapHtml(
+            emailContent.htmlBody,
+            "Book Strategy Call Now",
+            "https://calendly.com/denisse-nearshorenavigator/30min?month=2026-02"
+          );
 
-          // Step 5: Update Database Status
-          await step.run(`update-db-${leadKey}`, async () => {
-            console.log(`[ProspectingAgent] Updating status for ${lead.email} to "contacted"...`);
-            await db.update(leadsTable)
-              .set({ status: 'contacted' })
-              .where(eq(leadsTable.email, verifiedLead.email!));
+          await brevo.sendEmail({
+            to: [{ email: lead.email!, name: `${emailContent.firstName} ${emailContent.lastName}` }],
+            subject: emailContent.subject,
+            // scheduledAt: scheduledAt, // Commented out to blast immediately
+            htmlContent: finalHtml,
+            tags: [event.data.campaignType || 'marketing'], // Added required tags parameter to prevent Brevo API crash
           });
         });
-      } else {
-        console.log(`[ProspectingAgent] Skipping Brevo sync for ${lead.name} (Email missing or confidence too low: ${verifiedLead.confidence})`);
-      }
+
+        // Step 5: Update Database Status
+        await step.run(`update-db-${leadKey}`, async () => {
+          console.log(`[ProspectingAgent] Updating status for ${lead.email} to "contacted"...`);
+          await db.update(leadsTable)
+            .set({ status: 'contacted' })
+            .where(eq(leadsTable.email, lead.email!));
+        });
 
       // Add a small delay to avoid hitting Gemini Free Tier Rate Limits (15 RPM)
-      // We use a 2-minute delay to be absolutely sure we don't hit the 15 RPM limit
-      await step.sleep(`delay-${leadKey}`, '2m');
+      // Reduced to 15s to launch campaign immediately as requested by the user
+      await step.sleep(`delay-${leadKey}`, '15s');
 
-      results.push(verifiedLead);
+      results.push(emailContent);
     }
 
     return { success: true, processed: results.length, results };

@@ -3,7 +3,13 @@ import { inngest } from '@/lib/inngest/client';
 
 export async function POST(req: Request) {
   try {
-    const { email, name, pdfRequested } = await req.json();
+    const body = await req.json();
+    const { email, name, pdfRequested, honeypot } = body;
+
+    // Reject silently if honeypot is filled
+    if (honeypot) {
+        return NextResponse.json({ success: true, message: 'Your guide is on its way!' });
+    }
 
     if (!email) {
       return NextResponse.json({ error: 'Email is required' }, { status: 400 });

@@ -87,7 +87,7 @@ export function LeadForm({ title, subtitle, source, className }: LeadFormProps) 
             <form onSubmit={handleSubmit} className="space-y-4">
                 {/* Honeypot field - hidden from users */}
                 <div className="hidden" aria-hidden="true">
-                    <input type="text" name="honeypot" tabIndex={-1} autoComplete="off" />
+                    <input type="text" name="honeypot" tabIndex={-1} aria-hidden="true" autoComplete="off" />
                 </div>
 
                 <div>

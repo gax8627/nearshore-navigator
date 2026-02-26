@@ -12,7 +12,7 @@ export function Footer() {
             <div className="container mx-auto px-4 md:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                     <div className="col-span-1 md:col-span-1">
-                        <Link href={`/${language}`} className="block group">
+                        <Link href={`/${language}`} className="block group" aria-label="Nearshore Navigator Home">
                             <div className="relative w-44 md:w-60 h-12 md:h-16 transition-all group-hover:scale-105 duration-300">
                                 <Image
                                     src="/images/nearshore-logo-brand.png"

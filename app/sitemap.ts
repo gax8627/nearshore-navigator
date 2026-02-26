@@ -10,6 +10,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
             'en': `${baseUrl}/en${path}`,
             'es': `${baseUrl}/es${path}`,
+            'fr': `${baseUrl}/fr${path}`,
+            'de': `${baseUrl}/de${path}`,
+            'ja': `${baseUrl}/ja${path}`,
+            'zh': `${baseUrl}/zh${path}`,
+            'ko': `${baseUrl}/ko${path}`,
+            'it': `${baseUrl}/it${path}`,
+            'pt': `${baseUrl}/pt${path}`,
+            'ru': `${baseUrl}/ru${path}`,
             'x-default': `${baseUrl}/en${path}`,
         }
     })
