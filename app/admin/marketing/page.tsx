@@ -1,6 +1,34 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 
 export default function MarketingDashboard() {
+  const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/admin/metrics')
+      .then(res => res.json())
+      .then(json => {
+        if (json.success) setData(json.data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error(err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+      </div>
+    );
+  }
+
+  const leads = data?.recentLeads || [];
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <main className="flex-grow p-8">
@@ -12,10 +40,10 @@ export default function MarketingDashboard() {
 
           {/* Top Level Metrics */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <MetricCard title="Total Leads (30d)" value="42" trend="+12%" positive />
-            <MetricCard title="Est. Pipeline Value" value="$1.2M" trend="+5%" positive />
-            <MetricCard title="Content Drafts Pending" value="2" alert />
-            <MetricCard title="Email Open Rate" value="48.5%" trend="-2%" />
+            <MetricCard title="Total Leads (30d)" value={data?.totalLeads || 0} />
+            <MetricCard title="Est. Pipeline Value" value={data?.estimatedPipeline || '$0'} positive />
+            <MetricCard title="Content Drafts Pending" value={data?.pendingDrafts || 0} alert={(data?.pendingDrafts || 0) > 0} />
+            <MetricCard title="Email Open Rate" value={data?.emailOpenRate || '0%'} />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -23,11 +51,7 @@ export default function MarketingDashboard() {
             <div className="col-span-2 bg-white rounded-xl shadow-sm border border-gray-100 p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Latest Inbound Leads</h3>
               <div className="space-y-4">
-                {[
-                  { name: 'Sarah Jenkins', company: 'MedTech GMBH', source: 'Medical Device Campaign', time: '2 hours ago', score: 10 },
-                  { name: 'David Cho', company: 'Aero Dynamics', source: 'Organic Search', time: '5 hours ago', score: 8 },
-                  { name: 'Emily Thorne', company: '-', source: 'Lead Magnet: 2026 Guide', time: '1 day ago', score: 4 },
-                ].map((lead, i) => (
+                {leads.length > 0 ? leads.map((lead: any, i: number) => (
                   <div key={i} className="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg transition-colors border border-transparent hover:border-gray-100">
                     <div className="flex items-center space-x-4">
                       <div className="h-10 w-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-800 font-bold">
@@ -43,7 +67,9 @@ export default function MarketingDashboard() {
                       <p className="text-xs text-gray-400">{lead.time}</p>
                     </div>
                   </div>
-                ))}
+                )) : (
+                  <p className="text-gray-500 text-sm">No recent leads found.</p>
+                )}
               </div>
               <button className="mt-4 text-sm text-teal-600 font-medium hover:text-teal-700">View All Leads &rarr;</button>
             </div>
@@ -52,9 +78,9 @@ export default function MarketingDashboard() {
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Agent Status</h3>
               <div className="space-y-4">
-                <AgentStatus name="Lead Enrichment Robot" status="active" lastRun="2 hours ago" />
-                <AgentStatus name="LinkedIn Content Engine" status="waiting" lastRun="1 day ago" />
-                <AgentStatus name="Sales Prospecting Agent" status="active" lastRun="10 mins ago" />
+                <AgentStatus name="Lead Enrichment Robot" status="active" lastRun="Looking for leads..." />
+                <AgentStatus name="LinkedIn Content Engine" status={(data?.pendingDrafts || 0) > 0 ? "waiting for approval" : "active"} lastRun="Monitoring blog..." />
+                <AgentStatus name="Sales Prospecting Agent" status="active" lastRun="Processing queue..." />
               </div>
             </div>
           </div>
