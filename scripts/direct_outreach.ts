@@ -28,6 +28,7 @@ if (!TAVILY_API_KEY || !GOOGLE_GENERATIVE_AI_API_KEY) {
 
 const BATCH_SIZE = 50;
 const DELAY_SEC = 180; // 3 minutes to be absolutely safe with Free Tier per-minute/per-day limits
+const MIN_RELEVANCE = 65; // Raised from 50 — only contact verified manufacturing ICP
 
 function getNext8AM(timezoneArg: string = 'America/Los_Angeles'): string {
   try {
@@ -107,7 +108,7 @@ async function main() {
     try {
       // 1. Research (Tavily)
       console.log(`   🔍 Researching...`);
-      const researchData = await research(`Analyze ${lead.company}. industry, products, and news.`);
+      const researchData = await research(`${lead.company} manufacturing operations, supply chain, production, OR contract manufacturing. What industry do they serve?`);
       const context = JSON.stringify(researchData?.results || []);
 
       // 2. Single AI Call (Verification + Email)
@@ -134,16 +135,24 @@ async function main() {
               LEAD: ${lead.name} at ${lead.company}
               
               ABOUT NEARSHORE NAVIGATOR:
-              - Focus: Nearshore Logistics/Operations (Mexico/LATAM).
-              - Value Prop: Higher efficiency, same timezone as US, bilingual staff.
-              - Services: Headhunting, 3PL matching, operational setup.
+              - We help mid-market US manufacturers ($10M-$200M revenue) expand production to Baja California, Mexico.
+              - Services: Contract Manufacturing partner matching, Industrial Real Estate site selection, Shelter services setup, 3PL/Distribution.
+              - Value Prop: USMCA duty-free, 20 min from San Diego, 30-50% cost savings vs US, same timezone.
+              - Target buyer: VP Operations, Supply Chain Director, COO, or Plant Manager at industrial manufacturers.
 
               TASK:
-              1. Determine relevance (0-100) for Nearshore logistics.
-              2. Draft a warm, human cold email from Denisse Martinez.
-              3. DO NOT BE CREEPY. Show you understand their company's supply chain or scale needs.
-              4. Include signature: Denisse Gastelum, Lead Advisor | Nearshore Navigator.
-              5. Include Calendly link placeholder.
+              1. Determine relevance (0-100). Score HIGH (70+) ONLY IF the company manufactures physical goods
+                 (electronics, medical devices, aerospace, automotive, furniture, precision parts, consumer goods, etc.)
+                 and could plausibly benefit from nearshoring to Mexico.
+                 Score LOW (<40) if the company is: biotech/pharma (drug development), SaaS, healthcare services,
+                 financial services, consulting, or any non-manufacturing business.
+              2. If relevance >= 65, draft a warm, human cold email from Denisse Martinez.
+              3. The email should reference something SPECIFIC about their company or supply chain - do NOT be generic.
+              4. Focus the value prop on: tariff savings, USMCA duty-free status, Baja California proximity to their
+                 US distribution, or labor cost reduction - pick what fits them best.
+              5. Include signature: Denisse Martinez, Marketing Director & Advisor | Nearshore Navigator | nearshorenavigator.com.
+              6. Include Calendly booking link placeholder: [CALENDLY_LINK].
+              7. Subject line should be specific to their company - never generic.
             `
           });
           lastResult = object;
@@ -160,8 +169,8 @@ async function main() {
         }
       }
 
-      if (!lastResult || lastResult.relevance < 50 || !lastResult.email) {
-        console.log(`   ⚠️ Skipped (Relevance: ${lastResult?.relevance || 'N/A'}).`);
+      if (!lastResult || lastResult.relevance < MIN_RELEVANCE || !lastResult.email) {
+        console.log(`   ⚠️ Skipped (Relevance: ${lastResult?.relevance || 'N/A'} — below ${MIN_RELEVANCE} threshold or not manufacturing ICP).`);
       } else {
         // 3. Brevo
         console.log(`   📤 Syncing to Brevo...`);

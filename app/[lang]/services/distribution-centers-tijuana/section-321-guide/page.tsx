@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Section321Client from './Section321Client';
+import { getDictionary } from '@/app/i18n/get-dictionary';
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
     const { lang } = await props.params;
@@ -22,6 +23,8 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     };
 }
 
-export default function Section321GuidePage() {
-    return <Section321Client />;
+export default async function Section321GuidePage(props: { params: Promise<{ lang: string }> }) {
+    const { lang } = await props.params;
+    const dict = await getDictionary(lang);
+    return <Section321Client dict={dict} />;
 }

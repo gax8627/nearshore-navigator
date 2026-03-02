@@ -3,11 +3,20 @@
 import Image from "next/image";
 import { LeadForm } from "@/components/LeadForm";
 import { motion } from "framer-motion";
-import { Shield, Zap, DollarSign, Package, CheckCircle2, AlertTriangle, TrendingUp, ShieldCheck } from "lucide-react";
-import { useLanguage } from "@/app/context/LanguageContext";
+import { CheckCircle2, AlertTriangle, TrendingUp, ShieldCheck } from "lucide-react";
 
-export default function Section321Client() {
-    const { t } = useLanguage();
+interface Props {
+    dict: Record<string, any>;
+}
+
+export default function Section321Client({ dict }: Props) {
+    const t = (key: string) => {
+        const parts = key.split('.');
+        let val: any = dict;
+        for (const p of parts) val = val?.[p];
+        return val ?? key;
+    };
+
     return (
         <div className="pb-20 overflow-hidden">
             {/* Hero */}
