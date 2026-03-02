@@ -71,7 +71,6 @@ export const brevo = {
       to,
       subject,
       htmlContent,
-      tags: tags || [], 
     };
 
     if (scheduledAt) {

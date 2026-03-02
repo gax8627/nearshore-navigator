@@ -17,8 +17,28 @@ import { brevo } from '../../lib/brevo';
 import { hasEmailBudget, incrementEmailUsage, getEmailBudget } from '../../lib/email-usage-tracker';
 
 const CSV_DIR = path.join(process.cwd(), 'segmented_leads');
+const SENT_LOG_PATH = path.join(CSV_DIR, 'sent_manufacturing_outreach.json');
 const DRY_RUN = process.argv.includes('--dry-run');
 const BATCH_LIMIT = 50; // Per run — increase carefully
+
+// ─── Sent Log Handlers ────────────────────────────────────────────────────────
+function loadSentLog(): Set<string> {
+  if (fs.existsSync(SENT_LOG_PATH)) {
+    try {
+      const arr = JSON.parse(fs.readFileSync(SENT_LOG_PATH, 'utf-8'));
+      return new Set(arr);
+    } catch {
+      return new Set();
+    }
+  }
+  return new Set();
+}
+
+function appendToSentLog(email: string) {
+  const sent = loadSentLog();
+  sent.add(email);
+  fs.writeFileSync(SENT_LOG_PATH, JSON.stringify(Array.from(sent), null, 2));
+}
 
 // ─── Target CSVs (your real manufacturing ICP) ───────────────────────────────
 // Machine shops: CA, AZ, TX — within truck distance of Tijuana
@@ -110,6 +130,7 @@ interface Lead {
 }
 
 function loadLeadsFromCSVs(): Lead[] {
+  const sentLog = loadSentLog();
   const leads: Lead[] = [];
   const seen = new Set<string>();
 
@@ -133,7 +154,7 @@ function loadLeadsFromCSVs(): Lead[] {
         const city = get('City') || get('Location') || 'your area';
         const description = get('Description') || '';
 
-        if (!email || !email.includes('@') || seen.has(email)) continue;
+        if (!email || !email.includes('@') || seen.has(email) || sentLog.has(email)) continue;
         seen.add(email);
         // If no contact first name, use first word of company as personalization
         const resolvedFirstName = firstName || company.split(' ')[0] || 'there';
@@ -186,6 +207,7 @@ async function main() {
           htmlContent: html,
         });
         incrementEmailUsage(1);
+        appendToSentLog(lead.email);
         console.log(`[${i + 1}/${batch.length}] ✅ Sent → ${lead.email} (${lead.company})`);
         sent++;
         // Rate limit: 1 email per second to avoid Brevo throttling
