@@ -11,35 +11,35 @@ interface CaseStudy {
   results: string[];
 }
 
-interface Props {
-  dict: Record<string, any>;
-}
+import { useLanguage } from "@/app/context/LanguageContext";
 
-export function CaseStudies({ dict }: Props) {
-  const cs = dict?.caseStudies;
-  if (!cs) return null;
+export function CaseStudies() {
+  const { t } = useLanguage();
+
+  const case1_tag = t("caseStudies.case1_tag");
+  if (!case1_tag || case1_tag === "caseStudies.case1_tag") return null; // Wait for translations to load
 
   const cases: CaseStudy[] = [
     {
-      tag: cs.case1_tag,
-      title: cs.case1_title,
-      challenge: cs.case1_challenge,
-      solution: cs.case1_solution,
-      results: [cs.case1_result1, cs.case1_result2, cs.case1_result3],
+      tag: t("caseStudies.case1_tag"),
+      title: t("caseStudies.case1_title"),
+      challenge: t("caseStudies.case1_challenge"),
+      solution: t("caseStudies.case1_solution"),
+      results: [t("caseStudies.case1_result1"), t("caseStudies.case1_result2"), t("caseStudies.case1_result3")],
     },
     {
-      tag: cs.case2_tag,
-      title: cs.case2_title,
-      challenge: cs.case2_challenge,
-      solution: cs.case2_solution,
-      results: [cs.case2_result1, cs.case2_result2, cs.case2_result3],
+      tag: t("caseStudies.case2_tag"),
+      title: t("caseStudies.case2_title"),
+      challenge: t("caseStudies.case2_challenge"),
+      solution: t("caseStudies.case2_solution"),
+      results: [t("caseStudies.case2_result1"), t("caseStudies.case2_result2"), t("caseStudies.case2_result3")],
     },
     {
-      tag: cs.case3_tag,
-      title: cs.case3_title,
-      challenge: cs.case3_challenge,
-      solution: cs.case3_solution,
-      results: [cs.case3_result1, cs.case3_result2, cs.case3_result3],
+      tag: t("caseStudies.case3_tag"),
+      title: t("caseStudies.case3_title"),
+      challenge: t("caseStudies.case3_challenge"),
+      solution: t("caseStudies.case3_solution"),
+      results: [t("caseStudies.case3_result1"), t("caseStudies.case3_result2"), t("caseStudies.case3_result3")],
     },
   ];
 
@@ -49,10 +49,10 @@ export function CaseStudies({ dict }: Props) {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-primary-500/10 text-primary-400 border border-primary-500/20 mb-4">
-            {cs.badge}
+            {t("caseStudies.badge")}
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{cs.title}</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">{cs.subtitle}</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("caseStudies.title")}</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">{t("caseStudies.subtitle")}</p>
         </div>
 
         {/* Cards */}

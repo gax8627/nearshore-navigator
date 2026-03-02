@@ -1,0 +1,7 @@
+# Ignore large data directories
+segmented_leads/
+scripts/segmented_leads/
+.next/
+node_modules/
+*.csv
+.vscode/

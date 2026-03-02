@@ -43,7 +43,18 @@ const nextConfig = {
                 permanent: true,
             }
         ]
-    }
+    },
+    // Prevent Next.js from aggressively bundling the massive CSV directories into serverless functions
+    experimental: {
+        outputFileTracingExcludes: {
+            '*': [
+                'scripts/**/*',
+                'segmented_leads/**/*',
+                '**/*.csv',
+                '.git/**/*',
+            ],
+        },
+    },
 };
 
 export default nextConfig;
