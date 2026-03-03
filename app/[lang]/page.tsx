@@ -33,9 +33,10 @@ export default function Home() {
        * HomeClient renders the animated visual heading; this ensures crawlers
        * always see the primary keyword-bearing heading without client-side JS.
        */}
-      <h1 className="sr-only">
-        Nearshore Navigator – Your Trusted Partner for Manufacturing in Baja California, Mexico
-      </h1>
+      {/*
+       * SSR-only H1 removed to fix double-H1 SEO violation.
+       * The primary visible H1 is rendered by HomeClient.
+       */}
       <HomeClient />
     </>
   );

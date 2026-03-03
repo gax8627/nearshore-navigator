@@ -11,16 +11,18 @@
         "selectLanguage": "Select Language",
         "appearance": "Appearance",
         "darkMode": "Dark Mode",
-        "lightMode": "Light Mode"
+        "lightMode": "Light Mode",
+        "calculator": "Cost Calculator",
+        "park_map": "Industrial Park Map"
     },
     "home": {
-        "metaTitle": "Nearshore Navigator | Industrial Manufacturing In Baja California",
-        "metaDescription": "Strategic advisory for US companies expanding to Mexico. We connect you with verified contract manufacturers and industrial real estate in Tijuana and Baja California.",
+        "metaTitle": "Nearshore Shelter Services Mexico | Baja Navigators",
+        "metaDescription": "Trusted nearshore shelter services in Baja California. Verify contract manufacturers and establish your Mexico operation with expert local guidance.",
         "heroImageAlt": "Tijuana Industrial Park Aerial View"
     },
     "hero": {
-        "title": "Baja Industrial Roadmap",
-        "titleHighlight": "Navigator",
+        "title": "Nearshore Shelter Services | Vetted Partners in",
+        "titleHighlight": "Baja California",
         "subtitle": "Objective brokerage and strategic matchmaking. We connect US manufacturers with world-class facilities and vetted partners across Baja California.",
         "cta_primary": "Map Your Expansion",
         "cta_secondary": "Get Broker Audit"
@@ -580,5 +582,41 @@
         "case3_result1": "$1.2M projected 3-year savings vs. US domestic production",
         "case3_result2": "Lead times cut from 14 weeks (Asia) to 5 days (Tijuana to LA)",
         "case3_result3": "No tariff exposure — USMCA qualified from day one"
+    },
+    "bio_denisse": {
+        "title": "Meet Denisse Martinez | Nearshore Consultant in Baja California",
+        "intro": "A Strategic Approach to Mexico Manufacturing",
+        "backgroundTitle": "Professional Background & Local Leadership",
+        "backgroundDesc": "With over 15 years of experience across the Cali-Baja corridor, Denisse Martinez has established herself as a leading voice in North American nearshoring. By combining ground-truth economic data with deep regional ties, she guides Fortune 500s and mid-market manufacturers through the complexities of cross-border expansion. Her strategic vision goes beyond mere real estate transactions, focusing on holistic supply chain integration and sustainable operations.",
+        "trackRecordTitle": "Supported Over 20 Companies Across Multiple Industries",
+        "expertiseTitle": "Industry Credentials & Site Selection Methodology",
+        "expertiseDesc": "Denisse advocates for an objective brokerage model, ensuring that US manufacturers receive unbiased guidance rather than being shoehorned into one-size-fits-all shelter models. Her methodology prioritizes strict compliance, risk mitigation, and long-term operational resilience in Baja California.",
+        "quote": "Nearshoring decisions often get stuck after the initial excitement—when the real questions show up. My job is to turn 'we want Mexico' into a clear next step.",
+        "linkedin_cta": "Connect on LinkedIn",
+        "whatsapp_cta": "Message on WhatsApp",
+        "imageAlt": "Denisse Martinez, Nearshore Consultant in Baja California"
+    },
+    "partners": {
+        "title": "Our Vetted Industrial Partners",
+        "subtitle": "We exclusively work with certified facilities. When you partner with our curated network of contract manufacturers in Baja California, your production maintains global quality standards.",
+        "iso9001": "Quality Systems",
+        "iso13485": "Medical Devices",
+        "as9100": "Aerospace & Defense",
+        "iatf16949": "Automotive Core"
+    },
+    "cost_calculator": {
+        "metaTitle": "Baja California Manufacturing Cost Calculator | Nearshore Navigator",
+        "metaDesc": "Estimate your fully-burdened manufacturing costs in Baja California vs. US domestic. Free interactive tool.",
+        "title": "Baja California Manufacturing Cost Calculator",
+        "subtitle": "Estimate your fully-burdened manufacturing costs in Mexico vs. US domestic."
+    },
+    "park_map": {
+        "metaTitle": "Baja California Industrial Park Map (2026) | Nearshore Navigator",
+        "metaDesc": "Complete guide to Baja California industrial parks. Compare Class A availability, lease rates, and locations in Tijuana, Mexicali, and Tecate.",
+        "title": "Baja California Industrial Park Map (2026)",
+        "subtitle": "Explore Class A & B manufacturing space across Tijuana, Mexicali, and Tecate. Data reflects current NNN lease rates and market vacancy statuses.",
+        "tableTitle": "Market Availability & Lease Rates",
+        "ctaTitle": "Need help securing space in these parks?",
+        "ctaDesc": "Vacancy rates in Class A facilities are below 3%. Speak directly with Denisse Martinez to bypass waitlists and model your nearshore footprint."
     }
 }

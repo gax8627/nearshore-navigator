@@ -246,6 +246,55 @@ export default function HomeClient() {
         <StatsGrid />
       </section>
 
+      {/* Vetted Partners Certifications */}
+      <section className="bg-gray-50/50 dark:bg-gray-900/40 py-16 rounded-3xl border border-gray-100 dark:border-gray-800 mx-4 md:mx-auto container mt-12 mb-12 shadow-sm">
+        <div className="px-4 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            {t('partners.title')}
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10">
+            {t('partners.subtitle')}
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-80">
+            <div className="flex flex-col items-center group">
+              <span className="text-2xl font-black text-gray-800 dark:text-gray-100 group-hover:text-primary-500 transition-colors">ISO 9001</span>
+              <span className="text-xs text-gray-500 uppercase tracking-widest mt-2">{t('partners.iso9001')}</span>
+            </div>
+            <div className="flex flex-col items-center group">
+              <span className="text-2xl font-black text-gray-800 dark:text-gray-100 group-hover:text-primary-500 transition-colors">ISO 13485</span>
+              <span className="text-xs text-gray-500 uppercase tracking-widest mt-2">{t('partners.iso13485')}</span>
+            </div>
+            <div className="flex flex-col items-center group">
+              <span className="text-2xl font-black text-gray-800 dark:text-gray-100 group-hover:text-primary-500 transition-colors">AS9100</span>
+              <span className="text-xs text-gray-500 uppercase tracking-widest mt-2">{t('partners.as9100')}</span>
+            </div>
+            <div className="flex flex-col items-center group">
+              <span className="text-2xl font-black text-gray-800 dark:text-gray-100 group-hover:text-primary-500 transition-colors">IATF 16949</span>
+              <span className="text-xs text-gray-500 uppercase tracking-widest mt-2">{t('partners.iatf16949')}</span>
+            </div>
+          </div>
+        </div>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              "name": "Certified Manufacturing Network",
+              "description": "A curated network of ISO and industry-certified contract manufacturing facilities in Mexico.",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "item": { "@type": "Thing", "name": "ISO 9001 Certified Facilities" } },
+                { "@type": "ListItem", "position": 2, "item": { "@type": "Thing", "name": "ISO 13485 Medical Device Partners" } },
+                { "@type": "ListItem", "position": 3, "item": { "@type": "Thing", "name": "AS9100 Aerospace Facilities" } },
+                { "@type": "ListItem", "position": 4, "item": { "@type": "Thing", "name": "IATF 16949 Automotive Partners" } }
+              ]
+            })
+          }}
+        />
+      </section>
+
       {/* Founder Block – moved above services for trust-first conversion flow */}
       <FounderBlock />
 

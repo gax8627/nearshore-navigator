@@ -11,7 +11,9 @@
         "selectLanguage": "Seleccionar Idioma",
         "appearance": "Apariencia",
         "darkMode": "Modo Oscuro",
-        "lightMode": "Modo Claro"
+        "lightMode": "Modo Claro",
+        "calculator": "Calculadora de Costos",
+        "park_map": "Mapa de Parques Industriales"
     },
     "home": {
         "metaTitle": "Nearshore Navigator | Manufactura Industrial en Baja California",
@@ -507,5 +509,41 @@
         "finalDesc": "Cuéntenos qué está construyendo y cuándo necesita estar operativo. Le ayudaremos a identificar el punto de partida más inteligente y los próximos pasos para avanzar.",
         "scheduleBtn": "Agendar una Llamada de Descubrimiento",
         "assessmentBtn": "Solicitar una Evaluación de Ubicación"
+    },
+    "bio_denisse": {
+        "title": "Conoce a Denisse Martinez | Consultora Nearshore en Baja California",
+        "intro": "Un Enfoque Estratégico para la Manufactura en México",
+        "backgroundTitle": "Trayectoria Profesional y Liderazgo Local",
+        "backgroundDesc": "Con más de 15 años de experiencia en la región Cali-Baja, Denisse Martinez se ha consolidado como una voz líder en el nearshoring norteamericano. Combinando datos económicos reales con profundos lazos regionales, asesora a empresas Fortune 500 y fabricantes medianos en las complejidades de la expansión transfronteriza. Su visión estratégica va más allá de las simples transacciones inmobiliarias, centrándose en la integración holística de la cadena de suministro y en operaciones sostenibles.",
+        "trackRecordTitle": "Apoyo a Más de 20 Empresas en Diversas Industrias",
+        "expertiseTitle": "Credenciales de la Industria y Metodología de Selección de Sitios",
+        "expertiseDesc": "Denisse aboga por un modelo de corretaje objetivo, asegurando que los fabricantes estadounidenses reciban orientación imparcial en lugar de ser forzados a modelos de albergue (shelter) estandarizados. Su metodología prioriza el estricto cumplimiento, la mitigación de riesgos y la resiliencia operativa a largo plazo en Baja California.",
+        "quote": "Las decisiones de nearshoring a menudo se estancan después de la emoción inicial, cuando surgen las verdaderas preguntas. Mi trabajo es convertir el 'queremos a México' en un claro proximo paso.",
+        "linkedin_cta": "Conectar en LinkedIn",
+        "whatsapp_cta": "Mensaje por WhatsApp",
+        "imageAlt": "Denisse Martinez, Consultora Nearshore en Baja California"
+    },
+    "partners": {
+        "title": "Nuestros Socios Industriales Verificados",
+        "subtitle": "Trabajamos exclusivamente con instalaciones certificadas. Al asociarse con nuestra red curada de fabricantes por contrato en Baja California, su producción mantiene los estándares de calidad globales.",
+        "iso9001": "Sistemas de Calidad",
+        "iso13485": "Dispositivos Médicos",
+        "as9100": "Aeroespacial y Defensa",
+        "iatf16949": "Núcleo Automotriz"
+    },
+    "cost_calculator": {
+        "metaTitle": "Calculadora de Costos de Manufactura en Baja California | Nearshore Navigator",
+        "metaDesc": "Estime sus costos de manufactura totalmente integrados en Baja California frente a los de EE. UU. Herramienta interactiva gratuita.",
+        "title": "Calculadora de Costos de Manufactura en Baja California",
+        "subtitle": "Estime sus costos de manufactura totalmente integrados en México frente a los de EE. UU."
+    },
+    "park_map": {
+        "metaTitle": "Mapa de Parques Industriales en Baja California (2026) | Nearshore Navigator",
+        "metaDesc": "Guía completa de parques industriales en Baja California. Compare disponibilidad Clase A, tarifas de arrendamiento y ubicaciones en Tijuana, Mexicali y Tecate.",
+        "title": "Mapa de Parques Industriales en Baja California (2026)",
+        "subtitle": "Explore espacios de manufactura Clase A y B en Tijuana, Mexicali y Tecate. Los datos reflejan tarifas NNN actuales y disponibilidad de mercado.",
+        "tableTitle": "Disponibilidad del Mercado y Tarifas de Arrendamiento",
+        "ctaTitle": "¿Necesita ayuda para asegurar espacio en estos parques?",
+        "ctaDesc": "Las tasas de vacancia en instalaciones Clase A están por debajo del 3%. Hable directamente con Denisse Martinez para evitar listas de espera y modelar su operación nearshore."
     }
 }

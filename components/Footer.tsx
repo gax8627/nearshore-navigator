@@ -51,10 +51,18 @@ export function Footer() {
 
                     <div>
                         <h4 className="font-semibold mb-4 text-gray-100">{t('nav.contact')}</h4>
-                        <ul className="space-y-2 text-sm text-gray-300">
-                            <li>Baja California, MX</li>
-                            <li>San Diego, California, US</li>
-                            <li><a href="mailto:denisse@nearshorenavigator.com" className="hover:text-primary-400" aria-label="Send email to Nearshore Navigator">denisse@nearshorenavigator.com</a></li>
+                        <ul className="space-y-4 text-sm text-gray-300">
+                            <li>
+                                <span className="block font-medium text-gray-400 mb-1">USA HQ</span>
+                                San Diego, California, US
+                            </li>
+                            <li>
+                                <span className="block font-medium text-gray-400 mb-1">Mexico Operations</span>
+                                Blvd. Agua Caliente 10611, Tijuana
+                            </li>
+                            <li className="pt-2">
+                                <a href="mailto:denisse@nearshorenavigator.com" className="hover:text-primary-400 font-medium" aria-label="Send email to Nearshore Navigator">denisse@nearshorenavigator.com</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

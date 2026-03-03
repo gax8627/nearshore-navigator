@@ -18,9 +18,9 @@ export async function generateMetadata({ params }: Props) {
   if (!location || !service) return {};
 
   const titles = [
-    `${service.title} in ${location.name} | Nearshore Navigator`,
-    `${location.name} ${service.title} Solutions & Consulting`,
-    `Expanding to ${location.name}? ${service.title} Full Guide`
+    `Top 3 ${service.title} Partners in ${location.name} | Verified`,
+    `2026 Guide to ${service.title} in ${location.name} | Start Here`,
+    `${location.name} ${service.title} Solutions | Trusted Nearshore`
   ];
 
   return {

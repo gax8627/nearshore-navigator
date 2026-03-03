@@ -6,7 +6,7 @@ dotenv.config({ path: path.join(process.cwd(), '.env.local') });
 dotenv.config({ path: path.join(process.cwd(), '.env') }); // fallback
 
 async function main() {
-  const { brevo } = await import('../lib/brevo');
+  const { brevo } = await import(path.join(process.cwd(), 'lib/brevo.ts'));
 
   const today = new Date().toISOString().split('T')[0];
   console.log(`Checking email events for today: ${today}`);

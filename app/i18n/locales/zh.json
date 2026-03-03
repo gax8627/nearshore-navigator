@@ -11,7 +11,8 @@
         "appearance": "主题",
         "darkMode": "深色模式",
         "lightMode": "浅色模式",
-        "assessment": "评估"
+        "calculator": "成本计算器",
+        "park_map": "工业园区地图"
     },
     "home": {
         "metaTitle": "Nearshore Navigator | 下加利福尼亚州的工业制造",
@@ -507,5 +508,41 @@
         "finalDesc": "告诉我们您正在建设什么以及何时需要投入运营。我们将帮助您确定最明智的起点——以及前进的后续步骤。",
         "scheduleBtn": "预约发现通话",
         "assessmentBtn": "请求地点评估"
+    },
+    "bio_denisse": {
+        "title": "认识 Denisse Martinez | 下加利福尼亚州近岸外包顾问",
+        "intro": "墨西哥制造业的战略途径",
+        "backgroundTitle": "专业背景与当地领导力",
+        "backgroundDesc": "凭借在加州-下加州走廊超过15年的经验，Denisse Martinez 已成为北美近岸外包领域的领跑者。通过将真实的经济数据与深厚的区域联系结合，她指导财富500强企业和中端市场制造商应对跨境扩张的复杂性。她的战略视野超越了单纯的房地产交易，专注于整体供应链整合和可持续运营。",
+        "trackRecordTitle": "为多个行业的20多家公司提供支持",
+        "expertiseTitle": "行业资质与选址方法论",
+        "expertiseDesc": "Denisse 提倡客观的经纪模式，确保美国制造商获得公正的指导，而不是被迫接受一刀切的庇护所 (shelter) 模式。她的方法论优先考虑下加利福尼亚州的严格合规性、风险缓解和长期运营弹性。",
+        "quote": "近岸外包的决定往往在最初的兴奋之后停滞不前——当真正的问题出现时。我的工作就是将“我们想要墨西哥”转化为明确的下一步。",
+        "linkedin_cta": "在 LinkedIn 上联系",
+        "whatsapp_cta": "在 WhatsApp 上发送消息",
+        "imageAlt": "Denisse Martinez，下加利福尼亚州近岸外包顾问"
+    },
+    "partners": {
+        "title": "我们经过严格审核的工业合作伙伴",
+        "subtitle": "我们只与经过认证的工厂合作。当您与我们位于下加利福尼亚州精心挑选的合同制造商网络合作时，您的生产将保持全球质量标准。",
+        "iso9001": "质量系统",
+        "iso13485": "医疗设备",
+        "as9100": "航空航天与国防",
+        "iatf16949": "汽车核心"
+    },
+    "cost_calculator": {
+        "metaTitle": "下加利福尼亚州制造成本计算器 | Nearshore Navigator",
+        "metaDesc": "估算您在下加利福尼亚州与美国国内的完全负担制造成本。免费的交互式工具。",
+        "title": "下加利福尼亚州制造成本计算器",
+        "subtitle": "估算您在墨西哥与美国国内的完全负担制造成本。"
+    },
+    "park_map": {
+        "metaTitle": "下加利福尼亚州工业园地图 (2026) | Nearshore Navigator",
+        "metaDesc": "下加利福尼亚州工业园完整指南。比较蒂华纳、墨西卡利和特卡特的A级可用性、租赁费用和位置。",
+        "title": "下加利福尼亚州工业园地图 (2026)",
+        "subtitle": "探索蒂华纳、墨西卡利和特卡特的A级和B级制造空间。数据反映了当前NNN租赁费用和市场空置状况。",
+        "tableTitle": "市场可用性与租赁费用",
+        "ctaTitle": "需要在这些园区中确保空间吗？",
+        "ctaDesc": "A级设施的空置率低于3%。 直接与登尼斯·马丁内斯（Denisse Martinez）对话，以避开等候名单并模拟您的近岸外包足迹。"
     }
 }

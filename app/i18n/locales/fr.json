@@ -6,7 +6,9 @@
         "about": "À propos",
         "contact": "Contact",
         "bookTour": "Réserver une visite",
-        "assessment": "Évaluation"
+        "assessment": "Évaluation",
+        "calculator": "Calculateur de Coûts",
+        "park_map": "Carte des Parcs Industriels"
     },
     "hero": {
         "title": "Nearshoring Industriel à Baja",
@@ -428,5 +430,20 @@
         "q34": "What is the period for which you require our services?",
         "q35": "Can we offer you quotes for transportation? What are the addresses?",
         "q36": "What Annex 24 system do you use?"
+    },
+    "cost_calculator": {
+        "metaTitle": "Calculateur de Coûts de Fabrication en Basse-Californie | Nearshore Navigator",
+        "metaDesc": "Estimez vos coûts de fabrication entièrement intégrés en Basse-Californie par rapport aux coûts nationaux américains. Outil interactif gratuit.",
+        "title": "Calculateur de Coûts de Fabrication en Basse-Californie",
+        "subtitle": "Estimez vos coûts de fabrication entièrement intégrés au Mexique par rapport aux coûts nationaux américains."
+    },
+    "park_map": {
+        "metaTitle": "Carte des Parcs Industriels de Basse-Californie (2026) | Nearshore Navigator",
+        "metaDesc": "Guide complet des parcs industriels de Basse-Californie. Comparez la disponibilité de classe A, les taux de location et les emplacements à Tijuana, Mexicali et Tecate.",
+        "title": "Carte des Parcs Industriels de Basse-Californie (2026)",
+        "subtitle": "Explorez l'espace de fabrication de classe A et B à travers Tijuana, Mexicali et Tecate. Les données reflètent les taux de location NNN actuels et les statuts de vacance du marché.",
+        "tableTitle": "Disponibilité du Marché et Taux de Location",
+        "ctaTitle": "Besoin d'aide pour sécuriser de l'espace dans ces parcs?",
+        "ctaDesc": "Les taux de vacance dans les installations de classe A sont inférieurs à 3%. Parlez directement avec Denisse Martinez pour contourner les listes d'attente et modéliser votre empreinte nearshore."
     }
 }

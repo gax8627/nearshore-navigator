@@ -22,7 +22,7 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
   const title = `${service.title} in ${location.name}`;
   const subtitle = `Comprehensive ${service.title.toLowerCase()} solutions tailored for the ${location.name} industrial market. Leverage ${location.name}'s ${location.stats.proximity} and a workforce of ${location.stats.laborForce} to optimize your nearshoring strategy.`;
 
-  const faqs = [
+  const faqs = location.localFaqs || [
     {
       q: `What makes ${location.name} ideal for ${service.title.toLowerCase()}?`,
       a: `${location.name} is a strategic hub in ${location.state} with ${location.stats.proximity}. For ${service.title.toLowerCase()}, it offers ${location.advantages[0]} and ${location.advantages[1]}, making it a top choice for international manufacturers.`
@@ -63,12 +63,60 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
     "description": subtitle
   };
 
+  const faqSchema = location.localFaqs ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": location.localFaqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  } : null;
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://nearshorenavigator.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": location.name,
+        "item": `https://nearshorenavigator.com/${language}/locations/${city}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": service.title,
+        "item": `https://nearshorenavigator.com/${language}/locations/${city}/${serviceId}`
+      }
+    ]
+  };
+
   return (
     <div className="pb-20 overflow-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       {/* Hero */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -175,6 +223,43 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
                 </div>
             </section>
 
+            {/* How It Works (Dynamic Depth Expansion) */}
+            {(location.serviceHowItWorks?.[serviceId] || location.howItWorksSection) && (() => {
+              const section = location.serviceHowItWorks?.[serviceId] || location.howItWorksSection!;
+              return (
+              <section className="bg-white/40 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-700 p-6 rounded-xl">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                  {section.title}
+                </h3>
+                <div className="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 space-y-4">
+                  {section.content.map((paragraph, idx) => (
+                    <p key={idx}>{paragraph}</p>
+                  ))}
+                </div>
+                
+                <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3">Key Industrial Parks</h4>
+                    <ul className="space-y-2">
+                      {section.parks.map((park, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm">
+                          <MapPin className="w-4 h-4 text-primary-500" />
+                          {park}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3">Logistics Advantage</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed border-l-2 border-primary-500 pl-3 py-1">
+                      {section.logistics}
+                    </p>
+                  </div>
+                </div>
+              </section>
+              );
+            })()}
+
             {/* FAQ */}
             <section>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
@@ -210,13 +295,38 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
                             <div className="bg-primary-100 dark:bg-primary-900/30 p-2 rounded-full group-hover:bg-primary-200 dark:group-hover:bg-primary-900/50 transition-colors">
                                 <MapPin className="w-4 h-4 text-primary-600 dark:text-primary-400" />
                             </div>
-                            <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 translation-colors">
+                            <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                                 {loc.name}
                             </span>
                         </Link>
                     ))}
                 </div>
             </section>
+
+            {/* Related Insights */}
+            {location.relatedInsights && (
+              <section>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-6 pt-4 border-t border-gray-100 dark:border-gray-800">
+                  Insights & Research
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {location.relatedInsights.map((insight, idx) => (
+                    <Link
+                      key={idx}
+                      href={`/${language}${insight.url}`}
+                      className="block p-5 bg-white/60 dark:bg-gray-800/60 rounded-xl border border-gray-100 dark:border-gray-700 hover:border-primary-500 transition-colors group"
+                    >
+                      <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-primary-500 transition-colors mb-2">
+                        {insight.title}
+                      </h4>
+                      <span className="text-sm text-primary-600 flex items-center gap-1 font-medium">
+                        Read Analysis <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
 
           {/* Sidebar Form */}

@@ -15,8 +15,10 @@ export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isServicesOpen, setIsServicesOpen] = useState(false);
+    const [isResourcesOpen, setIsResourcesOpen] = useState(false);
     const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
     const servicesRef = useRef<HTMLDivElement>(null);
+    const resourcesRef = useRef<HTMLDivElement>(null);
     const langRef = useRef<HTMLDivElement>(null);
     const pathname = usePathname();
     const router = useRouter();
@@ -49,17 +51,21 @@ export function Navbar() {
 
     const serviceLinks = [
         { name: t('services.real_estate'), href: `/${language}/services/industrial-real-estate-baja` },
-
         { name: t('services.contract'), href: `/${language}/services/contract-manufacturing-tijuana` },
         { name: t('services.logistics'), href: `/${language}/services/distribution-centers-tijuana` },
         { name: t('services.call_center'), href: `/${language}/services/call-center-tijuana` },
         { name: t('services.marketing'), href: `/${language}/services/nearshore-marketing` },
     ];
 
+    const resourceLinks = [
+        { name: t('nav.calculator') || 'Cost Calculator', href: `/${language}/tools/cost-calculator` },
+        { name: t('nav.park_map') || 'Industrial Park Map', href: `/${language}/tools/industrial-park-map` },
+        { name: t('nav.resources') || 'Resources Hub', href: `/${language}/resources/tijuana-industrial-park-map` },
+    ];
+
     const navLinks = [
         { name: t('nav.insights'), href: `/${language}/insights` },
         { name: t('nav.assessment'), href: `/${language}/assessment` },
-        { name: t('nav.resources'), href: `/${language}/resources/tijuana-industrial-park-map` },
         { name: t('nav.about'), href: `/${language}/about` },
         { name: t('nav.contact'), href: `/${language}/contact` },
     ];
@@ -85,6 +91,9 @@ export function Navbar() {
             if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
                 setIsServicesOpen(false);
             }
+            if (resourcesRef.current && !resourcesRef.current.contains(event.target as Node)) {
+                setIsResourcesOpen(false);
+            }
             if (langRef.current && !langRef.current.contains(event.target as Node)) {
                 setIsLangMenuOpen(false);
             }
@@ -94,6 +103,7 @@ export function Navbar() {
     }, []);
 
     const isServiceActive = pathname.startsWith("/services");
+    const isResourceActive = pathname.includes("/tools/") || pathname.includes("/resources/");
 
     return (
         <>
@@ -152,6 +162,50 @@ export function Navbar() {
                                                 key={link.href}
                                                 href={link.href}
                                                 onClick={() => setIsServicesOpen(false)}
+                                                className={cn(
+                                                    "block px-4 py-3 text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors",
+                                                    pathname === link.href
+                                                        ? "text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20"
+                                                        : "text-gray-700 dark:text-gray-300"
+                                                )}
+                                            >
+                                                {link.name}
+                                            </Link>
+                                        ))}
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+
+                        {/* Resources Dropdown */}
+                        <div ref={resourcesRef} className="relative">
+                            <button
+                                onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                                className={cn(
+                                    "text-sm font-medium transition-colors hover:text-primary-500 flex items-center gap-1",
+                                    isResourceActive ? "text-primary-600 dark:text-primary-400" : "text-gray-600 dark:text-gray-300"
+                                )}
+                                aria-expanded={isResourcesOpen}
+                                aria-haspopup="true"
+                            >
+                                {t('nav.resources')}
+                                <ChevronDown className={cn("w-4 h-4 transition-transform", isResourcesOpen && "rotate-180")} />
+                            </button>
+
+                            <AnimatePresence>
+                                {isResourcesOpen && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: 10 }}
+                                        transition={{ duration: 0.2 }}
+                                        className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-100 dark:border-gray-800 py-2 overflow-hidden"
+                                    >
+                                        {resourceLinks.map((link) => (
+                                            <Link
+                                                key={link.href}
+                                                href={link.href}
+                                                onClick={() => setIsResourcesOpen(false)}
                                                 className={cn(
                                                     "block px-4 py-3 text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors",
                                                     pathname === link.href
@@ -287,6 +341,40 @@ export function Navbar() {
                                         >
                                             <div className="pl-4 pt-2 space-y-2">
                                                 {serviceLinks.map((link) => (
+                                                    <Link
+                                                        key={link.href}
+                                                        href={link.href}
+                                                        onClick={() => setIsMobileMenuOpen(false)}
+                                                        className="block py-2 text-gray-600 dark:text-gray-400 hover:text-primary-500"
+                                                    >
+                                                        {link.name}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+
+                            {/* Resources Accordion */}
+                            <div className="border-b border-gray-100 dark:border-gray-800 pb-4">
+                                <button
+                                    onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                                    className="flex items-center justify-between w-full text-lg font-medium text-gray-800 dark:text-gray-100 py-2"
+                                >
+                                    {t('nav.resources')}
+                                    <ChevronDown className={cn("w-5 h-5 transition-transform", isResourcesOpen && "rotate-180")} />
+                                </button>
+                                <AnimatePresence>
+                                    {isResourcesOpen && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            className="overflow-hidden"
+                                        >
+                                            <div className="pl-4 pt-2 space-y-2">
+                                                {resourceLinks.map((link) => (
                                                     <Link
                                                         key={link.href}
                                                         href={link.href}

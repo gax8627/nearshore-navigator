@@ -6,7 +6,9 @@
         "about": "Über uns",
         "contact": "Kontakt",
         "bookTour": "Tour Buchen",
-        "assessment": "Assessment"
+        "assessment": "Assessment",
+        "calculator": "Kostenrechner",
+        "park_map": "Industriepark-Karte"
     },
     "hero": {
         "title": "Industrielles Nearshoring in Baja",
@@ -428,5 +430,20 @@
         "q34": "What is the period for which you require our services?",
         "q35": "Can we offer you quotes for transportation? What are the addresses?",
         "q36": "What Annex 24 system do you use?"
+    },
+    "cost_calculator": {
+        "metaTitle": "Baja California Fertigungskostenrechner | Nearshore Navigator",
+        "metaDesc": "Schätzen Sie Ihre vollbelasteten Fertigungskosten in Baja California im Vergleich zu inländischen Kosten in den USA. Kostenloses interaktives Tool.",
+        "title": "Baja California Fertigungskostenrechner",
+        "subtitle": "Schätzen Sie Ihre vollbelasteten Fertigungskosten in Mexiko im Vergleich zu inländischen Kosten in den USA."
+    },
+    "park_map": {
+        "metaTitle": "Baja California Industrieparkkarte (2026) | Nearshore Navigator",
+        "metaDesc": "Vollständiger Leitfaden zu den Industrieparks in Baja California. Vergleichen Sie die Verfügbarkeit von Klasse A, die Mietpreise und die Standorte in Tijuana, Mexicali und Tecate.",
+        "title": "Baja California Industrieparkkarte (2026)",
+        "subtitle": "Erkunden Sie Klasse A und B Produktionsflächen in Tijuana, Mexicali und Tecate. Die Daten spiegeln die aktuellen NNN-Mietpreise und den Leerstand des Marktes wider.",
+        "tableTitle": "Marktverfügbarkeit und Mietpreise",
+        "ctaTitle": "Benötigen Sie Hilfe bei der Sicherung von Flächen in diesen Parks?",
+        "ctaDesc": "Die Leerstandsquoten in Klasse-A-Einrichtungen liegen unter 3%. Sprechen Sie direkt mit Denisse Martinez, um Wartelisten zu umgehen und Ihren Nearshore-Fußabdruck zu modellieren."
     }
 }

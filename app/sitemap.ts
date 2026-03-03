@@ -155,6 +155,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
             alternates: getAlternates('/insights/industrial-parks-in-tijuana-map-and-overview'),
         },
+        {
+            url: `${baseUrl}/en/insights/ultimate-guide-nearshore-shelter-services-baja-california`,
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.8,
+            alternates: getAlternates('/insights/ultimate-guide-nearshore-shelter-services-baja-california'),
+        },
+        {
+            url: `${baseUrl}/en/insights/2025-tariffs-baja-california-supply-chain`,
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.8,
+            alternates: getAlternates('/insights/2025-tariffs-baja-california-supply-chain'),
+        },
         // Sub-resources
         {
             url: `${baseUrl}/en/services/distribution-centers-tijuana/section-321-guide`,

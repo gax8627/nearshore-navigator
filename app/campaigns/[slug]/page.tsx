@@ -1,5 +1,6 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 
 // In a real implementation, this would likely come from a database or CMS.
 // For now, we use a simple configuration map.
@@ -7,25 +8,25 @@ const campaignData: Record<string, { title: string; subtitle: string; heroImage:
   'cnc-machining': {
     title: 'Precision CNC Machining in Mexico',
     subtitle: 'Reduce costs by up to 40% while maintaining AS9100 and ISO 9001 quality standards. Find your ideal nearshore manufacturing partner today.',
-    heroImage: '/images/hero/factory-floor.jpg', // Assuming this exists or will be styled
+    heroImage: '/images/hero/factory-floor.png',
     features: ['Access to certified machinists', 'Same time-zone collaboration', 'IP Protection guarantees', 'Logistics and cross-border support']
   },
   'medical-device': {
     title: 'Medical Device Manufacturing Nearshore',
     subtitle: 'Accelerate your time to market with ISO 13485 certified facilities just minutes from the US border.',
-    heroImage: '/images/hero/medical-facility.jpg',
+    heroImage: '/images/hero/medical-facility.png',
     features: ['Class II and III device experience', 'Cleanroom assembly (ISO Class 7/8)', 'FDA registered facilities', 'Supply chain resilience']
   },
   'furniture': {
     title: 'Contract Furniture Manufacturing',
     subtitle: 'Scale your furniture brand with high-quality upholstery, woodcraft, and metal fabrication in Mexico.',
-    heroImage: '/images/hero/furniture-shop.jpg',
+    heroImage: '/images/hero/furniture-shop.png',
     features: ['Skilled artisans and upholstery', 'Sustainably sourced materials', 'Fast prototyping and scaling', 'Direct-to-consumer fulfillment options']
   },
   'nearshore-marketing': {
     title: 'Nearshore Marketing OS',
     subtitle: 'Automate your B2B marketing engine with AI-driven lead enrichment, CRM routing, and LinkedIn content generation for a flat $3,450/month retainer.',
-    heroImage: '/images/hero/factory-floor.jpg',
+    heroImage: '/images/hero/marketing_hero.png',
     features: ['Automated CRM Routing', 'AI Lead Enrichment', 'Autonomous LinkedIn Content', 'Live Growth ROI Dashboards']
   }
 };
@@ -41,9 +42,14 @@ export default function CampaignLandingPage({ params }: { params: { slug: string
     <main className="min-h-screen flex flex-col pt-16">
       <section className="relative bg-teal-900 text-white py-20 lg:py-32">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-black/50 z-10" />
-          {/* Fallback pattern if image is missing */}
-          <div className="absolute inset-0 bg-gradient-to-r from-teal-900 to-teal-800" />
+          <Image
+            src={data.heroImage}
+            alt={data.title}
+            fill
+            className="object-cover opacity-60"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/40 z-10" />
         </div>
         
         <div className="container relative z-20 mx-auto px-4 max-w-5xl text-center">
