@@ -16,7 +16,7 @@ export default function DenisseBioClient() {
           <div className="w-full md:w-1/3 flex flex-col gap-6 sticky top-28">
             <div className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-white/20">
               <Image
-                src="/images/denisse-martinez.png"
+                src="/images/denisse-martinez.jpg"
                 alt={t('bio_denisse.imageAlt') || "Denisse Martinez"}
                 fill
                 className="object-cover"

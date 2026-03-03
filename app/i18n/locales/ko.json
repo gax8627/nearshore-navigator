@@ -69,7 +69,14 @@
     "insights": {
         "title": "시장 분석",
         "subtitle": "바하 칼리포르니아 산업 시장에 대한 최신 분석.",
-        "viewAll": "모든 분석 보기"
+        "viewAll": "모든 분석 보기",
+        "heroTitle": "니어쇼어 인사이트",
+        "heroSubtitle": "멕시코 산업 지형을 탐색하는 데 도움이 되는 전문가 분석 및 전략적 로드맵.",
+        "dashboardTitle": "바하 니어쇼어 인텔리전스",
+        "dashboardSubtitle": "검증된 브로커 네트워크의 합성 데이터.",
+        "dashboardBadge": "라이브 감사 데이터",
+        "dashboardUpdated": "업데이트됨",
+        "deepDives": "최근 심층 분석"
     },
     "about": {
         "title": "Nearshore Navigator 소개",

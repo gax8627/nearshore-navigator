@@ -73,7 +73,14 @@
     "insights": {
         "title": "Market Insights",
         "subtitle": "Latest analysis on the Baja California industrial market.",
-        "viewAll": "View All Insights"
+        "viewAll": "View All Insights",
+        "heroTitle": "Nearshore Insights",
+        "heroSubtitle": "Expert analysis and strategic roadmaps to help you navigate the Mexican industrial landscape.",
+        "dashboardTitle": "Baja Nearshore Intelligence",
+        "dashboardSubtitle": "Synthesized data from vetted broker network.",
+        "dashboardBadge": "Live Audit Data",
+        "dashboardUpdated": "Updated",
+        "deepDives": "Recent Deep Dives"
     },
     "about": {
         "title": "About Nearshore Navigator",

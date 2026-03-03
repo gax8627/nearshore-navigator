@@ -70,7 +70,14 @@
     "insights": {
         "title": "Perspectivas del Mercado",
         "subtitle": "Último análisis sobre el mercado industrial de Baja California.",
-        "viewAll": "Ver Todas las Perspectivas"
+        "viewAll": "Ver Todas las Perspectivas",
+        "heroTitle": "Perspectivas Nearshore",
+        "heroSubtitle": "Análisis experto y hojas de ruta estratégicas para ayudarle a navegar por el paisaje industrial mexicano.",
+        "dashboardTitle": "Inteligencia Nearshore de Baja",
+        "dashboardSubtitle": "Datos sintetizados de una red de corredores verificados.",
+        "dashboardBadge": "Datos de auditoría en vivo",
+        "dashboardUpdated": "Actualizado",
+        "deepDives": "Análisis recientes"
     },
     "about": {
         "title": "Acerca de Nearshore Navigator",

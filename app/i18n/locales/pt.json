@@ -73,7 +73,14 @@
     "insights": {
         "title": "Análises de Mercado",
         "subtitle": "Últimas análises sobre o mercado industrial de Baja Califórnia.",
-        "viewAll": "Ver Todas as Análises"
+        "viewAll": "Ver Todas as Análises",
+        "heroTitle": "Insights Nearshore",
+        "heroSubtitle": "Análise especializada e roteiros estratégicos para ajudar você a navegar no cenário industrial mexicano.",
+        "dashboardTitle": "Inteligência Nearshore da Baixa",
+        "dashboardSubtitle": "Dados sintetizados de uma rede de corretores verificados.",
+        "dashboardBadge": "Dados de auditoria ao vivo",
+        "dashboardUpdated": "Atualizado",
+        "deepDives": "Análises recentes"
     },
     "about": {
         "title": "Sobre a Nearshore Navigator",

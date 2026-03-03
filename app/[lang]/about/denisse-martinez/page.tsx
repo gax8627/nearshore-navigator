@@ -30,7 +30,7 @@ export default async function DenisseBioPage({ params }: Props) {
     "name": "Denisse Martinez",
     "jobTitle": "Marketing Director & Advisor",
     "url": "https://nearshorenavigator.com/about/denisse-martinez",
-    "image": "https://nearshorenavigator.com/images/denisse-martinez.png",
+    "image": "https://nearshorenavigator.com/images/denisse-martinez.jpg",
     "sameAs": [
       "https://www.linkedin.com/in/denisse-martinez"
     ],

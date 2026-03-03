@@ -69,7 +69,14 @@
     "insights": {
         "title": "市场洞察",
         "subtitle": "下加州工业市场的最新分析。",
-        "viewAll": "查看所有分析"
+        "viewAll": "查看所有分析",
+        "heroTitle": "近岸外包洞察",
+        "heroSubtitle": "专家分析和战略路线图，帮助您了解墨西哥工业格局。",
+        "dashboardTitle": "下加利福尼亚州近岸情报",
+        "dashboardSubtitle": "来自经过审核的经纪人网络的综合数据。",
+        "dashboardBadge": "实时审核数据",
+        "dashboardUpdated": "已更新",
+        "deepDives": "近期深度分析"
     },
     "about": {
         "title": "关于 Nearshore Navigator",
