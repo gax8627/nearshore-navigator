@@ -99,7 +99,7 @@ export const LOCATIONS: Location[] = [
         parks: ["Parque Industrial Pacifico", "Parque Industrial El Florido", "Finsa Tijuana", "Parque Industrial Nordika", "Otay Mesa Industrial Zone"],
         logistics: "Otay Mesa Port of Entry processes $50B+ in annual trade. FAST-lane clearance under 90 minutes. Otay Mesa East will cut times to under 30 minutes. 1-2 day truck transit to Los Angeles. BNSF rail connectivity for Midwest distribution."
       },
-      "soft-landing-services": {
+      "shelter-services": {
         title: "How Shelter Services Work in Tijuana",
         content: [
           "Tijuana has more active shelter service operators than any other city in Mexico, and for good reason: the city's 50+ year maquiladora heritage has created the deepest ecosystem of IMMEX-registered shelter companies, experienced labor lawyers, customs brokers, and compliance specialists anywhere on the border. For US manufacturers evaluating Mexico for the first time, a Tijuana shelter service eliminates the single biggest barrier to entry — the need to form a Mexican legal entity, navigate SAT tax registration, register with IMSS and INFONAVIT, and manage the complex web of Mexican labor law compliance.",
@@ -205,7 +205,7 @@ export const LOCATIONS: Location[] = [
         parks: ["Parque Industrial Calafia", "Parque Industrial Mexicali", "Cachanilla Industrial Park"],
         logistics: "Calexico East Port of Entry: FAST-lane under 60 minutes. Less congested than Otay Mesa. I-8 connectivity to Arizona and SoCal. Mexicali International Airport for air freight. Lower trucking costs via Imperial Valley backhaul availability."
       },
-      "soft-landing-services": {
+      "shelter-services": {
         title: "How Shelter Services Work in Mexicali",
         content: [
           "Mexicali offers a compelling alternative to Tijuana for companies seeking Baja California's nearshoring advantages with a distinctly different operational profile. While Tijuana has the largest concentration of shelter operators in Mexico, Mexicali's shelter ecosystem has been growing steadily, attracting operators who recognize that many US manufacturers prefer the city's lower cost structure, less contested labor market, and faster border crossing times. For companies evaluating their first shelter operation in Mexico, Mexicali represents the 'smart alternative' — delivering the same IMMEX legal framework and USMCA duty-free benefits as Tijuana, but with several structural cost advantages.",
@@ -626,8 +626,8 @@ export const SERVICES: Service[] = [
     icon: "Truck"
   },
   {
-    slug: "soft-landing-services",
-    title: "Soft Landing Services",
+    slug: "shelter-services",
+    title: "Shelter Services",
     description: "Legal, HR, and accounting support to incorporate your business in Mexico smoothly.",
     icon: "Headset"
   },
