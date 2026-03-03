@@ -23,6 +23,7 @@ export type Location = {
     parks: string[];
     logistics: string;
   }>;
+  serviceFaqs?: Record<string, { q: string; a: string }[]>;
   localFaqs?: { q: string; a: string }[];
   relatedInsights?: { title: string; url: string }[];
 };
@@ -352,6 +353,29 @@ export const LOCATIONS: Location[] = [
       parks: ["Parque Industrial Del Norte", "Finsa Matamoros", "CIMA Industrial Park"],
       logistics: "Direct access to the Port of Brownsville for ocean freight, plus heavy-haul trucking corridors directly into Texas."
     },
+    serviceHowItWorks: {
+      "shelter-services": {
+        title: "How Shelter Services Work in Matamoros",
+        content: [
+          "Matamoros is one of Mexico's oldest maquiladora corridors — active since the 1960s, which translates to deep institutional knowledge of IMMEX shelter operations. Establishing a presence here means tapping into decades of established administrative efficiency.",
+          "Proximity to Brownsville, Texas makes logistics highly predictable. The Veteran's International Bridge handles commercial traffic natively with dedicated FAST lane access, allowing for seamless integration with US supply chains.",
+          "The dominant industries for shelter operations in Matamoros are automotive components, metal mechanics, and electronics assembly. Major shelter operators are already well-established in Matamoros — Nearshore Navigator serves as your objective broker to compare all options without bias.",
+          "Labor dynamics in Matamoros are unique. The city features a strong, unionized workforce (with the CTM being the dominant union) that is highly experienced in repetitive precision assembly and structured operational cadences.",
+          "Operating under the IMMEX program via a shelter significantly accelerates your timeline: expect a 90-day startup under a shelter umbrella versus 6-12 months for direct standalone incorporation."
+        ],
+        parks: ["Finsa Matamoros", "Intermex Matamoros", "Parque Industrial del Noreste"],
+        logistics: "Direct FAST lane access to Brownsville, TX via Veteran's International Bridge. Heavy-haul capable."
+      }
+    },
+    serviceFaqs: {
+      "shelter-services": [
+        { q: "Is Matamoros good for shelter manufacturing?", a: "Yes, Matamoros is one of Mexico's oldest maquiladora corridors, offering deep institutional knowledge of IMMEX shelter operations." },
+        { q: "What union operates in Matamoros manufacturing plants?", a: "The workforce is heavily unionized, primarily represented by the CTM, which is highly experienced in structured manufacturing environments." },
+        { q: "How does a shelter service work in Matamoros?", a: "A shelter company acts as your legal entity in Mexico, assuming administrative, legal, and HR risks while you control production and IP." },
+        { q: "What industries use shelter services in Matamoros?", a: "Dominant industries include automotive components, metal mechanics, and electronics assembly." },
+        { q: "How far is Matamoros from the US border?", a: "Matamoros directly borders Brownsville, Texas, with commercial access via the Veteran's International Bridge." }
+      ]
+    },
     localFaqs: [
       { q: "What industries use contract manufacturing in Matamoros?", a: "Matamoros is highly specialized in automotive components, metal mechanics, and electronics manufacturing due to its proximity to the Texas supply chain." },
       { q: "How long is the border wait time at the Brownsville/Matamoros crossing?", a: "Commercial crossings using FAST lanes at the Veterans International Bridge typically average under 60 minutes during standard business hours." },
@@ -431,6 +455,29 @@ export const LOCATIONS: Location[] = [
       parks: ["Aerotech Industrial Park", "Parque Industrial Querétaro", "El Marqués Industrial Park"],
       logistics: "Centralized Bajío location with direct highway access to NAFTA corridor (Highway 57) and the Querétaro Intercontinental Airport (AIQ) for dedicated cargo."
     },
+    serviceHowItWorks: {
+      "shelter-services": {
+        title: "How Shelter Services Work in Querétaro",
+        content: [
+          "Querétaro serves as Mexico's absolute epicenter for aerospace manufacturing. Facilities belonging to Bombardier, Airbus, and GE Aviation have created an AS9100-rich ecosystem populated by highly skilled engineers.",
+          "Shelter services in Querétaro primarily cater to precision manufacturing sectors—aerospace, medical devices, and advanced electronics—where quality control outweighs high-volume speed.",
+          "As the safest state in Mexico, Querétaro boasts a remarkably high quality of life. This acts as a magnet for top-tier engineering talent from across the country, significantly reducing the turnover rates that plague border operations.",
+          "Logistically, Querétaro sits roughly 10 hours from the Nuevo Laredo border crossing. It is less ideal for daily cross-border supply chains, leaning instead toward operations utilizing dedicated air-freight and less urgent weekly trucking.",
+          "The IMMEX program is fully active here, bolstered by a mature administrative and customs broker network. We position Querétaro as the premium interior location for companies where talent quality strictly supersedes border proximity."
+        ],
+        parks: ["Parque Industrial Bernardo Quintana", "Parque Industrial Querétaro", "Finsa Querétaro"],
+        logistics: "10 hours to Nuevo Laredo by highway. Dedicated cargo services via Querétaro Intercontinental Airport (AIQ). Optimized for low-volume, high-value freight."
+      }
+    },
+    serviceFaqs: {
+      "shelter-services": [
+        { q: "Are there shelter services in Querétaro Mexico?", a: "Yes, Querétaro operates a mature IMMEX shelter ecosystem geared specifically toward advanced manufacturing, aerospace, and medical device companies." },
+        { q: "Is Querétaro good for aerospace manufacturing?", a: "It is the leading aerospace hub in Latin America, hosting major OEMs like Bombardier and Airbus, resulting in a highly specialized supply chain." },
+        { q: "How does IMMEX work in Querétaro?", a: "IMMEX in Querétaro operates exactly as it does on the border, but finished goods are usually consolidated for weekly shipments or exported via air freight." },
+        { q: "What certifications do manufacturers in Querétaro hold?", a: "Due to the aerospace density, there is a very high concentration of AS9100 and NADCAP certified manufacturing facilities." },
+        { q: "Is Querétaro safe for foreign manufacturing investment?", a: "Yes, Querétaro is consistently ranked as the safest industrial state in Mexico, attracting significant foreign direct investment and expatriate managers." }
+      ]
+    },
     localFaqs: [
       { q: "What is Querétaro known for in manufacturing?", a: "Querétaro is the aerospace capital of Mexico, hosting major facilities for Bombardier, Airbus, and GE Aviation, alongside a highly advanced IT and data center cluster." },
       { q: "Is Querétaro safe for foreign investment?", a: "Yes, Querétaro is consistently ranked as one of the safest states in Mexico, offering a high quality of life that attracts top engineering talent and foreign executives." },
@@ -489,6 +536,29 @@ export const LOCATIONS: Location[] = [
       parks: ["Derramadero Industrial Corridor", "Ramos Arizpe Industrial Park", "Server Industrial Park"],
       logistics: "Less than 4 hours to the Laredo, Texas border crossing via Highway 85, making it the perfect JIT (Just-In-Time) hub for US auto plants."
     },
+    serviceHowItWorks: {
+      "shelter-services": {
+        title: "How Shelter Services Work in Saltillo",
+        content: [
+          "Widely known as the 'Detroit of Mexico', Saltillo's industrial ecosystem is anchored by massive GM, Stellantis, and Daimler Truck assembly plants. Shelter operations here inherently plug into this established Tier 1 and Tier 2 supply chain.",
+          "Shelter services in Saltillo primarily serve the automotive and commercial vehicle sectors, alongside a growing cluster of aerospace suppliers utilizing the region's metallurgy expertise.",
+          "Saltillo sits just 3.5 hours from Laredo, Texas—the busiest commercial border crossing in the US by cargo volume. This offers a highly efficient logistical corridor for Just-In-Time (JIT) automotive sequences.",
+          "The labor force is deeply experienced in complex automotive assembly and precision manufacturing. Unions, particularly the CTM and CROC, are well-established and cooperate closely with shelter operators.",
+          "A major structural advantage of Saltillo is industrial real estate: lease rates average $0.65–$0.80/SF NNN, presenting significant cost savings for space-intensive operations compared to Baja California."
+        ],
+        parks: ["Ramos Arizpe Industrial Corridor", "Parque Industrial Saltillo 400", "Finsa Saltillo"],
+        logistics: "3.5-hour direct highway corridor to Laredo, Texas via Highway 85. Highest volume commercial crossing in the Americas."
+      }
+    },
+    serviceFaqs: {
+      "shelter-services": [
+        { q: "Is Saltillo good for shelter manufacturing in Mexico?", a: "Absolutely. Saltillo offers a world-class automotive ecosystem, competitive lease rates, and extremely efficient proximity to the Laredo border." },
+        { q: "What companies use shelter services in Saltillo?", a: "Predominantly Tier 1 and Tier 2 automotive suppliers supporting the local GM, Stellantis, and Daimler Truck assembly facilities." },
+        { q: "How far is Saltillo from Laredo Texas?", a: "Saltillo is approximately 180 miles from Laredo, translating to roughly a 3.5-hour drive via a dedicated commercial highway corridor." },
+        { q: "What are industrial lease rates in Saltillo?", a: "Class A industrial space typically ranges from $0.65 to $0.80 USD per square foot NNN, offering a discount compared to border cities." },
+        { q: "What unions operate in Saltillo manufacturing plants?", a: "The automotive workforce is highly unionized, with the CTM and CROC being the dominant unions managing stable, long-term collective agreements." }
+      ]
+    },
     localFaqs: [
       { q: "Is Saltillo good for nearshoring?", a: "Saltillo is one of the top nearshoring destinations in Mexico, often referred to as the 'Detroit of Mexico' due to its massive concentration of automotive assembly plants and Tier 1 suppliers." },
       { q: "How far is Saltillo from the US border?", a: "Saltillo is approximately 180 miles (about a 3.5-hour drive) from the Laredo, Texas commercial border crossing, making it highly efficient for NAFTA/USMCA logistics." },
@@ -533,6 +603,29 @@ export const LOCATIONS: Location[] = [
       ],
       parks: ["Pima Industrial Park", "Parque Industrial Hermosillo", "Guaymas Industrial Corridor"],
       logistics: "180 miles from Nogales, AZ (3-hour drive via Hwy 15D). Access to the deep-water Port of Guaymas for ocean freight. Fully burdened labor: ~$5.27/hr (non-border zone). Ford supplier hub infrastructure. Growing aerospace corridor in Hermosillo-Guaymas region."
+    },
+    serviceHowItWorks: {
+      "shelter-services": {
+        title: "How Shelter Services Work in Hermosillo",
+        content: [
+          "Hermosillo's industrial base is dominated by Ford's largest North American truck assembly plant. This anchor tenant has cultivated a deep Tier 1 and Tier 2 supplier ecosystem perfectly aligned for shelter service integration.",
+          "Critically, Hermosillo is NOT located in the Northern Border Free Zone. Companies operating here follow the general minimum wage rate (~$315 MXN/day) rather than the elevated border rate ($440 MXN/day), creating a massive structural labor cost advantage over Baja California.",
+          "The primary border crossing is Nogales, Arizona, located roughly 180 miles north. This creates highly manageable logistics for operations that execute weekly or bi-weekly shipments rather than daily JIT sequences.",
+          "We are tracking rapidly growing interest from Asian manufacturers in Hermosillo. Chinese and Korean supply chain companies are actively evaluating the city as a cost-effective nearshoring alternative to Tijuana.",
+          "IMMEX shelter operators are highly active in Hermosillo, but the market is significantly less crowded than the northern border, presenting an easier negotiating position for incoming foreign companies."
+        ],
+        parks: ["Parque Industrial Hermosillo", "Pima Industrial Park", "Parque Industrial Sonora"],
+        logistics: "180 miles (3 hours) north to Nogales, AZ via Highway 15D. Alternative ocean freight access via the deep-water Port of Guaymas."
+      }
+    },
+    serviceFaqs: {
+      "shelter-services": [
+        { q: "Are there shelter services in Hermosillo Mexico?", a: "Yes, Hermosillo supports a mature shelter industry primarily serving the automotive supply chain tied to Ford's regional assembly plant." },
+        { q: "Is Hermosillo cheaper than Tijuana for manufacturing?", a: "Yes. Because Hermosillo sits outside the Northern Border Free Zone, baseline labor rates are significantly lower than inside the border zone." },
+        { q: "What companies do shelter manufacturing in Hermosillo?", a: "Companies heavily focused on automotive stamping, plastic injection, wire harnesses, and increasingly, aerospace components." },
+        { q: "How far is Hermosillo from the US border?", a: "The city is roughly 180 miles (roughly a three-hour drive) south of the commercial crossing in Nogales, Arizona." },
+        { q: "What is the minimum wage in Hermosillo Mexico?", a: "Hermosillo operates on the general national minimum wage rate (approximately $315 MXN/day), rather than the elevated border zone rate." }
+      ]
     },
     localFaqs: [
       { q: "What companies manufacture in Hermosillo Mexico?", a: "Hermosillo is home to Ford Motor Company's major stamping and assembly plant (producing the Bronco Sport and Maverick). The city also hosts aerospace suppliers (Daher, Latecoere), automotive Tier 1 suppliers, and a growing mining services sector. Sonora is Mexico's leading copper and gold producing state." },
@@ -591,6 +684,20 @@ export const LOCATIONS: Location[] = [
       ],
       parks: ["Finsa Puebla", "Parque Industrial Vesta", "Ciudad Modelo (Audi Region)"],
       logistics: "Strategic central location with dual-coast access: highway connection to the Port of Veracruz for Europe/East Coast shipments, and rail to the US Midwest."
+    },
+    serviceHowItWorks: {
+      "shelter-services": {
+        title: "How Shelter Services Work in Puebla",
+        content: [
+          "Puebla is not a border city, which fundamentally changes how shelter services operate here compared to northern hubs. While logistics require more strategic planning—primarily shipping via the Port of Veracruz or driving highways to Nuevo Laredo—the trade-off is a massive, highly skilled labor pool at significantly lower cost.",
+          "The dominant shelter use case in Puebla revolves around Tier 1 and Tier 2 automotive suppliers. These operations act as dedicated supply lines for the massive VW, Audi, and Stellantis plants that anchor the region's economy.",
+          "The labor pool is exceptionally deep. With over 50 years of automotive manufacturing heritage, Puebla has created an incredibly experienced engineering workforce that understands German quality systems and tight operational tolerances natively.",
+          "The IMMEX program operates identically in Puebla as it does on the border, but goods are typically shipped via the Veracruz port or trucked up the central highway spine to the Nuevo Laredo border crossing.",
+          "We position Puebla as the ideal nearshore destination for companies that must prioritize skilled labor availability and competitive wages over immediate same-day border proximity."
+        ],
+        parks: ["Parque Industrial Finsa Puebla", "Parque Industrial Quetzalcoatl", "Ciudad Industrial Resurección"],
+        logistics: "Strategic interior logistics. Access to Port of Veracruz for ocean freight, and highway/rail corridors north to Nuevo Laredo. Highly competitive labor rates offset shipping distances."
+      }
     },
     localFaqs: [
       { q: "Why is Puebla a hub for contract manufacturing?", a: "Puebla has over 50 years of German automotive manufacturing heritage, anchored by VW and Audi, creating a massive pool of highly skilled engineers and technicians." },

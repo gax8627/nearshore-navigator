@@ -22,7 +22,7 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
   const title = `${service.title} in ${location.name}`;
   const subtitle = `Comprehensive ${service.title.toLowerCase()} solutions tailored for the ${location.name} industrial market. Leverage ${location.name}'s ${location.stats.proximity} and a workforce of ${location.stats.laborForce} to optimize your nearshoring strategy.`;
 
-  const faqs = location.localFaqs || [
+  const faqs = location.serviceFaqs?.[serviceId] || location.localFaqs || [
     {
       q: `What makes ${location.name} ideal for ${service.title.toLowerCase()}?`,
       a: `${location.name} is a strategic hub in ${location.state} with ${location.stats.proximity}. For ${service.title.toLowerCase()}, it offers ${location.advantages[0]} and ${location.advantages[1]}, making it a top choice for international manufacturers.`
