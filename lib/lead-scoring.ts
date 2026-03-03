@@ -42,7 +42,7 @@ export function scoreLead(data: {
   if (messageLower.includes('shelter') || messageLower.includes('immex')) {
     score += 15;
     tags.push('Shelter Services');
-    reasons.push('Interest in low-risk soft-landing (Shelter)');
+    reasons.push('Interest in low-risk shelter services');
   }
 
   if (messageLower.includes('build-to-suit') || messageLower.includes('square feet') || messageLower.includes('sq ft')) {

@@ -85,7 +85,7 @@
         "founderTitle": "Asesoría de nearshoring experta para Baja California",
         "founderName": "Denisse Martínez",
         "founderBadge": "Fundadora / Asesora Principal",
-        "founderDescription": "Ayudamos a las empresas manufactureras a expandirse a Baja California con un proceso claro, conocimiento del mercado local y una red verificada que las respalda. Dependiendo de sus necesidades, el apoyo puede incluir la selección de sitios industriales, la conexión estratégica con socios de manufactura por contrato o una ruta de 'soft-landing' más rápida, para que avance con confianza y menos sorpresas.",
+        "founderDescription": "Ayudamos a las empresas manufactureras a expandirse a Baja California con un proceso claro, conocimiento del mercado local y una red verificada que las respalda. Dependiendo de sus necesidades, el apoyo puede incluir la selección de sitios industriales, la conexión estratégica con socios de manufactura por contrato o una ruta de 'shelter' más rápida, para que avance con confianza y menos sorpresas.",
         "founderStat1": "Más de 15 años apoyando la expansión de manufactura transfronteriza",
         "founderStat2": "Apoyó el establecimiento de más de 20 empresas en México en múltiples industrias",
         "founderStat3": "Soporte práctico desde la evaluación hasta las visitas, diligencia debida y el impulso del lanzamiento",
@@ -95,8 +95,8 @@
         "heroTitle2": "Ejecución impulsada",
         "heroTitle3": "por nuestros socios.",
         "heroSubtitle": "Diseñado para fabricantes que ingresan a Baja California. Proporcionamos orientación estructurada, opciones prácticas y las conexiones adecuadas para que su expansión no se estanque en la incertidumbre.",
-        "softLandingTitle": "Aterrizaje Suave Estratégico",
-        "softLandingDesc": "Para cuando la velocidad importa. Le ayudamos a evaluar la ruta de entrada más eficiente (Shelter, M&A o independiente) y le conectamos con opciones verificadas."
+        "shelterServicesTitle": "Aterrizaje Suave Estratégico",
+        "shelterServicesDesc": "Para cuando la velocidad importa. Le ayudamos a evaluar la ruta de entrada más eficiente (Shelter, M&A o independiente) y le conectamos con opciones verificadas."
     },
     "contact": {
         "title": "Contacto",
@@ -486,8 +486,8 @@
         "cardRealEstateDesc": "Preseleccionar opciones de instalaciones que se ajusten a sus requisitos, coordinar recorridos productivos por los sitios, elaborar comparaciones listas para la decisión y apoyar los pasos de negociación.",
         "cardContractTitle": "Enlace con Socios de Manufactura por Contrato",
         "cardContractDesc": "Le ayudamos a empezar correctamente: definir requisitos, conectar con proveedores calificados e impulsar la evaluación y el seguimiento para que el proceso no se estanque.",
-        "cardSoftLandingTitle": "Aterrizaje Suave Estratégico",
-        "cardSoftLandingDesc": "Cuando la velocidad importa. Le ayudamos a evaluar la ruta de entrada más eficiente (Shelter, M&A o Independiente) y presentamos opciones verificadas.",
+        "cardShelterServicesTitle": "Aterrizaje Suave Estratégico",
+        "cardShelterServicesDesc": "Cuando la velocidad importa. Le ayudamos a evaluar la ruta de entrada más eficiente (Shelter, M&A o Independiente) y presentamos opciones verificadas.",
         "cardCtaLearnMore": "Saber más",
         "cardCtaRequest": "Solicitar Evaluación",
         "processTitle": "Un proceso sin rodeos que mantiene los proyectos en movimiento",

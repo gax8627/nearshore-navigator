@@ -94,8 +94,8 @@
         "heroTitle2": "伙伴驱动的",
         "heroTitle3": "执行力。",
         "heroSubtitle": "专为进入下加州市场的制造商打造。我们提供结构化指导和实际方案，确保您的扩张不因不确定性而停滞。",
-        "softLandingTitle": "战略级‘软着陆’",
-        "softLandingDesc": "为追求速度的企业提供最高效的准入路径评估（代管、并购或独立运营）。"
+        "shelterServicesTitle": "战略级‘软着陆’",
+        "shelterServicesDesc": "为追求速度的企业提供最高效的准入路径评估（代管、并购或独立运营）。"
     },
     "contact": {
         "title": "联系我们",
@@ -485,8 +485,8 @@
         "cardRealEstateDesc": "筛选符合您要求的设施选项，协调富有成效的现场考察，建立可供决策的比较，并支持谈判步骤。",
         "cardContractTitle": "合同制造合作伙伴匹配",
         "cardContractDesc": "我们帮助您正确开始：定义要求，联系合格的供应商，并推动评估和后续行动，以免流程停滞。",
-        "cardSoftLandingTitle": "战略软着陆",
-        "cardSoftLandingDesc": "当速度至关重要时。我们帮助您评估最有效的进入路线（托管、并购或独立），并提供经过审查的选项。",
+        "cardShelterServicesTitle": "战略软着陆",
+        "cardShelterServicesDesc": "当速度至关重要时。我们帮助您评估最有效的进入路线（托管、并购或独立），并提供经过审查的选项。",
         "cardCtaLearnMore": "了解更多",
         "cardCtaRequest": "请求评估",
         "processTitle": "推动项目前进的务实流程",

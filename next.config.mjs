@@ -10,6 +10,16 @@ const nextConfig = {
     },
     async redirects() {
         return [
+            {
+                source: '/:lang/locations/:city/soft-landing-services',
+                destination: '/:lang/locations/:city/shelter-services',
+                permanent: true,
+            },
+            {
+                source: '/locations/:city/soft-landing-services',
+                destination: '/en/locations/:city/shelter-services',
+                permanent: true,
+            },
             // Legacy / Misspelled URLs from GSC
             {
                 source: '/contact-accuracy-questionnaire',

@@ -94,8 +94,8 @@
         "heroTitle2": "파트너 중심의",
         "heroTitle3": "실행.",
         "heroSubtitle": "바하 칼리포르니아에 진출하는 제조업체를 위해 구축되었습니다. 당사는 구조화된 지침, 실질적인 옵션 및 적절한 소개를 제공하여 확장이 불확실성으로 인해 중단되지 않도록 합니다.",
-        "softLandingTitle": "전략적 소프트 랜딩",
-        "softLandingDesc": "속도가 중요한 경우를 위해. 가장 효율적인 진입 경로(쉘터, M&A 또는 독립형)를 평가하는 데 도움을 드리고 검증된 옵션과 연결해 드립니다."
+        "shelterServicesTitle": "전략적 소프트 랜딩",
+        "shelterServicesDesc": "속도가 중요한 경우를 위해. 가장 효율적인 진입 경로(쉘터, M&A 또는 독립형)를 평가하는 데 도움을 드리고 검증된 옵션과 연결해 드립니다."
     },
     "contact": {
         "title": "문의하기",
@@ -485,8 +485,8 @@
         "cardRealEstateDesc": "요구 사항에 맞는 시설 옵션 목록 작성, 생산적인 현장 투어 조정, 의사 결정을 위한 비교 자료 작성 및 협상 단계 지원.",
         "cardContractTitle": "위탁 생산 파트너 매칭",
         "cardContractDesc": "올바르게 시작하도록 돕습니다. 요구 사항 정의, 자격 있는 벤더 연결, 평가 및 후속 조치를 주도하여 프로세스가 중단되지 않도록 합니다.",
-        "cardSoftLandingTitle": "전략적 소프트 랜딩",
-        "cardSoftLandingDesc": "속도가 중요할 때. 가장 효율적인 진입 경로(쉘터, M&A 또는 독립형)를 평가하도록 돕고 검증된 옵션을 제시합니다.",
+        "cardShelterServicesTitle": "전략적 소프트 랜딩",
+        "cardShelterServicesDesc": "속도가 중요할 때. 가장 효율적인 진입 경로(쉘터, M&A 또는 독립형)를 평가하도록 돕고 검증된 옵션을 제시합니다.",
         "cardCtaLearnMore": "더 알아보기",
         "cardCtaRequest": "평가 요청",
         "processTitle": "프로젝트를 계속 진행시키는 군더더기 없는 프로세스",

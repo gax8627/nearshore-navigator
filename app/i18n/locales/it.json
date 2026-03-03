@@ -88,7 +88,7 @@
         "founderTitle": "Expert-led nearshoring guidance for Baja California",
         "founderName": "Denisse Martinez",
         "founderBadge": "Founder / Lead Advisor",
-        "founderDescription": "We help manufacturing companies expand into Baja California with a clear process, local market insight, and a vetted network behind you. Depending on your needs, support can include industrial site selection, contract manufacturing partner matching, or a faster soft-landing route—so you move forward with confidence and fewer surprises.",
+        "founderDescription": "We help manufacturing companies expand into Baja California with a clear process, local market insight, and a vetted network behind you. Depending on your needs, support can include industrial site selection, contract manufacturing partner matching, or a faster shelter route—so you move forward with confidence and fewer surprises.",
         "founderStat1": "15+ years supporting cross-border manufacturing expansion",
         "founderStat2": "Supported the setup of 20+ companies in Mexico across multiple industries",
         "founderStat3": "Hands-on support from evaluation to visits, due diligence, and launch momentum",
@@ -98,8 +98,8 @@
         "heroTitle2": "Partner-powered",
         "heroTitle3": "execution.",
         "heroSubtitle": "Built for manufacturers entering Baja California. We provide structured guidance, practical options, and the right introductions so your expansion doesn’t stall in uncertainty.",
-        "softLandingTitle": "Strategic Soft-landing",
-        "softLandingDesc": "For when speed matters. We help you assess the most efficient entry route (Shelter, M&A, or standalone) and connect you with vetted options."
+        "shelterServicesTitle": "Strategic Soft-landing",
+        "shelterServicesDesc": "For when speed matters. We help you assess the most efficient entry route (Shelter, M&A, or standalone) and connect you with vetted options."
     },
     "contact": {
         "title": "Contact Us",
@@ -495,8 +495,8 @@
         "cardRealEstateDesc": "Shortlisting facility options that fit your requirements, coordinating productive site tours, building decision-ready comparisons, and supporting negotiation steps.",
         "cardContractTitle": "Contract Manufacturing Partner Matching",
         "cardContractDesc": "We help you start correctly: define requirements, connect with qualified vendors, and drive evaluation and follow-up so the process doesn’t stall.",
-        "cardSoftLandingTitle": "Strategic Soft Landing",
-        "cardSoftLandingDesc": "When speed matters. We help you assess the most efficient entry route (Shelter, M&A, or Standalone) and present vetted options.",
+        "cardShelterServicesTitle": "Strategic Soft Landing",
+        "cardShelterServicesDesc": "When speed matters. We help you assess the most efficient entry route (Shelter, M&A, or Standalone) and present vetted options.",
         "cardCtaLearnMore": "Learn more",
         "cardCtaRequest": "Request Assessment",
         "processTitle": "A no-BS process that keeps projects moving",

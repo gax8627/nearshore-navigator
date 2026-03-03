@@ -262,8 +262,8 @@ export default function AboutClient() {
                         },
                         { 
                             icon: <MapPin className="w-7 h-7" />, 
-                            title: t('aboutPage.cardSoftLandingTitle'), 
-                            desc: t('aboutPage.cardSoftLandingDesc'),
+                            title: t('aboutPage.cardShelterServicesTitle'), 
+                            desc: t('aboutPage.cardShelterServicesDesc'),
                             link: `/${language}/contact`,
                             cta: t('aboutPage.cardCtaRequest'),
                             color: "purple"
