@@ -1,19 +1,19 @@
 [
   {
     "email": "adam@abs-solutions.com",
-    "firstName": "there",
+    "firstName": "",
     "lastName": "",
-    "company": "your company",
-    "lastInteraction": "2026-02-12T17:00:17.653+01:00",
-    "missingDetails": true
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T19:17:04.592+01:00"
   },
   {
     "email": "jacqueline.shea@inovio.com",
-    "firstName": "there",
+    "firstName": "",
     "lastName": "",
-    "company": "your company",
-    "lastInteraction": "2026-02-12T16:53:57.348+01:00",
-    "missingDetails": true
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T18:39:10.809+01:00"
   },
   {
     "email": "mgresser@wildcatdiscovery.com",
@@ -21,23 +21,23 @@
     "lastName": "Gresser",
     "company": "Wildcat Discovery Technologies",
     "industry": "Research & Development",
-    "lastInteraction": "2026-02-12T16:53:06.903+01:00"
+    "lastInteraction": "2026-02-18T19:02:25.497+01:00"
   },
   {
     "email": "spelletier@evofem.com",
-    "firstName": "there",
+    "firstName": "",
     "lastName": "",
-    "company": "your company",
-    "lastInteraction": "2026-02-12T16:51:19.672+01:00",
-    "missingDetails": true
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T19:21:13.888+01:00"
   },
   {
     "email": "lkirkpatrick@ensysce.com",
-    "firstName": "there",
+    "firstName": "",
     "lastName": "",
-    "company": "your company",
-    "lastInteraction": "2026-02-12T17:17:17.178+01:00",
-    "missingDetails": true
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-12T17:17:17.178+01:00"
   },
   {
     "email": "ariell.ortega@bionano.com",
@@ -45,7 +45,7 @@
     "lastName": "Ortega",
     "company": "BioNano Genomics",
     "industry": "Research & Development",
-    "lastInteraction": "2026-02-12T16:40:36.367+01:00"
+    "lastInteraction": "2026-02-18T19:52:12.947+01:00"
   },
   {
     "email": "ssaint@betabionics.com",
@@ -53,7 +53,7 @@
     "lastName": "Saint",
     "company": "Beta Bionics",
     "industry": "Research & Development",
-    "lastInteraction": "2026-02-12T16:39:14.804+01:00"
+    "lastInteraction": "2026-02-18T18:11:00.612+01:00"
   },
   {
     "email": "sarah@aviditybio.com",
@@ -61,7 +61,7 @@
     "lastName": "Boyce",
     "company": "Avidity Biosciences",
     "industry": "Research & Development",
-    "lastInteraction": "2026-02-12T16:38:18.001+01:00"
+    "lastInteraction": "2026-02-18T19:56:25.118+01:00"
   },
   {
     "email": "jprzybylek@activcareliving.com",
@@ -69,7 +69,7 @@
     "lastName": "Przybylek",
     "company": "ActivCare Living",
     "industry": "Hospitals & Physicians Clinics",
-    "lastInteraction": "2026-02-12T16:34:47.964+01:00"
+    "lastInteraction": "2026-02-18T18:52:19.162+01:00"
   },
   {
     "email": "egonzalez@activcareliving.com",
@@ -77,7 +77,7 @@
     "lastName": "Gonzalez",
     "company": "ActivCare Living",
     "industry": "Hospitals & Physicians Clinics",
-    "lastInteraction": "2026-02-12T16:36:35.382+01:00"
+    "lastInteraction": "2026-02-18T18:39:22.586+01:00"
   },
   {
     "email": "jmares@activcareliving.com",
@@ -85,7 +85,7 @@
     "lastName": "Mares",
     "company": "ActivCare Living",
     "industry": "Hospitals & Physicians Clinics",
-    "lastInteraction": "2026-02-12T16:36:34.508+01:00"
+    "lastInteraction": "2026-02-18T18:37:30.891+01:00"
   },
   {
     "email": "renee@activcareliving.com",
@@ -93,14 +93,1406 @@
     "lastName": "Barnard",
     "company": "ActivCare Living",
     "industry": "Hospitals & Physicians Clinics",
-    "lastInteraction": "2026-02-12T16:35:06.034+01:00"
+    "lastInteraction": "2026-02-18T19:17:58.176+01:00"
   },
   {
     "email": "rcox@epirium.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-12T17:22:20.234+01:00"
+  },
+  {
+    "email": "info@mybesthomecare.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-03-03T01:24:28.241+01:00"
+  },
+  {
+    "email": "taylor.roof@bigrentz.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T18:05:40.2+01:00"
+  },
+  {
+    "email": "ghurtado@ctcglobal.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-03-02T10:59:46.915+01:00"
+  },
+  {
+    "email": "manolo.viray@c-hmachine.com",
+    "firstName": "Manolo",
+    "lastName": "Viray",
+    "company": "C&h Machine",
+    "industry": "Manufacturing",
+    "lastInteraction": "2026-03-02T10:51:30.926+01:00"
+  },
+  {
+    "email": "mevans@5thaxis.com",
+    "firstName": "Mathew",
+    "lastName": "Evans",
+    "company": "5th Axis",
+    "industry": "Manufacturing",
+    "lastInteraction": "2026-03-02T10:51:30.88+01:00"
+  },
+  {
+    "email": "churd@benderccp.com",
+    "firstName": "Charlie",
+    "lastName": "Hurd",
+    "company": "Bender Ccp",
+    "industry": "Manufacturing",
+    "lastInteraction": "2026-03-02T10:51:27.983+01:00"
+  },
+  {
+    "email": "melissa@vetpowered.com",
+    "firstName": "Melissa",
+    "lastName": "Morales",
+    "company": "Vetpowered",
+    "industry": "Manufacturing",
+    "lastInteraction": "2026-03-02T10:51:15.797+01:00"
+  },
+  {
+    "email": "gregm@shopfloorautomations.com",
+    "firstName": "Greg",
+    "lastName": "M",
+    "company": "Shop Floor Automations, Inc.",
+    "industry": "Manufacturing",
+    "lastInteraction": "2026-03-02T10:51:13.157+01:00"
+  },
+  {
+    "email": "aokun@etogen.com",
+    "firstName": "Alex",
+    "lastName": "Okun",
+    "company": "Etogen Precision",
+    "industry": "Manufacturing",
+    "lastInteraction": "2026-03-02T10:51:01.341+01:00"
+  },
+  {
+    "email": "jhumphrey@bechlercams.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T19:34:05.121+01:00"
+  },
+  {
+    "email": "melissa.wade@zmicro.com",
     "firstName": "there",
     "lastName": "",
     "company": "your company",
-    "lastInteraction": "2026-02-12T17:22:20.234+01:00",
+    "lastInteraction": "2026-02-20T19:52:20.226+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "lior.yahalomi@vishay.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T19:45:10.558+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "jcadler@verismfg.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T19:35:04.411+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "bill.winther@vanguard-ems.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T19:23:24.746+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "anh.vu@vanguard-ems.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T19:10:32.924+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "floyd.sutz@vanguard-ems.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T19:08:22.021+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "sung.yi@viewsonic.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T19:08:00.807+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "kcc@wintecind.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T19:06:37.924+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "ckoo@wafertech.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T18:39:06.603+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "crisco@visco-light.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T18:34:32.717+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "scott.kaiser@vishay.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T18:32:40.193+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "andy@vse.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T18:17:21.216+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "felix.zandman@vishay.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T18:16:46.142+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "cryan@westcall.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T18:07:33.126+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "james.chu@viewsonic.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T18:04:31.172+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "mikej@wintecind.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T18:02:45.775+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "plee@oplink.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T18:29:08.329+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "jack.zhao@paradetech.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:40:37.532+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "kgalaznik@as-e.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:39:22.571+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "fred.bonyadina@touchpage.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:31:19.155+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "david_tacelli@ltxc.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:28:20.797+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "vladimir.movshovich@zultys.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:24:02.305+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "carl.russo@calix.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:12:05.242+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "henrik.stepanyan@bbqgalore.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:10:12.566+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "srishi@rambus.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:06:36.446+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "rblack@rambus.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T18:53:49.959+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "jjone@cohu.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T18:35:18.269+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "brett.dexheimer@thieletech.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T18:29:36.609+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "info@meditrina-inc.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T19:57:25.379+01:00"
+  },
+  {
+    "email": "donbeverage@absolutetechnologies.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T19:57:04.724+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "bradhart@robertstool.net",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T19:49:22.817+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "jeremy.ferch@milwaukeetool.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T19:43:20.85+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "derek@cpapservices.net",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T19:43:30.573+01:00"
+  },
+  {
+    "email": "shqiperim.behluli@thommenmedical.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T19:42:18.377+01:00"
+  },
+  {
+    "email": "andrewt@kapcoaero.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T19:41:40.344+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "gkao@pericom.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T19:39:20.281+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "vavisto@apria.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T19:35:29.871+01:00"
+  },
+  {
+    "email": "mkreps@xxiicentury.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T19:36:52.636+01:00"
+  },
+  {
+    "email": "esuro@uei.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T19:33:08.001+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "ed.metzger@biofit.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T19:23:03.429+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "gary.medved@navage.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T19:16:31.061+01:00"
+  },
+  {
+    "email": "cbandala@doncasters.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T19:07:22.212+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "michael.tucci@mic-tec.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T19:10:26.317+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "jluo@accellix.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T19:05:22.016+01:00"
+  },
+  {
+    "email": "kdrent@coremachinery.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T18:45:34.156+01:00"
+  },
+  {
+    "email": "tysonsomers@inspiresleep.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:44:35.95+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "rtillery@lmiaerospace.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:42:26.219+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "marie.juncaj@monitormedical.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T18:40:10.618+01:00"
+  },
+  {
+    "email": "greg.heitz@exacto.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:38:04.617+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "smingle@medonegroup.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T18:05:04.252+01:00"
+  },
+  {
+    "email": "mgray@engis.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:33:08.684+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "melody@cal-tool.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T18:28:22.455+01:00"
+  },
+  {
+    "email": "kamran@z-tronix.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:26:04.245+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "pmangan@promedmolding.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:23:33.469+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "kurt.watson@meridianlifescience.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:11:06.538+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "dan.moran@ccsmed.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T18:21:03.502+01:00"
+  },
+  {
+    "email": "nathan.berg@medela.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:21:02.878+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "tim.powers@medela.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:20:35.558+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "adam@mediview.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T18:18:21.977+01:00"
+  },
+  {
+    "email": "tgomez@sassafety.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:16:26.351+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "bobrashidi@iuseelite.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:15:03.906+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "jsheridan@tandemdiabetes.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:14:03.649+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "dhatton@tegramedical.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:10:50.371+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "jgraham@fibrogen.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:13:33.524+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "reza@regentaerospace.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:10:34.743+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "jkruger@gcx.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:04:33.182+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "khashizume@akceatx.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:04:38.546+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "johnsont@scanlangroup.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:04:24.224+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "tristan.inciong@sekisuidiagnostics.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:05:54.203+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "harold.chan@sekisuidiagnostics.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:05:08.163+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "mfoley@revance.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:05:09.657+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "gmehra@analogic.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:04:52.571+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "cedric@apellis.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:06:03.334+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "mmorales@gcx.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:04:38.889+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "vperlroth@kodiak.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:04:06.548+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "jalbers@blueprintmedicines.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:04:50.206+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "jmiller@byramhealthcare.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:16:08.122+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "sales@dcprecisionco.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-03-02T11:00:19.418+01:00"
+  },
+  {
+    "email": "ieee@uci.edu",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T19:22:05.694+01:00"
+  },
+  {
+    "email": "jonathan@rjmachine.net",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-03-02T10:59:24.954+01:00"
+  },
+  {
+    "email": "mark.mcginn@futuristicsmachine.com",
+    "firstName": "Mark",
+    "lastName": "McGinn",
+    "company": "Futuristics Machine, Inc.",
+    "industry": "Manufacturing",
+    "lastInteraction": "2026-03-02T10:51:37.711+01:00"
+  },
+  {
+    "email": "lveksler@ucsd.edu",
+    "firstName": "Lusia",
+    "lastName": "Veksler",
+    "company": "Ucsd Machining And Prototyping Services",
+    "industry": "Manufacturing",
+    "lastInteraction": "2026-03-02T10:51:00.61+01:00"
+  },
+  {
+    "email": "justin@austintoolco.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-26T23:52:22.763+01:00"
+  },
+  {
+    "email": "chris@homedepot.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-26T23:48:14.846+01:00"
+  },
+  {
+    "email": "enunez@magnumprecisionmachines.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-26T23:27:09.594+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "sales@lonestarindustrial.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-26T23:25:14.846+01:00"
+  },
+  {
+    "email": "alovett@treace.net",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:03:58.099+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "shakil.lakhani@inmodemd.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:04:35.886+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "yairm@inmodemd.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:04:01.074+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "jtreace@treace.net",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:03:57.553+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "fcisternelli@westcoastswitchgear.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T19:50:24.735+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "jeff.loehr@windriver.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T19:51:06.095+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "rwallace@precor.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T19:49:04.261+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "mike.lusk@windriver.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T19:33:06.292+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "penny@universaleas.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T19:14:10.199+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "bill@de-ice.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T19:07:11.986+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "dhall@velodyne.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T18:58:09.027+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "scott.morrison@windriver.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T18:58:06.027+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "mark.jagiela@teradyne.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T18:56:07.149+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "khsu@wafertech.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-20T18:50:12.577+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "rstraight@westbond.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-20T18:12:14.28+01:00"
+  },
+  {
+    "email": "ksennesael@enphaseenergy.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T20:38:53.261+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "mark.dankberg@viasat.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:59:25.806+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "richard.baldridge@viasat.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:57:08.663+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "ceverett@formfactor.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:54:04.607+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "jatan.shah@qscaudio.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:53:07.158+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "hans.betc@aei.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:40:34.188+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "chi-foonc@synopsys.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:26:05.537+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "seth_bagshaw@mksinst.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:19:06.246+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "meera.rao@monolithicpower.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:14:04.229+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "amccann@linear.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:13:05.513+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "zyang@ambarella.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:12:05.018+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "iteris@iteris.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T19:09:05.508+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "fermi.wang@ambarella.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T18:56:06.338+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "bdixon@precor.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T18:49:04.002+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "usinfo@monolithicpower.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T18:46:03.733+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "vernon.nagel@acuitybrands.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T18:40:10.186+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "fkaiser@alpha.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T18:35:48.85+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "leo_berlinghieri@mksinst.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T18:35:05.795+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "yho@aosmd.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T18:26:05.965+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "mmcclendon@miasole.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T18:19:23.301+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "mthall@velodyne.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T18:16:07.191+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "michael.bradley@teradyne.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T18:16:07.007+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "mmcclary@iteris.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T18:13:05.873+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "patrick.harshman@harmonicinc.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T18:10:17.87+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "conver@aerovironment.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T04:38:05.24+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "denisse@nearshorenavigator.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-19T00:07:39.196+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "kyle.largent@milliporesigma.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T21:56:45.76+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "thomas.mcnamara@gobio.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T21:10:35.085+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "richard@seeeyewear.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T20:58:34.98+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "aacquarulo@fostercomp.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T20:07:35.126+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "jason.stinger@lumenis.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T20:03:34.219+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "shlomi.cohen@lumenis.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T20:03:33.772+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "karen.smith@lumenis.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T20:03:25.703+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "csimon@haemonetics.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T19:48:49.232+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "michael.block@sdi.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T19:42:09.536+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "lorraine.serva@sdi.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T19:42:04.713+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "richard.tupper@americanaircraft.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T19:41:25.777+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "catheters@zeusinc.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T19:34:10.738+01:00"
+  },
+  {
+    "email": "cedgar@magnumprecisionmachines.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T18:55:19.237+01:00"
+  },
+  {
+    "email": "dant@therm-x.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:41:37.682+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "kevin.reed@centerlinebiomedical.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T18:22:08.935+01:00"
+  },
+  {
+    "email": "lindseyrugo@rugomachineshop.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T18:37:14.846+01:00"
+  },
+  {
+    "email": "maria.rivera@calix.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:29:06.259+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "ruben.galvan@zodiac.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:28:05.304+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "dpierre@thermofisher.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T18:28:05.064+01:00"
+  },
+  {
+    "email": "dhoff@arrowheadproducts.net",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:27:05.007+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "philq@therm-x.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:22:04.572+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "alex@dauntlessindustrial.com",
+    "firstName": "",
+    "lastName": "",
+    "company": "",
+    "industry": "",
+    "lastInteraction": "2026-02-18T18:20:15.356+01:00"
+  },
+  {
+    "email": "treasa.springett@donatelle.net",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:20:08.831+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "paul@enphaseenergy.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:18:06.394+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "tony@burbankdental.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:16:19.382+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "ben.fishburn@bioventus.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:15:25.036+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "fscholz@northstarnm.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:15:14.092+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "erubie@fillauer.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:12:49.661+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "theresa@cpcscientific.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:13:33.187+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "eleverenz@lifewatch.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:06:27.727+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "kevin.cato@ormco.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:06:04.523+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "daniel.oday@gilead.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:05:49.442+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "tushar.walhekar@takeda.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:06:08.273+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "alexis.kohler@milliporesigma.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:05:59.489+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "ablanchette@carolinaprecision.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:05:18.031+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "jdawson@novabio.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:05:01.619+01:00",
+    "missingDetails": true
+  },
+  {
+    "email": "david.moatazedi@evolus.com",
+    "firstName": "there",
+    "lastName": "",
+    "company": "your company",
+    "lastInteraction": "2026-02-18T18:04:49.238+01:00",
     "missingDetails": true
   }
 ]

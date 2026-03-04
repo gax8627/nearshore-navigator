@@ -1,24 +1,18 @@
 
 import fs from 'fs';
 import path from 'path';
-import { brevo } from '../lib/brevo';
-
-// Load env
-const envPath = path.join(process.cwd(), '.env.local');
-if (fs.existsSync(envPath)) {
-  const envConfig = fs.readFileSync(envPath, 'utf-8');
-  envConfig.split('\n').forEach(line => {
-    const [key, ...valueParts] = line.split('=');
-    if (key && valueParts.length > 0) {
-      process.env[key.trim()] = valueParts.join('=').trim().replace(/^"|"$/g, '');
-    }
-  });
-}
-
-const HISTORY_DAYS = 30; // Look back 30 days
-const ENGAGEMENT_FILE = path.join(process.cwd(), 'scripts/engagement_data.json');
+import dotenv from 'dotenv';
 
 async function main() {
+  // Load env FIRST
+  const envPath = path.join(process.cwd(), '.env.local');
+  dotenv.config({ path: envPath });
+
+  const { brevo } = await import('../lib/brevo');
+  
+  const HISTORY_DAYS = 30; // Look back 30 days
+  const ENGAGEMENT_FILE = path.join(process.cwd(), 'scripts/engagement_data.json');
+
   console.log('📊 Fetching email engagement data from Brevo...');
 
   // Calculate start date

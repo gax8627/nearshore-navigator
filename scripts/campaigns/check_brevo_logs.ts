@@ -1,4 +1,8 @@
 import { brevo } from '../../lib/brevo';
+import dotenv from 'dotenv';
+import path from 'path';
+
+dotenv.config({ path: path.join(process.cwd(), '.env.local') });
 
 async function checkBrevoLogs() {
   console.log("🔍 Fetching email events from Brevo API...");
