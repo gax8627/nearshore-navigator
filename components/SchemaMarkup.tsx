@@ -100,10 +100,6 @@ export default function SchemaMarkup() {
             "@type": "Organization",
             "name": "Nearshore Navigator"
         },
-        "areaServed": {
-            "@type": "Place",
-            "name": "Tijuana, Baja California, Mexico"
-        },
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Nearshoring Services",
@@ -152,44 +148,6 @@ export default function SchemaMarkup() {
         }
     };
 
-    const faqSchema = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is a shelter company in Mexico?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A shelter company is a Mexican legal entity that assumes the administrative, legal, HR, and import/export risks for foreign manufacturers. You control production and IP; the shelter handles compliance."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How much does a shelter service cost in Mexico?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Shelter services typically charge an administrative fee based on headcount or a percentage of payroll. Despite the fee, the 40-60% savings on labor and overhead still result in massive cost reductions."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How long does it take to set up manufacturing in Mexico under a shelter?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Using a shelter service allows companies to bypass the 6-12 month legal incorporation process. You can typically begin manufacturing operations within 90 days of signing a shelter agreement."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do I own my equipment under a Mexico shelter agreement?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. Under a shelter agreement, you retain 100% ownership of your machinery, equipment, raw materials, and intellectual property. The shelter simply facilitates their legal import and operation in Mexico."
-                }
-            }
-        ]
-    };
 
     const personSchema = {
         "@context": "https://schema.org",
@@ -227,10 +185,7 @@ export default function SchemaMarkup() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
             />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
+
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}

@@ -30,6 +30,12 @@ export default async function IndustrialParkMapPage({ params }: Props) {
     "@type": "Dataset",
     "name": "Baja California Industrial Parks Dataset",
     "description": "A dataset comparing industrial parks in Tijuana, Mexicali, and Tecate detailing class, vacancy status, lease rates, and key tenants.",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "creator": {
+      "@type": "Organization",
+      "name": "Nearshore Navigator",
+      "url": "https://nearshorenavigator.com"
+    },
     "spatialCoverage": {
       "@type": "Place",
       "name": "Baja California, Mexico"
@@ -51,7 +57,13 @@ export default async function IndustrialParkMapPage({ params }: Props) {
     "hasPart": BAJA_INDUSTRIAL_PARKS.map(park => ({
       "@type": "Dataset",
       "name": park.name,
-      "description": `Class: ${park.classification}, Lease Rate: ${park.leaseRate}, Vacancy: ${park.vacancyStatus}`
+      "description": `Class: ${park.classification}, Lease Rate: ${park.leaseRate}, Vacancy: ${park.vacancyStatus}`,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "creator": {
+        "@type": "Organization",
+        "name": "Nearshore Navigator",
+        "url": "https://nearshorenavigator.com"
+      }
     }))
   };
 
