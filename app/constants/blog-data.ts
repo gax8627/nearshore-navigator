@@ -16,7 +16,7 @@ export type BlogPost = {
   }
 };
 
-export const BLOG_POSTS: BlogPost[] = [
+export const BLOG_POSTS_RAW = [
   {
       title: "Nearshoring in Baja California: A Guide for US Companies",
       excerpt: "Everything you need to know about setting up operations in Mexico's manufacturing hub.",
@@ -3251,6 +3251,8 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
 `
   },
 ];
+
+export const BLOG_POSTS: BlogPost[] = (BLOG_POSTS_RAW.filter(Boolean) as unknown) as BlogPost[];
 
 export function getAllPosts(): BlogPost[] {
   return BLOG_POSTS;
