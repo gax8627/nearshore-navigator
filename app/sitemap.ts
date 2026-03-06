@@ -169,6 +169,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
             alternates: getAlternates('/insights/2025-tariffs-baja-california-supply-chain'),
         },
+        {
+            url: `${baseUrl}/en/insights/how-shelter-services-work-in-tijuana`,
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.8,
+            alternates: getAlternates('/insights/how-shelter-services-work-in-tijuana'),
+        },
+        {
+            url: `${baseUrl}/en/insights/maquiladora-vs-shelter-services-mexico`,
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.8,
+            alternates: getAlternates('/insights/maquiladora-vs-shelter-services-mexico'),
+        },
+        {
+            url: `${baseUrl}/en/insights/mexico-2025-nearshoring-boom-usmca-review`,
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.8,
+            alternates: getAlternates('/insights/mexico-2025-nearshoring-boom-usmca-review'),
+        },
+        {
+            url: `${baseUrl}/en/insights/how-to-start-manufacturing-in-mexico-2026`,
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.9,
+            alternates: getAlternates('/insights/how-to-start-manufacturing-in-mexico-2026'),
+        },
         // Sub-resources
         {
             url: `${baseUrl}/en/services/distribution-centers-tijuana/section-321-guide`,
