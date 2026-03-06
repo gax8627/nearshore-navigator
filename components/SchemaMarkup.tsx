@@ -161,7 +161,7 @@ export default function SchemaMarkup() {
         "url": "https://nearshorenavigator.com/en/about/denisse-martinez",
         "image": "https://nearshorenavigator.com/images/denisse-martinez.jpg",
         "sameAs": [
-            "https://www.linkedin.com/in/denisse-martinez"
+            "https://www.linkedin.com/in/denissemartinez"
         ],
         "description": "Expert nearshore consultant in Baja California, helping US manufacturers with site selection, shelter services, and cross-border strategic expansion into Mexico."
     };

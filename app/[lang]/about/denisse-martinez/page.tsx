@@ -32,7 +32,7 @@ export default async function DenisseBioPage({ params }: Props) {
     "url": "https://nearshorenavigator.com/about/denisse-martinez",
     "image": "https://nearshorenavigator.com/images/denisse-martinez.jpg",
     "sameAs": [
-      "https://www.linkedin.com/in/denisse-martinez"
+      "https://www.linkedin.com/in/denissemartinez"
     ],
     "worksFor": {
       "@type": "Organization",

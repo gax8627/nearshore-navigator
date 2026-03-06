@@ -25,7 +25,7 @@ export default function DenisseBioClient() {
             </div>
             
             <div className="flex flex-col gap-4">
-              <a href="https://www.linkedin.com/in/denisse-martinez" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/denissemartinez" target="_blank" rel="noopener noreferrer">
                 <Button className="w-full text-center py-4 bg-[#0077b5] hover:bg-[#005582] text-white">
                   {t('bio_denisse.linkedin_cta')}
                 </Button>
