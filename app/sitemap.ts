@@ -191,12 +191,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
         })
 
         // Service Pages per Location
+        // High-priority combos that are actively ranking in GSC (pos 5-17)
+        const highPriorityPairs: Record<string, string[]> = {
+            'puebla': ['contract-manufacturing'],
+            'matamoros': ['contract-manufacturing'],
+            'saltillo': ['distribution-centers'],
+            'hermosillo': ['contract-manufacturing'],
+        };
         SERVICES.forEach(service => {
+            const isHighPriority = highPriorityPairs[city.slug]?.includes(service.slug);
             routes.push({
                 url: `${baseUrl}/en/locations/${city.slug}/${service.slug}`,
                 lastModified: new Date(),
-                changeFrequency: 'monthly',
-                priority: 0.9,
+                changeFrequency: isHighPriority ? 'weekly' : 'monthly',
+                priority: isHighPriority ? 0.95 : 0.9,
                 alternates: getAlternates(`/locations/${city.slug}/${service.slug}`),
             })
         })

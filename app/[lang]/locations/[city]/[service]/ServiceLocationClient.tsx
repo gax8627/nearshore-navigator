@@ -63,10 +63,10 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
     "description": subtitle
   };
 
-  const faqSchema = location.localFaqs ? {
+  const faqSchema = faqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": location.localFaqs.map(faq => ({
+    "mainEntity": faqs.map(faq => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {
