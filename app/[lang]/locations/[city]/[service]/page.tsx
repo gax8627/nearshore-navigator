@@ -23,11 +23,17 @@ export async function generateMetadata({ params }: Props) {
     `${location.name} ${service.title} | Expert Nearshore Matchmaking`
   ];
 
+  // Non-English pages serve identical server-rendered content to the EN version
+  // (translations load client-side only). Use cross-canonical to EN so Google's
+  // chosen canonical matches our declaration — this resolves the GSC "Duplicate,
+  // Google chose different canonical" warning for ~650 non-en pages.
+  const canonicalUrl = `https://nearshorenavigator.com/en/locations/${city}/${serviceParam}`;
+
   return {
     title: titles[0],
     description: `Expert ${service.title.toLowerCase()} services in ${location.name}, ${location.state}. ${location.description}. We provide full support for ${service.title.toLowerCase()} including site selection and local compliance.`,
     alternates: {
-      canonical: `https://nearshorenavigator.com/${lang}/locations/${city}/${serviceParam}`,
+      canonical: canonicalUrl,
       languages: {
         'en': `https://nearshorenavigator.com/en/locations/${city}/${serviceParam}`,
         'es': `https://nearshorenavigator.com/es/locations/${city}/${serviceParam}`,

@@ -7,7 +7,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     title: '3PL Operation Questionnaire | Nearshore Navigator',
     description: 'Confidential assessment form for manufacturing and logistics operations in Baja California.',
     alternates: {
-      canonical: `https://nearshorenavigator.com/${lang}/resources/questionnaire`,
+      canonical: `https://nearshorenavigator.com/en/resources/questionnaire`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/resources/questionnaire',
         'es': 'https://nearshorenavigator.com/es/resources/questionnaire',

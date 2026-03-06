@@ -11,7 +11,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
       description: 'Class A industrial parks, build-to-suit, and warehouse leasing in Tijuana and Baja California, Mexico.',
     },
     alternates: {
-      canonical: `https://nearshorenavigator.com/${lang}/services/industrial-real-estate-baja`,
+      canonical: `https://nearshorenavigator.com/en/services/industrial-real-estate-baja`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/services/industrial-real-estate-baja',
         'es': 'https://nearshorenavigator.com/es/services/industrial-real-estate-baja',

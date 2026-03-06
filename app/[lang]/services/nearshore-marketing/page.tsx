@@ -11,7 +11,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
       description: 'Outbound campaigns, ICP targeting, and content marketing for companies expanding manufacturing operations to Baja California.',
     },
     alternates: {
-      canonical: `https://nearshorenavigator.com/${lang}/services/nearshore-marketing`,
+      canonical: `https://nearshorenavigator.com/en/services/nearshore-marketing`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/services/nearshore-marketing',
         'es': 'https://nearshorenavigator.com/es/services/nearshore-marketing',

@@ -11,7 +11,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
       description: 'Cross-border logistics, Section 321 fulfillment, and 3PL warehousing in Tijuana, Baja California — 20 min from San Diego.',
     },
     alternates: {
-      canonical: `https://nearshorenavigator.com/${lang}/services/distribution-centers-tijuana`,
+      canonical: `https://nearshorenavigator.com/en/services/distribution-centers-tijuana`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/services/distribution-centers-tijuana',
         'es': 'https://nearshorenavigator.com/es/services/distribution-centers-tijuana',

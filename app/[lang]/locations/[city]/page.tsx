@@ -15,11 +15,16 @@ export async function generateMetadata({ params }: Props) {
   
   if (!location) return {};
 
+  // Non-English city overview pages render identical server-side content to /en/.
+  // Cross-canonical to /en/ aligns our declaration with Google's chosen canonical,
+  // resolving the GSC "Duplicate, Google chose different canonical" warning.
+  const canonicalUrl = `https://nearshorenavigator.com/en/locations/${city}`;
+
   return {
     title: `Nearshoring to ${location.name}, ${location.state} | 2026 Manufacturing Guide`,
     description: `Complete guide to industrial manufacturing in ${location.name}. Access ${location.name}'s skilled workforce, industrial parks, and proximity to major US markets.`,
     alternates: {
-      canonical: `https://nearshorenavigator.com/${lang}/locations/${city}`,
+      canonical: canonicalUrl,
       languages: {
         'en': `https://nearshorenavigator.com/en/locations/${city}`,
         'es': `https://nearshorenavigator.com/es/locations/${city}`,

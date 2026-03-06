@@ -8,7 +8,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
         title: 'Section 321 Master Guide | Tijuana Distribution Centers',
         description: 'Navigate the 2025 de minimis suspension and discover compliant Section 321 distribution strategies in Mexico.',
         alternates: {
-            canonical: `https://nearshorenavigator.com/${lang}/services/distribution-centers-tijuana/section-321-guide`,
+            canonical: `https://nearshorenavigator.com/en/services/distribution-centers-tijuana/section-321-guide`,
             languages: {
               'en': 'https://nearshorenavigator.com/en/services/distribution-centers-tijuana/section-321-guide',
               'es': 'https://nearshorenavigator.com/es/services/distribution-centers-tijuana/section-321-guide',

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: dict.park_map?.metaTitle || 'Baja California Industrial Park Map (2026) | Nearshore Navigator',
     description: dict.park_map?.metaDesc || 'Complete guide to Baja California industrial parks. Compare Class A availability, lease rates, and locations in Tijuana, Mexicali, and Tecate.',
     alternates: {
-      canonical: `https://nearshorenavigator.com/${lang}/tools/industrial-park-map`
+      canonical: `https://nearshorenavigator.com/en/tools/industrial-park-map`
     }
   };
 }

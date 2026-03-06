@@ -14,7 +14,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     };
   }
 
-  const canonicalUrl = `https://nearshorenavigator.com/${lang}/insights/${slug}`;
+  // Insights articles are English-only content. All language variants canonicalize
+  // to /en/ so Google's chosen canonical matches ours, avoiding the GSC duplicate
+  // canonical warning for non-English insight pages.
+  const canonicalUrl = `https://nearshorenavigator.com/en/insights/${slug}`;
 
   return {
     title: post.title,
