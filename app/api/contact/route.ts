@@ -3,6 +3,17 @@ import { NextResponse } from 'next/server';
 import { brevo } from '@/lib/brevo';
 import { inngest } from '@/lib/inngest/client';
 
+// Sanitize user input before interpolating into HTML email bodies.
+// Prevents HTML injection into Denisse's notification emails.
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;');
+}
+
 function isDbConfigured() {
   return !!(process.env.POSTGRES_URL || process.env.POSTGRES_URL_NON_POOLING);
 }
@@ -104,18 +115,18 @@ export async function POST(req: Request) {
         try {
             await brevo.sendEmail({
                 to: [{ email: 'denisse@nearshorenavigator.com', name: 'Denisse Gastelum' }],
-                subject: `New Lead: ${name} (${source || 'Contact Form'})`,
+                subject: `New Lead: ${escapeHtml(name)} (${escapeHtml(source || 'Contact Form')})`,
                 htmlContent: `
                     <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
                         <h2 style="color: #2563eb;">New Lead Captured</h2>
-                        <p><strong>Name:</strong> ${name}</p>
-                        <p><strong>Email:</strong> ${email}</p>
-                        <p><strong>Company:</strong> ${company || 'N/A'}</p>
-                        <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
-                        <p><strong>Source:</strong> ${source || 'website_contact_form'}</p>
+                        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+                        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+                        <p><strong>Company:</strong> ${escapeHtml(company || 'N/A')}</p>
+                        <p><strong>Phone:</strong> ${escapeHtml(phone || 'N/A')}</p>
+                        <p><strong>Source:</strong> ${escapeHtml(source || 'website_contact_form')}</p>
                         <hr />
                         <p><strong>Message:</strong></p>
-                        <p>${message || 'No message provided.'}</p>
+                        <p>${escapeHtml(message || 'No message provided.')}</p>
                     </div>
                 `
             });

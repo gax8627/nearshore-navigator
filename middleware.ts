@@ -64,8 +64,10 @@ export async function middleware(request: NextRequest) {
         
         return clerkHandler(request, {} as any);
       } catch (e) {
-        // Clerk failed, allow through
-        return NextResponse.next();
+        // Clerk failed — fail-closed: block admin access rather than allowing through.
+        // Admin API routes have their own auth() checks, but admin UI pages do not.
+        console.error('[middleware] Clerk auth error on admin route:', e);
+        return NextResponse.json({ error: 'Authentication service unavailable' }, { status: 503 });
       }
     }
     

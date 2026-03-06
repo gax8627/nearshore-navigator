@@ -65,15 +65,14 @@ const nextConfig = {
         ]
     },
     // Prevent Next.js from aggressively bundling the massive CSV directories into serverless functions
-    experimental: {
-        outputFileTracingExcludes: {
-            '*': [
-                'scripts/**/*',
-                'segmented_leads/**/*',
-                '**/*.csv',
-                '.git/**/*',
-            ],
-        },
+    // NOTE: outputFileTracingExcludes was moved from experimental to top-level in Next.js 15
+    outputFileTracingExcludes: {
+        '*': [
+            'scripts/**/*',
+            'segmented_leads/**/*',
+            '**/*.csv',
+            '.git/**/*',
+        ],
     },
 };
 

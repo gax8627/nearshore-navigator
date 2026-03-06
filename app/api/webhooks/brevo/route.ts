@@ -2,6 +2,18 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
   try {
+    // Signature verification: Brevo signs webhook payloads with a secret.
+    // Set BREVO_WEBHOOK_SECRET in your environment to enable verification.
+    // To get the secret: Brevo dashboard → Transactional → Settings → Webhooks → Show secret
+    const webhookSecret = process.env.BREVO_WEBHOOK_SECRET;
+    if (webhookSecret) {
+      const signature = req.headers.get('x-brevo-signature') || req.headers.get('x-sib-signature');
+      if (!signature || signature !== webhookSecret) {
+        console.warn('[Brevo webhook] Invalid or missing signature — rejecting request');
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      }
+    }
+
     // Brevo sends a JSON payload. It might be a single object or related to events.
     // Documentation: https://developers.brevo.com/docs/transactional-webhooks
     const payload = await req.json();

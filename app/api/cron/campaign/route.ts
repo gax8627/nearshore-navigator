@@ -90,9 +90,11 @@ function wrapHtml(content: string, ctaText: string, ctaUrl: string) {
 }
 
 export async function GET(request: Request) {
-  // Security Check
+  // Security Check — fail-closed: always require CRON_SECRET.
+  // Previously this was fail-open (allowed through if env var was missing).
   const authHeader = request.headers.get('authorization');
-  if (process.env.CRON_SECRET && authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+  const cronSecret = process.env.CRON_SECRET;
+  if (!cronSecret || authHeader !== `Bearer ${cronSecret}`) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
