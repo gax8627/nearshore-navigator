@@ -11,6 +11,11 @@ const nextConfig = {
     async redirects() {
         return [
             {
+                source: '/discovery',
+                destination: 'https://calendly.com/denisse-nearshorenavigator/30min?month=2026-03',
+                permanent: false, // Use 302 temporary redirect in case the link changes in the future
+            },
+            {
                 source: '/:lang/locations/:city/soft-landing-services',
                 destination: '/:lang/locations/:city/shelter-services',
                 permanent: true,
