@@ -5,7 +5,7 @@ import path from 'path';
 dotenv.config({ path: path.join(process.cwd(), '.env.local') });
 
 async function main() {
-  const { brevo } = await import('../lib/brevo');
+  const { brevo } = await import(path.join(process.cwd(), 'lib/brevo.ts'));
 
   const date = '2026-03-03';
   console.log(`Checking email events for ${date}...`);

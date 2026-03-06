@@ -19,28 +19,36 @@ export const brevo = {
   async createContact(contact: BrevoContact) {
     if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
 
-    const response = await fetch(`${BREVO_API_URL}/contacts`, {
-      method: 'POST',
-      headers: {
-        'api-key': BREVO_API_KEY,
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-      body: JSON.stringify({
-        email: contact.email,
-        attributes: contact.attributes,
-        listIds: contact.listIds,
-        updateEnabled: contact.updateEnabled ?? true,
-      }),
-    });
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 30000);
 
-    const data = await response.json().catch(() => ({}));
+    try {
+      const response = await fetch(`${BREVO_API_URL}/contacts`, {
+        method: 'POST',
+        headers: {
+          'api-key': BREVO_API_KEY,
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          email: contact.email,
+          attributes: contact.attributes,
+          listIds: contact.listIds,
+          updateEnabled: contact.updateEnabled ?? true,
+        }),
+        signal: controller.signal,
+      });
 
-    if (!response.ok) {
-      console.warn('Brevo createContact warning:', data);
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        console.warn('Brevo createContact warning:', data);
+      }
+
+      return data;
+    } finally {
+      clearTimeout(timeoutId);
     }
-
-    return data;
   },
 
   /**
@@ -77,23 +85,31 @@ export const brevo = {
       body.scheduledAt = scheduledAt;
     }
 
-    const response = await fetch(`${BREVO_API_URL}/smtp/email`, {
-      method: 'POST',
-      headers: {
-        'api-key': apiKey,
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-      body: JSON.stringify(body),
-    });
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 30000);
 
-    const data = await response.json().catch(() => ({}));
+    try {
+      const response = await fetch(`${BREVO_API_URL}/smtp/email`, {
+        method: 'POST',
+        headers: {
+          'api-key': apiKey,
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(body),
+        signal: controller.signal,
+      });
 
-    if (!response.ok) {
-      throw new Error(`Brevo Email Error: ${JSON.stringify(data)}`);
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(`Brevo Email Error: ${JSON.stringify(data)}`);
+      }
+
+      return data;
+    } finally {
+      clearTimeout(timeoutId);
     }
-
-    return data;
   },
   
   /**
@@ -102,6 +118,10 @@ export const brevo = {
   async addContactToList(email: string, listId: number) {
       if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
 
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 30000);
+
+    try {
       const response = await fetch(`${BREVO_API_URL}/contacts/lists/${listId}/contacts/add`, {
         method: 'POST',
         headers: {
@@ -112,16 +132,20 @@ export const brevo = {
         body: JSON.stringify({
           emails: [email],
         }),
+        signal: controller.signal,
       });
   
       const data = await response.json().catch(() => ({}));
 
-    if (!response.ok) {
-       // It's okay if they are already in the list
-       return data; 
-    }
+      if (!response.ok) {
+        // It's okay if they are already in the list
+        return data; 
+      }
 
-    return data;
+      return data;
+    } finally {
+      clearTimeout(timeoutId);
+    }
   },
 
   /**
@@ -130,26 +154,34 @@ export const brevo = {
   async createList(name: string, folderId: number = 1) {
     if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
 
-    const response = await fetch(`${BREVO_API_URL}/contacts/lists`, {
-      method: 'POST',
-      headers: {
-        'api-key': BREVO_API_KEY,
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-      body: JSON.stringify({
-        name,
-        folderId,
-      }),
-    });
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 30000);
 
-    const data = await response.json().catch(() => ({}));
+    try {
+      const response = await fetch(`${BREVO_API_URL}/contacts/lists`, {
+        method: 'POST',
+        headers: {
+          'api-key': BREVO_API_KEY,
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          folderId,
+        }),
+        signal: controller.signal,
+      });
 
-    if (!response.ok) {
-       throw new Error(`Brevo Create List Error: ${JSON.stringify(data)}`);
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(`Brevo Create List Error: ${JSON.stringify(data)}`);
+      }
+
+      return data; // returns { id: number }
+    } finally {
+      clearTimeout(timeoutId);
     }
-
-    return data; // returns { id: number }
   },
 
   /**
@@ -191,23 +223,31 @@ export const brevo = {
       body.scheduledAt = scheduledAt;
     }
 
-    const response = await fetch(`${BREVO_API_URL}/emailCampaigns`, {
-      method: 'POST',
-      headers: {
-        'api-key': BREVO_API_KEY,
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-      body: JSON.stringify(body),
-    });
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 30000);
 
-    const data = await response.json().catch(() => ({}));
+    try {
+      const response = await fetch(`${BREVO_API_URL}/emailCampaigns`, {
+        method: 'POST',
+        headers: {
+          'api-key': BREVO_API_KEY,
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(body),
+        signal: controller.signal,
+      });
 
-    if (!response.ok) {
-      throw new Error(`Brevo Campaign Error: ${JSON.stringify(data)}`);
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(`Brevo Campaign Error: ${JSON.stringify(data)}`);
+      }
+
+      return data;
+    } finally {
+      clearTimeout(timeoutId);
     }
-
-    return data;
   },
 
   /**

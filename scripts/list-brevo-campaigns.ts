@@ -6,7 +6,7 @@ async function check() {
   const envPath = path.join(process.cwd(), '.env.local');
   dotenv.config({ path: envPath });
 
-  const { brevo } = await import('../lib/brevo');
+  const { brevo } = await import(path.join(process.cwd(), 'lib/brevo.ts'));
   
   console.log('--- Brevo Campaigns (Last 10) ---');
   try {
