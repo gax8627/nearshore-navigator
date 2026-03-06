@@ -72,6 +72,44 @@ export default function MarketingClient() {
 
     return (
         <main className="flex-grow pt-[104px] dark:bg-gray-950">
+            {/* Structured Data */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nearshorenavigator.com/en" },
+                        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://nearshorenavigator.com/en/services" },
+                        { "@type": "ListItem", "position": 3, "name": "Nearshore Marketing Services", "item": "https://nearshorenavigator.com/en/services/nearshore-marketing" }
+                    ]
+                }) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    "name": "Nearshore Marketing Services",
+                    "provider": { "@type": "Organization", "name": "Nearshore Navigator", "url": "https://nearshorenavigator.com" },
+                    "serviceType": "B2B Marketing & Lead Generation",
+                    "areaServed": { "@type": "Country", "name": "United States" },
+                    "description": "Specialized B2B marketing services for companies expanding to Mexico: ICP research, outbound campaigns, content marketing, and nearshore positioning strategy.",
+                    "offers": { "@type": "Offer", "url": "https://nearshorenavigator.com/en/services/nearshore-marketing" }
+                }) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                        { "@type": "Question", "name": "What marketing services do you offer for nearshore companies?", "acceptedAnswer": { "@type": "Answer", "text": "We offer ICP (Ideal Customer Profile) research, targeted outbound email campaigns, LinkedIn outreach, content creation for nearshore audiences, SEO for Mexico-US manufacturing keywords, and full marketing strategy for companies expanding operations to Baja California." } },
+                        { "@type": "Question", "name": "How long until we see results from nearshore marketing campaigns?", "acceptedAnswer": { "@type": "Answer", "text": "Outbound campaigns typically generate first conversations within 2-4 weeks. SEO and content marketing compound over 3-6 months. Our clients typically see a full pipeline within 90 days of launch." } },
+                        { "@type": "Question", "name": "Do you specialize in any specific industries?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We specialize in manufacturing, logistics, electronics, medical devices, and business process outsourcing (BPO) — the core industries driving nearshore expansion to Mexico." } }
+                    ]
+                }) }}
+            />
             {/* Hero Section — Fractional CMO Positioning */}
             <section className="relative bg-teal-900 border-b border-teal-800 text-white overflow-hidden py-24">
                 <div className="absolute inset-0 z-0">

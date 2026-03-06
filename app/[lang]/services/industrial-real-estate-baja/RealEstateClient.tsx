@@ -36,6 +36,48 @@ export default function IndustrialRealEstatePage() {
 
     return (
         <div ref={containerRef} className="pb-20 overflow-hidden">
+            {/* Structured Data */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nearshorenavigator.com/en" },
+                        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://nearshorenavigator.com/en/services" },
+                        { "@type": "ListItem", "position": 3, "name": "Industrial Real Estate in Baja California", "item": "https://nearshorenavigator.com/en/services/industrial-real-estate-baja" }
+                    ]
+                }) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    "name": "Industrial Real Estate in Baja California",
+                    "provider": { "@type": "Organization", "name": "Nearshore Navigator", "url": "https://nearshorenavigator.com" },
+                    "serviceType": "Industrial Real Estate Advisory",
+                    "areaServed": { "@type": "State", "name": "Baja California", "address": { "@type": "PostalAddress", "addressRegion": "Baja California", "addressCountry": "MX" } },
+                    "description": "Site selection, lease negotiation, and industrial park advisory for Class A manufacturing facilities in Tijuana, Mexicali, Ensenada, and Tecate, Baja California.",
+                    "offers": { "@type": "Offer", "url": "https://nearshorenavigator.com/en/services/industrial-real-estate-baja" }
+                }) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                        { "@type": "Question", "name": "What are the average lease rates for Class A industrial space in Baja?", "acceptedAnswer": { "@type": "Answer", "text": "Lease rates for Class A industrial space in Baja California typically range from $0.75 to $0.85 USD per square foot per month, depending on location and amenities. Tighter markets like Tijuana may see premiums, while developing areas offer more competitive sizing." } },
+                        { "@type": "Question", "name": "Can foreigners buy industrial land in Baja California?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, foreigners can acquire land in Mexico's restricted zone (border/coast) through a 'Fideicomiso' (Bank Trust). This grants you all ownership rights, including the ability to lease, sell, or build on the property." } },
+                        { "@type": "Question", "name": "How long does a Build-to-Suit project take in Baja?", "acceptedAnswer": { "@type": "Answer", "text": "A typical Build-to-Suit (BTS) project in Baja California takes between 8 to 12 months from groundbreaking to occupancy. This timeline includes permitting, construction, and utility connections." } },
+                        { "@type": "Question", "name": "What is the difference between Shell and Turnkey leases?", "acceptedAnswer": { "@type": "Answer", "text": "A 'Shell' lease provides the basic building structure (walls, roof, floor), leaving tenant improvements (offices, HVAC, lighting) to you. A 'Turnkey' lease includes all specified improvements, ready for immediate operation." } },
+                        { "@type": "Question", "name": "Are Triple Net (NNN) leases common in Mexico?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, most industrial leases in Mexico are Triple Net (NNN), meaning the tenant pays for property taxes, insurance, and maintenance in addition to the base rent." } },
+                        { "@type": "Question", "name": "What utilities are available in Baja industrial parks?", "acceptedAnswer": { "@type": "Answer", "text": "Major industrial parks offer high-voltage power (KVA rights), natural gas, fiber-optic internet, and treated water/sewage systems designed for high-volume manufacturing operations." } },
+                        { "@type": "Question", "name": "How close are Baja industrial parks to the US border?", "acceptedAnswer": { "@type": "Answer", "text": "Most Class A parks in Tijuana and Mexicali are located within 20-30 minutes of commercial border crossings (Otay Mesa, Calexico East), minimizing logistics transit time." } }
+                    ]
+                }) }}
+            />
             {/* Hero */}
             <section className="relative min-h-[60vh] py-32 flex items-center justify-center overflow-hidden">
                 <motion.div style={{ y }} className="absolute inset-0 z-0">

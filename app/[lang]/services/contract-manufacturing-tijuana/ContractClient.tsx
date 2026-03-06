@@ -73,6 +73,45 @@ export default function ContractClient() {
 
     return (
         <div ref={containerRef} className="pb-20 overflow-hidden">
+            {/* Structured Data */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nearshorenavigator.com/en" },
+                        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://nearshorenavigator.com/en/services" },
+                        { "@type": "ListItem", "position": 3, "name": "Contract Manufacturing in Tijuana", "item": "https://nearshorenavigator.com/en/services/contract-manufacturing-tijuana" }
+                    ]
+                }) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    "name": "Contract Manufacturing in Tijuana",
+                    "provider": { "@type": "Organization", "name": "Nearshore Navigator", "url": "https://nearshorenavigator.com" },
+                    "serviceType": "Contract Manufacturing",
+                    "areaServed": { "@type": "City", "name": "Tijuana", "address": { "@type": "PostalAddress", "addressRegion": "Baja California", "addressCountry": "MX" } },
+                    "description": "Contract manufacturing in Tijuana specializing in electronics, medical devices, aerospace components, and automotive parts with ISO-certified facilities and 30-50% cost savings.",
+                    "offers": { "@type": "Offer", "url": "https://nearshorenavigator.com/en/services/contract-manufacturing-tijuana" }
+                }) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                        { "@type": "Question", "name": "What is contract manufacturing?", "acceptedAnswer": { "@type": "Answer", "text": "Contract manufacturing is when a company outsources the production of goods to a third-party manufacturer in Mexico, allowing businesses to reduce costs, leverage specialized expertise, and scale production without owning factory facilities." } },
+                        { "@type": "Question", "name": "How much can I save with contract manufacturing in Tijuana?", "acceptedAnswer": { "@type": "Answer", "text": "Companies typically save 30-50% on total manufacturing costs by leveraging Tijuana's lower labor rates (averaging $5-8/hr vs. $20-30/hr in the US), while maintaining same-timezone operations and cross-border logistics efficiency." } },
+                        { "@type": "Question", "name": "What types of products can be manufactured?", "acceptedAnswer": { "@type": "Answer", "text": "Tijuana specializes in electronics, medical devices, aerospace components, automotive parts, and consumer goods. The city hosts major OEMs and contract manufacturers with ISO-certified facilities." } },
+                        { "@type": "Question", "name": "How does IP protection work in Mexico?", "acceptedAnswer": { "@type": "Answer", "text": "Mexico is a signatory to TRIPS, NAFTA/USMCA, and major IP treaties. Robust NDA and manufacturing agreements, combined with proper facility vetting, provide strong IP protection comparable to US standards." } }
+                    ]
+                }) }}
+            />
             {/* Hero */}
             <section className="bg-gray-900 py-32 text-center text-white relative overflow-hidden min-h-[60vh] flex items-center justify-center">
                 <motion.div style={{ y }} className="absolute inset-0 z-0">

@@ -11,6 +11,14 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
       languages: {
         'en': 'https://nearshorenavigator.com/en/resources/brochure',
         'es': 'https://nearshorenavigator.com/es/resources/brochure',
+        'fr': 'https://nearshorenavigator.com/fr/resources/brochure',
+        'de': 'https://nearshorenavigator.com/de/resources/brochure',
+        'ja': 'https://nearshorenavigator.com/ja/resources/brochure',
+        'zh': 'https://nearshorenavigator.com/zh/resources/brochure',
+        'ko': 'https://nearshorenavigator.com/ko/resources/brochure',
+        'it': 'https://nearshorenavigator.com/it/resources/brochure',
+        'pt': 'https://nearshorenavigator.com/pt/resources/brochure',
+        'ru': 'https://nearshorenavigator.com/ru/resources/brochure',
         'x-default': 'https://nearshorenavigator.com/en/resources/brochure',
       }
     }

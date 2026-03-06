@@ -20,6 +20,9 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
         'ja': 'https://nearshorenavigator.com/ja/services/distribution-centers-tijuana',
         'zh': 'https://nearshorenavigator.com/zh/services/distribution-centers-tijuana',
         'ko': 'https://nearshorenavigator.com/ko/services/distribution-centers-tijuana',
+        'it': 'https://nearshorenavigator.com/it/services/distribution-centers-tijuana',
+        'pt': 'https://nearshorenavigator.com/pt/services/distribution-centers-tijuana',
+        'ru': 'https://nearshorenavigator.com/ru/services/distribution-centers-tijuana',
         'x-default': 'https://nearshorenavigator.com/en/services/distribution-centers-tijuana',
       }
     }

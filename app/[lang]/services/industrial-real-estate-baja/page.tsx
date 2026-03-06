@@ -20,6 +20,9 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
         'ja': 'https://nearshorenavigator.com/ja/services/industrial-real-estate-baja',
         'zh': 'https://nearshorenavigator.com/zh/services/industrial-real-estate-baja',
         'ko': 'https://nearshorenavigator.com/ko/services/industrial-real-estate-baja',
+        'it': 'https://nearshorenavigator.com/it/services/industrial-real-estate-baja',
+        'pt': 'https://nearshorenavigator.com/pt/services/industrial-real-estate-baja',
+        'ru': 'https://nearshorenavigator.com/ru/services/industrial-real-estate-baja',
         'x-default': 'https://nearshorenavigator.com/en/services/industrial-real-estate-baja',
       }
     }

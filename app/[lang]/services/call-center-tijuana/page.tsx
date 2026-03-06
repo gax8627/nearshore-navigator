@@ -20,6 +20,9 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
         'ja': 'https://nearshorenavigator.com/ja/services/call-center-tijuana',
         'zh': 'https://nearshorenavigator.com/zh/services/call-center-tijuana',
         'ko': 'https://nearshorenavigator.com/ko/services/call-center-tijuana',
+        'it': 'https://nearshorenavigator.com/it/services/call-center-tijuana',
+        'pt': 'https://nearshorenavigator.com/pt/services/call-center-tijuana',
+        'ru': 'https://nearshorenavigator.com/ru/services/call-center-tijuana',
         'x-default': 'https://nearshorenavigator.com/en/services/call-center-tijuana',
       }
     }

@@ -17,6 +17,9 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
               'ja': 'https://nearshorenavigator.com/ja/services/distribution-centers-tijuana/section-321-guide',
               'zh': 'https://nearshorenavigator.com/zh/services/distribution-centers-tijuana/section-321-guide',
               'ko': 'https://nearshorenavigator.com/ko/services/distribution-centers-tijuana/section-321-guide',
+              'it': 'https://nearshorenavigator.com/it/services/distribution-centers-tijuana/section-321-guide',
+              'pt': 'https://nearshorenavigator.com/pt/services/distribution-centers-tijuana/section-321-guide',
+              'ru': 'https://nearshorenavigator.com/ru/services/distribution-centers-tijuana/section-321-guide',
               'x-default': 'https://nearshorenavigator.com/en/services/distribution-centers-tijuana/section-321-guide',
             }
         }

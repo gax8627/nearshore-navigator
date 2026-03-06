@@ -36,6 +36,48 @@ export default function CallCenterPage() {
 
     return (
         <div ref={containerRef} className="pb-20 overflow-hidden">
+            {/* Structured Data */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nearshorenavigator.com/en" },
+                        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://nearshorenavigator.com/en/services" },
+                        { "@type": "ListItem", "position": 3, "name": "Call Center & BPO in Tijuana", "item": "https://nearshorenavigator.com/en/services/call-center-tijuana" }
+                    ]
+                }) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    "name": "Call Center & BPO in Tijuana",
+                    "provider": { "@type": "Organization", "name": "Nearshore Navigator", "url": "https://nearshorenavigator.com" },
+                    "serviceType": "Business Process Outsourcing",
+                    "areaServed": { "@type": "City", "name": "Tijuana", "address": { "@type": "PostalAddress", "addressRegion": "Baja California", "addressCountry": "MX" } },
+                    "description": "World-class call center and BPO operations in Tijuana with 50,000+ bilingual agents, PST time-zone alignment, and 40–60% labor cost savings vs. the US.",
+                    "offers": { "@type": "Offer", "url": "https://nearshorenavigator.com/en/services/call-center-tijuana" }
+                }) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                        { "@type": "Question", "name": "How much can I save by outsourcing to Tijuana?", "acceptedAnswer": { "@type": "Answer", "text": "You can expect to save 40-60% on fully loaded labor costs compared to the US, while maintaining similar time zones and cultural alignment." } },
+                        { "@type": "Question", "name": "Are the agents truly bilingual?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tijuana has the largest population of English-speaking agents in Latin America, many of whom are bicultural 'pochos' spread across the border, ensuring near-native accent neutrality." } },
+                        { "@type": "Question", "name": "What is the turnover rate compared to other regions?", "acceptedAnswer": { "@type": "Answer", "text": "While call centers notoriously have high turnover, Tijuana averages 5-10% monthly turnover, which is significantly lower than the 15-20% often seen in US centers." } },
+                        { "@type": "Question", "name": "Do you offer omnichannel support (Chat/Email)?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our centers are equipped for voice, email, live chat, and social media moderation support." } },
+                        { "@type": "Question", "name": "Is the technology infrastructure reliable?", "acceptedAnswer": { "@type": "Answer", "text": "Tijuana's contact centers are interconnected with the same fiber backbone as San Diego. We guarantee 99.99% uptime with redundant ISP connections." } },
+                        { "@type": "Question", "name": "How long does it take to launch a call center in Tijuana?", "acceptedAnswer": { "@type": "Answer", "text": "Typically, we can recruit, train, and go live within 4-6 weeks from contract signing." } },
+                        { "@type": "Question", "name": "What industries do you serve?", "acceptedAnswer": { "@type": "Answer", "text": "We have deep experience in Tech Support, Healthcare (Patient scheduling), E-commerce (Customer Service), and Financial Services (Collections)." } }
+                    ]
+                }) }}
+            />
             {/* Hero */}
             <section className="relative min-h-[60vh] py-32 flex items-center justify-center overflow-hidden">
                 <motion.div style={{ y }} className="absolute inset-0 z-0">

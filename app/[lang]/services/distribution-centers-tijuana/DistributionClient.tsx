@@ -45,6 +45,44 @@ export default function DistributionPage() {
 
     return (
         <div ref={containerRef} className="pb-20 overflow-hidden">
+            {/* Structured Data */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nearshorenavigator.com/en" },
+                        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://nearshorenavigator.com/en/services" },
+                        { "@type": "ListItem", "position": 3, "name": "Distribution Centers in Tijuana", "item": "https://nearshorenavigator.com/en/services/distribution-centers-tijuana" }
+                    ]
+                }) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    "name": "Distribution Centers in Tijuana",
+                    "provider": { "@type": "Organization", "name": "Nearshore Navigator", "url": "https://nearshorenavigator.com" },
+                    "serviceType": "Distribution & Logistics",
+                    "areaServed": { "@type": "City", "name": "Tijuana", "address": { "@type": "PostalAddress", "addressRegion": "Baja California", "addressCountry": "MX" } },
+                    "description": "Strategic distribution centers in Tijuana offering same-day delivery to Southern California, Section 321 duty-free fulfillment, 24-hour customs brokerage, and Class A warehouse space at competitive rates.",
+                    "offers": { "@type": "Offer", "url": "https://nearshorenavigator.com/en/services/distribution-centers-tijuana" }
+                }) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                        { "@type": "Question", "name": "What are the advantages of a distribution center in Tijuana?", "acceptedAnswer": { "@type": "Answer", "text": "Tijuana offers same-day truck delivery to all of Southern California, 24-hour customs brokerage at Otay Mesa crossing, Class A warehouse space at $0.45-0.65/sqft/month (vs $1.50+ in LA), and access to Mexico's domestic market." } },
+                        { "@type": "Question", "name": "What is Section 321 de minimis and how does it apply?", "acceptedAnswer": { "@type": "Answer", "text": "Section 321 allows duty-free import of goods valued at $800 or less per person per day. Companies use Tijuana distribution centers to fulfill US e-commerce orders under this threshold, eliminating import duties legally." } },
+                        { "@type": "Question", "name": "How does cross-border logistics work from Tijuana?", "acceptedAnswer": { "@type": "Answer", "text": "Goods cross via commercial truck at Otay Mesa or Tecate border crossings, typically within 2-4 hours with pre-filed paperwork. Nearshore Navigator coordinates bonded carriers and customs brokers for seamless cross-border flow." } }
+                    ]
+                }) }}
+            />
             {/* Hero */}
             <section className="relative min-h-[60vh] py-32 flex items-center justify-center overflow-hidden">
                 <motion.div style={{ y }} className="absolute inset-0 z-0">
