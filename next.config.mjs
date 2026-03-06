@@ -13,7 +13,12 @@ const nextConfig = {
             {
                 source: '/discovery',
                 destination: 'https://calendly.com/denisse-nearshorenavigator/30min?month=2026-03',
-                permanent: false, // Use 302 temporary redirect in case the link changes in the future
+                permanent: false,
+            },
+            {
+                source: '/:lang/discovery',
+                destination: 'https://calendly.com/denisse-nearshorenavigator/30min?month=2026-03',
+                permanent: false,
             },
             {
                 source: '/:lang/locations/:city/soft-landing-services',
