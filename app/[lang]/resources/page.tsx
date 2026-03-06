@@ -7,7 +7,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     title: 'Industrial Resources & Tools | Nearshore Navigator',
     description: 'Access free tools for manufacturing in Mexico: Tijuana Industrial Map, Cost Estimators, Logistics Questionnaires, and Market Insights.',
     alternates: {
-      canonical: `https://nearshorenavigator.com/${lang}/resources`,
+      canonical: `https://nearshorenavigator.com/en/resources`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/resources',
         'es': 'https://nearshorenavigator.com/es/resources',
