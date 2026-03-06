@@ -4,8 +4,8 @@ import { Metadata } from 'next';
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await props.params;
   return {
-    title: 'About Us | Nearshore Navigator',
-    description: 'We are not just brokers. We are your strategic partners for nearshoring in Mexico. Learn about our "No-BS" approach to industrial real estate and shelter services.',
+    title: 'About Nearshore Navigator | Expert Nearshoring Advisors in Baja California',
+    description: 'Meet the team behind Nearshore Navigator — boots-on-the-ground advisors helping US companies set up manufacturing in Tijuana and Baja California since 2020.',
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/about`,
       languages: {
@@ -16,6 +16,9 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
         'ja': 'https://nearshorenavigator.com/ja/about',
         'zh': 'https://nearshorenavigator.com/zh/about',
         'ko': 'https://nearshorenavigator.com/ko/about',
+        'it': 'https://nearshorenavigator.com/it/about',
+        'pt': 'https://nearshorenavigator.com/pt/about',
+        'ru': 'https://nearshorenavigator.com/ru/about',
         'x-default': 'https://nearshorenavigator.com/en/about',
       }
     }

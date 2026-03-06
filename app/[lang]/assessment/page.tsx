@@ -4,8 +4,8 @@ import AssessmentClient from './AssessmentClient';
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await props.params;
   return {
-    title: 'Mexico Location Assessment | Cost Estimator | Nearshore Navigator',
-    description: 'Get a detailed data-backed analysis of your potential operating costs in Mexico. Labor, Real Estate, and Utility modeling for your expansion.',
+    title: 'Mexico Manufacturing Cost Calculator | Free Location Assessment | Nearshore Navigator',
+    description: 'Calculate your real operating costs in Tijuana vs. US manufacturing. Instant labor, real estate, and utility cost modeling for Baja California expansion.',
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/assessment`,
       languages: {
@@ -16,6 +16,9 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
         'ja': 'https://nearshorenavigator.com/ja/assessment',
         'zh': 'https://nearshorenavigator.com/zh/assessment',
         'ko': 'https://nearshorenavigator.com/ko/assessment',
+        'it': 'https://nearshorenavigator.com/it/assessment',
+        'pt': 'https://nearshorenavigator.com/pt/assessment',
+        'ru': 'https://nearshorenavigator.com/ru/assessment',
         'x-default': 'https://nearshorenavigator.com/en/assessment',
       }
     }
