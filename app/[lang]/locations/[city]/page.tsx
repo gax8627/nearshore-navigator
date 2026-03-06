@@ -16,10 +16,23 @@ export async function generateMetadata({ params }: Props) {
   if (!location) return {};
 
   return {
-    title: `Manufacturing in ${location.name}, ${location.state} | Nearshore Navigator`,
+    title: `Nearshoring to ${location.name}, ${location.state} | 2026 Manufacturing Guide`,
     description: `Complete guide to industrial manufacturing in ${location.name}. Access ${location.name}'s skilled workforce, industrial parks, and proximity to major US markets.`,
     alternates: {
-      canonical: `https://nearshorenavigator.com/${lang}/locations/${city}`
+      canonical: `https://nearshorenavigator.com/${lang}/locations/${city}`,
+      languages: {
+        'en': `https://nearshorenavigator.com/en/locations/${city}`,
+        'es': `https://nearshorenavigator.com/es/locations/${city}`,
+        'fr': `https://nearshorenavigator.com/fr/locations/${city}`,
+        'de': `https://nearshorenavigator.com/de/locations/${city}`,
+        'ja': `https://nearshorenavigator.com/ja/locations/${city}`,
+        'zh': `https://nearshorenavigator.com/zh/locations/${city}`,
+        'ko': `https://nearshorenavigator.com/ko/locations/${city}`,
+        'it': `https://nearshorenavigator.com/it/locations/${city}`,
+        'pt': `https://nearshorenavigator.com/pt/locations/${city}`,
+        'ru': `https://nearshorenavigator.com/ru/locations/${city}`,
+        'x-default': `https://nearshorenavigator.com/en/locations/${city}`,
+      }
     }
   };
 }

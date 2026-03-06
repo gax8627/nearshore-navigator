@@ -18,16 +18,29 @@ export async function generateMetadata({ params }: Props) {
   if (!location || !service) return {};
 
   const titles = [
-    `Top 3 ${service.title} Partners in ${location.name} | Verified`,
-    `2026 Guide to ${service.title} in ${location.name} | Start Here`,
-    `${location.name} ${service.title} Solutions | Trusted Nearshore`
+    `${service.title} in ${location.name}, ${location.state} | 2026 Guide`,
+    `Top ${service.title} Partners in ${location.name} | Nearshore Navigator`,
+    `${location.name} ${service.title} | Expert Nearshore Matchmaking`
   ];
 
   return {
     title: titles[0],
     description: `Expert ${service.title.toLowerCase()} services in ${location.name}, ${location.state}. ${location.description}. We provide full support for ${service.title.toLowerCase()} including site selection and local compliance.`,
     alternates: {
-      canonical: `https://nearshorenavigator.com/${lang}/locations/${city}/${serviceParam}`
+      canonical: `https://nearshorenavigator.com/${lang}/locations/${city}/${serviceParam}`,
+      languages: {
+        'en': `https://nearshorenavigator.com/en/locations/${city}/${serviceParam}`,
+        'es': `https://nearshorenavigator.com/es/locations/${city}/${serviceParam}`,
+        'fr': `https://nearshorenavigator.com/fr/locations/${city}/${serviceParam}`,
+        'de': `https://nearshorenavigator.com/de/locations/${city}/${serviceParam}`,
+        'ja': `https://nearshorenavigator.com/ja/locations/${city}/${serviceParam}`,
+        'zh': `https://nearshorenavigator.com/zh/locations/${city}/${serviceParam}`,
+        'ko': `https://nearshorenavigator.com/ko/locations/${city}/${serviceParam}`,
+        'it': `https://nearshorenavigator.com/it/locations/${city}/${serviceParam}`,
+        'pt': `https://nearshorenavigator.com/pt/locations/${city}/${serviceParam}`,
+        'ru': `https://nearshorenavigator.com/ru/locations/${city}/${serviceParam}`,
+        'x-default': `https://nearshorenavigator.com/en/locations/${city}/${serviceParam}`,
+      }
     }
   };
 }
