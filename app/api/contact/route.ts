@@ -68,27 +68,35 @@ export async function POST(req: Request) {
 
         console.log(`[Contact API] Received lead: ${email}`);
 
-        // DB Insertion
+        // DB Insertion (isolated so failures don't block CRM sync or notifications)
         if (isDbConfigured()) {
-            const { db } = await import('@/lib/db');
-            const { leads } = await import('@/lib/db/schema');
-            
-            const [newLead] = await db.insert(leads).values({
-                name,
-                email,
-                company: company || '',
-                phone: phone || '',
-                message: message || '',
-                source: source || 'website_contact_form'
-            }).returning({ id: leads.id });
-            console.log('[Contact API] Saved to database.');
+            try {
+                const { db } = await import('@/lib/db');
+                const { leads } = await import('@/lib/db/schema');
+                
+                const [newLead] = await db.insert(leads).values({
+                    name,
+                    email,
+                    company: company || '',
+                    phone: phone || '',
+                    message: message || '',
+                    source: source || 'website_contact_form'
+                }).returning({ id: leads.id });
+                console.log('[Contact API] Saved to database.');
 
-            // Trigger Inngest background job
-            await inngest.send({
-                name: 'lead.created',
-                data: { leadId: newLead.id, email, name, company, source }
-            });
-            console.log('[Contact API] Triggered Inngest lead.created event.');
+                // Trigger Inngest background job
+                try {
+                    await inngest.send({
+                        name: 'lead.created',
+                        data: { leadId: newLead.id, email, name, company, source }
+                    });
+                    console.log('[Contact API] Triggered Inngest lead.created event.');
+                } catch (inngestError) {
+                    console.error('[Contact API] Inngest Error (non-fatal):', inngestError);
+                }
+            } catch (dbError) {
+                console.error('[Contact API] Database Error (non-fatal):', dbError);
+            }
         } else {
             console.warn('[Contact API] Database not configured. Lead data:', { name, email, company, source });
         }
