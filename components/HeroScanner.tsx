@@ -71,7 +71,7 @@ export const HeroScanner = ({ src, alt, active = true }: HeroScannerProps) => {
       >
         <Image
           src={src}
-          alt=""
+          alt="Industrial warehouse background blur"
           fill
           className="object-cover blur-2xl contrast-200"
         />
