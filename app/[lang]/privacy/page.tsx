@@ -1,88 +1,31 @@
-"use client";
+import { Metadata } from 'next';
+import PrivacyClient from './PrivacyClient';
 
-import Link from "next/link";
-import Image from "next/image";
-import { useLanguage } from "@/app/context/LanguageContext";
+export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await props.params;
+  
+  return {
+    title: 'Privacy Policy | Nearshore Navigator',
+    description: 'Privacy policy and data protection practices for Nearshore Navigator.',
+    alternates: {
+      canonical: `https://nearshorenavigator.com/${lang}/privacy`,
+      languages: {
+        'en': 'https://nearshorenavigator.com/en/privacy',
+        'es': 'https://nearshorenavigator.com/es/privacy',
+        'fr': 'https://nearshorenavigator.com/fr/privacy',
+        'de': 'https://nearshorenavigator.com/de/privacy',
+        'it': 'https://nearshorenavigator.com/it/privacy',
+        'pt': 'https://nearshorenavigator.com/pt/privacy',
+        'ru': 'https://nearshorenavigator.com/ru/privacy',
+        'ja': 'https://nearshorenavigator.com/ja/privacy',
+        'zh': 'https://nearshorenavigator.com/zh/privacy',
+        'ko': 'https://nearshorenavigator.com/ko/privacy',
+        'x-default': 'https://nearshorenavigator.com/en/privacy',
+      }
+    }
+  };
+}
 
-export default function PrivacyPage() {
-    const { t, language } = useLanguage();
-
-    return (
-        <div className="pb-20 overflow-hidden">
-            {/* Hero Section */}
-            <section className="relative h-[40vh] flex items-center justify-center overflow-hidden mb-12">
-                <div className="absolute inset-0 z-0">
-                    <Image
-                        src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2000"
-                        alt="Privacy Policy"
-                        fill
-                        className="object-cover premium-image-filter"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-gray-900/80" />
-                </div>
-
-                <div className="container mx-auto px-4 z-10 text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{t('privacy.title')}</h1>
-                    <p className="text-gray-300">{t('privacy.lastUpdated')}</p>
-                </div>
-            </section>
-
-            <div className="container mx-auto px-4 max-w-4xl">
-
-            <div className="prose prose-lg dark:prose-invert max-w-none space-y-8">
-                <section>
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('privacy.section1_title')}</h2>
-                    <p className="text-gray-600 dark:text-gray-300">
-                        {t('privacy.section1_text')}
-                    </p>
-                </section>
-
-                <section>
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('privacy.section2_title')}</h2>
-                    <p className="text-gray-600 dark:text-gray-300">
-                        {t('privacy.section2_text')}
-                    </p>
-                </section>
-
-                <section>
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('privacy.section3_title')}</h2>
-                    <p className="text-gray-600 dark:text-gray-300">
-                        {t('privacy.section3_text')}
-                    </p>
-                </section>
-
-                <section>
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('privacy.section4_title')}</h2>
-                    <p className="text-gray-600 dark:text-gray-300">
-                        {t('privacy.section4_text')}
-                    </p>
-                </section>
-
-                <section>
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('privacy.section5_title')}</h2>
-                    <p className="text-gray-600 dark:text-gray-300">
-                        {t('privacy.section5_text')}
-                    </p>
-                </section>
-
-                <section>
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('privacy.section6_title')}</h2>
-                    <p className="text-gray-600 dark:text-gray-300">
-                        {t('privacy.section6_text')}{" "}
-                        <a href="mailto:denisse@nearshorenavigator.com" className="text-primary-600 dark:text-primary-400 hover:underline">
-                            denisse@nearshorenavigator.com
-                        </a>
-                    </p>
-                </section>
-            </div>
-
-            <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
-                <Link href={`/${language}`} className="text-primary-600 dark:text-primary-400 hover:underline">
-                    {t('privacy.backToHome')}
-                </Link>
-            </div>
-        </div>
-    </div>
-    );
+export default function Page() {
+  return <PrivacyClient />;
 }

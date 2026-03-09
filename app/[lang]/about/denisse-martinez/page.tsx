@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: dict.bio_denisse?.title || 'Meet Denisse Martinez | Nearshore Consultant in Baja California',
     description: dict.bio_denisse?.backgroundDesc?.substring(0, 160) || 'Expert nearshore consultant in Baja California, helping US manufacturers with site selection, shelter services, and cross-border strategic expansion.',
     alternates: {
-      canonical: `https://nearshorenavigator.com/en/about/denisse-martinez`
+      canonical: `https://nearshorenavigator.com/${lang}/about/denisse-martinez`
     }
   };
 }

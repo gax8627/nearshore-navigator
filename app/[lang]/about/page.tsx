@@ -7,7 +7,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     title: 'About Nearshore Navigator | Expert Nearshoring Advisors in Baja California',
     description: 'Meet the team behind Nearshore Navigator — boots-on-the-ground advisors helping US companies set up manufacturing in Tijuana and Baja California since 2020.',
     alternates: {
-      canonical: `https://nearshorenavigator.com/en/about`,
+      canonical: `https://nearshorenavigator.com/${lang}/about`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/about',
         'es': 'https://nearshorenavigator.com/es/about',

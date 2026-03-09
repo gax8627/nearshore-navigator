@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props) {
   // (translations load client-side only). Use cross-canonical to EN so Google's
   // chosen canonical matches our declaration — this resolves the GSC "Duplicate,
   // Google chose different canonical" warning for ~650 non-en pages.
-  const canonicalUrl = `https://nearshorenavigator.com/en/locations/${city}/${serviceParam}`;
+  const canonicalUrl = `https://nearshorenavigator.com/${lang}/locations/${city}/${serviceParam}`;
 
   return {
     title: titles[0],

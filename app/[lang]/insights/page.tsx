@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: { lang: string } })
       images: ['https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&q=80&w=2000'],
     },
     alternates: {
-      canonical: `https://nearshorenavigator.com/en/insights`,
+      canonical: `https://nearshorenavigator.com/${params.lang}/insights`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/insights',
         'es': 'https://nearshorenavigator.com/es/insights',

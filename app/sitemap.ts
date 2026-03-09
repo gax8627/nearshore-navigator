@@ -40,6 +40,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
             alternates: getAlternates('/about'),
         },
         {
+            url: `${baseUrl}/en/about/denisse-martinez`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+            alternates: getAlternates('/about/denisse-martinez'),
+        },
+        {
             url: `${baseUrl}/en/contact`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
@@ -75,11 +82,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
             alternates: getAlternates('/terms'),
         },
         {
-            url: `${baseUrl}/en/resources/tijuana-industrial-park-map`,
+            url: `${baseUrl}/en/tools/industrial-park-map`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.7,
-            alternates: getAlternates('/resources/tijuana-industrial-park-map'),
+            alternates: getAlternates('/tools/industrial-park-map'),
+        },
+        {
+            url: `${baseUrl}/en/tools/cost-calculator`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.9,
+            alternates: getAlternates('/tools/cost-calculator'),
         },
         {
             url: `${baseUrl}/en/resources/questionnaire`,
@@ -131,6 +145,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.9,
             alternates: getAlternates('/services/call-center-tijuana'),
+        },
+        {
+            url: `${baseUrl}/en/services/nearshore-marketing`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.9,
+            alternates: getAlternates('/services/nearshore-marketing'),
         },
         // Blog posts (Note: Assuming these exist in both languages for now, or just indexing EN)
         {

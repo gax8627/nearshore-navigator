@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props) {
   // Non-English city overview pages render identical server-side content to /en/.
   // Cross-canonical to /en/ aligns our declaration with Google's chosen canonical,
   // resolving the GSC "Duplicate, Google chose different canonical" warning.
-  const canonicalUrl = `https://nearshorenavigator.com/en/locations/${city}`;
+  const canonicalUrl = `https://nearshorenavigator.com/${lang}/locations/${city}`;
 
   return {
     title: `Nearshoring to ${location.name}, ${location.state} | 2026 Manufacturing Guide`,

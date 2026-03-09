@@ -7,7 +7,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     title: 'Mexico Manufacturing Cost Calculator | Free Location Assessment | Nearshore Navigator',
     description: 'Calculate your real operating costs in Tijuana vs. US manufacturing. Instant labor, real estate, and utility cost modeling for Baja California expansion.',
     alternates: {
-      canonical: `https://nearshorenavigator.com/en/assessment`,
+      canonical: `https://nearshorenavigator.com/${lang}/assessment`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/assessment',
         'es': 'https://nearshorenavigator.com/es/assessment',

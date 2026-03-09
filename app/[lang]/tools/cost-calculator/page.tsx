@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: dict.cost_calculator?.metaTitle || 'Baja California Manufacturing Cost Calculator | Nearshore Navigator',
     description: dict.cost_calculator?.metaDesc || 'Estimate your fully-burdened manufacturing costs in Baja California vs. US domestic. Free interactive tool.',
     alternates: {
-      canonical: `https://nearshorenavigator.com/en/tools/cost-calculator`
+      canonical: `https://nearshorenavigator.com/${lang}/tools/cost-calculator`
     }
   };
 }

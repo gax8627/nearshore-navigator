@@ -11,7 +11,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
       description: 'Bilingual call center and BPO solutions in Tijuana, Baja California. PST time zone, 40-60% cost savings, 50K+ available agents.',
     },
     alternates: {
-      canonical: `https://nearshorenavigator.com/en/services/call-center-tijuana`,
+      canonical: `https://nearshorenavigator.com/${lang}/services/call-center-tijuana`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/services/call-center-tijuana',
         'es': 'https://nearshorenavigator.com/es/services/call-center-tijuana',
