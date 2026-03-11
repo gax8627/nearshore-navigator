@@ -5,7 +5,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const { lang } = await props.params;
   return {
     title: 'The Ultimate Guide to Manufacturing in Tijuana (2026)',
-    description: 'Learn why Fortune 500s are nearshoring to Tijuana. Complete breakdown of contract manufacturing, shelter services, labor costs, and Otay Mesa logistics.',
+    description: 'Secure 0% USMCA tariffs and $7.84/hr fully burdened labor. Complete 2026 guide to contract manufacturing, shelter services, and Otay Mesa logistics in Tijuana.',
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/locations/tijuana/master-guide`,
       languages: {

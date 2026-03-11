@@ -39,6 +39,16 @@ export default async function DenisseBioPage({ params }: Props) {
       "name": "Nearshore Navigator",
       "url": "https://nearshorenavigator.com"
     },
+    "knowsAbout": [
+      "Nearshore shelter services",
+      "Contract manufacturing in Mexico",
+      "USMCA compliance",
+      "IMMEX program",
+      "Industrial real estate Baja California",
+      "Cross-border supply chain management",
+      "Site selection",
+      "Mexico manufacturing labor costs"
+    ],
     "description": "Expert nearshore consultant in Baja California, helping US manufacturers with site selection, shelter services, and cross-border strategic expansion."
   };
 

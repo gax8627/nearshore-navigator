@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props) {
 
   return {
     title: `Nearshoring to ${location.name}, ${location.state} | 2026 Manufacturing Guide`,
-    description: `Complete guide to industrial manufacturing in ${location.name}. Access ${location.name}'s skilled workforce, industrial parks, and proximity to major US markets.`,
+    description: location.description || `Complete guide to industrial manufacturing in ${location.name}. Access ${location.name}'s skilled workforce, industrial parks, and proximity to major US markets.`,
     alternates: {
       canonical: canonicalUrl,
       languages: {

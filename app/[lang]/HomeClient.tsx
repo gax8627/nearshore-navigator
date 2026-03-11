@@ -348,6 +348,47 @@ export default function HomeClient() {
         </motion.div>
       </section>
 
+      {/* Certified Partners Trust Section */}
+      <section className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7 }}
+          className="bg-gradient-to-br from-gray-50 to-blue-50/50 dark:from-gray-900/80 dark:to-blue-900/20 rounded-3xl p-10 md:p-14 border border-gray-100 dark:border-gray-800 shadow-sm"
+        >
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
+              {t('partners.title')}
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
+              {t('partners.subtitle')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { cert: "ISO 9001", label: t('partners.iso9001') },
+              { cert: "ISO 13485", label: t('partners.iso13485') },
+              { cert: "AS9100", label: t('partners.as9100') },
+              { cert: "IATF 16949", label: t('partners.iatf16949') },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.4 }}
+                className="bg-white dark:bg-gray-800 rounded-2xl p-6 text-center border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg hover:border-primary-300 dark:hover:border-primary-700 transition-all duration-300"
+              >
+                <p className="font-bold text-lg text-primary-700 dark:text-primary-400">{item.cert}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">{item.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
       {/* How We Work */}
       <section className="bg-gray-50 dark:bg-gray-900/50 py-24 relative overflow-hidden transition-colors duration-300">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 dark:opacity-0" />
