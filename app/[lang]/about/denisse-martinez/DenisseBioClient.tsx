@@ -9,10 +9,10 @@ export default function DenisseBioClient() {
   const { t } = useLanguage();
 
   const credentials = [
-    { icon: Shield, label: "ISO 9001 / AS9100 / IATF 16949", desc: "Certified facility network" },
-    { icon: Award, label: "15+ Years Cross-Border", desc: "Cali-Baja corridor expertise" },
-    { icon: Building2, label: "20+ Companies Launched", desc: "Multi-industry track record" },
-    { icon: Globe2, label: "USMCA & IMMEX Specialist", desc: "Tariff & compliance advisory" },
+    { icon: Shield, label: t('bio_denisse.credLabel1'), desc: t('bio_denisse.credDesc1') },
+    { icon: Award, label: t('bio_denisse.credLabel2'), desc: t('bio_denisse.credDesc2') },
+    { icon: Building2, label: t('bio_denisse.credLabel3'), desc: t('bio_denisse.credDesc3') },
+    { icon: Globe2, label: t('bio_denisse.credLabel4'), desc: t('bio_denisse.credDesc4') },
   ];
 
   return (
@@ -47,9 +47,9 @@ export default function DenisseBioClient() {
 
             {/* Reviewed-By Trust Badge */}
             <div className="bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-xl p-4 text-center">
-              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-1">Content Reviewed By</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-1">{t('bio_denisse.reviewedBy')}</p>
               <p className="text-sm font-bold text-gray-900 dark:text-white">Denisse Martinez</p>
-              <p className="text-xs text-gray-500 dark:text-gray-400">Mexico Manufacturing Advisor</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">{t('bio_denisse.advisorTitle')}</p>
             </div>
           </div>
 
@@ -110,19 +110,19 @@ export default function DenisseBioClient() {
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                  <div className="bg-white dark:bg-gray-700 rounded-lg p-4 shadow-sm">
-                   <p className="font-bold text-gray-800 dark:text-gray-200">Aerospace</p>
+                   <p className="font-bold text-gray-800 dark:text-gray-200">{t('bio_denisse.industryAerospace')}</p>
                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">AS9100</p>
                  </div>
                  <div className="bg-white dark:bg-gray-700 rounded-lg p-4 shadow-sm">
-                   <p className="font-bold text-gray-800 dark:text-gray-200">Medical Devices</p>
+                   <p className="font-bold text-gray-800 dark:text-gray-200">{t('bio_denisse.industryMedical')}</p>
                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">ISO 13485</p>
                  </div>
                  <div className="bg-white dark:bg-gray-700 rounded-lg p-4 shadow-sm">
-                   <p className="font-bold text-gray-800 dark:text-gray-200">Automotive</p>
+                   <p className="font-bold text-gray-800 dark:text-gray-200">{t('bio_denisse.industryAutomotive')}</p>
                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">IATF 16949</p>
                  </div>
                  <div className="bg-white dark:bg-gray-700 rounded-lg p-4 shadow-sm">
-                   <p className="font-bold text-gray-800 dark:text-gray-200">Electronics</p>
+                   <p className="font-bold text-gray-800 dark:text-gray-200">{t('bio_denisse.industryElectronics')}</p>
                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">IPC Standards</p>
                  </div>
               </div>
@@ -131,17 +131,17 @@ export default function DenisseBioClient() {
             {/* Certified Partner Network */}
             <section className="bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-2xl p-8 border border-primary-100 dark:border-primary-800">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 text-center">
-                Certified Manufacturing Network
+                {t('bio_denisse.certNetworkTitle')}
               </h2>
               <p className="text-center text-gray-600 dark:text-gray-300 mb-6 max-w-lg mx-auto">
-                We exclusively work with certified facilities and proven partners across Baja California.
+                {t('bio_denisse.certNetworkDesc')}
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
-                  { cert: "ISO 9001", area: "Quality Management" },
-                  { cert: "AS9100", area: "Aerospace Standards" },
-                  { cert: "ISO 13485", area: "Medical Devices" },
-                  { cert: "IATF 16949", area: "Automotive Quality" },
+                  { cert: "ISO 9001", area: t('bio_denisse.certQualityArea') },
+                  { cert: "AS9100", area: t('bio_denisse.certAeroArea') },
+                  { cert: "ISO 13485", area: t('bio_denisse.certMedArea') },
+                  { cert: "IATF 16949", area: t('bio_denisse.certAutoArea') },
                 ].map((item, i) => (
                   <div key={i} className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 text-center border border-white/50 dark:border-gray-700 shadow-sm">
                     <p className="font-bold text-primary-700 dark:text-primary-400 text-sm">{item.cert}</p>

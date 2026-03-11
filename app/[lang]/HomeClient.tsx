@@ -282,8 +282,8 @@ export default function HomeClient() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ItemList",
-              "name": "Certified Manufacturing Network",
-              "description": "A curated network of ISO and industry-certified contract manufacturing facilities in Mexico.",
+              "name": t('partners.title'),
+              "description": t('partners.subtitle'),
               "itemListElement": [
                 { "@type": "ListItem", "position": 1, "item": { "@type": "Thing", "name": "ISO 9001 Certified Facilities" } },
                 { "@type": "ListItem", "position": 2, "item": { "@type": "Thing", "name": "ISO 13485 Medical Device Partners" } },
