@@ -41,6 +41,48 @@ export default function RootLayout({
             gtag('config', 'G-7RHTT5QR43');
           `}
         </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": ["ProfessionalService", "LocalBusiness"],
+              "name": "Nearshore Navigator",
+              "description": "Strategic advisory for US companies expanding manufacturing operations to Mexico. Contract manufacturers and industrial real estate in Baja California and beyond.",
+              "url": "https://nearshorenavigator.com",
+              "areaServed": [
+                "United States", "Baja California", "Mexico", "Sonora", "Chihuahua", "Nuevo León", "Tamaulipas", "Jalisco", "Querétaro", "San Luis Potosí", "Coahuila", "Guanajuato", "Puebla"
+              ],
+              "serviceType": [
+                "Nearshoring Advisory",
+                "Contract Manufacturing Consulting",
+                "Industrial Real Estate",
+                "Supply Chain Management",
+                "Maquiladora Setup Services",
+                "Shelter Services"
+              ],
+              "address": [
+                {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Blvd. Agua Caliente 10611",
+                  "addressLocality": "Tijuana",
+                  "addressRegion": "Baja California",
+                  "addressCountry": "MX"
+                },
+                {
+                  "@type": "PostalAddress",
+                  "addressLocality": "San Diego",
+                  "addressRegion": "CA",
+                  "addressCountry": "US"
+                }
+              ],
+              "email": "denisse@nearshorenavigator.com",
+              "sameAs": [
+                "https://www.linkedin.com/company/nearshore-navigator/"
+              ]
+            })
+          }}
+        />
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>
         <Providers>

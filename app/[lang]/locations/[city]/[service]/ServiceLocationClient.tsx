@@ -101,8 +101,36 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
     ]
   };
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": `Nearshore Navigator - ${location.name}`,
+    "description": `Strategic nearshoring advisory and ${service.title} services in ${location.name}, ${location.state}.`,
+    "url": `https://nearshorenavigator.com/${language}/locations/${city}`,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": location.name,
+      "addressRegion": location.state,
+      "addressCountry": "MX"
+    },
+    "serviceType": [
+      `Industrial Real Estate ${location.name}`,
+      `Contract Manufacturing ${location.name}`,
+      `Shelter Services ${location.name}`
+    ],
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Nearshore Navigator",
+      "url": "https://nearshorenavigator.com"
+    }
+  };
+
   return (
     <div className="pb-20 overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
@@ -327,6 +355,40 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
                 </div>
               </section>
             )}
+
+            {/* Premium CTA & Trust Badges */}
+            <section className="bg-sky-900 rounded-2xl p-8 border border-sky-800 text-white shadow-xl relative overflow-hidden mt-12">
+              <div className="absolute top-0 right-0 -tr-10 opacity-20 transform translate-x-1/2 -translate-y-1/2">
+                <svg width="200" height="200" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" strokeWidth="2"/>
+                  <path d="M12 8L16 12L12 16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M8 12H16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <div className="relative z-10">
+                <span className="inline-block px-3 py-1 bg-sky-800 text-sky-200 text-xs font-bold rounded-full mb-4 uppercase tracking-wider">
+                   {location.name} Landed Cost Analysis
+                </span>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                  Calculate Your Exact Savings in {location.name}
+                </h3>
+                <p className="text-sky-100 mb-8 max-w-lg leading-relaxed">
+                  Stop guessing. Let our advisory team run a custom total landed cost analysis comparing your current supply chain directly to {location.name}.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 items-center">
+                  <Link 
+                    href={`/${language}/contact`}
+                    className="w-full sm:w-auto px-8 py-4 rounded-md bg-white text-sky-900 font-bold hover:bg-sky-50 transition-colors shadow-lg text-center"
+                  >
+                    Calculate Your Savings
+                  </Link>
+                  <p className="text-sm text-sky-200 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-sky-400" />
+                    Zero obligation report
+                  </p>
+                </div>
+              </div>
+            </section>
           </div>
 
           {/* Sidebar Form */}

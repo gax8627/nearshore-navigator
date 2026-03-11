@@ -239,6 +239,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
             alternates: getAlternates(`/locations/${city.slug}`),
         })
 
+        // Master Guide priority injection
+        if (city.slug === 'tijuana') {
+            routes.push({
+                url: `${baseUrl}/en/locations/tijuana/master-guide`,
+                lastModified: new Date(),
+                changeFrequency: 'daily',
+                priority: 1.0,
+                alternates: getAlternates(`/locations/tijuana/master-guide`),
+            })
+        }
+
         // Service Pages per Location
         // High-priority combos that are actively ranking in GSC (pos 5-17)
         const highPriorityPairs: Record<string, string[]> = {

@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Nearshore Navigator - {{CITY_NAME}}",
+  "description": "Strategic nearshoring advisory and {{SERVICE_TYPE}} services in {{CITY_NAME}}, {{STATE_NAME}}.",
+  "url": "https://nearshorenavigator.com/en/locations/{{CITY_SLUG}}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "{{CITY_NAME}}",
+    "addressRegion": "{{STATE_NAME}}",
+    "addressCountry": "MX"
+  },
+  "serviceType": [
+    "Industrial Real Estate {{CITY_NAME}}",
+    "Contract Manufacturing {{CITY_NAME}}",
+    "Shelter Services {{CITY_NAME}}"
+  ],
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Nearshore Navigator",
+    "url": "https://nearshorenavigator.com"
+  }
+}

@@ -42,7 +42,7 @@ export const LOCATIONS: Location[] = [
     name: "Tijuana",
     state: "Baja California",
     country: "Mexico",
-    description: "The most established manufacturing hub bordering San Diego, California. Ideal for time-sensitive supply chains.",
+    description: "Set up 20 mins from San Diego. Eliminate China tariffs instantly with $7.84/hr fully burdened labor and 2-hour US freight.",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2600",
     stats: {
       population: "2.2 Million",
@@ -171,7 +171,7 @@ export const LOCATIONS: Location[] = [
     name: "Mexicali",
     state: "Baja California",
     country: "Mexico",
-    description: "A highly educated capital city with deep ties to the aerospace and semiconductor industries.",
+    description: "Mexico's aerospace and semiconductor capital. Cut high-tech manufacturing costs by 65% while operating directly on the CA border.",
     image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=2000",
     stats: {
       population: "1.1 Million",
@@ -300,7 +300,7 @@ export const LOCATIONS: Location[] = [
     name: "Cd. Juárez",
     state: "Chihuahua",
     country: "Mexico",
-    description: "The historic heart of the maquiladora industry, bordering El Paso, Texas. Unmatched volume capacity.",
+    description: "The #1 maquiladora hub bordering El Paso. Access massive industrial volume and save millions on Section 301 tariffs.",
     image: "https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?auto=format&fit=crop&q=80&w=2000",
     stats: {
       population: "1.6 Million",
@@ -344,7 +344,7 @@ export const LOCATIONS: Location[] = [
     name: "Reynosa",
     state: "Tamaulipas",
     country: "Mexico",
-    description: "A rapid-growth hub bordering McAllen, Texas. specializing in electronics and auto parts.",
+    description: "Rapidly scale electronics and auto manufacturing on the Texas border. Avoid ocean freight delays with 1-day US Midwest access.",
     image: "https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?auto=format&fit=crop&q=80&w=2000",
     stats: {
       population: "800,000+",
@@ -388,7 +388,7 @@ export const LOCATIONS: Location[] = [
     name: "Nuevo Laredo",
     state: "Tamaulipas",
     country: "Mexico",
-    description: "The #1 land port in the Americas. The absolute center of gravity for logistics and land freight.",
+    description: "Dominate US logistics from the Americas' #1 land port. Ship directly into the I-35 corridor with extreme supply chain speed.",
     image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
     stats: {
       population: "450,000+",
@@ -432,7 +432,7 @@ export const LOCATIONS: Location[] = [
     name: "Nogales",
     state: "Sonora",
     country: "Mexico",
-    description: "Arizona's manufacturing partner. A specialized hub for aerospace, medical, and produce.",
+    description: "Arizona's dedicated manufacturing partner. Leverage a specialized aerospace and medical workforce just minutes from the US.",
     image: "https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&q=80&w=2000",
     stats: {
       population: "270,000+",
@@ -476,7 +476,7 @@ export const LOCATIONS: Location[] = [
     name: "Matamoros",
     state: "Tamaulipas",
     country: "Mexico",
-    description: "A port city bordering Brownsville, Texas. Expanding rapidly due to SpaceX and automotive growth.",
+    description: "Capitalize on the SpaceX corridor. Access deep-water maritime shipping and low-cost border labor next to Brownsville, TX.",
     image: "https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&fit=crop&q=80&w=2000",
     stats: {
       population: "550,000+",
@@ -571,7 +571,7 @@ export const LOCATIONS: Location[] = [
     name: "Monterrey",
     state: "Nuevo León",
     country: "Mexico",
-    description: "The industrial capital of Mexico, often called the 'Tesla hub'. Known for heavy industry and automotive excellence.",
+    description: "Join the 'Tesla Hub' in Mexico's industrial capital. Unlock world-class engineering talent and Tier 1 automotive infrastructure.",
     image: "https://images.unsplash.com/photo-1628624747186-a941c476b7ef?auto=format&fit=crop&q=80&w=2000",
     stats: {
       population: "5.3 Million",
@@ -615,7 +615,7 @@ export const LOCATIONS: Location[] = [
     name: "Guadalajara",
     state: "Jalisco",
     country: "Mexico",
-    description: "Known as the 'Silicon Valley of Mexico'. The premier destination for electronics and high-tech manufacturing.",
+    description: "Scale high-tech production in the 'Silicon Valley of Mexico'. Hire top-tier engineering talent at 30% of US equivalent costs.",
     image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=2000",
     stats: {
       population: "5.2 Million",
@@ -659,7 +659,7 @@ export const LOCATIONS: Location[] = [
     name: "Querétaro",
     state: "Querétaro",
     country: "Mexico",
-    description: "The aerospace capital of Mexico. A safe, modern, and high-tech city in the center of the country.",
+    description: "Establish aerospace and precision manufacturing in Mexico's safest high-tech hub. Tap into deep aviation supply chains.",
     image: "https://images.unsplash.com/photo-1605732562742-aec009732c8e?auto=format&fit=crop&q=80&w=2000",
     stats: {
       population: "2.4 Million",
@@ -735,7 +735,7 @@ export const LOCATIONS: Location[] = [
     name: "San Luis Potosí",
     state: "San Luis Potosí",
     country: "Mexico",
-    description: "The logistical crossroads of Mexico. Located within the 'Golden Triangle' of major cities.",
+    description: "Optimize national distribution from the 'Golden Triangle'. Ideal for heavy automotive and consumer goods manufacturing.",
     image: "https://images.unsplash.com/photo-1609619385002-f40f1df827ef?auto=format&fit=crop&q=80&w=2000",
     stats: {
       population: "1.4 Million",
@@ -779,7 +779,7 @@ export const LOCATIONS: Location[] = [
     name: "Saltillo",
     state: "Coahuila",
     country: "Mexico",
-    description: "The 'Detroit of Mexico'. A powerhouse of automotive assembly and parts manufacturing near Monterrey.",
+    description: "Build in the 'Detroit of Mexico'. Access unparalleled automotive assembly talent and heavy industrial infrastructure.",
     image: "https://images.unsplash.com/photo-1614854262340-ab1ca7d079c7?auto=format&fit=crop&q=80&w=2000",
     stats: {
       population: "1 Million",
@@ -876,7 +876,7 @@ export const LOCATIONS: Location[] = [
     name: "Hermosillo",
     state: "Sonora",
     country: "Mexico",
-    description: "A strategic industrial hub supporting Ford's massive stamping and assembly operations.",
+    description: "Establish your operation in 90 days. Avoid the border premium with $5.27/hr labor and Pacific ocean freight access via Guaymas.",
     image: "https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?auto=format&fit=crop&q=80&w=2000",
     stats: {
       population: "950,000+",
@@ -979,7 +979,7 @@ export const LOCATIONS: Location[] = [
     name: "Silao / Guanajuato",
     state: "Guanajuato",
     country: "Mexico",
-    description: "The heart of the Bajío automotive cluster. Incredible density of Japanese and European suppliers.",
+    description: "Plug into the Bajío automotive cluster. Surround your operation with a world-class density of global Tier 1 and 2 suppliers.",
     image: "https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?auto=format&fit=crop&q=80&w=2000",
     stats: {
       population: "200,000 (City) / 6M (State)",
@@ -1023,7 +1023,7 @@ export const LOCATIONS: Location[] = [
     name: "Puebla",
     state: "Puebla",
     country: "Mexico",
-    description: "A historic industrial giant. Home to Volkswagen for over 50 years and Audi's Q5 plant.",
+    description: "Leverage 50+ years of European automotive heritage. Exceptional specialized engineering talent and deep OEM supply chains.",
     image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
     stats: {
       population: "3.2 Million",
