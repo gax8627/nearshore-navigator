@@ -10,6 +10,10 @@ import { LeadForm } from "@/components/LeadForm";
 import { CheckCircle2, Warehouse, Globe2, Cog, Truck, Headset, MapPin, ChevronRight, Home } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { getLocation, SERVICES } from "@/app/constants/seo-data";
+import { TrustSeal } from "@/components/TrustSeal";
+import { INDUSTRY_MATRIX } from "@/app/constants/city-industry-matrix";
+import { INDUSTRY_VERTICALS } from "@/app/constants/industry-taxonomy";
+import { Factory } from "lucide-react";
 
 // Map string icon names to components
 const iconMap = {
@@ -161,6 +165,40 @@ export default function CityOverviewClient({ city }: Props) {
                     </div>
                 </section>
 
+                {/* Industrial Verticals (PAE Layer) */}
+                <section>
+                    <SectionTitle 
+                        title="Industry Expertise"
+                        subtitle={`Specialized manufacturing guides for ${location.name}'s key industrial clusters.`}
+                    />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                        {INDUSTRY_MATRIX.filter(m => m.citySlug === city).map((entry) => {
+                            const vertical = INDUSTRY_VERTICALS.find(v => v.slug === entry.industrySlug);
+                            if (!vertical) return null;
+                            return (
+                                <Link 
+                                    key={entry.industrySlug}
+                                    href={`/${language}/locations/${city}/industries/${entry.industrySlug}`}
+                                    className="group flex items-center justify-between p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 hover:border-primary-500 hover:shadow-md transition-all"
+                                >
+                                    <div className="flex items-center gap-4">
+                                        <div className="p-2 bg-primary-50 dark:bg-primary-900/20 rounded-lg group-hover:bg-primary-500 group-hover:text-white transition-colors">
+                                            <Factory className="w-5 h-5" />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">
+                                                {vertical.name}
+                                            </h4>
+                                            <p className="text-xs text-gray-500">{entry.stats.plants} Active Facilities</p>
+                                        </div>
+                                    </div>
+                                    <ChevronRight className="w-5 h-5 text-gray-300 group-hover:text-primary-500 transition-colors" />
+                                </Link>
+                            );
+                        })}
+                    </div>
+                </section>
+
                 {/* Why This City */}
                 <section>
                     <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Why Choose {location.name}?</h2>
@@ -216,7 +254,8 @@ export default function CityOverviewClient({ city }: Props) {
 
             {/* Sidebar Form */}
             <div className="lg:col-span-1">
-                <div className="sticky top-28">
+                <div className="sticky top-28 space-y-6">
+                    <TrustSeal />
                     <LeadForm
                         title={`Start in ${location.name}`}
                         subtitle="Get a free consultation and cost analysis for your project."

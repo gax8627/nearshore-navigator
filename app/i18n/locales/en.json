@@ -605,5 +605,92 @@
     "tableTitle": "Market Availability & Lease Rates",
     "ctaTitle": "Need help securing space in these parks?",
     "ctaDesc": "Vacancy rates in Class A facilities are below 3%. Speak directly with Denisse Martinez to bypass waitlists and model your nearshore footprint."
+  },
+  "tijuanaMasterGuide": {
+    "hero": {
+      "badge": "2026 B2B ADVISORY REPORT",
+      "title": "The Ultimate Guide to Manufacturing in Tijuana",
+      "subtitle": "Positioned 20 minutes from San Diego, Tijuana offers 0% USMCA tariffs, $7.84/hr fully-burdened labor, and 1-day shipping to California. See why top US manufacturers are bypassing Asia.",
+      "cta_landed_cost": "Calculate Your Landed Cost",
+      "cta_clusters": "Explore Industry Clusters",
+      "trust_label": "Trusted by leaders operating in Baja California"
+    },
+    "cost_advantage": {
+      "title": "The \"China-Plus-One\" Pivot: The Cost Advantage",
+      "subtitle": "The math driving the massive shift in global supply chains from Shenzhen to Tijuana.",
+      "labor_val": "$7.84",
+      "labor_label": "Fully Burdened Labor Rate",
+      "labor_desc": "Inclusive of IMSS social security, INFONAVIT housing, vacation premiums, and mandatory profit-sharing, representing a 60-75% reduction vs California.",
+      "real_estate_val": "$0.75",
+      "real_estate_label": "Class A Real Estate (NNN)",
+      "real_estate_desc": "With an 8% vacancy rate in Q1 2026, premium industrial space is abundant. Mesa de Otay premium zones offer 32ft clear heights and heavy power.",
+      "tariffs_val": "0%",
+      "tariffs_label": "USMCA Tariffs",
+      "tariffs_desc": "Bypass the 25-100% Section 301 tariffs on Chinese imports entirely. Goods manufactured under IMMEX entering the US are inherently duty-free."
+    },
+    "clusters": {
+      "title": "Dominant Industry Clusters",
+      "subtitle": "The infrastructure, supply chains, and specialized talent pools are already here.",
+      "medical": {
+        "title": "Medical Devices",
+        "badge": "#1 IN MEXICO",
+        "desc": "Tijuana is the largest medical device hub in Mexico and second largest globally. Over 70 FDA-registered facilities operate in Class-A parks, producing everything from Class I disposables to Class III pacemakers."
+      },
+      "aerospace": {
+        "title": "Aerospace & Defense",
+        "badge": "AS9100 READY",
+        "desc": "Bolstered by its proximity to Southern California`s defense sector, Tijuana has developed deep capabilities in precision machining, composite structures, and ITAR compliance."
+      },
+      "electronics": {
+        "title": "Electronics & EV",
+        "badge": "100+ FACILITIES",
+        "desc": "The original DNA of Tijuana`s maquiladora era. The city remains a global powerhouse for PCBA (SMT lines), automotive wire harnesses, and EV component assembly."
+      }
+    },
+    "real_estate": {
+      "title": "Class-A Industrial Parks",
+      "subtitle": "Tijuana operates like a fortress for manufacturers. Industrial zones are physically separated from residential areas, maintaining 24/7 security.",
+      "pacific": "Parque Industrial Pacifico",
+      "pacific_desc": "The premier location. Immediate Otay Mesa access.",
+      "otay": "Mesa de Otay Zone",
+      "otay_desc": "Heavy power availability. Highest demand sector.",
+      "finsa": "Finsa & El Florido",
+      "finsa_desc": "Large-scale footprints and built-to-suit capability."
+    },
+    "border": {
+      "title": "The Otay Mesa Border Advantage",
+      "asia_label": "Shenzhen to Long Beach (Ocean)",
+      "asia_val": "30-45 Days",
+      "tijuana_label": "Tijuana to San Diego (Truck)",
+      "tijuana_val": "90 Minutes",
+      "desc": "The FAST Lane program allows registered commercial carriers to bypass standard traffic, clearing customs in under 90 minutes."
+    },
+    "models": {
+      "title": "How to Enter the Market",
+      "subtitle": "The 90-day playbook vs. Turnkey Outsourcing.",
+      "shelter_title": "Shelter Services (IMMEX)",
+      "shelter_desc": "The fastest way to establish your own factory. A Mexican shelter company holds the IMMEX permit and handles compliance while you control production.",
+      "contract_title": "Contract Manufacturing",
+      "contract_desc": "Turnkey outsourcing for immediate scale. Partner with an existing, ISO-certified manufacturer in Tijuana who already has the facility and team.",
+      "cta_shelter": "Learn about Shelter Setup",
+      "cta_contract": "Find a Contract Manufacturer"
+    },
+    "cta_final": {
+      "title": "Ready to run the numbers?",
+      "subtitle": "Connect with a Nearshore Navigator advisor for a custom total landed cost analysis comparing your current supply chain to a Tijuana operation.",
+      "button": "Speak to a Principal Advisor"
+    },
+    "calculator": {
+      "title": "Landed Cost Simulator",
+      "subtitle": "Model your 2026 operational savings in Tijuana.",
+      "label_rate": "Current US Fully Burdened Rate ($/hr)",
+      "label_headcount": "Operational Headcount",
+      "label_baseline": "Tijuana Fixed Baseline (2026)",
+      "label_baseline_sub": "$7.84/hr (Fully Burdened)",
+      "label_savings": "Projected Annual Savings",
+      "label_reduction": "Cost Reduction",
+      "label_weekly": "Weekly Savings",
+      "disclaimer": "*Full burdened rate includes IMSS, INFONAVIT, Vacations, and 10% Mandatory Profit Sharing. Realized savings may vary based on specific industry turnover profiles."
+    }
   }
 }

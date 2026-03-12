@@ -7,6 +7,7 @@ import { FounderBlock } from "@/components/FounderBlock";
 import { CheckCircle2, ArrowRight, MapPin, ChevronRight, Home } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { getLocation, getService, LOCATIONS } from "@/app/constants/seo-data";
+import { TrustSeal } from "@/components/TrustSeal";
 
 type Props = {
   city: string;
@@ -393,7 +394,8 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
 
           {/* Sidebar Form */}
           <div className="lg:col-span-1">
-            <div className="sticky top-28">
+            <div className="sticky top-28 space-y-6">
+              <TrustSeal />
               <LeadForm
                 title={`Expand to ${location.name}`}
                 subtitle={`Get a custom proposal for ${service.title.toLowerCase()} in ${location.name}.`}

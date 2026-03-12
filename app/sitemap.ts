@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { LOCATIONS, SERVICES } from '@/app/constants/seo-data'
+import { INDUSTRY_MATRIX } from '@/app/constants/city-industry-matrix'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://nearshorenavigator.com'
@@ -228,18 +229,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
     ]
 
-    // Programmatic Pages: Locations
+    // Programmatic Pages: Locations & Services Matrix
     LOCATIONS.forEach(city => {
-        // City Overview
+        // 1. City Overview (High Priority)
         routes.push({
             url: `${baseUrl}/en/locations/${city.slug}`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
+            changeFrequency: 'weekly',
+            priority: 0.9,
             alternates: getAlternates(`/locations/${city.slug}`),
-        })
+        });
 
-        // Master Guide priority injection
+        // 2. Pillar 1: Tijuana Master Guide (Maximum Priority & Freshness)
         if (city.slug === 'tijuana') {
             routes.push({
                 url: `${baseUrl}/en/locations/tijuana/master-guide`,
@@ -247,28 +248,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 changeFrequency: 'daily',
                 priority: 1.0,
                 alternates: getAlternates(`/locations/tijuana/master-guide`),
-            })
+            });
         }
 
-        // Service Pages per Location
-        // High-priority combos that are actively ranking in GSC (pos 5-17)
+        // 3. Service Pages per Location (Targeted Priority)
         const highPriorityPairs: Record<string, string[]> = {
             'puebla': ['contract-manufacturing'],
             'matamoros': ['contract-manufacturing'],
             'saltillo': ['distribution-centers'],
-            'hermosillo': ['contract-manufacturing'],
+            'hermosillo': ['contract-manufacturing', 'shelter-services'],
+            'tijuana': ['industrial-real-estate-baja', 'shelter-services']
         };
+
         SERVICES.forEach(service => {
             const isHighPriority = highPriorityPairs[city.slug]?.includes(service.slug);
             routes.push({
                 url: `${baseUrl}/en/locations/${city.slug}/${service.slug}`,
                 lastModified: new Date(),
                 changeFrequency: isHighPriority ? 'weekly' : 'monthly',
-                priority: isHighPriority ? 0.95 : 0.9,
+                priority: isHighPriority ? 0.95 : 0.85,
                 alternates: getAlternates(`/locations/${city.slug}/${service.slug}`),
-            })
-        })
-    })
+            });
+        });
+    });
 
-    return routes
+    // 4. Programmatic Authority Engine: Vertical Guides (High Authority)
+    INDUSTRY_MATRIX.forEach(entry => {
+        routes.push({
+            url: `${baseUrl}/en/locations/${entry.citySlug}/industries/${entry.industrySlug}`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.95, // Targeted B2B pages are high value
+            alternates: getAlternates(`/locations/${entry.citySlug}/industries/${entry.industrySlug}`),
+        });
+    });
+
+    return routes;
 }

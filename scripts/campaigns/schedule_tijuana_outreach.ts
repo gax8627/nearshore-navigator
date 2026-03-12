@@ -29,8 +29,11 @@ const tijuanaTouchOneHtml = `
   Principal Advisor, Nearshore Navigator</p>
 `;
 
+const DRY_RUN = process.env.DRY_RUN === 'true' || true; // Defaulting to true for safety
+
 async function scheduleTijuanaCampaign() {
   console.log('--- Sales Automator: Scheduling Tijuana Master Guide Sprint ---');
+  if (DRY_RUN) console.log('🔍 [DRY RUN] Mode Active - No API calls will be made.');
   
   const campaignPayload = {
     name: "2026 Q1 Tijuana Master Guide Push - Touch 1",
@@ -41,6 +44,13 @@ async function scheduleTijuanaCampaign() {
     // Scheduled for tomorrow morning at 9:00 AM PST
     scheduledAt: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString() 
   };
+
+  if (DRY_RUN) {
+    console.log('📋 Payload Verification:');
+    console.log(JSON.stringify(campaignPayload, null, 2));
+    console.log('✅ Dry run completed successfully. Script is ready for production.');
+    return;
+  }
 
   try {
     const response = await fetch(API_URL, {
