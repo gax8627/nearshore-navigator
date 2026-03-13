@@ -8,6 +8,7 @@ export async function POST(req: Request) {
 
     // Reject silently if honeypot is filled
     if (honeypot) {
+        console.warn('[Lead Magnet] Honeypot triggered');
         return NextResponse.json({ success: true, message: 'Your guide is on its way!' });
     }
 

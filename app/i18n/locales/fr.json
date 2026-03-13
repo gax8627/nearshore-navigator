@@ -97,12 +97,12 @@
     "founderStat3": "Soutien pratique de l'évaluation au lancement",
     "ctaDiscovery": "Planifier un appel découverte",
     "ctaAssessment": "Demander une évaluation de site",
-    "heroTitle1": "Local leadership.",
-    "heroTitle2": "Partner-powered",
-    "heroTitle3": "execution.",
-    "heroSubtitle": "Built for manufacturers entering Baja California. We provide structured guidance, practical options, and the right introductions so your expansion doesn’t stall in uncertainty.",
-    "shelterServicesTitle": "Strategic Soft-landing",
-    "shelterServicesDesc": "For when speed matters. We help you assess the most efficient entry route (Shelter, M&A, or standalone) and connect you with vetted options."
+    "heroTitle1": "Leadership local.",
+    "heroTitle2": "Exécution axée",
+    "heroTitle3": "sur les partenaires.",
+    "heroSubtitle": "Conçu pour les fabricants s'implantant en Basse-Californie. Nous fournissons des conseils structurés, des options concrètes et les bonnes introductions pour que votre expansion ne stagne pas dans l'incertitude.",
+    "shelterServicesTitle": "Soft-landing stratégique",
+    "shelterServicesDesc": "Pour quand la rapidité compte. Nous vous aidons à évaluer la route d'entrée la plus efficace (Shelter, M&A, ou autonome) et vous connectons à des options vérifiées."
   },
   "contact": {
     "title": "Contactez-nous",
@@ -215,36 +215,36 @@
     "costModelingDesc": "Detailed comparison of labor, real-time CFE electricity, and lease rates vs. your current operations."
   },
   "distributionPage": {
-    "badge": "Logistics & Fulfillment",
-    "heroTitle": "Distribution Centers in",
+    "badge": "Logistique & Fulfillment",
+    "heroTitle": "Centres de distribution",
     "heroTitleHighlight": "Baja California",
-    "heroSubtitle": "Optimize your supply chain with cross-border fulfillment and 3PL solutions at the busiest land port of entry in the Western Hemisphere.",
-    "statsBorderCrossings": "Border Crossings",
-    "statsToLA": "To Los Angeles",
-    "statsCAConsumers": "CA Consumers",
-    "statsDuty": "Duty (<$800)",
-    "whyTijuanaTitle": "Why Baja California for Distribution?",
-    "sameDayTitle": "Same-Day Delivery to CA",
-    "sameDayDesc": "Reach 40 million consumers in Southern California within hours.",
-    "section321Title": "Section 321 Compliance",
-    "section321Desc": "Ship duty-free to US consumers on orders under $800.",
-    "portsTitle": "2 Ports of Entry",
-    "portsDesc": "Otay Mesa and San Ysidro crossings for flexible routing.",
-    "transloadingTitle": "Transloading Services",
-    "transloadingDesc": "Switch containers between rail, truck, and air seamlessly.",
-    "strategicTitle": "Strategic Border Location",
-    "strategicText1": "Baja California is adjacent to San Diego, providing immediate access to the US Interstate highway system (I-5 and I-805). The Otay Mesa Commercial Port of Entry processes over $50 billion in trade annually, making it the busiest commercial crossing on the California-Mexico border.",
+    "heroSubtitle": "Optimisez votre chaîne d'approvisionnement avec des solutions de cross-border fulfillment et 3PL au port d'entrée terrestre le plus fréquenté de l'hémisphère occidental.",
+    "statsBorderCrossings": "Passages frontaliers",
+    "statsToLA": "À Los Angeles",
+    "statsCAConsumers": "Consommateurs CA",
+    "statsDuty": "Exonération (<$800)",
+    "whyTijuanaTitle": "Pourquoi choisir la Basse-Californie pour la distribution ?",
+    "sameDayTitle": "Livraison le jour même en CA",
+    "sameDayDesc": "Atteignez 40 millions de consommateurs en Californie du Sud en quelques heures.",
+    "section321Title": "Conformité Section 321",
+    "section321Desc": "Expédiez en franchise de droits aux consommateurs américains pour les commandes de moins de 800 $.",
+    "portsTitle": "2 ports d'entrée",
+    "portsDesc": "Passages d'Otay Mesa et de San Ysidro pour un routage flexible.",
+    "transloadingTitle": "Services de transbordement",
+    "transloadingDesc": "Changez de conteneur entre le rail, le camion et l'air en toute transparence.",
+    "strategicTitle": "Emplacement frontalier stratégique",
+    "strategicText1": "La Basse-Californie est adjacente à San Diego, offrant un accès immédiat au réseau autoroutier américain (I-5 et I-805).",
     "strategicText2": "For e-commerce brands targeting the US West Coast market, Baja California acts as the perfect fulfillment hub — combining Mexican labor cost advantages with same-day delivery capabilities to Southern California.",
-    "availableServicesTitle": "Available Services",
-    "crossDocking": "Cross-docking & Transloading",
-    "ecommerce": "E-commerce Fulfillment",
-    "inventoryManagement": "Inventory Management Systems",
-    "pickPackShip": "Pick, Pack & Ship",
-    "returnsProcessing": "Returns Processing",
-    "lastMile": "Last-Mile Delivery Partners",
-    "customsBrokerage": "Customs Brokerage",
-    "coldChain": "Cold Chain Logistics",
-    "faqTitle": "Frequently Asked Questions",
+    "availableServicesTitle": "Services disponibles",
+    "crossDocking": "Cross-docking & Transbordement",
+    "ecommerce": "Fulfillment E-commerce",
+    "inventoryManagement": "Systèmes de gestion des stocks",
+    "pickPackShip": "Préparation, emballage & expédition",
+    "returnsProcessing": "Traitement des retours",
+    "lastMile": "Partenaires de livraison du dernier kilomètre",
+    "customsBrokerage": "Courtage en douane",
+    "coldChain": "Logistique de la chaîne du froid",
+    "faqTitle": "Questions fréquemment posées",
     "faq1Question": "What is Section 321 and how does it benefit e-commerce?",
     "faq1Answer": "Section 321 is a US customs provision that allows duty-free import of goods valued under $800 per recipient per day. By shipping from a Baja California fulfillment center directly to US consumers, e-commerce brands can avoid import duties entirely on qualifying orders.",
     "faq2Question": "How long does it take to cross the border?",
@@ -255,24 +255,24 @@
     "guideDesc": "Save up to 25% on tariffs by fulfilling US orders from Tijuana.",
     "questionnaireCTA": "Start 3PL Assessment",
     "questionnaireDesc": "Complete our 36-point operational questionnaire to receive a customized logistics proposal.",
-    "formTitle": "Get a Logistics Quote",
-    "formSubtitle": "Connect with vetted 3PL and distribution partners in Baja California."
+    "formTitle": "Obtenez un devis logistique",
+    "formSubtitle": "Connectez-vous avec des partenaires 3PL et de distribution vérifiés en Basse-Californie."
   },
   "contractPage": {
-    "badge": "Maquiladora Partners",
-    "heroTitle": "Contract Manufacturing in",
+    "badge": "Partenaires Maquiladora",
+    "heroTitle": "Fabrication en sous-traitance",
     "heroTitleHighlight": "Baja California",
-    "heroSubtitle": "Don't want to run a factory? Partner with established manufacturers in Baja California who already have the equipment, certifications, and trained workforce.",
-    "whyContractTitle": "Why Contract Manufacturing?",
-    "establishedTitle": "Established Facilities",
-    "establishedDesc": "Skip the 2-year ramp-up. Partner with manufacturers already running production.",
-    "ipTitle": "Your IP, Protected",
-    "ipDesc": "NDA-first approach. Contract manufacturers handle production, you own the designs.",
-    "certifiedTitle": "Pre-Certified",
-    "certifiedDesc": "We match you with CMs that already hold your required industry certifications.",
-    "workforceTitle": "Trained Workforce",
-    "workforceDesc": "Baja California has 700,000+ manufacturing workers with decades of export experience.",
-    "industriesTitle": "Industries We Serve",
+    "heroSubtitle": "Vous ne voulez pas gérer une usine ? Associez-vous à des fabricants établis en Basse-Californie qui disposent déjà de l'équipement, des certifications et d'une main-d'œuvre formée.",
+    "whyContractTitle": "Pourquoi la fabrication en sous-traitance ?",
+    "establishedTitle": "Installations établies",
+    "establishedDesc": "Sautez les 2 ans de phase de démarrage. Associez-vous à des fabricants produisant déjà.",
+    "ipTitle": "Votre IP protégée",
+    "ipDesc": "Approche NDA en premier. Les fabricants s'occupent de la production, vous êtes propriétaire des designs.",
+    "certifiedTitle": "Pré-certifié",
+    "certifiedDesc": "Nous vous mettons en relation avec des CM détenant déjà vos certifications industrielles requises.",
+    "workforceTitle": "Main-d'œuvre formée",
+    "workforceDesc": "La Basse-Californie compte plus de 700 000 ouvriers de production avec des décennies d'expérience.",
+    "industriesTitle": "Secteurs d'activité",
     "medicalDevices": "Medical Devices",
     "medicalDesc": "Clean room assembly (ISO Class 7/8) for Class I, II, and III devices. ISO 13485 certified.",
     "electronics": "Electronics",
@@ -587,18 +587,18 @@
     "industryElectronics": "Electronics",
     "certNetworkTitle": "Certified Manufacturing Network",
     "certNetworkDesc": "We exclusively work with certified facilities and proven partners across Baja California.",
-    "certQualityArea": "Quality Management",
-    "certAeroArea": "Aerospace Standards",
-    "certMedArea": "Medical Devices",
-    "certAutoArea": "Automotive Quality",
+    "certQualityArea": "Gestion de la Qualité",
+    "certAeroArea": "Normes Aérospatiales",
+    "certMedArea": "Dispositifs Médicaux",
+    "certAutoArea": "Qualité Automobile",
     "credLabel1": "ISO 9001 / AS9100 / IATF 16949",
-    "credDesc1": "Certified facility network",
+    "credDesc1": "Réseau d'installations certifiées",
     "credLabel2": "15+ Years Cross-Border",
     "credDesc2": "Cali-Baja corridor expertise",
     "credLabel3": "20+ Companies Launched",
     "credDesc3": "Multi-industry track record",
     "credLabel4": "USMCA & IMMEX Specialist",
-    "credDesc4": "Tariff & compliance advisory"
+    "credDesc4": "Conseils en tarifs et conformité"
   },
   "partners": {
     "title": "Nos partenaires industriels verifies",
@@ -607,5 +607,170 @@
     "iso13485": "Dispositifs medicaux",
     "as9100": "Aerospatiale et defense",
     "iatf16949": "Automobile"
+  },
+  "industries": {
+    "medical-devices": {
+      "name": "Fabrication de Dispositifs Médicaux",
+      "description": "Développez une production conforme à la FDA dans les pôles de technologie médicale de classe mondiale de Tijuana et Mexicali.",
+      "marketOpportunity": "La Basse-Californie est le plus grand pôle de dispositifs médicaux en Amérique du Nord, avec plus de 70 usines enregistrées auprès de la FDA et plus de 12 000 opérateurs.",
+      "laborProfile": "Spécialisé dans l'emballage stérile, l'assemblage de classe II/III et la gestion des systèmes de qualité ISO 13485.",
+      "logisticsEdge": "Transit par chaîne du froid de 90 minutes entre les usines de production de Tijuana et les centres de distribution de San Diego.",
+      "authorityGuide": "Guide d'Autorité",
+      "regionalPlants": "Usines Régionales",
+      "sectorWorkforce": "Main-d'œuvre du Secteur",
+      "avgLaborRate": "Taux de Main-d'œuvre Moyen",
+      "certEase": "Facilité de Certification",
+      "industryAnalysis": "Analyse du Secteur",
+      "regulatoryFramework": "Cadre Réglementaire et Conformité",
+      "requiredCerts": "Certifications Requises",
+      "keyBodies": "Organismes Réglementaires Clés",
+      "clusterValidation": "Validation du Pôle",
+      "clusterSub": "Rejoignez les entreprises de premier plan opérant déjà dans cette région.",
+      "specialistAccess": "Accès Spécialiste de l'Industrie",
+      "consultAdvisor": "Consultez un Conseiller {name}",
+      "advisorSub": "Obtenez des données spécifiques à l'industrie pour les opérations à {location}.",
+      "strategicRealEstate": "Immobilier Stratégique",
+      "realEstateSub": "Ces parcs industriels sont conçus spécifiquement pour les exigences {name}.",
+      "viewAllInfrastructure": "Voir toute l'infrastructure de {location}"
+    },
+    "aerospace": {
+      "name": "Aéronautique et Défense",
+      "description": "Accédez au pôle de fabrication certifié AS9100 le plus avancé à Mexicali et Sonora.",
+      "marketOpportunity": "Mexicali est la capitale aéronautique du Mexique, abritant la plus forte concentration de production d'usinage de précision et d'avionique.",
+      "laborProfile": "Main-d'œuvre hautement technique qualifiée dans les matériaux composites, l'usinage CNC et les processus NADCAP.",
+      "logisticsEdge": "Intégration directe avec les « mégarégions » aéronautiques de l'Arizona et de la Californie (chaînes d'approvisionnement Raytheon, Boeing)."
+    },
+    "automotive": {
+      "name": "Automobile et Véhicules Électriques",
+      "description": "Le pilier de la chaîne d'approvisionnement des véhicules électriques en Amérique du Nord, des harnais de câbles à l'assemblage de batteries.",
+      "marketOpportunity": "Juárez et le corridor Nord-Centre dominent les marchés mondiaux de l'assemblage de harnais de câbles et d'éclairage automobile.",
+      "laborProfile": "Expertise en assemblage stable et à haut volume avec une culture de livraison JIT (Just-in-Time) profondément ancrée.",
+      "logisticsEdge": "La connectivité du corridor I-35 permet une livraison en 24-48 heures vers les pôles automobiles américains de Détroit et du Tennessee."
+    },
+    "electronics": {
+      "name": "Électronique et SMT",
+      "description": "Électronique grand public et industrielle à haut volume centrée sur Reynosa et Tijuana.",
+      "marketOpportunity": "Reynosa et Tijuana sont des leaders mondiaux de l'assemblage de téléviseurs, d'appareils électroménagers et de matériel de télécommunications.",
+      "laborProfile": "Opérateurs SMT (Surface Mount Technology) de précision et spécialistes des tests PCBA.",
+      "logisticsEdge": "Accès transfrontalier direct aux distributeurs logistiques du Texas et de Californie."
+    },
+    "distribution-3pl": {
+      "name": "Distribution et Logistique 3PL",
+      "description": "Profitez de la porte d'entrée Laredo-Nuevo Laredo, le port terrestre commercial le plus fréquenté des Amériques.",
+      "marketOpportunity": "Nuevo Laredo gère 40 % de tout le commerce entre les États-Unis et le Mexique, ce qui en fait le premier emplacement pour le cross-docking et l'entreposage.",
+      "laborProfile": "Coordinateurs logistiques bilingues, spécialistes des systèmes de gestion d'entrepôt (WMS) et agents en douane certifiés.",
+      "logisticsEdge": "Accès ferroviaire intermodal sans attente (Union Pacific/KCSM) vers le Midwest et la côte Est des États-Unis."
+    }
+  },
+  "matrix": {
+    "tijuana": {
+      "medical-devices": "Le deuxième plus grand pôle de dispositifs médicaux au monde. Tijuana est spécialisée dans les dispositifs implantables de classe II et III et l'assemblage stérile de haute précision.",
+      "aerospace": "Le secteur aéronautique de Tijuana est profondément intégré au corridor de défense du sud de la Californie.",
+      "electronics": "Le secteur électronique de Tijuana se concentre sur la production de mélange élevé et faible volume (HMLV) et le PCBA avancé."
+    },
+    "mexicali": {
+      "medical-devices": "Mexicali offre une alternative à moindre coût à Tijuana pour les technologies médicales, avec un accent sur les produits jetables à haut volume.",
+      "aerospace": "Capitale aéronautique du Mexique. Mexicali gère 70 % de l'assemblage des jets Gulfstream et est un centre mondial pour les tests d'avionique."
+    },
+    "juarez": {
+      "automotive": "L'épicentre mondial de la fabrication de harnais de câbles. Juárez transitionne rapidement vers l'architecture de véhicules électriques.",
+      "electronics": "Foxconn et d'autres acteurs majeurs de l'EMS exploitent des lignes d'assemblage à haut volume à Juárez."
+    },
+    "monterrey": {
+      "automotive": "La future capitale des véhicules électriques en Amérique latine. Monterrey capte 72 % de l'investissement de nearshoring au Mexique."
+    },
+    "reynosa": {
+      "electronics": "La « Capitale mondiale de la télévision ». Reynosa est spécialisée dans l'électronique grand public à haut volume (LG, Panasonic)."
+    },
+    "nuevo-laredo": {
+      "distribution-3pl": "La porte d'entrée du « Commerce mondial ». Nuevo Laredo gère 40 % de tout le fret ferroviaire et routier entre les États-Unis et le Mexique."
+    }
+  },
+  "tijuanaMasterGuide": {
+    "hero": {
+      "badge": "RAPPORT ADVISORY B2B 2026",
+      "title": "Le guide ultime de la fabrication à Tijuana",
+      "subtitle": "Située à 20 minutes de San Diego, Tijuana offre des tarifs USMCA de 0 %, un coût de main-d'œuvre chargé de 7,84 $/h et une expédition en 1 jour vers la Californie. Découvrez pourquoi les principaux fabricants américains contournent l'Asie.",
+      "cta_landed_cost": "Calculez votre coût global",
+      "cta_clusters": "Explorez les clusters industriels",
+      "trust_label": "Approuvé par les leaders opérant en Basse-Californie"
+    },
+    "cost_advantage": {
+      "title": "Le pivot « China-Plus-One » : l'avantage financier",
+      "subtitle": "Les calculs qui motivent le déplacement massif des chaînes d'approvisionnement mondiales de Shenzhen vers Tijuana.",
+      "labor_val": "7,84 $",
+      "labor_label": "Taux de main-d'œuvre chargé",
+      "labor_desc": "Inclut la sécurité sociale IMSS, le logement INFONAVIT, les primes de vacances et l'intéressement obligatoire – une réduction de 60 à 75 % par rapport à la Californie.",
+      "real_estate_val": "0,75 $",
+      "real_estate_label": "Immobilier Classe A (NNN)",
+      "real_estate_desc": "Avec un taux de vacance de 8 % au T1 2026, les espaces industriels premium sont abondants. Les zones premium de Mesa de Otay offrent des hauteurs de 32 pieds et une puissance élevée.",
+      "tariffs_val": "0 %",
+      "tariffs_label": "Tarifs USMCA",
+      "tariffs_desc": "Évitez entièrement les tarifs de la Section 301 de 25 à 100 % sur les importations chinoises. Les produits fabriqués sous IMMEX entrant aux États-Unis sont exonérés de droits."
+    },
+    "clusters": {
+      "title": "Clusters industriels dominants",
+      "subtitle": "L'infrastructure, les chaînes d'approvisionnement et les talents spécialisés sont déjà là.",
+      "medical": {
+        "title": "Dispositifs médicaux",
+        "badge": "N°1 AU MEXIQUE",
+        "desc": "Tijuana est le plus grand hub de dispositifs médicaux au Mexique et le deuxième au monde."
+      },
+      "aerospace": {
+        "title": "Aéronautique et défense",
+        "badge": "PRÊT POUR AS9100",
+        "desc": "Tijuana a développé des capacités approfondies en usinage de précision et structures composites."
+      },
+      "electronics": {
+        "title": "Électronique & VE",
+        "badge": "100+ INSTALLATIONS",
+        "desc": "Un pôle mondial pour le PCBA, les faisceaux de câbles et l'assemblage de composants pour VE."
+      }
+    },
+    "real_estate": {
+      "title": "Parcs industriels Classe A",
+      "subtitle": "Tijuana offre une sécurité maximale. Les zones industrielles sont séparées des zones résidentielles et surveillées 24h/24.",
+      "pacific": "Parc industriel Pacifico",
+      "pacific_desc": "Emplacement de choix. Accès immédiat à Otay Mesa.",
+      "otay": "Zone Mesa de Otay",
+      "otay_desc": "Disponibilité de puissance élevée. Secteur le plus demandé.",
+      "finsa": "Finsa & El Florido",
+      "finsa_desc": "Grandes surfaces et capacités de construction sur mesure."
+    },
+    "border": {
+      "title": "L'avantage frontalier d'Otay Mesa",
+      "asia_label": "Shenzhen vers Long Beach (Mer)",
+      "asia_val": "30-45 jours",
+      "tijuana_label": "Tijuana vers San Diego (Camion)",
+      "tijuana_val": "90 minutes",
+      "desc": "Le programme FAST Lane permet aux transporteurs commerciaux enregistrés de contourner le trafic standard."
+    },
+    "models": {
+      "title": "Comment entrer sur le marché",
+      "subtitle": "Le playbook de 90 jours vs outsourcing clé en main.",
+      "shelter_title": "Services de Shelter (IMMEX)",
+      "shelter_desc": "Le moyen le plus rapide d'établir votre usine. Une société de shelter mexicaine gère la conformité.",
+      "contract_desc": "Sous-traitance clé en main pour une mise à l'échelle immédiate. Partenariat avec un fabricant certifié ISO existant à Tijuana qui possède déjà l'infrastructure et l'équipe.",
+      "contract_title": "Fabrication à façon",
+      "cta_contract": "Trouver un fabricant à façon",
+      "cta_shelter": "En savoir plus sur la configuration du shelter"
+    },
+    "cta_final": {
+      "button": "Parler à un conseiller",
+      "subtitle": "Contactez un conseiller Nearshore Navigator pour une analyse personnalisée du coût total rendu comparant votre chaîne d'approvisionnement actuelle à une opération à Tijuana.",
+      "title": "Prêt à faire les calculs ?"
+    },
+    "calculator": {
+      "disclaimer": "*Le taux chargé inclut l'IMSS, l'INFONAVIT, les vacances et la participation obligatoire aux bénéfices de 10 %. Les économies réalisées peuvent varier selon les profils de rotation spécifiques à l'industrie.",
+      "label_baseline": "Base fixe Tijuana (2026)",
+      "label_baseline_sub": "7,84 $/h (Chargé)",
+      "label_headcount": "Effectif opérationnel",
+      "label_rate": "Taux actuel US chargé ($/h)",
+      "label_reduction": "Réduction des coûts",
+      "label_savings": "Économies annuelles projetées",
+      "label_weekly": "Économies hebdomadaires",
+      "subtitle": "Simulez vos économies opérationnelles 2026 à Tijuana.",
+      "title": "Simulateur de coût global"
+    }
   }
 }

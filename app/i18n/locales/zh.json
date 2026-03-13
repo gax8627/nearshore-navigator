@@ -12,7 +12,8 @@
     "darkMode": "深色模式",
     "lightMode": "浅色模式",
     "calculator": "成本计算器",
-    "park_map": "工业园区地图"
+    "park_map": "工业园区地图",
+    "assessment": "申请选址评估"
   },
   "home": {
     "metaTitle": "Nearshore Navigator | 下加利福尼亚州的工业制造",
@@ -47,7 +48,9 @@
     "logistics": "分销与物流",
     "logistics_desc": "毗邻奥泰梅萨 (Otay Mesa) 和圣伊西德罗 (San Ysidro) 入境口岸的战略 3PL 及越库配送方案。",
     "call_center": "呼叫中心解决方案",
-    "call_center_desc": "在太平洋时区，利用 5 万多名双语座席扩展您的支持能力。"
+    "call_center_desc": "在太平洋时区，利用 5 万多名双语座席扩展您的支持能力。",
+    "marketing": "离岸营销操作系统",
+    "marketing_desc": "一个直接整合到您的业务中的完整 B2B 增长系统。"
   },
   "footer": {
     "rights": "版权所有。",
@@ -261,7 +264,12 @@
     "roadmapTitle": "扩张路线图",
     "roadmapDesc": "规划您的“去风险”策略：从合同伙伴开始，随着规模扩大，转而运营自有设施。",
     "safeguardsTitle": "IP 与质量标准",
-    "safeguardsDesc": "我们充当您在当地的耳目，管理定价、试运行及常规审计，确保符合美国标准。"
+    "safeguardsDesc": "我们充当您在当地的耳目，管理定价、试运行及常规审计，确保符合美国标准。",
+    "cnc": "精密 CNC 加工",
+    "cncDesc": "适用于航空航天和医疗器械品质的 3 轴和 5 轴加工中心。",
+    "furniture": "高档家具制造",
+    "furnitureDesc": "为大型品牌和 DTC 零售商提供的大规模木工和表面处理工艺。",
+    "regionsSubtitle": "下加利福尼亚州的战略制造枢纽。"
   },
   "realEstatePage": {
     "heroTitle": "下加利福尼亚",
@@ -484,7 +492,8 @@
     "q33": "您是否同意通过扩展您的保险单来为货物投保？",
     "q34": "您需要我们服务的时长是多久？",
     "q35": "我们可以为您提供运输报价吗？地址是什么？",
-    "q36": "您使用哪种 Annex 24 系统？"
+    "q36": "您使用哪种 Annex 24 系统？",
+    "intro": "准备您的离岸外包路线图。这些数据将帮助我们为您的需求推荐最佳模式和地点。"
   },
   "aboutPage": {
     "mainHeading": "将“我们要去墨西哥”转化为明确的下一步",
@@ -624,5 +633,170 @@
     "tableTitle": "市场可用性与租赁费用",
     "ctaTitle": "需要在这些园区中确保空间吗？",
     "ctaDesc": "A级设施的空置率低于3%。 直接与登尼斯·马丁内斯（Denisse Martinez）对话，以避开等候名单并模拟您的近岸外包足迹。"
+  },
+  "industries": {
+    "medical-devices": {
+      "name": "医疗器械制造",
+      "description": "在蒂华纳和墨西卡利的世界级医疗技术集群中，扩展符合 FDA 标准的生产。",
+      "marketOpportunity": "下加利福尼亚州是北美最大的医疗器械集群，拥有 70 多家 FDA 注册工厂和 12,000 多名专业操作人员。",
+      "laborProfile": "专注于无菌包装、II/III 类组装和 ISO 13485 质量体系管理。",
+      "logisticsEdge": "从蒂华纳生产车间到圣地亚哥分销中心的 90 分钟冷链运输。",
+      "authorityGuide": "权威指南",
+      "regionalPlants": "区域工厂数",
+      "sectorWorkforce": "行业劳动力",
+      "avgLaborRate": "平均工资",
+      "certEase": "认证难度",
+      "industryAnalysis": "行业分析",
+      "regulatoryFramework": "监管与合规框架",
+      "requiredCerts": "必备认证",
+      "keyBodies": "主要监管机构",
+      "clusterValidation": "集群验证",
+      "clusterSub": "加入已在该地区运营的领先企业行列。",
+      "specialistAccess": "行业专家咨询",
+      "consultAdvisor": "咨询 {name} 顾问",
+      "advisorSub": "获取有关 {location} 运营的行业特定数据。",
+      "strategicRealEstate": "战略房地产",
+      "realEstateSub": "这些工业园区专门针对 {name} 的需求而设计。",
+      "viewAllInfrastructure": "查看 {location} 的所有基础设施"
+    },
+    "aerospace": {
+      "name": "航空航天与国防",
+      "description": "访问位于墨西卡利和索诺拉的最先进的 AS9100 认证制造中心。",
+      "marketOpportunity": "墨西卡利是墨西哥的航空航天之都，拥有最高密度的精密机械加工和航电生产。",
+      "laborProfile": "高技术劳动力，擅长复合材料、CNC 加工和 NADCAP 工艺。",
+      "logisticsEdge": "与亚利桑那州和加利福尼亚州的航空航天“大区”（雷神、波音供应链）直接整合。"
+    },
+    "automotive": {
+      "name": "汽车与电动汽车",
+      "description": "北美电动汽车供应链的支柱，从线束到电池组装。",
+      "marketOpportunity": "胡亚雷斯和中北部走廊在全汽车线束和照明组装市场中占据主导地位。",
+      "laborProfile": "稳定的高产量组装专长，深受 JIT（准时制）交付文化的影响。",
+      "logisticsEdge": "I-35 走廊的连通性允许在 24-48 小时内交付至底特律和田纳西州等美国汽车枢纽。"
+    },
+    "electronics": {
+      "name": "电子与 SMT",
+      "description": "以雷诺萨和蒂华纳为中心的批量消费和工业电子产品。",
+      "marketOpportunity": "雷诺萨和蒂华纳在电视、家电和电信硬件组装方面处于全球领先地位。",
+      "laborProfile": "精密 SMT（表面贴装技术）操作员和 PCBA 测试专家。",
+      "logisticsEdge": "直接跨境接入德克萨斯州和加利福尼亚州的物流分销商。"
+    },
+    "distribution-3pl": {
+      "name": "分销与 3PL 物流",
+      "description": "利用拉雷多-新拉雷多走廊，这是美洲最繁忙的商业陆路口岸。",
+      "marketOpportunity": "新拉雷多处理美墨贸易总量的 40%，使其成为越库作业和仓库枢纽的首选地点。",
+      "laborProfile": "双语物流协调员、仓库管理系统 (WMS) 专家和认证清关代理。",
+      "logisticsEdge": "无等待的多式联运铁路接入（联合太平洋/KCSM），通往美国中西部和东海岸。"
+    }
+  },
+  "matrix": {
+    "tijuana": {
+      "medical-devices": "全球第二大医疗器械集群。蒂华纳专注于 II 类和 III 类植入式设备以及高精度无菌组装。",
+      "aerospace": "蒂华纳的航空航天部门与南加州国防走廊深度整合。",
+      "electronics": "蒂华纳的电子部门专注于多品种小批量 (HMLV) 生产和高级 PCBA。"
+    },
+    "mexicali": {
+      "medical-devices": "墨西卡利为医疗技术提供了比蒂华纳更低成本的选择，专注于大批量消耗品。",
+      "aerospace": "墨西哥的航空航天之都。墨西卡利承担了湾流 70% 的喷气式飞机组装，是全球航电测试中心。"
+    },
+    "juarez": {
+      "automotive": "全球线束制造的中心。胡亚雷斯正迅速向电动汽车架构转型。",
+      "electronics": "富士康等主要 EMS 指标在胡亚雷斯经营大批量组装线，供应北美市场。"
+    },
+    "monterrey": {
+      "automotive": "拉丁美洲未来的电动汽车之都。墨西卡利吸引了墨西哥 72% 的近岸外包投资。"
+    },
+    "reynosa": {
+      "electronics": "世界的“电视之都”。雷诺萨专注于批量消费电子产品（LG、松下）。"
+    },
+    "nuevo-laredo": {
+      "distribution-3pl": "“世界贸易”门户。新拉雷多处理美墨之间 40% 的铁路和卡车货运。"
+    }
+  },
+  "tijuanaMasterGuide": {
+    "hero": {
+      "badge": "2026 B2B 咨询报告",
+      "title": "蒂华纳制造终极指南",
+      "subtitle": "蒂华纳距离圣地亚哥仅 20 分钟路程，提供 0% 的 USMCA 关税、7.84 美元/小时的全额劳动力成本，以及 1 天送达加利福尼亚的物流。了解为何美国顶级制造商正在绕过亚洲。",
+      "cta_landed_cost": "计算您的到岸成本",
+      "cta_clusters": "探索产业集群",
+      "trust_label": "深受在下加利福尼亚州运营的领导者的信赖"
+    },
+    "cost_advantage": {
+      "title": "“中国加一”转型：成本优势",
+      "subtitle": "驱动全球供应链从深圳大规模转移到蒂华纳的财务逻辑。",
+      "labor_val": "7.84 美元",
+      "labor_label": "全额人力成本率",
+      "labor_desc": "包含 IMSS 社会保险、INFONAVIT 住房基金、假期津贴和法定利润分享，比加州降低了 60-75%。",
+      "real_estate_val": "0.75 美元",
+      "real_estate_label": "A 级工业地产 (NNN)",
+      "real_estate_desc": "2026 年第一季度空置率为 8%，优质工业空间充足。Mesa de Otay 优质区域提供 32 英尺净高和充足电力。",
+      "tariffs_val": "0%",
+      "tariffs_label": "USMCA 关税",
+      "tariffs_desc": "完全绕过针对中国进口商品的 25-100% 的 301 条款关税。在 IMMEX 模式下制造并进入美国的商品本身就是免税的。"
+    },
+    "border": {
+      "asia_label": "深圳到长滩（海运）",
+      "asia_val": "30-45 天",
+      "desc": "FAST Lane 计划允许注册的商业承运人绕过标准交通瓶颈，在 90 分钟内完成清关。",
+      "tijuana_label": "蒂华纳到圣地亚哥（陆运）",
+      "tijuana_val": "90 分钟",
+      "title": "Otay Mesa 边境优势"
+    },
+    "calculator": {
+      "disclaimer": "*全额费率包括 IMSS 社会保险、INFONAVIT 住房基金、假期津贴和 10% 的法定利润分享。实际节省可能因行业特定的流失率概况而异。",
+      "label_baseline": "蒂华纳固定基准 (2026)",
+      "label_baseline_sub": "7.84 美元/小时（全额）",
+      "label_headcount": "运营人数",
+      "label_rate": "当前美国全额费率 (美元/小时)",
+      "label_reduction": "成本降低",
+      "label_savings": "预计年节省额",
+      "label_weekly": "周节省额",
+      "subtitle": "模拟您 2026 年在蒂华纳的运营成本节省。",
+      "title": "总成本模拟器"
+    },
+    "clusters": {
+      "aerospace": {
+        "badge": "AS9100 就绪",
+        "desc": "依靠邻近南加州国防工业的优势，蒂华纳在精密加工、复合材料结构和 ITAR 合规性方面建立了深厚能力。",
+        "title": "航空航天与国防"
+      },
+      "electronics": {
+        "badge": "100+ 设施",
+        "desc": "蒂华纳仍然是 PCBA（SMT 线）、汽车线束和电动汽车组件组装的全球强市。",
+        "title": "电子与电动汽车"
+      },
+      "medical": {
+        "badge": "墨西哥第一",
+        "desc": "蒂华纳是墨西哥最大的医疗器械集群，也是全球第二大集群。",
+        "title": "医疗器械"
+      },
+      "subtitle": "基础设施、供应链和专业人才库已经就绪。",
+      "title": "主要产业集群"
+    },
+    "cta_final": {
+      "button": "咨询首席顾问",
+      "subtitle": "联系 Nearshore Navigator 顾问，进行个性化的总到岸成本分析，将您当前的供应链与蒂华纳的运营进行对比。",
+      "title": "准备好计算了吗？"
+    },
+    "models": {
+      "contract_desc": "即时扩展的顺手外包。与蒂华纳现有的、已获得 ISO 认证且拥有设施和团队的制造商合作。",
+      "contract_title": "合同制造",
+      "cta_contract": "寻找合同制造商",
+      "cta_shelter": "了解有关 Shelter 模式设置的更多信息",
+      "shelter_desc": "建立自己工厂的最快方式。墨西哥 Shelter 公司持有 IMMEX 许可并负责合规，而您控制生产。",
+      "shelter_title": "Shelter 服务 (IMMEX)",
+      "subtitle": "90 天策略 vs. 顺手外包。",
+      "title": "市场准入模式"
+    },
+    "real_estate": {
+      "finsa": "Finsa 和 El Florido",
+      "finsa_desc": "大规模占用空间和定制开发 (BTS) 能力。",
+      "otay": "Mesa de Otay 区域",
+      "otay_desc": "高电力供应充足。需求最旺盛的行业。",
+      "pacific": "帕西菲科工业园",
+      "pacific_desc": "优质地段。即刻通往 Otay Mesa。",
+      "subtitle": "蒂华纳像制造商的堡垒一样运作。工业区与住宅区物理隔离，保持 24/7 全天候安保。",
+      "title": "A 级工业园区"
+    }
   }
 }

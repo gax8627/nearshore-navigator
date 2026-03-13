@@ -48,7 +48,9 @@
     "logistics": "Distribución y Logística",
     "logistics_desc": "Soluciones estratégicas de 3PL y cross-docking cerca de los puertos de entrada de Otay Mesa y San Ysidro.",
     "call_center": "Soluciones de Call Center",
-    "call_center_desc": "Escale su soporte con más de 50,000 agentes bilingües en la Zona Horaria del Pacífico. Ahorre 40-60% en costos de BPO."
+    "call_center_desc": "Escale su soporte con más de 50,000 agentes bilingües en la Zona Horaria del Pacífico. Ahorre 40-60% en costos de BPO.",
+    "marketing": "Nearshore Marketing OS",
+    "marketing_desc": "Un sistema completo de crecimiento B2B integrado directamente en su negocio."
   },
   "footer": {
     "rights": "Todos los derechos reservados.",
@@ -689,6 +691,84 @@
       "label_reduction": "Reducción de Costos",
       "label_weekly": "Ahorros Semanales",
       "disclaimer": "*La tasa totalmente integrada incluye IMSS, INFONAVIT, Vacaciones y el 10% de Participación de los Trabajadores en las Utilidades (PTU). Los ahorros reales pueden variar según los perfiles de rotación específicos de la industria."
+    }
+  },
+  "industries": {
+    "medical-devices": {
+      "name": "Manufactura de Dispositivos Médicos",
+      "description": "Escale la producción que cumple con la FDA en los clústeres de tecnología médica de clase mundial de Tijuana y Mexicali.",
+      "marketOpportunity": "Baja California es el clúster de dispositivos médicos más grande de América del Norte, con más de 70 plantas registradas ante la FDA y más de 12,000 operadores.",
+      "laborProfile": "Especializada en empaque estéril, ensamblaje de Clase II/III y gestión de sistemas de calidad ISO 13485.",
+      "logisticsEdge": "Tránsito de cadena de frío de 90 minutos desde las plantas de producción de Tijuana hasta los centros de distribución de San Diego.",
+      "authorityGuide": "Guía de Autoridad",
+      "regionalPlants": "Plantas Regionales",
+      "sectorWorkforce": "Fuerza Laboral del Sector",
+      "avgLaborRate": "Tarifa Laboral Promedio",
+      "certEase": "Facilidad de Certificación",
+      "industryAnalysis": "Análisis de la Industria",
+      "regulatoryFramework": "Marco Regulatorio y de Cumplimiento",
+      "requiredCerts": "Certificaciones Requeridas",
+      "keyBodies": "Organismos Regulatorios Clave",
+      "clusterValidation": "Validación del Clúster",
+      "clusterSub": "Únase a las empresas líderes que ya operan en esta región.",
+      "specialistAccess": "Acceso a Especialistas de la Industria",
+      "consultAdvisor": "Consulte con un Asesor de {name}",
+      "advisorSub": "Obtenga datos específicos de la industria para las operaciones en {location}.",
+      "strategicRealEstate": "Bienes Raíces Estratégicos",
+      "realEstateSub": "Estos parques industriales están diseñados específicamente para los requisitos de {name}.",
+      "viewAllInfrastructure": "Ver Toda la Infraestructura de {location}"
+    },
+    "aerospace": {
+      "name": "Aeroespacial y Defensa",
+      "description": "Acceda al centro de manufactura certificado AS9100 más avanzado en Mexicali y Sonora.",
+      "marketOpportunity": "Mexicali es la capital aeroespacial de México, albergando la mayor concentración de producción de mecanizado de precisión y aviónica.",
+      "laborProfile": "Fuerza laboral altamente técnica con habilidades en materiales compuestos, mecanizado CNC y procesos NADCAP.",
+      "logisticsEdge": "Integración directa con las 'Megarregiones' aeroespaciales de Arizona y California (cadenas de suministro de Raytheon, Boeing)."
+    },
+    "automotive": {
+      "name": "Automotriz y Vehículos Eléctricos",
+      "description": "La columna vertebral de la cadena de suministro de vehículos eléctricos de América del Norte, desde arneses de cables hasta ensamblaje de baterías.",
+      "marketOpportunity": "Juárez y el corredor Norte-Centro dominan los mercados globales de ensamblaje de arneses de cables e iluminación automotriz.",
+      "laborProfile": "Experiencia en ensamblaje estable y de alto volumen con una cultura de entrega JIT (Just-in-Time) profundamente arraigada.",
+      "logisticsEdge": "La conectividad del corredor I-35 permite entregas en 24-48 horas a los centros automotrices de EE. UU. en Detroit y Tennessee."
+    },
+    "electronics": {
+      "name": "Electrónica y SMT",
+      "description": "Electrónica de consumo e industrial de alto volumen centrada en Reynosa y Tijuana.",
+      "marketOpportunity": "Reynosa y Tijuana son líderes globales en el ensamblaje de televisores, electrodomésticos y hardware de telecomunicaciones.",
+      "laborProfile": "Operadores de SMT (Tecnología de Montaje Superficial) de precisión y especialistas en pruebas de PCBA.",
+      "logisticsEdge": "Acceso transfronterizo directo a los distribuidores logísticos de Texas y California."
+    },
+    "distribution-3pl": {
+      "name": "Distribución y Logística 3PL",
+      "description": "Aproveche la puerta de enlace Laredo-Nuevo Laredo, el puerto terrestre comercial más transitado de las Américas.",
+      "marketOpportunity": "Nuevo Laredo maneja el 40% de todo el comercio entre EE. UU. y México, lo que lo convierte en la ubicación principal para cross-docking y centros de almacenamiento.",
+      "laborProfile": "Coordinadores logísticos bilingües, especialistas en sistemas de gestión de almacenes (WMS) y agentes aduanales certificados.",
+      "logisticsEdge": "Acceso ferroviario intermodal sin esperas (Union Pacific/KCSM) al Medio Oeste y la Costa Este de EE. UU."
+    }
+  },
+  "matrix": {
+    "tijuana": {
+      "medical-devices": "El segundo clúster de dispositivos médicos más grande del mundo. Tijuana se especializa en dispositivos implantables de Clase II y III y ensamblaje estéril de alta precisión. Su proximidad al centro de biotecnología de San Diego permite un intercambio diario de ingeniería.",
+      "aerospace": "El sector aeroespacial de Tijuana está profundamente integrado con el corredor de defensa del sur de California. Se especializa en componentes interiores, estructuras secundarias y mecanizado de precisión.",
+      "electronics": "El sector electrónico de Tijuana se enfoca en la producción de alta mezcla y bajo volumen (HMLV) y PCBA avanzado para aplicaciones médicas y aeroespaciales."
+    },
+    "mexicali": {
+      "medical-devices": "Mexicali ofrece una alternativa de menor costo a Tijuana para la tecnología médica, con un enfoque en desechables de alto volumen y ensamblaje de equipos de diagnóstico. Se beneficia de tiempos de espera en la frontera más cortos en Calexico East.",
+      "aerospace": "La capital aeroespacial de México. Mexicali maneja el 70% del ensamblaje de aviones de Gulfstream y es un centro global para pruebas de aviónica y sistemas de gestión térmica (Honeywell)."
+    },
+    "juarez": {
+      "automotive": "El epicentro global de la manufactura de arneses de cables. Juárez está transitando rápidamente hacia la arquitectura de vehículos eléctricos, produciendo arneses complejos de alto voltaje y unidades de control electrónico para los tres grandes.",
+      "electronics": "Foxconn y otros importantes actores de EMS operan líneas de ensamblaje de alto volumen en Juárez, abasteciendo al mercado de tecnología de consumo de América del Norte."
+    },
+    "monterrey": {
+      "automotive": "La futura capital de vehículos eléctricos de América Latina. Monterrey captura el 72% de la inversión de nearshoring en México, impulsada por el ecosistema de la Gigafactory de Tesla y una base masiva de proveedores Tier 1."
+    },
+    "reynosa": {
+      "electronics": "La 'Capital de la Televisión' del mundo. Reynosa se especializa en electrónica de consumo de alto volumen (LG, Panasonic) y controles de automatización industrial (Emerson)."
+    },
+    "nuevo-laredo": {
+      "distribution-3pl": "La puerta de enlace del 'Comercio Mundial'. Nuevo Laredo maneja el 40% de toda la carga ferroviaria y por camión entre EE. UU. y México. Ideal para cross-docking a gran escala y distribución multimodal hacia el Medio Oeste de EE. UU."
     }
   }
 }

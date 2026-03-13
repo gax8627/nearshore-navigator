@@ -24,18 +24,22 @@ export async function generateStaticParams() {
   );
 }
 
+import { getDictionary } from "@/app/i18n/get-dictionary";
+
 export async function generateMetadata({ params }: Props) {
   const { lang, city, industry } = await params;
   const location = getLocation(city);
   const vertical = INDUSTRY_VERTICALS.find(v => v.slug === industry);
+  const dict = await getDictionary(lang);
   
-  if (!location || !vertical) return {};
+  if (!location || !vertical || !dict) return {};
 
+  const industryName = dict.industries?.[industry]?.name || "Manufacturing Industry";
   const canonicalUrl = `https://nearshorenavigator.com/${lang}/locations/${city}/industries/${industry}`;
 
   return {
-    title: `${vertical.name} in ${location.name}, Mexico | 2026 Industrial Guide`,
-    description: `Expert guide to ${vertical.name.toLowerCase()} manufacturing in ${location.name}. Scale your production with ${location.name}'s specialized workforce and AS9100/FDA-compliant infrastructure.`,
+    title: `${industryName} in ${location.name}, Mexico | 2026 Industrial Guide`,
+    description: `Expert guide to ${industryName} manufacturing in ${location.name}. Scale your production with ${location.name}'s specialized workforce and AS9100/FDA-compliant infrastructure.`,
     alternates: {
       canonical: canonicalUrl,
       languages: {

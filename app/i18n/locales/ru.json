@@ -72,7 +72,14 @@
   "insights": {
     "title": "Market Insights",
     "subtitle": "Latest analysis on the Baja California industrial market.",
-    "viewAll": "View All Insights"
+    "viewAll": "View All Insights",
+    "dashboardBadge": "Актуальные данные",
+    "dashboardSubtitle": "Визуализация данных в реальном времени о местной промышленной активности.",
+    "dashboardTitle": "Промышленный дашборд",
+    "dashboardUpdated": "Последнее обновление: 2026",
+    "deepDives": "Отраслевой анализ",
+    "heroSubtitle": "Данные в реальном времени и экспертный анализ промышленной экосистемы Нижней Калифорнии.",
+    "heroTitle": "Аналитика рынка"
   },
   "about": {
     "title": "About Nearshore Navigator",
@@ -169,19 +176,19 @@
     "backToHome": "← Back to Home"
   },
   "distributionPage": {
-    "badge": "Logistics & Fulfillment",
-    "heroTitle": "Distribution Centers in",
+    "badge": "Логистика и фулфилмент",
+    "heroTitle": "Распределительные центры",
     "heroTitleHighlight": "Baja California",
-    "heroSubtitle": "Optimize your supply chain with cross-border fulfillment and 3PL solutions at the busiest land port of entry in the Western Hemisphere.",
-    "statsBorderCrossings": "Border Crossings",
-    "statsToLA": "To Los Angeles",
-    "statsCAConsumers": "CA Consumers",
-    "statsDuty": "Duty (<$800)",
-    "whyTijuanaTitle": "Why Baja California for Distribution?",
-    "sameDayTitle": "Same-Day Delivery to CA",
-    "sameDayDesc": "Reach 40 million consumers in Southern California within hours.",
-    "section321Title": "Section 321 Compliance",
-    "section321Desc": "Ship duty-free to US consumers on orders under $800.",
+    "heroSubtitle": "Оптимизируйте свою цепочку поставок с помощью трансграничного фулфилмента и 3PL-решений.",
+    "statsBorderCrossings": "Пограничные переходы",
+    "statsToLA": "До Лос-Анджелеса",
+    "statsCAConsumers": "Потребители Калифорнии",
+    "statsDuty": "Без пошлин (<$800)",
+    "whyTijuanaTitle": "Почему Нижняя Калифорния для дистрибуции?",
+    "sameDayTitle": "Доставка в тот же день в Калифорнию",
+    "sameDayDesc": "Доставляйте товары 40 миллионам потребителей в Южной Калифорнии за считанные часы.",
+    "section321Title": "Соответствие Разделу 321",
+    "section321Desc": "Беспошлинная доставка потребителям в США для заказов до 800 долларов.",
     "portsTitle": "2 Ports of Entry",
     "portsDesc": "Otay Mesa and San Ysidro crossings for flexible routing.",
     "transloadingTitle": "Transloading Services",
@@ -189,7 +196,7 @@
     "strategicTitle": "Strategic Border Location",
     "strategicText1": "Baja California is adjacent to San Diego, providing immediate access to the US Interstate highway system (I-5 and I-805). The Otay Mesa Commercial Port of Entry processes over $50 billion in trade annually, making it the busiest commercial crossing on the California-Mexico border.",
     "strategicText2": "For e-commerce brands targeting the US West Coast market, Baja California acts as the perfect fulfillment hub — combining Mexican labor cost advantages with same-day delivery capabilities to Southern California.",
-    "availableServicesTitle": "Available Services",
+    "availableServicesTitle": "Доступные услуги",
     "crossDocking": "Cross-docking & Transloading",
     "ecommerce": "E-commerce Fulfillment",
     "inventoryManagement": "Inventory Management Systems",
@@ -209,14 +216,14 @@
     "guideDesc": "Save up to 25% on tariffs by fulfilling US orders from Tijuana.",
     "questionnaireCTA": "Start 3PL Assessment",
     "questionnaireDesc": "Complete our 36-point operational questionnaire to receive a customized logistics proposal.",
-    "formTitle": "Get a Logistics Quote",
-    "formSubtitle": "Connect with vetted 3PL and distribution partners in Baja California."
+    "formTitle": "Получить котировку по логистике",
+    "formSubtitle": "Свяжитесь с проверенными 3PL-партнерами в Нижней Калифорнии."
   },
   "contractPage": {
-    "badge": "Maquiladora Partners",
-    "heroTitle": "Contract Manufacturing in",
+    "badge": "Партнеры Maquiladora",
+    "heroTitle": "Контрактное производство",
     "heroTitleHighlight": "Baja California",
-    "heroSubtitle": "Don't want to run a factory? Partner with established manufacturers in Baja California who already have the equipment, certifications, and trained workforce.",
+    "heroSubtitle": "Не хотите управлять заводом? Сотрудничайте с опытными мексиканскими производителями.",
     "whyContractTitle": "Why Contract Manufacturing?",
     "establishedTitle": "Established Facilities",
     "establishedDesc": "Skip the 2-year ramp-up. Partner with manufacturers already running production.",
@@ -601,12 +608,12 @@
     "industryElectronics": "Electronics",
     "certNetworkTitle": "Certified Manufacturing Network",
     "certNetworkDesc": "We exclusively work with certified facilities and proven partners across Baja California.",
-    "certQualityArea": "Quality Management",
-    "certAeroArea": "Aerospace Standards",
-    "certMedArea": "Medical Devices",
-    "certAutoArea": "Automotive Quality",
+    "certQualityArea": "Управление качеством",
+    "certAeroArea": "Аэрокосмические стандарты",
+    "certMedArea": "Медицинские изделия",
+    "certAutoArea": "Автомобильное качество",
     "credLabel1": "ISO 9001 / AS9100 / IATF 16949",
-    "credDesc1": "Certified facility network",
+    "credDesc1": "Сеть сертифицированных объектов",
     "credLabel2": "15+ Years Cross-Border",
     "credDesc2": "Cali-Baja corridor expertise",
     "credLabel3": "20+ Companies Launched",
@@ -636,5 +643,170 @@
     "tableTitle": "Market Availability & Lease Rates",
     "ctaTitle": "Need help securing space in these parks?",
     "ctaDesc": "Vacancy rates in Class A facilities are below 3%. Speak directly with Denisse Martinez to bypass waitlists and model your nearshore footprint."
+  },
+  "industries": {
+    "medical-devices": {
+      "name": "Производство медицинских изделий",
+      "description": "Масштабируйте производство, соответствующее требованиям FDA, в медицинских кластерах мирового уровня в Тихуане и Мехикали.",
+      "marketOpportunity": "Нижняя Калифорния — крупнейший кластер медицинских изделий в Северной Америке: более 70 заводов, зарегистрированных FDA, и 12 000+ специалистов.",
+      "laborProfile": "Специализация на стерильной упаковке, сборке классов II/III и управлении системами качества ISO 13485.",
+      "logisticsEdge": "90 минут в режиме холодовой цепи от заводов в Тихуане до распределительных центров в Сан-Диего.",
+      "authorityGuide": "Руководство эксперта",
+      "regionalPlants": "Региональные заводы",
+      "sectorWorkforce": "Персонал сектора",
+      "avgLaborRate": "Средняя ставка оплаты",
+      "certEase": "Простота сертификации",
+      "industryAnalysis": "Анализ отрасли",
+      "regulatoryFramework": "Нормативно-правовая база",
+      "requiredCerts": "Необходимые сертификаты",
+      "keyBodies": "Ключевые регулирующие органы",
+      "clusterValidation": "Подтверждение кластера",
+      "clusterSub": "Присоединяйтесь к ведущим компаниям, уже работающим в этом регионе.",
+      "specialistAccess": "Доступ к отраслевым экспертам",
+      "consultAdvisor": "Консультация с экспертом по {name}",
+      "advisorSub": "Получите отраслевые данные для работы в {location}.",
+      "strategicRealEstate": "Стратегическая недвижимость",
+      "realEstateSub": "Эти индустриальные парки спроектированы специально под требования {name}.",
+      "viewAllInfrastructure": "Посмотреть всю инфраструктуру {location}"
+    },
+    "aerospace": {
+      "name": "Аэрокосмическая отрасль и оборона",
+      "description": "Получите доступ к самому передовому производственному центру с сертификацией AS9100 в Мехикали и Соноре.",
+      "marketOpportunity": "Мехикали — аэрокосмическая столица Мексики с самой высокой концентрацией точного машиностроения и производства авионики.",
+      "laborProfile": "Высококвалифицированные технические кадры, опытные в работе с композитами, ЧПУ и процессами NADCAP.",
+      "logisticsEdge": "Прямая интеграция с аэрокосмическими «мегарегионами» Аризоны и Калифорнии (цепочки поставок Raytheon, Boeing)."
+    },
+    "automotive": {
+      "name": "Автомобилестроение и электромобили",
+      "description": "Основа цепочки поставок электромобилей в Северной Америке: от жгутов проводов до сборки аккумуляторов.",
+      "marketOpportunity": "Хуарес и Северо-Центральный коридор доминируют на мировых рынках сборки автомобильных жгутов и светотехники.",
+      "laborProfile": "Опыт стабильной крупносерийной сборки с глубоко укоренившейся культурой поставок JIT (точно в срок).",
+      "logisticsEdge": "Связь с коридором I-35 позволяет осуществлять доставку в течение 24–48 часов в автомобильные хабы США в Детройте и Теннесси."
+    },
+    "electronics": {
+      "name": "Электроника и SMT",
+      "description": "Крупносерийное производство потребительской и промышленной электроники с центрами в Рейносе и Тихуане.",
+      "marketOpportunity": "Рейноса и Тихуана — мировые лидеры в сборке телевизоров, бытовой техники и телекоммуникационного оборудования.",
+      "laborProfile": "Операторы точного SMT (монтаж на поверхность) и специалисты по тестированию PCBA.",
+      "logisticsEdge": "Прямой трансграничный доступ к логистическим дистрибьюторам в Техасе и Калифорнии."
+    },
+    "distribution-3pl": {
+      "name": "Дистрибуция и 3PL-логистика",
+      "description": "Используйте шлюз Ларедо — Нуэво-Ларедо, самый загруженный коммерческий сухопутный порт в Америке.",
+      "marketOpportunity": "Нуэво-Ларедо обрабатывает 40% всей торговли между США и Мексикой, являясь главным местом для кросс-докинга и складских хабов.",
+      "laborProfile": "Двуязычные координаторы логистики, специалисты по системам управления складом (WMS) и сертифицированные таможенные агенты.",
+      "logisticsEdge": "Безостановочный доступ к мультимодальным железным дорогам (Union Pacific/KCSM) на Средний Запад и Восточное побережье США."
+    }
+  },
+  "matrix": {
+    "tijuana": {
+      "medical-devices": "Второй по величине кластер медицинских изделий в мире. Тихуана специализируется на имплантируемых устройствах классов II и III.",
+      "aerospace": "Аэрокосмический сектор Тихуаны глубоко интегрирован с оборонным коридором Южной Калифорнии.",
+      "electronics": "Электронный сектор Тихуаны ориентирован на многономенклатурное мелкосерийное производство (HMLV) и современные PCBA."
+    },
+    "mexicali": {
+      "medical-devices": "Мехикали предлагает более дешевую альтернативу Тихуане с упором на крупносерийную сборку расходных материалов.",
+      "aerospace": "Аэрокосмическая столица Мексики. Мехикали выполняет 70% сборки самолетов Gulfstream и является мировым центром тестирования авионики."
+    },
+    "juarez": {
+      "automotive": "Мировой эпицентр производства жгутов проводов. Хуарес стремительно переходит на архитектуру электромобилей.",
+      "electronics": "Foxconn и другие крупные игроки EMS управляют линиями крупносерийной сборки в Хуаресе для рынка Северной Америки."
+    },
+    "monterrey": {
+      "automotive": "Будущая столица электромобилей в Латинской Америке. Монтеррей привлекает 72% инвестиций в ниаршоринг в Мексике."
+    },
+    "reynosa": {
+      "electronics": "Мировая «столица телевизоров». Рейноса специализируется на крупносерийной потребительской электронике (LG, Panasonic)."
+    },
+    "nuevo-laredo": {
+      "distribution-3pl": "Шлюз «мировой торговли». Нуэво-Ларедо обрабатывает 40% всех железнодорожных и автомобильных грузов между США и Мексикой."
+    }
+  },
+  "tijuanaMasterGuide": {
+    "hero": {
+      "badge": "КОНСУЛЬТАЦИОННЫЙ ОТЧЕТ B2B 2026",
+      "title": "Полное руководство по производству в Тихуане",
+      "subtitle": "Расположенная в 20 минутах от Сан-Диего, Тихуана предлагает 0% пошлин USMCA, стоимость рабочей силы $7.84/час и доставку в Калифорнию за 1 день. Узнайте, почему ведущие производители США выбирают Мексику вместо Азии.",
+      "cta_landed_cost": "Рассчитать общую стоимость",
+      "cta_clusters": "Изучить промышленные кластеры",
+      "trust_label": "Нам доверяют лидеры, работающие в Нижней Калифорнии"
+    },
+    "cost_advantage": {
+      "title": "Переход «Китай плюс один»: преимущество в стоимости",
+      "subtitle": "Математика, стоящая за массовым переносом глобальных цепочек поставок из Шэньчжэня в Тихуану.",
+      "labor_val": "$7.84",
+      "labor_label": "Полная стоимость рабочей силы в час",
+      "labor_desc": "Включает социальное страхование IMSS, жилищные взносы INFONAVIT, отпускные и обязательное распределение прибыли.",
+      "real_estate_desc": "При уровне вакантных площадей 8% в первом квартале 2026 года, производственные площади премиум-класса доступны в изобилии.",
+      "real_estate_label": "Недвижимость класса А (NNN)",
+      "real_estate_val": "$0.75",
+      "tariffs_desc": "Полностью избегайте тарифов Секции 301 в размере 25-100% на китайский импорт.",
+      "tariffs_label": "Тарифы USMCA",
+      "tariffs_val": "0%"
+    },
+    "border": {
+      "asia_label": "Из Шэньчжэня в Лонг-Бич (Море)",
+      "asia_val": "30-45 дней",
+      "desc": "Программа FAST Lane позволяет зарегистрированным коммерческим перевозчикам миновать стандартные пробки, проходя таможню менее чем за 90 минут.",
+      "tijuana_label": "Из Тихуаны в Сан-Диего (Грузовик)",
+      "tijuana_val": "90 минут",
+      "title": "Преимущество границы Отай-Меса"
+    },
+    "calculator": {
+      "disclaimer": "*Полная ставка включает IMSS, INFONAVIT, отпускные и обязательное распределение прибыли в размере 10%. Экономия может варьироваться в зависимости от специфики текучести кадров в отрасли.",
+      "label_baseline": "Фиксированная база в Тихуане (2026)",
+      "label_baseline_sub": "$7.84/час (Полная)",
+      "label_headcount": "Количество сотрудников",
+      "label_rate": "Текущая полная ставка в США ($/час)",
+      "label_reduction": "Снижение затрат",
+      "label_savings": "Прогнозируемая годовая экономия",
+      "label_weekly": "Еженедельная экономия",
+      "subtitle": "Смоделируйте свою операционную экономию в 2026 году в Тихуане.",
+      "title": "Симулятор полной стоимости"
+    },
+    "clusters": {
+      "aerospace": {
+        "badge": "ГОТОВНОСТЬ К AS9100",
+        "desc": "Благодаря близости к оборонному сектору Южной Калифорнии, Тихуана развила глубокие компетенции в прецизионной механической обработке и композитных конструкциях.",
+        "title": "Авиация и оборона"
+      },
+      "electronics": {
+        "badge": "БОЛЕЕ 100 ОБЪЕКТОВ",
+        "desc": "Тихуана остается глобальным центром по производству PCBA, автомобильных жгутов проводов и сборке компонентов для электромобилей.",
+        "title": "Электроника и EV"
+      },
+      "medical": {
+        "badge": "№1 В МЕКСИКЕ",
+        "desc": "Тихуана — крупнейший хаб по производству медицинских изделий в Мексике и второй в мире.",
+        "title": "Медицинские изделия"
+      },
+      "subtitle": "Инфраструктура, цепочки поставок и квалифицированные кадры уже здесь.",
+      "title": "Доминирующие промышленные кластеры"
+    },
+    "cta_final": {
+      "button": "Связаться с консультантом",
+      "subtitle": "Свяжитесь с консультантом Nearshore Navigator для получения персонализированного анализа полной стоимости, сравнивающего вашу текущую цепочку поставок с работой в Тихуане.",
+      "title": "Готовы к расчетам?"
+    },
+    "models": {
+      "contract_desc": "Аутсорсинг «под ключ» для немедленного масштабирования. Партнерство с существующим производителем в Тихуане, сертифицированным по ISO, у которого уже есть помещения и команда.",
+      "contract_title": "Контрактное производство",
+      "cta_contract": "Найти контрактного производителя",
+      "cta_shelter": "Подробнее о настройке Shelter",
+      "shelter_desc": "Самый быстрый способ открыть собственный завод. Мексиканская компания-шелтер владеет разрешением IMMEX и берет на себя вопросы комплаенса, пока вы контролируете производство.",
+      "shelter_title": "Услуги Shelter (IMMEX)",
+      "subtitle": "План на 90 дней против аутсорсинга «под ключ».",
+      "title": "Модели входа на рынок"
+    },
+    "real_estate": {
+      "finsa": "Finsa и El Florido",
+      "finsa_desc": "Масштабные площади и возможности строительства под ключ (BTS).",
+      "otay": "Зона Меса-де-Отай",
+      "otay_desc": "Наличие высокой электрической мощности. Самый востребованный сектор.",
+      "pacific": "Промышленный парк Pacifico",
+      "pacific_desc": "Премиальное расположение. Прямой доступ к Отай-Меса.",
+      "subtitle": "Тихуана — это крепость для производителей. Промышленные зоны физически отделены от жилых районов и круглосуточно охраняются.",
+      "title": "Промышленные парки класса А"
+    }
   }
 }

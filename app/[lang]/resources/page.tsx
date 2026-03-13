@@ -1,11 +1,15 @@
 import ResourcesClient from "./ResourcesClient";
 import { Metadata } from 'next';
 
+import { getDictionary } from "@/app/i18n/get-dictionary";
+
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await props.params;
+  const t = await getDictionary(lang);
+  
   return {
-    title: 'Industrial Resources & Tools | Nearshore Navigator',
-    description: 'Access free tools for manufacturing in Mexico: Tijuana Industrial Map, Cost Estimators, Logistics Questionnaires, and Market Insights.',
+    title: `${t.resources.title} | Nearshore Navigator`,
+    description: t.resources.subtitle,
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/resources`,
       languages: {
@@ -16,12 +20,16 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
         'ja': 'https://nearshorenavigator.com/ja/resources',
         'zh': 'https://nearshorenavigator.com/zh/resources',
         'ko': 'https://nearshorenavigator.com/ko/resources',
+        'it': 'https://nearshorenavigator.com/it/resources',
+        'pt': 'https://nearshorenavigator.com/pt/resources',
+        'ru': 'https://nearshorenavigator.com/ru/resources',
         'x-default': 'https://nearshorenavigator.com/en/resources',
       }
     }
   };
 }
 
-export default function ResourcesPage() {
+export default async function ResourcesPage(props: { params: Promise<{ lang: string }> }) {
+  const { lang } = await props.params;
   return <ResourcesClient />;
 }

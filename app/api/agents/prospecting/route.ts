@@ -4,9 +4,17 @@ import { auth } from '@clerk/nextjs/server';
 
 export async function POST(req: Request) {
   try {
-    const { userId } = await auth();
-    if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    // Check if Clerk is configured
+    const isClerkConfigured = !!(
+      process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY && 
+      process.env.CLERK_SECRET_KEY
+    );
+
+    if (isClerkConfigured) {
+      const { userId } = await auth();
+      if (!userId) {
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      }
     }
 
     const { leads, listId } = await req.json();

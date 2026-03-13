@@ -31,7 +31,7 @@ type Props = {
 };
 
 export default function IndustryVerticalClient({ city, industry }: Props) {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
   const location = getLocation(city);
   const vertical = INDUSTRY_VERTICALS.find(v => v.slug === industry);
   const matrixEntry = INDUSTRY_MATRIX.find(m => m.citySlug === city && m.industrySlug === industry);
@@ -57,7 +57,7 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
       { "@type": "ListItem", "position": 1, "name": "Home", "item": `https://nearshorenavigator.com/${language}` },
       { "@type": "ListItem", "position": 2, "name": "Locations", "item": `https://nearshorenavigator.com/${language}/locations` },
       { "@type": "ListItem", "position": 3, "name": location.name, "item": `https://nearshorenavigator.com/${language}/locations/${city}` },
-      { "@type": "ListItem", "position": 4, "name": vertical.name, "item": `https://nearshorenavigator.com/${language}/locations/${city}/industries/${industry}` }
+      { "@type": "ListItem", "position": 4, "name": t(`industries.${industry}.name`), "item": `https://nearshorenavigator.com/${language}/locations/${city}/industries/${industry}` }
     ]
   };
 
@@ -73,7 +73,7 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
         <div className="absolute inset-0 z-0">
           <Image
             src={vertical.heroImage}
-            alt={`${vertical.name} in ${location.name} - Nearshore Navigator`}
+            alt={`${t(`industries.${industry}.name`)} in ${location.name} - Nearshore Navigator`}
             fill
             className="object-cover opacity-90 brightness-[0.7]"
             priority
@@ -88,7 +88,7 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
                     <li className="inline-flex items-center">
                         <Link href={`/${language}`} className="inline-flex items-center hover:text-white transition-colors">
                             <Home className="w-4 h-4 mr-2" />
-                            Home
+                            {t('nav.home') || 'Home'}
                         </Link>
                     </li>
                     <li>
@@ -102,7 +102,7 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
                     <li>
                         <div className="flex items-center">
                             <ChevronRight className="w-4 h-4 mx-1" />
-                            <span className="text-white font-medium" aria-current="page">{vertical.name}</span>
+                            <span className="text-white font-medium" aria-current="page">{t(`industries.${industry}.name`)}</span>
                         </div>
                     </li>
                 </ol>
@@ -112,13 +112,13 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
         <div className="container mx-auto px-4 z-10 text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 backdrop-blur-md border border-primary-500/30 text-primary-200 mb-8">
                 <ShieldCheck className="w-4 h-4" />
-                <span className="text-sm font-bold uppercase tracking-widest">{vertical.name} Authority Guide</span>
+                <span className="text-sm font-bold uppercase tracking-widest">{t(`industries.${industry}.name`)} {t('industries.medical-devices.authorityGuide')}</span>
             </div>
             <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-                {vertical.name} in <span className="text-primary-400">{location.name}</span>
+                {t(`industries.${industry}.name`)} in <span className="text-primary-400">{location.name}</span>
             </h1>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-light">
-                {matrixEntry.localDynamics}
+                {t(`matrix.${city}.${industry}`)}
             </p>
         </div>
       </section>
@@ -129,28 +129,28 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700">
                 <div className="flex items-center gap-3 mb-4">
                     <Building2 className="w-5 h-5 text-primary-500" />
-                    <span className="text-xs font-bold uppercase text-gray-400">Regional Plants</span>
+                    <span className="text-xs font-bold uppercase text-gray-400">{t('industries.medical-devices.regionalPlants')}</span>
                 </div>
                 <div className="text-3xl font-bold text-gray-900 dark:text-white">{matrixEntry.stats.plants}</div>
             </div>
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700">
                 <div className="flex items-center gap-3 mb-4">
                     <Users2 className="w-5 h-5 text-primary-500" />
-                    <span className="text-xs font-bold uppercase text-gray-400">Sector Workforce</span>
+                    <span className="text-xs font-bold uppercase text-gray-400">{t('industries.medical-devices.sectorWorkforce')}</span>
                 </div>
                 <div className="text-3xl font-bold text-gray-900 dark:text-white">{matrixEntry.stats.workforce}</div>
             </div>
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700">
                 <div className="flex items-center gap-3 mb-4">
                     <TrendingUp className="w-5 h-5 text-primary-500" />
-                    <span className="text-xs font-bold uppercase text-gray-400">Avg. Labor Rate</span>
+                    <span className="text-xs font-bold uppercase text-gray-400">{t('industries.medical-devices.avgLaborRate')}</span>
                 </div>
                 <div className="text-2xl font-bold text-gray-900 dark:text-white">{vertical.metrics.avgLaborRate}</div>
             </div>
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700">
                 <div className="flex items-center gap-3 mb-4">
                     <Award className="w-5 h-5 text-primary-500" />
-                    <span className="text-xs font-bold uppercase text-gray-400">Certification Ease</span>
+                    <span className="text-xs font-bold uppercase text-gray-400">{t('industries.medical-devices.certEase')}</span>
                 </div>
                 <div className="text-3xl font-bold text-gray-900 dark:text-white">{vertical.metrics.complianceScore}</div>
             </div>
@@ -167,25 +167,25 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
                 <section>
                     <div className="flex items-center gap-4 mb-8">
                         <div className="h-px bg-primary-500 w-12" />
-                        <h2 className="text-2xl font-bold text-gray-900 dark:text-white uppercase tracking-widest">Industry Analysis</h2>
+                        <h2 className="text-2xl font-bold text-gray-900 dark:text-white uppercase tracking-widest">{t('industries.medical-devices.industryAnalysis')}</h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
                             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                                 <Zap className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                                Market Opportunity
+                                {t('industries.medical-devices.marketOpportunity')}
                             </h3>
                             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                                {vertical.insights.marketOpportunity}
+                                {t(`industries.${industry}.marketOpportunity`)}
                             </p>
                         </div>
                         <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
                             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                                 <Users2 className="w-5 h-5 text-blue-500" />
-                                Labor & Talent Profile
+                                {t('industries.medical-devices.laborProfile')}
                             </h3>
                             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                                {vertical.insights.laborProfile}
+                                {t(`industries.${industry}.laborProfile`)}
                             </p>
                         </div>
                     </div>
@@ -196,10 +196,10 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
                     <div className="bg-gray-900 rounded-3xl p-10 text-white relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/10 rounded-full blur-[100px]" />
                         <div className="relative z-10">
-                            <h2 className="text-3xl font-bold mb-8">Regulatory & Compliance Framework</h2>
+                            <h2 className="text-3xl font-bold mb-8">{t('industries.medical-devices.regulatoryFramework')}</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                 <div>
-                                    <h4 className="text-primary-400 font-bold uppercase tracking-widest text-sm mb-6">Required Certifications</h4>
+                                    <h4 className="text-primary-400 font-bold uppercase tracking-widest text-sm mb-6">{t('industries.medical-devices.requiredCerts')}</h4>
                                     <div className="space-y-4">
                                         {vertical.compliance.certifications.map((cert) => (
                                             <div key={cert} className="flex items-center gap-3">
@@ -212,7 +212,7 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
                                     </div>
                                 </div>
                                 <div>
-                                    <h4 className="text-primary-400 font-bold uppercase tracking-widest text-sm mb-6">Key Regulatory Bodies</h4>
+                                    <h4 className="text-primary-400 font-bold uppercase tracking-widest text-sm mb-6">{t('industries.medical-devices.keyBodies')}</h4>
                                     <div className="space-y-4">
                                         {vertical.compliance.regulatoryBodies.map((body) => (
                                             <div key={body} className="flex items-center gap-3">
@@ -232,8 +232,8 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
                 {/* Top Players & Validation */}
                 <section>
                     <SectionTitle 
-                        title="Cluster Validation"
-                        subtitle={`Join the leading ${vertical.name.toLowerCase()} companies already operating in ${location.name}.`}
+                        title={t('industries.medical-devices.clusterValidation')}
+                        subtitle={t('industries.medical-devices.clusterSub')}
                         align="left"
                     />
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
@@ -256,11 +256,11 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
                 <div className="sticky top-28 space-y-8">
                     <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-800">
                         <div className="bg-primary-600 p-4 text-center">
-                            <span className="text-white font-bold text-sm uppercase tracking-widest">Industry Specialist Access</span>
+                            <span className="text-white font-bold text-sm uppercase tracking-widest">{t('industries.medical-devices.specialistAccess')}</span>
                         </div>
                         <LeadForm
-                            title={`Consult with a ${vertical.name} Advisor`}
-                            subtitle={`Get industry-specific data for ${location.name} operations.`}
+                            title={t('industries.medical-devices.consultAdvisor').replace('{name}', t(`industries.${industry}.name`))}
+                            subtitle={t('industries.medical-devices.advisorSub').replace('{location}', location.name)}
                             source={`vertical_guide_${city}_${industry}`}
                             className="p-6"
                         />
@@ -270,9 +270,9 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
 
                     {/* Industrial Parks Badge */}
                     <div className="bg-gradient-to-br from-primary-900 to-primary-700 p-8 rounded-2xl text-white shadow-lg">
-                        <h4 className="text-xl font-bold mb-4">Strategic Real Estate</h4>
+                        <h4 className="text-xl font-bold mb-4">{t('industries.medical-devices.strategicRealEstate')}</h4>
                         <p className="text-primary-100 text-sm mb-6 leading-relaxed">
-                            These industrial parks are specifically engineered for {vertical.name.toLowerCase()} requirements, featuring reinforced foundations and heavy power grids.
+                            {t('industries.medical-devices.realEstateSub').replace('{name}', t(`industries.${industry}.name`))}
                         </p>
                         <div className="space-y-3">
                             {matrixEntry.featuredParks.map((park) => (
@@ -286,7 +286,7 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
                             href={`/${language}/locations/${city}`}
                             className="inline-flex items-center gap-2 mt-8 text-sm font-bold text-primary-200 hover:text-white transition-colors"
                         >
-                            View All {location.name} Infrastructure
+                            {t('industries.medical-devices.viewAllInfrastructure').replace('{location}', location.name)}
                             <ChevronRight className="w-4 h-4" />
                         </Link>
                     </div>

@@ -687,10 +687,88 @@
       "label_headcount": "Operational Headcount",
       "label_baseline": "Tijuana Fixed Baseline (2026)",
       "label_baseline_sub": "$7.84/hr (Fully Burdened)",
-      "label_savings": "Projected Annual Savings",
+    "label_savings": "Projected Annual Savings",
       "label_reduction": "Cost Reduction",
       "label_weekly": "Weekly Savings",
       "disclaimer": "*Full burdened rate includes IMSS, INFONAVIT, Vacations, and 10% Mandatory Profit Sharing. Realized savings may vary based on specific industry turnover profiles."
+    }
+  },
+  "industries": {
+    "medical-devices": {
+      "name": "Medical Device Manufacturing",
+      "description": "Scale FDA-compliant production in Tijuana and Mexicali's world-class med-tech clusters.",
+      "marketOpportunity": "Baja California is the single largest medical device cluster in North America, with 70+ FDA-registered plants and 12,000+ operators.",
+      "laborProfile": "Specialized in sterile packaging, Class II/III assembly, and ISO 13485 quality systems management.",
+      "logisticsEdge": "90-minute cold-chain transit from Tijuana production floors to San Diego distribution hubs.",
+      "authorityGuide": "Authority Guide",
+      "regionalPlants": "Regional Plants",
+      "sectorWorkforce": "Sector Workforce",
+      "avgLaborRate": "Avg. Labor Rate",
+      "certEase": "Certification Ease",
+      "industryAnalysis": "Industry Analysis",
+      "regulatoryFramework": "Regulatory & Compliance Framework",
+      "requiredCerts": "Required Certifications",
+      "keyBodies": "Key Regulatory Bodies",
+      "clusterValidation": "Cluster Validation",
+      "clusterSub": "Join the leading companies already operating in this region.",
+      "specialistAccess": "Industry Specialist Access",
+      "consultAdvisor": "Consult with a {name} Advisor",
+      "advisorSub": "Get industry-specific data for {location} operations.",
+      "strategicRealEstate": "Strategic Real Estate",
+      "realEstateSub": "These industrial parks are specifically engineered for {name} requirements.",
+      "viewAllInfrastructure": "View All {location} Infrastructure"
+    },
+    "aerospace": {
+      "name": "Aerospace & Defense",
+      "description": "Access the most advanced AS9100-certified manufacturing hub in Mexicali and Sonora.",
+      "marketOpportunity": "Mexicali is Mexico's aerospace capital, hosting the largest concentration of precision machining and avionics production.",
+      "laborProfile": "Highly technical workforce skilled in composite materials, CNC machining, and NADCAP processes.",
+      "logisticsEdge": "Direct integration with the Arizona and California aerospace 'Megaregions' (Raytheon, Boeing supply chains)."
+    },
+    "automotive": {
+      "name": "Automotive & Electric Vehicles",
+      "description": "The backbone of the North American EV supply chain, from wire harnesses to battery assembly.",
+      "marketOpportunity": "Juárez and the North-Central corridor dominate the global automotive wire harness and lighting assembly markets.",
+      "laborProfile": "Stable, high-volume assembly expertise with JIT (Just-in-Time) delivery culture deeply embedded.",
+      "logisticsEdge": "I-35 corridor connectivity allows 24-48 hour delivery to US auto hubs in Detroit and Tennessee."
+    },
+    "electronics": {
+      "name": "Electronics & SMT",
+      "description": "High-volume consumer and industrial electronics centering on Reynosa and Tijuana.",
+      "marketOpportunity": "Reynosa and Tijuana are global leaders in TV, appliance, and telecommunications hardware assembly.",
+      "laborProfile": "Precision SMT (Surface Mount Technology) operators and PCBA testing specialists.",
+      "logisticsEdge": "Direct cross-border access to Texas and California logistics distributors."
+    },
+    "distribution-3pl": {
+      "name": "Distribution & 3PL Logistics",
+      "description": "Leverage the Laredo-Nuevo Laredo gateway, the busiest commercial land port in the Americas.",
+      "marketOpportunity": "Nuevo Laredo handles 40% of all US-Mexico trade, making it the premier location for cross-docking and warehouse hubbing.",
+      "laborProfile": "Bilingual logistics coordinators, warehouse management system (WMS) specialists, and certified customs agents.",
+      "logisticsEdge": "Zero-wait intermodal rail access (Union Pacific/KCSM) to the US Midwest and East Coast."
+    }
+  },
+  "matrix": {
+    "tijuana": {
+      "medical-devices": "The world's second-largest medical device cluster. Tijuana specializes in Class II and III implantable devices and high-precision sterile assembly. Its proximity to San Diego's biotech hub allows for daily engineering exchange.",
+      "aerospace": "Tijuana's aerospace sector is deeply integrated with the Southern California defense corridor. Specializes in interior components, secondary structures, and precision machining.",
+      "electronics": "Tijuana's electronics sector focuses on high-mix, low-volume (HMLV) production and advanced PCBA for medical and aerospace applications."
+    },
+    "mexicali": {
+      "medical-devices": "Mexicali offers a lower-cost alternative to Tijuana for med-tech, with a focus on high-volume disposables and diagnostic equipment assembly. It benefits from shorter border wait times at Calexico East.",
+      "aerospace": "Mexico's aerospace capital. Mexicali handles 70% of Gulfstream's jet assembly and is a global center for avionics testing and thermal management systems (Honeywell)."
+    },
+    "juarez": {
+      "automotive": "The global epicenter of wire harness manufacturing. Juárez is rapidly transitioning to EV architecture, producing complex high-voltage harnesses and electronic control units for the Big Three.",
+      "electronics": "Foxconn and other major EMS players operate high-volume assembly lines in Juárez, feeding the North American consumer tech market."
+    },
+    "monterrey": {
+      "automotive": "The future EV capital of Latin America. Monterrey captures 72% of Mexico's nearshoring investment, driven by the Tesla Gigafactory ecosystem and a massive Tier 1 supplier base."
+    },
+    "reynosa": {
+      "electronics": "The 'Television Capital' of the world. Reynosa specializes in high-volume consumer electronics (LG, Panasonic) and industrial automation controls (Emerson)."
+    },
+    "nuevo-laredo": {
+      "distribution-3pl": "The 'World Trade' gateway. Nuevo Laredo handles 40% of all US-Mexico rail and truck freight. Ideal for large-scale cross-docking and multi-modal distribution into the US Midwest."
     }
   }
 }

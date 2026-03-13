@@ -607,5 +607,170 @@
     "iso13485": "Medizinprodukte",
     "as9100": "Luft- und Raumfahrt und Verteidigung",
     "iatf16949": "Automotive Core"
+  },
+  "industries": {
+    "medical-devices": {
+      "name": "Medizintechnik-Herstellung",
+      "description": "Skalieren Sie die FDA-konforme Produktion in den erstklassigen Medizintechnik-Clustern von Tijuana und Mexicali.",
+      "marketOpportunity": "Baja California ist der größte Medizintechnik-Cluster in Nordamerika mit über 70 FDA-registrierten Werken und 12.000+ Fachkräften.",
+      "laborProfile": "Spezialisiert auf sterile Verpackung, Montage der Klasse II/III und ISO 13485 Qualitätsmanagementsysteme.",
+      "logisticsEdge": "90-minütiger Kühlkettentransit von den Produktionsstätten in Tijuana zu den Vertriebszentren in San Diego.",
+      "authorityGuide": "Experten-Leitfaden",
+      "regionalPlants": "Regionale Werke",
+      "sectorWorkforce": "Branchen-Belegschaft",
+      "avgLaborRate": "Durchschnittlicher Lohnsatz",
+      "certEase": "Zertifizierungs-Aufwand",
+      "industryAnalysis": "Branchen-Analyse",
+      "regulatoryFramework": "Regulierungs- & Compliance-Rahmen",
+      "requiredCerts": "Erforderliche Zertifikate",
+      "keyBodies": "Wichtige Regulierungsbehörden",
+      "clusterValidation": "Cluster-Validierung",
+      "clusterSub": "Schließen Sie sich den führenden Unternehmen an, die bereits in dieser Region tätig sind.",
+      "specialistAccess": "Branchenspezialisten-Zugang",
+      "consultAdvisor": "Beratung durch einen {name}-Experten",
+      "advisorSub": "Erhalten Sie branchenspezifische Daten für den Betrieb in {location}.",
+      "strategicRealEstate": "Strategische Immobilien",
+      "realEstateSub": "Diese Industrieparks sind speziell auf die Anforderungen von {name} ausgelegt.",
+      "viewAllInfrastructure": "Alle Infrastrukturen in {location} anzeigen"
+    },
+    "aerospace": {
+      "name": "Luft- und Raumfahrt & Verteidigung",
+      "description": "Nutzen Sie das fortschrittlichste AS9100-zertifizierte Fertigungszentrum in Mexicali und Sonora.",
+      "marketOpportunity": "Mexicali ist Mexikos Hauptstadt der Luft- und Raumfahrt und beherbergt die größte Konzentration von Präzisionsfertigung und Avionik-Produktion.",
+      "laborProfile": "Hochtechnisierte Belegschaft, qualifiziert in Verbundwerkstoffen, CNC-Bearbeitung und NADCAP-Prozessen.",
+      "logisticsEdge": "Direkte Integration in die Luftfahrt-Megaregionen Arizonas und Kaliforniens (Raytheon, Boeing Lieferketten)."
+    },
+    "automotive": {
+      "name": "Automobil & Elektrofahrzeuge",
+      "description": "Das Rückgrat der nordamerikanischen EV-Lieferkette, von Kabelbäumen bis zur Batteriemontage.",
+      "marketOpportunity": "Juárez und der nordzentrale Korridor dominieren die globalen Märkte für Automobil-Kabelbäume und Beleuchtungssysteme.",
+      "laborProfile": "Stabile Expertise in der Hochvolumen-Montage mit einer tief verwurzelten JIT-Lieferkultur (Just-in-Time).",
+      "logisticsEdge": "Die Anbindung an den I-35 Korridor ermöglicht Lieferungen innerhalb von 24-48 Stunden in die US-Automobilzentren in Detroit und Tennessee."
+    },
+    "electronics": {
+      "name": "Elektronik & SMT",
+      "description": "Hochvolumige Konsum- und Industrieelektronik mit Schwerpunkt in Reynosa und Tijuana.",
+      "marketOpportunity": "Reynosa und Tijuana sind weltweit führend in der Montage von Fernsehern, Haushaltsgeräten und Telekommunikationshardware.",
+      "laborProfile": "Spezialisten für Präzisions-SMT (Surface Mount Technology) und PCBA-Prüfverfahren.",
+      "logisticsEdge": "Direkter grenzüberschreitender Zugang zu Logistikdistributoren in Texas und Kalifornien."
+    },
+    "distribution-3pl": {
+      "name": "Distribution & 3PL Logistik",
+      "description": "Nutzen Sie das Laredo-Nuevo Laredo Tor, den meistfrequentierten kommerziellen Landhafen Amerikas.",
+      "marketOpportunity": "Nuevo Laredo wickelt 40 % des gesamten Handels zwischen den USA und Mexiko ab und ist damit der wichtigste Standort für Cross-Docking und Hub-Lagerung.",
+      "laborProfile": "Bilinguale Logistikkoordinatoren, Spezialisten für Lagerverwaltungssysteme (WMS) und zertifizierte Zollagenten.",
+      "logisticsEdge": "Wartezeitfreier intermodaler Schienenzugang (Union Pacific/KCSM) in den US-Mittleren Westen und an die Ostküste."
+    }
+  },
+  "matrix": {
+    "tijuana": {
+      "medical-devices": "Der weltweit zweitgrößte Medizintechnik-Cluster. Tijuana ist spezialisiert auf implantierbare Geräte der Klasse II und III sowie sterile Präzisionsmontage.",
+      "aerospace": "Der Luftfahrtsektor von Tijuana ist eng mit dem Verteidigungskorridor in Südkalifornien verzahnt.",
+      "electronics": "Der Elektroniksektor in Tijuana konzentriert sich auf High-Mix-Low-Volume (HMLV) Produktion und fortschrittliche PCBA."
+    },
+    "mexicali": {
+      "medical-devices": "Mexicali bietet eine kostengünstigere Alternative zu Tijuana für Medizintechnik, mit Fokus auf Hochvolumen-Verbrauchsmaterialien.",
+      "aerospace": "Luftfahrt-Hauptstadt Mexikos. Mexicali wickelt 70 % der Montage von Gulfstream-Jets ab und ist ein globales Zentrum für Avionik-Tests."
+    },
+    "juarez": {
+      "automotive": "Das globale Epizentrum der Kabelbaumfertigung. Juárez stellt sich schnell auf die Architektur von Elektrofahrzeugen um.",
+      "electronics": "Foxconn und andere große EMS-Player betreiben in Juárez Hochvolumen-Montagelinien für den nordamerikanischen Markt."
+    },
+    "monterrey": {
+      "automotive": "Die künftige EV-Hauptstadt Lateinamerikas. Monterrey zieht 72 % der Nearshoring-Investitionen in Mexiko an."
+    },
+    "reynosa": {
+      "electronics": "Die 'TV-Hauptstadt' der Welt. Reynosa ist spezialisiert auf Hochvolumen-Unterhaltungselektronik (LG, Panasonic)."
+    },
+    "nuevo-laredo": {
+      "distribution-3pl": "Das Tor zum Welthandel. Nuevo Laredo wickelt 40 % des gesamten US-Mexiko-Schienen- und LKW-Frachtverkehrs ab."
+    }
+  },
+  "tijuanaMasterGuide": {
+    "hero": {
+      "badge": "B2B ADVISORY REPORT 2026",
+      "title": "Der ultimative Leitfaden für die Fertigung in Tijuana",
+      "subtitle": "Nur 20 Minuten von San Diego entfernt bietet Tijuana 0 % USMCA-Zölle, voll belastete Arbeitskosten von 7,84 $/Std. und 1-Tages-Versand nach Kalifornien. Erfahren Sie, warum führende US-Hersteller Asien umgehen.",
+      "cta_landed_cost": "Berechnen Sie Ihre Gesamtkosten",
+      "cta_clusters": "Industrie-Cluster erkunden",
+      "trust_label": "Vertraut von Branchenführern in Baja California"
+    },
+    "cost_advantage": {
+      "title": "Der „China-Plus-One“-Pivot: Der Kostenvorteil",
+      "subtitle": "Die Mathematik hinter der massiven Verlagerung globaler Lieferketten von Shenzhen nach Tijuana.",
+      "labor_val": "7,84 $",
+      "labor_label": "Voll belasteter Arbeitskostensatz",
+      "labor_desc": "Inklusive IMSS-Sozialversicherung, INFONAVIT-Wohnungsbau, Urlaubsprämien und obligatorischer Gewinnbeteiligung – eine Reduzierung um 60–75 % gegenüber Kalifornien.",
+      "real_estate_val": "0,75 $",
+      "real_estate_label": "Class A Immobilien (NNN)",
+      "real_estate_desc": "Mit einer Leerstandsquote von 8 % im 1. Quartal 2026 ist erstklassige Industriefläche reichlich vorhanden. Mesa de Otay Premium-Zonen bieten 32 Fuß lichte Höhe und viel Energie.",
+      "tariffs_val": "0 %",
+      "tariffs_label": "USMCA-Zölle",
+      "tariffs_desc": "Umgehen Sie die 25–100 %igen Section 301-Zölle auf chinesische Importe vollständig. Unter IMMEX hergestellte Waren, die in die USA gelangen, sind von Natur aus zollfrei."
+    },
+    "clusters": {
+      "title": "Dominante Industrie-Cluster",
+      "subtitle": "Die Infrastruktur, Lieferketten und spezialisierten Talentpools sind bereits hier.",
+      "medical": {
+        "title": "Medizintechnik",
+        "badge": "NR. 1 IN MEXIKO",
+        "desc": "Tijuana ist der größte Hub für Medizintechnik in Mexiko und der zweitgrößte weltweit."
+      },
+      "aerospace": {
+        "title": "Luft- und Raumfahrt",
+        "badge": "AS9100 BEREIT",
+        "desc": "Tijuana verfügt über umfassende Fähigkeiten in der Präzisionsbearbeitung und Verbundstrukturen."
+      },
+      "electronics": {
+        "title": "Elektronik & EV",
+        "badge": "100+ STANDORTE",
+        "desc": "Ein globales Kraftzentrum für PCBA, Kabelbäume und EV-Komponentenmontage."
+      }
+    },
+    "real_estate": {
+      "title": "Class-A Industrieparks",
+      "subtitle": "Tijuana bietet höchste Sicherheit. Industriezonen sind von Wohngebieten getrennt und werden rund um die Uhr bewacht.",
+      "pacific": "Industriepark Pacifico",
+      "pacific_desc": "Spitzenlage. Unmittelbarer Zugang zu Otay Mesa.",
+      "otay": "Mesa de Otay Zone",
+      "otay_desc": "Hohe Energieverfügbarkeit. Sektor mit der höchsten Nachfrage.",
+      "finsa": "Finsa & El Florido",
+      "finsa_desc": "Großflächige Standorte und maßgeschneiderte Lösungen."
+    },
+    "border": {
+      "title": "Der Otay Mesa Grenzvorteil",
+      "asia_label": "Shenzhen nach Long Beach (See)",
+      "asia_val": "30–45 Tage",
+      "tijuana_label": "Tijuana nach San Diego (LKW)",
+      "tijuana_val": "90 Minuten",
+      "desc": "Das FAST Lane-Programm ermöglicht es registrierten Spediteuren, den normalen Verkehr zu umgehen."
+    },
+    "models": {
+      "title": "Markteintrittsstrategien",
+      "subtitle": "Das 90-Tage-Playbook vs. schlüsselfertiges Outsourcing.",
+      "shelter_title": "Shelter-Dienstleistungen (IMMEX)",
+      "shelter_desc": "Der schnellste Weg zur eigenen Fabrik. Ein mexikanisches Shelter-Unternehmen kümmert sich um die Compliance.",
+      "contract_title": "Auftragsfertigung",
+      "contract_desc": "Sofortige Skalierung durch Partnerschaft mit bestehenden, ISO-zertifizierten Herstellern.",
+      "cta_shelter": "Mehr über Shelter-Setup",
+      "cta_contract": "Auftragsfertiger finden"
+    },
+    "cta_final": {
+      "button": "Sprechen Sie mit einem Berater",
+      "subtitle": "Kontaktieren Sie einen Berater von Nearshore Navigator für eine personalisierte Analyse Ihrer gesamten Lieferkosten im Vergleich zu einem Standort in Tijuana.",
+      "title": "Bereit für die Kalkulation?"
+    },
+    "calculator": {
+      "title": "Gesamtkostensimulator",
+      "subtitle": "Modellieren Sie Ihre Einsparungen für 2026 in Tijuana.",
+      "label_rate": "Aktueller US-Arbeitskostensatz ($/Std.)",
+      "label_headcount": "Anzahl der Mitarbeiter",
+      "label_baseline": "Tijuana Fix-Basis (2026)",
+      "label_baseline_sub": "7,84 $/Std. (Voll belastet)",
+      "label_savings": "Projizierte jährliche Einsparungen",
+      "label_reduction": "Kostensenkung",
+      "disclaimer": "*Der voll belastete Satz beinhaltet IMSS, INFONAVIT, Urlaub und die gesetzliche Gewinnbeteiligung von 10 %. Die tatsächlichen Einsparungen können je nach Branchenfluktuation variieren.",
+      "label_weekly": "Wöchentliche Einsparungen"
+    }
   }
 }

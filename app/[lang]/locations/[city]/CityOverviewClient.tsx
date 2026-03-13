@@ -29,7 +29,7 @@ type Props = {
 };
 
 export default function CityOverviewClient({ city }: Props) {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
   const location = getLocation(city);
 
   if (!location) {
@@ -185,12 +185,12 @@ export default function CityOverviewClient({ city }: Props) {
                                         <div className="p-2 bg-primary-50 dark:bg-primary-900/20 rounded-lg group-hover:bg-primary-500 group-hover:text-white transition-colors">
                                             <Factory className="w-5 h-5" />
                                         </div>
-                                        <div>
-                                            <h4 className="font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">
-                                                {vertical.name}
-                                            </h4>
-                                            <p className="text-xs text-gray-500">{entry.stats.plants} Active Facilities</p>
-                                        </div>
+                                          <div>
+                                              <h4 className="font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">
+                                                 {t(`industries.${vertical.slug}.name`)}
+                                              </h4>
+                                              <p className="text-xs text-gray-500">{entry.stats.plants} Active Facilities</p>
+                                          </div>
                                     </div>
                                     <ChevronRight className="w-5 h-5 text-gray-300 group-hover:text-primary-500 transition-colors" />
                                 </Link>
