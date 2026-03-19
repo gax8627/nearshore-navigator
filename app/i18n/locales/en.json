@@ -21,7 +21,7 @@
     "heroImageAlt": "Tijuana Industrial Park Aerial View"
   },
   "hero": {
-    "title": "Nearshore Shelter Services | Vetted Partners in",
+    "title": "Nearshore Shelter Services | Strategic Matchmaking in",
     "titleHighlight": "Baja California",
     "subtitle": "Objective brokerage and strategic matchmaking. We connect US manufacturers with world-class facilities and vetted partners across Baja California.",
     "cta_primary": "Map Your Expansion",
@@ -687,7 +687,7 @@
       "label_headcount": "Operational Headcount",
       "label_baseline": "Tijuana Fixed Baseline (2026)",
       "label_baseline_sub": "$7.84/hr (Fully Burdened)",
-    "label_savings": "Projected Annual Savings",
+      "label_savings": "Projected Annual Savings",
       "label_reduction": "Cost Reduction",
       "label_weekly": "Weekly Savings",
       "disclaimer": "*Full burdened rate includes IMSS, INFONAVIT, Vacations, and 10% Mandatory Profit Sharing. Realized savings may vary based on specific industry turnover profiles."
@@ -770,5 +770,43 @@
     "nuevo-laredo": {
       "distribution-3pl": "The 'World Trade' gateway. Nuevo Laredo handles 40% of all US-Mexico rail and truck freight. Ideal for large-scale cross-docking and multi-modal distribution into the US Midwest."
     }
+  },
+  "marketingPage": {
+    "badge": "Fractional Marketing Consultant",
+    "heroTitle": "Your Fractional",
+    "heroTitleHighlight": "Marketing Director",
+    "heroSubtitle": "I work alongside your team as your part-time marketing director — bringing the strategy, tools, and execution that manufacturers need to grow. Pick exactly the services you need, nothing more.",
+    "heroCta": "See Services",
+    "heroCtaSecondary": "Book a Free 15-Min Call",
+    "servicesTitle": "À La Carte Marketing Services",
+    "servicesSubtitle": "Choose exactly what your business needs right now. Start with one service, add more as you grow.",
+    "linkedinTitle": "LinkedIn Outreach Campaigns",
+    "linkedinDesc": "Targeted outreach to decision-makers in your industry. We identify, connect, and nurture prospects through personalized LinkedIn campaigns that generate real conversations.",
+    "crmTitle": "CRM Audit & Setup",
+    "crmDesc": "Stop losing leads in spreadsheets. I audit your current CRM process, set up automated lead routing, scoring, and follow-up sequences so nothing falls through the cracks.",
+    "contentTitle": "Industry Content Creation",
+    "contentDesc": "Monthly blog posts, case studies, and LinkedIn articles tailored to your industry. Position your company as a thought leader that engineers and buyers trust.",
+    "emailTitle": "Email Campaigns",
+    "emailDesc": "Custom-designed email sequences that nurture prospects from first touch to booked meeting. AI-powered personalization at scale with transparent deliverability tracking.",
+    "seoTitle": "SEO Audit & Optimization",
+    "seoDesc": "Comprehensive technical SEO audit, keyword strategy, and on-page optimization. Get found by buyers actively searching for your services on Google.",
+    "socialTitle": "Social Media Management",
+    "socialDesc": "Consistent, professional social media presence across LinkedIn, Instagram, and Facebook. Showcase your capabilities with engaging posts and short-form video content.",
+    "howTitle": "How It Works",
+    "howSubtitle": "No long-term contracts. No bloated retainers. Just the marketing help you actually need.",
+    "step1Title": "Pick Your Services",
+    "step1Desc": "Choose the specific marketing services your business needs right now. No bundles, no commitments — just what moves the needle.",
+    "step2Title": "I Embed With Your Team",
+    "step2Desc": "I work alongside your people as your part-time marketing director — weekly strategy calls, hands-on execution, and full transparency.",
+    "step3Title": "See Real Results",
+    "step3Desc": "Live reporting on every campaign. You see exactly what's working, what's not, and where every dollar goes. No black boxes.",
+    "whyDenisseTitle": "Why Work With a Fractional Marketing Director?",
+    "whyPoint1": "Senior marketing leadership without the $200K+ salary",
+    "whyPoint2": "Someone who understands manufacturing, not just marketing buzzwords",
+    "whyPoint3": "Bilingual (English/Spanish) — seamless communication across borders",
+    "whyPoint4": "Scale up or down anytime — no long-term contracts required",
+    "whyCta": "Schedule a Free Consultation",
+    "formTitle": "Let's Talk About Your Marketing",
+    "formSubtitle": "Book a free 15-minute call. No pitch, no pressure — just an honest conversation about what's working and what's not."
   }
 }

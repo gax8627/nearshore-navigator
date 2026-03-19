@@ -78,6 +78,36 @@ export function Footer() {
                     </div>
                 </div>
             </div>
+
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "LocalBusiness",
+                        "name": "Nearshore Navigator",
+                        "image": "https://nearshorenavigator.com/images/nearshore-logo-brand.png",
+                        "url": "https://nearshorenavigator.com",
+                        "telephone": "+1-800-000-0000",
+                        "address": [
+                            {
+                                "@type": "PostalAddress",
+                                "streetAddress": "San Diego, California, US",
+                                "addressLocality": "San Diego",
+                                "addressRegion": "CA",
+                                "addressCountry": "US"
+                            },
+                            {
+                                "@type": "PostalAddress",
+                                "streetAddress": "Blvd. Agua Caliente 10611",
+                                "addressLocality": "Tijuana",
+                                "addressRegion": "BNC",
+                                "addressCountry": "MX"
+                            }
+                        ]
+                    })
+                }}
+            />
         </footer>
     );
 }

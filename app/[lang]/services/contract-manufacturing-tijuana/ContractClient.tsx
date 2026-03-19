@@ -45,13 +45,13 @@ export default function ContractClient() {
         },
         {
             name: t('contractPage.furniture'),
-            img: "https://images.unsplash.com/photo-1533090138077-0f6664d1c255?auto=format&fit=crop&q=80&w=800",
+            img: "/images/services/furniture_mfg.png",
             desc: t('contractPage.furnitureDesc'),
             certifications: ["Commercial Furniture", "Wood/Metal Fab", "Packaging Design"],
         },
         {
             name: t('contractPage.cnc'),
-            img: "https://images.unsplash.com/photo-1565439366436-1c098583fbdb?auto=format&fit=crop&q=80&w=800",
+            img: "/images/services/cnc_machining.png",
             desc: t('contractPage.cncDesc'),
             certifications: ["Lathe/Milling", "AS9100D", "Tight-Tolerance"],
         },

@@ -12,16 +12,21 @@ import { TrustSeal } from "@/components/TrustSeal";
 type Props = {
   city: string;
   serviceId: string;
+  localizedData?: any;
 };
 
-export default function ServiceLocationClient({ city, serviceId }: Props) {
+export default function ServiceLocationClient({ city, serviceId, localizedData }: Props) {
   const { t, language } = useLanguage();
   const location = getLocation(city)!;
   const service = getService(serviceId)!;
 
+  // Use localized data if available, otherwise fallback to lookup
+  const currentServiceTitle = localizedData?.service?.title || service.title;
+  const currentCityName = localizedData?.location?.name || location.name;
+
   // Dynamic content generation
-  const title = `${service.title} in ${location.name}`;
-  const subtitle = `Comprehensive ${service.title.toLowerCase()} solutions tailored for the ${location.name} industrial market. Leverage ${location.name}'s ${location.stats.proximity} and a workforce of ${location.stats.laborForce} to optimize your nearshoring strategy.`;
+  const title = `${currentServiceTitle} in ${currentCityName}`;
+  const subtitle = localizedData?.service?.description || `Comprehensive ${service.title.toLowerCase()} solutions tailored for the ${location.name} industrial market. Leverage ${location.name}'s ${location.stats.proximity} and a workforce of ${location.stats.laborForce} to optimize your nearshoring strategy.`;
 
   const faqs = location.serviceFaqs?.[serviceId] || location.localFaqs || [
     {
@@ -189,7 +194,7 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
         <div className="container mx-auto px-4 z-10 text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white mb-8">
                 <MapPin className="w-4 h-4 text-primary-400" />
-                <span className="text-sm font-medium">{location.name} Industrial Hub</span>
+                <span className="text-sm font-medium">{currentCityName} Industrial Hub</span>
             </div>
           <h1 className="text-3xl md:text-6xl font-bold text-white mb-6">
             {service.title} in <span className="text-primary-500">{location.name}</span>
@@ -208,11 +213,54 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
             {/* Key Benefits */}
             <section>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Critical Advantages of {location.name} for {service.title}
+                {t('industries.clusterValidation')} - {currentCityName}
               </h2>
+              
+              {/* AI-SEO: Direct Answer Block */}
+              <p className="text-lg font-medium text-gray-800 dark:text-gray-200 mb-6 border-l-4 border-primary-500 pl-4">
+                Operating in {currentCityName} provides immediate access to {location.stats?.proximity || "the US market"}. With {location.stats?.laborForce?.toString() || "a massive"} industrial workforce and fully burdened manufacturing labor rates up to 60-75% lower than California, {currentCityName} is the strategic choice for {currentServiceTitle} under the IMMEX and USMCA frameworks.
+              </p>
+
+              {/* AI-SEO: Structured Data Table */}
+              <div className="overflow-x-auto mb-8 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
+                <table className="min-w-full text-left text-sm">
+                  <thead className="bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300">
+                    <tr>
+                      <th className="px-6 py-4 font-semibold">Key Metric</th>
+                      <th className="px-6 py-4 font-semibold">{currentCityName} Advantage</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-100 dark:divide-gray-800 text-gray-600 dark:text-gray-400">
+                    <tr>
+                      <td className="px-6 py-4 font-medium">Logistics & Proximity</td>
+                      <td className="px-6 py-4">{location.stats?.proximity || "Direct border access"}</td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 font-medium">Labor Force</td>
+                      <td className="px-6 py-4">{location.stats?.laborForce?.toString() || "Specialized manufacturing talent"}</td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 font-medium">Top Industrial Focus</td>
+                      <td className="px-6 py-4">{location.advantages?.[0] || currentServiceTitle}</td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 font-medium">USMCA Tariff Status</td>
+                      <td className="px-6 py-4">0% Duty on qualifying manufactured goods</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {localizedData?.matrixContent && (
+                <div className="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-8 bg-primary-50/50 dark:bg-primary-900/10 p-6 rounded-xl border border-primary-100 dark:border-primary-900/20">
+                  <p className="text-lg leading-relaxed italic">
+                    {localizedData.matrixContent}
+                  </p>
+                </div>
+              )}
               <div className="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-8">
                 <p>
-                  Operating in {location.name} provides immediate access to {location.stats.proximity}. With a population of {location.stats.population} and a mature industrial base, companies utilizing {service.title.toLowerCase()} can expect high operational efficiency and significant cost advantages.
+                  {localizedData?.marketOpportunity || `Operating in ${location.name} provides immediate access to ${location.stats.proximity}. With a population of ${location.stats.population} and a mature industrial base, companies utilizing ${service.title.toLowerCase()} can expect high operational efficiency and significant cost advantages.`}
                 </p>
               </div>
               
@@ -229,11 +277,11 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
             {/* Service Details */}
             <section>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                    Our {service.title} Expertise in {location.name}
+                    {t('industries.industryAnalysis')} - {currentServiceTitle}
                 </h3>
                 <div className="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-300">
                     <p>
-                        Our mission in {location.name} is to bridge the gap between US requirements and Mexican execution. For {service.title.toLowerCase()}, this means:
+                        {localizedData?.laborProfile || `Our mission in ${location.name} is to bridge the gap between US requirements and Mexican execution. For ${service.title.toLowerCase()}, this means:`}
                     </p>
                     <ul className="grid grid-cols-1 gap-4 mt-6 not-prose">
                         <li className="flex items-center gap-3">
@@ -292,7 +340,7 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
             {/* FAQ */}
             <section>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                FAQs: {service.title} in {location.name}
+                FAQs: {currentServiceTitle} in {currentCityName}
               </h3>
               <div className="space-y-4">
                 {faqs.map((faq, i) => (
@@ -312,7 +360,7 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
             {/* Related Locations */}
             <section>
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                    See {service.title} in Other Cities
+                    {t('industries.viewAllInfrastructure').replace('{location}', currentCityName)}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
                     {LOCATIONS.filter(l => l.slug !== city).slice(0, 6).map((loc) => (
@@ -371,7 +419,7 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
                    {location.name} Landed Cost Analysis
                 </span>
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                  Calculate Your Exact Savings in {location.name}
+                  {t('industries.consultAdvisor').replace('{name}', currentServiceTitle)} - {currentCityName}
                 </h3>
                 <p className="text-sky-100 mb-8 max-w-lg leading-relaxed">
                   Stop guessing. Let our advisory team run a custom total landed cost analysis comparing your current supply chain directly to {location.name}.
@@ -397,8 +445,8 @@ export default function ServiceLocationClient({ city, serviceId }: Props) {
             <div className="sticky top-28 space-y-6">
               <TrustSeal />
               <LeadForm
-                title={`Expand to ${location.name}`}
-                subtitle={`Get a custom proposal for ${service.title.toLowerCase()} in ${location.name}.`}
+                title={`${t('industries.consultAdvisor').replace('{name}', currentServiceTitle)}`}
+                subtitle={t('industries.advisorSub').replace('{location}', currentCityName).replace('{name}', currentServiceTitle)}
                 source={`service_location_${city}_${serviceId}`}
                 className="shadow-xl"
               />

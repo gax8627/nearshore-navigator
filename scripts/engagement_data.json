@@ -18739,9 +18739,15 @@
         "date": "2026-03-06T21:24:45.592+01:00",
         "subject": "Quick case study: 42% cost reduction in 90 days",
         "messageId": "<202603061247.28510229606@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-10T19:32:34.045+01:00",
+        "subject": "Quick case study: 42% cost reduction in 90 days",
+        "messageId": "<202603061247.28510229606@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-06T21:24:45.592+01:00"
+    "last_interaction": "2026-03-10T19:32:34.045+01:00"
   },
   "mike@qualitasindustries.com": {
     "status": "opened",
@@ -21397,9 +21403,15 @@
         "date": "2026-03-09T16:01:48+01:00",
         "subject": "Just sent this to another client in Baja",
         "messageId": "<202603090554.29491039320@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T23:52:22.988+01:00",
+        "subject": "Just sent this to another client in Baja",
+        "messageId": "<202603090554.29491039320@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T16:04:39.069+01:00"
+    "last_interaction": "2026-03-10T23:52:22.988+01:00"
   },
   "stacey@gostaff.com": {
     "status": "opened",
@@ -26119,9 +26131,15 @@
         "date": "2026-03-09T16:01:56+01:00",
         "subject": "Clear Blue Energy — Mexico manufacturing shortlist?",
         "messageId": "<202603090549.76441335713@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T21:28:02.996+01:00",
+        "subject": "Clear Blue Energy — Mexico manufacturing shortlist?",
+        "messageId": "<202603090549.76441335713@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T16:02:26.354+01:00"
+    "last_interaction": "2026-03-10T21:28:02.996+01:00"
   },
   "kashan.mehmood@bajacallcenters.com": {
     "status": "new",
@@ -28387,6 +28405,12 @@
         "date": "2026-03-10T18:00:09+01:00",
         "subject": "Vistage — Baja California supply chain shortlist?",
         "messageId": "<202603101046.40548713012@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-10T18:10:41.793+01:00",
+        "subject": "Vistage — Baja California supply chain shortlist?",
+        "messageId": "<202603101046.40548713012@smtp-relay.mailin.fr>"
       }
     ],
     "last_interaction": "2026-03-10T18:31:22.815+01:00"
@@ -28999,9 +29023,15 @@
         "date": "2026-03-10T18:00:14+01:00",
         "subject": "Mexico manufacturing option for your supply chain?",
         "messageId": "<202603101046.72304847623@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T21:05:39.4+01:00",
+        "subject": "Mexico manufacturing option for your supply chain?",
+        "messageId": "<202603101046.72304847623@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:12:00.518+01:00"
+    "last_interaction": "2026-03-10T21:05:39.4+01:00"
   },
   "david.harper@vistage.com": {
     "status": "new",
@@ -29075,6 +29105,12 @@
       {
         "type": "deferred",
         "date": "2026-03-10T18:00:15+01:00",
+        "subject": "Mexico manufacturing option for your supply chain?",
+        "messageId": "<202603101046.69444667357@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-10T18:10:47.137+01:00",
         "subject": "Mexico manufacturing option for your supply chain?",
         "messageId": "<202603101046.69444667357@smtp-relay.mailin.fr>"
       }
@@ -29323,9 +29359,15 @@
         "date": "2026-03-10T18:00:08+01:00",
         "subject": "Mexico manufacturing option for your supply chain?",
         "messageId": "<202603101046.69972693209@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T19:07:09.793+01:00",
+        "subject": "Mexico manufacturing option for your supply chain?",
+        "messageId": "<202603101046.69972693209@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:11:33.895+01:00"
+    "last_interaction": "2026-03-10T19:07:09.793+01:00"
   },
   "lorry.ruml@vistage.com": {
     "status": "new",
@@ -29437,9 +29479,15 @@
         "date": "2026-03-10T18:00:12+01:00",
         "subject": "Vistage — Baja California supply chain shortlist?",
         "messageId": "<202603101046.62039075614@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T19:45:53.419+01:00",
+        "subject": "Vistage — Baja California supply chain shortlist?",
+        "messageId": "<202603101046.62039075614@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:11:28.686+01:00"
+    "last_interaction": "2026-03-10T19:45:53.419+01:00"
   },
   "christy.lyras@vistage.com": {
     "status": "new",
@@ -30085,9 +30133,15 @@
         "date": "2026-03-10T18:00:08.435+01:00",
         "subject": "Mexico manufacturing option for your supply chain?",
         "messageId": "<202603101035.49141955396@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-11T00:03:24.318+01:00",
+        "subject": "Mexico manufacturing option for your supply chain?",
+        "messageId": "<202603101035.49141955396@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:05:55.849+01:00"
+    "last_interaction": "2026-03-11T00:03:24.318+01:00"
   },
   "aasadourian@homehelpershomecare.com": {
     "status": "clicked",
@@ -30751,9 +30805,15 @@
         "date": "2026-03-10T18:00:12+01:00",
         "subject": "Feast On This — Baja California supply chain shortlist?",
         "messageId": "<202603101033.21956292053@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T21:28:55.785+01:00",
+        "subject": "Feast On This — Baja California supply chain shortlist?",
+        "messageId": "<202603101033.21956292053@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:01:49.241+01:00"
+    "last_interaction": "2026-03-10T21:28:55.785+01:00"
   },
   "wally.dawson@vistage-chair.net": {
     "status": "new",
@@ -30882,7 +30942,7 @@
     "last_interaction": "2026-03-10T18:01:34.85+01:00"
   },
   "ruth@softwarediscountcenter.com": {
-    "status": "new",
+    "status": "opened",
     "history": [
       {
         "type": "delivered",
@@ -30895,9 +30955,15 @@
         "date": "2026-03-10T18:00:22+01:00",
         "subject": "Software Discount Center — Baja California supply chain shortlist?",
         "messageId": "<202603101042.23363088043@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-10T19:13:12.788+01:00",
+        "subject": "Software Discount Center — Baja California supply chain shortlist?",
+        "messageId": "<202603101042.23363088043@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:01:33+01:00"
+    "last_interaction": "2026-03-10T19:13:12.788+01:00"
   },
   "popat.bothe@iqvia.com": {
     "status": "clicked",
@@ -32131,9 +32197,15 @@
         "date": "2026-03-10T18:00:12+01:00",
         "subject": "Mexico manufacturing option for your supply chain?",
         "messageId": "<202603101043.74935452609@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T19:10:39.589+01:00",
+        "subject": "Mexico manufacturing option for your supply chain?",
+        "messageId": "<202603101043.74935452609@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:00:39.835+01:00"
+    "last_interaction": "2026-03-10T19:10:39.589+01:00"
   },
   "russ@rljones.com": {
     "status": "new",
@@ -33655,9 +33727,15 @@
         "date": "2026-03-10T18:00:18+01:00",
         "subject": "Mexico manufacturing option for your supply chain?",
         "messageId": "<202603101046.95322989433@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T20:40:03.89+01:00",
+        "subject": "Mexico manufacturing option for your supply chain?",
+        "messageId": "<202603101046.95322989433@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:00:18+01:00"
+    "last_interaction": "2026-03-10T20:40:03.89+01:00"
   },
   "brynn@formativeco.com": {
     "status": "new",
@@ -34183,9 +34261,15 @@
         "date": "2026-03-10T18:00:08.044+01:00",
         "subject": "Mexico manufacturing option for your supply chain?",
         "messageId": "<202603101034.66105925236@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T22:55:28.782+01:00",
+        "subject": "Mexico manufacturing option for your supply chain?",
+        "messageId": "<202603101034.66105925236@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:00:14+01:00"
+    "last_interaction": "2026-03-10T22:55:28.782+01:00"
   },
   "mike@servprocoronado.com": {
     "status": "new",
@@ -34201,9 +34285,15 @@
         "date": "2026-03-10T18:00:07.711+01:00",
         "subject": "Mexico manufacturing option for your supply chain?",
         "messageId": "<202603101042.81184009868@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T21:18:11.923+01:00",
+        "subject": "Mexico manufacturing option for your supply chain?",
+        "messageId": "<202603101042.81184009868@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:00:14+01:00"
+    "last_interaction": "2026-03-10T21:18:11.923+01:00"
   },
   "b.blazek@tac-eng.com": {
     "status": "new",
@@ -34525,9 +34615,15 @@
         "date": "2026-03-10T18:00:13+01:00",
         "subject": "Mexico manufacturing option for your supply chain?",
         "messageId": "<202603101042.80638042706@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T19:16:17.253+01:00",
+        "subject": "Mexico manufacturing option for your supply chain?",
+        "messageId": "<202603101042.80638042706@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:00:13+01:00"
+    "last_interaction": "2026-03-10T19:16:17.253+01:00"
   },
   "barry@estateresourcegroup.com": {
     "status": "new",
@@ -34722,7 +34818,7 @@
     "last_interaction": "2026-03-10T18:00:12+01:00"
   },
   "natalie.aller@mheducation.com": {
-    "status": "new",
+    "status": "opened",
     "history": [
       {
         "type": "delivered",
@@ -34735,9 +34831,21 @@
         "date": "2026-03-10T18:00:09.971+01:00",
         "subject": "McGraw-Hill Education — Baja California supply chain shortlist?",
         "messageId": "<202603101037.77736866655@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-10T19:22:59.738+01:00",
+        "subject": "McGraw-Hill Education — Baja California supply chain shortlist?",
+        "messageId": "<202603101037.77736866655@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-10T19:22:06.555+01:00",
+        "subject": "McGraw-Hill Education — Baja California supply chain shortlist?",
+        "messageId": "<202603101037.77736866655@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:00:12+01:00"
+    "last_interaction": "2026-03-10T19:22:59.738+01:00"
   },
   "bhargavsai.pillati@viasat.com": {
     "status": "new",
@@ -35052,7 +35160,7 @@
     "last_interaction": "2026-03-10T18:00:12+01:00"
   },
   "tyler@tfw-a.com": {
-    "status": "new",
+    "status": "opened",
     "history": [
       {
         "type": "delivered",
@@ -35065,9 +35173,21 @@
         "date": "2026-03-10T18:00:08.532+01:00",
         "subject": "Mexico manufacturing option for your supply chain?",
         "messageId": "<202603101043.53300918834@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-10T18:47:57.12+01:00",
+        "subject": "Mexico manufacturing option for your supply chain?",
+        "messageId": "<202603101043.53300918834@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-10T18:45:41.944+01:00",
+        "subject": "Mexico manufacturing option for your supply chain?",
+        "messageId": "<202603101043.53300918834@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:00:12+01:00"
+    "last_interaction": "2026-03-10T18:47:57.12+01:00"
   },
   "mary.hill@ipsgroupinc.com": {
     "status": "new",
@@ -35994,16 +36114,22 @@
     "last_interaction": "2026-03-10T18:00:09+01:00"
   },
   "mjmagett@evolvecfoservices.com": {
-    "status": "new",
+    "status": "opened",
     "history": [
       {
         "type": "delivered",
         "date": "2026-03-10T18:00:09+01:00",
         "subject": "Mexico manufacturing option for your supply chain?",
         "messageId": "<202603101033.10269904282@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-10T18:38:27.231+01:00",
+        "subject": "Mexico manufacturing option for your supply chain?",
+        "messageId": "<202603101033.10269904282@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:00:09+01:00"
+    "last_interaction": "2026-03-10T18:38:27.231+01:00"
   },
   "jacob@growthcollective.com": {
     "status": "new",
@@ -36199,9 +36325,15 @@
         "date": "2026-03-10T18:00:09+01:00",
         "subject": "FES International — Baja California supply chain shortlist?",
         "messageId": "<202603101033.46256475882@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T23:40:04.106+01:00",
+        "subject": "FES International — Baja California supply chain shortlist?",
+        "messageId": "<202603101033.46256475882@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:00:09+01:00"
+    "last_interaction": "2026-03-10T23:40:04.106+01:00"
   },
   "vsanchez@taec.com.mx": {
     "status": "new",
@@ -36265,9 +36397,21 @@
         "date": "2026-03-10T18:00:07.711+01:00",
         "subject": "Mexico manufacturing option for your supply chain?",
         "messageId": "<202603101042.67471191349@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T18:50:25.601+01:00",
+        "subject": "Mexico manufacturing option for your supply chain?",
+        "messageId": "<202603101042.67471191349@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T18:38:51.722+01:00",
+        "subject": "Mexico manufacturing option for your supply chain?",
+        "messageId": "<202603101042.67471191349@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:00:09+01:00"
+    "last_interaction": "2026-03-10T18:50:25.601+01:00"
   },
   "james@taylorresearch.com": {
     "status": "new",
@@ -36571,9 +36715,15 @@
         "date": "2026-03-10T18:00:08+01:00",
         "subject": "Rubio's Restaurants — Baja California supply chain shortlist?",
         "messageId": "<202603101041.62544701901@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "delivered",
+        "date": "2026-03-10T21:25:19+01:00",
+        "subject": "Rubio's Restaurants — Baja California supply chain shortlist?",
+        "messageId": "<202603101041.62544701901@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:00:08+01:00"
+    "last_interaction": "2026-03-10T21:25:19+01:00"
   },
   "tom@spicosolutions.com": {
     "status": "new",
@@ -36619,9 +36769,21 @@
         "date": "2026-03-10T18:00:08+01:00",
         "subject": "Mexico manufacturing option for your supply chain?",
         "messageId": "<202603101033.75811980445@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-11T00:20:17.377+01:00",
+        "subject": "Mexico manufacturing option for your supply chain?",
+        "messageId": "<202603101033.75811980445@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T20:52:23.488+01:00",
+        "subject": "Mexico manufacturing option for your supply chain?",
+        "messageId": "<202603101033.75811980445@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-10T18:00:08+01:00"
+    "last_interaction": "2026-03-11T00:20:17.377+01:00"
   },
   "gardner@kctrademarks.com": {
     "status": "new",
@@ -36712,5 +36874,29 @@
       }
     ],
     "last_interaction": "2026-03-10T18:00:07+01:00"
+  },
+  "john.peraza@expressrxinc.net": {
+    "status": "new",
+    "history": [
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T20:39:06.403+01:00",
+        "subject": "Express Rx Pharmacy And Medical Supplies — Mexico manufacturing shortlist?",
+        "messageId": "<202603040042.54696064596@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-03-10T20:39:06.403+01:00"
+  },
+  "henry@ecgofnashville.com": {
+    "status": "new",
+    "history": [
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T19:39:01.507+01:00",
+        "subject": "ECG Management Consultants — Mexico manufacturing shortlist?",
+        "messageId": "<202603050900.33885326565@smtp-relay.mailin.fr>"
+      }
+    ],
+    "last_interaction": "2026-03-10T19:39:01.507+01:00"
   }
 }

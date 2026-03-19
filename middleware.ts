@@ -75,6 +75,16 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // ─── Domain Consistency: WWW to Non-WWW ─────────────────
+  const host = request.headers.get('host');
+  if (host?.startsWith('www.')) {
+    const newHost = host.replace('www.', '');
+    return NextResponse.redirect(
+      new URL(request.nextUrl.pathname + request.nextUrl.search, `https://${newHost}`),
+      301
+    );
+  }
+
   // ─── Public Routes: Locale Routing ───────────────────────
   // Skip assets, API routes, and internal paths
   if (
@@ -95,12 +105,15 @@ export async function middleware(request: NextRequest) {
     // Detect preferred locale
     const locale = getPreferredLocale(request) || 'en';
     
-    return NextResponse.redirect(
-      new URL(
-        `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
-        request.url
-      )
+    // Fix: Remove trailing slash from the redirected path to avoid multi-hop redirects
+    // e.g., "/" -> "/en" instead of "/" -> "/en/" -> "/en"
+    const targetPath = pathname === '/' ? '' : pathname.replace(/\/$/, '');
+    const redirectUrl = new URL(
+      `/${locale}${targetPath}${request.nextUrl.search}`,
+      request.url
     );
+    
+    return NextResponse.redirect(redirectUrl, 307);
   }
 
   return NextResponse.next();

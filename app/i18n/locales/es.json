@@ -770,5 +770,43 @@
     "nuevo-laredo": {
       "distribution-3pl": "La puerta de enlace del 'Comercio Mundial'. Nuevo Laredo maneja el 40% de toda la carga ferroviaria y por camión entre EE. UU. y México. Ideal para cross-docking a gran escala y distribución multimodal hacia el Medio Oeste de EE. UU."
     }
+  },
+  "marketingPage": {
+    "badge": "Consultora de Marketing Fraccional",
+    "heroTitle": "Su Directora",
+    "heroTitleHighlight": "de Marketing Fraccional",
+    "heroSubtitle": "Trabajo junto a su equipo como su directora de marketing a tiempo parcial, aportando la estrategia, las herramientas y la ejecución que los fabricantes necesitan para crecer. Elija exactamente los servicios que necesita, nada más.",
+    "heroCta": "Ver Servicios",
+    "heroCtaSecondary": "Agende una Llamada de 15 Min",
+    "servicesTitle": "Servicios de Marketing a la Carta",
+    "servicesSubtitle": "Elija exactamente lo que su negocio necesita ahora mismo. Comience con un servicio, agregue más a medida que crece.",
+    "linkedinTitle": "Campañas de Prospección en LinkedIn",
+    "linkedinDesc": "Prospección dirigida a los tomadores de decisiones en su industria. Identificamos, conectamos y cultivamos prospectos a través de campañas personalizadas en LinkedIn que generan conversaciones reales.",
+    "crmTitle": "Auditoría y Configuración de CRM",
+    "crmDesc": "Deje de perder leads en hojas de cálculo. Audito su proceso actual de CRM, configuro el enrutamiento automatizado de leads, la puntuación y las secuencias de seguimiento para que nada se pierda.",
+    "contentTitle": "Creación de Contenido Industrial",
+    "contentDesc": "Publicaciones de blog mensuales, casos de estudio y artículos de LinkedIn adaptados a su industria. Posicione a su empresa como el líder de opinión en el que los ingenieros y compradores confían.",
+    "emailTitle": "Campañas de Correo Electrónico",
+    "emailDesc": "Secuencias de correo electrónico diseñadas a medida que nutren a los prospectos desde el primer contacto hasta la reunión agendada. Personalización a escala con IA y seguimiento transparente de entregabilidad.",
+    "seoTitle": "Auditoría y Optimización SEO",
+    "seoDesc": "Auditoría técnica de SEO integral, estrategia de palabras clave y optimización on-page. Sea encontrado por compradores que buscan activamente sus servicios en Google.",
+    "socialTitle": "Gestión de Redes Sociales",
+    "socialDesc": "Presencia profesional y constante en LinkedIn, Instagram y Facebook. Muestre sus capacidades con publicaciones atractivas y contenido de video corto.",
+    "howTitle": "Cómo Funciona",
+    "howSubtitle": "Sin contratos a largo plazo. Sin retenciones infladas. Solo la ayuda de marketing que realmente necesita.",
+    "step1Title": "Elija sus Servicios",
+    "step1Desc": "Elija los servicios de marketing específicos que su empresa necesita ahora mismo. Sin paquetes, sin compromisos, solo lo que mueve la aguja.",
+    "step2Title": "Me Integro con su Equipo",
+    "step2Desc": "Trabajo junto a su gente como su directora de marketing a tiempo parcial: llamadas de estrategia semanales, ejecución directa y total transparencia.",
+    "step3Title": "Vea Resultados Reales",
+    "step3Desc": "Informes en vivo de cada campaña. Usted ve exactamente qué está funcionando, qué no y a dónde va cada dólar. Sin cajas negras.",
+    "whyDenisseTitle": "¿Por qué trabajar con una Directora de Marketing Fraccional?",
+    "whyPoint1": "Liderazgo de marketing senior sin el salario de más de $200k",
+    "whyPoint2": "Alguien que entiende la manufactura, no solo palabras de moda de marketing",
+    "whyPoint3": "Bilingüe (Inglés/Español): comunicación fluida a través de la frontera",
+    "whyPoint4": "Escale hacia arriba o hacia abajo en cualquier momento: sin contratos a largo plazo",
+    "whyCta": "Agende una Consulta Gratuita",
+    "formTitle": "Hablemos de su Marketing",
+    "formSubtitle": "Reserve una llamada gratuita de 15 minutos. Sin ventas, sin presión, solo una conversación honesta sobre lo que funciona y lo que no."
   }
 }

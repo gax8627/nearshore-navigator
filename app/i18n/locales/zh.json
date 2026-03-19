@@ -798,5 +798,29 @@
       "subtitle": "蒂华纳像制造商的堡垒一样运作。工业区与住宅区物理隔离，保持 24/7 全天候安保。",
       "title": "A 级工业园区"
     }
+  },
+  "marketingPage": {
+    "badge": "分数营销顾问",
+    "heroTitle": "您的",
+    "heroTitleHighlight": "分数营销总监",
+    "heroSubtitle": "我作为您的兼职营销总监与您的团队并肩作战，提供制造商成长所需的战略、工具和执行。精确选择您需要的服务，无需多余。",
+    "heroCta": "查看服务",
+    "heroCtaSecondary": "预约15分钟视频通话",
+    "servicesTitle": "单点营销服务",
+    "servicesSubtitle": "精确选择您企业现在需要的服务。从一项服务开始，随着成长逐步增加。",
+    "linkedinTitle": "LinkedIn开发活动",
+    "linkedinDesc": "针对您行业决策者的精准开发。通过个性化的LinkedIn活动识别、连接并培育潜客，产生真正的对话。",
+    "crmTitle": "CRM审计与设置",
+    "crmDesc": "停止在电子表格中丢失潜客。我将审计您当前的CRM流程，设置自动化潜客路由、评分和跟进序列，确保万无一失。",
+    "contentTitle": "工业内容制作",
+    "contentDesc": "量身定制的每月博客文章、案例研究和LinkedIn文章。将您的公司定位为工程师和买家信赖的思想领袖。",
+    "emailTitle": "电子邮件营销",
+    "emailDesc": "从首次接触到预约会议的定制化电子邮件序列。利用AI实现大规模个性化，以及透明的可送达性跟踪。",
+    "seoTitle": "SEO审计与优化",
+    "seoDesc": "全面的技术SEO审计、关键词策略和网页优化。让在Google上积极寻找您服务的买家找到您。",
+    "socialTitle": "社交媒体管理",
+    "socialDesc": "在LinkedIn、Instagram和Facebook上保持专业且连贯的品牌形象。通过引人入胜的帖文和短视频内容展示您的实力。",
+    "howTitle": "运作方式",
+    "howSubtitle": "无长期合同。无虚高预付。只提供您真正需要的营销帮助。"
   }
 }
