@@ -116,7 +116,26 @@ export async function POST(req: Request) {
             });
             console.log('[Contact API] Sync to Brevo successful.');
         } catch (crmError) {
-            console.error('[Contact API] CRM Sync Error:', crmError);
+            console.error('[Contact API] CRM Sync Error (Brevo):', crmError);
+        }
+
+        // CRM Integration (HubSpot) - PHASE A
+        try {
+            const { hubspot } = await import('@/lib/hubspot');
+            const intentScore = message ? 60 : 20; // Basic scoring
+            await hubspot.upsertContact({
+                email,
+                firstname: name.split(' ')[0],
+                lastname: name.split(' ').slice(1).join(' ') || 'Lead',
+                company: company || '',
+                phone: phone || '',
+                industry_intent: source || 'website_contact_form',
+                intent_score: intentScore,
+                lifecyclestage: 'lead'
+            });
+            console.log('[Contact API] Sync to HubSpot successful.');
+        } catch (hubspotError) {
+            console.error('[Contact API] CRM Sync Error (HubSpot):', hubspotError);
         }
 
         // Notifications

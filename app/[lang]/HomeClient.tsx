@@ -14,6 +14,7 @@ import { HeroScanner } from "@/components/HeroScanner";
 import { useRef, useState, useCallback, useEffect } from "react";
 import { useScroll, useTransform, motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/app/context/LanguageContext";
+import { SiteSelectionWizard } from "@/components/SiteSelectionWizard";
 
 export default function HomeClient() {
   const { t, language } = useLanguage();
@@ -244,6 +245,17 @@ export default function HomeClient() {
       {/* Stats Section */}
       <section className="container mx-auto px-4">
         <StatsGrid />
+      </section>
+
+      {/* Site Selection Wizard - LEVER 1 */}
+      <section className="container mx-auto px-4 py-12">
+        <SectionTitle 
+            title={t('wizard.resultTitle')} 
+            subtitle="Interactive site selection tool to identify the optimal hub for your industrial requirements." 
+        />
+        <div className="mt-12">
+            <SiteSelectionWizard />
+        </div>
       </section>
 
       {/* Vetted Partners Certifications */}

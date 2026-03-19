@@ -32,6 +32,23 @@ yarn-error.log*
 # vercel
 .vercel
 
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS
+.DS_Store
+Thumbs.db
+
+# local
+.agent/
+.agents/
+.gemini/
+.env*
+! .env.example

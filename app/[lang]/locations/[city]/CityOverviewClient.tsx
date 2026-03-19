@@ -13,7 +13,8 @@ import { getLocation, SERVICES } from "@/app/constants/seo-data";
 import { TrustSeal } from "@/components/TrustSeal";
 import { INDUSTRY_MATRIX } from "@/app/constants/city-industry-matrix";
 import { INDUSTRY_VERTICALS } from "@/app/constants/industry-taxonomy";
-import { Factory } from "lucide-react";
+import { ComparisonModule } from "@/components/ComparisonModule";
+import { Factory, TrendingUp, BarChart3 } from "lucide-react";
 
 // Map string icon names to components
 const iconMap = {
@@ -196,6 +197,28 @@ export default function CityOverviewClient({ city }: Props) {
                                 </Link>
                             );
                         })}
+                    </div>
+                </section>
+
+                {/* Strategy & Competitor Analysis */}
+                <section>
+                    <SectionTitle 
+                        title={t('comparison.title')}
+                        subtitle={t('comparison.subtitle')}
+                    />
+                    <div className="mt-8">
+                        <ComparisonModule type="competitor" />
+                    </div>
+                </section>
+
+                {/* Hub Performance Benchmark */}
+                <section>
+                    <SectionTitle 
+                        title={t('hubs.title')}
+                        subtitle={t('hubs.subtitle')}
+                    />
+                    <div className="mt-8">
+                        <ComparisonModule type="hub" selection={["tijuana", "mexicali", "monterrey"]} />
                     </div>
                 </section>
 

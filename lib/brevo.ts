@@ -1,9 +1,8 @@
-const BREVO_API_KEY = process.env.BREVO_API_KEY as string;
-const BREVO_API_URL = 'https://api.brevo.com/v3';
-
-if (!BREVO_API_KEY) {
-  console.warn('BREVO_API_KEY is not set.');
-}
+const getBrevoConfig = () => {
+    const key = process.env.BREVO_API_KEY;
+    const url = 'https://api.brevo.com/v3';
+    return { key, url };
+};
 
 interface BrevoContact {
   email: string;
@@ -14,9 +13,43 @@ interface BrevoContact {
 
 export const brevo = {
   /**
+   * Get a contact from Brevo.
+   */
+  async getContact(email: string) {
+    const { key: BREVO_API_KEY, url: BREVO_API_URL } = getBrevoConfig();
+    if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 30000);
+
+    try {
+      const response = await fetch(`${BREVO_API_URL}/contacts/${encodeURIComponent(email)}`, {
+        method: 'GET',
+        headers: {
+          'api-key': BREVO_API_KEY,
+          'Accept': 'application/json',
+        },
+        signal: controller.signal,
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        if (response.status === 404) return null;
+        console.warn('Brevo getContact warning:', data);
+      }
+
+      return data;
+    } finally {
+      clearTimeout(timeoutId);
+    }
+  },
+
+  /**
    * Create or update a contact in Brevo.
    */
   async createContact(contact: BrevoContact) {
+    const { key: BREVO_API_KEY, url: BREVO_API_URL } = getBrevoConfig();
     if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
 
     const controller = new AbortController();
@@ -69,7 +102,7 @@ export const brevo = {
     scheduledAt?: string;
     tags?: string[];
   }) {
-    const apiKey = process.env.BREVO_API_KEY;
+    const { key: apiKey, url: BREVO_API_URL } = getBrevoConfig();
     if (!apiKey) throw new Error('BREVO_API_KEY not configured');
 
     const defaultSender = { email: 'nearshore.navigator@gmail.com', name: 'Denisse Martinez' };
@@ -271,7 +304,7 @@ export const brevo = {
     event?: 'bounces' | 'hardBounces' | 'softBounces' | 'delivered' | 'spam' | 'requests' | 'opened' | 'clicks' | 'invalid' | 'deferred' | 'blocked' | 'unsubscribed' | 'error' | 'loadedByProxy';
     sort?: 'asc' | 'desc';
   }) {
-    // @ts-ignore
+    const { key: BREVO_API_KEY, url: BREVO_API_URL } = getBrevoConfig();
     if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
 
     const params = new URLSearchParams();
@@ -283,7 +316,6 @@ export const brevo = {
     if (event) params.append('event', event);
     if (sort) params.append('sort', sort);
 
-    // @ts-ignore
     const response = await fetch(`${BREVO_API_URL}/smtp/statistics/events?${params.toString()}`, {
       method: 'GET',
       headers: {
@@ -305,6 +337,7 @@ export const brevo = {
    * Get campaigns
    */
   async getCampaigns({ limit = 5 }: { limit?: number }) {
+    const { key: BREVO_API_KEY, url: BREVO_API_URL } = getBrevoConfig();
     if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
 
     const params = new URLSearchParams();
@@ -341,6 +374,7 @@ export const brevo = {
     htmlContent: string;
     sender?: { email: string; name?: string };
   }) {
+    const { key: BREVO_API_KEY, url: BREVO_API_URL } = getBrevoConfig();
     if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
 
     const response = await fetch(`${BREVO_API_URL}/smtp/templates`, {
@@ -381,6 +415,7 @@ export const brevo = {
     subject?: string;
     htmlContent?: string;
   }) {
+    const { key: BREVO_API_KEY, url: BREVO_API_URL } = getBrevoConfig();
     if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
 
     const response = await fetch(`${BREVO_API_URL}/smtp/templates/${templateId}`, {
@@ -409,6 +444,7 @@ export const brevo = {
    * Create a Contact Attribute (e.g., HOOK, ORGANIZATION)
    */
   async createAttribute(category: 'normal' | 'transactional' | 'category' | 'calculated' | 'global', name: string, type: 'text' | 'date' | 'float' | 'id') {
+      const { key: BREVO_API_KEY, url: BREVO_API_URL } = getBrevoConfig();
       if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
 
       const response = await fetch(`${BREVO_API_URL}/contacts/attributes/${category}/${name}`, {

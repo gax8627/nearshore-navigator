@@ -5,6 +5,9 @@ export type IndustryMatrixEntry = {
     plants: string;
     workforce: string;
     exportValue?: string;
+    vacancyRate?: string;
+    energyCostKwh?: string;
+    logisticsScore?: number; // 1-10 Border Velocity
   };
   featuredParks: string[];
   topLocalEmployers: string[];
@@ -18,7 +21,10 @@ export const INDUSTRY_MATRIX: IndustryMatrixEntry[] = [
     stats: {
       plants: "75+",
       workforce: "74,000+",
-      exportValue: "$3B+"
+      exportValue: "$3B+",
+      vacancyRate: "5.91%",
+      energyCostKwh: "$0.13",
+      logisticsScore: 9
     },
     featuredParks: ["Parque Industrial Pacifico", "Finsa Tijuana"],
     topLocalEmployers: ["Medtronic", "Becton Dickinson", "CareFusion", "Stryker"]
@@ -64,7 +70,10 @@ export const INDUSTRY_MATRIX: IndustryMatrixEntry[] = [
     stats: {
       plants: "150+",
       workforce: "300,000+",
-      exportValue: "$15B+"
+      exportValue: "$15B+",
+      vacancyRate: "7.88%",
+      energyCostKwh: "$0.13",
+      logisticsScore: 9
     },
     featuredParks: ["Parque Industrial Omega", "PIMSA Juárez"],
     topLocalEmployers: ["Lear Corp", "Aptiv", "Robert Bosch", "Continental"]
@@ -75,7 +84,10 @@ export const INDUSTRY_MATRIX: IndustryMatrixEntry[] = [
     stats: {
       plants: "200+",
       workforce: "100,000+",
-      exportValue: "$20B+"
+      exportValue: "$20B+",
+      vacancyRate: "5.40%",
+      energyCostKwh: "$0.14",
+      logisticsScore: 8
     },
     featuredParks: ["Santa Catarina Industrial Corridor", "Interpuerto Monterrey"],
     topLocalEmployers: ["Tesla Suppliers (Quanta)", "Kia Motors", "General Motors", "Nemak"]

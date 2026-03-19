@@ -6,6 +6,7 @@ import { LanguageProvider } from '@/app/context/LanguageContext'
 import { ThemeProvider } from '@/app/context/ThemeContext'
 import WhatsAppButton from '@/app/components/WhatsAppButton'
 import { SchemaMarkup } from '@/components/SchemaMarkup'
+import { AIConsultant } from '@/components/AIConsultant'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -87,6 +88,7 @@ export default async function LangLayout({
           </main>
           <Footer />
           <WhatsAppButton />
+          <AIConsultant />
         </div>
       </ThemeProvider>
     </LanguageProvider>

@@ -697,9 +697,15 @@
         "date": "2026-03-09T16:00:44.276+01:00",
         "subject": "The 3 factories our clients keep choosing in Baja",
         "messageId": "<202603090555.91217975420@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-09T20:41:58.071+01:00",
+        "subject": "The 3 factories our clients keep choosing in Baja",
+        "messageId": "<202603090555.91217975420@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T16:01:43.28+01:00"
+    "last_interaction": "2026-03-09T20:41:58.071+01:00"
   },
   "sarah@aviditybio.com": {
     "status": "clicked",
@@ -3319,9 +3325,15 @@
         "date": "2026-03-09T16:00:30+01:00",
         "subject": "Just sent this to another client in Baja",
         "messageId": "<202603090551.57468837217@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-09T22:21:07.62+01:00",
+        "subject": "Just sent this to another client in Baja",
+        "messageId": "<202603090551.57468837217@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T16:01:42.341+01:00"
+    "last_interaction": "2026-03-09T22:21:07.62+01:00"
   },
   "lior.yahalomi@vishay.com": {
     "status": "clicked",
@@ -3493,9 +3505,15 @@
         "date": "2026-03-09T16:01:59+01:00",
         "subject": "Just sent this to another client in Baja",
         "messageId": "<202603090551.14700260257@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-09T19:44:01.065+01:00",
+        "subject": "Just sent this to another client in Baja",
+        "messageId": "<202603090551.14700260257@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T16:02:55.238+01:00"
+    "last_interaction": "2026-03-09T19:44:01.065+01:00"
   },
   "daniaa@westcall.com": {
     "status": "clicked",
@@ -3739,9 +3757,15 @@
         "date": "2026-03-09T16:01:31+01:00",
         "subject": "Just sent this to another client in Baja",
         "messageId": "<202603090551.96215335457@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-09T22:29:53.189+01:00",
+        "subject": "Just sent this to another client in Baja",
+        "messageId": "<202603090551.96215335457@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T16:02:51.001+01:00"
+    "last_interaction": "2026-03-09T22:29:53.189+01:00"
   },
   "kcc@wintecind.com": {
     "status": "clicked",
@@ -13117,9 +13141,15 @@
         "date": "2026-03-09T16:01:19+01:00",
         "subject": "Just sent this to another client in Baja",
         "messageId": "<202603090553.93006471519@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "clicks",
+        "date": "2026-03-09T22:59:06.667+01:00",
+        "subject": "The 3 factories our clients keep choosing in Baja",
+        "messageId": "<202603061244.73680693351@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T16:02:08.872+01:00"
+    "last_interaction": "2026-03-09T22:59:06.667+01:00"
   },
   "shakil.lakhani@inmodemd.com": {
     "status": "clicked",
@@ -14221,9 +14251,15 @@
         "date": "2026-03-06T18:01:02+01:00",
         "subject": "The 3 factories our clients keep choosing in Baja",
         "messageId": "<202603061246.17066077383@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-10T00:37:55.096+01:00",
+        "subject": "Just sent this to another client in Baja",
+        "messageId": "<202603090553.40745928996@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-06T18:05:09.841+01:00"
+    "last_interaction": "2026-03-10T00:37:55.096+01:00"
   },
   "scott.morrison@windriver.com": {
     "status": "clicked",
@@ -14437,9 +14473,15 @@
         "date": "2026-03-09T16:01:30.311+01:00",
         "subject": "Just sent this to another client in Baja",
         "messageId": "<202603090553.56161047574@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "clicks",
+        "date": "2026-03-10T00:37:48.266+01:00",
+        "subject": "Just sent this to another client in Baja",
+        "messageId": "<202603090553.56161047574@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T16:01:30.311+01:00"
+    "last_interaction": "2026-03-10T00:37:48.266+01:00"
   },
   "hans.betc@aei.com": {
     "status": "clicked",
@@ -20857,9 +20899,15 @@
         "date": "2026-03-09T16:00:40.72+01:00",
         "subject": "Just sent this to another client in Baja",
         "messageId": "<202603090554.77106148608@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-09T22:22:46.396+01:00",
+        "subject": "Just sent this to another client in Baja",
+        "messageId": "<202603090554.77106148608@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T16:00:40.72+01:00"
+    "last_interaction": "2026-03-09T22:22:46.396+01:00"
   },
   "banderson@llprinters.com": {
     "status": "new",
@@ -24619,9 +24667,33 @@
         "date": "2026-03-09T16:01:47+01:00",
         "subject": "Eclectic Aspirations — Mexico manufacturing shortlist?",
         "messageId": "<202603090550.11307024063@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-09T23:57:41.33+01:00",
+        "subject": "Eclectic Aspirations — Mexico manufacturing shortlist?",
+        "messageId": "<202603090550.11307024063@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-09T23:41:14.936+01:00",
+        "subject": "Eclectic Aspirations — Mexico manufacturing shortlist?",
+        "messageId": "<202603090550.11307024063@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-09T22:48:05.391+01:00",
+        "subject": "Eclectic Aspirations — Mexico manufacturing shortlist?",
+        "messageId": "<202603090550.11307024063@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-09T22:47:55.173+01:00",
+        "subject": "Eclectic Aspirations — Mexico manufacturing shortlist?",
+        "messageId": "<202603090550.11307024063@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T18:25:26.39+01:00"
+    "last_interaction": "2026-03-09T23:57:41.33+01:00"
   },
   "npiccotti@cognella.com": {
     "status": "opened",
@@ -25183,9 +25255,15 @@
         "date": "2026-03-09T16:00:57+01:00",
         "subject": "AgreeMedia — Mexico manufacturing shortlist?",
         "messageId": "<202603090547.38477919061@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-10T00:31:33.081+01:00",
+        "subject": "AgreeMedia — Mexico manufacturing shortlist?",
+        "messageId": "<202603090547.38477919061@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T16:06:56.807+01:00"
+    "last_interaction": "2026-03-10T00:31:33.081+01:00"
   },
   "stacey@civilian.agency": {
     "status": "clicked",
@@ -25375,9 +25453,15 @@
         "date": "2026-03-09T16:01:23+01:00",
         "subject": "California Community Management — Mexico manufacturing shortlist?",
         "messageId": "<202603090549.59285729423@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "clicks",
+        "date": "2026-03-09T21:55:48.558+01:00",
+        "subject": "California Community Management — Mexico manufacturing shortlist?",
+        "messageId": "<202603090549.59285729423@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T16:05:05.475+01:00"
+    "last_interaction": "2026-03-09T21:55:48.558+01:00"
   },
   "britnie.neuman@amnhealthcare.com": {
     "status": "clicked",
@@ -26761,9 +26845,15 @@
         "date": "2026-03-09T16:01:49+01:00",
         "subject": "Cindy C Murray — Mexico manufacturing shortlist?",
         "messageId": "<202603090549.98536443179@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-09T23:03:37.372+01:00",
+        "subject": "Cindy C Murray — Mexico manufacturing shortlist?",
+        "messageId": "<202603090549.98536443179@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T16:01:49+01:00"
+    "last_interaction": "2026-03-09T23:03:37.372+01:00"
   },
   "tburns@dtxpharma.com": {
     "status": "new",
@@ -26785,9 +26875,15 @@
         "date": "2026-03-09T16:01:49+01:00",
         "subject": "Canter Companies — Mexico manufacturing shortlist?",
         "messageId": "<202603090549.27018480178@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-09T19:47:46.102+01:00",
+        "subject": "Canter Companies — Mexico manufacturing shortlist?",
+        "messageId": "<202603090549.27018480178@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T16:01:49+01:00"
+    "last_interaction": "2026-03-09T19:47:46.102+01:00"
   },
   "belindasimonini@bwdesigngroup.com": {
     "status": "new",
@@ -27415,9 +27511,21 @@
         "date": "2026-03-09T16:00:33+01:00",
         "subject": "EffectiveSoft — Mexico manufacturing shortlist?",
         "messageId": "<202603090550.39068101930@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-09T20:05:24.043+01:00",
+        "subject": "EffectiveSoft — Mexico manufacturing shortlist?",
+        "messageId": "<202603090550.39068101930@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-09T19:57:38+01:00",
+        "subject": "EffectiveSoft — Mexico manufacturing shortlist?",
+        "messageId": "<202603090550.39068101930@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T16:01:10.33+01:00"
+    "last_interaction": "2026-03-09T20:05:24.043+01:00"
   },
   "vince@foxmoorhomes.com": {
     "status": "new",
@@ -27889,9 +27997,15 @@
         "date": "2026-03-09T16:00:30+01:00",
         "subject": "Aptera — Mexico manufacturing shortlist?",
         "messageId": "<202603090547.39147522309@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-09T21:32:08.327+01:00",
+        "subject": "Aptera — Mexico manufacturing shortlist?",
+        "messageId": "<202603090547.39147522309@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T16:00:49.474+01:00"
+    "last_interaction": "2026-03-09T21:32:08.327+01:00"
   },
   "rsilkey@einsteinindustries.com": {
     "status": "new",
@@ -27985,9 +28099,15 @@
         "date": "2026-03-09T16:00:45+01:00",
         "subject": "All Solutions — Mexico manufacturing shortlist?",
         "messageId": "<202603090547.23876778423@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-10T00:58:24.504+01:00",
+        "subject": "All Solutions — Mexico manufacturing shortlist?",
+        "messageId": "<202603090547.23876778423@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T16:00:45+01:00"
+    "last_interaction": "2026-03-10T00:58:24.504+01:00"
   },
   "harris@allinoneline.com": {
     "status": "new",
@@ -28068,16 +28188,34 @@
     "last_interaction": "2026-03-09T16:00:39.554+01:00"
   },
   "montal@caucho.com": {
-    "status": "new",
+    "status": "opened",
     "history": [
       {
         "type": "delivered",
         "date": "2026-03-09T16:00:37+01:00",
         "subject": "Caucho Technology — Mexico manufacturing shortlist?",
         "messageId": "<202603090549.84539641626@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "unsubscribed",
+        "date": "2026-03-09T20:41:40.015+01:00",
+        "subject": "Caucho Technology — Mexico manufacturing shortlist?",
+        "messageId": "<202603090549.84539641626@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-09T20:41:38.712+01:00",
+        "subject": "Caucho Technology — Mexico manufacturing shortlist?",
+        "messageId": "<202603090549.84539641626@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "opened",
+        "date": "2026-03-09T20:41:34.826+01:00",
+        "subject": "Caucho Technology — Mexico manufacturing shortlist?",
+        "messageId": "<202603090549.84539641626@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T16:00:37+01:00"
+    "last_interaction": "2026-03-09T20:41:40.015+01:00"
   },
   "leila.stilwell@10news.com": {
     "status": "clicked",
@@ -28321,9 +28459,15 @@
         "date": "2026-03-09T19:23:07.602+01:00",
         "subject": "AirEvac International — Mexico manufacturing shortlist?",
         "messageId": "<202603090547.32870357546@smtp-relay.mailin.fr>"
+      },
+      {
+        "type": "loadedByProxy",
+        "date": "2026-03-09T22:49:40.626+01:00",
+        "subject": "AirEvac International — Mexico manufacturing shortlist?",
+        "messageId": "<202603090547.32870357546@smtp-relay.mailin.fr>"
       }
     ],
-    "last_interaction": "2026-03-09T19:23:07.602+01:00"
+    "last_interaction": "2026-03-09T22:49:40.626+01:00"
   },
   "frank.fabela@vistagechair.com": {
     "status": "clicked",
