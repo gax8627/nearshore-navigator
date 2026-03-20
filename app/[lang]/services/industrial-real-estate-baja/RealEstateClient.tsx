@@ -99,7 +99,7 @@ export default function IndustrialRealEstatePage() {
                     >
                         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
                             <Warehouse className="w-4 h-4 text-primary-400" />
-                            70+ Class A Industrial Parks
+                            {t('realEstatePage.badgeParks')}
                         </div>
                         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">{t('realEstatePage.heroTitle')} <span className="text-primary-500">{t('realEstatePage.heroTitleHighlight')}</span></h1>
                         <p className="text-xl text-gray-200 max-w-2xl mx-auto">
@@ -126,10 +126,10 @@ export default function IndustrialRealEstatePage() {
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('realEstatePage.strategyTitle')}</h2>
                             <p className="text-xl text-gray-300 mb-6">{t('realEstatePage.strategySubtitle')}</p>
                             <a 
-                                href="/en/services/distribution-centers-tijuana/section-321-guide" 
+                                href={`/${t('language')}/services/distribution-centers-tijuana/section-321-guide`} 
                                 className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 font-bold transition-colors group"
                             >
-                                Exploring B2C? View our Section 321 Distribution Guide
+                                {t('realEstatePage.linkB2C')}
                                 <span className="group-hover:translate-x-1 transition-transform">→</span>
                             </a>
                         </div>
@@ -202,14 +202,13 @@ export default function IndustrialRealEstatePage() {
                                 {[
                                     { q: t('realEstatePage.faq1Question'), a: t('realEstatePage.faq1Answer') },
                                     { q: t('realEstatePage.faq2Question'), a: t('realEstatePage.faq2Answer') },
-                                    { q: "What are the average lease rates for Class A industrial space in Baja?", a: "Lease rates for Class A industrial space in Baja California typically range from $0.75 to $0.85 USD per square foot per month, depending on location and amenities. Tighter markets like Tijuana may see premiums, while developing areas offer more competitive sizing." },
-                                    { q: "Can foreigners buy industrial land in Baja California?", a: "Yes, foreigners can acquire land in Mexico's restricted zone (border/coast) through a 'Fideicomiso' (Bank Trust). This grants you all ownership rights, including the ability to lease, sell, or build on the property." },
-                                    { q: "How long does a 'Build-to-Suit' project take?", a: "A typical Build-to-Suit (BTS) project in Baja California takes between 8 to 12 months from groundbreaking to occupancy. This timeline includes permitting, construction, and utility connections." },
-                                    { q: "What is the difference between Shell and Turnkey leases?", a: "A 'Shell' lease provides the basic building structure (walls, roof, floor), leaving tenant improvements (offices, HVAC, lighting) to you. A 'Turnkey' lease includes all specified improvements, ready for immediate operation." },
-                                    { q: "Are Triple Net (NNN) leases common in Mexico?", a: "Yes, most industrial leases in Mexico are Triple Net (NNN), meaning the tenant pays for property taxes, insurance, and maintenance in addition to the base rent." },
-                                    { q: "What utilities are available in Baja industrial parks?", a: "Major industrial parks offer high-voltage power (KVA rights), natural gas, fiber-optic internet, and treated water/sewage systems designed for high-volume manufacturing operations." },
-                                    { q: "How close are these parks to the US border?", a: "Most Class A parks in Tijuana and Mexicali are located within 20-30 minutes of commercial border crossings (Otay Mesa, Calexico East), minimizing logistics transit time." },
-                                    { q: "Do you offer property management services?", a: "We partner with top-tier facility management firms to handle maintenance, security, and compliance, allowing you to focus entirely on your manufacturing operations." }
+                                    { q: t('realEstatePage.faq3Question'), a: t('realEstatePage.faq3Answer') },
+                                    { q: t('realEstatePage.faq4Question'), a: t('realEstatePage.faq4Answer') },
+                                    { q: t('realEstatePage.faq5Question'), a: t('realEstatePage.faq5Answer') },
+                                    { q: t('realEstatePage.faq6Question'), a: t('realEstatePage.faq6Answer') },
+                                    { q: t('realEstatePage.faq7Question'), a: t('realEstatePage.faq7Answer') },
+                                    { q: t('realEstatePage.faq8Question'), a: t('realEstatePage.faq8Answer') },
+                                    { q: t('realEstatePage.faq9Question'), a: t('realEstatePage.faq9Answer') }
                                 ].map((faq, i) => (
                                     <details key={i} className="group p-4 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700 open:bg-white/60 dark:open:bg-gray-800/60 transition-colors">
                                         <summary className="font-semibold text-gray-900 dark:text-white cursor-pointer list-none flex justify-between items-center">

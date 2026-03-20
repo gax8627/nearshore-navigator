@@ -269,7 +269,19 @@
     "cncDesc": "适用于航空航天和医疗器械品质的 3 轴和 5 轴加工中心。",
     "furniture": "高档家具制造",
     "furnitureDesc": "为大型品牌和 DTC 零售商提供的大规模木工和表面处理工艺。",
-    "regionsSubtitle": "下加利福尼亚州的战略制造枢纽。"
+    "regionsSubtitle": "下加利福尼亚州的战略制造枢纽。",
+    "faq5Question": "Do you own the factories?",
+    "faq5Answer": "We work with a vetted network of Contract Manufacturers (CMs). We do not own the factories, but handle the due diligence and quality oversight.",
+    "faq6Question": "What is the minimum order quantity (MOQ)?",
+    "faq6Answer": "MOQs vary by manufacturer and product. It is generally best for companies looking to scale beyond prototyping.",
+    "faq7Question": "How do you handle Quality Control (QC)?",
+    "faq7Answer": "QC is handled via the CM's internal ISO certifications and our own external audits.",
+    "faq8Question": "Can I bring my own raw materials?",
+    "faq8Answer": "Yes, this is called \"consignment.\" Materials can be shipped tax-free via the IMMEX program.",
+    "faq9Question": "Does contract manufacturing protect my IP?",
+    "faq9Answer": "Yes, we ensure strict NDAs and multi-layered IP protection frameworks aligned with US standards.",
+    "faq10Question": "Who manages the logistics?",
+    "faq11Answer": "Typically set as Ex-Works. We connect you with logistics partners to handle the cross-border import process."
   },
   "realEstatePage": {
     "heroTitle": "下加利福尼亚",
@@ -304,7 +316,23 @@
     "comparativeTitle": "多城市对比研究",
     "comparativeDesc": "TCO 总成本分析，对比下加州与其他地区，量化您的总到岸成本。",
     "tenantTitle": "承租人策略分析",
-    "tenantDesc": "针对‘定制’还是‘现房’提供专家建议，在低空置率市场中最大化您的议价权。"
+    "tenantDesc": "针对‘定制’还是‘现房’提供专家建议，在低空置率市场中最大化您的议价权。",
+    "faq3Question": "What are the average lease rates for Class A industrial space in Baja?",
+    "faq3Answer": "Lease rates for Class A industrial space in Baja California typically range from /bin/zsh.75 to /bin/zsh.85 USD per square foot per month, depending on location and amenities.",
+    "faq4Question": "Can foreigners buy industrial land in Baja California?",
+    "faq4Answer": "Yes, foreigners can acquire land in Mexico's restricted zone through a \"Fideicomiso\" (Bank Trust), granting full ownership rights.",
+    "faq5Question": "How long does a Build-to-Suit project take?",
+    "faq5Answer": "A typical Build-to-Suit (BTS) project in Baja California takes between 8 to 12 months from groundbreaking to occupancy.",
+    "faq6Question": "What is the difference between Shell and Turnkey leases?",
+    "faq6Answer": "A \"Shell\" lease provides the basic structure, while a \"Turnkey\" lease includes all specified improvements, ready for operation.",
+    "faq7Question": "Are Triple Net (NNN) leases common in Mexico?",
+    "faq7Answer": "Yes, most industrial leases are NNN, meaning the tenant pays for property taxes, insurance, and maintenance.",
+    "faq8Question": "What utilities are available in Baja industrial parks?",
+    "faq8Answer": "Major parks offer high-voltage power, natural gas, fiber-optic internet, and treated water/sewage systems.",
+    "faq9Question": "How close are these parks to the US border?",
+    "faq9Answer": "Most Class A parks in Tijuana and Mexicali are located within 20-30 minutes of commercial border crossings.",
+    "linkB2C": "Exploring B2C? View our Section 321 Distribution Guide",
+    "badgeParks": "70+ Class A Industrial Parks"
   },
   "callCenterPage": {
     "badge": "BPO 与呼叫中心服务",
@@ -413,7 +441,18 @@
     "shelter": "庇护服务",
     "mfg": "合同制造",
     "contact": "联系我们",
-    "download": "下载 PDF"
+    "download": "下载 PDF",
+    "titlePreview": "Digital Brochure",
+    "subtitlePreview": "Preview of the downloadable PDF.",
+    "whyBajaSubtitle": "The premier destination for North American manufacturing.",
+    "realEstateDesc": "Site selection, BTS analysis, and lease negotiation for Class A industrial facilities.",
+    "shelterDesc": "Administrative and legal compliance services to launch operations in 90 days.",
+    "mfgDesc": "Partner matching with certified manufacturers for medical, aerospace, and electronics.",
+    "quote": "\"We help you align your operational needs with the reality of the Baja market to ensure a successful long-term investment.\"",
+    "leadershipTitle": "Leadership",
+    "denisseRole": "Director of Marketing & Business Development",
+    "hq": "San Diego HQ",
+    "ops": "Baja California Operations"
   },
   "assessment": {
     "liveData": "实时 CFE 工业费率",
@@ -493,7 +532,8 @@
     "q34": "您需要我们服务的时长是多久？",
     "q35": "我们可以为您提供运输报价吗？地址是什么？",
     "q36": "您使用哪种 Annex 24 系统？",
-    "intro": "准备您的离岸外包路线图。这些数据将帮助我们为您的需求推荐最佳模式和地点。"
+    "intro": "准备您的离岸外包路线图。这些数据将帮助我们为您的需求推荐最佳模式和地点。",
+    "printPdf": "Click here to Print / Save as PDF"
   },
   "aboutPage": {
     "mainHeading": "将“我们要去墨西哥”转化为明确的下一步",
@@ -636,7 +676,7 @@
   },
   "industries": {
     "medical-devices": {
-      "name": "医疗器械制造",
+      "name": "医疗设备",
       "description": "在蒂华纳和墨西卡利的世界级医疗技术集群中，扩展符合 FDA 标准的生产。",
       "marketOpportunity": "下加利福尼亚州是北美最大的医疗器械集群，拥有 70 多家 FDA 注册工厂和 12,000 多名专业操作人员。",
       "laborProfile": "专注于无菌包装、II/III 类组装和 ISO 13485 质量体系管理。",
@@ -660,7 +700,7 @@
       "viewAllInfrastructure": "查看 {location} 的所有基础设施"
     },
     "aerospace": {
-      "name": "航空航天与国防",
+      "name": "航空航天",
       "description": "访问位于墨西卡利和索诺拉的最先进的 AS9100 认证制造中心。",
       "marketOpportunity": "墨西卡利是墨西哥的航空航天之都，拥有最高密度的精密机械加工和航电生产。",
       "laborProfile": "高技术劳动力，擅长复合材料、CNC 加工和 NADCAP 工艺。",
@@ -684,7 +724,7 @@
       "viewAllInfrastructure": "查看 {location} 的所有基础设施"
     },
     "automotive": {
-      "name": "汽车与电动汽车",
+      "name": "汽车",
       "description": "北美电动汽车供应链的支柱，从线束到电池组装。",
       "marketOpportunity": "胡亚雷斯和中北部走廊在全汽车线束和照明组装市场中占据主导地位。",
       "laborProfile": "稳定的高产量组装专长，深受 JIT（准时制）交付文化的影响。",
@@ -708,7 +748,7 @@
       "viewAllInfrastructure": "查看 {location} 的所有基础设施"
     },
     "electronics": {
-      "name": "电子与 SMT",
+      "name": "电子产品",
       "description": "以雷诺萨和蒂华纳为中心的批量消费和工业电子产品。",
       "marketOpportunity": "雷诺萨和蒂华纳在电视、家电和电信硬件组装方面处于全球领先地位。",
       "laborProfile": "精密 SMT（表面贴装技术）操作员和 PCBA 测试专家。",
@@ -732,7 +772,7 @@
       "viewAllInfrastructure": "查看 {location} 的所有基础设施"
     },
     "distribution-3pl": {
-      "name": "分销与 3PL 物流",
+      "name": "物流与3PL",
       "description": "利用拉雷多-新拉雷多走廊，这是美洲最繁忙的商业陆路口岸。",
       "marketOpportunity": "新拉雷多处理美墨贸易总量的 40%，使其成为越库作业和仓库枢纽的首选地点。",
       "laborProfile": "双语物流协调员、仓库管理系统 (WMS) 专家和认证清关代理。",
@@ -754,30 +794,365 @@
       "strategicRealEstate": "战略房地产",
       "realEstateSub": "这些工业园区专门针对 {name} 的需求而设计。",
       "viewAllInfrastructure": "查看 {location} 的所有基础设施"
-    }
+    },
+    "authorityGuide": "Authority Guide",
+    "regionalPlants": "Regional Plants",
+    "sectorWorkforce": "Sector Workforce",
+    "strategicRealEstate": "Strategic Real Estate",
+    "realEstateSub": "Exploring industrial park availability for {name} in this region.",
+    "activePlants": "Active Plants",
+    "specializedTalent": "Specialized Talent"
   },
   "matrix": {
     "tijuana": {
-      "medical-devices": "全球第二大医疗器械集群。蒂华纳专注于 II 类和 III 类植入式设备以及高精度无菌组装。",
-      "aerospace": "蒂华纳的航空航天部门与南加州国防走廊深度整合。",
-      "electronics": "蒂华纳的电子部门专注于多品种小批量 (HMLV) 生产和高级 PCBA。"
+      "medical-devices": "Tijuana is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Tijuana is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Tijuana is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Tijuana is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Tijuana is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
     },
     "mexicali": {
-      "medical-devices": "墨西卡利为医疗技术提供了比蒂华纳更低成本的选择，专注于大批量消耗品。",
-      "aerospace": "墨西哥的航空航天之都。墨西卡利承担了湾流 70% 的喷气式飞机组装，是全球航电测试中心。"
+      "medical-devices": "Mexicali is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Mexicali is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Mexicali is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Mexicali is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Mexicali is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
     },
     "juarez": {
-      "automotive": "全球线束制造的中心。胡亚雷斯正迅速向电动汽车架构转型。",
-      "electronics": "富士康等主要 EMS 指标在胡亚雷斯经营大批量组装线，供应北美市场。"
+      "automotive": "Juarez is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Juarez is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "medical-devices": "Juarez is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Juarez is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Juarez is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
     },
     "monterrey": {
-      "automotive": "拉丁美洲未来的电动汽车之都。墨西卡利吸引了墨西哥 72% 的近岸外包投资。"
+      "automotive": "Monterrey is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "medical-devices": "Monterrey is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Monterrey is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Monterrey is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Monterrey is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
     },
     "reynosa": {
-      "electronics": "世界的“电视之都”。雷诺萨专注于批量消费电子产品（LG、松下）。"
+      "electronics": "Reynosa is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "medical-devices": "Reynosa is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Reynosa is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Reynosa is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Reynosa is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
     },
     "nuevo-laredo": {
-      "distribution-3pl": "“世界贸易”门户。新拉雷多处理美墨之间 40% 的铁路和卡车货运。"
+      "distribution-3pl": "Nuevo Laredo is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "medical-devices": "Nuevo Laredo is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Nuevo Laredo is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Nuevo Laredo is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Nuevo Laredo is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "nogales": {
+      "medical-devices": "Nogales is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Nogales is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Nogales is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Nogales is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Nogales is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "matamoros": {
+      "medical-devices": "Matamoros is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Matamoros is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Matamoros is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Matamoros is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Matamoros is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "guadalajara": {
+      "medical-devices": "Guadalajara is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Guadalajara is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Guadalajara is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Guadalajara is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Guadalajara is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "queretaro": {
+      "medical-devices": "Queretaro is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Queretaro is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Queretaro is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Queretaro is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Queretaro is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "san-luis-potosi": {
+      "medical-devices": "San Luis Potosi is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "San Luis Potosi is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "San Luis Potosi is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "San Luis Potosi is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "San Luis Potosi is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "saltillo": {
+      "medical-devices": "Saltillo is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Saltillo is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Saltillo is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Saltillo is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Saltillo is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "hermosillo": {
+      "medical-devices": "Hermosillo is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Hermosillo is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Hermosillo is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Hermosillo is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Hermosillo is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "silao": {
+      "medical-devices": "Silao is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Silao is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Silao is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Silao is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Silao is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "puebla": {
+      "medical-devices": "Puebla is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Puebla is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Puebla is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Puebla is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Puebla is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "chihuahua-city": {
+      "medical-devices": "Chihuahua City is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Chihuahua City is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Chihuahua City is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Chihuahua City is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Chihuahua City is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "torreon": {
+      "medical-devices": "Torreon is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Torreon is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Torreon is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Torreon is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Torreon is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "leon": {
+      "medical-devices": "Leon is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Leon is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Leon is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Leon is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Leon is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "toluca": {
+      "medical-devices": "Toluca is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Toluca is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Toluca is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Toluca is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Toluca is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "villahermosa": {
+      "medical-devices": "Villahermosa is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Villahermosa is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Villahermosa is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Villahermosa is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Villahermosa is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "veracruz": {
+      "medical-devices": "Veracruz is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Veracruz is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Veracruz is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Veracruz is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Veracruz is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "merida": {
+      "medical-devices": "Merida is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Merida is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Merida is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Merida is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Merida is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "cancun": {
+      "medical-devices": "Cancun is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Cancun is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Cancun is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Cancun is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Cancun is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "mexico-city": {
+      "medical-devices": "Mexico City is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Mexico City is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Mexico City is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Mexico City is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Mexico City is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "aguascalientes": {
+      "medical-devices": "Aguascalientes is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Aguascalientes is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Aguascalientes is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Aguascalientes is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Aguascalientes is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "celaya": {
+      "medical-devices": "Celaya is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Celaya is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Celaya is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Celaya is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Celaya is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "irapuato": {
+      "medical-devices": "Irapuato is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Irapuato is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Irapuato is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Irapuato is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Irapuato is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "salamanca": {
+      "medical-devices": "Salamanca is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Salamanca is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Salamanca is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Salamanca is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Salamanca is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "gomez-palacio": {
+      "medical-devices": "Gomez Palacio is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Gomez Palacio is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Gomez Palacio is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Gomez Palacio is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Gomez Palacio is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "durango": {
+      "medical-devices": "Durango is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Durango is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Durango is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Durango is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Durango is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "zacatecas": {
+      "medical-devices": "Zacatecas is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Zacatecas is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Zacatecas is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Zacatecas is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Zacatecas is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "pachuca": {
+      "medical-devices": "Pachuca is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Pachuca is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Pachuca is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Pachuca is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Pachuca is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "cuernavaca": {
+      "medical-devices": "Cuernavaca is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Cuernavaca is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Cuernavaca is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Cuernavaca is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Cuernavaca is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "tlaxcala": {
+      "medical-devices": "Tlaxcala is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Tlaxcala is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Tlaxcala is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Tlaxcala is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Tlaxcala is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "morelia": {
+      "medical-devices": "Morelia is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Morelia is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Morelia is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Morelia is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Morelia is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "uruapan": {
+      "medical-devices": "Uruapan is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Uruapan is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Uruapan is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Uruapan is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Uruapan is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "colima": {
+      "medical-devices": "Colima is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Colima is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Colima is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Colima is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Colima is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "manzanillo": {
+      "medical-devices": "Manzanillo is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Manzanillo is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Manzanillo is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Manzanillo is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Manzanillo is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "tepic": {
+      "medical-devices": "Tepic is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Tepic is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Tepic is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Tepic is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Tepic is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "mazatlan": {
+      "medical-devices": "Mazatlan is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Mazatlan is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Mazatlan is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Mazatlan is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Mazatlan is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "culiacan": {
+      "medical-devices": "Culiacan is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Culiacan is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Culiacan is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Culiacan is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Culiacan is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "los-mochis": {
+      "medical-devices": "Los Mochis is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Los Mochis is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Los Mochis is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Los Mochis is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Los Mochis is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "la-paz": {
+      "medical-devices": "La Paz is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "La Paz is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "La Paz is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "La Paz is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "La Paz is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "ensenada": {
+      "medical-devices": "Ensenada is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Ensenada is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Ensenada is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Ensenada is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Ensenada is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "tecate": {
+      "medical-devices": "Tecate is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Tecate is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Tecate is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Tecate is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Tecate is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "rosarito": {
+      "medical-devices": "Rosarito is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Rosarito is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Rosarito is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Rosarito is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Rosarito is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "guaymas": {
+      "medical-devices": "Guaymas is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Guaymas is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Guaymas is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Guaymas is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Guaymas is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "puerto-penasco": {
+      "medical-devices": "Puerto Penasco is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Puerto Penasco is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Puerto Penasco is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Puerto Penasco is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Puerto Penasco is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "piedras-negras": {
+      "medical-devices": "Piedras Negras is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Piedras Negras is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Piedras Negras is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Piedras Negras is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Piedras Negras is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
+    },
+    "acuna": {
+      "medical-devices": "Acuna is a premier destination for Medical Devices manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "aerospace": "Acuna is a premier destination for Aerospace manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "automotive": "Acuna is a premier destination for Automotive manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "electronics": "Acuna is a premier destination for Electronics manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs.",
+      "distribution-3pl": "Acuna is a premier destination for Distribution 3Pl manufacturing, offering a mature supply chain, specialized talent, and direct proximity to North American demand hubs."
     }
   },
   "tijuanaMasterGuide": {
@@ -889,7 +1264,21 @@
     "socialTitle": "社交媒体管理",
     "socialDesc": "在LinkedIn、Instagram和Facebook上保持专业且连贯的品牌形象。通过引人入胜的帖文和短视频内容展示您的实力。",
     "howTitle": "运作方式",
-    "howSubtitle": "无长期合同。无虚高预付。只提供您真正需要的营销帮助。"
+    "howSubtitle": "无长期合同。无虚高预付。只提供您真正需要的营销帮助。",
+    "step1Title": "Pick Your Services",
+    "step1Desc": "Choose the specific marketing services your business needs right now. No bundles, no commitments — just what moves the needle.",
+    "step2Title": "I Embed With Your Team",
+    "step2Desc": "I work alongside your people as your part-time marketing director — weekly strategy calls, hands-on execution, and full transparency.",
+    "step3Title": "See Real Results",
+    "step3Desc": "Live reporting on every campaign. You see exactly what's working, what's not, and where every dollar goes. No black boxes.",
+    "whyDenisseTitle": "Why Work With a Fractional Marketing Director?",
+    "whyPoint1": "Senior marketing leadership without the $200K+ salary",
+    "whyPoint2": "Someone who understands manufacturing, not just marketing buzzwords",
+    "whyPoint3": "Bilingual (English/Spanish) — seamless communication across borders",
+    "whyPoint4": "Scale up or down anytime — no long-term contracts required",
+    "whyCta": "Schedule a Free Consultation",
+    "formTitle": "Let's Talk About Your Marketing",
+    "formSubtitle": "Book a free 15-minute call. No pitch, no pressure — just an honest conversation about what's working and what's not."
   },
   "comparison": {
     "title": "Strategy & Competitor Analysis",
@@ -899,7 +1288,9 @@
     "strength": "Primary Strength",
     "pricing": "Pricing Structure",
     "agile": "Agile Adaptability",
-    "verifiedData": "Verified data baseline as of Q1 2026."
+    "verifiedData": "Verified data baseline as of Q1 2026.",
+    "benchmark": "Benchmarking",
+    "selectUpTo3": "Select up to 3"
   },
   "hubs": {
     "title": "Regional Hub Comparison",
@@ -907,6 +1298,903 @@
     "vacancy": "Industrial Vacancy",
     "energy": "Energy (per kWh)",
     "logistics": "Logistics Score",
-    "topEmployers": "Top Employers"
+    "topEmployers": "Top Employers",
+    "analysis": "Hub Analysis",
+    "blueprint": "View Hub Blueprint"
+  },
+  "industryVerticals": {
+    "medical-devices": "全球领先的医疗器械制造枢枢。提华纳和下加利福尼亚州拥有 80 多家通过 FDA 认证的工厂，根据 ISO 13485 标准生产从导管到复杂诊断设备的各类产品。",
+    "aerospace": "墨西哥的航空航天中心。墨西卡利和克雷塔罗在为波音、空客和庞巴迪制造涡轮机部件、机身和航空电子系统方面占据主导地位，并拥有 AS9100 认证。",
+    "automotive": "北美的汽车动力源。凭借庞大的 1 级和 2 级供应商网络，墨西哥是根据 IATF 16949 标准进行电动汽车和关键零部件组装的全球中心。",
+    "electronics": "电子制造服务 (EMS) 的卓越代表。从电视到半导体，我们的边境地点提供大批量、高科技的组装能力，并实现向美国的即时 (JIT) 物流。",
+    "distribution-3pl": "战略跨境物流。利用全球最繁忙的陆路入境口岸进行多式联运、保税仓储和高效的电子商务履约。"
+  },
+  "locations": {
+    "tijuana": {
+      "name": "Tijuana",
+      "description": "Strategic industrial hub in Tijuana, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Tijuana provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Tijuana Industrial Park",
+        "Finsa Tijuana",
+        "PIMSA Tijuana"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "mexicali": {
+      "name": "Mexicali",
+      "description": "Strategic industrial hub in Mexicali, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Mexicali provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Mexicali Industrial Park",
+        "Finsa Mexicali",
+        "PIMSA Mexicali"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "juarez": {
+      "name": "Juarez",
+      "description": "Strategic industrial hub in Juarez, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Juarez provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Juarez Industrial Park",
+        "Finsa Juarez",
+        "PIMSA Juarez"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "reynosa": {
+      "name": "Reynosa",
+      "description": "Strategic industrial hub in Reynosa, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Reynosa provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Reynosa Industrial Park",
+        "Finsa Reynosa",
+        "PIMSA Reynosa"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "nuevo-laredo": {
+      "name": "Nuevo Laredo",
+      "description": "Strategic industrial hub in Nuevo Laredo, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Nuevo Laredo provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Nuevo Laredo Industrial Park",
+        "Finsa Nuevo Laredo",
+        "PIMSA Nuevo Laredo"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "nogales": {
+      "name": "Nogales",
+      "description": "Strategic industrial hub in Nogales, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Nogales provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Nogales Industrial Park",
+        "Finsa Nogales",
+        "PIMSA Nogales"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "matamoros": {
+      "name": "Matamoros",
+      "description": "Strategic industrial hub in Matamoros, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Matamoros provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Matamoros Industrial Park",
+        "Finsa Matamoros",
+        "PIMSA Matamoros"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "monterrey": {
+      "name": "Monterrey",
+      "description": "Strategic industrial hub in Monterrey, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Monterrey provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Monterrey Industrial Park",
+        "Finsa Monterrey",
+        "PIMSA Monterrey"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "guadalajara": {
+      "name": "Guadalajara",
+      "description": "Strategic industrial hub in Guadalajara, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Guadalajara provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Guadalajara Industrial Park",
+        "Finsa Guadalajara",
+        "PIMSA Guadalajara"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "queretaro": {
+      "name": "Queretaro",
+      "description": "Strategic industrial hub in Queretaro, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Queretaro provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Queretaro Industrial Park",
+        "Finsa Queretaro",
+        "PIMSA Queretaro"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "san-luis-potosi": {
+      "name": "San Luis Potosi",
+      "description": "Strategic industrial hub in San Luis Potosi, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in San Luis Potosi provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "San Luis Potosi Industrial Park",
+        "Finsa San Luis Potosi",
+        "PIMSA San Luis Potosi"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "saltillo": {
+      "name": "Saltillo",
+      "description": "Strategic industrial hub in Saltillo, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Saltillo provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Saltillo Industrial Park",
+        "Finsa Saltillo",
+        "PIMSA Saltillo"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "hermosillo": {
+      "name": "Hermosillo",
+      "description": "Strategic industrial hub in Hermosillo, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Hermosillo provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Hermosillo Industrial Park",
+        "Finsa Hermosillo",
+        "PIMSA Hermosillo"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "silao": {
+      "name": "Silao",
+      "description": "Strategic industrial hub in Silao, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Silao provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Silao Industrial Park",
+        "Finsa Silao",
+        "PIMSA Silao"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "puebla": {
+      "name": "Puebla",
+      "description": "Strategic industrial hub in Puebla, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Puebla provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Puebla Industrial Park",
+        "Finsa Puebla",
+        "PIMSA Puebla"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "chihuahua-city": {
+      "name": "Chihuahua City",
+      "description": "Strategic industrial hub in Chihuahua City, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Chihuahua City provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Chihuahua City Industrial Park",
+        "Finsa Chihuahua City",
+        "PIMSA Chihuahua City"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "torreon": {
+      "name": "Torreon",
+      "description": "Strategic industrial hub in Torreon, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Torreon provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Torreon Industrial Park",
+        "Finsa Torreon",
+        "PIMSA Torreon"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "leon": {
+      "name": "Leon",
+      "description": "Strategic industrial hub in Leon, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Leon provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Leon Industrial Park",
+        "Finsa Leon",
+        "PIMSA Leon"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "toluca": {
+      "name": "Toluca",
+      "description": "Strategic industrial hub in Toluca, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Toluca provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Toluca Industrial Park",
+        "Finsa Toluca",
+        "PIMSA Toluca"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "villahermosa": {
+      "name": "Villahermosa",
+      "description": "Strategic industrial hub in Villahermosa, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Villahermosa provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Villahermosa Industrial Park",
+        "Finsa Villahermosa",
+        "PIMSA Villahermosa"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "veracruz": {
+      "name": "Veracruz",
+      "description": "Strategic industrial hub in Veracruz, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Veracruz provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Veracruz Industrial Park",
+        "Finsa Veracruz",
+        "PIMSA Veracruz"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "merida": {
+      "name": "Merida",
+      "description": "Strategic industrial hub in Merida, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Merida provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Merida Industrial Park",
+        "Finsa Merida",
+        "PIMSA Merida"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "cancun": {
+      "name": "Cancun",
+      "description": "Strategic industrial hub in Cancun, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Cancun provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Cancun Industrial Park",
+        "Finsa Cancun",
+        "PIMSA Cancun"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "mexico-city": {
+      "name": "Mexico City",
+      "description": "Strategic industrial hub in Mexico City, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Mexico City provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Mexico City Industrial Park",
+        "Finsa Mexico City",
+        "PIMSA Mexico City"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "aguascalientes": {
+      "name": "Aguascalientes",
+      "description": "Strategic industrial hub in Aguascalientes, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Aguascalientes provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Aguascalientes Industrial Park",
+        "Finsa Aguascalientes",
+        "PIMSA Aguascalientes"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "celaya": {
+      "name": "Celaya",
+      "description": "Strategic industrial hub in Celaya, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Celaya provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Celaya Industrial Park",
+        "Finsa Celaya",
+        "PIMSA Celaya"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "irapuato": {
+      "name": "Irapuato",
+      "description": "Strategic industrial hub in Irapuato, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Irapuato provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Irapuato Industrial Park",
+        "Finsa Irapuato",
+        "PIMSA Irapuato"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "salamanca": {
+      "name": "Salamanca",
+      "description": "Strategic industrial hub in Salamanca, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Salamanca provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Salamanca Industrial Park",
+        "Finsa Salamanca",
+        "PIMSA Salamanca"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "gomez-palacio": {
+      "name": "Gomez Palacio",
+      "description": "Strategic industrial hub in Gomez Palacio, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Gomez Palacio provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Gomez Palacio Industrial Park",
+        "Finsa Gomez Palacio",
+        "PIMSA Gomez Palacio"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "durango": {
+      "name": "Durango",
+      "description": "Strategic industrial hub in Durango, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Durango provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Durango Industrial Park",
+        "Finsa Durango",
+        "PIMSA Durango"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "zacatecas": {
+      "name": "Zacatecas",
+      "description": "Strategic industrial hub in Zacatecas, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Zacatecas provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Zacatecas Industrial Park",
+        "Finsa Zacatecas",
+        "PIMSA Zacatecas"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "pachuca": {
+      "name": "Pachuca",
+      "description": "Strategic industrial hub in Pachuca, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Pachuca provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Pachuca Industrial Park",
+        "Finsa Pachuca",
+        "PIMSA Pachuca"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "cuernavaca": {
+      "name": "Cuernavaca",
+      "description": "Strategic industrial hub in Cuernavaca, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Cuernavaca provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Cuernavaca Industrial Park",
+        "Finsa Cuernavaca",
+        "PIMSA Cuernavaca"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "tlaxcala": {
+      "name": "Tlaxcala",
+      "description": "Strategic industrial hub in Tlaxcala, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Tlaxcala provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Tlaxcala Industrial Park",
+        "Finsa Tlaxcala",
+        "PIMSA Tlaxcala"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "morelia": {
+      "name": "Morelia",
+      "description": "Strategic industrial hub in Morelia, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Morelia provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Morelia Industrial Park",
+        "Finsa Morelia",
+        "PIMSA Morelia"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "uruapan": {
+      "name": "Uruapan",
+      "description": "Strategic industrial hub in Uruapan, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Uruapan provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Uruapan Industrial Park",
+        "Finsa Uruapan",
+        "PIMSA Uruapan"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "colima": {
+      "name": "Colima",
+      "description": "Strategic industrial hub in Colima, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Colima provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Colima Industrial Park",
+        "Finsa Colima",
+        "PIMSA Colima"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "manzanillo": {
+      "name": "Manzanillo",
+      "description": "Strategic industrial hub in Manzanillo, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Manzanillo provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Manzanillo Industrial Park",
+        "Finsa Manzanillo",
+        "PIMSA Manzanillo"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "tepic": {
+      "name": "Tepic",
+      "description": "Strategic industrial hub in Tepic, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Tepic provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Tepic Industrial Park",
+        "Finsa Tepic",
+        "PIMSA Tepic"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "mazatlan": {
+      "name": "Mazatlan",
+      "description": "Strategic industrial hub in Mazatlan, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Mazatlan provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Mazatlan Industrial Park",
+        "Finsa Mazatlan",
+        "PIMSA Mazatlan"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "culiacan": {
+      "name": "Culiacan",
+      "description": "Strategic industrial hub in Culiacan, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Culiacan provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Culiacan Industrial Park",
+        "Finsa Culiacan",
+        "PIMSA Culiacan"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "los-mochis": {
+      "name": "Los Mochis",
+      "description": "Strategic industrial hub in Los Mochis, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Los Mochis provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Los Mochis Industrial Park",
+        "Finsa Los Mochis",
+        "PIMSA Los Mochis"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "la-paz": {
+      "name": "La Paz",
+      "description": "Strategic industrial hub in La Paz, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in La Paz provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "La Paz Industrial Park",
+        "Finsa La Paz",
+        "PIMSA La Paz"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "ensenada": {
+      "name": "Ensenada",
+      "description": "Strategic industrial hub in Ensenada, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Ensenada provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Ensenada Industrial Park",
+        "Finsa Ensenada",
+        "PIMSA Ensenada"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "tecate": {
+      "name": "Tecate",
+      "description": "Strategic industrial hub in Tecate, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Tecate provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Tecate Industrial Park",
+        "Finsa Tecate",
+        "PIMSA Tecate"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "rosarito": {
+      "name": "Rosarito",
+      "description": "Strategic industrial hub in Rosarito, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Rosarito provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Rosarito Industrial Park",
+        "Finsa Rosarito",
+        "PIMSA Rosarito"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "guaymas": {
+      "name": "Guaymas",
+      "description": "Strategic industrial hub in Guaymas, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Guaymas provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Guaymas Industrial Park",
+        "Finsa Guaymas",
+        "PIMSA Guaymas"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "puerto-penasco": {
+      "name": "Puerto Penasco",
+      "description": "Strategic industrial hub in Puerto Penasco, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Puerto Penasco provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Puerto Penasco Industrial Park",
+        "Finsa Puerto Penasco",
+        "PIMSA Puerto Penasco"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "piedras-negras": {
+      "name": "Piedras Negras",
+      "description": "Strategic industrial hub in Piedras Negras, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Piedras Negras provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Piedras Negras Industrial Park",
+        "Finsa Piedras Negras",
+        "PIMSA Piedras Negras"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    },
+    "acuna": {
+      "name": "Acuna",
+      "description": "Strategic industrial hub in Acuna, specializing in high-efficiency manufacturing and logistics.",
+      "advantages": [
+        "Reduced Labor Costs",
+        "Strategic Location",
+        "Industrial Infrastructure",
+        "USMCA Compliance"
+      ],
+      "howItWorks": "Operating in Acuna provides immediate access to major North American markets. Leverage high-tier talent and competitive cost structures.",
+      "parks": [
+        "Acuna Industrial Park",
+        "Finsa Acuna",
+        "PIMSA Acuna"
+      ],
+      "logistics": "Integrated rail, air, and truck networks ensuring rapid cross-border movement."
+    }
+  },
+  "wizard": {
+    "step1": "Select Your Industry",
+    "step2": "Define Your Priority",
+    "step3": "Operational Scale",
+    "resultTitle": "Recommended Hubs",
+    "reset": "Reset Wizard"
+  },
+  "newsroom": {
+    "title": "Market Pulse Newsroom",
+    "subtitle": "Real-time geopolitical analysis and trade-impact bulletins.",
+    "agentState": "Agent State: Active",
+    "scanFreq": "Scan Frequency: 240min",
+    "impact": "Impact Pulse",
+    "verified": "Verified Intelligence",
+    "mitigation": "Mitigation Strategy",
+    "contact": "Contact Response Team"
+  },
+  "resourceMap": {
+    "heroTitle": "Tijuana Industrial",
+    "heroTitleHighlight": "Park Map",
+    "heroSubtitle": "The most accurate and up-to-date guide to the Otay, El Florido, and Pacifico industrial zones.",
+    "freeResource": "Free Resource",
+    "downloadTitle": "Download the 2026 Map",
+    "downloadDesc": "Ensure your site selection team has the most updated zoning data for Tijuana's top industrial zones: Otay, El Florido, and Pacifico.",
+    "feature1": "Detailed zoning and locations",
+    "feature2": "Major highway access points",
+    "feature3": "Key tenants in each park",
+    "feature4": "Infrastructure highlights",
+    "formTitle": "Get the Map",
+    "formName": "Name",
+    "formEmail": "Work Email",
+    "formButton": "Download PDF",
+    "successTitle": "Download Started!",
+    "successSubtitle": "Your high-res map is downloading.",
+    "successClick": "Click here if it didn't start automatically"
   }
 }

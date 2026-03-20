@@ -111,10 +111,10 @@ export default function CityOverviewClient({ city }: Props) {
                 <span className="text-sm font-medium">{location.state}, {location.country}</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                Manufacturing in <span className="text-primary-500">{location.name}</span>
+                Manufacturing in <span className="text-primary-500">{t(`locations.${city}.name`) || location.name}</span>
             </h1>
             <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-                {location.description}
+                {t(`locations.${city}.description`) || location.description}
             </p>
         </div>
       </section>
@@ -147,7 +147,7 @@ export default function CityOverviewClient({ city }: Props) {
                 {/* Available Services */}
                 <section>
                     <SectionTitle 
-                        title={`Services in ${location.name}`}
+                        title={`${t('nav.services')} in ${t(`locations.${city}.name`) || location.name}`}
                         subtitle="Explore our comprehensive manufacturing and logistics solutions tailored for this region."
                     />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
@@ -170,12 +170,13 @@ export default function CityOverviewClient({ city }: Props) {
                 <section>
                     <SectionTitle 
                         title="Industry Expertise"
-                        subtitle={`Specialized manufacturing guides for ${location.name}'s key industrial clusters.`}
+                        subtitle={`Specialized manufacturing guides for ${t(`locations.${city}.name`) || location.name}'s key industrial clusters.`}
                     />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                         {INDUSTRY_MATRIX.filter(m => m.citySlug === city).map((entry) => {
                             const vertical = INDUSTRY_VERTICALS.find(v => v.slug === entry.industrySlug);
                             if (!vertical) return null;
+                            const indName = t(`industries.${entry.industrySlug}.name`) || vertical.slug;
                             return (
                                 <Link 
                                     key={entry.industrySlug}
@@ -188,7 +189,7 @@ export default function CityOverviewClient({ city }: Props) {
                                         </div>
                                           <div>
                                               <h4 className="font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">
-                                                 {t(`industries.${vertical.slug}.name`)}
+                                                 {indName}
                                               </h4>
                                               <p className="text-xs text-gray-500">{entry.stats.plants} Active Facilities</p>
                                           </div>

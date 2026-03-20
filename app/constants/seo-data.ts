@@ -1107,7 +1107,672 @@ export const LOCATIONS: Location[] = [
       { title: "Ultimate Guide to Nearshore Shelter Services", url: "/insights/ultimate-guide-nearshore-shelter-services-baja-california" },
       { title: "How 2025 Tariffs Reshape Supply Chains", url: "/insights/2025-tariffs-baja-california-supply-chain" }
     ]
-  }
+  },
+  {
+    slug: "chihuahua-city",
+    name: "Chihuahua City",
+    state: "Chihuahua",
+    country: "Mexico",
+    description: "Major electronics and automotive hub with a highly skilled workforce.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "torreon",
+    name: "Torreón",
+    state: "Coahuila",
+    country: "Mexico",
+    description: "Strategic industrial center in the Laguna region.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "leon",
+    name: "León",
+    state: "Guanajuato",
+    country: "Mexico",
+    description: "The leather and footwear capital, now a major automotive player.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "toluca",
+    name: "Toluca",
+    state: "Estado de México",
+    country: "Mexico",
+    description: "High-density automotive and industrial hub near Mexico City.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "villahermosa",
+    name: "Villahermosa",
+    state: "Tabasco",
+    country: "Mexico",
+    description: "Energy and oil services hub for Southern Mexico.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "veracruz",
+    name: "Veracruz",
+    state: "Veracruz",
+    country: "Mexico",
+    description: "Mexico's primary Atlantic port and logistics gateway.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "merida",
+    name: "Mérida",
+    state: "Yucatán",
+    country: "Mexico",
+    description: "Growing tech and light manufacturing hub in the Yucatan peninsula.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "cancun",
+    name: "Cancún",
+    state: "Quintana Roo",
+    country: "Mexico",
+    description: "Logistics gateway for the Riviera Maya and Caribbean.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "mexico-city",
+    name: "Mexico City",
+    state: "CDMX",
+    country: "Mexico",
+    description: "The financial and corporate heart of Mexico's industrial network.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "aguascalientes",
+    name: "Aguascalientes",
+    state: "Aguascalientes",
+    country: "Mexico",
+    description: "Major Nissan-anchored automotive cluster with perfect logistics.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "celaya",
+    name: "Celaya",
+    state: "Guanajuato",
+    country: "Mexico",
+    description: "Strategic rail and automotive node in the Bajío region.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "irapuato",
+    name: "Irapuato",
+    state: "Guanajuato",
+    country: "Mexico",
+    description: "Fast-growing industrial and food processing center.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "salamanca",
+    name: "Salamanca",
+    state: "Guanajuato",
+    country: "Mexico",
+    description: "Energy and petrochemical hub with a strong automotive presence.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "gomez-palacio",
+    name: "Gómez Palacio",
+    state: "Durango",
+    country: "Mexico",
+    description: "Key industrial component of the Laguna region's economy.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "durango",
+    name: "Durango",
+    state: "Durango",
+    country: "Mexico",
+    description: "Resource-rich manufacturing hub with growing electronics presence.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "zacatecas",
+    name: "Zacatecas",
+    state: "Zacatecas",
+    country: "Mexico",
+    description: "Mining and heavy industrial equipment manufacturing center.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "pachuca",
+    name: "Pachuca",
+    state: "Hidalgo",
+    country: "Mexico",
+    description: "Logistics and light manufacturing hub serving Central Mexico.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "cuernavaca",
+    name: "Cuernavaca",
+    state: "Morelos",
+    country: "Mexico",
+    description: "Automotive and pharmaceutical cluster south of Mexico City.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "tlaxcala",
+    name: "Tlaxcala",
+    state: "Tlaxcala",
+    country: "Mexico",
+    description: "Specialized automotive and textile manufacturing hub.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "morelia",
+    name: "Morelia",
+    state: "Michoacán",
+    country: "Mexico",
+    description: "Strategic logistics point for the Lázaro Cárdenas port.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "uruapan",
+    name: "Uruapan",
+    state: "Michoacán",
+    country: "Mexico",
+    description: "Agricultural and food processing industrial center.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "colima",
+    name: "Colima",
+    state: "Colima",
+    country: "Mexico",
+    description: "Logistics hub near the busiest Pacific port of Manzanillo.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "manzanillo",
+    name: "Manzanillo",
+    state: "Colima",
+    country: "Mexico",
+    description: "Mexico's busiest container port on the Pacific coast.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "tepic",
+    name: "Tepic",
+    state: "Nayarit",
+    country: "Mexico",
+    description: "Emerging light manufacturing and food processing hub.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "mazatlan",
+    name: "Mazatlán",
+    state: "Sinaloa",
+    country: "Mexico",
+    description: "Strategic Pacific logistics and port city.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "culiacan",
+    name: "Culiacán",
+    state: "Sinaloa",
+    country: "Mexico",
+    description: "Major agricultural and growing industrial machinery hub.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "los-mochis",
+    name: "Los Mochis",
+    state: "Sinaloa",
+    country: "Mexico",
+    description: "Pacific gateway with strong energy and rail infrastructure.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "la-paz",
+    name: "La Paz",
+    state: "Baja California Sur",
+    country: "Mexico",
+    description: "Strategic maritime logistics hub for the southern peninsula.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "ensenada",
+    name: "Ensenada",
+    state: "Baja California",
+    country: "Mexico",
+    description: "Major Pacific port and burgeoning high-tech manufacturing city.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "tecate",
+    name: "Tecate",
+    state: "Baja California",
+    country: "Mexico",
+    description: "Quiet industrial alternative with strong electrical clusters.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "rosarito",
+    name: "Rosarito",
+    state: "Baja California",
+    country: "Mexico",
+    description: "Electronics and energy manufacturing near the US border.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "guaymas",
+    name: "Guaymas",
+    state: "Sonora",
+    country: "Mexico",
+    description: "Strategic aerospace and maritime hub in the Sea of Cortez.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "puerto-penasco",
+    name: "Puerto Peñasco",
+    state: "Sonora",
+    country: "Mexico",
+    description: "Growing tourism and logistics point in northern Sonora.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "piedras-negras",
+    name: "Piedras Negras",
+    state: "Coahuila",
+    country: "Mexico",
+    description: "Efficient border crossing hub serving the Texas market.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
+  {
+    slug: "acuna",
+    name: "Cd. Acuña",
+    state: "Coahuila",
+    country: "Mexico",
+    description: "High-volume automotive and home appliance manufacturing node.",
+    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
+    stats: {
+      population: "Varies",
+      laborForce: "High Availability",
+      proximity: "Strategic Location",
+    },
+    advantages: [
+      "Lower operating costs than border cities",
+      "Stable and abundant labor force",
+      "Strategic highway and rail connectivity",
+      "Established industrial infrastructure"
+    ]
+  },
 ];
 
 export const SERVICES: Service[] = [

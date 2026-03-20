@@ -5,11 +5,11 @@ import { getDictionary } from "@/app/i18n/get-dictionary";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await props.params;
-  const t = await getDictionary(lang);
+  const dict = await getDictionary(lang as any);
   
   return {
-    title: `${t.resources.title} | Nearshore Navigator`,
-    description: t.resources.subtitle,
+    title: `${dict.resources.title} | Nearshore Navigator`,
+    description: dict.resources.metaDescription || 'Industrial resources, tools, and guides for your Mexico expansion.',
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/resources`,
       languages: {

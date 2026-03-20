@@ -21,45 +21,45 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
   const service = getService(serviceId)!;
 
   // Use localized data if available, otherwise fallback to lookup
-  const currentServiceTitle = localizedData?.service?.title || service.title;
-  const currentCityName = localizedData?.location?.name || location.name;
+  const currentCityName = t(`locations.${city}.name`) || location.name;
+  const currentServiceTitle = t(`nav.${serviceId}`) || service.title;
 
   // Dynamic content generation
   const title = `${currentServiceTitle} in ${currentCityName}`;
-  const subtitle = localizedData?.service?.description || `Comprehensive ${service.title.toLowerCase()} solutions tailored for the ${location.name} industrial market. Leverage ${location.name}'s ${location.stats.proximity} and a workforce of ${location.stats.laborForce} to optimize your nearshoring strategy.`;
+  const subtitle = t(`locations.${city}.description`) || `Comprehensive ${currentServiceTitle.toLowerCase()} solutions tailored for the ${currentCityName} industrial market.`;
 
   const faqs = location.serviceFaqs?.[serviceId] || location.localFaqs || [
     {
-      q: `What makes ${location.name} ideal for ${service.title.toLowerCase()}?`,
-      a: `${location.name} is a strategic hub in ${location.state} with ${location.stats.proximity}. For ${service.title.toLowerCase()}, it offers ${location.advantages[0]} and ${location.advantages[1]}, making it a top choice for international manufacturers.`
+      q: `What makes ${currentCityName} ideal for ${currentServiceTitle.toLowerCase()}?`,
+      a: `${currentCityName} is a strategic hub in ${location.state} with ${location.stats.proximity}. For ${currentServiceTitle.toLowerCase()}, it offers ${location.advantages[0]} and ${location.advantages[1]}, making it a top choice for international manufacturers.`
     },
     {
-      q: `How does Nearshore Navigator support ${service.title.toLowerCase()} in ${location.name}?`,
-      a: `We provide boots-on-the-ground expertise in ${location.name}. Our services include site selection, compliance auditing, and connecting you with the best ${service.title.toLowerCase()} partners in ${location.state}.`
+      q: `How does Nearshore Navigator support ${currentServiceTitle.toLowerCase()} in ${currentCityName}?`,
+      a: `We provide boots-on-the-ground expertise in ${currentCityName}. Our services include site selection, compliance auditing, and connecting you with the best ${currentServiceTitle.toLowerCase()} partners in ${location.state}.`
     },
     {
-      q: `What are the key industrial advantages of ${location.name}?`,
-      a: `${location.name} offers ${location.advantages.join(', ')}. These factors contribute to a robust ecosystem for companies utilizing ${service.title.toLowerCase()} to serve the North American market.`
+      q: `What are the key industrial advantages of ${currentCityName}?`,
+      a: `${currentCityName} offers ${location.advantages.join(', ')}. These factors contribute to a robust ecosystem for companies utilizing ${currentServiceTitle.toLowerCase()} to serve the North American market.`
     },
     {
-      q: `Can I combine ${service.title.toLowerCase()} with other services in ${location.name}?`,
-      a: `Absolutely. Many clients in ${location.name} integrate ${service.title.toLowerCase()} with shelter operations or distribution center management to create a seamless supply chain.`
+      q: `Can I combine ${currentServiceTitle.toLowerCase()} with other services in ${currentCityName}?`,
+      a: `Absolutely. Many clients in ${currentCityName} integrate ${currentServiceTitle.toLowerCase()} with shelter operations or distribution center management to create a seamless supply chain.`
     }
   ];
 
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": `${service.title} in ${location.name}`,
+    "name": `${currentServiceTitle} in ${currentCityName}`,
     "provider": {
       "@type": "Organization",
       "name": "Nearshore Navigator",
       "url": "https://nearshorenavigator.com"
     },
-    "serviceType": service.title,
+    "serviceType": currentServiceTitle,
     "areaServed": {
       "@type": "City",
-      "name": location.name,
+      "name": currentCityName,
       "address": {
         "@type": "PostalAddress",
         "addressRegion": location.state,
@@ -95,13 +95,13 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
       {
         "@type": "ListItem",
         "position": 2,
-        "name": location.name,
+        "name": currentCityName,
         "item": `https://nearshorenavigator.com/${language}/locations/${city}`
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "name": service.title,
+        "name": currentServiceTitle,
         "item": `https://nearshorenavigator.com/${language}/locations/${city}/${serviceId}`
       }
     ]
@@ -110,19 +110,19 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": `Nearshore Navigator - ${location.name}`,
-    "description": `Strategic nearshoring advisory and ${service.title} services in ${location.name}, ${location.state}.`,
+    "name": `Nearshore Navigator - ${currentCityName}`,
+    "description": `Strategic nearshoring advisory and ${currentServiceTitle} services in ${currentCityName}, ${location.state}.`,
     "url": `https://nearshorenavigator.com/${language}/locations/${city}`,
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": location.name,
+      "addressLocality": currentCityName,
       "addressRegion": location.state,
       "addressCountry": "MX"
     },
     "serviceType": [
-      `Industrial Real Estate ${location.name}`,
-      `Contract Manufacturing ${location.name}`,
-      `Shelter Services ${location.name}`
+      `Industrial Real Estate ${currentCityName}`,
+      `Contract Manufacturing ${currentCityName}`,
+      `Shelter Services ${currentCityName}`
     ],
     "parentOrganization": {
       "@type": "Organization",
@@ -177,14 +177,14 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
                         <div className="flex items-center">
                             <ChevronRight className="w-4 h-4 mx-1" />
                             <Link href={`/${language}/locations/${city}`} className="hover:text-white transition-colors">
-                                {location.name}
+                                {currentCityName}
                             </Link>
                         </div>
                     </li>
                     <li>
                         <div className="flex items-center">
                             <ChevronRight className="w-4 h-4 mx-1" />
-                            <span className="text-white font-medium" aria-current="page">{service.title}</span>
+                            <span className="text-white font-medium" aria-current="page">{currentServiceTitle}</span>
                         </div>
                     </li>
                 </ol>
@@ -197,7 +197,7 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
                 <span className="text-sm font-medium">{currentCityName} Industrial Hub</span>
             </div>
           <h1 className="text-3xl md:text-6xl font-bold text-white mb-6">
-            {service.title} in <span className="text-primary-500">{location.name}</span>
+            {currentServiceTitle} in <span className="text-primary-500">{currentCityName}</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
             {subtitle}

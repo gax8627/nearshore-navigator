@@ -12,13 +12,14 @@
  */
 
 interface LeadBehavior {
-    headcount: number;
-    usRate: number;
-    sqft: number;
-    pageViews: string[];
+    headcount?: number;
+    usRate?: number;
+    sqft?: number;
+    pageViews?: string[];
     formComments?: string;
-    sessionDurationSeconds: number;
+    sessionDurationSeconds?: number;
     role?: string;
+    source?: string;
 }
 
 interface IntentResult {
@@ -34,12 +35,16 @@ export class UserIntentAgent {
         let urgencyScore = 0;
 
         // 1. Headcount Magnitude (Size of Opportunity)
-        if (behavior.headcount > 100) score += 40;
-        else if (behavior.headcount > 50) score += 20;
+        if (behavior.headcount) {
+            if (behavior.headcount > 100) score += 40;
+            else if (behavior.headcount > 50) score += 20;
+        }
 
         // 2. Financial Pain (US Rate vs Mexico Savings)
-        const savingsDelta = (behavior.usRate - 7.84) * behavior.headcount * 160;
-        if (savingsDelta > 50000) score += 30;
+        if (behavior.usRate && behavior.headcount) {
+            const savingsDelta = (behavior.usRate - 7.84) * behavior.headcount * 160;
+            if (savingsDelta > 50000) score += 30;
+        }
 
         // 3. Keyword Analysis (Geopolitical Urgency)
         const panicKeywords = ['tariff', 'usmca', 'asap', 'urgent', 'trump', 'sheinbaum', 'deadline'];
@@ -49,7 +54,7 @@ export class UserIntentAgent {
         });
 
         // 4. Content Focus
-        const isReadingTariffs = behavior.pageViews.some(p => p.includes('tariff') || p.includes('geopolitics'));
+        const isReadingTariffs = (behavior.pageViews || []).some(p => p.includes('tariff') || p.includes('geopolitics'));
         if (isReadingTariffs) urgencyScore += 30;
 
         // Determine Category

@@ -24,7 +24,7 @@ export default function QuestionnaireClient() {
                             className="inline-flex items-center gap-2 text-primary-600 font-bold hover:underline mb-4"
                         >
                             <Printer className="w-5 h-5" />
-                            Click here to Print / Save as PDF
+                            {t('questionnaire.printPdf')}
                         </button>
                     </div>
                     

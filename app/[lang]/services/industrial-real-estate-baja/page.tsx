@@ -1,11 +1,14 @@
 import { Metadata } from 'next';
 import RealEstateClient from './RealEstateClient';
+import { getDictionary } from '@/app/i18n/get-dictionary';
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await props.params;
+  const dict = await getDictionary(lang as any);
+  
   return {
-    title: 'Industrial Real Estate in Baja California | Class A Warehouses & Parks',
-    description: 'Find Class A industrial space, build-to-suit, and warehouse leasing in Tijuana and Baja California. 75M+ sq ft of inventory starting at $0.75/sqft/mo.',
+    title: `${dict.realEstatePage.heroTitle} ${dict.realEstatePage.heroTitleHighlight} | Nearshore Navigator`,
+    description: dict.realEstatePage.heroSubtitle || 'Find Class A industrial space and warehouse leasing in Baja California.',
     openGraph: {
       title: 'Industrial Real Estate in Baja California | Nearshore Navigator',
       description: 'Class A industrial parks, build-to-suit, and warehouse leasing in Tijuana and Baja California, Mexico.',

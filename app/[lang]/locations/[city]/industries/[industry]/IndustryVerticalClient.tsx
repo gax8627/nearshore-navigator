@@ -42,7 +42,7 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Vertical Guide Not Found</h1>
           <Link href={`/${language}/locations/${city}`} className="text-primary-600 hover:underline">
-            Return to {location?.name || 'City'} Overview
+            Return to {t(`locations.${city}.name`) || location?.name || 'City'} Overview
           </Link>
         </div>
       </div>
@@ -56,7 +56,7 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": `https://nearshorenavigator.com/${language}` },
       { "@type": "ListItem", "position": 2, "name": "Locations", "item": `https://nearshorenavigator.com/${language}/locations` },
-      { "@type": "ListItem", "position": 3, "name": location.name, "item": `https://nearshorenavigator.com/${language}/locations/${city}` },
+      { "@type": "ListItem", "position": 3, "name": t(`locations.${city}.name`) || location.name, "item": `https://nearshorenavigator.com/${language}/locations/${city}` },
       { "@type": "ListItem", "position": 4, "name": t(`industries.${industry}.name`), "item": `https://nearshorenavigator.com/${language}/locations/${city}/industries/${industry}` }
     ]
   };
@@ -73,7 +73,7 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
         <div className="absolute inset-0 z-0">
           <Image
             src={vertical.heroImage}
-            alt={`${t(`industries.${industry}.name`)} in ${location.name} - Nearshore Navigator`}
+            alt={`${t(`industries.${industry}.name`)} in ${t(`locations.${city}.name`) || location.name} - Nearshore Navigator`}
             fill
             className="object-cover opacity-90 brightness-[0.7]"
             priority
@@ -95,7 +95,7 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
                         <div className="flex items-center">
                             <ChevronRight className="w-4 h-4 mx-1" />
                             <Link href={`/${language}/locations/${city}`} className="hover:text-white transition-colors">
-                                {location.name}
+                                {t(`locations.${city}.name`) || location.name}
                             </Link>
                         </div>
                     </li>
@@ -112,10 +112,10 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
         <div className="container mx-auto px-4 z-10 text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 backdrop-blur-md border border-primary-500/30 text-primary-200 mb-8">
                 <ShieldCheck className="w-4 h-4" />
-                <span className="text-sm font-bold uppercase tracking-widest">{t(`industries.${industry}.name`)} {t('industries.medical-devices.authorityGuide')}</span>
+                <span className="text-sm font-bold uppercase tracking-widest">{t(`industries.${industry}.name`)} {t('industries.authorityGuide')}</span>
             </div>
             <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-                {t(`industries.${industry}.name`)} in <span className="text-primary-400">{location.name}</span>
+                {t(`industries.${industry}.name`)} in <span className="text-primary-400">{t(`locations.${city}.name`) || location.name}</span>
             </h1>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-light">
                 {t(`matrix.${city}.${industry}`)}
@@ -129,14 +129,14 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700">
                 <div className="flex items-center gap-3 mb-4">
                     <Building2 className="w-5 h-5 text-primary-500" />
-                    <span className="text-xs font-bold uppercase text-gray-400">{t('industries.medical-devices.regionalPlants')}</span>
+                    <span className="text-xs font-bold uppercase text-gray-400">{t('industries.activePlants')}</span>
                 </div>
                 <div className="text-3xl font-bold text-gray-900 dark:text-white">{matrixEntry.stats.plants}</div>
             </div>
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700">
                 <div className="flex items-center gap-3 mb-4">
                     <Users2 className="w-5 h-5 text-primary-500" />
-                    <span className="text-xs font-bold uppercase text-gray-400">{t('industries.medical-devices.sectorWorkforce')}</span>
+                    <span className="text-xs font-bold uppercase text-gray-400">{t('industries.specializedTalent')}</span>
                 </div>
                 <div className="text-3xl font-bold text-gray-900 dark:text-white">{matrixEntry.stats.workforce}</div>
             </div>

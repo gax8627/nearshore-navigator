@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning={true}>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-7RHTT5QR43"
@@ -84,7 +84,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`} suppressHydrationWarning={true}>
         <Providers>
           {children}
         </Providers>

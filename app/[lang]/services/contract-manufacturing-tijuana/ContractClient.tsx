@@ -105,10 +105,11 @@ export default function ContractClient() {
                     "@context": "https://schema.org",
                     "@type": "FAQPage",
                     "mainEntity": [
-                        { "@type": "Question", "name": "What is contract manufacturing?", "acceptedAnswer": { "@type": "Answer", "text": "Contract manufacturing is when a company outsources the production of goods to a third-party manufacturer in Mexico, allowing businesses to reduce costs, leverage specialized expertise, and scale production without owning factory facilities." } },
-                        { "@type": "Question", "name": "How much can I save with contract manufacturing in Tijuana?", "acceptedAnswer": { "@type": "Answer", "text": "Companies typically save 30-50% on total manufacturing costs by leveraging Tijuana's lower labor rates (averaging $5-8/hr vs. $20-30/hr in the US), while maintaining same-timezone operations and cross-border logistics efficiency." } },
-                        { "@type": "Question", "name": "What types of products can be manufactured?", "acceptedAnswer": { "@type": "Answer", "text": "Tijuana specializes in electronics, medical devices, aerospace components, automotive parts, and consumer goods. The city hosts major OEMs and contract manufacturers with ISO-certified facilities." } },
-                        { "@type": "Question", "name": "How does IP protection work in Mexico?", "acceptedAnswer": { "@type": "Answer", "text": "Mexico is a signatory to TRIPS, NAFTA/USMCA, and major IP treaties. Robust NDA and manufacturing agreements, combined with proper facility vetting, provide strong IP protection comparable to US standards." } }
+                        { "@type": "Question", "name": t('contractPage.faq1Question'), "acceptedAnswer": { "@type": "Answer", "text": t('contractPage.faq1Answer') } },
+                        { "@type": "Question", "name": t('contractPage.faq2Question'), "acceptedAnswer": { "@type": "Answer", "text": t('contractPage.faq2Answer') } },
+                        { "@type": "Question", "name": t('contractPage.faq3Question'), "acceptedAnswer": { "@type": "Answer", "text": t('contractPage.faq3Answer') } },
+                        { "@type": "Question", "name": t('contractPage.faq4Question'), "acceptedAnswer": { "@type": "Answer", "text": t('contractPage.faq4Answer') } },
+                        { "@type": "Question", "name": t('contractPage.faq5Question'), "acceptedAnswer": { "@type": "Answer", "text": t('contractPage.faq5Answer') } }
                     ]
                 }) }}
             />
@@ -283,15 +284,15 @@ export default function ContractClient() {
                     <div className="space-y-4">
                         {[
                             { q: t('contractPage.faq1Question'), a: t('contractPage.faq1Answer') },
-                            { q: t('contractPage.faq2Question'), a: t('contractPage.faq2Answer') },
-                            { q: t('contractPage.faq3Question'), a: t('contractPage.faq3Answer') },
-                            { q: t('contractPage.faq4Question'), a: t('contractPage.faq4Answer') },
-                            { q: "Do you own the factories?", a: "We work with a vetted network of Contract Manufacturers (CMs). We do not own the factories, but we perform the due diligence to ensure they meet your quality and capacity standards." },
-                            { q: "What is the minimum order quantity (MOQ)?", a: "MOQs vary by manufacturer and product type. However, contract manufacturing is generally best suited for companies looking to scale production beyond initial prototyping." },
-                            { q: "How do you handle Quality Control (QC)?", a: "QC is handled on two levels: the CM's internal ISO certifications and our external audits. We can also facilitate third-party inspections before shipment." },
-                            { q: "Can I bring my own raw materials?", a: "Yes. This is often called 'consignment'. You can ship key components from the US or Asia to Mexico tax-free (via IMMEX) for assembly." },
-                            { q: "Does contract manufacturing protect my IP?", a: "Yes. We ensure strict NDAs are signed before any drawings are shared. Mexico's IP laws are robust and aligned with US standards." },
-                            { q: "Who manages the logistics?", a: "Typically, the CM sets the product Ex-Works (at the factory door). We can connect you with logistics partners to handle the export/import process to your US warehouse." }
+                        { q: t('contractPage.faq2Question'), a: t('contractPage.faq2Answer') },
+                        { q: t('contractPage.faq3Question'), a: t('contractPage.faq3Answer') },
+                        { q: t('contractPage.faq4Question'), a: t('contractPage.faq4Answer') },
+                        { q: t('contractPage.faq5Question'), a: t('contractPage.faq5Answer') },
+                        { q: t('contractPage.faq6Question'), a: t('contractPage.faq6Answer') },
+                        { q: t('contractPage.faq7Question'), a: t('contractPage.faq7Answer') },
+                        { q: t('contractPage.faq8Question'), a: t('contractPage.faq8Answer') },
+                        { q: t('contractPage.faq9Question'), a: t('contractPage.faq9Answer') },
+                        { q: t('contractPage.faq10Question'), a: t('contractPage.faq11Answer') }
                         ].map((faq, i) => (
                             <details key={i} className="group p-4 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700 open:bg-white/60 dark:open:bg-gray-800/60 transition-colors">
                                 <summary className="font-semibold text-gray-900 dark:text-white cursor-pointer list-none flex justify-between items-center">

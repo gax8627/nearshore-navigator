@@ -68,7 +68,16 @@ export async function POST(req: Request) {
 
         console.log(`[Contact API] Received lead: ${email}`);
 
-        // DB Insertion (isolated so failures don't block CRM sync or notifications)
+        // DP1: User Intent Analysis
+        const { UserIntentAgent } = await import('@/scripts/agents/user_intent_agent');
+        const intentAgent = new UserIntentAgent();
+        const intentResult = intentAgent.analyze({
+            formComments: message || '',
+            source: source || 'website_contact_form'
+        });
+
+        // DB Insertion
+        let savedLeadId: number | undefined;
         if (isDbConfigured()) {
             try {
                 const { db } = await import('@/lib/db');
@@ -80,25 +89,37 @@ export async function POST(req: Request) {
                     company: company || '',
                     phone: phone || '',
                     message: message || '',
-                    source: source || 'website_contact_form'
+                    source: source || 'website_contact_form',
+                    intentCategory: intentResult.category,
+                    intentScore: intentResult.score,
+                    urgency: intentResult.urgency,
+                    score: Math.min(100, (intentResult.score + 20)) // Base score + intent
                 }).returning({ id: leads.id });
-                console.log('[Contact API] Saved to database.');
+                
+                savedLeadId = newLead.id;
+                console.log('[Contact API] Saved to database with Intent Category:', intentResult.category);
 
                 // Trigger Inngest background job
                 try {
                     await inngest.send({
                         name: 'lead.created',
-                        data: { leadId: newLead.id, email, name, company, source }
+                        data: { 
+                            leadId: newLead.id, 
+                            email, 
+                            name, 
+                            company, 
+                            source,
+                            intentCategory: intentResult.category,
+                            intentScore: intentResult.score,
+                            urgency: intentResult.urgency
+                        }
                     });
-                    console.log('[Contact API] Triggered Inngest lead.created event.');
                 } catch (inngestError) {
-                    console.error('[Contact API] Inngest Error (non-fatal):', inngestError);
+                    console.error('[Contact API] Inngest Error:', inngestError);
                 }
             } catch (dbError) {
-                console.error('[Contact API] Database Error (non-fatal):', dbError);
+                console.error('[Contact API] Database Error:', dbError);
             }
-        } else {
-            console.warn('[Contact API] Database not configured. Lead data:', { name, email, company, source });
         }
 
         // CRM Integration (Brevo)
@@ -110,7 +131,10 @@ export async function POST(req: Request) {
                     LASTNAME: name.split(' ').slice(1).join(' ') || 'Lead',
                     COMPANY: company || '',
                     SMS: phone || '',
-                    SOURCE: source || 'website_contact_form'
+                    SOURCE: source || 'website_contact_form',
+                    INTENT_CATEGORY: intentResult.category,
+                    INTENT_SCORE: intentResult.score.toString(),
+                    URGENCY: intentResult.urgency
                 },
                 updateEnabled: true
             });
@@ -119,26 +143,21 @@ export async function POST(req: Request) {
             console.error('[Contact API] CRM Sync Error (Brevo):', crmError);
         }
 
-        // CRM Integration (HubSpot) - PHASE A
+        // Notifications (DP1: Autonomous Alert)
         try {
-            const { hubspot } = await import('@/lib/hubspot');
-            const intentScore = message ? 60 : 20; // Basic scoring
-            await hubspot.upsertContact({
+            const { notifyLead } = await import('@/lib/notifications');
+            await notifyLead({
+                name,
                 email,
-                firstname: name.split(' ')[0],
-                lastname: name.split(' ').slice(1).join(' ') || 'Lead',
-                company: company || '',
-                phone: phone || '',
-                industry_intent: source || 'website_contact_form',
-                intent_score: intentScore,
-                lifecyclestage: 'lead'
+                company: company || 'N/A',
+                score: intentResult.score,
+                intentCategory: intentResult.category,
+                urgency: intentResult.urgency,
+                tags: [source || 'contact_form']
             });
-            console.log('[Contact API] Sync to HubSpot successful.');
-        } catch (hubspotError) {
-            console.error('[Contact API] CRM Sync Error (HubSpot):', hubspotError);
+        } catch (notifError) {
+            console.error('[Contact API] Notification Error:', notifError);
         }
-
-        // Notifications
         try {
             await brevo.sendEmail({
                 to: [{ email: 'denisse@nearshorenavigator.com', name: 'Denisse Gastelum' }],

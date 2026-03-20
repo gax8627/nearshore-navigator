@@ -1,11 +1,14 @@
 import AboutClient from "./AboutClient";
 import { Metadata } from 'next';
+import { getDictionary } from '@/app/i18n/get-dictionary';
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await props.params;
+  const dict = await getDictionary(lang as any);
+  
   return {
-    title: 'About Nearshore Navigator | Expert Nearshoring Advisors in Baja California',
-    description: 'Meet the team behind Nearshore Navigator — boots-on-the-ground advisors helping US companies set up manufacturing in Tijuana and Baja California since 2020.',
+    title: `${dict.about.title} | Nearshore Navigator`,
+    description: dict.about.metaDescription || 'Learn more about Nearshore Navigator and our mission to support manufacturing expansion in Mexico.',
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/about`,
       languages: {

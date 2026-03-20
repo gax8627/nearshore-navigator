@@ -19,8 +19,8 @@ export default function BrochureClient() {
             {/* Control Bar - Hidden when printing */}
             <div className="container mx-auto px-4 mb-8 flex flex-col md:flex-row justify-between items-center gap-4 print:hidden">
                 <div>
-                     <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Digital Brochure</h1>
-                     <p className="text-gray-500 text-sm">Preview of the downloadable PDF.</p>
+                     <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{t('brochure.titlePreview')}</h1>
+                     <p className="text-gray-500 text-sm">{t('brochure.subtitlePreview')}</p>
                 </div>
                 <Button 
                     onClick={handlePrint} 
@@ -70,7 +70,7 @@ export default function BrochureClient() {
                             <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent" />
                             <div className="absolute bottom-6 left-6 text-white">
                                 <h3 className="text-3xl font-bold mb-1">{t('brochure.whyBaja')}</h3>
-                                <p className="text-blue-200">The premier destination for North American manufacturing.</p>
+                                <p className="text-blue-200">{t('brochure.whyBajaSubtitle')}</p>
                             </div>
                         </div>
 
@@ -103,21 +103,21 @@ export default function BrochureClient() {
                                 <div className="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-gray-900">{t('brochure.realEstate')}</h4>
-                                    <p className="text-sm text-gray-600">Site selection, BTS analysis, and lease negotiation for Class A industrial facilities.</p>
+                                    <p className="text-sm text-gray-600">{t('brochure.realEstateDesc')}</p>
                                 </div>
                             </div>
                             <div className="flex gap-4">
                                 <div className="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-gray-900">{t('brochure.shelter')}</h4>
-                                    <p className="text-sm text-gray-600">Administrative and legal compliance services to launch operations in 90 days.</p>
+                                    <p className="text-sm text-gray-600">{t('brochure.shelterDesc')}</p>
                                 </div>
                             </div>
                             <div className="flex gap-4">
                                 <div className="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-gray-900">{t('brochure.mfg')}</h4>
-                                    <p className="text-sm text-gray-600">Partner matching with certified manufacturers for medical, aerospace, and electronics.</p>
+                                    <p className="text-sm text-gray-600">{t('brochure.mfgDesc')}</p>
                                 </div>
                             </div>
                         </div>
@@ -126,11 +126,11 @@ export default function BrochureClient() {
                     {/* Team Spotlight */}
                     <div className="bg-blue-900 text-white rounded-xl p-8 flex items-center justify-between">
                          <div>
-                            <span className="text-blue-300 text-xs font-bold uppercase tracking-wider mb-2 block">Leadership</span>
+                            <span className="text-blue-300 text-xs font-bold uppercase tracking-wider mb-2 block">{t('brochure.leadershipTitle')}</span>
                             <h3 className="text-2xl font-bold mb-1">Denisse Martinez</h3>
-                            <p className="text-blue-200 text-sm mb-4">Director of Marketing & Business Development</p>
+                            <p className="text-blue-200 text-sm mb-4">{t('brochure.denisseRole')}</p>
                             <p className="text-xs text-blue-100/80 max-w-sm italic">
-                                "We help you align your operational needs with the reality of the Baja market to ensure a successful long-term investment."
+                                {t('brochure.quote')}
                             </p>
                          </div>
                          <div className="w-20 h-20 bg-blue-800 rounded-full flex items-center justify-center border-2 border-blue-400 overflow-hidden relative">
@@ -157,8 +157,8 @@ export default function BrochureClient() {
                              </div>
                         </div>
                         <div className="text-right">
-                             <h5 className="font-bold text-gray-900 mb-2">San Diego HQ</h5>
-                             <p className="text-gray-600">Baja California Operations</p>
+                             <h5 className="font-bold text-gray-900 mb-2">{t('brochure.hq')}</h5>
+                             <p className="text-gray-600">{t('brochure.ops')}</p>
                              <p className="text-blue-600 font-bold mt-2">nearshorenavigator.com</p>
                         </div>
                      </div>

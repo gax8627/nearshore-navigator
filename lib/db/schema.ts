@@ -29,6 +29,9 @@ export const leads = pgTable('leads', {
   category: varchar('category', { length: 50 }).default('Standard'), // High, Standard, Low
   tags: text('tags').notNull().default('[]'),
   source: varchar('source', { length: 50 }).default('website'), // website, csv_upload, manual
+  intentCategory: varchar('intent_category', { length: 50 }).default('GENERAL_EXPLORATION'),
+  intentScore: integer('intent_score').default(0),
+  urgency: varchar('urgency', { length: 20 }).default('LOW'),
   createdAt: timestamp('created_at').notNull().defaultNow(),
 }, (table) => {
   return {

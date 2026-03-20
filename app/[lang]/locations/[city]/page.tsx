@@ -9,11 +9,17 @@ type Props = {
   }>;
 };
 
+import { getDictionary } from "@/app/i18n/get-dictionary";
+
 export async function generateMetadata({ params }: Props) {
   const { lang, city } = await params;
   const location = getLocation(city);
+  const dict = await getDictionary(lang);
   
-  if (!location) return {};
+  if (!location || !dict) return {};
+
+  const cityName = dict.locations?.[city]?.name || location.name;
+  const cityDesc = dict.locations?.[city]?.description || location.description;
 
   // Non-English city overview pages render identical server-side content to /en/.
   // Cross-canonical to /en/ aligns our declaration with Google's chosen canonical,
@@ -21,8 +27,8 @@ export async function generateMetadata({ params }: Props) {
   const canonicalUrl = `https://nearshorenavigator.com/${lang}/locations/${city}`;
 
   return {
-    title: `Nearshoring to ${location.name}, ${location.state} | 2026 Manufacturing Guide`,
-    description: location.description || `Complete guide to industrial manufacturing in ${location.name}. Access ${location.name}'s skilled workforce, industrial parks, and proximity to major US markets.`,
+    title: `Nearshoring to ${cityName}, ${location.state} | 2026 Manufacturing Guide`,
+    description: cityDesc || `Complete guide to industrial manufacturing in ${cityName}. Access ${cityName}'s skilled workforce, industrial parks, and proximity to major US markets.`,
     alternates: {
       canonical: canonicalUrl,
       languages: {

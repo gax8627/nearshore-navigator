@@ -3,22 +3,39 @@ export interface LeadNotification {
   email: string;
   company: string;
   score: number;
-  category: 'High' | 'Medium' | 'Low';
+  intentCategory: string;
+  urgency: string;
   tags: string[];
 }
 
 export async function notifyLead(lead: LeadNotification) {
-  // Simulation of Slack/Webhook/Email notifications
-  // In production, this would use fetch() to a Slack Webhook or Resend API
-  
   const timestamp = new Date().toISOString();
-  
-  if (lead.category === 'High') {
-    console.log(`[${timestamp}] 🚨 PRIORITY ALERT: High-value lead from ${lead.company} (${lead.name})`);
-    console.log(`[${timestamp}] 📈 Score: ${lead.score} | Tags: ${lead.tags.join(', ')}`);
-    // Example: await fetch(process.env.SLACK_WEBHOOK_URL!, { method: 'POST', body: JSON.stringify({...}) });
-  } else {
-    console.log(`[${timestamp}] Lead Captured: ${lead.name} (${lead.company}) - Category: ${lead.category}`);
+  const webhookUrl = process.env.SLACK_WEBHOOK_URL;
+
+  // Determine Emoji
+  const emoji = lead.intentCategory === 'TARIFF_PANIC' ? '🚨' : 
+                lead.urgency === 'CRITICAL' ? '🔥' : '📈';
+
+  const message = `${emoji} *NEW LEAD CAPTURED: ${lead.intentCategory}*
+> *Name:* ${lead.name}
+> *Company:* ${lead.company}
+> *Email:* ${lead.email}
+> *Urgency:* ${lead.urgency}
+> *Score:* ${lead.score}
+> *Tags:* ${lead.tags.join(', ')}`;
+
+  console.log(`[${timestamp}] ${message}`);
+
+  if (webhookUrl) {
+    try {
+      await fetch(webhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: message }),
+      });
+    } catch (e) {
+      console.error('[Notifications] Failed to send Slack alert:', e);
+    }
   }
 
   return { success: true, dispatchedAt: timestamp };

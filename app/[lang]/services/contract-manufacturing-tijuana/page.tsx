@@ -1,11 +1,14 @@
 import ContractClient from "./ContractClient";
 import { Metadata } from 'next';
+import { getDictionary } from '@/app/i18n/get-dictionary';
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await props.params;
+  const dict = await getDictionary(lang as any);
+  
   return {
-    title: 'Contract Manufacturing in Tijuana | 30–50% Cost Savings | ISO-Certified Partners',
-    description: 'Connect with verified ISO 13485 and AS9100 contract manufacturers in Tijuana. Save 30–50% vs. US costs on medical, aerospace, and electronics production.',
+    title: `${dict.contractPage.heroTitle} ${dict.contractPage.heroTitleHighlight} | Nearshore Navigator`,
+    description: dict.contractPage.heroSubtitle,
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/services/contract-manufacturing-tijuana`,
       languages: {
