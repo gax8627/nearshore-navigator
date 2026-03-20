@@ -32,28 +32,51 @@ export const BLOG_POSTS_RAW = [
         { q: "What industries are best suited for nearshoring to Baja California?", a: "Baja California is especially well-suited for medical devices (the highest MedDev concentration in North America), aerospace components (Bombardier, Honeywell, Collins Aerospace), consumer electronics (Samsung, Foxconn), automotive wire harnesses and subassemblies, and precision machining. The region's 50-year industrial heritage means deep supplier ecosystems, trained workforce pipelines from UABC and CETYS universities, and established quality management culture (ISO 13485, AS9100, IATF 16949 certifications are common)." }
       ],
       content: `
-        <p>Baja California has arguably become the most critical manufacturing hub in North America for companies looking to decouple from Asia. With its strategic proximity to California, a shared time zone, and a deeply integrated cross-border culture, it offers advantages that few other regions can match.</p>
+        <p>Baja California has become the most critical manufacturing hub in North America for companies aiming to decouple from Asia. With its strategic proximity to California, shared timezone, and integrated border culture, it offers high-velocity supply chain advantages.</p>
         
         <h2>Why "China+1" Leads to Baja</h2>
-        <p>The global supply chain creates risk. Tariffs, geopolitical tension, and rising labor costs in China have forced US companies to seek alternatives. Baja California isn't just a "low-cost" alternative; it's a <strong>high-velocity</strong> partner.</p>
-        <p>Being minutes from San Diego allows for:</p>
+        <p><strong>Baja California is the ultimate "China+1" destination because it offers zero USMCA tariffs, 2-hour truck delivery to California, and robust intellectual property protections, replacing 6-week ocean transits and volatile 25% Section 301 tariffs associated with Asian off-shoring.</strong></p>
+        <p>The global supply chain creates risk. Sourcing from Baja California directly hedges against this fragility:</p>
         <ul>
-          <li><strong>Same-day executive oversight:</strong> Your engineering team in California can visit the factory in Tijuana and be back for dinner.</li>
-          <li><strong>USMCA Tariff benefits:</strong> Qualifying goods enter the US duty-free, avoiding Section 301 tariffs that plague Asian imports.</li>
-          <li><strong>IP Protection:</strong> Mexico's IP laws, strengthened by USMCA, offer far more robust protection than typical Asian jurisdictions.</li>
+          <li><strong>Executive Oversight:</strong> Engineering teams in California can visit the Tijuana factory and return home for dinner exactly the same day.</li>
+          <li><strong>USMCA Tariff Avoidance:</strong> Qualifying manufactured goods enter the United States absolutely duty-free.</li>
+          <li><strong>IP Protection:</strong> Mexico's strict intellectual property laws offer significantly more security than typical Asian jurisdictions.</li>
+          <li><strong>Speed to Market:</strong> Products move from assembly line to San Diego distribution centers in a matter of hours.</li>
+          <li><strong>Shared Timezone:</strong> Real-time collaboration between US corporate offices and Mexican production lines.</li>
         </ul>
 
         <h2>The Workforce Advantage</h2>
-        <p>Tijuana and Mexicali are not new to this. They have a 50-year history of aerospace, medical device, and electronics manufacturing. The region produces thousands of engineers annually from top universities like UABC and CETYS.</p>
-        <p>Major clusters include:</p>
-        <ul>
-            <li><strong>Medical Devices:</strong> The highest concentration of MedDev manufacturing in North America (Medtronic, DjO, Breg).</li>
-            <li><strong>Aerospace:</strong> High-precision machining and assembly for giants like Honeywell and Collins Aerospace.</li>
-            <li><strong>Electronics:</strong> From Samsung to Foxconn, the electronics ecosystem is mature and deep.</li>
-        </ul>
+        <p><strong>Tijuana and Mexicali provide a mature, 50-year industrial workforce that graduates over 3,000 highly skilled engineers annually from top regional universities, supporting deep ecosystems in medical devices, aerospace, and electronics.</strong></p>
+        <table class="w-full text-left border-collapse border border-gray-200 my-6">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="border border-gray-200 px-4 py-2">Industry Sector</th>
+              <th class="border border-gray-200 px-4 py-2">Major Players in Baja</th>
+              <th class="border border-gray-200 px-4 py-2">Regional Concentration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2">Medical Devices</td>
+              <td class="border border-gray-200 px-4 py-2">Medtronic, DjO, Breg</td>
+              <td class="border border-gray-200 px-4 py-2">Highest in North America</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2">Aerospace</td>
+              <td class="border border-gray-200 px-4 py-2">Honeywell, Collins</td>
+              <td class="border border-gray-200 px-4 py-2">Mexicali & Tijuana</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2">Electronics</td>
+              <td class="border border-gray-200 px-4 py-2">Samsung, Foxconn</td>
+              <td class="border border-gray-200 px-4 py-2">Global Leader</td>
+            </tr>
+          </tbody>
+        </table>
 
         <h2>Getting Started</h2>
-        <p>The first step is a feasibility study: assessing your labor needs, power requirements, and logistics flow. Don't sign a lease until you understand your "landed cost" model.</p>
+        <p><strong>The first step to manufacturing in Mexico is a comprehensive feasibility study that models land acquisition, labor availability, power requirements, and Total Landed Cost prior to signing any industrial lease.</strong></p>
+        <p>By executing proper due diligence, US companies can rapidly launch their nearshore shelter operations within 90 days.</p>
       `,
       locales: {
         ja: {
@@ -101,17 +124,51 @@ export const BLOG_POSTS_RAW = [
         { q: "What are the logistics advantages of manufacturing in Baja California vs Asia?", a: "Manufacturing in Baja California eliminates trans-Pacific ocean freight (30–45 day transit, $2,000–$20,000 per container depending on market conditions). Products move by truck from Tijuana to Los Angeles in 3–4 hours, San Diego in 1 hour, Phoenix in 5 hours, allowing true Just-in-Time (JIT) manufacturing. This reduces finished goods inventory requirements by 60–70%, eliminates ocean freight insurance costs, removes port delay risk (LA/Long Beach congestion), and enables same-week response to demand changes. For manufacturers with high SKU variability or time-sensitive customer commitments, the logistics advantage alone often justifies nearshoring." }
       ],
       content: `
-        <p>When calculating Total Landed Cost (TLC), Mexico often wins out over Asian competitors not necessarily on labor rates alone, but on the total cost of ownership, speed, and risk mitigation.</p>
+        <p>When calculating Total Landed Cost (TLC), Mexico often wins out over Asian competitors not just on regional labor rates, but on the total cost of ownership, speed to market, and geopolitical risk mitigation.</p>
         
         <h2>The Logistics Equation</h2>
-        <p>The pandemic exposed the fragility of trans-Pacific shipping. A container from Shanghai to Long Beach can take 3-6 weeks and cost anywhere from $2,000 to $20,000 depending on volatility.</p>
-        <p><strong>The Baja Difference:</strong> A truck from Tijuana to a distribution center in Otay Mesa takes 2 hours. The cost is stable, predictable, and allows for "Just-in-Time" (JIT) inventory management that is impossible when sourcing from Asia.</p>
+        <p><strong>Shipping from Baja California offers massive logistics advantages over Asia by replacing a $2,000–$20,000, 30-45 day trans-Pacific ocean container voyage with a highly predictable 2-hour truck delivery directly into Southern California.</strong></p>
+        <p>This geographic proximity supports true "Just-in-Time" (JIT) inventory management, something fundamentally impossible when relying on long-haul offshore sourcing.</p>
+        <ul>
+          <li><strong>Transit Time:</strong> 2 hours vs. 30-45 days.</li>
+          <li><strong>Freight Cost:</strong> Stable localized trucking vs. highly volatile ocean spot rates.</li>
+          <li><strong>Inventory Buffer:</strong> 1-2 days holding versus 40-60 days container floats.</li>
+          <li><strong>Port Congestion:</strong> Avoids systemic delays at LA/Long Beach ports.</li>
+          <li><strong>Insurance:</strong> Eliminates catastrophic ocean freight insurance premiums.</li>
+        </ul>
 
         <h2>Labor vs. Automation</h2>
-        <p>While unskilled labor in Vietnam or India may be cheaper on paper, Mexico offers a "sweet spot" of skilled labor at competitive rates. The fully burdened cost for a skilled assembly operator in Tijuana is significantly lower than the US, but with productivity rates that often match or exceed US counterparts due to the mature industrial culture.</p>
+        <p><strong>Tijuana offers a highly productive "sweet spot" for skilled manufacturing labor, with fully burdened assembly operator rates averaging $7.84 per hour in 2026, delivering high-quality output matching US standards.</strong></p>
+        <table class="w-full text-left border-collapse border border-gray-200 my-6">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="border border-gray-200 px-4 py-2">Cost Metric (2026)</th>
+              <th class="border border-gray-200 px-4 py-2">China Equivalent</th>
+              <th class="border border-gray-200 px-4 py-2">Baja California</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2">Transit Time to LA</td>
+              <td class="border border-gray-200 px-4 py-2">30-45 Days</td>
+              <td class="border border-gray-200 px-4 py-2">2-4 Hours</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2">Section 301 US Tariffs</td>
+              <td class="border border-gray-200 px-4 py-2">25% - 100%</td>
+              <td class="border border-gray-200 px-4 py-2">0% (USMCA)</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2">IP Risk Profile</td>
+              <td class="border border-gray-200 px-4 py-2">High Risk</td>
+              <td class="border border-gray-200 px-4 py-2">Protected (USMCA)</td>
+            </tr>
+          </tbody>
+        </table>
 
         <h2>Tariff Avoidance (Section 301)</h2>
-        <p>For many industries, the 25% Section 301 tariff on Chinese goods obliterates profit margins. Manufacturing in Mexico under USMCA allows for <strong>duty-free entry</strong> into the US for qualifying products. This single factor often makes Nearshoring 20-25% cheaper than Offshoring, regardless of labor arbitrage.</p>
+        <p><strong>By manufacturing in Mexico under USMCA provisions, US companies secure duty-free entry for qualifying products, completely avoiding the catastrophic 25% to 100% Section 301 tariffs historically imposed on Chinese imports.</strong></p>
+        <p>This ultimate tariff relief creates an immediate 20-30% competitive pricing advantage on top of baseline labor arbitrage.</p>
       `,
       locales: {
         ja: {
@@ -148,20 +205,51 @@ export const BLOG_POSTS_RAW = [
         { q: "What are the costs of a shelter service in Mexico?", a: "Shelter service fees typically consist of: (1) a per-employee-per-month management fee ranging from $150–$350/employee/month depending on services included and employee count; (2) a direct pass-through of actual Mexican payroll costs (wages + mandatory benefits at ~30–35% of base wage); and (3) facility lease (typically market rate for the industrial park, passed through without markup). Some shelters charge a flat percentage of labor payroll (8–15%). Total overhead including shelter fees averages $1.50–$3.50/hr per direct labor employee above raw payroll cost. This is more expensive than a standalone operation at scale (500+ employees) but provides significant value for operations under 300 employees." }
       ],
       content: `
-        <p>For many US companies, the idea of incorporating a Mexican entity, dealing with Mexican labor law, and navigating tax codes (SAT) is a non-starter. Enter the <strong>Shelter Service</strong> model.</p>
+        <p>For many US companies, the prospect of incorporating a standalone Mexican S. de R.L. de C.V., navigating unfamiliar federal labor courts, and managing SAT tax codes is a complete dealbreaker. This is exactly where the <strong>Shelter Service</strong> model excels.</p>
         
         <h2>What is a Shelter?</h2>
-        <p>A Shelter Service Provider (like the ones we partner with) acts as your legal "umbrella" in Mexico. They are the legal employer of record and the importer of record. You retain full control over your production process, quality, and supply chain.</p>
+        <p><strong>A Shelter Service Provider is a legally established Mexican corporation acting as your importer and employer of record, handling all administrative, HR, and tax compliance, while you retain 100% control over production and quality.</strong></p>
+        <p>The shelter operator essentially places a proactive corporate umbrella over your factory floor, reducing legal exposure to zero.</p>
 
         <h2>Why Choose a Shelter?</h2>
-        <ul>
-          <li><strong>Speed to Market:</strong> You can be operational in as little as 90 days. Forming a standalone Mexican corporation can take 6-12 months.</li>
-          <li><strong>Immediate Certification:</strong> Shelter companies already possess the coveted "IVA Certification" (VAT Certification), allowing you to import raw materials and machinery without paying 16% VAT upfront.</li>
-          <li><strong>Reduced Liability:</strong> The Shelter assumes the labor and legal liability. You focus on making great products.</li>
-        </ul>
+        <p><strong>Foreign manufacturers overwhelming choose the shelter model because it slashes market entry timelines from 12 months down to 90 days, grants immediate VAT tax exemptions, and eliminates catastrophic Mexican labor law liability.</strong></p>
+        <table class="w-full text-left border-collapse border border-gray-200 my-6">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="border border-gray-200 px-4 py-2">Operational Dimension</th>
+              <th class="border border-gray-200 px-4 py-2">Shelter Model</th>
+              <th class="border border-gray-200 px-4 py-2">Standalone Entity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2">Setup Timeline</td>
+              <td class="border border-gray-200 px-4 py-2">90 - 120 Days</td>
+              <td class="border border-gray-200 px-4 py-2">6 - 12 Months</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2">Legal Liability</td>
+              <td class="border border-gray-200 px-4 py-2">Zero (Absorbed by Shelter)</td>
+              <td class="border border-gray-200 px-4 py-2">100% Client Liability</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2">VAT Certification (IVA)</td>
+              <td class="border border-gray-200 px-4 py-2">Immediate Use</td>
+              <td class="border border-gray-200 px-4 py-2">12+ Month Wait Period</td>
+            </tr>
+          </tbody>
+        </table>
 
         <h2>The Cost Structure</h2>
-        <p>Shelters typically charge a management fee (often a pass-through plus a markup or a per-head fee). While slightly more expensive than a standalone operation in the long run, the speed and risk reduction make it the preferred entry mode for 80% of foreign manufacturers in Baja.</p>
+        <p><strong>Shelters charge a fixed management fee, often ranging from $150–$350 per employee monthly, representing a highly efficient variable cost that is significantly cheaper than hiring internal Mexican HR, legal, and customs compliance teams.</strong></p>
+        <p>The standard inclusions generally cover:</p>
+        <ul>
+          <li><strong>Recruitment:</strong> Sourcing, screening, and hiring assembly line workers.</li>
+          <li><strong>Payroll Administration:</strong> Calculating complex IMSS, INFONAVIT, and severance allocations.</li>
+          <li><strong>Customs (Pedimentos):</strong> Legally importing raw materials duty-free.</li>
+          <li><strong>Facility Leasing:</strong> Securing Tier-1 real estate on behalf of the client.</li>
+          <li><strong>EHS Compliance:</strong> Ensuring full localized environmental and safety protocol adherence.</li>
+        </ul>
       `,
       locales: {
         ja: {
@@ -201,24 +289,55 @@ export const BLOG_POSTS_RAW = [
         { q: "What utilities and infrastructure are available in Tijuana industrial parks?", a: "Tijuana's Class A industrial parks provide: 3-phase electrical power (CFE) at 13.2kV or 115kV depending on park with 95%+ uptime; natural gas from Sempra Energy Infraestructura (same provider as San Diego Gas & Electric); municipal water and industrial wastewater treatment; fiber optic internet (Telmex, Infinitum, and US carriers with cross-border connectivity); paved roads and truck-accessible logistics corridors; US-specification sprinkler systems; and 24/7 security with controlled perimeter access. Some newer parks (Pacifico, Mariano Matamoros) offer LEED certification, solar-ready roofing, and EV charging infrastructure for sustainability-focused manufacturers." }
       ],
       content: `
-        <p>Tijuana boasts over 70 industrial parks and more than 80 million square feet of industrial inventory. Choosing the right park is critical for your labor strategy and logistics.</p>
+        <p>Tijuana boasts over 70 industrial parks and more than 80 million square feet of Class A and B manufacturing inventory. However, picking the wrong park fundamentally jeopardizes labor retention and increases inbound logistical drag.</p>
 
         <h2>Otay Mesa / Chilpancingo</h2>
-        <p><strong>Profile:</strong> The logistics heart of the city. Located immediately adjacent to the Commercial Border Crossing.</p>
-        <p><strong>Ideal For:</strong> High-volume logistics, medical devices, and companies needing rapid border access. Rents are typically higher here due to demand.</p>
+        <p><strong>Otay Mesa is the heavy-duty logistics heart of Tijuana, situated immediately beside the commercial border crossing, making it the strategic choice for companies requiring daily rapid distribution into San Diego.</strong></p>
+        <p>It carries premium lease prices due to this unparalleled access.</p>
 
         <h2>El Florido / El Refugio</h2>
-        <p><strong>Profile:</strong> The growth corridor. Home to massive campuses for Samsung, Coca-Cola, and DJO Global. Known for having larger land reserves and a dense labor pool.</p>
-        <p><strong>Ideal For:</strong> Large-scale manufacturing, electronics, and heavy industry.</p>
+        <p><strong>El Florido represents the primary growth corridor of modern Tijuana, housing massive corporate campuses for Samsung and Medtronic due to its deep access to highly concentrated skilled labor pools.</strong></p>
+        <ul>
+          <li><strong>Labor Density:</strong> Incredible access to thousands of manufacturing operators.</li>
+          <li><strong>Scale:</strong> Facilities supporting 1,000+ localized headcount.</li>
+          <li><strong>Cost:</strong> Slightly lower NNN lease rates compared to the Otay premium zone.</li>
+          <li><strong>Infrastructure:</strong> Deep electrical sub-station capabilities for intense production.</li>
+          <li><strong>Tenant Quality:</strong> Surrounded by Fortune 500 manufacturing operations.</li>
+        </ul>
 
         <h2>Pacifico / Nordika</h2>
-        <p><strong>Profile:</strong> Established, stable industrial zones with good access to the Rosarito labor pool.</p>
-        <p><strong>Ideal For:</strong> Mid-sized manufacturing and assembly operations.</p>
+        <p><strong>The Pacifico zone provides highly stable, legacy industrial frameworks offering excellent mid-tier manufacturing facilities with fluid highway access toward Rosarito and Ensenada ports.</strong></p>
+        <table class="w-full text-left border-collapse border border-gray-200 my-6">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="border border-gray-200 px-4 py-2">Industrial Zone</th>
+              <th class="border border-gray-200 px-4 py-2">Primary Advantage</th>
+              <th class="border border-gray-200 px-4 py-2">Target Industries</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2">Otay Mesa</td>
+              <td class="border border-gray-200 px-4 py-2">Border Crossing Speed</td>
+              <td class="border border-gray-200 px-4 py-2">Distribution, 3PLs</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2">El Florido</td>
+              <td class="border border-gray-200 px-4 py-2">Massive Labor Pools</td>
+              <td class="border border-gray-200 px-4 py-2">Medical, Aerospace</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2">Pacifico</td>
+              <td class="border border-gray-200 px-4 py-2">Mature Infrastructure</td>
+              <td class="border border-gray-200 px-4 py-2">Electronics, Assembly</td>
+            </tr>
+          </tbody>
+        </table>
 
         <h2>Valle Bonito</h2>
-        <p><strong>Profile:</strong> A newer, modern corridor offering Class A buildings at slightly more competitive rates than Otay.</p>
-        <p><strong>Ideal For:</strong> Companies needing modern infrastructure and willing to drive 15-20 mins further east.</p>
-      `
+        <p><strong>Valle Bonito is the eastern border's rising Class-A corridor, delivering brand-new build-to-suit manufacturing floorplans at lease rates significantly more competitive than legacy established zones.</strong></p>
+        <p>As the city expands eastward, companies willing to drive an extra 15 minutes secure superior structural amenities.</p>
+      `,
   },
   {
       title: "The $6B Investment: Mexico's 2025 Nearshoring Boom",
@@ -234,17 +353,50 @@ export const BLOG_POSTS_RAW = [
         { q: "Is it too late to invest in nearshoring in Mexico?", a: "No, but early movers have the advantage. The nearshoring wave that began in 2021–2022 has driven industrial real estate vacancy in border cities to historic lows of 1–2%, meaning site selection now requires 6–18 months lead time for quality Class A space versus 2–4 months in 2020. Labor market competition for experienced manufacturing supervisors and engineers has intensified, though Tijuana's engineering university pipeline (UABC, CETYS, UNAM Tijuana) continues to graduate 3,000+ engineers annually. Companies that commit in 2025–2026 still achieve USMCA tariff benefits, competitive labor rates ($4.80–$7.84/hr fully burdened), and first-mover advantage in capturing trained workforce and available facilities before the 2026 USMCA review introduces additional uncertainty." }
       ],
       content: `
-        <p>Investment in industrial parks across Mexico is projected to reach US $6 billion in 2025. This surge is driven by global companies de-risking from Asia and the strategic necessity of the North American market.</p>
+        <p>Direct investment in premium industrial parks across Mexico is definitively projected to shatter the US $6 billion threshold in 2025 as the North American supply chain officially decouples from Asian dependency.</p>
         
         <h2>The 2026 USMCA Review</h2>
-        <p>The upcoming review of the USMCA (T-MEC) agreement is driving a frenzy of activity. Companies are racing to establish North American content to ensure they remain tariff-free. The definition of "Rules of Origin" is tightening, and physically manufacturing in Mexico is the safest bet.</p>
+        <p><strong>The critical 2026 USMCA joint review is aggressively driving North American nearshoring, forcing corporations to rapidly establish Mexican manufacturing bases to satisfy tightening Rules of Origin constraints and maintain duty-free market access.</strong></p>
+        <p>It is not a passive renegotiation; it is a hard deadline. Missing this compliance window threatens core profitability streams.</p>
 
         <h2>Vacancy Rates & Rents</h2>
-        <p>Developing industrial land in Tijuana is challenging due to topography. This supply constraint, coupled with record demand, has pushed vacancy rates to near-historic lows (<2%).</p>
-        <p><strong>The Strategy:</strong> Companies cannot wait for a building to be finished. Pre-leasing (often 6-9 months out) is now the standard operating procedure for Class A space.</p>
+        <p><strong>Record-breaking demand for Class A Mexican industrial real estate has driven Tijuana's vacancy rates below an astonishing 2%, forcing incoming US manufacturers into competitive 6-9 month pre-leasing agreements.</strong></p>
+        <table class="w-full text-left border-collapse border border-gray-200 my-6">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="border border-gray-200 px-4 py-2">Real Estate Metric (2025)</th>
+              <th class="border border-gray-200 px-4 py-2">Current Status</th>
+              <th class="border border-gray-200 px-4 py-2">Strategic Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2">Regional Vacancy Rate</td>
+              <td class="border border-gray-200 px-4 py-2">Sub 1-2%</td>
+              <td class="border border-gray-200 px-4 py-2">Pre-lease early</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2">Class A Build-to-Suit</td>
+              <td class="border border-gray-200 px-4 py-2">$0.70 - $1.00 NNN</td>
+              <td class="border border-gray-200 px-4 py-2">Lock in 5-10 yr terms</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-4 py-2">Lead Time to Entry</td>
+              <td class="border border-gray-200 px-4 py-2">6 - 18 Months</td>
+              <td class="border border-gray-200 px-4 py-2">Partner with Shelters</td>
+            </tr>
+          </tbody>
+        </table>
 
         <h2>The Energy Question</h2>
-        <p>Power availability remains the #1 constraint. Private investment in substations and cogeneration is booming to meet the needs of energy-intensive industries like data centers and heavy manufacturing.</p>
+        <p><strong>Electrical power capacity remains the ultimate constraint in Baja California, sparking massive and rapid private micro-grid and substation cogeneration projects to safely power complex data centers and heavy industrial installations.</strong></p>
+        <ul>
+          <li><strong>CFE Dependency:</strong> Expanding beyond public grid limitations.</li>
+          <li><strong>Private Capital:</strong> Billions injected directly into localized substation infrastructure.</li>
+          <li><strong>Sustainability:</strong> Solar-ready roofing mandates hitting Class A leases.</li>
+          <li><strong>Energy-Intensive Zoning:</strong> Specialized mapping for high-KV demands.</li>
+          <li><strong>Due Diligence:</strong> Feasibility studies are now 90% power-driven.</li>
+        </ul>
       `
   },
   {
