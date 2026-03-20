@@ -217,7 +217,7 @@ function buildEmail(firstName: string, company: string, city: string): string {
   const glassBorder = '#1E293B';
   const textMuted = '#94A3B8';
   const signatureBanner = 'https://nearshorenavigator.com/images/denisse-banner.jpg';
-  const calendlyLink = 'https://calendly.com/denisse-nearshorenavigator/30min';
+  const calendlyLink = 'https://calendly.com/denisse-nearshorenavigator/30min?month=2026-03&date=2026-03-24';
 
   // NEW HOOK: Tariff-immunity + March 2026 timeliness
   const content = `

@@ -144,17 +144,21 @@ export const ComparisonModule = ({ type, selection }: ComparisonModuleProps) => 
                                 <div className="space-y-4">
                                     <div className="flex justify-between items-center text-sm">
                                         <span className="text-gray-500 dark:text-gray-400">Industrial Vacancy</span>
-                                        <span className="font-bold text-gray-900 dark:text-white">{hub.stats.vacancyRate || "N/A"}%</span>
+                                        <span className="font-bold text-gray-900 dark:text-white">{(hub.stats as any).vacancyRate || "N/A"}%</span>
+                                    </div>
+                                    <div className="flex justify-between items-center text-sm">
+                                        <span className="text-gray-500 dark:text-gray-400">Logistics Score</span>
+                                        <span className="font-bold text-gray-900 dark:text-white">{(hub.stats as any).logisticsScore ? `${(hub.stats as any).logisticsScore}/5.0` : "N/A"}</span>
                                     </div>
                                     <div className="flex justify-between items-center text-sm">
                                         <span className="text-gray-500 dark:text-gray-400">Energy (per kWh)</span>
-                                        <span className="font-bold text-gray-900 dark:text-white">${hub.stats.energyCostKwh || "N/A"}</span>
+                                        <span className="font-bold text-gray-900 dark:text-white">${(hub.stats as any).energyCostKwh || "N/A"}</span>
                                     </div>
                                     <div className="flex justify-between items-center text-sm">
                                         <span className="text-gray-500 dark:text-gray-400">Logistics Score</span>
                                         <div className="flex gap-0.5">
                                             {[1, 2, 3, 4, 5].map(v => (
-                                                <div key={v} className={`w-3 h-1.5 rounded-full ${v <= (hub.stats.logisticsScore || 0) ? "bg-primary-500" : "bg-gray-200 dark:bg-gray-800"}`} />
+                                                <div key={v} className={`w-3 h-1.5 rounded-full ${v <= ((hub.stats as any).logisticsScore || 0) ? "bg-primary-500" : "bg-gray-200 dark:bg-gray-800"}`} />
                                             ))}
                                         </div>
                                     </div>

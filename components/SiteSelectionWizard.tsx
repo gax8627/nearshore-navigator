@@ -54,10 +54,10 @@ export function SiteSelectionWizard() {
     const getRecommendations = () => {
         const matches = INDUSTRY_MATRIX.filter(m => m.industrySlug === selections.industry);
         if (selections.priority === "technology") {
-            return matches.sort((a, b) => (b.logisticsScore || 0) - (a.logisticsScore || 0)).slice(0, 2);
+            return matches.sort((a, b) => ((b as any).logisticsScore || 0) - ((a as any).logisticsScore || 0)).slice(0, 2);
         }
         if (selections.priority === "cost") {
-            return matches.sort((a, b) => (a.energyCostKwh || 0) - (b.energyCostKwh || 0)).slice(0, 2);
+            return matches.sort((a, b) => ((a as any).energyCostKwh || 0) - ((b as any).energyCostKwh || 0)).slice(0, 2);
         }
         return matches.slice(0, 2); // Default
     };
@@ -88,7 +88,7 @@ export function SiteSelectionWizard() {
                                     <div className="text-primary-400 group-hover:scale-110 transition-transform">
                                         <Factory className="w-8 h-8 mb-4" />
                                     </div>
-                                    <h3 className="font-bold text-white uppercase text-sm tracking-tight">{ind.name}</h3>
+                                    <h3 className="font-bold text-white uppercase text-sm tracking-tight">{ind.slug.replace('-', ' ')}</h3>
                                 </button>
                             ))}
                         </div>
@@ -184,11 +184,11 @@ export function SiteSelectionWizard() {
                                     <div className="space-y-3">
                                         <div className="flex justify-between text-sm">
                                             <span className="text-gray-500">Logistics Score</span>
-                                            <span className="text-primary-400 font-mono">{(rec.logisticsScore || 0) / 5 * 100}%</span>
+                                            <span className="text-primary-400 font-mono">{((rec as any).logisticsScore || 0) / 5 * 100}%</span>
                                         </div>
                                         <div className="flex justify-between text-sm">
                                             <span className="text-gray-500">Vacancy Rate</span>
-                                            <span className="text-white font-mono">{rec.vacancyRate}%</span>
+                                            <span className="text-white font-mono">{(rec as any).vacancyRate}%</span>
                                         </div>
                                     </div>
                                     <button className="w-full mt-6 py-3 px-4 bg-primary-600 hover:bg-primary-500 text-white font-bold rounded-lg transition-colors text-sm uppercase tracking-wider">

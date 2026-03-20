@@ -48,7 +48,7 @@ async function main() {
         const priorityLeads: any[] = [];
 
         for (const email of uniqueEmails) {
-            const contact = await brevo.getContact(email);
+            const contact = await brevo.getContact(email as string);
             if (!contact || !contact.attributes) continue;
 
             const attrs = contact.attributes;

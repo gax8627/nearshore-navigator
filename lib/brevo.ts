@@ -92,6 +92,7 @@ export const brevo = {
     subject,
     htmlContent,
     sender,
+    replyTo,
     scheduledAt,
     tags,
   }: {
@@ -99,6 +100,7 @@ export const brevo = {
     subject: string;
     htmlContent: string;
     sender?: { email: string; name?: string };
+    replyTo?: { email: string; name?: string };
     scheduledAt?: string;
     tags?: string[];
   }) {
@@ -110,6 +112,7 @@ export const brevo = {
     const body: any = {
       sender: sender || defaultSender,
       to,
+      replyTo: replyTo || { email: 'denisse@nearshorenavigator.com', name: 'Denisse Martinez' },
       subject,
       htmlContent,
     };

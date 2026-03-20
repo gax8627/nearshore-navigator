@@ -25,8 +25,8 @@ export async function POST(req: Request) {
                 const entries = INDUSTRY_MATRIX.filter(e => e.citySlug === city);
                 entries.forEach(e => {
                     context += `\n- ${city.toUpperCase()} (${e.industrySlug}): ${e.stats.plants} plants, ${e.stats.workforce} workers. `;
-                    if (e.stats.vacancyRate) context += `Vacancy: ${e.stats.vacancyRate}. `;
-                    if (e.stats.energyCostKwh) context += `Energy: ${e.stats.energyCostKwh}. `;
+                    if ((e.stats as any).vacancyRate) context += `Vacancy: ${(e.stats as any).vacancyRate}. `;
+                    if ((e.stats as any).energyCostKwh) context += `Energy: ${(e.stats as any).energyCostKwh}. `;
                 });
             });
         }

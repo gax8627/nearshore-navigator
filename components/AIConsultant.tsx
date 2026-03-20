@@ -28,7 +28,7 @@ export function AIConsultant() {
     const handleSend = async () => {
         if (!input.trim() || isLoading) return;
 
-        const userMsg = { role: 'user', content: input };
+        const userMsg: { role: 'user' | 'assistant', content: string } = { role: 'user', content: input };
         setMessages(prev => [...prev, userMsg]);
         setInput("");
         setIsLoading(true);

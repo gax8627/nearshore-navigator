@@ -180,7 +180,7 @@ function buildClickerEmail(email: string): string {
   const glassBg = '#0F172A';
   const glassBorder = '#1E293B';
   const textMuted = '#94A3B8';
-  const calendlyLink = 'https://calendly.com/denisse-nearshorenavigator/30min';
+  const calendlyLink = 'https://calendly.com/denisse-nearshorenavigator/30min?month=2026-03&date=2026-03-24';
 
   // CLICKER copy: They already showed intent — give them a case study / next step
   const content = `
@@ -205,7 +205,7 @@ function buildOpenerEmail(email: string): string {
   const glassBg = '#0F172A';
   const glassBorder = '#1E293B';
   const textMuted = '#94A3B8';
-  const calendlyLink = 'https://calendly.com/denisse-nearshorenavigator/30min';
+  const calendlyLink = 'https://calendly.com/denisse-nearshorenavigator/30min?month=2026-03&date=2026-03-24';
 
   // OPENER copy: They opened but didn't engage — social proof + low-commitment CTA
   const content = `
