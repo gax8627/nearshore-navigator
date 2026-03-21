@@ -11,24 +11,30 @@ type Props = {
 
 import { getDictionary } from "@/app/i18n/get-dictionary";
 
+// Locales whose machine-translated content is too similar to /en/ and cannibalizes
+// English rankings in Google. We noindex these to consolidate authority to /en/.
+// Genuine non-English demand locales (zh, ko, ja, es) remain fully indexed.
+const NOINDEX_LOCALES = new Set(['fr', 'de', 'it', 'pt', 'ru']);
+
 export async function generateMetadata({ params }: Props) {
   const { lang, city } = await params;
   const location = getLocation(city);
   const dict = await getDictionary(lang);
-  
+
   if (!location || !dict) return {};
 
   const cityName = dict.locations?.[city]?.name || location.name;
   const cityDesc = dict.locations?.[city]?.description || location.description;
 
-  // Non-English city overview pages render identical server-side content to /en/.
-  // Cross-canonical to /en/ aligns our declaration with Google's chosen canonical,
-  // resolving the GSC "Duplicate, Google chose different canonical" warning.
   const canonicalUrl = `https://nearshorenavigator.com/${lang}/locations/${city}`;
 
   return {
     title: `Nearshoring to ${cityName}, ${location.state} | 2026 Manufacturing Guide`,
     description: cityDesc || `Complete guide to industrial manufacturing in ${cityName}. Access ${cityName}'s skilled workforce, industrial parks, and proximity to major US markets.`,
+    // Noindex machine-translated locales that cannibalize /en/ rankings.
+    // Google Search Console data showed /fr/, /pt/, /ru/, /de/, /it/ outranking /en/
+    // for English queries on location pages due to near-identical content.
+    robots: NOINDEX_LOCALES.has(lang) ? { index: false, follow: true } : undefined,
     alternates: {
       canonical: canonicalUrl,
       languages: {

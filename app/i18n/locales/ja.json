@@ -2168,5 +2168,19 @@
     "successTitle": "Download Started!",
     "successSubtitle": "Your high-res map is downloading.",
     "successClick": "Click here if it didn't start automatically"
+  },
+  "inlineForm": {
+    "title": "戦略ブリーフをリクエスト",
+    "subtitle": "貴社の特定業種に対応した工業用地と人件費の概要をカスタムでお届けします。",
+    "name": "氏名",
+    "email": "会社メールアドレス",
+    "submit": "ブリーフをリクエスト",
+    "processing": "処理中...",
+    "success": "リクエスト受信",
+    "successDesc": "バハ・カリフォルニアチームが24時間以内にご連絡します。",
+    "error": "問題が発生しました。再度お試しいただくか、直接お問い合わせください。",
+    "nda": "NDA保護済み",
+    "response": "24時間以内返答",
+    "expert": "専門家によるガイダンス"
   }
 }

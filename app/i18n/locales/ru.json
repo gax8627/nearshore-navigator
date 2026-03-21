@@ -2168,5 +2168,19 @@
     "successTitle": "Download Started!",
     "successSubtitle": "Your high-res map is downloading.",
     "successClick": "Click here if it didn't start automatically"
+  },
+  "inlineForm": {
+    "title": "Запросить стратегический бриф",
+    "subtitle": "Получите индивидуальный обзор доступных промышленных площадей и ставок оплаты труда для вашей отрасли.",
+    "name": "Полное имя",
+    "email": "Рабочий email",
+    "submit": "Запросить бриф",
+    "processing": "Обработка...",
+    "success": "Запрос получен",
+    "successDesc": "Наша команда в Baja California свяжется с вами в течение 24 часов.",
+    "error": "Что-то пошло не так. Повторите попытку или свяжитесь с нами напрямую.",
+    "nda": "Защищено NDA",
+    "response": "Ответ за 24ч",
+    "expert": "Экспертное руководство"
   }
 }

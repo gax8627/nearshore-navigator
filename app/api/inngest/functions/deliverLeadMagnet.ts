@@ -35,7 +35,7 @@ export const deliverLeadMagnet = inngest.createFunction(
               <p>As requested, here is your copy of <strong>${pdfRequested || 'The Nearshore Guide'}</strong>.</p>
               
               <div style="margin: 30px 0; text-align: center;">
-                 <a href="https://nearshorenavigator.com/resources/latest-guide.pdf" style="background-color: #0d9488; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Download PDF Guide</a>
+                 <a href="https://nearshorenavigator.com/documents/Nearshore-Navigator-Master-Project-Report.pdf" style="background-color: #0d9488; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Download Your Nearshore Guide</a>
               </div>
               
               <p>If you have any questions about how this applies to your specific manufacturing needs, just reply to this email.</p>

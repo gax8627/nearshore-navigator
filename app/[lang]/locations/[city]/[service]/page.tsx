@@ -11,6 +11,10 @@ type Props = {
   }>;
 };
 
+// Locales whose machine-translated content cannibalizes /en/ rankings.
+// Genuine non-English demand locales (zh, ko, ja, es) remain fully indexed.
+const NOINDEX_LOCALES = new Set(['fr', 'de', 'it', 'pt', 'ru']);
+
 export async function generateMetadata({ params }: Props) {
   const { lang, city, service: serviceParam } = await params;
   const location = getLocation(city);
@@ -20,18 +24,34 @@ export async function generateMetadata({ params }: Props) {
 
   const localized = await getLocalizedSeoContent(lang, city, serviceParam);
 
-  const title = localized 
-    ? `Trusted ${localized.service.title} in ${localized.location.name} | 2026 Guide`
-    : `Trusted ${service.title} in ${location.name} | 2026 Guide`;
+  // Check for city+service-specific SEO overrides
+  const serviceHowItWorks = location.serviceHowItWorks?.[serviceParam];
+  const seoTitleOverride = lang === 'en' ? serviceHowItWorks?.seoTitle : undefined;
+  const seoDescOverride = lang === 'en' ? serviceHowItWorks?.seoDescription : undefined;
+  // If a dedicated /services/ page exists for this city+service, canonicalize to it
+  // to avoid splitting authority between two competing pages (e.g. Tijuana contract-manufacturing).
+  const canonicalOverride = lang === 'en' ? serviceHowItWorks?.canonicalOverride : undefined;
 
-  const description = localized?.service.description || 
-    `Verified ${service.title.toLowerCase()} partners in ${location.name}. Reduce costs 40-60% with our objective broker network. Get your 2026 expansion roadmap.`;
+  const title = seoTitleOverride
+    ?? (localized
+      ? `Trusted ${localized.service.title} in ${localized.location.name} | 2026 Guide`
+      : `Trusted ${service.title} in ${location.name} | 2026 Guide`);
 
-  const canonicalUrl = `https://nearshorenavigator.com/${lang}/locations/${city}/${serviceParam}`;
+  const description = seoDescOverride
+    ?? localized?.service.description
+    ?? `Verified ${service.title.toLowerCase()} partners in ${location.name}. Reduce costs 40-60% with our objective broker network. Get your 2026 expansion roadmap.`;
+
+  const canonicalUrl = canonicalOverride
+    ?? `https://nearshorenavigator.com/${lang}/locations/${city}/${serviceParam}`;
+
+  // Pages that canonicalize to a different URL should also be noindexed so Google
+  // doesn't index a duplicate. Pages in cannibalizing locales are always noindexed.
+  const shouldNoindex = NOINDEX_LOCALES.has(lang) || (lang === 'en' && !!canonicalOverride);
 
   return {
     title,
     description,
+    robots: shouldNoindex ? { index: false, follow: true } : undefined,
     alternates: {
       canonical: canonicalUrl,
       languages: {

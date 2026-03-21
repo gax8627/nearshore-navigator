@@ -2170,5 +2170,19 @@
     "successTitle": "Download Started!",
     "successSubtitle": "Your high-res map is downloading.",
     "successClick": "Click here if it didn't start automatically"
+  },
+  "inlineForm": {
+    "title": "Strategisches Briefing anfordern",
+    "subtitle": "Erhalten Sie einen maßgeschneiderten Überblick über verfügbare Industrieflächen und Arbeitslöhne für Ihre Branche.",
+    "name": "Vollständiger Name",
+    "email": "Geschäftliche E-Mail",
+    "submit": "Brief anfordern",
+    "processing": "Verarbeitung...",
+    "success": "Anfrage erhalten",
+    "successDesc": "Unser Baja California-Team wird sich innerhalb von 24 Stunden bei Ihnen melden.",
+    "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.",
+    "nda": "NDA-geschützt",
+    "response": "24h Antwortzeit",
+    "expert": "Expertenberatung"
   }
 }

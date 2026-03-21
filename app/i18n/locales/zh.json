@@ -2196,5 +2196,19 @@
     "successTitle": "Download Started!",
     "successSubtitle": "Your high-res map is downloading.",
     "successClick": "Click here if it didn't start automatically"
+  },
+  "inlineForm": {
+    "title": "申请战略简报",
+    "subtitle": "获取针对您特定行业的工业用地和劳动力成本的定制概述。",
+    "name": "全名",
+    "email": "工作邮箱",
+    "submit": "申请简报",
+    "processing": "处理中...",
+    "success": "申请已收到",
+    "successDesc": "我们的下加利福尼亚团队将在24小时内与您联系。",
+    "error": "发生错误，请重试或直接联系我们。",
+    "nda": "NDA保护",
+    "response": "24小时响应",
+    "expert": "专家指导"
   }
 }

@@ -2196,5 +2196,19 @@
     "successTitle": "Download Started!",
     "successSubtitle": "Your high-res map is downloading.",
     "successClick": "Click here if it didn't start automatically"
+  },
+  "inlineForm": {
+    "title": "전략 브리프 요청",
+    "subtitle": "귀사의 특정 업종에 맞는 산업 시설 및 인건비 개요를 맞춤 제공합니다.",
+    "name": "성명",
+    "email": "회사 이메일",
+    "submit": "브리프 요청",
+    "processing": "처리 중...",
+    "success": "요청 수신됨",
+    "successDesc": "바하 캘리포니아 팀이 24시간 내로 연락드립니다.",
+    "error": "문제가 발생했습니다. 다시 시도하거나 직접 문의해 주세요.",
+    "nda": "NDA 보호",
+    "response": "24시간 응답",
+    "expert": "전문가 안내"
   }
 }

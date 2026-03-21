@@ -467,8 +467,8 @@ export const BLOG_POSTS_RAW = [
       `
   },
   {
-      title: "How 2025 Tariffs Are Reshaping Baja California's Manufacturing Supply Chain",
-      excerpt: "Explore the macroeconomic shifts driving supply chains out of Asia and into the USMCA safe harbor of Baja California following the implementation of aggressive 2025 tariffs.",
+      title: "2025 Mexico Tariffs Guide: Escape Section 301 with Baja California USMCA Manufacturing",
+      excerpt: "Section 301 tariffs added 25–100% to Chinese imports. Manufacturers moving to Baja California pay 0% under USMCA — and can be operational in 90 days. Here's the complete playbook.",
       date: "Mar 02, 2026",
       slug: "2025-tariffs-baja-california-supply-chain",
       imageUrl: "/images/warehouse.jpg",

@@ -14,14 +14,15 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     };
   }
 
-  // Insights articles are English-only content. All language variants canonicalize
-  // to /en/ so Google's chosen canonical matches ours, avoiding the GSC duplicate
-  // canonical warning for non-English insight pages.
+  // Insights articles are English-only content. Non-EN locale variants
+  // are noindexed to prevent cannibalization of the /en/ page in Google search.
   const canonicalUrl = `https://nearshorenavigator.com/${lang}/insights/${slug}`;
+  const isNonEnglish = lang !== 'en';
 
   return {
     title: post.title,
     description: post.excerpt,
+    robots: isNonEnglish ? { index: false, follow: true } : undefined,
     alternates: {
       canonical: canonicalUrl,
       languages: {

@@ -251,23 +251,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
             });
         }
 
-        // 3. Service Pages per Location (Targeted Priority)
-        const highPriorityPairs: Record<string, string[]> = {
-            'puebla': ['contract-manufacturing'],
-            'matamoros': ['contract-manufacturing'],
-            'saltillo': ['distribution-centers'],
+        // 3. Service Pages per Location — only include if the city has real serviceHowItWorks content
+        // This prevents crawl budget waste on thin stub pages (e.g. Colima × shelter-services)
+        const cityServices = city.serviceHowItWorks ? Object.keys(city.serviceHowItWorks) : [];
+
+        // Cities with seoTitle overrides get highest priority (data-driven differentiated content)
+        const premiumPairs: Record<string, string[]> = {
+            'tijuana': ['contract-manufacturing', 'shelter-services'],
+            'mexicali': ['contract-manufacturing', 'shelter-services', 'industrial-real-estate'],
             'hermosillo': ['contract-manufacturing', 'shelter-services'],
-            'tijuana': ['industrial-real-estate-baja', 'shelter-services']
+            'monterrey': ['contract-manufacturing', 'shelter-services'],
+            'matamoros': ['contract-manufacturing', 'shelter-services'],
+            'saltillo': ['shelter-services', 'distribution-centers'],
         };
 
-        SERVICES.forEach(service => {
-            const isHighPriority = highPriorityPairs[city.slug]?.includes(service.slug);
+        cityServices.forEach(serviceSlug => {
+            const isPremium = premiumPairs[city.slug]?.includes(serviceSlug);
             routes.push({
-                url: `${baseUrl}/en/locations/${city.slug}/${service.slug}`,
+                url: `${baseUrl}/en/locations/${city.slug}/${serviceSlug}`,
                 lastModified: new Date(),
-                changeFrequency: isHighPriority ? 'weekly' : 'monthly',
-                priority: isHighPriority ? 0.95 : 0.85,
-                alternates: getAlternates(`/locations/${city.slug}/${service.slug}`),
+                changeFrequency: isPremium ? 'weekly' : 'monthly',
+                priority: isPremium ? 0.95 : 0.85,
+                alternates: getAlternates(`/locations/${city.slug}/${serviceSlug}`),
             });
         });
     });

@@ -5,7 +5,8 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const { lang } = await props.params;
   return {
     title: 'Mexico Manufacturing Cost Calculator | Free Location Assessment | Nearshore Navigator',
-    description: 'Calculate your real operating costs in Tijuana vs. US manufacturing. Instant labor, real estate, and utility cost modeling for Baja California expansion.',
+    description: 'Free Mexico manufacturing cost calculator. Model labor ($4.80–$7.84/hr), real estate, and utility costs across 15+ cities — Tijuana, Monterrey, Hermosillo, Querétaro, and more. Compare Mexico vs. US in 60 seconds.',
+    robots: lang !== 'en' ? { index: false, follow: true } : undefined,
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/assessment`,
       languages: {

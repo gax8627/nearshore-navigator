@@ -2168,5 +2168,19 @@
     "successTitle": "Download Started!",
     "successSubtitle": "Your high-res map is downloading.",
     "successClick": "Click here if it didn't start automatically"
+  },
+  "inlineForm": {
+    "title": "Richiedi un Brief Strategico",
+    "subtitle": "Ricevi una panoramica personalizzata delle infrastrutture industriali e dei costi del lavoro per il tuo settore specifico.",
+    "name": "Nome Completo",
+    "email": "Email Aziendale",
+    "submit": "Richiedi Brief",
+    "processing": "Elaborazione...",
+    "success": "Richiesta Ricevuta",
+    "successDesc": "Il nostro team Baja California ti contatterà entro 24 ore.",
+    "error": "Qualcosa è andato storto. Riprova o contattaci direttamente.",
+    "nda": "Protetto da NDA",
+    "response": "Risposta in 24h",
+    "expert": "Guida Esperta"
   }
 }
