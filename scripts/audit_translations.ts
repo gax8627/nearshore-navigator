@@ -1,67 +1,50 @@
-
 import fs from 'fs';
 import path from 'path';
 
 const localesDir = path.join(process.cwd(), 'app/i18n/locales');
-const locales = ['es', 'fr', 'de', 'ja', 'zh', 'ko'];
-const masterLocale = 'en';
+const enPath = path.join(localesDir, 'en.json');
+const enData = JSON.parse(fs.readFileSync(enPath, 'utf-8'));
 
-function flattenKeys(obj: any, prefix = ''): string[] {
-    let keys: string[] = [];
-    for (const key in obj) {
-        if (typeof obj[key] === 'object' && obj[key] !== null) {
-            keys = keys.concat(flattenKeys(obj[key], prefix + key + '.'));
+function flattenObject(ob: any) {
+    var toReturn: any = {};
+    for (var i in ob) {
+        if (!ob.hasOwnProperty(i)) continue;
+        if ((typeof ob[i]) == 'object' && ob[i] !== null) {
+            var flatObject = flattenObject(ob[i]);
+            for (var x in flatObject) {
+                if (!flatObject.hasOwnProperty(x)) continue;
+                toReturn[i + '.' + x] = flatObject[x];
+            }
         } else {
-            keys.push(prefix + key);
+            toReturn[i] = ob[i];
         }
     }
-    return keys;
+    return toReturn;
 }
 
-function audit() {
-    console.log(`Starting Translation Audit...`);
+const enFlat = flattenObject(enData);
+const enKeys = Object.keys(enFlat);
+
+const files = fs.readdirSync(localesDir).filter(f => f.endsWith('.json') && f !== 'en.json');
+
+files.forEach(file => {
+    const langPath = path.join(localesDir, file);
+    const langData = JSON.parse(fs.readFileSync(langPath, 'utf-8'));
+    const langFlat = flattenObject(langData);
     
-    // Load Master (EN)
-    const masterPath = path.join(localesDir, `${masterLocale}.json`);
-    if (!fs.existsSync(masterPath)) {
-        console.error(`❌ Master locale file not found: ${masterPath}`);
-        process.exit(1);
-    }
-    const masterContent = JSON.parse(fs.readFileSync(masterPath, 'utf-8'));
-    const masterKeys = new Set(flattenKeys(masterContent));
-    console.log(`✅ Master (${masterLocale}) loaded: ${masterKeys.size} keys.`);
+    let missingKeys = 0;
+    let untranslatedKeys = 0;
 
-    let hasErrors = false;
-
-    for (const locale of locales) {
-        const localePath = path.join(localesDir, `${locale}.json`);
-        if (!fs.existsSync(localePath)) {
-            console.error(`❌ Missing locale file: ${locale}`);
-            hasErrors = true;
-            continue;
+    enKeys.forEach(key => {
+        if (!langFlat.hasOwnProperty(key)) {
+            missingKeys++;
+        } else if (langFlat[key] === enFlat[key]) {
+            // Check if it's identical text (could be intentional, but worth flagging)
+            if (typeof enFlat[key] === 'string' && enFlat[key].match(/[a-zA-Z]/)) {
+                untranslatedKeys++;
+            }
         }
+    });
 
-        const content = JSON.parse(fs.readFileSync(localePath, 'utf-8'));
-        const keys = new Set(flattenKeys(content));
-        const missingKeys = [...masterKeys].filter(k => !keys.has(k));
-
-        if (missingKeys.length > 0) {
-            console.error(`⚠️  ${locale.toUpperCase()}: Missing ${missingKeys.length} keys`);
-            // Only show first 5 to avoid spam
-            missingKeys.slice(0, 5).forEach(k => console.error(`   - ${k}`));
-            if (missingKeys.length > 5) console.error(`   ...and ${missingKeys.length - 5} more.`);
-            hasErrors = true;
-        } else {
-            console.log(`✅ ${locale.toUpperCase()}: 100% Match (${keys.size} keys)`);
-        }
-    }
-
-    if (hasErrors) {
-        console.warn(`\n⚠️  Audit completed with warnings. Some keys are missing in target languages.`);
-        console.warn(`Note: "resources" and "brochure" keys were recently added. If they are missing in ES, that is expected/fixable.`);
-    } else {
-        console.log(`\n🎉 Audit Passed! All locales have 100% key parity.`);
-    }
-}
-
-audit();
+    console.log(`[${file}] Missing Keys: ${missingKeys} | Identical to EN: ${untranslatedKeys}`);
+});
