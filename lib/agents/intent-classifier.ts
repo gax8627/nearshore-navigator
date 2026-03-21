@@ -38,7 +38,7 @@ export async function classifyReplyIntent(text: string): Promise<IntentResult> {
     `;
 
     const { text: responseText } = await generateText({
-      model: google('gemini-1.5-flash-latest'), // Use Flash for speed in webhooks
+      model: google('gemini-2.0-flash'), // Use 2.0 Flash for speed and accuracy in webhooks
       prompt: prompt,
     });
 

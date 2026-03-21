@@ -15,6 +15,7 @@ import { useRef, useState, useCallback, useEffect } from "react";
 import { useScroll, useTransform, motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { SiteSelectionWizard } from "@/components/SiteSelectionWizard";
+import { InlineLeadForm } from "@/components/InlineLeadForm";
 
 export default function HomeClient() {
   const { t, language } = useLanguage();
@@ -247,6 +248,11 @@ export default function HomeClient() {
         <StatsGrid />
       </section>
 
+      {/* Inline Lead Capture - CRO LEVER 2 (Benchmarked against IVEMSA) */}
+      <section className="container mx-auto px-4 -mt-12 mb-12">
+        <InlineLeadForm />
+      </section>
+
       {/* Site Selection Wizard - LEVER 1 */}
       <section className="container mx-auto px-4 py-12">
         <SectionTitle 
@@ -463,6 +469,9 @@ export default function HomeClient() {
 
       {/* Newsletter Banner */}
       <NewsletterBanner />
+
+      {/* Defensive padding for Chat Widget overlap on mobile */}
+      <div className="h-24 md:hidden" />
     </div>
   );
 }

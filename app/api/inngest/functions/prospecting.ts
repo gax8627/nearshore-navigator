@@ -275,13 +275,13 @@ export const prospectingAgent = inngest.createFunction(
           const finalHtml = wrapHtml(
             emailContent.htmlBody,
             "Book Strategy Call Now",
-            "https://calendly.com/denisse-nearshorenavigator/30min?month=2026-02"
+            "https://calendly.com/denisse-nearshorenavigator/30min"
           );
 
           await brevo.sendEmail({
             to: [{ email: lead.email!, name: `${emailContent.firstName} ${emailContent.lastName}` }],
             subject: emailContent.subject,
-            // scheduledAt: scheduledAt, // Commented out to blast immediately
+            scheduledAt: scheduledAt,
             htmlContent: finalHtml,
             tags: [event.data.campaignType || 'marketing'], // Added required tags parameter to prevent Brevo API crash
           });

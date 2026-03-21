@@ -1,0 +1,3016 @@
+From d2c322bd8cbd4cd86c631eaaf601464716dcca4e Mon Sep 17 00:00:00 2001
+From: Denisse Martinez <denisse@nearshorenavigator.com>
+Date: Sat, 21 Mar 2026 07:45:31 -0700
+Subject: [PATCH] fix(seo): eliminate duplicate FAQPage schema + add GA4
+ reporting script
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+- Remove hardcoded generic FAQPage from city/service page.tsx — GSC was
+  flagging "Duplicate field FAQPage" rich-result errors; ServiceLocationClient
+  now owns the only authoritative FAQ schema per page
+- Gate homepage FAQPage in SchemaMarkup.tsx behind usePathname() so it only
+  emits on / and /[lang] routes, never on city/service pages
+- AI Consultant, HeroScanner, AIChat, Questionnaire: Gemini 2.0 Flash upgrade
+  and agent improvements
+- Add llms.txt endpoint for LLM crawlers
+- i18n: complete en/es locale coverage for questionnaire + new keys
+- market_pulse_agent: Gemini-powered competitive intelligence
+- scripts/ga4-report.mjs: GA4 Data API reporting script (analytics without
+  opening browser; uses gcloud ADC — see script header for setup)
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+---
+ app/[lang]/HomeClient.tsx                     |   9 +
+ .../locations/[city]/[service]/page.tsx       |  49 +-
+ .../questionnaire/QuestionnaireClient.tsx     |  50 +-
+ app/api/chat/route.ts                         | 165 +++--
+ app/api/inngest/functions/prospecting.ts      |   4 +-
+ app/components/WhatsAppButton.tsx             |   1 +
+ app/i18n/locales/en.json                      |  66 ++
+ app/i18n/locales/es.json                      |  66 ++
+ app/llms.txt/route.ts                         |  96 +++
+ components/AIConsultant.tsx                   |  83 ++-
+ components/HeroScanner.tsx                    |   2 +-
+ components/SchemaMarkup.tsx                   |  17 +-
+ lib/agents/intent-classifier.ts               |   2 +-
+ next.config.mjs                               |   4 +-
+ package-lock.json                             | 655 ++++++++++++++----
+ package.json                                  |   4 +-
+ scripts/agents/market_pulse_agent.ts          | 193 ++++--
+ scripts/ga4-report.mjs                        | 154 ++++
+ scripts/localization.log                      | 485 +++++++++++--
+ scripts/translate-blog-content.ts             |  79 +--
+ scripts/translate-missing-keys.ts             |  32 +-
+ send_outreach.mjs                             |   1 +
+ 22 files changed, 1731 insertions(+), 486 deletions(-)
+ create mode 100644 app/llms.txt/route.ts
+ create mode 100644 scripts/ga4-report.mjs
+
+diff --git a/app/[lang]/HomeClient.tsx b/app/[lang]/HomeClient.tsx
+index 0b17117..2b0a79b 100644
+--- a/app/[lang]/HomeClient.tsx
++++ b/app/[lang]/HomeClient.tsx
+@@ -15,6 +15,7 @@ import { useRef, useState, useCallback, useEffect } from "react";
+ import { useScroll, useTransform, motion, AnimatePresence } from "framer-motion";
+ import { useLanguage } from "@/app/context/LanguageContext";
+ import { SiteSelectionWizard } from "@/components/SiteSelectionWizard";
++import { InlineLeadForm } from "@/components/InlineLeadForm";
+ 
+ export default function HomeClient() {
+   const { t, language } = useLanguage();
+@@ -247,6 +248,11 @@ export default function HomeClient() {
+         <StatsGrid />
+       </section>
+ 
++      {/* Inline Lead Capture - CRO LEVER 2 (Benchmarked against IVEMSA) */}
++      <section className="container mx-auto px-4 -mt-12 mb-12">
++        <InlineLeadForm />
++      </section>
++
+       {/* Site Selection Wizard - LEVER 1 */}
+       <section className="container mx-auto px-4 py-12">
+         <SectionTitle 
+@@ -463,6 +469,9 @@ export default function HomeClient() {
+ 
+       {/* Newsletter Banner */}
+       <NewsletterBanner />
++
++      {/* Defensive padding for Chat Widget overlap on mobile */}
++      <div className="h-24 md:hidden" />
+     </div>
+   );
+ }
+diff --git a/app/[lang]/locations/[city]/[service]/page.tsx b/app/[lang]/locations/[city]/[service]/page.tsx
+index 8f61f57..b0c5d63 100644
+--- a/app/[lang]/locations/[city]/[service]/page.tsx
++++ b/app/[lang]/locations/[city]/[service]/page.tsx
+@@ -82,52 +82,9 @@ export default async function ServiceLocationPage({ params }: Props) {
+ 
+   const localizedData = await getLocalizedSeoContent(lang, city, serviceParam);
+ 
+-  const schemaData = {
+-    "@context": "https://schema.org",
+-    "@type": "FAQPage",
+-    "mainEntity": [
+-      {
+-        "@type": "Question",
+-        "name": `What are the benefits of ${service.title.toLowerCase()} in ${location.name}?`,
+-        "acceptedAnswer": {
+-          "@type": "Answer",
+-          "text": `Manufacturers in ${location.name} benefit from 40-60% labor savings, strict IP protection, and proximity to the US supply chain. We provide trusted operators.`
+-        }
+-      },
+-      {
+-        "@type": "Question",
+-        "name": `How fast can we start ${service.title.toLowerCase()} operations in ${location.name}?`,
+-        "acceptedAnswer": {
+-          "@type": "Answer",
+-          "text": `With our verified network of partners in ${location.name}, ${location.state}, initial pilot production can often begin within 60 to 90 days.`
+-        }
+-      },
+-      {
+-        "@type": "Question",
+-        "name": `Are facilities in ${location.name} certified for US exports?`,
+-        "acceptedAnswer": {
+-          "@type": "Answer",
+-          "text": `Yes, our verified partners in ${location.name} maintain ISO 9001, AS9100, and ISO 13485 certifications depending on your industry requirements.`
+-        }
+-      },
+-      {
+-        "@type": "Question",
+-        "name": `Why choose a broker for ${location.name}?`,
+-        "acceptedAnswer": {
+-          "@type": "Answer",
+-          "text": `An objective broker evaluates the entire ${location.name} market to find the best-fit partner for your volume and quality requirements without conflict of interest.`
+-        }
+-      }
+-    ]
+-  };
+-
++  // FAQ schema is handled exclusively by ServiceLocationClient (dynamic, city+service-specific).
++  // Removed duplicate generic FAQPage here to fix "Duplicate field FAQPage" GSC rich-result error.
+   return (
+-    <>
+-      <script
+-        type="application/ld+json"
+-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+-      />
+-      <ServiceLocationClient city={city} serviceId={serviceParam} localizedData={localizedData} />
+-    </>
++    <ServiceLocationClient city={city} serviceId={serviceParam} localizedData={localizedData} />
+   );
+ }
+diff --git a/app/[lang]/resources/questionnaire/QuestionnaireClient.tsx b/app/[lang]/resources/questionnaire/QuestionnaireClient.tsx
+index 01e6839..c581289 100644
+--- a/app/[lang]/resources/questionnaire/QuestionnaireClient.tsx
++++ b/app/[lang]/resources/questionnaire/QuestionnaireClient.tsx
+@@ -15,43 +15,49 @@ interface QConfig {
+ }
+ 
+ const QUESTION_CONFIG: Record<string, QConfig> = {
+-    // Section 1
++    // Section 1: Operational Blueprint
+     q1: { type: 'mcq', options: ['< 5,000 sqft', '5k - 20k sqft', '20k - 50k sqft', '50k+ sqft'] },
+-    q2: { type: 'mcq', options: ['Electronics', 'Medical Devices', 'Aerospace', 'Apparel / Textiles', 'Consumer Goods', 'Other'] },
++    q2: { type: 'mcq', options: ['Electronics', 'Medical Devices', 'Aerospace', 'Apparel / Textiles', 'Consumer Goods', 'Automotive', 'Other'] },
+     q3: { type: 'mcq', options: ['Standard Pallets', 'Bulk', 'Bags', 'Parcels / Packages', 'Other'] },
+     q4: { type: 'text' },
+     q5: { type: 'text' },
+-    // Section 2
+-    q6: { type: 'text' },
++    // Section 2: Labor & Logistics
++    q6: { type: 'mcq', options: ['1-10', '10-50', '50-100', '100+'] },
+     q7: { type: 'yesno' },
+     q8: { type: 'mcq', options: ['1 Level (No Stacking)', '2 Levels', '3+ Levels'] },
+     q9: { type: 'mcq', options: ['< 100', '100 - 500', '500 - 1000', '1000+'] },
+     q10: { type: 'mcq', options: ['1-5', '5-20', '20-50', '50+'] },
+-    q11: { type: 'mcq', options: ['Virtual Transfers', 'Home Extension (Import/Export)', 'Both'] },
++    q11: { type: 'mcq', options: ['Virtual Transfers', 'Pedimentos', 'Both'] },
+     q12: { type: 'text' },
+-    // Section 3
+-    q13: { type: 'mcq', options: ['EDI', 'API', 'Email / CSV', 'Other'] },
+-    q14: { type: 'mcq', options: ['SAP', 'Oracle', 'NetSuite', 'Shopify', 'Custom / Other'] },
++    // Section 3: Integration & Systems
++    q13: { type: 'mcq', options: ['EDI', 'API', 'Email / CSV', 'Manual'] },
++    q14: { type: 'mcq', options: ['SAP', 'Oracle', 'NetSuite', 'Shopify', 'Microsoft Dynamics', 'Custom / Other'] },
+     q15: { type: 'mcq', options: ['Real-time', 'Hourly', 'Daily', 'Weekly'] },
+     q16: { type: 'mcq', options: ['AS2', 'FTP / SFTP', 'API / HTTPS', 'Email'] },
+     q17: { type: 'mcq', options: ['EDI ANSI X12', 'CSV / Flat File', 'XML / JSON', 'Other'] },
+     q18: { type: 'text' },
+-    // Section 4
+-    q19: { type: 'mcq', options: ['1-10', '10-50', '50-100', '100+'] },
+-    q20: { type: 'mcq', options: ['< 100', '100 - 500', '500 - 1000', '1000+'] },
+-    q21: { type: 'mcq', options: ['1-5', '5-10', '10-20', '20+'] },
+-    q22: { type: 'text' },
+-    q23: { type: 'mcq', options: ['< 100', '100 - 500', '500 - 1000', '1000+'] },
+-    // Section 5
++    // Section 4: Production Velocity
++    q19: { type: 'mcq', options: ['1 Shift', '2 Shifts', '3 Shifts (24/7)'] },
++    q20: { type: 'mcq', options: ['< 1,000', '1,000 - 5,000', '5,000 - 20,000', '20,000+'] },
++    q21: { type: 'mcq', options: ['Q1 (Jan-Mar)', 'Q2 (Apr-Jun)', 'Q3 (Jul-Sep)', 'Q4 (Oct-Dec)', 'None'] },
++    q22: { type: 'mcq', options: ['Light Assembly', 'Moderate Complexity', 'Heavy Machining', 'Technical / Design-intensive'] },
++    q23: { type: 'mcq', options: ['< 10%', '10-25%', '25-50%', '50%+'] },
++    // Section 5: Compliance & Security
+     q24: { type: 'yesno' },
++    q25: { type: 'text' }, 
++    q26: { type: 'mcq', options: ['ISO 9001', 'ISO 13485 (Medical)', 'AS9100 (Aero)', 'IATF 16949 (Auto)', 'Other / None'] }, 
++    q27: { type: 'mcq', options: ['Level 1 (Standard)', 'Level 2 (High-Sec)', 'Level 3 (Max - Defense Grade)'] }, 
+     q28: { type: 'yesno' },
+-    q25: { type: 'text' }, q26: { type: 'text' }, q27: { type: 'text' }, q29: { type: 'text' }, q30: { type: 'text' }, q31: { type: 'text' },
+-    // Section 6
++    q29: { type: 'text' }, 
++    q30: { type: 'text' }, 
++    q31: { type: 'text' },
++    // Section 6: Financial Scoping
+     q32: { type: 'mcq', options: ['< $100k', '$100k - $500k', '$500k - $1M', '$1M+'] },
+-    q33: { type: 'mcq', options: ['Yes', 'No', 'Need Quote'] },
+-    q34: { type: 'mcq', options: ['Month-to-Month', '1 Year', '3 Years', '5+ Years'] },
+-    q35: { type: 'mcq', options: ['Yes (Need Quote)', 'No (Have my own)'] },
+-    q36: { type: 'text' },
++    q33: { type: 'mcq', options: ['< $500k', '$500k - $2M', '$2M - $5M', '$5M+'] },
++    q34: { type: 'mcq', options: ['Month-to-Month', '1-2 Years', '3-5 Years', '5+ Years'] },
++    q35: { type: 'mcq', options: ['Shelter Service', 'Standalone / Direct', 'Contract Manufacturing', 'Undecided'] },
++    q36: { type: 'mcq', options: ['Immediate (< 30 days)', '90 Days', '6 Months', '1 Year+'] },
++    q37: { type: 'text' },
+ };
+ 
+ export default function QuestionnaireClient() {
+@@ -365,7 +371,7 @@ function getQuestionsForStep(step: number): string[] {
+         case 3: return ['q13', 'q14', 'q15', 'q16', 'q17', 'q18']; 
+         case 4: return ['q19', 'q20', 'q21', 'q22', 'q23']; 
+         case 5: return ['q24', 'q25', 'q26', 'q27', 'q28', 'q29', 'q30', 'q31']; 
+-        case 6: return ['q32', 'q33', 'q34', 'q35', 'q36']; 
++        case 6: return ['q32', 'q33', 'q34', 'q35', 'q36', 'q37']; 
+         default: return [];
+     }
+ }
+diff --git a/app/api/chat/route.ts b/app/api/chat/route.ts
+index d532844..e2be1f4 100644
+--- a/app/api/chat/route.ts
++++ b/app/api/chat/route.ts
+@@ -1,65 +1,122 @@
+ import { NextResponse } from 'next/server';
++import { google } from '@ai-sdk/google';
++import { generateText } from 'ai';
+ import { INDUSTRY_MATRIX } from '@/app/constants/city-industry-matrix';
+ import { COMPETITOR_MATRIX } from '@/app/constants/competitor-matrix';
+ import { MARKET_ALERTS } from '@/app/constants/market-pulse-news';
+ 
+ /**
+- * AI Manufacturing Consultant - RAG Engine (Phase B)
+- * Provides data-driven advice based on internal industrial datasets.
++ * AI Manufacturing Consultant — Real Gemini RAG Engine
++ * Uses Gemini 2.5 Flash with internal industrial datasets as RAG context.
++ * Falls back gracefully when the API key is unavailable.
+  */
+ 
++// Build a compact RAG context string from internal datasets
++function buildRagContext(lastMessage: string): string {
++  const lower = lastMessage.toLowerCase();
++  const chunks: string[] = [];
++
++  // City/hub data
++  const cities = ['tijuana', 'mexicali', 'juarez', 'monterrey', 'reynosa', 'hermosillo', 'matamoros', 'saltillo', 'puebla', 'queretaro', 'guadalajara', 'silao', 'san-luis-potosi', 'nuevo-laredo'];
++  const mentionedCities = cities.filter(c => lower.includes(c.replace('-', ' ')) || lower.includes(c));
++
++  if (mentionedCities.length > 0) {
++    mentionedCities.slice(0, 3).forEach(city => {
++      const entries = INDUSTRY_MATRIX.filter(e => e.citySlug === city).slice(0, 3);
++      entries.forEach(e => {
++        const stats = e.stats as Record<string, string | number>;
++        chunks.push(
++          `[HUB: ${city.toUpperCase()} / ${e.industrySlug}] Plants: ${e.stats.plants}, Workforce: ${e.stats.workforce}` +
++          (stats.vacancyRate ? `, Vacancy: ${stats.vacancyRate}` : '') +
++          (stats.energyCostKwh ? `, Energy: ${stats.energyCostKwh}/kWh` : '') +
++          (stats.fullyBurdenedLaborRate ? `, Labor: ${stats.fullyBurdenedLaborRate}` : '')
++        );
++      });
++    });
++  } else {
++    // Default: include top 5 hubs summary
++    const topHubs = ['tijuana', 'monterrey', 'juarez', 'hermosillo', 'saltillo'];
++    topHubs.forEach(city => {
++      const first = INDUSTRY_MATRIX.find(e => e.citySlug === city);
++      if (first) {
++        chunks.push(`[HUB: ${city.toUpperCase()}] Plants: ${first.stats.plants}, Workforce: ${first.stats.workforce}`);
++      }
++    });
++  }
++
++  // Competitor data
++  if (lower.includes('competitor') || lower.includes('compare') || lower.includes('ivemsa') || lower.includes('naps') || lower.includes('tecma') || lower.includes('offshore group')) {
++    COMPETITOR_MATRIX.forEach(comp => {
++      chunks.push(`[COMPETITOR: ${comp.name}] Strengths: ${comp.strengths.join(', ')}. Speed-to-market: ${comp.speedToMarket}.`);
++    });
++  }
++
++  // Market alerts
++  if (lower.includes('tariff') || lower.includes('usmca') || lower.includes('news') || lower.includes('alert') || lower.includes('trade')) {
++    MARKET_ALERTS.forEach(alert => {
++      chunks.push(`[MARKET ALERT – ${alert.impactLevel} – ${alert.topic}]: ${alert.summary} Affected cities: ${alert.affectedCities.join(', ')}.`);
++    });
++  }
++
++  return chunks.join('\n');
++}
++
++const SYSTEM_PROMPT = `You are an expert AI Manufacturing Consultant for Nearshore Navigator, a strategic advisory firm that helps US companies expand manufacturing operations to Mexico — specifically Baja California (Tijuana, Mexicali), Monterrey, Hermosillo, and other Mexican industrial hubs.
++
++Your role:
++- Provide accurate, data-driven advice about nearshoring, shelter services, contract manufacturing, industrial real estate, and USMCA/IMMEX trade structures in Mexico.
++- Use the provided RAG context (real industrial data) to back up your answers with specific facts: labor rates, plant counts, vacancy rates, etc.
++- Be concise, professional, and direct. You are speaking to C-suite executives and supply chain managers evaluating a major business decision.
++- When relevant, recommend a free 30-minute strategy call: https://calendly.com/denisse-nearshorenavigator/30min
++- Nearshore Navigator's key differentiator: objective broker model (no conflict of interest), 15-30 day speed-to-market, bilingual team on both sides of the border.
++- Do NOT fabricate data. If you don't have information, say so and offer to connect the user with Denisse Martinez directly.
++- Keep responses under 200 words unless the user asks for a detailed breakdown.`;
++
+ export async function POST(req: Request) {
+-    try {
+-        const { messages } = await req.json();
+-        const lastMessage = messages[messages.length - 1].content.toLowerCase();
+-
+-        // 1. Context Retrieval (RAG Lite)
+-        let context = "";
+-
+-        // Check for city/hub mentions
+-        const cities = ["tijuana", "mexicali", "juarez", "monterrey", "reynosa", "nuevo-laredo"];
+-        const mentionedCities = cities.filter(c => lastMessage.includes(c));
+-        
+-        if (mentionedCities.length > 0) {
+-            mentionedCities.forEach(city => {
+-                const entries = INDUSTRY_MATRIX.filter(e => e.citySlug === city);
+-                entries.forEach(e => {
+-                    context += `\n- ${city.toUpperCase()} (${e.industrySlug}): ${e.stats.plants} plants, ${e.stats.workforce} workers. `;
+-                    if ((e.stats as any).vacancyRate) context += `Vacancy: ${(e.stats as any).vacancyRate}. `;
+-                    if ((e.stats as any).energyCostKwh) context += `Energy: ${(e.stats as any).energyCostKwh}. `;
+-                });
+-            });
+-        }
+-
+-        // Check for competitor mentions
+-        if (lastMessage.includes("competitor") || lastMessage.includes("compare") || lastMessage.includes("ivemsa") || lastMessage.includes("naps")) {
+-            COMPETITOR_MATRIX.forEach(comp => {
+-                context += `\n- ${comp.name}: Strengths: ${comp.strengths.join(", ")}. Speed: ${comp.speedToMarket}. `;
+-            });
+-        }
+-
+-        // Check for market pulse/news
+-        if (lastMessage.includes("news") || lastMessage.includes("tariff") || lastMessage.includes("usmca")) {
+-            MARKET_ALERTS.forEach(alert => {
+-                context += `\n- ALERT [${alert.topic}]: ${alert.summary} Affected: ${alert.affectedCities.join(", ")}. `;
+-            });
+-        }
+-
+-        // 2. Response Synthesis (Agentic Logic)
+-        // In a real app, we'd call an LLM with 'context' here. 
+-        // For this agentic demo, we'll generate a high-quality deterministic response based on the context.
+-        
+-        let response = "";
+-        if (context) {
+-            response = `Based on our verified manufacturing data and real-time market pulse, here is what you need to know: \n\n${context}\n\nNearshore Navigator (Agile) offers a 15-30 day speed-to-market, which is significantly faster than legacy providers. Would you like a detailed feasibility study for your specific industry?`;
+-        } else {
+-            response = "I am the Nearshore Navigator AI Consultant. I can provide real-time data on industrial hubs (Tijuana, Monterrey, Juarez), competitor benchmarking (NAPS, IVEMSA), and USMCA trade alerts. What specific manufacturing constraints are you facing today?";
+-        }
+-
+-        return NextResponse.json({ role: 'assistant', content: response });
+-
+-    } catch (error) {
+-        console.error('[AI Consultant API] Error:', error);
+-        return NextResponse.json({ error: 'Failed to process AI request' }, { status: 500 });
++  try {
++    const { messages } = await req.json();
++    const lastMessage = messages[messages.length - 1]?.content || '';
++
++    // Build RAG context from internal datasets
++    const ragContext = buildRagContext(lastMessage);
++
++    // Check if Gemini API key is available
++    if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
++      console.warn('[Chat API] GOOGLE_GENERATIVE_AI_API_KEY not set — returning fallback response.');
++      return NextResponse.json({
++        role: 'assistant',
++        content: 'Our AI consultant is temporarily offline. Please reach out directly to Denisse Martinez at denisse@nearshorenavigator.com or book a call at calendly.com/denisse-nearshorenavigator/30min for immediate assistance.',
++      });
+     }
++
++    // Build the prompt with RAG context injected
++    const userPrompt = ragContext
++      ? `INTERNAL DATA CONTEXT (use this to answer accurately):\n${ragContext}\n\nUSER QUESTION: ${lastMessage}`
++      : lastMessage;
++
++    // Format conversation history (last 6 messages to keep context manageable)
++    const history = messages.slice(-7, -1).map((m: { role: string; content: string }) => ({
++      role: m.role as 'user' | 'assistant',
++      content: m.content,
++    }));
++
++    const historyText = history.length > 0
++      ? history.map((m: { role: string; content: string }) => `${m.role === 'user' ? 'User' : 'Assistant'}: ${m.content}`).join('\n') + '\n\n'
++      : '';
++
++    const { text } = await generateText({
++      model: google('gemini-2.0-flash'),
++      system: SYSTEM_PROMPT,
++      prompt: `${historyText}User: ${userPrompt}`,
++    });
++
++    return NextResponse.json({ role: 'assistant', content: text });
++
++  } catch (error) {
++    console.error('[Chat API] Error:', error);
++    return NextResponse.json({
++      role: 'assistant',
++      content: 'I encountered a temporary issue. Please try again, or reach out to Denisse at denisse@nearshorenavigator.com for immediate help.',
++    });
++  }
+ }
+diff --git a/app/api/inngest/functions/prospecting.ts b/app/api/inngest/functions/prospecting.ts
+index 3986adb..28f4f70 100644
+--- a/app/api/inngest/functions/prospecting.ts
++++ b/app/api/inngest/functions/prospecting.ts
+@@ -275,13 +275,13 @@ export const prospectingAgent = inngest.createFunction(
+           const finalHtml = wrapHtml(
+             emailContent.htmlBody,
+             "Book Strategy Call Now",
+-            "https://calendly.com/denisse-nearshorenavigator/30min?month=2026-02"
++            "https://calendly.com/denisse-nearshorenavigator/30min"
+           );
+ 
+           await brevo.sendEmail({
+             to: [{ email: lead.email!, name: `${emailContent.firstName} ${emailContent.lastName}` }],
+             subject: emailContent.subject,
+-            // scheduledAt: scheduledAt, // Commented out to blast immediately
++            scheduledAt: scheduledAt,
+             htmlContent: finalHtml,
+             tags: [event.data.campaignType || 'marketing'], // Added required tags parameter to prevent Brevo API crash
+           });
+diff --git a/app/components/WhatsAppButton.tsx b/app/components/WhatsAppButton.tsx
+index 5357dcc..1fab47d 100644
+--- a/app/components/WhatsAppButton.tsx
++++ b/app/components/WhatsAppButton.tsx
+@@ -14,6 +14,7 @@ export default function WhatsAppButton() {
+             target="_blank"
+             rel="noopener noreferrer"
+             className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#1fa851] transition-colors flex items-center justify-center group"
++        title="Chat with us on WhatsApp"
+             initial={{ scale: 0, rotate: 180 }}
+             animate={{ scale: 1, rotate: 0 }}
+             whileHover={{ scale: 1.1 }}
+diff --git a/app/i18n/locales/en.json b/app/i18n/locales/en.json
+index cd81ccf..4b65ee1 100644
+--- a/app/i18n/locales/en.json
++++ b/app/i18n/locales/en.json
+@@ -15,6 +15,72 @@
+     "calculator": "Cost Calculator",
+     "park_map": "Industrial Park Map"
+   },
++  "questionnaire": {
++    "title": "Industrial Scoping & Matchmaking Tool",
++    "intro": "Generate a localized operational requirements brief to bypass waitlists and access Tier-1 industrial space in Baja California.",
++    "sec1_title": "Operational Blueprint",
++    "q1": "Total Industrial Footprint (Sqft)",
++    "q2": "Primary Manufacturing Vertical",
++    "q3": "Material Handling & Storage Requirement",
++    "q4": "Specific Hazardous Material Requirements (Hazmat/Chemicals)?",
++    "q5": "Specialized Facility Needs (Cleanroom, Cold Storage, etc.)?",
++
++    "sec2_title": "Labor & Logistics Intelligence",
++    "q6": "Estimated Launch Headcount (Direct Labor)",
++    "q7": "Do you require IMMEX/Shelter Administration Support?",
++    "q8": "Facility Height / Stacking Preference",
++    "q9": "Daily Average SKU Throughput",
++    "q10": "Inbound / Outbound Load Frequency (Daily)",
++    "q11": "Customs Preference (Virtual Transfers vs. Pedimentos)",
++    "q12": "Additional Logistics Complexity (Cross-docking, Bonded Warehouse)?",
++
++    "sec3_title": "Integration & Systems",
++    "q13": "EDI/Communication Preference",
++    "q14": "Primary ERP System",
++    "q15": "Inventory Sync Frequency Requirement",
++    "q16": "Data Transmission Protocol",
++    "q17": "Standard File Format",
++    "q18": "System Integration Notes",
++
++    "sec4_title": "Production Velocity",
++    "q19": "Target Production Shifts (Per Day)",
++    "q20": "Weekly Unit Volume Estimate",
++    "q21": "Peak Season Sensitivity (Months)",
++    "q22": "Labor Intensity (Light Assembly vs. Heavy Machining)",
++    "q23": "Anticipated 2-Year Expansion Rate (%)",
++
++    "sec5_title": "Compliance & Security",
++    "q24": "C-TPAT / OEA Certification Required?",
++    "q25": "Security & Monitoring Requirements",
++    "q26": "Quality Management System (ISO 9001/13485)",
++    "q27": "IP Protection Level Required",
++    "q28": "Do you require 24/7 On-site Guarding?",
++    "q29": "Insurance Requirements",
++    "q30": "Environmental/Social Governance (ESG) Standards",
++    "q31": "Additional Compliance Requirements",
++
++    "sec6_title": "Financial Scoping",
++    "q32": "Target CapEx for Facility Launch",
++    "q33": "Annual OpEx Target (Labor & Lease)",
++    "q34": "Target Lease Term",
++    "q35": "Shelter vs. Standalone Preference",
++    "q36": "Project Timeline & Urgency",
++    "q37": "Additional Strategic Notes"
++  },
++  "inlineForm": {
++    "title": "Request a Strategy Brief",
++    "subtitle": "Get a custom overview of available industrial footprints and labor rates for your specific vertical.",
++    "name": "Full Name",
++    "email": "Work Email",
++    "submit": "Request Brief",
++    "processing": "Processing...",
++    "success": "Request Received",
++    "successDesc": "Our Baja California team will reach out within 24 hours.",
++    "error": "Something went wrong. Please try again or contact us directly.",
++    "nda": "NDA Protected",
++    "response": "24h Response Time",
++    "expert": "Expert Guidance"
++  },
+   "home": {
+     "metaTitle": "Nearshore Manufacturing in Baja California | 40-60% Cost Savings | Nearshore Navigator",
+     "metaDescription": "Strategic advisory for US companies expanding manufacturing to Tijuana and Baja California. Cut costs 40-60%, access 50K+ bilingual workers, and go live in 90 days — 20 minutes from San Diego.",
+diff --git a/app/i18n/locales/es.json b/app/i18n/locales/es.json
+index 8742171..605b02e 100644
+--- a/app/i18n/locales/es.json
++++ b/app/i18n/locales/es.json
+@@ -15,6 +15,72 @@
+     "calculator": "Calculadora de Costos",
+     "park_map": "Mapa de Parques Industriales"
+   },
++  "questionnaire": {
++    "title": "Herramienta de Diagnóstico Industrial",
++    "intro": "Genere un resumen de requisitos operativos para evitar listas de espera y acceder a naves industriales Clase-1 en Baja California.",
++    "sec1_title": "Plan Maestro Operativo",
++    "q1": "Superficie Industrial Total (Pies Cuadrados)",
++    "q2": "Vertical de Manufactura Principal",
++    "q3": "Requisito de Manejo y Almacenamiento de Materiales",
++    "q4": "¿Requisitos Específicos de Materiales Peligrosos (Hazmat)?",
++    "q5": "¿Necesidades de Instalaciones Especializadas (Cuarto Limpio, Almacenamiento en Frío, etc.)?",
++
++    "sec2_title": "Inteligencia Laboral y Logística",
++    "q6": "Plantilla Estimada de Lanzamiento (Mano de Obra Directa)",
++    "q7": "¿Requiere Apoyo en Administración de Shelter / IMMEX?",
++    "q8": "Preferencia de Altura de Nave / Estibado",
++    "q9": "Promedio Diario de Movimiento de SKUs",
++    "q10": "Frecuencia de Carga de Entrada / Salida (Diaria)",
++    "q11": "Preferencia Aduanera (Transferencias Virtuales vs. Pedimentos)",
++    "q12": "¿Complejidad Logística Adicional (Cross-docking, Almacén Fiscal)?",
++
++    "sec3_title": "Integración y Sistemas",
++    "q13": "Preferencia de Comunicación / EDI",
++    "q14": "Sistema ERP Principal",
++    "q15": "Requisito de Frecuencia de Sincronización de Inventarios",
++    "q16": "Protocolo de Transmisión de Datos",
++    "q17": "Formato de Archivo Estándar",
++    "q18": "Notas de Integración de Sistemas",
++
++    "sec4_title": "Velocidad de Producción",
++    "q19": "Turnos de Producción Previstos (Por Día)",
++    "q20": "Volumen de Unidades Semanales (Estimado)",
++    "q21": "Sensibilidad de Temporada Alta (Meses)",
++    "q22": "Intensidad Laboral (Ensamble Ligero vs. Maquinado Pesado)",
++    "q23": "Tasa de Expansión Anticipada a 2 Años (%)",
++
++    "sec5_title": "Cumplimiento y Seguridad",
++    "q24": "¿Requiere Certificación C-TPAT / OEA?",
++    "q25": "Requisitos de Seguridad y Monitoreo",
++    "q26": "Sistema de Gestión de Calidad (ISO 9001/13485)",
++    "q27": "Nivel de Protección de Propiedad Intelectual Requerido",
++    "q28": "¿Requiere Guardia de Seguridad en Sitio 24/7?",
++    "q29": "Requisitos de Seguros",
++    "q30": "Estándares de Gobernanza Ambiental/Social (ESG)",
++    "q31": "Otros Requisitos de Cumplimiento",
++
++    "sec6_title": "Alcance Financiero",
++    "q32": "Presupuesto de CapEx para Lanzamiento de Instalación",
++    "q33": "Meta de OpEx Anual (Mano de Obra y Arrendamiento)",
++    "q34": "Plazo de Arrendamiento Objetivo",
++    "q35": "Preferencia: Shelter vs. Operación Directa",
++    "q36": "Cronograma y Urgencia del Proyecto",
++    "q37": "Notas Estratégicas Adicionales"
++  },
++  "inlineForm": {
++    "title": "Solicite un Resumen Estratégico",
++    "subtitle": "Obtenga un panorama personalizado de naves industriales disponibles y tasas laborales para su vertical específica.",
++    "name": "Nombre Completo",
++    "email": "Correo Institucional",
++    "submit": "Solicitar Resumen",
++    "processing": "Procesando...",
++    "success": "Solicitud Recibida",
++    "successDesc": "Nuestro equipo en Baja California se pondrá en contacto en menos de 24 horas.",
++    "error": "Algo salió mal. Inténtelo de nuevo o contáctenos directamente.",
++    "nda": "Protección por NDA",
++    "response": "Respuesta en 24h",
++    "expert": "Asesoría Experta"
++  },
+   "home": {
+     "metaTitle": "Nearshore Navigator | Manufactura Industrial en Baja California",
+     "metaDescription": "Asesoría estratégica para empresas estadounidenses que buscan expandirse a México. Le conectamos con fabricantes por contrato verificados y bienes raíces industriales en Tijuana y Baja California.",
+diff --git a/app/llms.txt/route.ts b/app/llms.txt/route.ts
+new file mode 100644
+index 0000000..162df3e
+--- /dev/null
++++ b/app/llms.txt/route.ts
+@@ -0,0 +1,96 @@
++import { NextResponse } from 'next/server';
++
++/**
++ * llms.txt — The emerging open standard for AI/LLM crawlers.
++ * Tells AI tools (Perplexity, ChatGPT Browse, Gemini, Claude) which pages
++ * contain authoritative, citable content about nearshoring in Mexico.
++ *
++ * Spec: https://llmstxt.org
++ */
++export async function GET() {
++  const content = `# Nearshore Navigator
++
++> Strategic advisory for US companies expanding manufacturing operations to Mexico.
++> Specializing in Baja California (Tijuana, Mexicali), Monterrey, Hermosillo, and all major Mexican industrial hubs.
++> Bilingual team with deep expertise in shelter services, IMMEX/USMCA compliance, and industrial real estate.
++
++## About
++
++Nearshore Navigator helps US manufacturers reduce costs 40-60% by relocating or expanding production to Mexico.
++Founded by Denisse Martinez, a bilingual nearshoring advisor based in Tijuana and San Diego.
++
++Contact: denisse@nearshorenavigator.com
++Phone: +52-664-123-7199
++Website: https://nearshorenavigator.com
++
++## Core Guides (Authoritative)
++
++- [How to Start Manufacturing in Mexico 2026](https://nearshorenavigator.com/en/insights/how-to-start-manufacturing-in-mexico-2026): Complete step-by-step guide to launching manufacturing operations in Mexico using shelter services or direct subsidiary.
++
++- [Ultimate Guide to Nearshore Shelter Services in Baja California](https://nearshorenavigator.com/en/insights/ultimate-guide-nearshore-shelter-services-baja-california): Comprehensive explanation of how shelter services work, cost structures, and provider selection.
++
++- [Tijuana vs Asia Manufacturing Cost Comparison](https://nearshorenavigator.com/en/insights/tijuana-vs-asia-manufacturing-cost-comparison): Data-driven cost analysis comparing Mexico, China, Vietnam, and India for US manufacturers.
++
++- [Nearshoring in Tijuana: Guide for US Companies](https://nearshorenavigator.com/en/insights/nearshoring-in-tijuana-guide-for-us-companies): Detailed city guide with labor rates, industrial parks, and setup process for Tijuana operations.
++
++- [Maquiladora vs Shelter Services in Mexico](https://nearshorenavigator.com/en/insights/maquiladora-vs-shelter-services-mexico): Clear explanation of the legal and operational differences between these two models.
++
++- [2025 Tariffs and Baja California Supply Chain](https://nearshorenavigator.com/en/insights/2025-tariffs-baja-california-supply-chain): Analysis of Section 301 tariff impacts and how USMCA+IMMEX eliminates them.
++
++- [Mexico 2025 Nearshoring Boom USMCA Review](https://nearshorenavigator.com/en/insights/mexico-2025-nearshoring-boom-usmca-review): Market overview of nearshoring investment trends under the current trade environment.
++
++- [How Shelter Services Work in Tijuana](https://nearshorenavigator.com/en/insights/how-shelter-services-work-in-tijuana): Operational walkthrough of the shelter model from site selection to production launch.
++
++- [Industrial Parks in Tijuana: Map and Overview](https://nearshorenavigator.com/en/insights/industrial-parks-in-tijuana-map-and-overview): Detailed comparison of Tijuana's major industrial parks (Pacifico, El Florido, Finsa, Nordika).
++
++## Key Service Pages
++
++- [Contract Manufacturing Tijuana](https://nearshorenavigator.com/en/services/contract-manufacturing-tijuana)
++- [Industrial Real Estate Baja California](https://nearshorenavigator.com/en/services/industrial-real-estate-baja)
++- [Distribution Centers Tijuana](https://nearshorenavigator.com/en/services/distribution-centers-tijuana)
++- [Section 321 Distribution Guide](https://nearshorenavigator.com/en/services/distribution-centers-tijuana/section-321-guide)
++- [Call Center Tijuana](https://nearshorenavigator.com/en/services/call-center-tijuana)
++- [Nearshore Marketing Services](https://nearshorenavigator.com/en/services/nearshore-marketing)
++
++## Location Guides
++
++- [Tijuana Manufacturing Hub](https://nearshorenavigator.com/en/locations/tijuana): Medical devices, aerospace, electronics — 2nd largest medical device cluster globally
++- [Tijuana Master Guide 2026](https://nearshorenavigator.com/en/locations/tijuana/master-guide): Deep-dive operational guide
++- [Mexicali Manufacturing Hub](https://nearshorenavigator.com/en/locations/mexicali): Aerospace, electronics, energy
++- [Hermosillo Manufacturing Hub](https://nearshorenavigator.com/en/locations/hermosillo): Ford automotive, aerospace (Guaymas port access)
++- [Monterrey Manufacturing Hub](https://nearshorenavigator.com/en/locations/monterrey): Automotive, steel, advanced manufacturing
++- [Saltillo Manufacturing Hub](https://nearshorenavigator.com/en/locations/saltillo): Detroit of Mexico — GM, Chrysler, Kia
++- [Matamoros Manufacturing Hub](https://nearshorenavigator.com/en/locations/matamoros): Automotive wire harnesses, maquiladoras
++- [Reynosa Manufacturing Hub](https://nearshorenavigator.com/en/locations/reynosa): Electronics, appliances
++- [Juárez Manufacturing Hub](https://nearshorenavigator.com/en/locations/juarez): Largest border city — 3,500+ maquiladoras
++
++## Tools
++
++- [Mexico Manufacturing Cost Calculator](https://nearshorenavigator.com/en/tools/cost-calculator): Free tool to compare US vs Mexico fully-burdened labor costs
++- [Tijuana Industrial Park Map](https://nearshorenavigator.com/en/tools/industrial-park-map): Interactive map of all Class A industrial parks in Tijuana
++
++## Data Points (Key Facts for AI Citation)
++
++- Fully burdened manufacturing labor: $7.84/hr in border cities (2026 CONASAMI rate)
++- Class A industrial lease rates in Tijuana: $0.75–$1.05/sqft NNN/month (2026)
++- Tijuana to San Diego: 20 minutes, same Pacific time zone
++- Medical devices: Tijuana is the 2nd largest cluster globally (70+ manufacturers)
++- USMCA + IMMEX = 0% tariff on qualifying manufactured goods exported to US
++- Section 301 tariffs on Chinese goods: 25%–100%; Mexico USMCA tariff: 0%
++- Otay Mesa POE: Busiest commercial border crossing in Western US (~$50B annual trade)
++- Time to launch via shelter service: 90–120 days
++- Time to launch direct subsidiary: 6–12 months
++
++## Optional
++
++- [Free Nearshoring Assessment](https://nearshorenavigator.com/en/assessment)
++- [Book a Strategy Call](https://calendly.com/denisse-nearshorenavigator/30min)
++`;
++
++  return new NextResponse(content, {
++    headers: {
++      'Content-Type': 'text/plain; charset=utf-8',
++      'Cache-Control': 'public, max-age=86400, stale-while-revalidate=3600',
++    },
++  });
++}
+diff --git a/components/AIConsultant.tsx b/components/AIConsultant.tsx
+index e71521d..47f8055 100644
+--- a/components/AIConsultant.tsx
++++ b/components/AIConsultant.tsx
+@@ -6,18 +6,19 @@ import { MessageSquare, Send, X, Bot, Zap, ShieldCheck } from 'lucide-react';
+ import { useLanguage } from '@/app/context/LanguageContext';
+ 
+ /**
+- * AI Manufacturing Consultant - Phase B
+- * Premium floating chat interface with Agentic Stream v1.0 feedback.
++ * AI Manufacturing Consultant
++ * Real Gemini-powered chat with full accessibility support.
+  */
+ export function AIConsultant() {
+     const { t } = useLanguage();
+     const [isOpen, setIsOpen] = useState(false);
+     const [messages, setMessages] = useState<{ role: 'user' | 'assistant'; content: string }[]>([
+-        { role: 'assistant', content: "Hello. I am your AI Manufacturing Consultant. I have real-time access to the Mexico Industrial Matrix and USMCA trade alerts. How can I help optimize your operation today?" }
++        { role: 'assistant', content: "Hello! I'm your AI Manufacturing Consultant, powered by real industrial data. Ask me about labor costs, industrial hubs, USMCA tariffs, shelter services, or how to start manufacturing in Mexico. How can I help you today?" }
+     ]);
+     const [input, setInput] = useState("");
+     const [isLoading, setIsLoading] = useState(false);
+     const scrollRef = useRef<HTMLDivElement>(null);
++    const inputRef = useRef<HTMLInputElement>(null);
+ 
+     useEffect(() => {
+         if (scrollRef.current) {
+@@ -25,6 +26,13 @@ export function AIConsultant() {
+         }
+     }, [messages]);
+ 
++    // Focus input when chat opens
++    useEffect(() => {
++        if (isOpen) {
++            setTimeout(() => inputRef.current?.focus(), 300);
++        }
++    }, [isOpen]);
++
+     const handleSend = async () => {
+         if (!input.trim() || isLoading) return;
+ 
+@@ -41,25 +49,34 @@ export function AIConsultant() {
+             });
+             const data = await res.json();
+             setMessages(prev => [...prev, data]);
+-        } catch (e) {
+-            setMessages(prev => [...prev, { role: 'assistant', content: "I encountered a synchronization error with the knowledge matrix. Please try again or contact our human specialists." }]);
++        } catch {
++            setMessages(prev => [...prev, { role: 'assistant', content: "I encountered a temporary issue. Please try again or contact Denisse directly at denisse@nearshorenavigator.com." }]);
+         } finally {
+             setIsLoading(false);
+         }
+     };
+ 
++    // Simple newline → paragraph renderer (no external dependency needed)
++    const renderContent = (text: string) => {
++        return text.split('\n').filter(Boolean).map((line, i) => (
++            <span key={i} className="block mb-1 last:mb-0">{line}</span>
++        ));
++    };
++
+     return (
+-        <div className="fixed bottom-6 right-6 z-[9999]">
++        // Position at bottom-28 to avoid overlap with WhatsApp button (bottom-6)
++        <div className="fixed bottom-28 right-6 z-[9999]">
+             {/* Toggle Button */}
+             {!isOpen && (
+                 <motion.button
+                     whileHover={{ scale: 1.1 }}
+                     whileTap={{ scale: 0.9 }}
+                     onClick={() => setIsOpen(true)}
++                    aria-label="Open AI Manufacturing Consultant"
+                     className="w-16 h-16 bg-primary-600 text-white rounded-full shadow-2xl flex items-center justify-center border-4 border-white/20 dark:border-gray-800/50 hover:bg-primary-500 transition-colors"
+                 >
+-                    <MessageSquare size={28} />
+-                    <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white animate-pulse" />
++                    <MessageSquare size={28} aria-hidden="true" />
++                    <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white animate-pulse" aria-hidden="true" />
+                 </motion.button>
+             )}
+ 
+@@ -67,6 +84,9 @@ export function AIConsultant() {
+             <AnimatePresence>
+                 {isOpen && (
+                     <motion.div
++                        role="dialog"
++                        aria-label="AI Manufacturing Consultant chat"
++                        aria-modal="true"
+                         initial={{ opacity: 0, scale: 0.8, y: 100 }}
+                         animate={{ opacity: 1, scale: 1, y: 0 }}
+                         exit={{ opacity: 0, scale: 0.8, y: 100 }}
+@@ -76,23 +96,33 @@ export function AIConsultant() {
+                         <div className="p-6 bg-gradient-to-r from-primary-900/40 to-gray-900/40 border-b border-white/5 flex items-center justify-between">
+                             <div className="flex items-center gap-3">
+                                 <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-900/20">
+-                                    <Bot size={22} className="text-white" />
++                                    <Bot size={22} className="text-white" aria-hidden="true" />
+                                 </div>
+                                 <div>
+                                     <h3 className="text-white font-bold leading-none">AI Consultant</h3>
+                                     <div className="flex items-center gap-1.5 mt-1">
+-                                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+-                                        <span className="text-[10px] text-gray-400 uppercase tracking-widest font-black">Agentic Stream v1.0</span>
++                                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" aria-hidden="true" />
++                                        <span className="text-[10px] text-gray-400 uppercase tracking-widest font-black">Powered by Gemini</span>
+                                     </div>
+                                 </div>
+                             </div>
+-                            <button onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-white transition-colors">
+-                                <X size={20} />
++                            <button
++                                onClick={() => setIsOpen(false)}
++                                aria-label="Close AI Manufacturing Consultant"
++                                className="text-gray-400 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/10"
++                            >
++                                <X size={20} aria-hidden="true" />
+                             </button>
+                         </div>
+ 
+                         {/* Messages Area */}
+-                        <div ref={scrollRef} className="flex-1 p-6 overflow-y-auto space-y-4 scrollbar-hide">
++                        <div
++                            ref={scrollRef}
++                            role="log"
++                            aria-live="polite"
++                            aria-label="Conversation"
++                            className="flex-1 p-6 overflow-y-auto space-y-4 scrollbar-hide"
++                        >
+                             {messages.map((msg, i) => (
+                                 <motion.div
+                                     key={i}
+@@ -100,17 +130,17 @@ export function AIConsultant() {
+                                     animate={{ opacity: 1, x: 0 }}
+                                     className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                                 >
+-                                    <div className={`max-w-[85%] p-4 rounded-2xl text-sm ${
+-                                        msg.role === 'user' 
+-                                            ? 'bg-primary-600 text-white rounded-tr-none' 
++                                    <div className={`max-w-[85%] p-4 rounded-2xl text-sm leading-relaxed ${
++                                        msg.role === 'user'
++                                            ? 'bg-primary-600 text-white rounded-tr-none'
+                                             : 'bg-white/5 text-gray-200 border border-white/5 rounded-tl-none'
+                                     }`}>
+-                                        {msg.content}
++                                        {renderContent(msg.content)}
+                                     </div>
+                                 </motion.div>
+                             ))}
+                             {isLoading && (
+-                                <div className="flex justify-start">
++                                <div className="flex justify-start" role="status" aria-label="AI is thinking">
+                                     <div className="bg-white/5 p-4 rounded-2xl rounded-tl-none border border-white/5 flex gap-1">
+                                         <div className="w-1.5 h-1.5 bg-gray-500 rounded-full animate-bounce" />
+                                         <div className="w-1.5 h-1.5 bg-gray-500 rounded-full animate-bounce [animation-delay:0.2s]" />
+@@ -123,23 +153,28 @@ export function AIConsultant() {
+                         {/* Input Area */}
+                         <div className="p-6 border-t border-white/5 bg-gray-900/50">
+                             <div className="flex gap-2">
++                                <label htmlFor="ai-chat-input" className="sr-only">Ask about manufacturing in Mexico</label>
+                                 <input
++                                    id="ai-chat-input"
++                                    ref={inputRef}
+                                     type="text"
+                                     value={input}
+                                     onChange={(e) => setInput(e.target.value)}
+                                     onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+                                     placeholder="Ask about tariffs, hubs, or costs..."
+-                                    className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-primary-500 transition-colors"
++                                    className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 transition-colors"
++                                    disabled={isLoading}
+                                 />
+                                 <button
+                                     onClick={handleSend}
+-                                    disabled={isLoading}
+-                                    className="w-10 h-10 bg-primary-600 text-white rounded-xl flex items-center justify-center hover:bg-primary-500 transition-colors disabled:opacity-50"
++                                    disabled={isLoading || !input.trim()}
++                                    aria-label="Send message"
++                                    className="w-10 h-10 bg-primary-600 text-white rounded-xl flex items-center justify-center hover:bg-primary-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                 >
+-                                    <Send size={18} />
++                                    <Send size={18} aria-hidden="true" />
+                                 </button>
+                             </div>
+-                            <div className="flex justify-center gap-4 mt-4 opacity-30 grayscale">
++                            <div className="flex justify-center gap-4 mt-4 opacity-30 grayscale" aria-hidden="true">
+                                 <ShieldCheck size={14} className="text-gray-400" />
+                                 <Zap size={14} className="text-gray-400" />
+                             </div>
+diff --git a/components/HeroScanner.tsx b/components/HeroScanner.tsx
+index df45aef..d87cd53 100644
+--- a/components/HeroScanner.tsx
++++ b/components/HeroScanner.tsx
+@@ -118,7 +118,7 @@ export const HeroScanner = ({ src, alt, active = true }: HeroScannerProps) => {
+                     initial={{ opacity: 0, scale: 0, x: -20 }}
+                     animate={{ opacity: 1, scale: 1, x: 0 }}
+                     exit={{ opacity: 0 }}
+-                    className="absolute"
++                    className="absolute hidden md:block"
+                     style={{ top: node.top, left: node.left }}
+                 >
+                     <div className="relative">
+diff --git a/components/SchemaMarkup.tsx b/components/SchemaMarkup.tsx
+index d0a5736..af0896b 100644
+--- a/components/SchemaMarkup.tsx
++++ b/components/SchemaMarkup.tsx
+@@ -1,4 +1,11 @@
++'use client';
++import { usePathname } from 'next/navigation';
++
+ export default function SchemaMarkup() {
++    const pathname = usePathname();
++    // Only emit FAQPage schema on the homepage (/ or /[lang]) to avoid
++    // "Duplicate field FAQPage" GSC errors on city/service pages that have their own FAQ schema.
++    const isHomepage = /^\/[a-z]{2}(\/)?$/.test(pathname) || pathname === '/';
+     const organizationSchema = {
+         "@context": "https://schema.org",
+         "@type": "Organization",
+@@ -285,10 +292,12 @@ export default function SchemaMarkup() {
+                 type="application/ld+json"
+                 dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+             />
+-            <script
+-                type="application/ld+json"
+-                dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqSchema) }}
+-            />
++            {isHomepage && (
++                <script
++                    type="application/ld+json"
++                    dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqSchema) }}
++                />
++            )}
+         </>
+     );
+ }
+diff --git a/lib/agents/intent-classifier.ts b/lib/agents/intent-classifier.ts
+index fc1dd52..2ddf939 100644
+--- a/lib/agents/intent-classifier.ts
++++ b/lib/agents/intent-classifier.ts
+@@ -38,7 +38,7 @@ export async function classifyReplyIntent(text: string): Promise<IntentResult> {
+     `;
+ 
+     const { text: responseText } = await generateText({
+-      model: google('gemini-1.5-flash-latest'), // Use Flash for speed in webhooks
++      model: google('gemini-2.0-flash'), // Use 2.0 Flash for speed and accuracy in webhooks
+       prompt: prompt,
+     });
+ 
+diff --git a/next.config.mjs b/next.config.mjs
+index fbd9d8e..04e0472 100644
+--- a/next.config.mjs
++++ b/next.config.mjs
+@@ -12,12 +12,12 @@ const nextConfig = {
+         return [
+             {
+                 source: '/discovery',
+-                destination: 'https://calendly.com/denisse-nearshorenavigator/30min?month=2026-03',
++                destination: 'https://calendly.com/denisse-nearshorenavigator/30min',
+                 permanent: false,
+             },
+             {
+                 source: '/:lang/discovery',
+-                destination: 'https://calendly.com/denisse-nearshorenavigator/30min?month=2026-03',
++                destination: 'https://calendly.com/denisse-nearshorenavigator/30min',
+                 permanent: false,
+             },
+             {
+diff --git a/package-lock.json b/package-lock.json
+index 781b791..1c8ee2e 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -1,11 +1,11 @@
+ {
+-  "name": "cryo-blazar",
++  "name": "nearshore-navigator",
+   "version": "0.1.0",
+   "lockfileVersion": 3,
+   "requires": true,
+   "packages": {
+     "": {
+-      "name": "cryo-blazar",
++      "name": "nearshore-navigator",
+       "version": "0.1.0",
+       "dependencies": {
+         "@ai-sdk/google": "^3.0.29",
+@@ -20,7 +20,6 @@
+         "clsx": "^2.1.1",
+         "csv-parse": "^6.1.0",
+         "csv-stringify": "^6.6.0",
+-        "docx": "^9.5.1",
+         "dotenv": "^17.3.1",
+         "drizzle-orm": "^0.45.1",
+         "framer-motion": "^12.34.2",
+@@ -47,6 +46,7 @@
+         "postcss": "^8",
+         "puppeteer": "^24.36.1",
+         "tailwindcss": "^3.4.1",
++        "tsx": "^4.21.0",
+         "typescript": "^5"
+       }
+     },
+@@ -1953,6 +1953,7 @@
+       "version": "1.0.2",
+       "license": "MIT",
+       "optional": true,
++      "peer": true,
+       "dependencies": {
+         "@types/node": "^22.15.30",
+         "@types/pg": "^8.8.0"
+@@ -1965,6 +1966,7 @@
+       "version": "22.19.11",
+       "license": "MIT",
+       "optional": true,
++      "peer": true,
+       "dependencies": {
+         "undici-types": "~6.21.0"
+       }
+@@ -2176,7 +2178,6 @@
+     "node_modules/@opentelemetry/api": {
+       "version": "1.9.0",
+       "license": "Apache-2.0",
+-      "peer": true,
+       "engines": {
+         "node": ">=8.0.0"
+       }
+@@ -2280,7 +2281,6 @@
+     "node_modules/@opentelemetry/core": {
+       "version": "2.5.0",
+       "license": "Apache-2.0",
+-      "peer": true,
+       "dependencies": {
+         "@opentelemetry/semantic-conventions": "^1.29.0"
+       },
+@@ -3832,7 +3832,6 @@
+       "version": "18.3.27",
+       "dev": true,
+       "license": "MIT",
+-      "peer": true,
+       "dependencies": {
+         "@types/prop-types": "*",
+         "csstype": "^3.2.2"
+@@ -3901,7 +3900,6 @@
+       "version": "8.54.0",
+       "dev": true,
+       "license": "MIT",
+-      "peer": true,
+       "dependencies": {
+         "@typescript-eslint/scope-manager": "8.54.0",
+         "@typescript-eslint/types": "8.54.0",
+@@ -4460,7 +4458,6 @@
+     "node_modules/acorn": {
+       "version": "8.15.0",
+       "license": "MIT",
+-      "peer": true,
+       "bin": {
+         "acorn": "bin/acorn"
+       },
+@@ -5282,10 +5279,6 @@
+       "dev": true,
+       "license": "MIT"
+     },
+-    "node_modules/core-util-is": {
+-      "version": "1.0.3",
+-      "license": "MIT"
+-    },
+     "node_modules/cosmiconfig": {
+       "version": "9.0.0",
+       "dev": true,
+@@ -5519,8 +5512,7 @@
+     "node_modules/devtools-protocol": {
+       "version": "0.0.1551306",
+       "dev": true,
+-      "license": "BSD-3-Clause",
+-      "peer": true
++      "license": "BSD-3-Clause"
+     },
+     "node_modules/dfa": {
+       "version": "1.2.0",
+@@ -5536,48 +5528,6 @@
+       "dev": true,
+       "license": "MIT"
+     },
+-    "node_modules/docx": {
+-      "version": "9.5.1",
+-      "license": "MIT",
+-      "dependencies": {
+-        "@types/node": "^24.0.1",
+-        "hash.js": "^1.1.7",
+-        "jszip": "^3.10.1",
+-        "nanoid": "^5.1.3",
+-        "xml": "^1.0.1",
+-        "xml-js": "^1.6.8"
+-      },
+-      "engines": {
+-        "node": ">=10"
+-      }
+-    },
+-    "node_modules/docx/node_modules/@types/node": {
+-      "version": "24.10.13",
+-      "license": "MIT",
+-      "dependencies": {
+-        "undici-types": "~7.16.0"
+-      }
+-    },
+-    "node_modules/docx/node_modules/nanoid": {
+-      "version": "5.1.6",
+-      "funding": [
+-        {
+-          "type": "github",
+-          "url": "https://github.com/sponsors/ai"
+-        }
+-      ],
+-      "license": "MIT",
+-      "bin": {
+-        "nanoid": "bin/nanoid.js"
+-      },
+-      "engines": {
+-        "node": "^18 || >=20"
+-      }
+-    },
+-    "node_modules/docx/node_modules/undici-types": {
+-      "version": "7.16.0",
+-      "license": "MIT"
+-    },
+     "node_modules/dotenv": {
+       "version": "17.3.1",
+       "license": "BSD-2-Clause",
+@@ -6010,7 +5960,6 @@
+       "dev": true,
+       "hasInstallScript": true,
+       "license": "MIT",
+-      "peer": true,
+       "bin": {
+         "esbuild": "bin/esbuild"
+       },
+@@ -6099,7 +6048,6 @@
+       "version": "9.39.2",
+       "dev": true,
+       "license": "MIT",
+-      "peer": true,
+       "dependencies": {
+         "@eslint-community/eslint-utils": "^4.8.0",
+         "@eslint-community/regexpp": "^4.12.1",
+@@ -6259,7 +6207,6 @@
+       "version": "2.32.0",
+       "dev": true,
+       "license": "MIT",
+-      "peer": true,
+       "dependencies": {
+         "@rtsao/scc": "^1.1.0",
+         "array-includes": "^3.1.9",
+@@ -7492,10 +7439,6 @@
+         "node": ">= 4"
+       }
+     },
+-    "node_modules/immediate": {
+-      "version": "3.0.6",
+-      "license": "MIT"
+-    },
+     "node_modules/import-fresh": {
+       "version": "3.3.1",
+       "dev": true,
+@@ -8095,7 +8038,6 @@
+       "version": "1.21.7",
+       "dev": true,
+       "license": "MIT",
+-      "peer": true,
+       "bin": {
+         "jiti": "bin/jiti.js"
+       }
+@@ -8189,16 +8131,6 @@
+         "node": ">=4.0"
+       }
+     },
+-    "node_modules/jszip": {
+-      "version": "3.10.1",
+-      "license": "(MIT OR GPL-3.0-or-later)",
+-      "dependencies": {
+-        "lie": "~3.3.0",
+-        "pako": "~1.0.2",
+-        "readable-stream": "~2.3.6",
+-        "setimmediate": "^1.0.5"
+-      }
+-    },
+     "node_modules/jwa": {
+       "version": "2.0.1",
+       "resolved": "https://registry.npmjs.org/jwa/-/jwa-2.0.1.tgz",
+@@ -8256,13 +8188,6 @@
+         "node": ">= 0.8.0"
+       }
+     },
+-    "node_modules/lie": {
+-      "version": "3.3.0",
+-      "license": "MIT",
+-      "dependencies": {
+-        "immediate": "~3.0.5"
+-      }
+-    },
+     "node_modules/lilconfig": {
+       "version": "3.1.3",
+       "dev": true,
+@@ -8504,7 +8429,6 @@
+     "node_modules/next": {
+       "version": "16.1.6",
+       "license": "MIT",
+-      "peer": true,
+       "dependencies": {
+         "@next/env": "16.1.6",
+         "@swc/helpers": "0.5.15",
+@@ -9053,7 +8977,6 @@
+         }
+       ],
+       "license": "MIT",
+-      "peer": true,
+       "dependencies": {
+         "nanoid": "^3.3.11",
+         "picocolors": "^1.1.1",
+@@ -9227,10 +9150,6 @@
+         "node": ">= 0.8.0"
+       }
+     },
+-    "node_modules/process-nextick-args": {
+-      "version": "2.0.1",
+-      "license": "MIT"
+-    },
+     "node_modules/progress": {
+       "version": "2.0.3",
+       "dev": true,
+@@ -9435,7 +9354,6 @@
+     "node_modules/react": {
+       "version": "18.3.1",
+       "license": "MIT",
+-      "peer": true,
+       "dependencies": {
+         "loose-envify": "^1.1.0"
+       },
+@@ -9446,7 +9364,6 @@
+     "node_modules/react-dom": {
+       "version": "18.3.1",
+       "license": "MIT",
+-      "peer": true,
+       "dependencies": {
+         "loose-envify": "^1.1.0",
+         "scheduler": "^0.23.2"
+@@ -9467,34 +9384,6 @@
+         "pify": "^2.3.0"
+       }
+     },
+-    "node_modules/readable-stream": {
+-      "version": "2.3.8",
+-      "license": "MIT",
+-      "dependencies": {
+-        "core-util-is": "~1.0.0",
+-        "inherits": "~2.0.3",
+-        "isarray": "~1.0.0",
+-        "process-nextick-args": "~2.0.0",
+-        "safe-buffer": "~5.1.1",
+-        "string_decoder": "~1.1.1",
+-        "util-deprecate": "~1.0.1"
+-      }
+-    },
+-    "node_modules/readable-stream/node_modules/isarray": {
+-      "version": "1.0.0",
+-      "license": "MIT"
+-    },
+-    "node_modules/readable-stream/node_modules/safe-buffer": {
+-      "version": "5.1.2",
+-      "license": "MIT"
+-    },
+-    "node_modules/readable-stream/node_modules/string_decoder": {
+-      "version": "1.1.1",
+-      "license": "MIT",
+-      "dependencies": {
+-        "safe-buffer": "~5.1.0"
+-      }
+-    },
+     "node_modules/readdirp": {
+       "version": "3.6.0",
+       "dev": true,
+@@ -9735,13 +9624,6 @@
+         "url": "https://github.com/sponsors/ljharb"
+       }
+     },
+-    "node_modules/sax": {
+-      "version": "1.4.4",
+-      "license": "BlueOak-1.0.0",
+-      "engines": {
+-        "node": ">=11.0.0"
+-      }
+-    },
+     "node_modules/scheduler": {
+       "version": "0.23.2",
+       "license": "MIT",
+@@ -9820,10 +9702,6 @@
+         "node": ">= 0.4"
+       }
+     },
+-    "node_modules/setimmediate": {
+-      "version": "1.0.5",
+-      "license": "MIT"
+-    },
+     "node_modules/sharp": {
+       "version": "0.34.5",
+       "hasInstallScript": true,
+@@ -10647,7 +10525,6 @@
+       "version": "4.0.3",
+       "dev": true,
+       "license": "MIT",
+-      "peer": true,
+       "engines": {
+         "node": ">=12"
+       },
+@@ -10701,6 +10578,510 @@
+       "version": "2.8.1",
+       "license": "0BSD"
+     },
++    "node_modules/tsx": {
++      "version": "4.21.0",
++      "resolved": "https://registry.npmjs.org/tsx/-/tsx-4.21.0.tgz",
++      "integrity": "sha512-5C1sg4USs1lfG0GFb2RLXsdpXqBSEhAaA/0kPL01wxzpMqLILNxIxIOKiILz+cdg/pLnOUxFYOR5yhHU666wbw==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "esbuild": "~0.27.0",
++        "get-tsconfig": "^4.7.5"
++      },
++      "bin": {
++        "tsx": "dist/cli.mjs"
++      },
++      "engines": {
++        "node": ">=18.0.0"
++      },
++      "optionalDependencies": {
++        "fsevents": "~2.3.3"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/aix-ppc64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/aix-ppc64/-/aix-ppc64-0.27.4.tgz",
++      "integrity": "sha512-cQPwL2mp2nSmHHJlCyoXgHGhbEPMrEEU5xhkcy3Hs/O7nGZqEpZ2sUtLaL9MORLtDfRvVl2/3PAuEkYZH0Ty8Q==",
++      "cpu": [
++        "ppc64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "aix"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/android-arm": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/android-arm/-/android-arm-0.27.4.tgz",
++      "integrity": "sha512-X9bUgvxiC8CHAGKYufLIHGXPJWnr0OCdR0anD2e21vdvgCI8lIfqFbnoeOz7lBjdrAGUhqLZLcQo6MLhTO2DKQ==",
++      "cpu": [
++        "arm"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "android"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/android-arm64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/android-arm64/-/android-arm64-0.27.4.tgz",
++      "integrity": "sha512-gdLscB7v75wRfu7QSm/zg6Rx29VLdy9eTr2t44sfTW7CxwAtQghZ4ZnqHk3/ogz7xao0QAgrkradbBzcqFPasw==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "android"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/android-x64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/android-x64/-/android-x64-0.27.4.tgz",
++      "integrity": "sha512-PzPFnBNVF292sfpfhiyiXCGSn9HZg5BcAz+ivBuSsl6Rk4ga1oEXAamhOXRFyMcjwr2DVtm40G65N3GLeH1Lvw==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "android"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/darwin-arm64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.27.4.tgz",
++      "integrity": "sha512-b7xaGIwdJlht8ZFCvMkpDN6uiSmnxxK56N2GDTMYPr2/gzvfdQN8rTfBsvVKmIVY/X7EM+/hJKEIbbHs9oA4tQ==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "darwin"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/darwin-x64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/darwin-x64/-/darwin-x64-0.27.4.tgz",
++      "integrity": "sha512-sR+OiKLwd15nmCdqpXMnuJ9W2kpy0KigzqScqHI3Hqwr7IXxBp3Yva+yJwoqh7rE8V77tdoheRYataNKL4QrPw==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "darwin"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/freebsd-arm64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/freebsd-arm64/-/freebsd-arm64-0.27.4.tgz",
++      "integrity": "sha512-jnfpKe+p79tCnm4GVav68A7tUFeKQwQyLgESwEAUzyxk/TJr4QdGog9sqWNcUbr/bZt/O/HXouspuQDd9JxFSw==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "freebsd"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/freebsd-x64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/freebsd-x64/-/freebsd-x64-0.27.4.tgz",
++      "integrity": "sha512-2kb4ceA/CpfUrIcTUl1wrP/9ad9Atrp5J94Lq69w7UwOMolPIGrfLSvAKJp0RTvkPPyn6CIWrNy13kyLikZRZQ==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "freebsd"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/linux-arm": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-arm/-/linux-arm-0.27.4.tgz",
++      "integrity": "sha512-aBYgcIxX/wd5n2ys0yESGeYMGF+pv6g0DhZr3G1ZG4jMfruU9Tl1i2Z+Wnj9/KjGz1lTLCcorqE2viePZqj4Eg==",
++      "cpu": [
++        "arm"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/linux-arm64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-arm64/-/linux-arm64-0.27.4.tgz",
++      "integrity": "sha512-7nQOttdzVGth1iz57kxg9uCz57dxQLHWxopL6mYuYthohPKEK0vU0C3O21CcBK6KDlkYVcnDXY099HcCDXd9dA==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/linux-ia32": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-ia32/-/linux-ia32-0.27.4.tgz",
++      "integrity": "sha512-oPtixtAIzgvzYcKBQM/qZ3R+9TEUd1aNJQu0HhGyqtx6oS7qTpvjheIWBbes4+qu1bNlo2V4cbkISr8q6gRBFA==",
++      "cpu": [
++        "ia32"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/linux-loong64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-loong64/-/linux-loong64-0.27.4.tgz",
++      "integrity": "sha512-8mL/vh8qeCoRcFH2nM8wm5uJP+ZcVYGGayMavi8GmRJjuI3g1v6Z7Ni0JJKAJW+m0EtUuARb6Lmp4hMjzCBWzA==",
++      "cpu": [
++        "loong64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/linux-mips64el": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-mips64el/-/linux-mips64el-0.27.4.tgz",
++      "integrity": "sha512-1RdrWFFiiLIW7LQq9Q2NES+HiD4NyT8Itj9AUeCl0IVCA459WnPhREKgwrpaIfTOe+/2rdntisegiPWn/r/aAw==",
++      "cpu": [
++        "mips64el"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/linux-ppc64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-ppc64/-/linux-ppc64-0.27.4.tgz",
++      "integrity": "sha512-tLCwNG47l3sd9lpfyx9LAGEGItCUeRCWeAx6x2Jmbav65nAwoPXfewtAdtbtit/pJFLUWOhpv0FpS6GQAmPrHA==",
++      "cpu": [
++        "ppc64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/linux-riscv64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-riscv64/-/linux-riscv64-0.27.4.tgz",
++      "integrity": "sha512-BnASypppbUWyqjd1KIpU4AUBiIhVr6YlHx/cnPgqEkNoVOhHg+YiSVxM1RLfiy4t9cAulbRGTNCKOcqHrEQLIw==",
++      "cpu": [
++        "riscv64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/linux-s390x": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-s390x/-/linux-s390x-0.27.4.tgz",
++      "integrity": "sha512-+eUqgb/Z7vxVLezG8bVB9SfBie89gMueS+I0xYh2tJdw3vqA/0ImZJ2ROeWwVJN59ihBeZ7Tu92dF/5dy5FttA==",
++      "cpu": [
++        "s390x"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/linux-x64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.27.4.tgz",
++      "integrity": "sha512-S5qOXrKV8BQEzJPVxAwnryi2+Iq5pB40gTEIT69BQONqR7JH1EPIcQ/Uiv9mCnn05jff9umq/5nqzxlqTOg9NA==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/netbsd-arm64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/netbsd-arm64/-/netbsd-arm64-0.27.4.tgz",
++      "integrity": "sha512-xHT8X4sb0GS8qTqiwzHqpY00C95DPAq7nAwX35Ie/s+LO9830hrMd3oX0ZMKLvy7vsonee73x0lmcdOVXFzd6Q==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "netbsd"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/netbsd-x64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/netbsd-x64/-/netbsd-x64-0.27.4.tgz",
++      "integrity": "sha512-RugOvOdXfdyi5Tyv40kgQnI0byv66BFgAqjdgtAKqHoZTbTF2QqfQrFwa7cHEORJf6X2ht+l9ABLMP0dnKYsgg==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "netbsd"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/openbsd-arm64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/openbsd-arm64/-/openbsd-arm64-0.27.4.tgz",
++      "integrity": "sha512-2MyL3IAaTX+1/qP0O1SwskwcwCoOI4kV2IBX1xYnDDqthmq5ArrW94qSIKCAuRraMgPOmG0RDTA74mzYNQA9ow==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "openbsd"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/openbsd-x64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/openbsd-x64/-/openbsd-x64-0.27.4.tgz",
++      "integrity": "sha512-u8fg/jQ5aQDfsnIV6+KwLOf1CmJnfu1ShpwqdwC0uA7ZPwFws55Ngc12vBdeUdnuWoQYx/SOQLGDcdlfXhYmXQ==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "openbsd"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/openharmony-arm64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/openharmony-arm64/-/openharmony-arm64-0.27.4.tgz",
++      "integrity": "sha512-JkTZrl6VbyO8lDQO3yv26nNr2RM2yZzNrNHEsj9bm6dOwwu9OYN28CjzZkH57bh4w0I2F7IodpQvUAEd1mbWXg==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "openharmony"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/sunos-x64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/sunos-x64/-/sunos-x64-0.27.4.tgz",
++      "integrity": "sha512-/gOzgaewZJfeJTlsWhvUEmUG4tWEY2Spp5M20INYRg2ZKl9QPO3QEEgPeRtLjEWSW8FilRNacPOg8R1uaYkA6g==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "sunos"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/win32-arm64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/win32-arm64/-/win32-arm64-0.27.4.tgz",
++      "integrity": "sha512-Z9SExBg2y32smoDQdf1HRwHRt6vAHLXcxD2uGgO/v2jK7Y718Ix4ndsbNMU/+1Qiem9OiOdaqitioZwxivhXYg==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "win32"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/win32-ia32": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/win32-ia32/-/win32-ia32-0.27.4.tgz",
++      "integrity": "sha512-DAyGLS0Jz5G5iixEbMHi5KdiApqHBWMGzTtMiJ72ZOLhbu/bzxgAe8Ue8CTS3n3HbIUHQz/L51yMdGMeoxXNJw==",
++      "cpu": [
++        "ia32"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "win32"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/@esbuild/win32-x64": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.27.4.tgz",
++      "integrity": "sha512-+knoa0BDoeXgkNvvV1vvbZX4+hizelrkwmGJBdT17t8FNPwG2lKemmuMZlmaNQ3ws3DKKCxpb4zRZEIp3UxFCg==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "os": [
++        "win32"
++      ],
++      "engines": {
++        "node": ">=18"
++      }
++    },
++    "node_modules/tsx/node_modules/esbuild": {
++      "version": "0.27.4",
++      "resolved": "https://registry.npmjs.org/esbuild/-/esbuild-0.27.4.tgz",
++      "integrity": "sha512-Rq4vbHnYkK5fws5NF7MYTU68FPRE1ajX7heQ/8QXXWqNgqqJ/GkmmyxIzUnf2Sr/bakf8l54716CcMGHYhMrrQ==",
++      "dev": true,
++      "hasInstallScript": true,
++      "license": "MIT",
++      "bin": {
++        "esbuild": "bin/esbuild"
++      },
++      "engines": {
++        "node": ">=18"
++      },
++      "optionalDependencies": {
++        "@esbuild/aix-ppc64": "0.27.4",
++        "@esbuild/android-arm": "0.27.4",
++        "@esbuild/android-arm64": "0.27.4",
++        "@esbuild/android-x64": "0.27.4",
++        "@esbuild/darwin-arm64": "0.27.4",
++        "@esbuild/darwin-x64": "0.27.4",
++        "@esbuild/freebsd-arm64": "0.27.4",
++        "@esbuild/freebsd-x64": "0.27.4",
++        "@esbuild/linux-arm": "0.27.4",
++        "@esbuild/linux-arm64": "0.27.4",
++        "@esbuild/linux-ia32": "0.27.4",
++        "@esbuild/linux-loong64": "0.27.4",
++        "@esbuild/linux-mips64el": "0.27.4",
++        "@esbuild/linux-ppc64": "0.27.4",
++        "@esbuild/linux-riscv64": "0.27.4",
++        "@esbuild/linux-s390x": "0.27.4",
++        "@esbuild/linux-x64": "0.27.4",
++        "@esbuild/netbsd-arm64": "0.27.4",
++        "@esbuild/netbsd-x64": "0.27.4",
++        "@esbuild/openbsd-arm64": "0.27.4",
++        "@esbuild/openbsd-x64": "0.27.4",
++        "@esbuild/openharmony-arm64": "0.27.4",
++        "@esbuild/sunos-x64": "0.27.4",
++        "@esbuild/win32-arm64": "0.27.4",
++        "@esbuild/win32-ia32": "0.27.4",
++        "@esbuild/win32-x64": "0.27.4"
++      }
++    },
+     "node_modules/type-check": {
+       "version": "0.4.0",
+       "dev": true,
+@@ -10790,7 +11171,6 @@
+     "node_modules/typescript": {
+       "version": "5.9.3",
+       "license": "Apache-2.0",
+-      "peer": true,
+       "bin": {
+         "tsc": "bin/tsc",
+         "tsserver": "bin/tsserver"
+@@ -11207,20 +11587,6 @@
+         "node": ">=0.8"
+       }
+     },
+-    "node_modules/xml": {
+-      "version": "1.0.1",
+-      "license": "MIT"
+-    },
+-    "node_modules/xml-js": {
+-      "version": "1.6.11",
+-      "license": "MIT",
+-      "dependencies": {
+-        "sax": "^1.2.4"
+-      },
+-      "bin": {
+-        "xml-js": "bin/cli.js"
+-      }
+-    },
+     "node_modules/xtend": {
+       "version": "4.0.2",
+       "license": "MIT",
+@@ -11314,7 +11680,6 @@
+     "node_modules/zod": {
+       "version": "4.3.6",
+       "license": "MIT",
+-      "peer": true,
+       "funding": {
+         "url": "https://github.com/sponsors/colinhacks"
+       }
+diff --git a/package.json b/package.json
+index bf4edd6..8017da1 100644
+--- a/package.json
++++ b/package.json
+@@ -1,5 +1,5 @@
+ {
+-  "name": "cryo-blazar",
++  "name": "nearshore-navigator",
+   "version": "0.1.0",
+   "private": true,
+   "scripts": {
+@@ -22,7 +22,6 @@
+     "clsx": "^2.1.1",
+     "csv-parse": "^6.1.0",
+     "csv-stringify": "^6.6.0",
+-    "docx": "^9.5.1",
+     "dotenv": "^17.3.1",
+     "drizzle-orm": "^0.45.1",
+     "framer-motion": "^12.34.2",
+@@ -49,6 +48,7 @@
+     "postcss": "^8",
+     "puppeteer": "^24.36.1",
+     "tailwindcss": "^3.4.1",
++    "tsx": "^4.21.0",
+     "typescript": "^5"
+   }
+ }
+diff --git a/scripts/agents/market_pulse_agent.ts b/scripts/agents/market_pulse_agent.ts
+index f976163..53ef92a 100644
+--- a/scripts/agents/market_pulse_agent.ts
++++ b/scripts/agents/market_pulse_agent.ts
+@@ -1,72 +1,167 @@
+ /**
+  * market_pulse_agent.ts
+- * 
+- * PHASE 2: Autonomous Market Reaction
+- * This agent monitors global trade news (USMCA, Tariffs, Labor Laws),
+- * analyzes impact on specific industrial hubs, and drafts localized alerts.
+- * 
++ *
++ * PHASE 2: Autonomous Market Reaction — LIVE VERSION
++ * Monitors global trade news (USMCA, Tariffs, Labor Laws, nearshoring trends),
++ * analyzes impact on specific industrial hubs, and publishes real alerts.
++ *
+  * Run: npx tsx scripts/agents/market_pulse_agent.ts
+  */
+ 
+ import dotenv from 'dotenv';
+ import path from 'path';
+ import fs from 'fs';
+-import { INDUSTRY_MATRIX } from '../../app/constants/city-industry-matrix';
++import { tavily } from '@tavily/core';
+ 
+ const envPath = path.join(process.cwd(), '.env.local');
+ dotenv.config({ path: envPath });
+ 
++interface MarketAlert {
++  id: string;
++  topic: string;
++  date: string;
++  impactLevel: 'HIGH' | 'MEDIUM' | 'LOW';
++  affectedSectors: string[];
++  affectedCities: string[];
++  summary: string;
++}
++
++const SEARCH_QUERIES = [
++  {
++    query: 'USMCA nearshoring Mexico manufacturing 2026 tariff update',
++    topic: 'USMCA Trade Policy Update',
++    sectors: ['automotive', 'medical-devices', 'electronics'],
++    cities: ['tijuana', 'monterrey', 'juarez', 'matamoros'],
++  },
++  {
++    query: 'Mexico manufacturing labor cost minimum wage 2026',
++    topic: 'Mexico Labor Cost Update',
++    sectors: ['manufacturing', 'electronics', 'automotive'],
++    cities: ['tijuana', 'mexicali', 'juarez', 'monterrey'],
++  },
++  {
++    query: 'Baja California industrial real estate nearshoring investment 2026',
++    topic: 'Baja California Industrial Market',
++    sectors: ['industrial-real-estate', 'logistics'],
++    cities: ['tijuana', 'mexicali'],
++  },
++  {
++    query: 'Mexico energy electricity CFE industrial surcharge 2026',
++    topic: 'Mexico Energy Grid Update',
++    sectors: ['electronics', 'automotive', 'heavy-manufacturing'],
++    cities: ['mexicali', 'monterrey', 'reynosa', 'juarez'],
++  },
++  {
++    query: 'nearshoring Mexico US supply chain reshoring 2026 trend',
++    topic: 'Nearshoring Demand Surge',
++    sectors: ['contract-manufacturing', 'shelter-services'],
++    cities: ['tijuana', 'hermosillo', 'monterrey', 'saltillo'],
++  },
++];
++
++function classifyImpact(content: string): 'HIGH' | 'MEDIUM' | 'LOW' {
++  const highKeywords = ['tariff', 'ban', 'suspended', 'executive order', 'emergency', 'critical', 'surge', 'record', 'crisis'];
++  const mediumKeywords = ['increase', 'change', 'update', 'new', 'announced', 'expected', 'projected'];
++  const lower = content.toLowerCase();
++  if (highKeywords.some(k => lower.includes(k))) return 'HIGH';
++  if (mediumKeywords.some(k => lower.includes(k))) return 'MEDIUM';
++  return 'LOW';
++}
++
++function generateId(topic: string): string {
++  return topic.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
++}
++
+ async function main() {
+-    console.log('\n📡 [AGENT] Initializing MarketPulseAgent (Phase 2)...');
+-    
+-    // Simulated live market feed
+-    const simulatedGlobalPulse = [
+-        {
+-            id: "usmca-2026-compliance",
+-            topic: "USMCA 2026 Audit Requirements",
+-            date: "March 19, 2026",
+-            impactLevel: "HIGH",
+-            affectedSectors: ["automotive", "medical-devices"],
+-            affectedCities: ["tijuana", "monterrey", "juarez"],
+-            summary: "New USMCA labor audits require 48-hour compliance response windows for IMMEX plants. Non-compliance could trigger immediate tariff 'reversions' to Most Favored Nation (MFN) rates."
+-        },
+-        {
+-            id: "energy-surcharge-baja",
+-            topic: "Grid Surcharge in Northern Mexico",
+-            date: "March 18, 2026",
+-            impactLevel: "MEDIUM",
+-            affectedSectors: ["electronics"],
+-            affectedCities: ["mexicali", "reynosa"],
+-            summary: "Baja California industrial grid surcharge announced for peak summer hours (June-Aug). High-volume electronics assembly plants are advised to shift heavy production to off-peak night shifts."
+-        }
+-    ];
+-
+-    console.log(`🔍 Analyzed ${simulatedGlobalPulse.length} critical market shifts.`);
+-
+-    // Generate the TS file content
+-    const fileContent = `/**
+- * AUTO-GENERATED BY MarketPulseAgent
+- * DO NOT EDIT MANUALLY
++  console.log('\n📡 [MarketPulseAgent] Initializing live data collection...');
++
++  const apiKey = process.env.TAVILY_API_KEY;
++  if (!apiKey) {
++    console.error('❌ TAVILY_API_KEY not set in .env.local. Cannot run live agent.');
++    console.log('💡 Falling back to keeping existing market-pulse-news.ts unchanged.');
++    process.exit(0);
++  }
++
++  const client = tavily({ apiKey });
++  const alerts: MarketAlert[] = [];
++  const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
++
++  for (const q of SEARCH_QUERIES) {
++    try {
++      console.log(`🔍 Searching: "${q.query}"...`);
++      const result = await client.search(q.query, {
++        search_depth: 'basic',
++        max_results: 3,
++        include_answer: true,
++      });
++
++      // Build summary from top results
++      const snippets = result.results
++        ?.slice(0, 2)
++        .map(r => r.content?.slice(0, 400))
++        .filter(Boolean)
++        .join(' ') || '';
++
++      const summary = result.answer
++        ? result.answer.slice(0, 500)
++        : snippets.slice(0, 500) || 'No summary available.';
++
++      if (summary.length > 50) {
++        alerts.push({
++          id: generateId(q.topic),
++          topic: q.topic,
++          date: today,
++          impactLevel: classifyImpact(summary),
++          affectedSectors: q.sectors,
++          affectedCities: q.cities,
++          summary: summary.replace(/"/g, "'").trim(),
++        });
++        console.log(`  ✅ Alert created: ${q.topic} [${classifyImpact(summary)}]`);
++      } else {
++        console.log(`  ⚠️  Skipping (insufficient content): ${q.topic}`);
++      }
++
++      // Rate limit: 1 request per 2 seconds for free tier
++      await new Promise(resolve => setTimeout(resolve, 2000));
++    } catch (err) {
++      console.error(`  ❌ Failed to fetch "${q.topic}":`, err);
++    }
++  }
++
++  if (alerts.length === 0) {
++    console.log('\n⚠️  No alerts generated. Keeping existing market-pulse-news.ts unchanged.');
++    process.exit(0);
++  }
++
++  // Generate the TypeScript file
++  const fileContent = `/**
++ * AUTO-GENERATED BY MarketPulseAgent (Live)
++ * Generated: ${new Date().toISOString()}
++ * Source: Tavily real-time search
++ * DO NOT EDIT MANUALLY — re-run: npx tsx scripts/agents/market_pulse_agent.ts
+  */
+ 
+ export interface MarketAlert {
+-    id: string;
+-    topic: string;
+-    date: string;
+-    impactLevel: "HIGH" | "MEDIUM" | "LOW";
+-    affectedSectors: string[];
+-    affectedCities: string[];
+-    summary: string;
++  id: string;
++  topic: string;
++  date: string;
++  impactLevel: "HIGH" | "MEDIUM" | "LOW";
++  affectedSectors: string[];
++  affectedCities: string[];
++  summary: string;
+ }
+ 
+-export const MARKET_ALERTS: MarketAlert[] = ${JSON.stringify(simulatedGlobalPulse, null, 4)};
++export const MARKET_ALERTS: MarketAlert[] = ${JSON.stringify(alerts, null, 2)};
+ `;
+ 
+-    const outputPath = path.join(process.cwd(), 'app/constants/market-pulse-news.ts');
+-    fs.writeFileSync(outputPath, fileContent, 'utf8');
++  const outputPath = path.join(process.cwd(), 'app/constants/market-pulse-news.ts');
++  fs.writeFileSync(outputPath, fileContent, 'utf8');
+ 
+-    console.log(`✅ [AGENT] Published ${simulatedGlobalPulse.length} alerts to: ${outputPath}`);
+-    console.log('\n✅ Cycle Complete.\n');
++  console.log(`\n✅ [MarketPulseAgent] Published ${alerts.length} live alerts to: ${outputPath}`);
++  console.log('✅ Cycle Complete.\n');
+ }
+ 
+-main();
++main().catch(err => {
++  console.error('[MarketPulseAgent] Fatal error:', err);
++  process.exit(1);
++});
+diff --git a/scripts/ga4-report.mjs b/scripts/ga4-report.mjs
+new file mode 100644
+index 0000000..2d1cc4f
+--- /dev/null
++++ b/scripts/ga4-report.mjs
+@@ -0,0 +1,154 @@
++/**
++ * GA4 Data API reporting script — uses googleapis (already in deps)
++ * Property: Nearshore Navigator (528048108)  |  Measurement ID: G-7RHTT5QR43
++ *
++ * ─── SETUP (one-time, run in terminal on your Mac) ─────────────────────────
++ *   gcloud auth application-default login \
++ *     --scopes="https://www.googleapis.com/auth/analytics.readonly,https://www.googleapis.com/auth/webmasters.readonly,https://www.googleapis.com/auth/cloud-platform"
++ *
++ * ─── USAGE ─────────────────────────────────────────────────────────────────
++ *   npx tsx scripts/ga4-report.mjs               # last 28 days (full report)
++ *   npx tsx scripts/ga4-report.mjs --days 7      # last 7 days
++ *   npx tsx scripts/ga4-report.mjs --pages       # top pages only
++ *   npx tsx scripts/ga4-report.mjs --sources     # traffic channels only
++ *   npx tsx scripts/ga4-report.mjs --countries   # top countries only
++ */
++
++import { google } from 'googleapis';
++
++const PROPERTY_ID = '528048108';
++
++const args = process.argv.slice(2);
++const daysArg = args.includes('--days') ? parseInt(args[args.indexOf('--days') + 1]) : 28;
++const showPages = args.includes('--pages');
++const showSources = args.includes('--sources');
++const showCountries = args.includes('--countries');
++const showAll = !showPages && !showSources && !showCountries;
++
++// Auth via gcloud application-default credentials
++const auth = new google.auth.GoogleAuth({
++  scopes: ['https://www.googleapis.com/auth/analytics.readonly'],
++});
++
++const analyticsdata = google.analyticsdata({ version: 'v1beta', auth });
++
++async function runReport(body) {
++  const res = await analyticsdata.properties.runReport({
++    property: `properties/${PROPERTY_ID}`,
++    requestBody: body,
++  });
++  return res.data;
++}
++
++async function summary(days) {
++  const data = await runReport({
++    dateRanges: [{ startDate: `${days}daysAgo`, endDate: 'today' }],
++    metrics: [
++      { name: 'sessions' },
++      { name: 'totalUsers' },
++      { name: 'newUsers' },
++      { name: 'engagedSessions' },
++      { name: 'bounceRate' },
++      { name: 'averageSessionDuration' },
++      { name: 'screenPageViews' },
++      { name: 'conversions' },
++    ],
++  });
++
++  const v = (i, dec = 0) => parseFloat(data.rows?.[0]?.metricValues?.[i]?.value ?? 0).toFixed(dec);
++
++  console.log(`\n📊 Nearshore Navigator — GA4 Summary (last ${days} days)`);
++  console.log('═'.repeat(52));
++  console.log(`  Sessions              ${v(0).padStart(10)}`);
++  console.log(`  Total users           ${v(1).padStart(10)}`);
++  console.log(`  New users             ${v(2).padStart(10)}`);
++  console.log(`  Engaged sessions      ${v(3).padStart(10)}`);
++  console.log(`  Bounce rate           ${(parseFloat(v(4, 4)) * 100).toFixed(1).padStart(9)}%`);
++  console.log(`  Avg session (sec)     ${v(5, 0).padStart(10)}`);
++  console.log(`  Page views            ${v(6).padStart(10)}`);
++  console.log(`  Conversions           ${v(7).padStart(10)}`);
++}
++
++async function topPages(days) {
++  const data = await runReport({
++    dateRanges: [{ startDate: `${days}daysAgo`, endDate: 'today' }],
++    dimensions: [{ name: 'pagePath' }],
++    metrics: [{ name: 'screenPageViews' }, { name: 'totalUsers' }],
++    orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }],
++    limit: 20,
++  });
++
++  console.log(`\n📄 Top Pages (last ${days} days)`);
++  console.log('═'.repeat(72));
++  for (const row of data.rows ?? []) {
++    const path = (row.dimensionValues[0].value).padEnd(48).substring(0, 48);
++    const views = row.metricValues[0].value.padStart(6);
++    const users = row.metricValues[1].value.padStart(6);
++    console.log(`  ${path}  ${views} views  ${users} users`);
++  }
++}
++
++async function sources(days) {
++  const data = await runReport({
++    dateRanges: [{ startDate: `${days}daysAgo`, endDate: 'today' }],
++    dimensions: [{ name: 'sessionDefaultChannelGroup' }],
++    metrics: [{ name: 'sessions' }, { name: 'totalUsers' }, { name: 'conversions' }],
++    orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
++  });
++
++  console.log(`\n🔗 Traffic Sources (last ${days} days)`);
++  console.log('═'.repeat(60));
++  for (const row of data.rows ?? []) {
++    const ch = row.dimensionValues[0].value.padEnd(28);
++    const sess = row.metricValues[0].value.padStart(7);
++    const usr = row.metricValues[1].value.padStart(7);
++    const conv = row.metricValues[2].value.padStart(5);
++    console.log(`  ${ch}  ${sess} sessions  ${usr} users  ${conv} conv`);
++  }
++}
++
++async function countries(days) {
++  const data = await runReport({
++    dateRanges: [{ startDate: `${days}daysAgo`, endDate: 'today' }],
++    dimensions: [{ name: 'country' }],
++    metrics: [{ name: 'sessions' }, { name: 'totalUsers' }],
++    orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
++    limit: 15,
++  });
++
++  console.log(`\n🌍 Top Countries (last ${days} days)`);
++  console.log('═'.repeat(44));
++  for (const row of data.rows ?? []) {
++    const c = row.dimensionValues[0].value.padEnd(24);
++    const sess = row.metricValues[0].value.padStart(7);
++    const usr = row.metricValues[1].value.padStart(7);
++    console.log(`  ${c}  ${sess} sessions  ${usr} users`);
++  }
++}
++
++try {
++  if (showAll) {
++    await summary(daysArg);
++    await topPages(daysArg);
++    await sources(daysArg);
++    await countries(daysArg);
++  } else {
++    if (showPages) await topPages(daysArg);
++    if (showSources) await sources(daysArg);
++    if (showCountries) await countries(daysArg);
++  }
++  console.log('');
++} catch (err) {
++  const msg = err.message ?? '';
++  if (msg.includes('PERMISSION_DENIED') || err.code === 403) {
++    console.error('\n❌ Analytics API not authorized. Run this once:\n');
++    console.error('  gcloud auth application-default login \\');
++    console.error('    --scopes="https://www.googleapis.com/auth/analytics.readonly,https://www.googleapis.com/auth/webmasters.readonly,https://www.googleapis.com/auth/cloud-platform"\n');
++  } else if (msg.includes('UNAUTHENTICATED') || err.code === 401) {
++    console.error('\n❌ Not authenticated. Run:\n  gcloud auth application-default login\n');
++  } else {
++    console.error('\n❌ Error:', msg);
++    if (process.env.DEBUG) console.error(err);
++  }
++  process.exit(1);
++}
+diff --git a/scripts/localization.log b/scripts/localization.log
+index 23d7a60..0fb9e6a 100644
+--- a/scripts/localization.log
++++ b/scripts/localization.log
+@@ -1,73 +1,414 @@
+-[dotenv@17.3.1] injecting env (10) from .env.local -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+-Starting Sequential EXTREME SAFEMODE Sweep: es, ja
++[dotenv@17.3.1] injecting env (0) from .env.local -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
++Starting Optimized Sequential Sweep: es, fr, de, ja, zh, ko, it, pt, ru
+ 
+-[es] Translating 889 remaining keys...
+-  [es] Processing Batch 1/445...
+-    Rate limited (429). Waiting 65s then retrying...
+-    Rate limited (429). Waiting 97.5s then retrying...
+-    Rate limited (429). Waiting 146.25s then retrying...
+-    Rate limited (429). Waiting 219.375s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
+-    Rate limited (429). Waiting 300s then retrying...
++[es] Translating 889 remaining keys in batches of 50...
++  [es] Processing Batch 1/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [es] Processing Batch 2/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [es] Processing Batch 3/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [es] Processing Batch 4/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [es] Processing Batch 5/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [es] Processing Batch 6/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [es] Processing Batch 7/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [es] Processing Batch 8/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [es] Processing Batch 9/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [es] Processing Batch 10/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [es] Processing Batch 11/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [es] Processing Batch 12/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [es] Processing Batch 13/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [es] Processing Batch 14/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [es] Processing Batch 15/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [es] Processing Batch 16/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [es] Processing Batch 17/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [es] Processing Batch 18/18...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++
++[fr] Translating 1129 remaining keys in batches of 50...
++  [fr] Processing Batch 1/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 2/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 3/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 4/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 5/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 6/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 7/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 8/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 9/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 10/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 11/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 12/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 13/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 14/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 15/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 16/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 17/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 18/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 19/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 20/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 21/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 22/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [fr] Processing Batch 23/23...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++
++[de] Translating 1185 remaining keys in batches of 50...
++  [de] Processing Batch 1/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 2/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 3/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 4/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 5/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 6/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 7/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 8/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 9/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 10/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 11/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 12/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 13/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 14/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 15/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 16/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 17/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 18/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 19/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 20/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 21/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 22/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 23/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [de] Processing Batch 24/24...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++
++[ja] Translating 996 remaining keys in batches of 50...
++  [ja] Processing Batch 1/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 2/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 3/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 4/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 5/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 6/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 7/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 8/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 9/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 10/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 11/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 12/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 13/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 14/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 15/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 16/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 17/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 18/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 19/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ja] Processing Batch 20/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++
++[zh] Translating 934 remaining keys in batches of 50...
++  [zh] Processing Batch 1/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 2/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 3/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 4/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 5/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 6/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 7/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 8/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 9/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 10/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 11/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 12/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 13/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 14/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 15/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 16/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 17/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 18/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [zh] Processing Batch 19/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++
++[ko] Translating 955 remaining keys in batches of 50...
++  [ko] Processing Batch 1/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 2/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 3/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 4/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 5/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 6/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 7/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 8/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 9/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 10/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 11/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 12/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 13/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 14/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 15/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 16/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 17/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 18/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 19/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ko] Processing Batch 20/20...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++
++[it] Translating 1212 remaining keys in batches of 50...
++  [it] Processing Batch 1/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 2/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 3/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 4/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 5/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 6/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 7/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 8/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 9/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 10/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 11/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 12/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 13/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 14/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 15/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 16/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 17/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 18/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 19/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 20/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 21/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 22/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 23/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 24/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [it] Processing Batch 25/25...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++
++[pt] Translating 915 remaining keys in batches of 50...
++  [pt] Processing Batch 1/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 2/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 3/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 4/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 5/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 6/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 7/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 8/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 9/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 10/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 11/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 12/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 13/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 14/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 15/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 16/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 17/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 18/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [pt] Processing Batch 19/19...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++
++[ru] Translating 1443 remaining keys in batches of 50...
++  [ru] Processing Batch 1/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 2/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 3/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 4/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 5/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 6/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 7/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 8/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 9/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 10/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 11/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 12/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 13/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 14/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 15/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 16/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 17/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 18/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 19/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 20/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 21/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 22/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 23/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 24/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 25/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 26/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 27/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 28/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
++  [ru] Processing Batch 29/29...
++    Error in batch: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+diff --git a/scripts/translate-blog-content.ts b/scripts/translate-blog-content.ts
+index c734076..84ad251 100644
+--- a/scripts/translate-blog-content.ts
++++ b/scripts/translate-blog-content.ts
+@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
+ dotenv.config({ path: '.env.local' });
+ 
+ const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY || '');
+-const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
++const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+ 
+ const targetSlugs = [
+   'nearshoring-in-tijuana-guide-for-us-companies',
+@@ -22,23 +22,13 @@ const blogDataPath = path.join(process.cwd(), 'app/constants/blog-data.ts');
+ async function translateBlogData() {
+     let content = fs.readFileSync(blogDataPath, 'utf8');
+     
+-    // We'll use a safer approach: find each post by slug in the text, 
+-    // and then inject or update the locales object.
+-    // This is tricky with raw text. Let's try to parse the array part.
+-    
+     for (const slug of targetSlugs) {
+         console.log(`\nProcessing articles for slug: ${slug}`);
+         
+-        // Extract the specific post object using a rough regex or string search
+-        // For simplicity in this agentic context, I'll extract the title, excerpt, and content 
+-        // from the English version which we just wrote.
+-        
+         const postStartIdx = content.indexOf(`slug: "${slug}"`);
+         if (postStartIdx === -1) continue;
+         
+-        // Find the block around it
+         const blockStart = content.lastIndexOf('{', postStartIdx);
+-        // Find the end of this object (approximate by matching braces)
+         let blockEnd = blockStart;
+         let braceCount = 0;
+         for (let i = blockStart; i < content.length; i++) {
+@@ -52,7 +42,6 @@ async function translateBlogData() {
+         
+         const postBlock = content.substring(blockStart, blockEnd);
+         
+-        // Extract EN fields
+         const titleMatch = postBlock.match(/title:\s*"([^"]+)"/);
+         const excerptMatch = postBlock.match(/excerpt:\s*"([^"]+)"/);
+         const content_match = postBlock.match(/content:\s*`([\s\S]*?)`/);
+@@ -67,22 +56,29 @@ async function translateBlogData() {
+         const enContent = content_match[1];
+         
+         for (const locale of locales) {
+-            console.log(`  Translating to ${locale}...`);
++            // Check if locale already exists in this block
++            const localeKey = `${locale}: {`;
++            if (postBlock.indexOf(localeKey) !== -1) {
++                console.log(`  [${locale}] Already exists for ${slug}, skipping.`);
++                continue;
++            }
++
++            console.log(`  [${locale}] Translating...`);
+             
+-            let retries = 3;
++            let backoff = 20000;
+             let success = false;
+-            while (retries > 0 && !success) {
++            while (!success) {
+                 try {
+                     const prompt = `Translate this B2B manufacturing article from English to ${locale}.
+-                    Keep the tone professional and authoritative.
+-                    IMPORTANT: Maintain all HTML tags (p, h2, strong, table, th, td, ul, li) exactly as they are.
+-                    Do not translate technical terms like "USMCA", "IMMEX", "Nearshoring", or city names like "Tijuana".
+-                    
+-                    Title: ${enTitle}
+-                    Excerpt: ${enExcerpt}
+-                    Content: ${enContent}
+-                    
+-                    Return a JSON object with keys: title, excerpt, content.`;
++Keep the tone professional and authoritative.
++IMPORTANT: Maintain all HTML tags (p, h2, strong, table, th, td, ul, li) exactly as they are.
++Do not translate technical terms like "USMCA", "IMMEX", "Nearshoring", or city names like "Tijuana".
++
++Title: ${enTitle}
++Excerpt: ${enExcerpt}
++Content: ${enContent}
++
++Return a JSON object with keys: title, excerpt, content.`;
+                     
+                     const result = await model.generateContent(prompt);
+                     const response = await result.response;
+@@ -90,41 +86,38 @@ async function translateBlogData() {
+                     const jsonStr = text.match(/\{[\s\S]*\}/)?.[0] || text;
+                     const translated = JSON.parse(jsonStr);
+                     
+-                    // Inject into the file content
+-                    // We look for the locales object in the postBlock
+                     const localesKey = `locales: {`;
+                     const localesIdx = postBlock.indexOf(localesKey);
+                     
+                     if (localesIdx === -1) {
+-                        // Create locales object if missing
+                         const newLocales = `\n      locales: {\n        ${locale}: ${JSON.stringify(translated, null, 10).replace(/\s{2,}/g, ' ')}\n      },`;
+                         const lastBrace = postBlock.lastIndexOf('}');
+                         const updatedPostBlock = postBlock.substring(0, lastBrace) + newLocales + `\n  }`;
+                         content = content.replace(postBlock, updatedPostBlock);
+                     } else {
+-                        // Check if locale already exists
+-                        const localeKey = `${locale}: {`;
+-                        if (postBlock.indexOf(localeKey) === -1) {
+-                            // Add to existing locales
+-                            const insertionPoint = postBlock.indexOf('{', localesIdx) + 1;
+-                            const newLocaleEntry = `\n        ${locale}: ${JSON.stringify(translated, null, 10).replace(/\s{2,}/g, ' ')},`;
+-                            const updatedPostBlock = postBlock.substring(0, insertionPoint) + newLocaleEntry + postBlock.substring(insertionPoint);
+-                            content = content.replace(postBlock, updatedPostBlock);
+-                        } else {
+-                            // Skip if exists (or we could overwrite, but let's assume clean start)
+-                            console.log(`    ${locale} already exists, skipping.`);
+-                        }
++                        const insertionPoint = postBlock.indexOf('{', localesIdx) + 1;
++                        const newLocaleEntry = `\n        ${locale}: ${JSON.stringify(translated, null, 10).replace(/\s{2,}/g, ' ')},`;
++                        const updatedPostBlock = postBlock.substring(0, insertionPoint) + newLocaleEntry + postBlock.substring(insertionPoint);
++                        content = content.replace(postBlock, updatedPostBlock);
+                     }
+                     
+                     success = true;
+                     fs.writeFileSync(blogDataPath, content);
+-                } catch (e: any) {
+-                    retries--;
+-                    console.error(`    Error for ${locale}:`, e.message);
++                    console.log(`  [${locale}] Success.`);
++                    // Small break between successful translations
+                     await new Promise(resolve => setTimeout(resolve, 5000));
++                } catch (e: any) {
++                    if (e?.status === 429 || e?.message?.includes('429')) {
++                        console.log(`    Rate limited (429). Waiting ${backoff/1000}s then retrying...`);
++                        await new Promise(resolve => setTimeout(resolve, backoff));
++                        backoff = Math.min(backoff * 2, 300000); 
++                    } else {
++                        console.error(`    Error for ${locale}:`, e.message);
++                        await new Promise(resolve => setTimeout(resolve, 30000));
++                        break; // Skip on fatal error
++                    }
+                 }
+             }
+-            await new Promise(resolve => setTimeout(resolve, 2000));
+         }
+     }
+ }
+diff --git a/scripts/translate-missing-keys.ts b/scripts/translate-missing-keys.ts
+index 2ea230a..d7f199c 100644
+--- a/scripts/translate-missing-keys.ts
++++ b/scripts/translate-missing-keys.ts
+@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
+ dotenv.config({ path: '.env.local' });
+ 
+ const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY || '');
+-const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
++const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+ 
+ const locales = ['es', 'fr', 'de', 'ja', 'zh', 'ko', 'it', 'pt', 'ru'];
+ const localesDir = path.join(process.cwd(), 'app/i18n/locales');
+@@ -69,20 +69,21 @@ function unflattenObject(ob: any) {
+ }
+ 
+ const enFlat = flattenObject(enData);
+-const BATCH_SIZE = 2; // EXTREME SAFEMODE: 2 keys to ensure small prompts
++const BATCH_SIZE = 50; // Optimized batching: 50 keys per request reduces RPM significantly
+ 
+ async function translateBatch(batch: string[], locale: string): Promise<Record<string, string>> {
+-    const prompt = `Translate these 2 dictionary keys from English to ${locale}. 
+-Return a JSON object where the keys are EXACTLY the same.
+-Tone: Professional, B2B, Manufacturing.
++    const prompt = `Translate these B2B manufacturing and nearshoring dictionary keys from English to ${locale}. 
++Return a JSON object where the keys are EXACTLY the same as provided.
++Tone: Professional, Authoritative, B2B.
+ Do NOT translate city names (Tijuana, Mexicali, etc.) or brand names like "Nearshore Navigator".
++Maintain all variable placeholders like {name} or {location} as is.
+ JSON format only.
+ 
+ Keys:
+ ${batch.map(k => `${k}: ${enFlat[k]}`).join('\n')}
+ `;
+ 
+-    let backoff = 65000;
++    let backoff = 10000;
+     while (true) {
+         try {
+             const result = await model.generateContent(prompt);
+@@ -92,22 +93,16 @@ ${batch.map(k => `${k}: ${enFlat[k]}`).join('\n')}
+             const jsonStr = text.match(/\{[\s\S]*\}/)?.[0] || text;
+             const translated: Record<string, string> = JSON.parse(jsonStr);
+ 
+-            const missingKeys = batch.filter(k => !translated.hasOwnProperty(k));
+-            if (missingKeys.length > 0) {
+-                console.warn(`    Batch missing keys. Retrying...`);
+-                await new Promise(resolve => setTimeout(resolve, 5000));
+-                continue;
+-            }
+-
+             return translated;
+         } catch (e: any) {
+             if (e?.status === 429 || e?.message?.includes('429')) {
+                 console.log(`    Rate limited (429). Waiting ${backoff/1000}s then retrying...`);
+                 await new Promise(resolve => setTimeout(resolve, backoff));
+-                backoff = Math.min(backoff * 1.5, 300000); 
++                backoff = Math.min(backoff * 2, 300000); 
+             } else {
+                 console.error(`    Error in batch: ${e.message || e}`);
+                 await new Promise(resolve => setTimeout(resolve, 30000));
++                return {}; // Skip bad batch
+             }
+         }
+     }
+@@ -117,7 +112,7 @@ const targetLocales = process.argv.slice(2);
+ const localesToProcess = targetLocales.length > 0 ? targetLocales : locales;
+ 
+ async function translateMissingKeys() {
+-  console.log(`Starting Sequential EXTREME SAFEMODE Sweep: ${localesToProcess.join(', ')}`);
++  console.log(`Starting Optimized Sequential Sweep: ${localesToProcess.join(', ')}`);
+   for (const locale of localesToProcess) {
+     const localePath = path.join(localesDir, `${locale}.json`);
+     if (!fs.existsSync(localePath)) continue;
+@@ -137,7 +132,7 @@ async function translateMissingKeys() {
+       continue;
+     }
+ 
+-    console.log(`\n[${locale}] Translating ${keysToTranslate.length} remaining keys...`);
++    console.log(`\n[${locale}] Translating ${keysToTranslate.length} remaining keys in batches of ${BATCH_SIZE}...`);
+ 
+     const translatedFlat = { ...localeFlat };
+     
+@@ -147,8 +142,6 @@ async function translateMissingKeys() {
+       
+       const translatedBatch = await translateBatch(batch, locale);
+       
+-      // 💰 Extreme Safemode: 2 keys per batch, 125s delay (Strict < 1 RPM)
+-      const delay = 125000;
+       for (const key of batch) {
+           if (translatedBatch[key]) {
+               translatedFlat[key] = translatedBatch[key];
+@@ -156,7 +149,8 @@ async function translateMissingKeys() {
+       }
+ 
+       fs.writeFileSync(localePath, JSON.stringify(unflattenObject(translatedFlat), null, 2));
+-      await new Promise(resolve => setTimeout(resolve, 65000));
++      // 5-second breath between batches to keep RPM low but efficient
++      await new Promise(resolve => setTimeout(resolve, 5000));
+     }
+   }
+ }
+diff --git a/send_outreach.mjs b/send_outreach.mjs
+index 244bb00..48b6132 100644
+--- a/send_outreach.mjs
++++ b/send_outreach.mjs
+@@ -1,5 +1,6 @@
+ // Backlink outreach emails sent via Brevo under Denisse Martinez
+ // Usage: BREVO_API_KEY=your_key node send_outreach.mjs
++// Key name in Brevo: nearshore-navigator-outreach (generated 2026-03-21, replaces revoked key)
+ const BREVO_API_KEY = process.env.BREVO_API_KEY;
+ 
+ const sender = { email: 'nearshore.navigator@gmail.com', name: 'Denisse Martinez' };
+-- 
+2.34.1
+

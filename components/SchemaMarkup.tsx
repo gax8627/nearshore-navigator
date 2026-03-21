@@ -1,4 +1,11 @@
+'use client';
+import { usePathname } from 'next/navigation';
+
 export default function SchemaMarkup() {
+    const pathname = usePathname();
+    // Only emit FAQPage schema on the homepage (/ or /[lang]) to avoid
+    // "Duplicate field FAQPage" GSC errors on city/service pages that have their own FAQ schema.
+    const isHomepage = /^\/[a-z]{2}(\/)?$/.test(pathname) || pathname === '/';
     const organizationSchema = {
         "@context": "https://schema.org",
         "@type": "Organization",
@@ -285,10 +292,12 @@ export default function SchemaMarkup() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
             />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqSchema) }}
-            />
+            {isHomepage && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqSchema) }}
+                />
+            )}
         </>
     );
 }

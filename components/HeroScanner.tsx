@@ -118,7 +118,7 @@ export const HeroScanner = ({ src, alt, active = true }: HeroScannerProps) => {
                     initial={{ opacity: 0, scale: 0, x: -20 }}
                     animate={{ opacity: 1, scale: 1, x: 0 }}
                     exit={{ opacity: 0 }}
-                    className="absolute"
+                    className="absolute hidden md:block"
                     style={{ top: node.top, left: node.left }}
                 >
                     <div className="relative">

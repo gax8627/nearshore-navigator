@@ -14,6 +14,7 @@ export default function WhatsAppButton() {
             target="_blank"
             rel="noopener noreferrer"
             className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#1fa851] transition-colors flex items-center justify-center group"
+        title="Chat with us on WhatsApp"
             initial={{ scale: 0, rotate: 180 }}
             animate={{ scale: 1, rotate: 0 }}
             whileHover={{ scale: 1.1 }}

@@ -1,5 +1,7 @@
 // Backlink outreach emails sent via Brevo under Denisse Martinez
-const BREVO_API_KEY = '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';
+// Usage: BREVO_API_KEY=your_key node send_outreach.mjs
+// Key name in Brevo: nearshore-navigator-outreach (generated 2026-03-21, replaces revoked key)
+const BREVO_API_KEY = process.env.BREVO_API_KEY;
 
 const sender = { email: 'nearshore.navigator@gmail.com', name: 'Denisse Martinez' };
 const replyTo = { email: 'denisse@nearshorenavigator.com', name: 'Denisse Martinez' };

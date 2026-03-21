@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 dotenv.config({ path: '.env.local' });
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY || '');
-const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
 const locales = ['es', 'fr', 'de', 'ja', 'zh', 'ko', 'it', 'pt', 'ru'];
 const localesDir = path.join(process.cwd(), 'app/i18n/locales');
@@ -69,20 +69,21 @@ function unflattenObject(ob: any) {
 }
 
 const enFlat = flattenObject(enData);
-const BATCH_SIZE = 2; // EXTREME SAFEMODE: 2 keys to ensure small prompts
+const BATCH_SIZE = 50; // Optimized batching: 50 keys per request reduces RPM significantly
 
 async function translateBatch(batch: string[], locale: string): Promise<Record<string, string>> {
-    const prompt = `Translate these 2 dictionary keys from English to ${locale}. 
-Return a JSON object where the keys are EXACTLY the same.
-Tone: Professional, B2B, Manufacturing.
+    const prompt = `Translate these B2B manufacturing and nearshoring dictionary keys from English to ${locale}. 
+Return a JSON object where the keys are EXACTLY the same as provided.
+Tone: Professional, Authoritative, B2B.
 Do NOT translate city names (Tijuana, Mexicali, etc.) or brand names like "Nearshore Navigator".
+Maintain all variable placeholders like {name} or {location} as is.
 JSON format only.
 
 Keys:
 ${batch.map(k => `${k}: ${enFlat[k]}`).join('\n')}
 `;
 
-    let backoff = 65000;
+    let backoff = 10000;
     while (true) {
         try {
             const result = await model.generateContent(prompt);
@@ -92,22 +93,16 @@ ${batch.map(k => `${k}: ${enFlat[k]}`).join('\n')}
             const jsonStr = text.match(/\{[\s\S]*\}/)?.[0] || text;
             const translated: Record<string, string> = JSON.parse(jsonStr);
 
-            const missingKeys = batch.filter(k => !translated.hasOwnProperty(k));
-            if (missingKeys.length > 0) {
-                console.warn(`    Batch missing keys. Retrying...`);
-                await new Promise(resolve => setTimeout(resolve, 5000));
-                continue;
-            }
-
             return translated;
         } catch (e: any) {
             if (e?.status === 429 || e?.message?.includes('429')) {
                 console.log(`    Rate limited (429). Waiting ${backoff/1000}s then retrying...`);
                 await new Promise(resolve => setTimeout(resolve, backoff));
-                backoff = Math.min(backoff * 1.5, 300000); 
+                backoff = Math.min(backoff * 2, 300000); 
             } else {
                 console.error(`    Error in batch: ${e.message || e}`);
                 await new Promise(resolve => setTimeout(resolve, 30000));
+                return {}; // Skip bad batch
             }
         }
     }
@@ -117,7 +112,7 @@ const targetLocales = process.argv.slice(2);
 const localesToProcess = targetLocales.length > 0 ? targetLocales : locales;
 
 async function translateMissingKeys() {
-  console.log(`Starting Sequential EXTREME SAFEMODE Sweep: ${localesToProcess.join(', ')}`);
+  console.log(`Starting Optimized Sequential Sweep: ${localesToProcess.join(', ')}`);
   for (const locale of localesToProcess) {
     const localePath = path.join(localesDir, `${locale}.json`);
     if (!fs.existsSync(localePath)) continue;
@@ -137,7 +132,7 @@ async function translateMissingKeys() {
       continue;
     }
 
-    console.log(`\n[${locale}] Translating ${keysToTranslate.length} remaining keys...`);
+    console.log(`\n[${locale}] Translating ${keysToTranslate.length} remaining keys in batches of ${BATCH_SIZE}...`);
 
     const translatedFlat = { ...localeFlat };
     
@@ -147,8 +142,6 @@ async function translateMissingKeys() {
       
       const translatedBatch = await translateBatch(batch, locale);
       
-      // 💰 Extreme Safemode: 2 keys per batch, 125s delay (Strict < 1 RPM)
-      const delay = 125000;
       for (const key of batch) {
           if (translatedBatch[key]) {
               translatedFlat[key] = translatedBatch[key];
@@ -156,7 +149,8 @@ async function translateMissingKeys() {
       }
 
       fs.writeFileSync(localePath, JSON.stringify(unflattenObject(translatedFlat), null, 2));
-      await new Promise(resolve => setTimeout(resolve, 65000));
+      // 5-second breath between batches to keep RPM low but efficient
+      await new Promise(resolve => setTimeout(resolve, 5000));
     }
   }
 }

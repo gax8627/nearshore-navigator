@@ -15,43 +15,49 @@ interface QConfig {
 }
 
 const QUESTION_CONFIG: Record<string, QConfig> = {
-    // Section 1
+    // Section 1: Operational Blueprint
     q1: { type: 'mcq', options: ['< 5,000 sqft', '5k - 20k sqft', '20k - 50k sqft', '50k+ sqft'] },
-    q2: { type: 'mcq', options: ['Electronics', 'Medical Devices', 'Aerospace', 'Apparel / Textiles', 'Consumer Goods', 'Other'] },
+    q2: { type: 'mcq', options: ['Electronics', 'Medical Devices', 'Aerospace', 'Apparel / Textiles', 'Consumer Goods', 'Automotive', 'Other'] },
     q3: { type: 'mcq', options: ['Standard Pallets', 'Bulk', 'Bags', 'Parcels / Packages', 'Other'] },
     q4: { type: 'text' },
     q5: { type: 'text' },
-    // Section 2
-    q6: { type: 'text' },
+    // Section 2: Labor & Logistics
+    q6: { type: 'mcq', options: ['1-10', '10-50', '50-100', '100+'] },
     q7: { type: 'yesno' },
     q8: { type: 'mcq', options: ['1 Level (No Stacking)', '2 Levels', '3+ Levels'] },
     q9: { type: 'mcq', options: ['< 100', '100 - 500', '500 - 1000', '1000+'] },
     q10: { type: 'mcq', options: ['1-5', '5-20', '20-50', '50+'] },
-    q11: { type: 'mcq', options: ['Virtual Transfers', 'Home Extension (Import/Export)', 'Both'] },
+    q11: { type: 'mcq', options: ['Virtual Transfers', 'Pedimentos', 'Both'] },
     q12: { type: 'text' },
-    // Section 3
-    q13: { type: 'mcq', options: ['EDI', 'API', 'Email / CSV', 'Other'] },
-    q14: { type: 'mcq', options: ['SAP', 'Oracle', 'NetSuite', 'Shopify', 'Custom / Other'] },
+    // Section 3: Integration & Systems
+    q13: { type: 'mcq', options: ['EDI', 'API', 'Email / CSV', 'Manual'] },
+    q14: { type: 'mcq', options: ['SAP', 'Oracle', 'NetSuite', 'Shopify', 'Microsoft Dynamics', 'Custom / Other'] },
     q15: { type: 'mcq', options: ['Real-time', 'Hourly', 'Daily', 'Weekly'] },
     q16: { type: 'mcq', options: ['AS2', 'FTP / SFTP', 'API / HTTPS', 'Email'] },
     q17: { type: 'mcq', options: ['EDI ANSI X12', 'CSV / Flat File', 'XML / JSON', 'Other'] },
     q18: { type: 'text' },
-    // Section 4
-    q19: { type: 'mcq', options: ['1-10', '10-50', '50-100', '100+'] },
-    q20: { type: 'mcq', options: ['< 100', '100 - 500', '500 - 1000', '1000+'] },
-    q21: { type: 'mcq', options: ['1-5', '5-10', '10-20', '20+'] },
-    q22: { type: 'text' },
-    q23: { type: 'mcq', options: ['< 100', '100 - 500', '500 - 1000', '1000+'] },
-    // Section 5
+    // Section 4: Production Velocity
+    q19: { type: 'mcq', options: ['1 Shift', '2 Shifts', '3 Shifts (24/7)'] },
+    q20: { type: 'mcq', options: ['< 1,000', '1,000 - 5,000', '5,000 - 20,000', '20,000+'] },
+    q21: { type: 'mcq', options: ['Q1 (Jan-Mar)', 'Q2 (Apr-Jun)', 'Q3 (Jul-Sep)', 'Q4 (Oct-Dec)', 'None'] },
+    q22: { type: 'mcq', options: ['Light Assembly', 'Moderate Complexity', 'Heavy Machining', 'Technical / Design-intensive'] },
+    q23: { type: 'mcq', options: ['< 10%', '10-25%', '25-50%', '50%+'] },
+    // Section 5: Compliance & Security
     q24: { type: 'yesno' },
+    q25: { type: 'text' }, 
+    q26: { type: 'mcq', options: ['ISO 9001', 'ISO 13485 (Medical)', 'AS9100 (Aero)', 'IATF 16949 (Auto)', 'Other / None'] }, 
+    q27: { type: 'mcq', options: ['Level 1 (Standard)', 'Level 2 (High-Sec)', 'Level 3 (Max - Defense Grade)'] }, 
     q28: { type: 'yesno' },
-    q25: { type: 'text' }, q26: { type: 'text' }, q27: { type: 'text' }, q29: { type: 'text' }, q30: { type: 'text' }, q31: { type: 'text' },
-    // Section 6
+    q29: { type: 'text' }, 
+    q30: { type: 'text' }, 
+    q31: { type: 'text' },
+    // Section 6: Financial Scoping
     q32: { type: 'mcq', options: ['< $100k', '$100k - $500k', '$500k - $1M', '$1M+'] },
-    q33: { type: 'mcq', options: ['Yes', 'No', 'Need Quote'] },
-    q34: { type: 'mcq', options: ['Month-to-Month', '1 Year', '3 Years', '5+ Years'] },
-    q35: { type: 'mcq', options: ['Yes (Need Quote)', 'No (Have my own)'] },
-    q36: { type: 'text' },
+    q33: { type: 'mcq', options: ['< $500k', '$500k - $2M', '$2M - $5M', '$5M+'] },
+    q34: { type: 'mcq', options: ['Month-to-Month', '1-2 Years', '3-5 Years', '5+ Years'] },
+    q35: { type: 'mcq', options: ['Shelter Service', 'Standalone / Direct', 'Contract Manufacturing', 'Undecided'] },
+    q36: { type: 'mcq', options: ['Immediate (< 30 days)', '90 Days', '6 Months', '1 Year+'] },
+    q37: { type: 'text' },
 };
 
 export default function QuestionnaireClient() {
@@ -365,7 +371,7 @@ function getQuestionsForStep(step: number): string[] {
         case 3: return ['q13', 'q14', 'q15', 'q16', 'q17', 'q18']; 
         case 4: return ['q19', 'q20', 'q21', 'q22', 'q23']; 
         case 5: return ['q24', 'q25', 'q26', 'q27', 'q28', 'q29', 'q30', 'q31']; 
-        case 6: return ['q32', 'q33', 'q34', 'q35', 'q36']; 
+        case 6: return ['q32', 'q33', 'q34', 'q35', 'q36', 'q37']; 
         default: return [];
     }
 }

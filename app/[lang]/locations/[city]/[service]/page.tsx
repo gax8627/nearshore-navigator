@@ -82,52 +82,9 @@ export default async function ServiceLocationPage({ params }: Props) {
 
   const localizedData = await getLocalizedSeoContent(lang, city, serviceParam);
 
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": `What are the benefits of ${service.title.toLowerCase()} in ${location.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Manufacturers in ${location.name} benefit from 40-60% labor savings, strict IP protection, and proximity to the US supply chain. We provide trusted operators.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `How fast can we start ${service.title.toLowerCase()} operations in ${location.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `With our verified network of partners in ${location.name}, ${location.state}, initial pilot production can often begin within 60 to 90 days.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `Are facilities in ${location.name} certified for US exports?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Yes, our verified partners in ${location.name} maintain ISO 9001, AS9100, and ISO 13485 certifications depending on your industry requirements.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `Why choose a broker for ${location.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `An objective broker evaluates the entire ${location.name} market to find the best-fit partner for your volume and quality requirements without conflict of interest.`
-        }
-      }
-    ]
-  };
-
+  // FAQ schema is handled exclusively by ServiceLocationClient (dynamic, city+service-specific).
+  // Removed duplicate generic FAQPage here to fix "Duplicate field FAQPage" GSC rich-result error.
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
-      <ServiceLocationClient city={city} serviceId={serviceParam} localizedData={localizedData} />
-    </>
+    <ServiceLocationClient city={city} serviceId={serviceParam} localizedData={localizedData} />
   );
 }

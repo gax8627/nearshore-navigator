@@ -12,12 +12,12 @@ const nextConfig = {
         return [
             {
                 source: '/discovery',
-                destination: 'https://calendly.com/denisse-nearshorenavigator/30min?month=2026-03',
+                destination: 'https://calendly.com/denisse-nearshorenavigator/30min',
                 permanent: false,
             },
             {
                 source: '/:lang/discovery',
-                destination: 'https://calendly.com/denisse-nearshorenavigator/30min?month=2026-03',
+                destination: 'https://calendly.com/denisse-nearshorenavigator/30min',
                 permanent: false,
             },
             {

@@ -1,5 +1,5 @@
 {
-  "name": "cryo-blazar",
+  "name": "nearshore-navigator",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -22,7 +22,6 @@
     "clsx": "^2.1.1",
     "csv-parse": "^6.1.0",
     "csv-stringify": "^6.6.0",
-    "docx": "^9.5.1",
     "dotenv": "^17.3.1",
     "drizzle-orm": "^0.45.1",
     "framer-motion": "^12.34.2",
@@ -49,6 +48,7 @@
     "postcss": "^8",
     "puppeteer": "^24.36.1",
     "tailwindcss": "^3.4.1",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }
