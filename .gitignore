@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Google ADC credentials (local only, never commit)
+.gcloud-adc.json
+
 # dependencies
 /node_modules
 /.pnp
