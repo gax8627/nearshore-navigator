@@ -73,7 +73,7 @@ async function getMetrics() {
       
       if (recentClicks.length > 0) {
           console.log('\n  Today\'s Clicks (Live Updates):');
-          recentClicks.forEach(c => console.log(`   - ${c.email}: ${c.subject}`));
+          recentClicks.forEach((c: any) => console.log(`   - ${c.email}: ${c.subject}`));
       }
     }
   } catch (error: any) {
