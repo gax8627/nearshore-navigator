@@ -55,3 +55,4 @@ Thumbs.db
 .gemini/
 .env*
 ! .env.example
+yes/

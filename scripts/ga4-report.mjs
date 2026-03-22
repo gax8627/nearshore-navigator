@@ -15,7 +15,11 @@
  */
 
 import { google } from 'googleapis';
+import { readFileSync, existsSync } from 'fs';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROPERTY_ID = '528048108';
 
 const args = process.argv.slice(2);
@@ -25,10 +29,20 @@ const showSources = args.includes('--sources');
 const showCountries = args.includes('--countries');
 const showAll = !showPages && !showSources && !showCountries;
 
-// Auth via gcloud application-default credentials
-const auth = new google.auth.GoogleAuth({
-  scopes: ['https://www.googleapis.com/auth/analytics.readonly'],
-});
+// Auth — uses local .gcloud-adc.json if present (for Cowork), otherwise falls back to ADC
+const localCreds = resolve(__dirname, '../.gcloud-adc.json');
+let auth;
+if (existsSync(localCreds)) {
+  const keyFile = JSON.parse(readFileSync(localCreds, 'utf8'));
+  auth = new google.auth.GoogleAuth({
+    credentials: keyFile,
+    scopes: ['https://www.googleapis.com/auth/analytics.readonly'],
+  });
+} else {
+  auth = new google.auth.GoogleAuth({
+    scopes: ['https://www.googleapis.com/auth/analytics.readonly'],
+  });
+}
 
 const analyticsdata = google.analyticsdata({ version: 'v1beta', auth });
 
