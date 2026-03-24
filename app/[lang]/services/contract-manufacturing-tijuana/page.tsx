@@ -2,13 +2,12 @@ import ContractClient from "./ContractClient";
 import { Metadata } from 'next';
 import { getDictionary } from '@/app/i18n/get-dictionary';
 
-const NOINDEX_LOCALES = new Set(['fr', 'de', 'it', 'pt', 'ru']);
+import { NOINDEX_LOCALES } from "@/app/constants/seo-config";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await props.params;
   const dict = await getDictionary(lang as any);
 
-  // EN-specific optimized title targeting the highest-volume Tijuana queries
   const title = lang === 'en'
     ? 'Contract Manufacturing in Tijuana Mexico | ISO Certified, $7.84/hr | 2026 Guide'
     : `${dict.contractPage.heroTitle} ${dict.contractPage.heroTitleHighlight} | Nearshore Navigator`;
@@ -42,4 +41,4 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
 
 export default function ContractManufacturingPage() {
   return <ContractClient />;
-}
+                                       }
