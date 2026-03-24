@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import RealEstateClient from './RealEstateClient';
 import { getDictionary } from '@/app/i18n/get-dictionary';
 
-const NOINDEX_LOCALES_RE = new Set(['fr', 'de', 'it', 'pt', 'ru']);
+import { NOINDEX_LOCALES } from "@/app/constants/seo-config";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await props.params;
@@ -19,7 +19,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   return {
     title,
     description,
-    robots: NOINDEX_LOCALES_RE.has(lang) ? { index: false, follow: true } : undefined,
+    robots: NOINDEX_LOCALES.has(lang) ? { index: false, follow: true } : undefined,
     openGraph: {
       title: 'Industrial Real Estate in Baja California | Nearshore Navigator',
       description: 'Class A industrial parks, build-to-suit, and warehouse leasing in Tijuana and Baja California, Mexico.',
