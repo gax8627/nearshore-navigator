@@ -26,12 +26,14 @@ export async function generateStaticParams() {
 
 import { getDictionary } from "@/app/i18n/get-dictionary";
 
+import { NOINDEX_LOCALES } from "@/app/constants/seo-config";
+
 export async function generateMetadata({ params }: Props) {
   const { lang, city, industry } = await params;
   const location = getLocation(city);
   const vertical = INDUSTRY_VERTICALS.find(v => v.slug === industry);
   const dict = await getDictionary(lang);
-  
+
   if (!location || !vertical || !dict) return {};
 
   const industryName = dict.industries?.[industry]?.name || "Manufacturing Industry";
@@ -40,6 +42,7 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${industryName} in ${location.name}, Mexico | 2026 Industrial Guide`,
     description: `Expert guide to ${industryName} manufacturing in ${location.name}. Scale your production with ${location.name}'s specialized workforce and AS9100/FDA-compliant infrastructure.`,
+    robots: NOINDEX_LOCALES.has(lang) ? { index: false, follow: true } : undefined,
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -70,4 +73,4 @@ export default async function IndustryVerticalPage({ params }: Props) {
   }
 
   return <IndustryVerticalClient city={city} industry={industry} />;
-}
+    }
