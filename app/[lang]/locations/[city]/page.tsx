@@ -10,11 +10,7 @@ type Props = {
 };
 
 import { getDictionary } from "@/app/i18n/get-dictionary";
-
-// Locales whose machine-translated content is too similar to /en/ and cannibalizes
-// English rankings in Google. We noindex these to consolidate authority to /en/.
-// Genuine non-English demand locales (zh, ko, ja, es) remain fully indexed.
-const NOINDEX_LOCALES = new Set(['fr', 'de', 'it', 'pt', 'ru']);
+import { NOINDEX_LOCALES } from "@/app/constants/seo-config";
 
 export async function generateMetadata({ params }: Props) {
   const { lang, city } = await params;
@@ -63,4 +59,4 @@ export default async function CityPage({ params }: Props) {
   }
 
   return <CityOverviewClient city={city} />;
-}
+  }
