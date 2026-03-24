@@ -11,9 +11,7 @@ type Props = {
   }>;
 };
 
-// Locales whose machine-translated content cannibalizes /en/ rankings.
-// Genuine non-English demand locales (zh, ko, ja, es) remain fully indexed.
-const NOINDEX_LOCALES = new Set(['fr', 'de', 'it', 'pt', 'ru']);
+import { NOINDEX_LOCALES } from "@/app/constants/seo-config";
 
 export async function generateMetadata({ params }: Props) {
   const { lang, city, service: serviceParam } = await params;
