@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const USAGE_FILE = path.join(process.cwd(), 'scripts/email_usage.json');
-const HARD_LIMIT = 4800; // Leave buffer for system emails
+const HARD_LIMIT = 10000; // Increased for global scaling batch
 
 export function getEmailBudget() {
   if (!fs.existsSync(USAGE_FILE)) {

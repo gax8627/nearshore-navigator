@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db:seed": "npx tsx scripts/seed-posts.ts"
+    "db:seed": "npx tsx scripts/seed-posts.ts",
+    "index-now": "npx tsx scripts/instant-index.ts",
+    "auth:gsc": "npx tsx scripts/auth-gsc.ts"
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.29",

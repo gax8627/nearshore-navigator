@@ -104,8 +104,8 @@ export const brevo = {
     scheduledAt?: string;
     tags?: string[];
   }) {
-    const { key: apiKey, url: BREVO_API_URL } = getBrevoConfig();
-    if (!apiKey) throw new Error('BREVO_API_KEY not configured');
+    const { key: BREVO_API_KEY, url: BREVO_API_URL } = getBrevoConfig();
+    if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
 
     const defaultSender = { email: 'nearshore.navigator@gmail.com', name: 'Denisse Martinez' };
 
@@ -128,7 +128,7 @@ export const brevo = {
       const response = await fetch(`${BREVO_API_URL}/smtp/email`, {
         method: 'POST',
         headers: {
-          'api-key': apiKey,
+          'api-key': BREVO_API_KEY,
           'Content-Type': 'application/json',
           'Accept': 'application/json',
         },
@@ -152,7 +152,8 @@ export const brevo = {
    * Add a contact to a specific list
    */
   async addContactToList(email: string, listId: number) {
-      if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
+    const { key: BREVO_API_KEY, url: BREVO_API_URL } = getBrevoConfig();
+    if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
 
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 30000);
@@ -188,6 +189,7 @@ export const brevo = {
    * Create a new List
    */
   async createList(name: string, folderId: number = 1) {
+    const { key: BREVO_API_KEY, url: BREVO_API_URL } = getBrevoConfig();
     if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
 
     const controller = new AbortController();
@@ -240,6 +242,7 @@ export const brevo = {
     sender?: { email: string; name?: string };
     scheduledAt?: string; // Format: YYYY-MM-DD HH:mm:ss
   }) {
+    const { key: BREVO_API_KEY, url: BREVO_API_URL } = getBrevoConfig();
     if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
 
     const defaultSender = { email: 'nearshore.navigator@gmail.com', name: 'Denisse Martinez' };
