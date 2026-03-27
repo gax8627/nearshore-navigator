@@ -54,10 +54,10 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": `https://nearshorenavigator.com/${language}` },
-      { "@type": "ListItem", "position": 2, "name": "Locations", "item": `https://nearshorenavigator.com/${language}/locations` },
-      { "@type": "ListItem", "position": 3, "name": t(`locations.${city}.name`) || location.name, "item": `https://nearshorenavigator.com/${language}/locations/${city}` },
-      { "@type": "ListItem", "position": 4, "name": t(`industries.${industry}.name`), "item": `https://nearshorenavigator.com/${language}/locations/${city}/industries/${industry}` }
+      { "@type": "ListItem", "position": 1, "name": t('nav.home') || "Home", "item": `https://nearshorenavigator.com/${language}` },
+      { "@type": "ListItem", "position": 2, "name": t('nav.locations') || "Locations", "item": `https://nearshorenavigator.com/${language}/locations` },
+      { "@type": "ListItem", "position": 3, "name": t(`locations.${city}.name`) || location.name || "Baja California", "item": `https://nearshorenavigator.com/${language}/locations/${city}` },
+      { "@type": "ListItem", "position": 4, "name": t(`industries.${industry}.name`) || industry.charAt(0).toUpperCase() + industry.slice(1).replace(/-/g, ' ') || "Industry Guide", "item": `https://nearshorenavigator.com/${language}/locations/${city}/industries/${industry}` }
     ]
   };
 

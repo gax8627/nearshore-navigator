@@ -86,24 +86,10 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://nearshorenavigator.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": currentCityName,
-        "item": `https://nearshorenavigator.com/${language}/locations/${city}`
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": currentServiceTitle,
-        "item": `https://nearshorenavigator.com/${language}/locations/${city}/${serviceId}`
-      }
+      { "@type": "ListItem", "position": 1, "name": t('nav.home') || "Home", "item": `https://nearshorenavigator.com/${language}` },
+      { "@type": "ListItem", "position": 2, "name": t('nav.locations') || "Locations", "item": `https://nearshorenavigator.com/${language}/locations` },
+      { "@type": "ListItem", "position": 3, "name": t(`locations.${city}.name`) || city.charAt(0).toUpperCase() + city.slice(1), "item": `https://nearshorenavigator.com/${language}/locations/${city}` },
+      { "@type": "ListItem", "position": 4, "name": t(`services.${serviceId}.title`) || serviceId.charAt(0).toUpperCase() + serviceId.slice(1).replace(/-/g, ' '), "item": `https://nearshorenavigator.com/${language}/locations/${city}/${serviceId}` }
     ]
   };
 

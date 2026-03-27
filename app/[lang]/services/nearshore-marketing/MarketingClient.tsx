@@ -79,9 +79,9 @@ export default function MarketingClient() {
                     "@context": "https://schema.org",
                     "@type": "BreadcrumbList",
                     "itemListElement": [
-                        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nearshorenavigator.com/en" },
-                        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://nearshorenavigator.com/en/services" },
-                        { "@type": "ListItem", "position": 3, "name": "Nearshore Marketing Services", "item": "https://nearshorenavigator.com/en/services/nearshore-marketing" }
+                        { "@type": "ListItem", "position": 1, "name": t('nav.home') || "Home", "item": `https://nearshorenavigator.com/${language}` },
+                        { "@type": "ListItem", "position": 2, "name": t('nav.services') || "Services", "item": `https://nearshorenavigator.com/${language}#services` },
+                        { "@type": "ListItem", "position": 3, "name": t('services.marketing.title') || "Nearshore Marketing", "item": `https://nearshorenavigator.com/${language}/services/nearshore-marketing` }
                     ]
                 }) }}
             />

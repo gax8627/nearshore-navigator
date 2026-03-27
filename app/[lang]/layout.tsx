@@ -4,7 +4,6 @@ import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { LanguageProvider } from '@/app/context/LanguageContext'
 import { ThemeProvider } from '@/app/context/ThemeContext'
-import WhatsAppButton from '@/app/components/WhatsAppButton'
 import { SchemaMarkup } from '@/components/SchemaMarkup'
 import { AIConsultant } from '@/components/AIConsultant'
 
@@ -87,7 +86,6 @@ export default async function LangLayout({
             {children}
           </main>
           <Footer />
-          <WhatsAppButton />
           <AIConsultant />
         </div>
       </ThemeProvider>

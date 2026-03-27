@@ -52,9 +52,9 @@ export default function DistributionPage() {
                     "@context": "https://schema.org",
                     "@type": "BreadcrumbList",
                     "itemListElement": [
-                        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nearshorenavigator.com/en" },
-                        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://nearshorenavigator.com/en/services" },
-                        { "@type": "ListItem", "position": 3, "name": "Distribution Centers in Tijuana", "item": "https://nearshorenavigator.com/en/services/distribution-centers-tijuana" }
+                        { "@type": "ListItem", "position": 1, "name": t('nav.home') || "Home", "item": `https://nearshorenavigator.com/${language}` },
+                        { "@type": "ListItem", "position": 2, "name": t('nav.services') || "Services", "item": `https://nearshorenavigator.com/${language}#services` },
+                        { "@type": "ListItem", "position": 3, "name": t('services.distribution.title') || "Distribution Centers", "item": `https://nearshorenavigator.com/${language}/services/distribution-centers-tijuana` }
                     ]
                 }) }}
             />

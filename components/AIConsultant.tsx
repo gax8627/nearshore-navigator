@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, Send, X, Bot, Zap, ShieldCheck } from 'lucide-react';
+import { MessageSquare, Send, X, Bot, Zap, ShieldCheck, Phone } from 'lucide-react';
 import { useLanguage } from '@/app/context/LanguageContext';
 
 /**
@@ -64,8 +64,7 @@ export function AIConsultant() {
     };
 
     return (
-        // Position at bottom-28 to avoid overlap with WhatsApp button (bottom-6)
-        <div className="fixed bottom-28 right-6 z-[9999]">
+        <div className="fixed bottom-6 right-6 z-[9999]">
             {/* Toggle Button */}
             {!isOpen && (
                 <motion.button
@@ -92,7 +91,6 @@ export function AIConsultant() {
                         exit={{ opacity: 0, scale: 0.8, y: 100 }}
                         className="w-[380px] h-[550px] bg-gray-900/95 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-[0_32px_128px_-16px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col"
                     >
-                        {/* Header */}
                         <div className="p-6 bg-gradient-to-r from-primary-900/40 to-gray-900/40 border-b border-white/5 flex items-center justify-between">
                             <div className="flex items-center gap-3">
                                 <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-900/20">
@@ -106,13 +104,25 @@ export function AIConsultant() {
                                     </div>
                                 </div>
                             </div>
-                            <button
-                                onClick={() => setIsOpen(false)}
-                                aria-label="Close AI Manufacturing Consultant"
-                                className="text-gray-400 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/10"
-                            >
-                                <X size={20} aria-hidden="true" />
-                            </button>
+                            <div className="flex items-center gap-2">
+                                <a 
+                                    href="https://wa.me/526643640203" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="p-2 bg-green-600/20 text-green-400 rounded-lg hover:bg-green-600/30 transition-colors group relative"
+                                    aria-label="Talk to an expert on WhatsApp"
+                                >
+                                    <Phone size={18} />
+                                    <span className="absolute -top-10 right-0 bg-gray-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap pointer-events-none transition-opacity">Speak to Expert</span>
+                                </a>
+                                <button
+                                    onClick={() => setIsOpen(false)}
+                                    aria-label="Close AI Manufacturing Consultant"
+                                    className="text-gray-400 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/10"
+                                >
+                                    <X size={20} aria-hidden="true" />
+                                </button>
+                            </div>
                         </div>
 
                         {/* Messages Area */}
