@@ -46,12 +46,17 @@ export async function generateMetadata({ params }: Props) {
   // doesn't index a duplicate. Pages in cannibalizing locales are always noindexed.
   const shouldNoindex = NOINDEX_LOCALES.has(lang) || (lang === 'en' && !!canonicalOverride);
 
+  // If we are in a no-index locale, we want the canonical to point back to the source (English)
+  const finalCanonical = NOINDEX_LOCALES.has(lang)
+    ? `https://nearshorenavigator.com/en/locations/${city}/${serviceParam}`
+    : canonicalUrl;
+
   return {
     title,
     description,
     robots: shouldNoindex ? { index: false, follow: true } : undefined,
     alternates: {
-      canonical: canonicalUrl,
+      canonical: finalCanonical,
       languages: {
         'en': `https://nearshorenavigator.com/en/locations/${city}/${serviceParam}`,
         'es': `https://nearshorenavigator.com/es/locations/${city}/${serviceParam}`,

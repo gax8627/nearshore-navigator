@@ -1,6 +1,7 @@
 import { InsightsClient } from "./InsightsClient";
 import { getDictionary } from "@/app/i18n/get-dictionary";
 import { Metadata } from "next";
+import { NOINDEX_LOCALES } from "@/app/constants/seo-config";
 
 export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
   const dict = await getDictionary(params.lang as any);
@@ -13,7 +14,9 @@ export async function generateMetadata({ params }: { params: { lang: string } })
       images: ['https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&q=80&w=2000'],
     },
     alternates: {
-      canonical: `https://nearshorenavigator.com/${params.lang}/insights`,
+      canonical: NOINDEX_LOCALES.has(params.lang) 
+        ? 'https://nearshorenavigator.com/en/insights' 
+        : `https://nearshorenavigator.com/${params.lang}/insights`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/insights',
         'es': 'https://nearshorenavigator.com/es/insights',

@@ -24,7 +24,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: post.excerpt,
     robots: isNonEnglish ? { index: false, follow: true } : undefined,
     alternates: {
-      canonical: canonicalUrl,
+      canonical: isNonEnglish 
+        ? `https://nearshorenavigator.com/en/insights/${slug}`
+        : canonicalUrl,
       languages: {
         'en': `https://nearshorenavigator.com/en/insights/${slug}`,
         'x-default': `https://nearshorenavigator.com/en/insights/${slug}`,

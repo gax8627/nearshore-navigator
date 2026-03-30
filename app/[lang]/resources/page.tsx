@@ -1,6 +1,6 @@
 import ResourcesClient from "./ResourcesClient";
 import { Metadata } from 'next';
-
+import { NOINDEX_LOCALES } from "@/app/constants/seo-config";
 import { getDictionary } from "@/app/i18n/get-dictionary";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -11,7 +11,9 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     title: `${dict.resources.title} | Nearshore Navigator`,
     description: dict.resources.metaDescription || 'Industrial resources, tools, and guides for your Mexico expansion.',
     alternates: {
-      canonical: `https://nearshorenavigator.com/${lang}/resources`,
+      canonical: NOINDEX_LOCALES.has(lang) 
+        ? 'https://nearshorenavigator.com/en/resources' 
+        : `https://nearshorenavigator.com/${lang}/resources`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/resources',
         'es': 'https://nearshorenavigator.com/es/resources',

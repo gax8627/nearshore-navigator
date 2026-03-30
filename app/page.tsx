@@ -8,6 +8,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   alternates: {
     canonical: 'https://nearshorenavigator.com/en',
+    languages: {
+      'x-default': 'https://nearshorenavigator.com/en',
+    }
   },
 };
 

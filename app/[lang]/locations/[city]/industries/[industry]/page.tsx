@@ -44,7 +44,9 @@ export async function generateMetadata({ params }: Props) {
     description: `Expert guide to ${industryName} manufacturing in ${location.name}. Scale your production with ${location.name}'s specialized workforce and AS9100/FDA-compliant infrastructure.`,
     robots: NOINDEX_LOCALES.has(lang) ? { index: false, follow: true } : undefined,
     alternates: {
-      canonical: canonicalUrl,
+      canonical: NOINDEX_LOCALES.has(lang) 
+        ? `https://nearshorenavigator.com/en/locations/${city}/industries/${industry}` 
+        : canonicalUrl,
       languages: {
         'en': `https://nearshorenavigator.com/en/locations/${city}/industries/${industry}`,
         'es': `https://nearshorenavigator.com/es/locations/${city}/industries/${industry}`,

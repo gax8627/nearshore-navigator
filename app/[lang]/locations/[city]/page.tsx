@@ -32,7 +32,9 @@ export async function generateMetadata({ params }: Props) {
     // for English queries on location pages due to near-identical content.
     robots: NOINDEX_LOCALES.has(lang) ? { index: false, follow: true } : undefined,
     alternates: {
-      canonical: canonicalUrl,
+      canonical: NOINDEX_LOCALES.has(lang) 
+        ? `https://nearshorenavigator.com/en/locations/${city}` 
+        : canonicalUrl,
       languages: {
         'en': `https://nearshorenavigator.com/en/locations/${city}`,
         'es': `https://nearshorenavigator.com/es/locations/${city}`,

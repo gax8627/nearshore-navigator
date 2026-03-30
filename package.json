@@ -9,6 +9,7 @@
     "lint": "next lint",
     "db:seed": "npx tsx scripts/seed-posts.ts",
     "index-now": "npx tsx scripts/instant-index.ts",
+    "index-audit": "npx tsx scripts/indexing-auditor.ts",
     "auth:gsc": "npx tsx scripts/auth-gsc.ts"
   },
   "dependencies": {

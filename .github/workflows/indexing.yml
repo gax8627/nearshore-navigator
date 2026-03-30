@@ -32,3 +32,8 @@ jobs:
         run: npm run index-now
         env:
           GOOGLE_TOKEN_JSON: ${{ secrets.GOOGLE_TOKEN_JSON }}
+
+      - name: 🛡️  Run Indexing Auditor
+        run: npm run index-audit
+        env:
+          GOOGLE_TOKEN_JSON: ${{ secrets.GOOGLE_TOKEN_JSON }}
