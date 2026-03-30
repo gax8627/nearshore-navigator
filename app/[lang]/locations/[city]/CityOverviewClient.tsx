@@ -106,16 +106,39 @@ export default function CityOverviewClient({ city }: Props) {
         </div>
 
         <div className="container mx-auto px-4 z-10 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white mb-8">
-                <MapPin className="w-4 h-4 text-primary-400" />
-                <span className="text-sm font-medium">{location.state}, {location.country}</span>
+            <div className="flex flex-col items-center gap-4 mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">
+                    <MapPin className="w-4 h-4 text-primary-400" />
+                    <span className="text-sm font-medium">{location.state}, {location.country}</span>
+                </div>
+                {city === 'tijuana' && (
+                    <div className="flex items-center gap-2 px-3 py-1 bg-primary-500/20 text-primary-400 text-[10px] font-bold rounded-md border border-primary-500/30 uppercase tracking-widest animate-pulse">
+                        <TrendingUp className="w-3 h-3" />
+                        15-Minute Border Proximity Advantage
+                    </div>
+                )}
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 Manufacturing in <span className="text-primary-500">{t(`locations.${city}.name`) || location.name}</span>
             </h1>
-            <p className="text-xl text-gray-200 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-200 max-w-2xl mx-auto mb-10">
                 {t(`locations.${city}.description`) || location.description}
             </p>
+            {city === 'tijuana' && (
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button 
+                        size="lg" 
+                        href={`/${language}/contact?source=tijuana_shortlist`}
+                        className="bg-primary-600 hover:bg-primary-500 text-white shadow-xl shadow-primary-900/20 px-8"
+                    >
+                        Get Vetted Tijuana Shortlist
+                    </Button>
+                    <div className="flex items-center gap-2 text-white/60 text-sm">
+                        <CheckCircle2 className="w-4 h-4 text-primary-500" />
+                        2026 Capacity Report Included
+                    </div>
+                </div>
+            )}
         </div>
       </section>
 
@@ -154,13 +177,20 @@ export default function CityOverviewClient({ city }: Props) {
                         {SERVICES.map((service) => {
                             const Icon = iconMap[service.icon];
                             return (
-                                <ServiceCard
-                                    key={service.slug}
-                                    title={service.title}
-                                    description={service.description}
-                                    href={`/${language}/locations/${location.slug}/${service.slug}`}
-                                    icon={<Icon className="w-6 h-6" />}
-                                />
+                                <div className="relative group">
+                                    {(city === 'tijuana' && (service.slug === 'contract-manufacturing-tijuana' || service.slug === 'industrial-real-estate-baja')) && (
+                                        <div className="absolute -top-2 -right-2 z-10 bg-primary-500 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-lg animate-bounce">
+                                            Most Popular
+                                        </div>
+                                    )}
+                                    <ServiceCard
+                                        key={service.slug}
+                                        title={service.title}
+                                        description={service.description}
+                                        href={`/${language}/locations/${location.slug}/${service.slug}`}
+                                        icon={<Icon className="w-6 h-6" />}
+                                    />
+                                </div>
                             );
                         })}
                     </div>

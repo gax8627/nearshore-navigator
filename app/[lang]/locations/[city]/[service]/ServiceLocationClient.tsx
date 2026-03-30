@@ -178,9 +178,16 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
         </div>
 
         <div className="container mx-auto px-4 z-10 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white mb-8">
-                <MapPin className="w-4 h-4 text-primary-400" />
-                <span className="text-sm font-medium">{currentCityName} Industrial Hub</span>
+            <div className="flex flex-col items-center gap-4 mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">
+                    <MapPin className="w-4 h-4 text-primary-400" />
+                    <span className="text-sm font-medium">{currentCityName} Industrial Hub</span>
+                </div>
+                {city === 'tijuana' && (
+                    <div className="flex items-center gap-2 px-3 py-1 bg-primary-500/20 text-primary-400 text-[10px] font-bold rounded-md border border-primary-500/30 uppercase tracking-widest animate-pulse">
+                        Tijuana Speed-to-Market Center
+                    </div>
+                )}
             </div>
           <h1 className="text-3xl md:text-6xl font-bold text-white mb-6">
             {currentServiceTitle} in <span className="text-primary-500">{currentCityName}</span>
@@ -412,10 +419,12 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 items-center">
                   <Link 
-                    href={`/${language}/contact`}
+                    href={`/${language}/contact?source=service_location_${city}_conversion`}
                     className="w-full sm:w-auto px-8 py-4 rounded-md bg-white text-sky-900 font-bold hover:bg-sky-50 transition-colors shadow-lg text-center"
                   >
-                    Calculate Your Savings
+                    {city === 'tijuana' && serviceId === 'contract-manufacturing-tijuana' 
+                      ? "Get Vetted Tijuana Partner Shortlist" 
+                      : "Calculate Your Savings"}
                   </Link>
                   <p className="text-sm text-sky-200 flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-sky-400" />

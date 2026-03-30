@@ -30,9 +30,10 @@ const PREVIOUS_SENT_LOGS = [
   path.join(process.cwd(), 'scripts/sent_march24_outreach_pt1.json'),
   path.join(process.cwd(), 'scripts/sent_march24_outreach_pt2.json'),
   path.join(process.cwd(), 'scripts/sent_march25_outreach.json'),
+  path.join(process.cwd(), 'scripts/sent_march26_outreach.json'),
 ];
 
-const SENT_LOG_PATH = path.join(process.cwd(), 'scripts/sent_march26_outreach.json');
+const SENT_LOG_PATH = path.join(process.cwd(), 'scripts/sent_march30_outreach.json');
 
 const DRY_RUN = process.argv.includes('--dry-run');
 const BATCH_LIMIT = 500; // March 25 batch
