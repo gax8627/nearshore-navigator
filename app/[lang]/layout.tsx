@@ -6,6 +6,7 @@ import { LanguageProvider } from '@/app/context/LanguageContext'
 import { ThemeProvider } from '@/app/context/ThemeContext'
 import { SchemaMarkup } from '@/components/SchemaMarkup'
 import { AIConsultant } from '@/components/AIConsultant'
+import { NOINDEX_LOCALES } from '@/app/constants/seo-config'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -19,7 +20,8 @@ export const viewport: Viewport = {
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const baseUrl = 'https://nearshorenavigator.com';
-  const url = `${baseUrl}/${lang}`;
+  const isNoIndex = NOINDEX_LOCALES.has(lang);
+  const canonicalUrl = isNoIndex ? `${baseUrl}/en` : `${baseUrl}/${lang}`;
 
   return {
     metadataBase: new URL(baseUrl),
@@ -29,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     },
     description: 'Your partner for industrial nearshoring, shelter services, and contract manufacturing in Baja California, Mexico. Access Class A industrial buildings, bilingual workforce, and 40-60% cost savings just 20 minutes from San Diego.',
     alternates: {
-      canonical: url,
+      canonical: canonicalUrl,
       languages: {
         'en': `${baseUrl}/en`,
         'es': `${baseUrl}/es`,
@@ -45,7 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       }
     },
     openGraph: {
-      url: url,
+      url: canonicalUrl,
       type: 'website',
       title: 'Nearshore Navigator | Industrial Manufacturing in Baja California',
       description: 'Your partner for industrial nearshoring, shelter services, and contract manufacturing in Baja California, Mexico.',

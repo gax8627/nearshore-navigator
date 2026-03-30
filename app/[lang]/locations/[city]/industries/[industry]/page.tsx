@@ -12,21 +12,18 @@ type Props = {
   }>;
 };
 
+import { getDictionary } from "@/app/i18n/get-dictionary";
+import { NOINDEX_LOCALES, LOCALES } from "@/app/constants/seo-config";
+
 export async function generateStaticParams() {
-  const langs = ['en', 'es', 'fr', 'de', 'ja', 'zh', 'ko', 'it', 'pt', 'ru'];
-  
   return INDUSTRY_MATRIX.flatMap(entry => 
-    langs.map(lang => ({
+    LOCALES.map(lang => ({
       lang,
       city: entry.citySlug,
       industry: entry.industrySlug
     }))
   );
 }
-
-import { getDictionary } from "@/app/i18n/get-dictionary";
-
-import { NOINDEX_LOCALES } from "@/app/constants/seo-config";
 
 export async function generateMetadata({ params }: Props) {
   const { lang, city, industry } = await params;
