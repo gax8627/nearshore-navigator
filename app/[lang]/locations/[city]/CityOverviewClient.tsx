@@ -126,13 +126,14 @@ export default function CityOverviewClient({ city }: Props) {
             </p>
             {city === 'tijuana' && (
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button 
-                        size="lg" 
-                        href={`/${language}/contact?source=tijuana_shortlist`}
-                        className="bg-primary-600 hover:bg-primary-500 text-white shadow-xl shadow-primary-900/20 px-8"
-                    >
-                        Get Vetted Tijuana Shortlist
-                    </Button>
+                    <Link href={`/${language}/contact?source=tijuana_shortlist`}>
+                        <Button 
+                            size="lg" 
+                            className="bg-primary-600 hover:bg-primary-500 text-white shadow-xl shadow-primary-900/20 px-8"
+                        >
+                            Get Vetted Tijuana Shortlist
+                        </Button>
+                    </Link>
                     <div className="flex items-center gap-2 text-white/60 text-sm">
                         <CheckCircle2 className="w-4 h-4 text-primary-500" />
                         2026 Capacity Report Included
