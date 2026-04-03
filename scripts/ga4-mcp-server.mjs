@@ -131,6 +131,17 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
       },
     },
+    {
+      name: 'ga4_events',
+      description: 'Get counts for specific events (like generate_lead, click_email, file_download)',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          days: { type: 'number', default: 28 },
+          limit: { type: 'number', default: 20 },
+        },
+      },
+    },
   ],
 }));
 
@@ -239,6 +250,17 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         limit
       );
       result = `🛬 Landing Pages — last ${days} days\n\n${formatReport(data)}`;
+    }
+
+    else if (name === 'ga4_events') {
+      const data = await runReport(
+        dateRange,
+        ['eventName'],
+        ['eventCount', 'totalUsers'],
+        [{ metric: { metricName: 'eventCount' }, desc: true }],
+        limit
+      );
+      result = `🎯 Top Events — last ${days} days\n\n${formatReport(data)}`;
     }
 
     return { content: [{ type: 'text', text: result }] };

@@ -113,7 +113,7 @@ export async function middleware(request: NextRequest) {
       request.url
     );
     
-    return NextResponse.redirect(redirectUrl, 307);
+    return NextResponse.redirect(redirectUrl, 301);
   }
 
   return NextResponse.next();
