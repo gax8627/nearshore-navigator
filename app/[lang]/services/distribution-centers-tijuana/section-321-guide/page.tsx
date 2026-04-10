@@ -1,20 +1,23 @@
 import { Metadata } from 'next';
 import Section321Client from './Section321Client';
 import { getDictionary } from '@/app/i18n/get-dictionary';
+import { NOINDEX_LOCALES } from '@/app/constants/seo-config';
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
     const { lang } = await props.params;
     const dict = await getDictionary(lang);
     
-    // Fallback titles if dictionary is missing keys
     const title = dict.s321?.heroTitle ? `${dict.s321.heroTitle} ${dict.s321.heroTitleHighlight || ''} | Nearshore Navigator` : 'Section 321 Master Guide | Tijuana Distribution Centers';
     const description = dict.s321?.heroSubtitle || 'Navigate the 2025 de minimis suspension and discover compliant Section 321 distribution strategies in Mexico.';
 
     return {
         title,
         description,
+        robots: NOINDEX_LOCALES.has(lang) ? { index: false, follow: true } : undefined,
         alternates: {
-            canonical: `https://nearshorenavigator.com/${lang}/services/distribution-centers-tijuana/section-321-guide`,
+            canonical: NOINDEX_LOCALES.has(lang)
+              ? 'https://nearshorenavigator.com/en/services/distribution-centers-tijuana/section-321-guide'
+              : `https://nearshorenavigator.com/${lang}/services/distribution-centers-tijuana/section-321-guide`,
             languages: {
               'en': 'https://nearshorenavigator.com/en/services/distribution-centers-tijuana/section-321-guide',
               'es': 'https://nearshorenavigator.com/es/services/distribution-centers-tijuana/section-321-guide',
@@ -53,36 +56,11 @@ export default async function Section321GuidePage(props: { params: Promise<{ lan
             "totalTime": "P90D",
             "estimatedCost": { "@type": "MonetaryAmount", "currency": "USD", "value": "5000" },
             "step": [
-                {
-                    "@type": "HowToStep",
-                    "position": 1,
-                    "name": "Assess product eligibility",
-                    "text": "Confirm your goods qualify under Section 321: shipments must be valued at $800 or less per recipient per day. Excluded categories include alcohol, tobacco, and textiles with quota restrictions."
-                },
-                {
-                    "@type": "HowToStep",
-                    "position": 2,
-                    "name": "Select a Tijuana distribution center",
-                    "text": "Choose a Class A warehouse in Tijuana near the Otay Mesa commercial crossing. Look for bonded warehouse status, 24/7 operations, and integrated customs brokerage partnerships."
-                },
-                {
-                    "@type": "HowToStep",
-                    "position": 3,
-                    "name": "Establish customs brokerage",
-                    "text": "Partner with a licensed US Customs broker at the Otay Mesa port of entry. Pre-file Section 321 entry summaries electronically through CBP's Automated Broker Interface (ABI) for same-day clearance."
-                },
-                {
-                    "@type": "HowToStep",
-                    "position": 4,
-                    "name": "Configure inventory and WMS",
-                    "text": "Integrate your Warehouse Management System (WMS) with cross-border carrier manifests. Set up order routing rules to ensure individual order values stay at or below the $800 threshold."
-                },
-                {
-                    "@type": "HowToStep",
-                    "position": 5,
-                    "name": "Launch and optimize",
-                    "text": "Begin with a pilot batch of shipments to test customs clearance times (typically 2-4 hours at Otay Mesa). Scale once compliance processes are confirmed and transit SLAs are established."
-                }
+                { "@type": "HowToStep", "position": 1, "name": "Assess product eligibility", "text": "Confirm your goods qualify under Section 321: shipments must be valued at $800 or less per recipient per day. Excluded categories include alcohol, tobacco, and textiles with quota restrictions." },
+                { "@type": "HowToStep", "position": 2, "name": "Select a Tijuana distribution center", "text": "Choose a Class A warehouse in Tijuana near the Otay Mesa commercial crossing. Look for bonded warehouse status, 24/7 operations, and integrated customs brokerage partnerships." },
+                { "@type": "HowToStep", "position": 3, "name": "Establish customs brokerage", "text": "Partner with a licensed US Customs broker at the Otay Mesa port of entry. Pre-file Section 321 entry summaries electronically through CBP's Automated Broker Interface (ABI) for same-day clearance." },
+                { "@type": "HowToStep", "position": 4, "name": "Configure inventory and WMS", "text": "Integrate your Warehouse Management System (WMS) with cross-border carrier manifests. Set up order routing rules to ensure individual order values stay at or below the $800 threshold." },
+                { "@type": "HowToStep", "position": 5, "name": "Launch and optimize", "text": "Begin with a pilot batch of shipments to test customs clearance times (typically 2-4 hours at Otay Mesa). Scale once compliance processes are confirmed and transit SLAs are established." }
             ]
         },
         {
