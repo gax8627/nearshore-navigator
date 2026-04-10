@@ -13,9 +13,10 @@ export async function generateMetadata({ params }: { params: { lang: string } })
       description: 'In-depth analysis of the Baja California industrial market: labor costs, real estate trends, tariff impacts, and nearshoring strategy for US manufacturers.',
       images: ['https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&q=80&w=2000'],
     },
+    robots: NOINDEX_LOCALES.has(params.lang) ? { index: false, follow: true } : undefined,
     alternates: {
-      canonical: NOINDEX_LOCALES.has(params.lang) 
-        ? 'https://nearshorenavigator.com/en/insights' 
+      canonical: NOINDEX_LOCALES.has(params.lang)
+        ? 'https://nearshorenavigator.com/en/insights'
         : `https://nearshorenavigator.com/${params.lang}/insights`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/insights',
