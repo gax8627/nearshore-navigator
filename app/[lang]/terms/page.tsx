@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import TermsClient from './TermsClient';
 import { getDictionary } from '@/app/i18n/get-dictionary';
+import { NOINDEX_LOCALES } from '@/app/constants/seo-config';
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await props.params;
@@ -9,8 +10,11 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   return {
     title: `${dict.terms.title} | Nearshore Navigator`,
     description: dict.terms.metaDescription || 'Legal terms and conditions for using Nearshore Navigator services.',
+    robots: NOINDEX_LOCALES.has(lang) ? { index: false, follow: true } : undefined,
     alternates: {
-      canonical: `https://nearshorenavigator.com/${lang}/terms`,
+      canonical: NOINDEX_LOCALES.has(lang)
+        ? 'https://nearshorenavigator.com/en/terms'
+        : `https://nearshorenavigator.com/${lang}/terms`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/terms',
         'es': 'https://nearshorenavigator.com/es/terms',
