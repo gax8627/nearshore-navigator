@@ -1,6 +1,7 @@
 import ResourceMapClient from "./ResourceMapClient";
 import { Metadata } from 'next';
 import { getDictionary } from "@/app/i18n/get-dictionary";
+import { NOINDEX_LOCALES } from '@/app/constants/seo-config';
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await props.params;
@@ -9,8 +10,11 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   return {
     title: `${t.resourceMap.heroTitle} ${t.resourceMap.heroTitleHighlight} | Nearshore Navigator`,
     description: t.resourceMap.heroSubtitle,
+    robots: NOINDEX_LOCALES.has(lang) ? { index: false, follow: true } : undefined,
     alternates: {
-      canonical: `https://nearshorenavigator.com/${lang}/resources/tijuana-industrial-park-map`,
+      canonical: NOINDEX_LOCALES.has(lang)
+        ? 'https://nearshorenavigator.com/en/resources/tijuana-industrial-park-map'
+        : `https://nearshorenavigator.com/${lang}/resources/tijuana-industrial-park-map`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/resources/tijuana-industrial-park-map',
         'es': 'https://nearshorenavigator.com/es/resources/tijuana-industrial-park-map',
