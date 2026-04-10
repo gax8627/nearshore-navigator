@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import PrivacyClient from './PrivacyClient';
 import { getDictionary } from '@/app/i18n/get-dictionary';
+import { NOINDEX_LOCALES } from '@/app/constants/seo-config';
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await props.params;
@@ -9,8 +10,11 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   return {
     title: `${dict.privacy.title} | Nearshore Navigator`,
     description: dict.privacy.metaDescription || 'Legal privacy policy and data protection for Nearshore Navigator.',
+    robots: NOINDEX_LOCALES.has(lang) ? { index: false, follow: true } : undefined,
     alternates: {
-      canonical: `https://nearshorenavigator.com/${lang}/privacy`,
+      canonical: NOINDEX_LOCALES.has(lang)
+        ? 'https://nearshorenavigator.com/en/privacy'
+        : `https://nearshorenavigator.com/${lang}/privacy`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/privacy',
         'es': 'https://nearshorenavigator.com/es/privacy',
