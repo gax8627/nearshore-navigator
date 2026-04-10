@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import MarketingClient from './MarketingClient';
+import { NOINDEX_LOCALES } from '@/app/constants/seo-config';
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await props.params;
@@ -10,8 +11,11 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
       title: 'B2B Marketing for Nearshore Companies | Nearshore Navigator',
       description: 'Outbound campaigns, ICP targeting, and content marketing for companies expanding manufacturing operations to Baja California.',
     },
+    robots: NOINDEX_LOCALES.has(lang) ? { index: false, follow: true } : undefined,
     alternates: {
-      canonical: `https://nearshorenavigator.com/${lang}/services/nearshore-marketing`,
+      canonical: NOINDEX_LOCALES.has(lang)
+        ? 'https://nearshorenavigator.com/en/services/nearshore-marketing'
+        : `https://nearshorenavigator.com/${lang}/services/nearshore-marketing`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/services/nearshore-marketing',
         'es': 'https://nearshorenavigator.com/es/services/nearshore-marketing',
