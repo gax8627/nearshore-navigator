@@ -10,9 +10,10 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   return {
     title: `${dict.resources.title} | Nearshore Navigator`,
     description: dict.resources.metaDescription || 'Industrial resources, tools, and guides for your Mexico expansion.',
+    robots: NOINDEX_LOCALES.has(lang) ? { index: false, follow: true } : undefined,
     alternates: {
-      canonical: NOINDEX_LOCALES.has(lang) 
-        ? 'https://nearshorenavigator.com/en/resources' 
+      canonical: NOINDEX_LOCALES.has(lang)
+        ? 'https://nearshorenavigator.com/en/resources'
         : `https://nearshorenavigator.com/${lang}/resources`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/resources',
