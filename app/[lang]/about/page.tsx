@@ -1,6 +1,7 @@
 import AboutClient from "./AboutClient";
 import { Metadata } from 'next';
 import { getDictionary } from '@/app/i18n/get-dictionary';
+import { NOINDEX_LOCALES } from '@/app/constants/seo-config';
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await props.params;
@@ -9,8 +10,11 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   return {
     title: `${dict.about.title} | Nearshore Navigator`,
     description: dict.about.metaDescription || 'Learn more about Nearshore Navigator and our mission to support manufacturing expansion in Mexico.',
+    robots: NOINDEX_LOCALES.has(lang) ? { index: false, follow: true } : undefined,
     alternates: {
-      canonical: `https://nearshorenavigator.com/${lang}/about`,
+      canonical: NOINDEX_LOCALES.has(lang)
+        ? 'https://nearshorenavigator.com/en/about'
+        : `https://nearshorenavigator.com/${lang}/about`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/about',
         'es': 'https://nearshorenavigator.com/es/about',
