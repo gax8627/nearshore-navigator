@@ -1,28 +1,37 @@
 import { MetadataRoute } from 'next'
 import { LOCATIONS } from '@/app/constants/seo-data'
 import { INDUSTRY_MATRIX } from '@/app/constants/city-industry-matrix'
-import { LOCALES, BASE_URL } from '@/app/constants/seo-config'
+import { LOCALES, BASE_URL, NOINDEX_LOCALES } from '@/app/constants/seo-config'
 
 /**
- * MEGA-SITEMAP GENERATOR
- * 
- * Goal: Restore all 250 industry pages and all 10 language variants as first-class citizens.
- * Total unique URLs: ~3,600.
- * 
- * Instead of listing English as the primary <loc> and others as alternates, we now list 
- * every language variant as its own <loc> entry. This forces Google to see and count 
- * every URL in its "Submitted" index in Search Console.
+ * SITEMAP GENERATOR
+ *
+ * Only submits indexable locales (en + es) as primary <loc> entries.
+ * The 8 deprecated locales (fr, de, it, pt, ru, ja, zh, ko) are now
+ * 301-redirected to /en by middleware.ts, so we never advertise them
+ * in the sitemap or hreflang — which previously created contradictory
+ * signals and produced ~960 "Duplicate, Google chose different canonical"
+ * errors in Search Console.
+ *
+ * Hreflang now advertises only en + es + x-default, matching what we
+ * actually serve 200-OK responses for.
  */
+
+// Only submit pages Google is allowed to index
+const INDEXABLE_LOCALES = LOCALES.filter(l => !NOINDEX_LOCALES.has(l)); // ['en', 'es']
 export default function sitemap(): MetadataRoute.Sitemap {
     const routes: MetadataRoute.Sitemap = [];
-    
-    // Stable date to avoid unnecessary Googlebot recrawl cycles
-    const lastModified = new Date('2026-03-26');
 
-    // Helper to generate hreflang alternates for any path
+    // Bump lastModified on each deploy of SEO-affecting changes so Google
+    // re-crawls and re-evaluates canonical/hreflang after the cleanup.
+    const lastModified = new Date('2026-04-16');
+
+    // Helper to generate hreflang alternates for any path.
+    // ONLY indexable locales go in here — advertising deprecated locales
+    // tells Google to crawl them, and they all now 301 to /en anyway.
     const getAlternates = (path: string) => ({
         languages: Object.fromEntries([
-            ...LOCALES.map(l => [l, `${BASE_URL}/${l}${path}`]),
+            ...INDEXABLE_LOCALES.map(l => [l, `${BASE_URL}/${l}${path}`]),
             ['x-default', `${BASE_URL}/en${path}`]
         ])
     });
@@ -73,14 +82,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             freq: 'weekly' 
         });
 
-        if (city.slug === 'tijuana') {
-            cityPaths.push({ 
-                path: `/locations/tijuana/master-guide`, 
-                priority: 1.0, 
-                freq: 'daily' 
-            });
-        }
-
         const cityServices = city.serviceHowItWorks ? Object.keys(city.serviceHowItWorks) : [];
         cityServices.forEach(serviceSlug => {
             const isPremium = ['tijuana', 'mexicali', 'hermosillo', 'monterrey'].includes(city.slug);
@@ -100,11 +101,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     );
 
     /**
-     * MEGA GENERATOR
-     * Build the entries by iterating every locale as a primary <loc>
+     * GENERATOR — only en + es as primary <loc> entries
+     * Hreflang alternates still cover all 10 locales for language targeting.
      */
-    
-    LOCALES.forEach(lang => {
+    INDEXABLE_LOCALES.forEach(lang => {
         // Build Static
         staticPaths.forEach(path => {
             routes.push({

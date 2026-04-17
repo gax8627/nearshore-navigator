@@ -11,7 +11,6 @@ type Props = {
   }>;
 };
 
-import { NOINDEX_LOCALES } from "@/app/constants/seo-config";
 
 export async function generateMetadata({ params }: Props) {
   const { lang, city, service: serviceParam } = await params;
@@ -43,13 +42,11 @@ export async function generateMetadata({ params }: Props) {
     ?? `https://nearshorenavigator.com/${lang}/locations/${city}/${serviceParam}`;
 
   // Pages that canonicalize to a different URL should also be noindexed so Google
-  // doesn't index a duplicate. Pages in cannibalizing locales are always noindexed.
-  const shouldNoindex = NOINDEX_LOCALES.has(lang) || (lang === 'en' && !!canonicalOverride);
+  // doesn't index a duplicate (e.g. /en/locations/tijuana/contract-manufacturing
+  // canonicalizes to /en/services/contract-manufacturing-tijuana).
+  const shouldNoindex = lang === 'en' && !!canonicalOverride;
 
-  // If we are in a no-index locale, we want the canonical to point back to the source (English)
-  const finalCanonical = NOINDEX_LOCALES.has(lang)
-    ? `https://nearshorenavigator.com/en/locations/${city}/${serviceParam}`
-    : canonicalUrl;
+  const finalCanonical = canonicalUrl;
 
   return {
     title,
@@ -60,14 +57,6 @@ export async function generateMetadata({ params }: Props) {
       languages: {
         'en': `https://nearshorenavigator.com/en/locations/${city}/${serviceParam}`,
         'es': `https://nearshorenavigator.com/es/locations/${city}/${serviceParam}`,
-        'fr': `https://nearshorenavigator.com/fr/locations/${city}/${serviceParam}`,
-        'de': `https://nearshorenavigator.com/de/locations/${city}/${serviceParam}`,
-        'ja': `https://nearshorenavigator.com/ja/locations/${city}/${serviceParam}`,
-        'zh': `https://nearshorenavigator.com/zh/locations/${city}/${serviceParam}`,
-        'ko': `https://nearshorenavigator.com/ko/locations/${city}/${serviceParam}`,
-        'it': `https://nearshorenavigator.com/it/locations/${city}/${serviceParam}`,
-        'pt': `https://nearshorenavigator.com/pt/locations/${city}/${serviceParam}`,
-        'ru': `https://nearshorenavigator.com/ru/locations/${city}/${serviceParam}`,
         'x-default': `https://nearshorenavigator.com/en/locations/${city}/${serviceParam}`,
       }
     }

@@ -1,7 +1,6 @@
 import { getDictionary } from '@/app/i18n/get-dictionary';
 import { Metadata } from 'next';
 import DenisseBioClient from './DenisseBioClient';
-import { NOINDEX_LOCALES } from '@/app/constants/seo-config';
 
 type Props = {
   params: Promise<{
@@ -16,22 +15,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: dict.bio_denisse?.title || 'Meet Denisse Martinez | Nearshore Consultant in Baja California',
     description: dict.bio_denisse?.backgroundDesc?.substring(0, 160) || 'Expert nearshore consultant in Baja California, helping US manufacturers with site selection, shelter services, and cross-border strategic expansion.',
-    robots: NOINDEX_LOCALES.has(lang) ? { index: false, follow: true } : undefined,
     alternates: {
-      canonical: NOINDEX_LOCALES.has(lang)
-        ? 'https://nearshorenavigator.com/en/about/denisse-martinez'
-        : `https://nearshorenavigator.com/${lang}/about/denisse-martinez`,
+      canonical: `https://nearshorenavigator.com/${lang}/about/denisse-martinez`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/about/denisse-martinez',
         'es': 'https://nearshorenavigator.com/es/about/denisse-martinez',
-        'fr': 'https://nearshorenavigator.com/fr/about/denisse-martinez',
-        'de': 'https://nearshorenavigator.com/de/about/denisse-martinez',
-        'ja': 'https://nearshorenavigator.com/ja/about/denisse-martinez',
-        'zh': 'https://nearshorenavigator.com/zh/about/denisse-martinez',
-        'ko': 'https://nearshorenavigator.com/ko/about/denisse-martinez',
-        'it': 'https://nearshorenavigator.com/it/about/denisse-martinez',
-        'pt': 'https://nearshorenavigator.com/pt/about/denisse-martinez',
-        'ru': 'https://nearshorenavigator.com/ru/about/denisse-martinez',
         'x-default': 'https://nearshorenavigator.com/en/about/denisse-martinez',
       }
     }

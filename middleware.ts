@@ -1,7 +1,13 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-const locales = ['en', 'es', 'fr', 'de', 'ja', 'zh', 'ko', 'it', 'pt', 'ru'];
+// Only en + es are indexable and supported. The other 8 locales
+// (fr/de/ja/zh/ko/it/pt/ru) used to serve machine-translated content that
+// cannibalized /en/ in search results and produced "Duplicate, Google chose
+// different canonical" errors at scale. We now 301-redirect those prefixes
+// to /en/ so Google removes them from the index cleanly.
+const locales = ['en', 'es'];
+const deprecatedLocales = new Set(['fr', 'de', 'ja', 'zh', 'ko', 'it', 'pt', 'ru']);
 
 // Check if Clerk is configured
 const isClerkConfigured = !!(
@@ -9,7 +15,9 @@ const isClerkConfigured = !!(
   process.env.CLERK_SECRET_KEY
 );
 
-// Helper to match locales from Accept-Language header
+// Helper to match locales from Accept-Language header.
+// Only returns supported (indexable) locales: en, es. Unsupported browser
+// languages fall through to the default /en (see redirect block below).
 function getPreferredLocale(request: NextRequest): string | undefined {
   // 1. Check for cookie first (User Preference)
   const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value;
@@ -21,20 +29,13 @@ function getPreferredLocale(request: NextRequest): string | undefined {
   const acceptLanguage = request.headers.get('accept-language');
   if (!acceptLanguage) return undefined;
 
-  // Simple parser for Accept-Language: "en-US,en;q=0.9,es;q=0.8"
-  // We split by comma, then sort by quality if present, but for simplicity
-  // we'll just take the first supported one we find in the list.
-  // A robust parser would sort by 'q' values.
   const preferredLocales = acceptLanguage.split(',').map(lang => {
     const [locale, q] = lang.split(';');
     return { locale: locale.trim(), q: q ? parseFloat(q.split('=')[1]) : 1.0 };
   }).sort((a, b) => b.q - a.q);
 
   for (const { locale } of preferredLocales) {
-    // Check exact match (e.g. "fr")
     if (locales.includes(locale)) return locale;
-    
-    // Check base language (e.g. "fr-CA" -> "fr")
     const baseLocale = locale.split('-')[0];
     if (locales.includes(baseLocale)) return baseLocale;
   }
@@ -93,6 +94,18 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith('/_next')
   ) {
     return NextResponse.next();
+  }
+
+  // ─── Deprecated locales: 301 → /en equivalent ───────────
+  // Removes machine-translated duplicates from Google's index without
+  // leaving them discoverable. Strips the old locale prefix and preserves
+  // the rest of the path.
+  const firstSegment = pathname.split('/')[1];
+  if (firstSegment && deprecatedLocales.has(firstSegment)) {
+    const rest = pathname.slice(`/${firstSegment}`.length) || '';
+    const target = `/en${rest}`;
+    const redirectUrl = new URL(target + request.nextUrl.search, request.url);
+    return NextResponse.redirect(redirectUrl, 301);
   }
 
   // Check if the pathname is missing a locale

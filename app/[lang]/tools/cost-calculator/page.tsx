@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import { getDictionary } from '@/app/i18n/get-dictionary';
 import CostCalculatorClient from './CostCalculatorClient';
-import { NOINDEX_LOCALES } from '@/app/constants/seo-config';
 
 type Props = {
   params: Promise<{
@@ -16,22 +15,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: dict.cost_calculator?.metaTitle || 'Baja California Manufacturing Cost Calculator | Nearshore Navigator',
     description: dict.cost_calculator?.metaDesc || 'Estimate your fully-burdened manufacturing costs in Baja California vs. US domestic. Free interactive tool.',
-    robots: NOINDEX_LOCALES.has(lang) ? { index: false, follow: true } : undefined,
     alternates: {
-      canonical: NOINDEX_LOCALES.has(lang)
-        ? 'https://nearshorenavigator.com/en/tools/cost-calculator'
-        : `https://nearshorenavigator.com/${lang}/tools/cost-calculator`,
+      canonical: `https://nearshorenavigator.com/${lang}/tools/cost-calculator`,
       languages: {
         'en': 'https://nearshorenavigator.com/en/tools/cost-calculator',
         'es': 'https://nearshorenavigator.com/es/tools/cost-calculator',
-        'fr': 'https://nearshorenavigator.com/fr/tools/cost-calculator',
-        'de': 'https://nearshorenavigator.com/de/tools/cost-calculator',
-        'ja': 'https://nearshorenavigator.com/ja/tools/cost-calculator',
-        'zh': 'https://nearshorenavigator.com/zh/tools/cost-calculator',
-        'ko': 'https://nearshorenavigator.com/ko/tools/cost-calculator',
-        'it': 'https://nearshorenavigator.com/it/tools/cost-calculator',
-        'pt': 'https://nearshorenavigator.com/pt/tools/cost-calculator',
-        'ru': 'https://nearshorenavigator.com/ru/tools/cost-calculator',
         'x-default': 'https://nearshorenavigator.com/en/tools/cost-calculator',
       }
     }

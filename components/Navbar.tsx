@@ -25,14 +25,12 @@ export function Navbar() {
     const { language, setLanguage, t } = useLanguage();
     const { theme, toggleTheme } = useTheme();
 
+    // Only en + es are supported. Other locales were retired in 2026-04
+    // because their machine-translated content was cannibalizing /en/ in
+    // Google search and producing canonical-duplication errors at scale.
     const languages = [
         { code: 'en', label: 'English', flag: '🇺🇸' },
         { code: 'es', label: 'Español', flag: '🇲🇽' },
-        { code: 'fr', label: 'Français', flag: '🇫🇷' },
-        { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
-        { code: 'ja', label: '日本語', flag: '🇯🇵' },
-        { code: 'zh', label: '中文', flag: '🇨🇳' },
-        { code: 'ko', label: '한국어', flag: '🇰🇷' },
     ];
 
     const currentLang = languages.find(l => l.code === language) || languages[0];

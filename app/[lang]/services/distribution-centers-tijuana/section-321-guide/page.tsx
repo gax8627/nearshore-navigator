@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Section321Client from './Section321Client';
 import { getDictionary } from '@/app/i18n/get-dictionary';
-import { NOINDEX_LOCALES } from '@/app/constants/seo-config';
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
     const { lang } = await props.params;
@@ -13,22 +12,11 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     return {
         title,
         description,
-        robots: NOINDEX_LOCALES.has(lang) ? { index: false, follow: true } : undefined,
         alternates: {
-            canonical: NOINDEX_LOCALES.has(lang)
-              ? 'https://nearshorenavigator.com/en/services/distribution-centers-tijuana/section-321-guide'
-              : `https://nearshorenavigator.com/${lang}/services/distribution-centers-tijuana/section-321-guide`,
+            canonical: `https://nearshorenavigator.com/${lang}/services/distribution-centers-tijuana/section-321-guide`,
             languages: {
               'en': 'https://nearshorenavigator.com/en/services/distribution-centers-tijuana/section-321-guide',
               'es': 'https://nearshorenavigator.com/es/services/distribution-centers-tijuana/section-321-guide',
-              'fr': 'https://nearshorenavigator.com/fr/services/distribution-centers-tijuana/section-321-guide',
-              'de': 'https://nearshorenavigator.com/de/services/distribution-centers-tijuana/section-321-guide',
-              'ja': 'https://nearshorenavigator.com/ja/services/distribution-centers-tijuana/section-321-guide',
-              'zh': 'https://nearshorenavigator.com/zh/services/distribution-centers-tijuana/section-321-guide',
-              'ko': 'https://nearshorenavigator.com/ko/services/distribution-centers-tijuana/section-321-guide',
-              'it': 'https://nearshorenavigator.com/it/services/distribution-centers-tijuana/section-321-guide',
-              'pt': 'https://nearshorenavigator.com/pt/services/distribution-centers-tijuana/section-321-guide',
-              'ru': 'https://nearshorenavigator.com/ru/services/distribution-centers-tijuana/section-321-guide',
               'x-default': 'https://nearshorenavigator.com/en/services/distribution-centers-tijuana/section-321-guide',
             }
         }

@@ -7,7 +7,9 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 // In a stricter setup, we would infer this from the JSON schema.
 type Translations = any;
 
-export type Language = 'en' | 'es' | 'fr' | 'de' | 'ja' | 'zh' | 'ko' | 'it' | 'pt' | 'ru';
+// 2026-04 cleanup: only en + es are supported. The other locales were
+// 301-redirected to /en to eliminate canonical duplication in Google.
+export type Language = 'en' | 'es';
 
 type LanguageContextType = {
     language: Language;
@@ -65,39 +67,32 @@ export const LanguageProvider = ({ children, lang }: { children: ReactNode, lang
 
             let targetLang: Language = 'en';
 
-            // 1. Check localStorage first
+            // 1. Check localStorage first (normalize against supported locales)
+            const SUPPORTED: Language[] = ['en', 'es'];
             const storedLang = localStorage.getItem('app_lang') as Language;
-            if (storedLang) {
+            if (storedLang && SUPPORTED.includes(storedLang)) {
                 targetLang = storedLang;
             } else {
-                // 2. IP Geolocation as primary fallback
+                // 2. IP Geolocation as primary fallback.
+                //    Only en + es are supported since the 2026-04 cleanup;
+                //    everyone else gets /en.
                 try {
                     const response = await fetch('https://ipapi.co/json/');
                     const data = await response.json();
                     const country = data.country_code;
 
                     const spanishSpeakingCountries = [
-                        'MX', 'ES', 'AR', 'CO', 'PE', 'VE', 'CL', 'EC', 'GT', 'CU', 
+                        'MX', 'ES', 'AR', 'CO', 'PE', 'VE', 'CL', 'EC', 'GT', 'CU',
                         'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY', 'GQ'
                     ];
 
                     if (spanishSpeakingCountries.includes(country)) {
                         targetLang = 'es';
-                    } else if (country === 'FR') {
-                        targetLang = 'fr';
-                    } else if (country === 'DE') {
-                        targetLang = 'de';
-                    } else if (country === 'JP') {
-                        targetLang = 'ja';
-                    } else if (country === 'CN') {
-                        targetLang = 'zh';
-                    } else if (country === 'KR') {
-                        targetLang = 'ko';
                     }
                 } catch (error) {
-                    console.warn('Geolocation failed, falling back to browser language:', error);
-                    const browserLang = navigator.language.split('-')[0].toLowerCase() as Language;
-                    targetLang = browserLang;
+                    console.warn('Geolocation failed, defaulting to en:', error);
+                    const browserLang = navigator.language.split('-')[0].toLowerCase();
+                    targetLang = browserLang === 'es' ? 'es' : 'en';
                 }
             }
 

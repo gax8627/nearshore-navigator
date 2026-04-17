@@ -6,7 +6,6 @@ import { LanguageProvider } from '@/app/context/LanguageContext'
 import { ThemeProvider } from '@/app/context/ThemeContext'
 import { SchemaMarkup } from '@/components/SchemaMarkup'
 import { AIConsultant } from '@/components/AIConsultant'
-import { NOINDEX_LOCALES } from '@/app/constants/seo-config'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -20,8 +19,7 @@ export const viewport: Viewport = {
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const baseUrl = 'https://nearshorenavigator.com';
-  const isNoIndex = NOINDEX_LOCALES.has(lang);
-  const canonicalUrl = isNoIndex ? `${baseUrl}/en` : `${baseUrl}/${lang}`;
+  const canonicalUrl = `${baseUrl}/${lang}`;
 
   return {
     metadataBase: new URL(baseUrl),
@@ -35,14 +33,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       languages: {
         'en': `${baseUrl}/en`,
         'es': `${baseUrl}/es`,
-        'fr': `${baseUrl}/fr`,
-        'de': `${baseUrl}/de`,
-        'it': `${baseUrl}/it`,
-        'pt': `${baseUrl}/pt`,
-        'ja': `${baseUrl}/ja`,
-        'ko': `${baseUrl}/ko`,
-        'zh': `${baseUrl}/zh`,
-        'ru': `${baseUrl}/ru`,
         'x-default': `${baseUrl}/en`,
       }
     },

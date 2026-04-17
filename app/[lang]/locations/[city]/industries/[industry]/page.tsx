@@ -13,7 +13,7 @@ type Props = {
 };
 
 import { getDictionary } from "@/app/i18n/get-dictionary";
-import { NOINDEX_LOCALES, LOCALES } from "@/app/constants/seo-config";
+import { LOCALES } from "@/app/constants/seo-config";
 
 export async function generateStaticParams() {
   return INDUSTRY_MATRIX.flatMap(entry => 
@@ -39,22 +39,11 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${industryName} in ${location.name}, Mexico | 2026 Industrial Guide`,
     description: `Expert guide to ${industryName} manufacturing in ${location.name}. Scale your production with ${location.name}'s specialized workforce and AS9100/FDA-compliant infrastructure.`,
-    robots: NOINDEX_LOCALES.has(lang) ? { index: false, follow: true } : undefined,
     alternates: {
-      canonical: NOINDEX_LOCALES.has(lang) 
-        ? `https://nearshorenavigator.com/en/locations/${city}/industries/${industry}` 
-        : canonicalUrl,
+      canonical: canonicalUrl,
       languages: {
         'en': `https://nearshorenavigator.com/en/locations/${city}/industries/${industry}`,
         'es': `https://nearshorenavigator.com/es/locations/${city}/industries/${industry}`,
-        'fr': `https://nearshorenavigator.com/fr/locations/${city}/industries/${industry}`,
-        'de': `https://nearshorenavigator.com/de/locations/${city}/industries/${industry}`,
-        'ja': `https://nearshorenavigator.com/ja/locations/${city}/industries/${industry}`,
-        'zh': `https://nearshorenavigator.com/zh/locations/${city}/industries/${industry}`,
-        'ko': `https://nearshorenavigator.com/ko/locations/${city}/industries/${industry}`,
-        'it': `https://nearshorenavigator.com/it/locations/${city}/industries/${industry}`,
-        'pt': `https://nearshorenavigator.com/pt/locations/${city}/industries/${industry}`,
-        'ru': `https://nearshorenavigator.com/ru/locations/${city}/industries/${industry}`,
         'x-default': `https://nearshorenavigator.com/en/locations/${city}/industries/${industry}`,
       }
     }
