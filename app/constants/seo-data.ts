@@ -851,7 +851,7 @@ export const LOCATIONS: Location[] = [
     serviceHowItWorks: {
       "shelter-services": {
         title: "How Shelter Services Work in Saltillo",
-        seoTitle: "Shelter Services in Saltillo Mexico | Detroit of Mexico, IMMEX, $5.50/hr | 2026",
+        seoTitle: "Finsa Saltillo & Ramos Arizpe Shelter Services | $5.50/hr | 2026",
         seoDescription: "Saltillo shelter operators: GM, Stellantis & Daimler Truck ecosystem, IATF 16949, $5.50/hr labor (15-20% below border), 3.5hrs Laredo TX, CTM stable unions, IMMEX duty-free. Nearshore Navigator finds your Saltillo shelter partner — free.",
         content: [
           "Often referred to as the 'Detroit of Mexico,' Saltillo serves as the heavy-industrial heart of the Coahuila automotive cluster. For manufacturers considering a Mexico expansion, Saltillo represents one of the most stable and productive environments in North America. The region's industrial ecosystem is anchored by massive automotive assembly operations, including General Motors' Ramos Arizpe complex and the Stellantis Saltillo Truck Assembly Plant—the largest producer of Dodge Ram trucks in the world. When you utilize a shelter service in Saltillo, your operation is not just opening a factory; it is plugging directly into a hyper-dense network of Tier 1 and Tier 2 suppliers that have been operating here for decades. The shelter provider acts as your institutional interface, managing the regulatory and administrative complexities of the IMMEX program while you focus on scaling production within one of the world's most successful manufacturing corridors.",
@@ -1130,6 +1130,17 @@ export const LOCATIONS: Location[] = [
         ],
         parks: ["Parque Industrial Finsa Puebla", "Parque Industrial Quetzalcoatl", "Ciudad Industrial Resurección"],
         logistics: "Strategic interior logistics. Access to Port of Veracruz for ocean freight, and highway/rail corridors north to Nuevo Laredo. Highly competitive labor rates offset shipping distances."
+      },
+      "distribution-centers": {
+        title: "How Distribution Centers and 3PL Work in Puebla",
+        seoTitle: "3PL & Distribution Centers in Puebla Mexico | Finsa, VW & Audi Hub | 2026",
+        seoDescription: "Puebla 3PL and distribution: $0.55–0.70/sqft NNN, strategically located near VW & Audi plants. 2.5hrs to Port of Veracruz. Nearshore Navigator finds your Puebla logistics partner — free.",
+        content: [
+          "Puebla has developed into one of Mexico's most sophisticated logistics hubs, serving as the primary distribution gateway for the European automotive supply chain in North America. The presence of the Volkswagen and Audi assembly plants has mandated the development of world-class third-party logistics (3PL) and distribution infrastructure. For companies evaluating 3PL in Puebla, the value proposition centers on talent density and strategic geography: you are 2.5 hours from the Port of Veracruz (Atlantic access) and 2 hours from Mexico City, all while operating at a cost structure 20-30% below northern border cities.",
+          "Standard warehouse specifications in Puebla meet international Class A requirements, with facilities in Parque Industrial Finsa Puebla and Parque Industrial Vesta offering ESFR fire suppression, 32-40 foot clear heights, and heavy-load flooring. These facilities are frequently used by automotive Tier 1s for sequencing, kitting, and vendor-managed inventory (VMI) operations. The maturity of the local 3PL market means that warehouse personnel are already trained in advanced WMS systems and lean logistics principles. Nearshore Navigator helps you source and vet these logistics partners without taking commissions, ensuring you get the best rate and service level for your Puebla distribution needs."
+        ],
+        parks: ["Parque Industrial Finsa Puebla", "Parque Industrial Quetzalcoatl"],
+        logistics: "Direct highway access to the Port of Veracruz (2.5 hours) and Mexico City (2 hours). Integrated rail service to the US border via Nuevo Laredo."
       },
       "contract-manufacturing": {
         title: "How Contract Manufacturing Works in Puebla",

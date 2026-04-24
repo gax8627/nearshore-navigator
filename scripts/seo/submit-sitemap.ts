@@ -8,7 +8,10 @@ async function submitSitemap() {
   try {
     const auth = new google.auth.GoogleAuth({
       keyFile: KEY_FILE,
-      scopes: ['https://www.googleapis.com/auth/webmasters'],
+      scopes: [
+        'https://www.googleapis.com/auth/webmasters',
+        'https://www.googleapis.com/auth/searchconsole'
+      ],
     });
 
     const searchconsole = google.searchconsole({ version: 'v1', auth });

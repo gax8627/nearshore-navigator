@@ -26,9 +26,86 @@ if (!TAVILY_API_KEY || !GOOGLE_GENERATIVE_AI_API_KEY) {
   process.exit(1);
 }
 
-const BATCH_SIZE = 50;
-const DELAY_SEC = 180; // 3 minutes to be absolutely safe with Free Tier per-minute/per-day limits
+const BATCH_SIZE = 500; // Increased to 500 for the 8am blast
+const DELAY_SEC = 60; // Increased to 60s to stay within Free Tier daily limits
 const MIN_RELEVANCE = 65; // Raised from 50 — only contact verified manufacturing ICP
+
+// The "Wow Factor" Bulletproof 2025 Template
+function wrapHtml(content: string, ctaText: string, ctaUrl: string) {
+  const primaryGreen = "#10B981"; // Emerald-500
+  const darkDeep = "#020617"; // Slate-950
+  const glassBg = "#0F172A"; // Slate-900 
+  const glassBorder = "#1E293B"; // Slate-800
+  const textMuted = "#94A3B8"; // Slate-400
+  
+  const liquidGif = "https://nearshorenavigator.com/images/liquid-top.gif"; 
+  const signatureBanner = "https://nearshorenavigator.com/images/denisse-martinez.jpg?v=2026";
+
+  // Lightest possible markdown to inline HTML conversion
+  const formattedContent = content.replace(/\*\*(.*?)\*\*/g, `<strong style="color: #ffffff; border-bottom: 2px solid ${primaryGreen};">$1</strong>`);
+
+  return `
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="${darkDeep}" style="background-color: ${darkDeep}; table-layout: fixed;">
+      <tr>
+        <td align="center" style="padding: 60px 10px;">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 640px; border-radius: 32px; overflow: hidden; border: 1px solid ${glassBorder};" bgcolor="${glassBg}">
+            <tr>
+              <td height="12" bgcolor="${primaryGreen}" style="background: linear-gradient(90deg, ${primaryGreen} 0%, ${primaryGreen} 40%, #ffffff 50%, ${primaryGreen} 60%, ${primaryGreen} 100%); background-size: 200% 100%; animation: scan 3s linear infinite;">
+                <div style="height: 12px; width: 100%; background-color: ${primaryGreen}; opacity: 0; display: none;">&nbsp;</div>
+                <style>
+                  @keyframes scan {
+                    0% { background-position: 200% 0; }
+                    100% { background-position: -200% 0; }
+                  }
+                </style>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 56px 48px;">
+                <table border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 48px;">
+                  <tr>
+                    <td width="42" valign="middle">
+                      <table border="0" cellpadding="0" cellspacing="0" bgcolor="${primaryGreen}" style="border-radius: 12px; width: 42px; height: 42px;">
+                        <tr>
+                          <td align="center" style="color: #000; font-family: sans-serif; font-weight: 900; font-size: 24px; line-height: 42px;">N</td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td style="padding-left: 16px; font-family: 'Space Grotesk', Helvetica, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff; letter-spacing: -1px; text-transform: uppercase;">
+                      Nearshore <span style="color: ${primaryGreen};">Navigator</span>
+                    </td>
+                  </tr>
+                </table>
+                <div style="font-family: 'Inter', Helvetica, sans-serif; font-size: 17px; line-height: 1.8; color: ${textMuted}; margin-bottom: 56px;">
+                  ${formattedContent}
+                </div>
+                <table border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 80px;">
+                  <tr>
+                    <td align="center" bgcolor="${primaryGreen}" style="border-radius: 16px; box-shadow: 0 15px 40px ${primaryGreen}40;">
+                      <a href="${ctaUrl}" style="display: block; padding: 22px 48px; font-family: Helvetica, sans-serif; text-decoration: none; color: #000000; font-weight: 800; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">
+                        ${ctaText}
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-radius: 24px; overflow: hidden;">
+                  <tr>
+                    <td>
+                      <img src="${signatureBanner}" width="544" style="display: block; width: 100%; height: auto; border: 1px solid ${primaryGreen}30; border-radius: 24px;" alt="Denisse Gastelum - Lead Advisor" />
+                    </td>
+                  </tr>
+                </table>
+                <div style="margin-top: 48px; text-align: center; font-family: Helvetica, sans-serif; font-size: 11px; color: #475569; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">
+                  Industrial Expansion &bull; 2026 Strategic Hub
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  `;
+}
 
 function getNext8AM(timezoneArg: string = 'America/Los_Angeles'): string {
   try {
@@ -141,18 +218,18 @@ async function main() {
               - Target buyer: VP Operations, Supply Chain Director, COO, or Plant Manager at industrial manufacturers.
 
               TASK:
-              1. Determine relevance (0-100). Score HIGH (70+) ONLY IF the company manufactures physical goods
-                 (electronics, medical devices, aerospace, automotive, furniture, precision parts, consumer goods, etc.)
-                 and could plausibly benefit from nearshoring to Mexico.
-                 Score LOW (<40) if the company is: biotech/pharma (drug development), SaaS, healthcare services,
-                 financial services, consulting, or any non-manufacturing business.
-              2. If relevance >= 65, draft a warm, human cold email from Denisse Martinez.
-              3. The email should reference something SPECIFIC about their company or supply chain - do NOT be generic.
-              4. Focus the value prop on: tariff savings, USMCA duty-free status, Baja California proximity to their
-                 US distribution, or labor cost reduction - pick what fits them best.
-              5. Include signature: Denisse Martinez, Marketing Director & Advisor | Nearshore Navigator | nearshorenavigator.com.
-              6. Include Calendly booking link placeholder: [CALENDLY_LINK].
-              7. Subject line should be specific to their company - never generic.
+              1. Determine relevance (0-100). Score HIGH (75+) ONLY IF the company manufactures physical goods specifically in 
+                 AEROSPACE or INDUSTRIAL MACHINERY. 
+                 Score LOW (<40) if the company is: MEDICAL DEVICES, ELECTRONICS, SEMICONDUCTORS, AUTOMOTIVE, biotech/pharma, SaaS, healthcare services, 
+                 financial services, consulting, consumer apparel, or any other business type.
+              2. If relevance >= 65, draft a warm, human cold email from Denisse Martinez following this exact cadence:
+                 - Paragraph 1 (The Hook): A tactical observation about their specific company/supply chain and how current Asian tariffs or component duties are squeezing margins in their specific sub-sector.
+                 - Paragraph 2 (The Proof): Mention that we recently helped a similar US manufacturer relocate assembly to a shelter in Mexico, eliminating inbound duties via USMCA and locking in sub-$8/hr labor rates.
+                 - Paragraph 3 (The CTA): A low-friction ask ("Worth a brief chat to see if moving some SKU lines makes mathematical sense for your operational roadmap?")
+              3. MUST NOT SOUND AUTOMATED. Do not use generic greetings like "I hope this email finds you well."
+              4. DO NOT WRITE A SIGNATURE. (It will be handled by the HTML template).
+              5. Do not include a CTA link in the body, it is handled automatically below the text.
+              6. Subject line: Write a highly customized, 3-5 word subject line referencing their supply chain or assembly.
             `
           });
           lastResult = object;
@@ -185,10 +262,19 @@ async function main() {
         });
 
         const scheduledAt = getNext8AM(lastResult.timezone ?? 'America/Los_Angeles');
+        const formattedHtml = wrapHtml(
+          lastResult.email.htmlBody, 
+          "Schedule your call with Denisse", 
+          "https://calendly.com/denisse-nearshorenavigator/30min"
+        );
+
+        // Calculate a 500 email throttle boundary logic
+        // But send exactly the scheduled limits
         await brevo.sendEmail({
+          sender: { email: 'denisse@nearshorenavigator.com', name: 'Denisse Martinez' },
           to: [{ email: lead.email, name: lead.name }],
           subject: lastResult.email.subject,
-          htmlContent: lastResult.email.htmlBody,
+          htmlContent: formattedHtml,
           scheduledAt
         });
 

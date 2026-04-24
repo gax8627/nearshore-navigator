@@ -19,6 +19,41 @@ export type BlogPost = {
 
 export const BLOG_POSTS_RAW = [
   {
+      title: "Monterrey Power Map: 5 Industrial Parks with Private Substations",
+      excerpt: "Energy reliability is the #1 bottleneck for nearshoring in Monterrey. We've mapped the parks with redundant power and private infrastructure.",
+      date: "Apr 21, 2026",
+      slug: "monterrey-industrial-parks-energy-resilience",
+      imageUrl: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
+      tags: ["Monterrey", "Energy", "Infrastructure", "Industrial Parks"],
+      faqSchema: [
+        { q: "Which industrial parks in Monterrey have the best power reliability?", a: "Industrial parks with private electrical substations offer the highest reliability in Monterrey. Key locations include FINSA Monterrey (Santa Catarina), Prologis Park Monterrey, and Meor's Hubs. These parks invest in their own high-voltage infrastructure to bypass public grid bottlenecks, ensuring 99%+ uptime for heavy manufacturing." },
+        { q: "How much does it cost to secure high-voltage power in Monterrey?", a: "While CFE (Federal Electricity Commission) rates are regulated, the 'true cost' involves the infrastructure investment. Pre-leasing space in an energy-ready park can save $2M–$5M in substation construction costs and 12–18 months in permitting delays. Demand for energy-intensive space has driven Class A rents in Santa Catarina to $0.75–$0.95/sqft." }
+      ],
+      content: `
+        <p>As the nearshoring boom accelerates in Nuevo León, the limiting factor for new manufacturing operations has shifted from real estate availability to <strong>electrical power reliability</strong>.</p>
+        
+        <h2>The CFE Bottleneck</h2>
+        <p>While Mexico has sufficient generation capacity, the <strong>transmission and distribution grid</strong> in Monterrey is under extreme stress. 91% of industrial parks in the region have reported at least one major power failure in the last 12 months. For Tier-1 automotive and aerospace suppliers, a single hour of downtime can cost upwards of $200,000.</p>
+        
+        <h2>The Solution: Private Substations</h2>
+        <p>The most resilient industrial parks in Monterrey are those that have "de-risked" their power supply by building **private on-site substations**. These parks take high-voltage feed (115kV) directly from the grid and step it down themselves, ensuring a cleaner, more stable, and higher-capacity supply than parks reliant on public mid-voltage distribution.</p>
+        
+        <h3>Top 5 Energy-Resilient Parks in Monterrey (2026)</h3>
+        <ol>
+          <li><strong>FINSA Monterrey (Santa Catarina):</strong> Features a dedicated 60 MVA substation with expansion capacity. Ideal for heavy stamping and data centers.</li>
+          <li><strong>Prologis Park Monterrey:</strong> Known for "redundant feed" configurations where power can be switched between two different grid inputs.</li>
+          <li><strong>Vynmsa Santa Catarina Industrial Park:</strong> Offers "plug-and-play" high-voltage connections for immediate equipment setup.</li>
+          <li><strong>Meor Hub Monterrey South:</strong> Newest infrastructure with LEED-certified smart grid monitoring.</li>
+          <li><strong>Stiva Santa Catarina:</strong> Established park with legacy high-capacity power lines suitable for energy-intensive molding.</li>
+        </ol>
+
+        <h2>Strategic Recommendation</h2>
+        <p>If your operation requires more than 2 MVA of power, do not sign a lease without a <strong>verified Electrical Load Study</strong> and a physical inspection of the park's substation. Nearshore Navigator provides independent power audits for all major Monterrey developments.</p>
+        
+        <p><a href="/en/locations/monterrey">Explore Monterrey Industrial Data</a></p>
+      `
+  },
+  {
       title: "Nearshoring in Baja California: A Guide for US Companies",
       excerpt: "Everything you need to know about setting up operations in Mexico's manufacturing hub.",
       date: "Oct 24, 2025",

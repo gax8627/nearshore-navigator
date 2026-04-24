@@ -39,6 +39,7 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${industryName} in ${location.name}, Mexico | 2026 Industrial Guide`,
     description: `Expert guide to ${industryName} manufacturing in ${location.name}. Scale your production with ${location.name}'s specialized workforce and AS9100/FDA-compliant infrastructure.`,
+    robots: { index: false, follow: true },
     alternates: {
       canonical: canonicalUrl,
       languages: {

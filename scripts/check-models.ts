@@ -9,11 +9,11 @@ async function listModels() {
   // There is no straightforward listModels in the JS SDK without the rest API
   // But we can try to initialize some common ones and see which one doesn't throw a "not found"
   const models = [
-    "gemini-1.5-flash",
-    "gemini-1.5-pro",
-    "gemini-2.0-flash-exp",
-    "gemini-2.0-flash",
-    "gemini-exp-1206"
+    "gemini-1.5-flash-latest",
+    "gemini-1.5-flash-8b-latest",
+    "gemini-2.0-flash-lite-001",
+    "gemini-2.0-flash-001",
+    "gemini-2.0-flash"
   ];
 
   for (const modelName of models) {

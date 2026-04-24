@@ -14,7 +14,8 @@ import { TrustSeal } from "@/components/TrustSeal";
 import { INDUSTRY_MATRIX } from "@/app/constants/city-industry-matrix";
 import { INDUSTRY_VERTICALS } from "@/app/constants/industry-taxonomy";
 import { ComparisonModule } from "@/components/ComparisonModule";
-import { Factory, TrendingUp, BarChart3 } from "lucide-react";
+import { Factory, TrendingUp, BarChart3, Building2, Activity } from "lucide-react";
+import { FloatingLeadDock } from "@/components/FloatingLeadDock";
 
 // Map string icon names to components
 const iconMap = {
@@ -271,6 +272,47 @@ export default function CityOverviewClient({ city }: Props) {
                     </div>
                 </section>
 
+                {/* How It Works (Dynamic Depth Expansion) */}
+                {location.howItWorksSection && (
+                  <section className="bg-white/40 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-700 p-6 md:p-10 rounded-2xl mt-12 mb-12">
+                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                      {location.howItWorksSection.title}
+                    </h2>
+                    <div className="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 space-y-6 text-lg">
+                      {location.howItWorksSection.content.map((paragraph, idx) => (
+                        <p key={idx} className="leading-relaxed">{paragraph}</p>
+                      ))}
+                    </div>
+                    
+                    <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
+                        <h4 className="font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                          <Building2 className="w-5 h-5 text-primary-500" />
+                          Key Industrial Parks
+                        </h4>
+                        <ul className="space-y-3">
+                          {location.howItWorksSection.parks.map((park, idx) => (
+                            <li key={idx} className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                              <MapPin className="w-4 h-4 text-primary-500 flex-shrink-0" />
+                              <span className="font-medium">{park}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
+                        <h4 className="font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                          <Activity className="w-5 h-5 text-primary-500" />
+                          Logistics Advantage
+                        </h4>
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                          {location.howItWorksSection.logistics}
+                        </p>
+                      </div>
+                    </div>
+                  </section>
+                )}
+
+
                 {/* Premium CTA & Trust Badges */}
                 <section className="bg-sky-900 rounded-2xl p-8 border border-sky-800 text-white shadow-xl relative overflow-hidden mt-12">
                   <div className="absolute top-0 right-0 -tr-10 opacity-20 transform translate-x-1/2 -translate-y-1/2">
@@ -321,6 +363,7 @@ export default function CityOverviewClient({ city }: Props) {
             </div>
         </div>
       </div>
+      <FloatingLeadDock city={city} language={language} />
     </div>
   );
 }

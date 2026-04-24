@@ -16,6 +16,13 @@ const CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
 const CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 const REDIRECT_URI = 'http://localhost:3000';
 
+async function authorize() {
+  const oauth2Client = new google.auth.OAuth2(
+    CLIENT_ID,
+    CLIENT_SECRET,
+    REDIRECT_URI
+  );
+
   if (!CLIENT_ID || !CLIENT_SECRET) {
     console.error('❌ ERROR: GOOGLE_CLIENT_ID or GOOGLE_CLIENT_SECRET is missing in .env.local');
     return;

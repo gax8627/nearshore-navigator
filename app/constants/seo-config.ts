@@ -23,14 +23,13 @@
 export const NOINDEX_LOCALES = new Set<string>();
 
 /** Indexable + buildable locales for this site. */
-export const LOCALES = ['en', 'es'] as const;
+export const LOCALES = ['en', 'es', 'fr', 'de', 'ja', 'zh', 'ko', 'it', 'pt', 'ru'] as const;
 export type Locale = typeof LOCALES[number];
 
 /**
- * Locales we used to serve but now 301-redirect to /en/.
- * Exported so robots/sitemap/debug scripts can reason about them.
+ * Locales that are fully supported and indexable.
  */
-export const DEPRECATED_LOCALES = ['fr', 'de', 'ja', 'zh', 'ko', 'it', 'pt', 'ru'] as const;
+export const DEPRECATED_LOCALES = [] as const;
 
 /** Base URL for canonical and hreflang generation. */
 export const BASE_URL = 'https://nearshorenavigator.com';

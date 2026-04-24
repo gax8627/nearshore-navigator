@@ -8,6 +8,7 @@ import { CheckCircle2, ArrowRight, MapPin, ChevronRight, Home } from "lucide-rea
 import { useLanguage } from "@/app/context/LanguageContext";
 import { getLocation, getService, LOCATIONS } from "@/app/constants/seo-data";
 import { TrustSeal } from "@/components/TrustSeal";
+import { FloatingLeadDock } from "@/components/FloatingLeadDock";
 
 type Props = {
   city: string;
@@ -452,6 +453,7 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
 
       {/* Founder Block */}
       <FounderBlock />
+      <FloatingLeadDock city={city} language={language} />
     </div>
   );
 }

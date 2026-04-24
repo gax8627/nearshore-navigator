@@ -1,0 +1,3 @@
+module.exports=[36590,a=>{"use strict";var b=a.i(87924),c=a.i(72131),d=a.i(50944);function e(){let a=(0,d.useRouter)();return(0,c.useEffect)(()=>{a.replace("/admin")},[a]),(0,b.jsx)("div",{className:"min-h-screen bg-gray-950 flex items-center justify-center",children:(0,b.jsxs)("div",{className:"text-center",children:[(0,b.jsx)("div",{className:"w-12 h-12 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"}),(0,b.jsx)("p",{className:"text-gray-400",children:"Redirecting to sign in..."})]})})}a.s(["default",()=>e,"dynamic",0,"force-dynamic"])}];
+
+//# sourceMappingURL=app_admin_sign-in_%5B%5B___sign-in%5D%5D_page_tsx_d208436f._.js.map

@@ -16,7 +16,7 @@ function wrapHtml(content: string, ctaText: string, ctaUrl: string) {
   
   // Public Assets - These must be hosted on the website's public images folder
   const liquidGif = "https://nearshorenavigator.com/images/liquid-top.gif"; 
-  const signatureBanner = "https://nearshorenavigator.com/images/denisse-banner.jpg";
+  const signatureBanner = "https://nearshorenavigator.com/images/denisse-martinez.jpg?v=2026";
 
   // Format bold text for robust rendering
   const formattedContent = content.replace(/\*\*(.*?)\*\*/g, `<strong style="color: #ffffff; border-bottom: 2px solid ${primaryGreen};">$1</strong>`);
@@ -98,16 +98,16 @@ function wrapHtml(content: string, ctaText: string, ctaUrl: string) {
 }
 
 async function sendTestEmail() {
-  const prospectName = "Test User";
-  const userEmail = "gax8627@gmail.com"; 
+  const prospectName = "Ramiro";
+  const userEmail = "gmailderamiro@gmail.com"; 
 
   const htmlContent = wrapHtml(`
     <p>Hi ${prospectName},</p>
-    <p>I noticed you were researching some of our nearshore manufacturing options in Mexico recently.</p>
-    <p>Rather than jumping on a call, would it be helpful if I sent over a **shortlist of 3 vetted partners** specifically for **Nearshore Navigator Test**?</p>
-    <p>I can include their current CNC/assembly capacities and typical lead times so you can compare them against your current setup without any commitment.</p>
-    <p>If you're interested, just click below to schedule a time or simply reply to this email.</p>
-  `, "Schedule a Deep Dive", "https://calendly.com/denisse-nearshorenavigator/30min");
+    <p>We've been helping several US Aerospace and Industrial Machinery manufacturers out of California take a closer look at Baja.</p>
+    <p>Based on your current assembly lines, moving some of these heavy sub-assemblies to a shelter operation in Mexicali would completely eliminate your inbound Asian tariffs while locking your labor in at **$7.84/hr**.</p>
+    <p>I frequently share our internal landed-cost models and free logistics checklists with other supply chain leaders, and would love to walk you through it.</p>
+    <p>Worth connecting to see if moving some SKU lines makes mathematical sense for your roadmap?</p>
+  `, "Schedule a call with Denisse", "https://calendly.com/denisse-nearshorenavigator/30min");
 
   const body = {
     sender: { email: 'denisse@nearshorenavigator.com', name: 'Denisse Martinez' },
@@ -130,7 +130,6 @@ async function sendTestEmail() {
     console.error('Failed to send test email:', await response.text());
   } else {
     console.log('✅ Test email sent successfully to:', userEmail);
-    console.log('   Check your inbox at gax8627@gmail.com to preview the design.');
   }
 }
 

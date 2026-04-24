@@ -6,15 +6,12 @@ import { LOCALES, BASE_URL, NOINDEX_LOCALES } from '@/app/constants/seo-config'
 /**
  * SITEMAP GENERATOR
  *
- * Only submits indexable locales (en + es) as primary <loc> entries.
- * The 8 deprecated locales (fr, de, it, pt, ru, ja, zh, ko) are now
- * 301-redirected to /en by middleware.ts, so we never advertise them
- * in the sitemap or hreflang — which previously created contradictory
- * signals and produced ~960 "Duplicate, Google chose different canonical"
- * errors in Search Console.
+ * Submits all 10 supported international locales (en, es, fr, de, ja, zh, ko, it, pt, ru)
+ * to maximize global search visibility.
  *
- * Hreflang now advertises only en + es + x-default, matching what we
- * actually serve 200-OK responses for.
+ * Hreflang alternates are generated for all indexable locales to ensure
+ * Google serves the correct language version to the correct audience
+ * without cannibalization.
  */
 
 // Only submit pages Google is allowed to index
@@ -24,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Bump lastModified on each deploy of SEO-affecting changes so Google
     // re-crawls and re-evaluates canonical/hreflang after the cleanup.
-    const lastModified = new Date('2026-04-16');
+    const lastModified = new Date('2026-04-24');
 
     // Helper to generate hreflang alternates for any path.
     // ONLY indexable locales go in here — advertising deprecated locales
@@ -76,11 +73,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
      */
     const cityPaths: { path: string, priority: number, freq: 'daily' | 'weekly' | 'monthly' }[] = [];
     LOCATIONS.forEach(city => {
-        cityPaths.push({ 
-            path: `/locations/${city.slug}`, 
-            priority: 0.9, 
-            freq: 'weekly' 
-        });
+        // Only submit cities that have substantial unique content to prevent thin content indexing errors
+        const hasSubstantialContent = city.howItWorksSection || (city.serviceHowItWorks && Object.keys(city.serviceHowItWorks).length > 0);
+        
+        if (hasSubstantialContent) {
+            cityPaths.push({ 
+                path: `/locations/${city.slug}`, 
+                priority: 0.9, 
+                freq: 'weekly' 
+            });
+        }
 
         const cityServices = city.serviceHowItWorks ? Object.keys(city.serviceHowItWorks) : [];
         cityServices.forEach(serviceSlug => {
@@ -94,11 +96,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
 
     /**
-     * 3. INDUSTRY MATRIX (THE 250 PAGES)
+     * 3. INDUSTRY MATRIX (THIN DOORWAY PAGES REMOVED FROM SITEMAP)
+     * These paths now have algorithmic noindex to fix Google SC coverage errors.
      */
-    const matrixPaths: string[] = INDUSTRY_MATRIX.map(entry => 
-        `/locations/${entry.citySlug}/industries/${entry.industrySlug}`
-    );
+    const matrixPaths: string[] = [];
 
     /**
      * GENERATOR — only en + es as primary <loc> entries

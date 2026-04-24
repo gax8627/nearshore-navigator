@@ -21,13 +21,22 @@ async function main() {
     if (events && events.events) {
       const delivered = events.events.filter((e: any) => e.event === 'delivered');
       const opened = events.events.filter((e: any) => e.event === 'opened');
-      const clicks = events.events.filter((e: any) => e.event === 'clicks');
-      const deferred = events.events.filter((e: any) => e.event === 'deferred');
+      const clicks = (events.events as any[]).filter((e: any) => e.event === 'clicks');
+      const uniqueClickers = Array.from(new Set(clicks.map((e: any) => e.email)));
+
       console.log(`Today's stats from Brevo API:`);
       console.log(`  Delivered: ${delivered.length}`);
       console.log(`  Opened:    ${opened.length}`);
-      console.log(`  Clicks:    ${clicks.length}`);
-      console.log(`  Deferred:  ${deferred.length}`);
+      console.log(`  Clicks:    ${clicks.length} (Total events)`);
+      console.log(`  Clickers:  ${uniqueClickers.length} (Unique individuals)`);
+      
+      if (uniqueClickers.length > 0) {
+        console.log('\n🎯 HIGH-INTENT CLICKERS:');
+        uniqueClickers.forEach((email: string) => {
+            const count = clicks.filter((e: any) => e.email === email).length;
+            console.log(`  - ${email} (${count} clicks)`);
+        });
+      }
     } else {
       console.log('No events found or error fetching:', events);
     }

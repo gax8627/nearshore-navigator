@@ -33,6 +33,14 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       languages: {
         'en': `${baseUrl}/en`,
         'es': `${baseUrl}/es`,
+        'fr': `${baseUrl}/fr`,
+        'de': `${baseUrl}/de`,
+        'ja': `${baseUrl}/ja`,
+        'zh': `${baseUrl}/zh`,
+        'ko': `${baseUrl}/ko`,
+        'it': `${baseUrl}/it`,
+        'pt': `${baseUrl}/pt`,
+        'ru': `${baseUrl}/ru`,
         'x-default': `${baseUrl}/en`,
       }
     },

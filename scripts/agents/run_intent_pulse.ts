@@ -21,19 +21,21 @@ async function main() {
     const agent = new UserIntentAgent();
     
     // 1. Fetch events from the last 48 hours
-    const now = new Date();
-    const twoDaysAgo = new Date(now.getTime() - (48 * 60 * 60 * 1000));
-    const startDate = twoDaysAgo.toISOString().split('T')[0];
-    
-    console.log(`🔍 Scanning engagement since ${startDate}...`);
-    
-    try {
-        const eventsData = await brevo.getEmailEvents({
-            limit: 500,
-            startDate,
-            event: 'opened',
-            sort: 'desc'
-        });
+        const now = new Date();
+        const twoDaysAgo = new Date(now.getTime() - (48 * 60 * 60 * 1000));
+        const startDate = twoDaysAgo.toISOString().split('T')[0];
+        const endDate = now.toISOString().split('T')[0];
+        
+        console.log(`🔍 Scanning engagement between ${startDate} and ${endDate}...`);
+        
+        try {
+            const eventsData = await brevo.getEmailEvents({
+                limit: 500,
+                startDate,
+                endDate,
+                event: 'opened',
+                sort: 'desc'
+            });
 
         const events = eventsData.events || [];
         if (events.length === 0) {

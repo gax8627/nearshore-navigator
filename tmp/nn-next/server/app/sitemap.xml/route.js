@@ -1,0 +1,10 @@
+var R=require("../../chunks/[turbopack]_runtime.js")("server/app/sitemap.xml/route.js")
+R.c("server/chunks/[root-of-the-server]__2bcbb516._.js")
+R.c("server/chunks/node_modules_next_f2da0d3e._.js")
+R.c("server/chunks/app_constants_city-industry-matrix_ts_1b9fef2b._.js")
+R.c("server/chunks/[root-of-the-server]__4780b363._.js")
+R.c("server/chunks/app_constants_seo-data_ts_3a6c1cf4._.js")
+R.c("server/chunks/node_modules_next_dist_3cae5f3a._.js")
+R.c("server/chunks/_next-internal_server_app_sitemap_xml_route_actions_12658ace.js")
+R.m(8922)
+module.exports=R.m(8922).exports

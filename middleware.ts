@@ -6,8 +6,8 @@ import type { NextRequest } from 'next/server';
 // cannibalized /en/ in search results and produced "Duplicate, Google chose
 // different canonical" errors at scale. We now 301-redirect those prefixes
 // to /en/ so Google removes them from the index cleanly.
-const locales = ['en', 'es'];
-const deprecatedLocales = new Set(['fr', 'de', 'ja', 'zh', 'ko', 'it', 'pt', 'ru']);
+const locales = ['en', 'es', 'fr', 'de', 'ja', 'zh', 'ko', 'it', 'pt', 'ru'];
+const deprecatedLocales = new Set([]);
 
 // Check if Clerk is configured
 const isClerkConfigured = !!(
@@ -96,17 +96,7 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // ─── Deprecated locales: 301 → /en equivalent ───────────
-  // Removes machine-translated duplicates from Google's index without
-  // leaving them discoverable. Strips the old locale prefix and preserves
-  // the rest of the path.
-  const firstSegment = pathname.split('/')[1];
-  if (firstSegment && deprecatedLocales.has(firstSegment)) {
-    const rest = pathname.slice(`/${firstSegment}`.length) || '';
-    const target = `/en${rest}`;
-    const redirectUrl = new URL(target + request.nextUrl.search, request.url);
-    return NextResponse.redirect(redirectUrl, 301);
-  }
+  // Deprecated locales logic removed to support full 10-language indexing.
 
   // Check if the pathname is missing a locale
   const pathnameIsMissingLocale = locales.every(
