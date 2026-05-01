@@ -8,8 +8,8 @@ dotenv.config({ path: path.join(process.cwd(), '.env.local') });
 
 // Setup Gemini
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY || '');
-// Using gemini-3.1-pro-preview to finish the final 14 entries
-const model = genAI.getGenerativeModel({ model: 'gemini-3.1-pro-preview' });
+// Using gemini-flash-latest with a fresh rotated API key
+const model = genAI.getGenerativeModel({ model: 'gemini-flash-latest' });
 
 // We load the TS file using ts-node dynamically or just parse it if we can.
 // To avoid TS compile issues in a standalone script, we'll import it directly.
@@ -79,8 +79,8 @@ async function generateAnalysis() {
       
       processedCount++;
       
-      // Sleep to avoid rate limits (longer delay for Pro/Preview models)
-      await new Promise(resolve => setTimeout(resolve, 10000));
+      // Sleep to avoid rate limits (15 RPM free tier = 4000ms. Using 4500ms to be safe)
+      await new Promise(resolve => setTimeout(resolve, 4500));
     } catch (error: any) {
       console.error(`❌ Failed to generate for ${key}:`, error.message);
     }

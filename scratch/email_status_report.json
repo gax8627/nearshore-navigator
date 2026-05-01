@@ -1,0 +1,595 @@
+[dotenv@17.3.1] injecting env (12) from .env.local -- tip: ⚡️ secrets for agents: https://dotenvx.com/as2
+📊 Fetching latest email events from Brevo...
+
+--- Latest 10 Email Events ---
+{
+  "events": [
+    {
+      "email": "info@mybesthomecare.com",
+      "date": "2026-04-29T15:25:12.502-07:00",
+      "messageId": "<202602172104.65219148298@smtp-relay.mailin.fr>",
+      "event": "clicks",
+      "subject": "Class A Industrial Space in Baja / Monterrey for My Best Homecare",
+      "from": "denisse@nearshorenavigator.com",
+      "link": "https://calendly.com/denisse-nearshorenavigator/30min",
+      "ip": "54.145.254.103"
+    },
+    {
+      "email": "rphillips@phillipsind.com",
+      "date": "2026-04-27T05:58:11.329-07:00",
+      "messageId": "<202603241254.67502251057@smtp-relay.mailin.fr>",
+      "event": "clicks",
+      "subject": "Baja CA supply chain shortlist for Phillips Industries?",
+      "from": "nearshore.navigator@10628686.brevosend.com",
+      "link": "https://calendly.com/denisse-nearshorenavigator/30min",
+      "ip": "144.217.233.242"
+    },
+    {
+      "email": "aheckman@acmefoundry.net",
+      "date": "2026-04-24T11:42:34.426-07:00",
+      "messageId": "<202603251120.11557697753@smtp-relay.mailin.fr>",
+      "event": "loadedByProxy",
+      "subject": "Baja CA supply chain shortlist for Acme Foundry?",
+      "from": "nearshore.navigator@10628686.brevosend.com",
+      "ip": "146.75.164.1"
+    },
+    {
+      "email": "mikevogelvang@gmail.com",
+      "date": "2026-04-24T08:32:49.037-07:00",
+      "messageId": "<202603040038.57090003197@smtp-relay.mailin.fr>",
+      "event": "opened",
+      "subject": "Positive Machining — Mexico manufacturing shortlist?",
+      "from": "nearshore.navigator@10628686.brevosend.com",
+      "ip": "66.249.84.228"
+    },
+    {
+      "email": "swessel@propanetank.com",
+      "date": "2026-04-23T04:35:34.2-07:00",
+      "messageId": "<202603251115.31041109907@smtp-relay.mailin.fr>",
+      "event": "clicks",
+      "subject": "The 3 factories our clients keep choosing in Baja",
+      "from": "nearshore.navigator@10628686.brevosend.com",
+      "link": "https://calendly.com/denisse-nearshorenavigator/30min",
+      "ip": "198.50.163.54"
+    },
+    {
+      "email": "susansweezy@matjack.com",
+      "date": "2026-04-22T12:27:54.482-07:00",
+      "messageId": "<202603231254.36070380287@smtp-relay.mailin.fr>",
+      "event": "loadedByProxy",
+      "subject": "The 3 factories our clients keep choosing in Baja",
+      "from": "nearshore.navigator@10628686.brevosend.com",
+      "ip": "104.28.103.30"
+    },
+    {
+      "email": "cbontrager@modineer.com",
+      "date": "2026-04-22T07:07:41.463-07:00",
+      "messageId": "<202603251120.14074865489@smtp-relay.mailin.fr>",
+      "event": "clicks",
+      "subject": "Tijuana vs Shenzhen manufacturing costs (2026 data)",
+      "from": "nearshore.navigator@10628686.brevosend.com",
+      "link": "https://calendly.com/denisse-nearshorenavigator/30min",
+      "ip": "51.83.243.164"
+    },
+    {
+      "email": "executive@testcompany.com",
+      "date": "2026-04-21T19:40:59-07:00",
+      "messageId": "<202604220240.46586043085@smtp-relay.mailin.fr>",
+      "event": "softBounces",
+      "subject": "Test Company — July USMCA Rules of Origin Shift?",
+      "from": "nearshore.navigator@10628686.brevosend.com",
+      "reason": "Invalid MX of domain  [MX issue]",
+      "ip": "77.32.148.28"
+    },
+    {
+      "email": "executive@testcompany.com",
+      "date": "2026-04-21T19:40:58.372-07:00",
+      "messageId": "<202604220240.46586043085@smtp-relay.mailin.fr>",
+      "event": "requests",
+      "subject": "Test Company — July USMCA Rules of Origin Shift?",
+      "from": "nearshore.navigator@10628686.brevosend.com",
+      "ip": "77.32.148.28"
+    },
+    {
+      "email": "mikevogelvang@gmail.com",
+      "date": "2026-04-21T09:16:21.663-07:00",
+      "messageId": "<202603040038.57090003197@smtp-relay.mailin.fr>",
+      "event": "opened",
+      "subject": "Positive Machining — Mexico manufacturing shortlist?",
+      "from": "nearshore.navigator@10628686.brevosend.com",
+      "ip": "10.42.30.39"
+    }
+  ]
+}
+
+--- Recent Campaigns ---
+{
+  "campaigns": [
+    {
+      "id": 8,
+      "name": "Media Pitches March 2026",
+      "subject": "Nearshore Navigator Media Pitch",
+      "previewText": "",
+      "type": "classic",
+      "status": "sent",
+      "scheduledAt": "2026-03-03T09:00:00.000-08:00",
+      "testSent": false,
+      "header": "[DEFAULT_HEADER]",
+      "footer": "[DEFAULT_FOOTER]",
+      "sender": {
+        "email": "nearshore.navigator@gmail.com",
+        "name": "Denisse Martinez",
+        "id": 1
+      },
+      "replyTo": "[DEFAULT_REPLY_TO]",
+      "toField": "",
+      "htmlContent": "\n        <html>\n          <head>\n      <style>\n        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@600&display=swap');\n        body { font-family: 'Inter', sans-serif; color: #1e293b; line-height: 1.6; }\n        .container { max-width: 600px; margin: 0 auto; padding: 20px; }\n        .header { margin-bottom: 24px; }\n        .content { margin-bottom: 32px; }\n        .footer { font-size: 14px; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 20px; }\n        .btn { background-color: #0F9D58; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; display: inline-block; font-weight: 600; }\n        .logo { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 600; color: #0F9D58; text-decoration: none; }\n      </style>\n    </head>\n          <body>\n            <div class=\"container\">\n              <div class=\"content\">\n                <p>Hi {{contact.FIRSTNAME}},</p>\n                <p>{{contact.PUBLICATION}} has done an excellent job lately covering the shifting sands of nearshoring. {{contact.PITCH_ANGLE}}</p>\n                <p>I'm the Marketing Director at Nearshore Navigator in Tijuana. {{contact.ARTICLE_ABSTRACT}}</p>\n                <p>I can have a draft over by next week—does this align with your upcoming editorial calendar?</p>\n              </div>\n              <div class=\"footer\">\n                <p>Best,<br/><strong>Denisse Martinez</strong><br/>Marketing Director, Nearshore Navigator</p>\n                <p>denisse@nearshorenavigator.com</p>\n              </div>\n            </div>\n          </body>\n        </html>\n      ",
+      "shareLink": "http://sh1.sendinblue.com/nyb709vt4c.html",
+      "tag": "",
+      "createdAt": "2026-03-02T19:41:36.000-08:00",
+      "modifiedAt": "2026-03-02T19:41:36.000-08:00",
+      "sentDate": "2026-03-03T09:07:59.000-08:00",
+      "inlineImageActivation": false,
+      "mirrorActive": false,
+      "recipients": {
+        "lists": [
+          14
+        ],
+        "exclusionLists": [],
+        "segments": [],
+        "excludedSegments": []
+      },
+      "statistics": {
+        "globalStats": {
+          "uniqueClicks": 0,
+          "clickers": 0,
+          "complaints": 0,
+          "delivered": 0,
+          "sent": 0,
+          "softBounces": 0,
+          "hardBounces": 0,
+          "uniqueViews": 0,
+          "unsubscriptions": 0,
+          "viewed": 0,
+          "trackableViews": 0,
+          "trackableViewsRate": 0,
+          "estimatedViews": 0,
+          "opensRate": 0,
+          "appleMppOpens": 0
+        },
+        "campaignStats": [
+          {
+            "listId": 14,
+            "uniqueClicks": 0,
+            "clickers": 0,
+            "complaints": 0,
+            "delivered": 0,
+            "sent": 2,
+            "softBounces": 1,
+            "hardBounces": 1,
+            "uniqueViews": 0,
+            "trackableViews": 0,
+            "unsubscriptions": 0,
+            "viewed": 0,
+            "deferred": 0
+          }
+        ],
+        "mirrorClick": 0,
+        "remaining": 0,
+        "linksStats": {},
+        "statsByDomain": {},
+        "statsByDevice": {
+          "desktop": {
+            "mac": {
+              "clickers": 0,
+              "uniqueClicks": 0,
+              "viewed": 0,
+              "uniqueViews": 0,
+              "trackableViews": 0
+            },
+            "othersystem": {
+              "clickers": 0,
+              "uniqueClicks": 0,
+              "viewed": 0,
+              "uniqueViews": 0,
+              "trackableViews": 0
+            },
+            "windows": {
+              "clickers": 0,
+              "uniqueClicks": 0,
+              "viewed": 0,
+              "uniqueViews": 0,
+              "trackableViews": 0
+            }
+          },
+          "mobile": {
+            "androidmobile": {
+              "clickers": 0,
+              "uniqueClicks": 0,
+              "viewed": 0,
+              "uniqueViews": 0,
+              "trackableViews": 0
+            },
+            "iphone": {
+              "clickers": 0,
+              "uniqueClicks": 0,
+              "viewed": 0,
+              "uniqueViews": 0,
+              "trackableViews": 0
+            }
+          },
+          "tablet": {
+            "androidtablet": {
+              "clickers": 0,
+              "uniqueClicks": 0,
+              "viewed": 0,
+              "uniqueViews": 0,
+              "trackableViews": 0
+            },
+            "appleipad": {
+              "clickers": 0,
+              "uniqueClicks": 0,
+              "viewed": 0,
+              "uniqueViews": 0,
+              "trackableViews": 0
+            }
+          }
+        },
+        "statsByBrowser": {
+          "android": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "chrome": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "edge": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "electron": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "firefox": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "internetexplorer": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "mailchannelsscanner": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "microsoft": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "mozilla": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "opera": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "outlookexpress": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "safari": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "thunderbird": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "unknown": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "yahoomailproxy": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          }
+        }
+      },
+      "abTesting": false,
+      "sendAtBestTime": false
+    },
+    {
+      "id": 7,
+      "name": "Association Outreach March 2026",
+      "subject": "Collaborating on Baja California's 2026 Growth Data",
+      "previewText": "",
+      "type": "classic",
+      "status": "sent",
+      "scheduledAt": "2026-03-03T09:00:00.000-08:00",
+      "testSent": false,
+      "header": "[DEFAULT_HEADER]",
+      "footer": "[DEFAULT_FOOTER]",
+      "sender": {
+        "email": "nearshore.navigator@gmail.com",
+        "name": "Denisse Martinez",
+        "id": 1
+      },
+      "replyTo": "[DEFAULT_REPLY_TO]",
+      "toField": "",
+      "htmlContent": "\n        <html>\n          <head>\n      <style>\n        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@600&display=swap');\n        body { font-family: 'Inter', sans-serif; color: #1e293b; line-height: 1.6; }\n        .container { max-width: 600px; margin: 0 auto; padding: 20px; }\n        .header { margin-bottom: 24px; }\n        .content { margin-bottom: 32px; }\n        .footer { font-size: 14px; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 20px; }\n        .btn { background-color: #0F9D58; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; display: inline-block; font-weight: 600; }\n        .logo { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 600; color: #0F9D58; text-decoration: none; }\n      </style>\n    </head>\n          <body>\n            <div class=\"container\">\n              <div class=\"header\">\n                <a href=\"https://nearshorenavigator.com\" class=\"logo\">Nearshore Navigator</a>\n              </div>\n              <div class=\"content\">\n                <p>Hi {{contact.FIRSTNAME}},</p>\n                <p>I closely follow {{contact.ORGANIZATION}}'s updates on Baja California's industrial growth—{{contact.HOOK}} was excellent to see.</p>\n                <p>As the Marketing Director at Nearshore Navigator, we're currently publishing our \"2026 Ultimate Guide to Baja Shelter Services.\" Because we rely so heavily on the foundational data your organization provides, we'd love to feature and link out to you as a recommended resource for US firms.</p>\n                <p>Would you be open to a quick chat to ensure we're aligning our data? In return, we'd love to discuss contributing a guest insight piece regarding upcoming USMCA compliance trends.</p>\n                <p style=\"margin-top: 30px;\">\n                  <a href=\"https://nearshorenavigator.com/en/insights/ultimate-guide-baja-shelter\" class=\"btn\">View the Guide</a>\n                </p>\n              </div>\n              <div class=\"footer\">\n                <p><strong>Denisse Martinez</strong><br/>Marketing Director, Nearshore Navigator</p>\n                <p>denisse@nearshorenavigator.com | Tijuana, BC</p>\n              </div>\n            </div>\n          </body>\n        </html>\n      ",
+      "shareLink": "http://sh1.sendinblue.com/nv5f09vt4c.html",
+      "tag": "",
+      "createdAt": "2026-03-02T19:41:36.000-08:00",
+      "modifiedAt": "2026-03-02T19:41:36.000-08:00",
+      "sentDate": "2026-03-03T09:08:16.000-08:00",
+      "inlineImageActivation": false,
+      "mirrorActive": false,
+      "recipients": {
+        "lists": [
+          13
+        ],
+        "exclusionLists": [],
+        "segments": [],
+        "excludedSegments": []
+      },
+      "statistics": {
+        "globalStats": {
+          "uniqueClicks": 0,
+          "clickers": 0,
+          "complaints": 0,
+          "delivered": 0,
+          "sent": 0,
+          "softBounces": 0,
+          "hardBounces": 0,
+          "uniqueViews": 0,
+          "unsubscriptions": 0,
+          "viewed": 0,
+          "trackableViews": 0,
+          "trackableViewsRate": 0,
+          "estimatedViews": 0,
+          "opensRate": 0,
+          "appleMppOpens": 0
+        },
+        "campaignStats": [
+          {
+            "listId": 13,
+            "uniqueClicks": 0,
+            "clickers": 0,
+            "complaints": 0,
+            "delivered": 1,
+            "sent": 5,
+            "softBounces": 1,
+            "hardBounces": 3,
+            "uniqueViews": 1,
+            "trackableViews": 1,
+            "unsubscriptions": 0,
+            "viewed": 1,
+            "deferred": 0
+          }
+        ],
+        "mirrorClick": 0,
+        "remaining": 0,
+        "linksStats": {
+          "https://nearshorenavigator.com": 0,
+          "https://nearshorenavigator.com/en/insights/ultimate-guide-baja-shelter": 0
+        },
+        "statsByDomain": {},
+        "statsByDevice": {
+          "desktop": {
+            "mac": {
+              "clickers": 0,
+              "uniqueClicks": 0,
+              "viewed": 0,
+              "uniqueViews": 0,
+              "trackableViews": 0
+            },
+            "othersystem": {
+              "clickers": 0,
+              "uniqueClicks": 0,
+              "viewed": 0,
+              "uniqueViews": 0,
+              "trackableViews": 0
+            },
+            "windows": {
+              "clickers": 0,
+              "uniqueClicks": 0,
+              "viewed": 0,
+              "uniqueViews": 0,
+              "trackableViews": 0
+            }
+          },
+          "mobile": {
+            "androidmobile": {
+              "clickers": 0,
+              "uniqueClicks": 0,
+              "viewed": 0,
+              "uniqueViews": 0,
+              "trackableViews": 0
+            },
+            "iphone": {
+              "clickers": 0,
+              "uniqueClicks": 0,
+              "viewed": 0,
+              "uniqueViews": 0,
+              "trackableViews": 0
+            }
+          },
+          "tablet": {
+            "androidtablet": {
+              "clickers": 0,
+              "uniqueClicks": 0,
+              "viewed": 0,
+              "uniqueViews": 0,
+              "trackableViews": 0
+            },
+            "appleipad": {
+              "clickers": 0,
+              "uniqueClicks": 0,
+              "viewed": 0,
+              "uniqueViews": 0,
+              "trackableViews": 0
+            }
+          }
+        },
+        "statsByBrowser": {
+          "android": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "chrome": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "edge": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "electron": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "firefox": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "internetexplorer": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "mailchannelsscanner": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "microsoft": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "mozilla": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "opera": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "outlookexpress": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "safari": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "thunderbird": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "unknown": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          },
+          "yahoomailproxy": {
+            "clickers": 0,
+            "uniqueClicks": 0,
+            "viewed": 0,
+            "uniqueViews": 0,
+            "trackableViews": 0
+          }
+        }
+      },
+      "abTesting": false,
+      "sendAtBestTime": false
+    }
+  ],
+  "count": 2
+}
