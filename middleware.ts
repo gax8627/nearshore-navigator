@@ -96,8 +96,22 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Deprecated locales logic removed to support full 10-language indexing.
+  // ─── Deprecated Locales Redirect ──────────────────────
+  // We explicitly 301 redirect these to /en/ to consolidate link equity
+  // and resolve "Discovered - currently not indexed" crawl bloat.
+  const deprecatedLocalesList = ['fr', 'de', 'ja', 'zh', 'ko', 'it', 'pt', 'ru'];
+  const hasDeprecatedLocale = deprecatedLocalesList.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  );
 
+  if (hasDeprecatedLocale) {
+    const newPathname = pathname.replace(/^\/(fr|de|ja|zh|ko|it|pt|ru)(\/|$)/, '/en$2');
+    const redirectUrl = new URL(
+      `${newPathname}${request.nextUrl.search}`,
+      request.url
+    );
+    return NextResponse.redirect(redirectUrl, 301);
+  }
   // Check if the pathname is missing a locale
   const pathnameIsMissingLocale = locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`

@@ -10,8 +10,9 @@ import { cn } from "@/lib/utils"; // Ensure this exists or use clsx/tailwind-mer
 const navItems = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
   { label: "Posts", href: "/admin/posts", icon: FileText },
+  { label: "Content Queue", href: "/admin/content-queue", icon: Shield },
   { label: "Leads", href: "/admin/leads", icon: Users },
-  { label: "Campaigns", href: "/admin/crm", icon: Users },
+  { label: "CRM", href: "/admin/crm", icon: Settings },
   { label: "Settings", href: "/admin/settings", icon: Settings },
 ];
 

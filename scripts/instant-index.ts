@@ -78,8 +78,16 @@ async function instantIndex() {
   /**
    * ─── BING / INDEXNOW SUBMISSION ───
    */
-  console.log('\n[Bing] Pinging IndexNow protocol...');
+  console.log('\n[Bing] Pinging IndexNow protocol with individual URLs...');
   try {
+    // Dynamically import the sitemap generator
+    const sitemapModule = await import('../app/sitemap');
+    const routes = sitemapModule.default();
+    // Extract just the URL strings
+    const urlList = routes.map((r: any) => r.url);
+
+    console.log(`[Bing] Submitting ${urlList.length} URLs directly to IndexNow...`);
+
     const res = await fetch('https://www.bing.com/indexnow', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -87,12 +95,12 @@ async function instantIndex() {
         host: 'nearshorenavigator.com',
         key: INDEXNOW_KEY,
         keyLocation: `https://nearshorenavigator.com/${INDEXNOW_KEY}.txt`,
-        urlList: [SITEMAP_URL],
+        urlList: urlList,
       }),
     });
 
     if (res.ok) {
-      console.log('✅ Bing: IndexNow Ping Success (HTTP 200/202).');
+      console.log(`✅ Bing: IndexNow Ping Success (HTTP 200/202). Submitted ${urlList.length} URLs.`);
     } else {
       const text = await res.text();
       console.error(`❌ Bing Error (${res.status}):`, text);

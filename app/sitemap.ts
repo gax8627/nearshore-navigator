@@ -1,27 +1,34 @@
 import { MetadataRoute } from 'next'
 import { LOCATIONS } from '@/app/constants/seo-data'
 import { INDUSTRY_MATRIX } from '@/app/constants/city-industry-matrix'
-import { LOCALES, BASE_URL, NOINDEX_LOCALES } from '@/app/constants/seo-config'
+import { INDEXABLE_LOCALES, BASE_URL } from '@/app/constants/seo-config'
 
 /**
- * SITEMAP GENERATOR
+ * SITEMAP GENERATOR — 2026-04-27 Overhaul
  *
- * Submits all 10 supported international locales (en, es, fr, de, ja, zh, ko, it, pt, ru)
- * to maximize global search visibility.
+ * Only submits en + es locales (the only indexable ones).
+ * The 8 deprecated locales (fr/de/ja/zh/ko/it/pt/ru) are 301-redirected
+ * by middleware.ts and must NOT appear in the sitemap.
  *
- * Hreflang alternates are generated for all indexable locales to ensure
- * Google serves the correct language version to the correct audience
- * without cannibalization.
+ * Industry matrix pages are now conditionally included: only Tier 1
+ * cities with real, verified content are submitted. Placeholder entries
+ * are excluded to prevent "Discovered - currently not indexed" buildup.
  */
 
-// Only submit pages Google is allowed to index
-const INDEXABLE_LOCALES = LOCALES.filter(l => !NOINDEX_LOCALES.has(l)); // ['en', 'es']
+/** Tier 1 cities with verified deep content in seo-data.ts */
+const TIER1_CITIES = new Set([
+  'tijuana', 'mexicali', 'juarez', 'reynosa', 'nuevo-laredo',
+  'nogales', 'matamoros', 'monterrey', 'guadalajara', 'queretaro',
+  'san-luis-potosi', 'saltillo', 'hermosillo', 'silao', 'puebla',
+  'chihuahua-city',
+]);
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const routes: MetadataRoute.Sitemap = [];
 
     // Bump lastModified on each deploy of SEO-affecting changes so Google
     // re-crawls and re-evaluates canonical/hreflang after the cleanup.
-    const lastModified = new Date('2026-04-24');
+    const lastModified = new Date('2026-04-28');
 
     // Helper to generate hreflang alternates for any path.
     // ONLY indexable locales go in here — advertising deprecated locales
@@ -96,14 +103,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
 
     /**
-     * 3. INDUSTRY MATRIX (THIN DOORWAY PAGES REMOVED FROM SITEMAP)
-     * These paths now have algorithmic noindex to fix Google SC coverage errors.
+     * 3. INDUSTRY MATRIX — Tier 1 cities only
+     * Only submit industry vertical pages for cities with verified,
+     * non-placeholder content. This prevents GSC "Discovered - currently
+     * not indexed" accumulation from thin doorway pages.
      */
-    const matrixPaths: string[] = [];
+    const matrixPaths: { path: string, priority: number }[] = [];
+    INDUSTRY_MATRIX.forEach(entry => {
+        if (TIER1_CITIES.has(entry.citySlug)) {
+            // Check for non-placeholder data (real company names, real parks)
+            const isPlaceholder = (
+                entry.topLocalEmployers.some(e => e.startsWith('Global ')) ||
+                entry.featuredParks.some(p => p.includes(' Industrial Zone'))
+            );
+            if (!isPlaceholder) {
+                matrixPaths.push({
+                    path: `/locations/${entry.citySlug}/industries/${entry.industrySlug}`,
+                    priority: 0.85,
+                });
+            }
+        }
+    });
 
     /**
      * GENERATOR — only en + es as primary <loc> entries
-     * Hreflang alternates still cover all 10 locales for language targeting.
+     * Hreflang alternates cover en + es + x-default only.
      */
     INDEXABLE_LOCALES.forEach(lang => {
         // Build Static
@@ -128,14 +152,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
             });
         });
 
-        // Build Industry Matrix
-        matrixPaths.forEach(path => {
+        // Build Industry Matrix (Tier 1 only)
+        matrixPaths.forEach(item => {
             routes.push({
-                url: `${BASE_URL}/${lang}${path}`,
+                url: `${BASE_URL}/${lang}${item.path}`,
                 lastModified,
                 changeFrequency: 'weekly',
-                priority: 0.85,
-                alternates: getAlternates(path)
+                priority: item.priority,
+                alternates: getAlternates(item.path)
             });
         });
     });

@@ -1,4 +1,26 @@
 {
+  "cityOverview": {
+    "home": "Inicio",
+    "locations": "Ubicaciones",
+    "proximityAdvantage": "Ventaja de proximidad fronteriza de 15 minutos",
+    "getShortlist": "Obtener Lista Corta Verificada",
+    "capacityReport": "Reporte de Capacidad 2026 Incluido",
+    "population": "Población",
+    "laborForce": "Fuerza Laboral",
+    "proximity": "Proximidad",
+    "industryExpertise": "Experiencia en la Industria",
+    "activeFacilities": "Instalaciones Activas",
+    "whyChoose": "Por Qué Elegir",
+    "keyParks": "Parques Industriales Clave",
+    "logisticsAdvantage": "Ventaja Logística",
+    "landedCostAnalysis": "Análisis de Costo Total",
+    "calculateSavings": "Calcule Sus Ahorros Exactos en",
+    "savingsDesc": "Deje de adivinar. Permita que nuestro equipo asesor realice un análisis de costo total comparando su cadena de suministro actual directamente con",
+    "btnCalculate": "Calcular Sus Ahorros",
+    "zeroObligation": "Reporte sin compromiso",
+    "startIn": "Comience en",
+    "consultationDesc": "Obtenga una consulta gratuita y un análisis de costos para su proyecto."
+  },
   "nav": {
     "services": "Servicios",
     "assessment": "Evaluación",

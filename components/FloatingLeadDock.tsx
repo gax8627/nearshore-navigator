@@ -60,6 +60,7 @@ export const FloatingLeadDock: React.FC<FloatingLeadDockProps> = ({ city, langua
             <div className="flex flex-col gap-2">
               <button 
                 onClick={() => setIsVisible(false)}
+                aria-label="Close"
                 className="absolute top-2 right-2 text-slate-500 hover:text-white transition-colors"
               >
                 <X className="w-4 h-4" />

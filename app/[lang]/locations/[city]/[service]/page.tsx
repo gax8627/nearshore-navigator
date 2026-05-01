@@ -59,14 +59,6 @@ export async function generateMetadata({ params }: Props) {
       languages: {
         'en': `https://nearshorenavigator.com/en/locations/${city}/${serviceParam}`,
         'es': `https://nearshorenavigator.com/es/locations/${city}/${serviceParam}`,
-        'fr': `https://nearshorenavigator.com/fr/locations/${city}/${serviceParam}`,
-        'de': `https://nearshorenavigator.com/de/locations/${city}/${serviceParam}`,
-        'ja': `https://nearshorenavigator.com/ja/locations/${city}/${serviceParam}`,
-        'zh': `https://nearshorenavigator.com/zh/locations/${city}/${serviceParam}`,
-        'ko': `https://nearshorenavigator.com/ko/locations/${city}/${serviceParam}`,
-        'it': `https://nearshorenavigator.com/it/locations/${city}/${serviceParam}`,
-        'pt': `https://nearshorenavigator.com/pt/locations/${city}/${serviceParam}`,
-        'ru': `https://nearshorenavigator.com/ru/locations/${city}/${serviceParam}`,
         'x-default': `https://nearshorenavigator.com/en/locations/${city}/${serviceParam}`,
       }
     }

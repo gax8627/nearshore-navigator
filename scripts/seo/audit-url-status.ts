@@ -5,10 +5,11 @@ const KEY_FILE = '/Users/gax8627/.config/gcloud/application_default_credentials.
 const SITE_URL = 'sc-domain:nearshorenavigator.com';
 
 const URLS_TO_CHECK = [
-  'https://nearshorenavigator.com/en/resources/questionnaire',
-  'https://nearshorenavigator.com/es/resources/questionnaire',
-  'https://nearshorenavigator.com/en/blog/3pl-logistics-mexico-guide',
-  'https://nearshorenavigator.com/en'
+  'https://nearshorenavigator.com/en',
+  'https://nearshorenavigator.com/ja/locations/tijuana',
+  'https://nearshorenavigator.com/de/locations/mexicali',
+  'https://nearshorenavigator.com/es/locations/juarez',
+  'https://nearshorenavigator.com/en/services/shelter-services'
 ];
 
 async function checkIndexStatus() {

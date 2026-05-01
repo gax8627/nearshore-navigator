@@ -24,6 +24,7 @@ import { useLanguage } from "@/app/context/LanguageContext";
 import { getLocation } from "@/app/constants/seo-data";
 import { INDUSTRY_VERTICALS } from "@/app/constants/industry-taxonomy";
 import { INDUSTRY_MATRIX } from "@/app/constants/city-industry-matrix";
+import localAnalysisData from '@/app/constants/local-analysis-data.json';
 
 type Props = {
   city: string;
@@ -162,13 +163,27 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
             
             {/* Main Content Area */}
             <div className="lg:col-span-8 space-y-20">
-                
                 {/* Sector Opportunity Deep Dive */}
                 <section>
                     <div className="flex items-center gap-4 mb-8">
                         <div className="h-px bg-primary-500 w-12" />
                         <h2 className="text-2xl font-bold text-gray-900 dark:text-white uppercase tracking-widest">{t(`industries.${industry}.industryAnalysis`)}</h2>
                     </div>
+
+                    {/* Programmatic SEO: Hyper-Local Injection */}
+                    {(localAnalysisData as Record<string, string>)[`${city}_${industry}`] && (
+                        <div className="bg-primary-500/5 border border-primary-500/20 p-8 rounded-2xl mb-10">
+                            <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-primary-600 dark:text-primary-400">
+                                <MapPin className="w-5 h-5" />
+                                Local Market Advantage: {location.name}
+                            </h3>
+                            <div 
+                                className="text-gray-700 dark:text-gray-300 leading-relaxed space-y-4"
+                                dangerouslySetInnerHTML={{ __html: (localAnalysisData as Record<string, string>)[`${city}_${industry}`] }}
+                            />
+                        </div>
+                    )}
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
                             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
@@ -294,6 +309,77 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
             </div>
 
         </div>
+      </div>
+
+      {/* ── Hub/Spoke Cross-Linking ── */}
+      {/* These internal links are critical for programmatic SEO. They create
+          the interconnected page architecture that Google requires before
+          indexing programmatic pages. Without these, pages are "orphaned"
+          and remain in the "Discovered - currently not indexed" bucket. */}
+      <div className="container mx-auto px-4 mt-20 space-y-16 pb-8">
+        
+        {/* Other Industries in This City */}
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            {t('industries.exploreOtherIndustries')?.replace('{location}', location.name) || 
+              `Explore Other Industries in ${location.name}`}
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {INDUSTRY_VERTICALS
+              .filter(v => v.slug !== industry)
+              .map(v => {
+                const hasMatrix = INDUSTRY_MATRIX.some(m => m.citySlug === city && m.industrySlug === v.slug);
+                if (!hasMatrix) return null;
+                return (
+                  <Link
+                    key={v.slug}
+                    href={`/${language}/locations/${city}/industries/${v.slug}`}
+                    className="group bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-100 dark:border-gray-700 hover:border-primary-500 hover:shadow-lg transition-all duration-200"
+                  >
+                    <Activity className="w-5 h-5 text-gray-400 group-hover:text-primary-500 mb-3 transition-colors" />
+                    <span className="block text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 transition-colors">
+                      {t(`industries.${v.slug}.name`) || v.slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                    </span>
+                    <span className="block text-xs text-gray-500 mt-1">
+                      {location.name}
+                    </span>
+                  </Link>
+                );
+              })}
+          </div>
+        </section>
+
+        {/* Same Industry in Other Cities */}
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            {t(`industries.${industry}.exploreOtherCities`) ||
+              `${t(`industries.${industry}.name`) || industry.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} in Other Cities`}
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {INDUSTRY_MATRIX
+              .filter(m => m.industrySlug === industry && m.citySlug !== city)
+              .slice(0, 10) // Limit to avoid excessive links
+              .map(m => {
+                const otherLocation = getLocation(m.citySlug);
+                if (!otherLocation) return null;
+                return (
+                  <Link
+                    key={m.citySlug}
+                    href={`/${language}/locations/${m.citySlug}/industries/${industry}`}
+                    className="group bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-100 dark:border-gray-700 hover:border-primary-500 hover:shadow-lg transition-all duration-200"
+                  >
+                    <MapPin className="w-5 h-5 text-gray-400 group-hover:text-primary-500 mb-3 transition-colors" />
+                    <span className="block text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 transition-colors">
+                      {t(`locations.${m.citySlug}.name`) || otherLocation.name}
+                    </span>
+                    <span className="block text-xs text-gray-500 mt-1">
+                      {otherLocation.state}
+                    </span>
+                  </Link>
+                );
+              })}
+          </div>
+        </section>
       </div>
     </div>
   );

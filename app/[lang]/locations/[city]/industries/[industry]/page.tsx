@@ -13,11 +13,48 @@ type Props = {
 };
 
 import { getDictionary } from "@/app/i18n/get-dictionary";
-import { LOCALES } from "@/app/constants/seo-config";
+import { INDEXABLE_LOCALES } from "@/app/constants/seo-config";
 
+/**
+ * Tier 1 cities with rich, verified content in seo-data.ts.
+ * Only these cities produce indexable industry vertical pages.
+ * All other matrix entries are placeholder data and remain noindex.
+ */
+const TIER1_CITIES = new Set([
+  'tijuana', 'mexicali', 'juarez', 'reynosa', 'nuevo-laredo',
+  'nogales', 'matamoros', 'monterrey', 'guadalajara', 'queretaro',
+  'san-luis-potosi', 'saltillo', 'hermosillo', 'silao', 'puebla',
+  'chihuahua-city',
+]);
+
+/**
+ * Content quality gate: checks if a matrix entry has real data
+ * (not the generic placeholder pattern).
+ */
+function hasRealContent(entry: typeof INDUSTRY_MATRIX[number]): boolean {
+  const isPlaceholder = (
+    entry.topLocalEmployers.some(e => e.startsWith('Global ')) ||
+    entry.featuredParks.some(p => p.includes(' Industrial Zone'))
+  );
+  return !isPlaceholder && TIER1_CITIES.has(entry.citySlug);
+}
+
+/**
+ * Only generate static pages for:
+ *   - Indexable locales (en + es)
+ *   - Tier 1 cities with real content
+ *
+ * This reduces page count from 2,510 → ~100-150 pages.
+ * Other city/industry combos are still accessible via dynamic rendering
+ * but are NOT pre-built at compile time.
+ */
 export async function generateStaticParams() {
-  return INDUSTRY_MATRIX.flatMap(entry => 
-    LOCALES.map(lang => ({
+  const tier1Entries = INDUSTRY_MATRIX.filter(entry => 
+    TIER1_CITIES.has(entry.citySlug)
+  );
+
+  return tier1Entries.flatMap(entry => 
+    INDEXABLE_LOCALES.map(lang => ({
       lang,
       city: entry.citySlug,
       industry: entry.industrySlug
@@ -33,13 +70,17 @@ export async function generateMetadata({ params }: Props) {
 
   if (!location || !vertical || !dict) return {};
 
+  const matrixEntry = INDUSTRY_MATRIX.find(m => m.citySlug === city && m.industrySlug === industry);
+  const isIndexable = matrixEntry ? hasRealContent(matrixEntry) : false;
+
   const industryName = dict.industries?.[industry]?.name || "Manufacturing Industry";
   const canonicalUrl = `https://nearshorenavigator.com/${lang}/locations/${city}/industries/${industry}`;
 
   return {
     title: `${industryName} in ${location.name}, Mexico | 2026 Industrial Guide`,
     description: `Expert guide to ${industryName} manufacturing in ${location.name}. Scale your production with ${location.name}'s specialized workforce and AS9100/FDA-compliant infrastructure.`,
-    robots: { index: false, follow: true },
+    // Only index pages with verified, real content. Placeholder pages remain noindex.
+    robots: { index: isIndexable, follow: true },
     alternates: {
       canonical: canonicalUrl,
       languages: {

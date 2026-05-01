@@ -87,13 +87,13 @@ export default function CityOverviewClient({ city }: Props) {
                     <li className="inline-flex items-center">
                         <Link href={`/${language}`} className="inline-flex items-center hover:text-white transition-colors">
                             <Home className="w-4 h-4 mr-2" />
-                            Home
+                            {t('cityOverview.home')}
                         </Link>
                     </li>
                     <li>
                         <div className="flex items-center">
                             <ChevronRight className="w-4 h-4 mx-1" />
-                            <span className="text-gray-400">Locations</span>
+                            <span className="text-gray-400">{t('cityOverview.locations')}</span>
                         </div>
                     </li>
                     <li>
@@ -115,7 +115,7 @@ export default function CityOverviewClient({ city }: Props) {
                 {city === 'tijuana' && (
                     <div className="flex items-center gap-2 px-3 py-1 bg-primary-500/20 text-primary-400 text-[10px] font-bold rounded-md border border-primary-500/30 uppercase tracking-widest animate-pulse">
                         <TrendingUp className="w-3 h-3" />
-                        15-Minute Border Proximity Advantage
+                        {t('cityOverview.proximityAdvantage')}
                     </div>
                 )}
             </div>
@@ -132,12 +132,12 @@ export default function CityOverviewClient({ city }: Props) {
                             size="lg" 
                             className="bg-primary-600 hover:bg-primary-500 text-white shadow-xl shadow-primary-900/20 px-8"
                         >
-                            Get Vetted Tijuana Shortlist
+                            {t('cityOverview.getShortlist')}
                         </Button>
                     </Link>
                     <div className="flex items-center gap-2 text-white/60 text-sm">
                         <CheckCircle2 className="w-4 h-4 text-primary-500" />
-                        2026 Capacity Report Included
+                        {t('cityOverview.capacityReport')}
                     </div>
                 </div>
             )}
@@ -149,15 +149,15 @@ export default function CityOverviewClient({ city }: Props) {
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-gray-700">
                 <div className="p-4">
-                    <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Population</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">{t('cityOverview.population')}</div>
                     <div className="text-3xl font-bold text-gray-900 dark:text-white">{location.stats.population}</div>
                 </div>
                 <div className="p-4">
-                    <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Labor Force</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">{t('cityOverview.laborForce')}</div>
                     <div className="text-3xl font-bold text-gray-900 dark:text-white">{location.stats.laborForce}</div>
                 </div>
                 <div className="p-4">
-                    <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Proximity</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">{t('cityOverview.proximity')}</div>
                     <div className="text-3xl font-bold text-gray-900 dark:text-white">{location.stats.proximity}</div>
                 </div>
             </div>
@@ -201,7 +201,7 @@ export default function CityOverviewClient({ city }: Props) {
                 {/* Industrial Verticals (PAE Layer) */}
                 <section>
                     <SectionTitle 
-                        title="Industry Expertise"
+                        title={t('cityOverview.industryExpertise')}
                         subtitle={`Specialized manufacturing guides for ${t(`locations.${city}.name`) || location.name}'s key industrial clusters.`}
                     />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
@@ -223,7 +223,7 @@ export default function CityOverviewClient({ city }: Props) {
                                               <h4 className="font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">
                                                  {indName}
                                               </h4>
-                                              <p className="text-xs text-gray-500">{entry.stats.plants} Active Facilities</p>
+                                              <p className="text-xs text-gray-500">{entry.stats.plants} {t('cityOverview.activeFacilities')}</p>
                                           </div>
                                     </div>
                                     <ChevronRight className="w-5 h-5 text-gray-300 group-hover:text-primary-500 transition-colors" />
@@ -257,7 +257,7 @@ export default function CityOverviewClient({ city }: Props) {
 
                 {/* Why This City */}
                 <section>
-                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Why Choose {location.name}?</h2>
+                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">{t('cityOverview.whyChoose')} {location.name}?</h2>
                     <div className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700">
                         <div className="grid grid-cols-1 gap-6">
                             {location.advantages.map((advantage, index) => (
@@ -288,7 +288,7 @@ export default function CityOverviewClient({ city }: Props) {
                       <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
                         <h4 className="font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                           <Building2 className="w-5 h-5 text-primary-500" />
-                          Key Industrial Parks
+                          {t('cityOverview.keyParks')}
                         </h4>
                         <ul className="space-y-3">
                           {location.howItWorksSection.parks.map((park, idx) => (
@@ -302,7 +302,7 @@ export default function CityOverviewClient({ city }: Props) {
                       <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
                         <h4 className="font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                           <Activity className="w-5 h-5 text-primary-500" />
-                          Logistics Advantage
+                          {t('cityOverview.logisticsAdvantage')}
                         </h4>
                         <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                           {location.howItWorksSection.logistics}
@@ -324,24 +324,24 @@ export default function CityOverviewClient({ city }: Props) {
                   </div>
                   <div className="relative z-10">
                     <span className="inline-block px-3 py-1 bg-sky-800 text-sky-200 text-xs font-bold rounded-full mb-4 uppercase tracking-wider">
-                       {location.name} Landed Cost Analysis
+                       {location.name} {t('cityOverview.landedCostAnalysis')}
                     </span>
                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                      Calculate Your Exact Savings in {location.name}
+                      {t('cityOverview.calculateSavings')} {location.name}
                     </h3>
                     <p className="text-sky-100 mb-8 max-w-lg leading-relaxed">
-                      Stop guessing. Let our advisory team run a custom total landed cost analysis comparing your current supply chain directly to {location.name}.
+                      {t('cityOverview.savingsDesc')} {location.name}.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 items-center">
                       <Link 
                         href={`/${language}/contact`}
                         className="w-full sm:w-auto px-8 py-4 rounded-md bg-white text-sky-900 font-bold hover:bg-sky-50 transition-colors shadow-lg text-center"
                       >
-                        Calculate Your Savings
+                        {t('cityOverview.btnCalculate')}
                       </Link>
                       <p className="text-sm text-sky-200 flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-sky-400" />
-                        Zero obligation report
+                        {t('cityOverview.zeroObligation')}
                       </p>
                     </div>
                   </div>
@@ -354,8 +354,8 @@ export default function CityOverviewClient({ city }: Props) {
                 <div className="sticky top-28 space-y-6">
                     <TrustSeal />
                     <LeadForm
-                        title={`Start in ${location.name}`}
-                        subtitle="Get a free consultation and cost analysis for your project."
+                        title={`${t('cityOverview.startIn')} ${location.name}`}
+                        subtitle={t('cityOverview.consultationDesc')}
                         source={`city_overview_${city}`}
                         className="shadow-xl"
                     />

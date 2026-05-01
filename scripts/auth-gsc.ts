@@ -2,6 +2,9 @@ import { google } from 'googleapis';
 import fs from 'fs';
 import path from 'path';
 import readline from 'readline/promises';
+import * as dotenv from 'dotenv';
+
+dotenv.config({ path: path.join(process.cwd(), '.env.local') });
 
 /**
  * GOOGLE SEARCH CONSOLE ONE-TIME AUTHORIZATION

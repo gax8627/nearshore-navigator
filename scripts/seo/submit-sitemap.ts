@@ -1,18 +1,24 @@
 import { google } from 'googleapis';
 
-const KEY_FILE = '/Users/gax8627/.config/gcloud/application_default_credentials.json';
+import * as dotenv from 'dotenv';
+import path from 'path';
+import fs from 'fs';
+
+dotenv.config({ path: path.join(process.cwd(), '.env.local') });
+
+const TOKEN_PATH = path.join(process.cwd(), 'google-token.json');
+const CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+const CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
+const REDIRECT_URI = 'http://localhost:3000';
+
 const SITE_URL = 'sc-domain:nearshorenavigator.com';
 const SITEMAP_URL = 'https://nearshorenavigator.com/sitemap.xml';
 
 async function submitSitemap() {
   try {
-    const auth = new google.auth.GoogleAuth({
-      keyFile: KEY_FILE,
-      scopes: [
-        'https://www.googleapis.com/auth/webmasters',
-        'https://www.googleapis.com/auth/searchconsole'
-      ],
-    });
+    const auth = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
+    const tokenData = JSON.parse(fs.readFileSync(TOKEN_PATH, 'utf8'));
+    auth.setCredentials(tokenData);
 
     const searchconsole = google.searchconsole({ version: 'v1', auth });
 

@@ -109,12 +109,15 @@ function wrapHtml(content: string, ctaText: string, ctaUrl: string) {
 
 function getNext8AM(timezoneArg: string = 'America/Los_Angeles'): string {
   try {
-    const timezone = timezoneArg || 'America/Los_Angeles';
     const now = new Date();
-    // Simple 8AM tomorrow for script
     const target = new Date(now);
-    target.setDate(target.getDate() + 1);
-    target.setHours(8, 0, 0, 0); 
+    target.setHours(8, 0, 0, 0);
+    
+    // If it's already past 8 AM today, schedule for tomorrow
+    if (target.getTime() <= now.getTime()) {
+      target.setDate(target.getDate() + 1);
+    }
+    
     return target.toISOString();
   } catch (e) {
     const d = new Date();

@@ -22,9 +22,17 @@
 
 export const NOINDEX_LOCALES = new Set<string>();
 
-/** Indexable + buildable locales for this site. */
+/** All locales the site supports (middleware uses this for routing). */
 export const LOCALES = ['en', 'es', 'fr', 'de', 'ja', 'zh', 'ko', 'it', 'pt', 'ru'] as const;
 export type Locale = typeof LOCALES[number];
+
+/**
+ * Only en + es are indexable and should be statically generated.
+ * The other 8 locales are 301-redirected by middleware.ts and should
+ * NOT be pre-rendered or submitted in the sitemap.
+ * Use this in generateStaticParams() and sitemap.ts.
+ */
+export const INDEXABLE_LOCALES: readonly string[] = ['en', 'es'] as const;
 
 /**
  * Locales that are fully supported and indexable.

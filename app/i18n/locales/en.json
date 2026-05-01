@@ -1,4 +1,26 @@
 {
+  "cityOverview": {
+    "home": "Home",
+    "locations": "Locations",
+    "proximityAdvantage": "15-Minute Border Proximity Advantage",
+    "getShortlist": "Get Vetted Shortlist",
+    "capacityReport": "2026 Capacity Report Included",
+    "population": "Population",
+    "laborForce": "Labor Force",
+    "proximity": "Proximity",
+    "industryExpertise": "Industry Expertise",
+    "activeFacilities": "Active Facilities",
+    "whyChoose": "Why Choose",
+    "keyParks": "Key Industrial Parks",
+    "logisticsAdvantage": "Logistics Advantage",
+    "landedCostAnalysis": "Landed Cost Analysis",
+    "calculateSavings": "Calculate Your Exact Savings in",
+    "savingsDesc": "Stop guessing. Let our advisory team run a custom total landed cost analysis comparing your current supply chain directly to",
+    "btnCalculate": "Calculate Your Savings",
+    "zeroObligation": "Zero obligation report",
+    "startIn": "Start in",
+    "consultationDesc": "Get a free consultation and cost analysis for your project."
+  },
   "nav": {
     "services": "Services",
     "assessment": "Assessment",

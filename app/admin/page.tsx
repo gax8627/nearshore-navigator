@@ -1,5 +1,7 @@
-import { FileText, Users, TrendingUp, ArrowUpRight } from "lucide-react";
+import { FileText, Users, TrendingUp, ArrowUpRight, ShieldCheck, ShieldAlert } from "lucide-react";
 import Link from "next/link";
+import fs from "fs";
+import path from "path";
 
 export const dynamic = 'force-dynamic';
 
@@ -31,7 +33,31 @@ import { db } from "@/lib/db";
 import { posts, leads } from "@/lib/db/schema";
 import { sql } from "drizzle-orm";
 
-export default async function AdminDashboard() {
+export default async function AdminPage() {
+  // Read Indexing Audit Report
+  let indexingHealth = { status: "Unknown", color: "bg-gray-500/20 text-gray-400", icon: ShieldCheck };
+  try {
+    const reportPath = path.join(process.cwd(), "scripts/indexing_audit_report.json");
+    if (fs.existsSync(reportPath)) {
+      const report = JSON.parse(fs.readFileSync(reportPath, "utf-8"));
+      if (report.isHealthy) {
+        indexingHealth = { 
+          status: "Healthy", 
+          color: "bg-emerald-500/20 text-emerald-400", 
+          icon: ShieldCheck 
+        };
+      } else {
+        indexingHealth = { 
+          status: "Issues Found", 
+          color: "bg-red-500/20 text-red-400", 
+          icon: ShieldAlert 
+        };
+      }
+    }
+  } catch (e) {
+    console.error("Failed to read indexing report:", e);
+  }
+
   // Fetch real data from DB
   const [postStats] = await db
     .select({
@@ -61,7 +87,15 @@ export default async function AdminDashboard() {
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <StatCard
+          title="Indexing Health"
+          value={indexingHealth.status}
+          subtitle="Sitemap & GSC Pulse"
+          icon={indexingHealth.icon}
+          href="/admin/settings"
+          color={indexingHealth.color}
+        />
         <StatCard
           title="Blog Posts"
           value={stats.posts.total}
