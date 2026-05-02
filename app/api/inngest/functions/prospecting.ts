@@ -143,8 +143,7 @@ function getNext8AM(timezone: string): string {
 
 
 export const prospectingAgent = inngest.createFunction(
-  { id: 'prospecting-agent' },
-  { event: 'prospecting/start-campaign' },
+  { id: 'prospecting-agent', triggers: { event: 'prospecting/start-campaign' } },
   async ({ event, step }) => {
     const { leads, listId } = event.data;
     console.log(`[ProspectingAgent] Starting campaign for ${leads.length} leads. ListId: ${listId}`);

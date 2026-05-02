@@ -2,8 +2,7 @@ import { inngest } from '@/lib/inngest/client';
 import { brevo } from '@/lib/brevo';
 
 export const deliverLeadMagnet = inngest.createFunction(
-  { id: 'deliver-lead-magnet' },
-  { event: 'lead.requested.magnet' },
+  { id: 'deliver-lead-magnet', triggers: { event: 'lead.requested.magnet' } },
   async ({ event, step }) => {
     const { email, name, pdfRequested } = event.data;
 

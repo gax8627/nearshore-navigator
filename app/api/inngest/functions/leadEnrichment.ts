@@ -6,8 +6,7 @@ import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
 export const leadEnrichment = inngest.createFunction(
-  { id: 'lead-enrichment', retries: 3 },
-  { event: 'lead.created' },
+  { id: 'lead-enrichment', retries: 3, triggers: { event: 'lead.created' } },
   async ({ event, step }) => {
     const { leadId, email, name, company, source } = event.data;
 

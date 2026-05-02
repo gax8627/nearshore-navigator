@@ -6,8 +6,7 @@ import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
 export const generateSocialContent = inngest.createFunction(
-  { id: 'generate-social-content', retries: 3 },
-  { event: 'post.published' }, // Trigger when a blog post is published
+  { id: 'generate-social-content', retries: 3, triggers: { event: 'post.published' } },
   async ({ event, step }) => {
     const { postId } = event.data;
 
