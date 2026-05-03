@@ -149,8 +149,6 @@ export const BLOG_POSTS_RAW = [
         <p><strong>The first step to manufacturing in Mexico is a comprehensive feasibility study that models land acquisition, labor availability, power requirements, and Total Landed Cost prior to signing any industrial lease.</strong></p>
         <p>By executing proper due diligence, US companies can rapidly launch their nearshore shelter operations within 90 days.</p>
       `,
-    },
-
   },
   {
       title: "Baja California vs Asia: Manufacturing Cost Comparison",
@@ -237,7 +235,6 @@ export const BLOG_POSTS_RAW = [
         <p><strong>By manufacturing in Mexico under USMCA provisions, US companies secure duty-free entry for qualifying products, completely avoiding the catastrophic 25% to 100% Section 301 tariffs historically imposed on Chinese imports.</strong></p>
         <p>This ultimate tariff relief creates an immediate 20-30% competitive pricing advantage on top of baseline labor arbitrage.</p>
       `,
-
   },
   {
       title: "How Shelter Services Work in Baja California",
@@ -327,7 +324,6 @@ export const BLOG_POSTS_RAW = [
           <li><strong>EHS Compliance:</strong> Ensuring full localized environmental and safety protocol adherence.</li>
         </ul>
       `,
-
   },
   {
       title: "Industrial Parks Map Overview 2026",
