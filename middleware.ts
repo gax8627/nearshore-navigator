@@ -1,11 +1,10 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-// Only en + es are indexable and supported. The other 8 locales
-// (fr/de/ja/zh/ko/it/pt/ru) used to serve machine-translated content that
-// cannibalized /en/ in search results and produced "Duplicate, Google chose
-// different canonical" errors at scale. We now 301-redirect those prefixes
-// to /en/ so Google removes them from the index cleanly.
+// Phase 1 multilingual: en, es, de, ja are fully indexable.
+// fr, zh, ko, it, pt, ru are still 301-redirected to /en/ until Phase 2/3.
+// de and ja have real localized content and proper hreflang — Google will
+// serve them to German/Japanese searchers without canonical conflicts.
 const locales = ['en', 'es', 'fr', 'de', 'ja', 'zh', 'ko', 'it', 'pt', 'ru'];
 const deprecatedLocales = new Set([]);
 
@@ -99,7 +98,8 @@ export async function middleware(request: NextRequest) {
   // ─── Deprecated Locales Redirect ──────────────────────
   // We explicitly 301 redirect these to /en/ to consolidate link equity
   // and resolve "Discovered - currently not indexed" crawl bloat.
-  const deprecatedLocalesList = ['fr', 'de', 'ja', 'zh', 'ko', 'it', 'pt', 'ru'];
+  // de and ja are Phase 1 indexable — do NOT redirect them.
+  const deprecatedLocalesList = ['fr', 'zh', 'ko', 'it', 'pt', 'ru'];
   const hasDeprecatedLocale = deprecatedLocalesList.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );

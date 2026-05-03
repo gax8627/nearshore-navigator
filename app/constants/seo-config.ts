@@ -2,22 +2,24 @@
  * Shared SEO configuration constants.
  * Single source of truth — import from here, never redefine locally.
  *
- * --- 2026-04 cleanup --------------------------------------------------
- * We previously shipped 10 locales with the 8 non-English/Spanish ones
- * marked `noindex` + canonicalized to /en/. That strategy created
- * contradictory signals (Google ignores canonical on noindex pages) and
- * produced ~960 "Duplicate, Google chose different canonical than user"
- * errors in Search Console at scale.
+ * --- 2026-05 Phase 1 multilingual rollout --------------------------------
+ * German (de) and Japanese (ja) are re-activated as fully indexable locales.
+ * These two markets have confirmed demand (de/ja pages still rank in GSC
+ * even after 301-redirects) and represent the largest foreign manufacturing
+ * investors in Mexico (German automotive, Japanese electronics/auto).
  *
- * New strategy (aligned with Google's own guidance):
- *   1. Only build /en/ and /es/ pages.
- *   2. Requests to old locale prefixes (fr, de, ja, zh, ko, it, pt, ru)
- *      are 301-redirected to the /en/ equivalent by middleware.ts.
- *   3. Hreflang only advertises en, es, x-default.
- *   4. Canonical always points to self (never a cross-locale override).
+ * Strategy:
+ *   1. en, es, de, ja — indexable, pre-rendered, in sitemap, proper hreflang.
+ *   2. fr, zh, ko, it, pt, ru — still 301-redirected to /en/ until Phase 2/3.
+ *   3. Each de/ja page has localized title + excerpt + tags (blog-data.ts).
+ *   4. Canonical always points to self (never cross-locale override).
+ *   5. Hreflang now advertises en, es, de, ja, x-default on all indexable pages.
+ *
+ * Phase 2 (next): zh, ko
+ * Phase 3 (after): fr, pt, it, ru (demand-driven only)
  *
  * NOINDEX_LOCALES is kept (empty) so existing generateMetadata files
- * that still import it don't break — the predicate simply returns false.
+ * that still import it don't break.
  */
 
 export const NOINDEX_LOCALES = new Set<string>();
@@ -27,17 +29,16 @@ export const LOCALES = ['en', 'es', 'fr', 'de', 'ja', 'zh', 'ko', 'it', 'pt', 'r
 export type Locale = typeof LOCALES[number];
 
 /**
- * Only en + es are indexable and should be statically generated.
- * The other 8 locales are 301-redirected by middleware.ts and should
- * NOT be pre-rendered or submitted in the sitemap.
+ * Indexable locales — pre-rendered, submitted in sitemap, hreflang-advertised.
+ * Phase 1: en, es, de, ja
  * Use this in generateStaticParams() and sitemap.ts.
  */
-export const INDEXABLE_LOCALES: readonly string[] = ['en', 'es'] as const;
+export const INDEXABLE_LOCALES: readonly string[] = ['en', 'es', 'de', 'ja'] as const;
 
 /**
- * Locales that are fully supported and indexable.
+ * Locales still being redirected to /en/ (Phase 2/3 candidates).
  */
-export const DEPRECATED_LOCALES = [] as const;
+export const DEPRECATED_LOCALES = ['fr', 'zh', 'ko', 'it', 'pt', 'ru'] as const;
 
 /** Base URL for canonical and hreflang generation. */
 export const BASE_URL = 'https://nearshorenavigator.com';

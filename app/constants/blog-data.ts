@@ -60,6 +60,18 @@ export const BLOG_POSTS_RAW = [
       slug: "nearshoring-in-tijuana-guide-for-us-companies",
       imageUrl: "/images/warehouse.jpg",
       tags: ["Guide", "Strategy"],
+      locales: {
+        de: {
+          title: "Nearshoring in Baja California: Leitfaden für US-Unternehmen (2026)",
+          excerpt: "Alles, was Sie über den Aufbau von Fertigungsstandorten in Mexikos führendem Industriezentrum wissen müssen — Kosten, Zeitplan und USMCA-Vorteile.",
+          tags: ["Leitfaden", "Strategie", "Baja California", "Nearshoring"],
+        },
+        ja: {
+          title: "バハ・カリフォルニアのニアショアリング：米国企業向けガイド（2026年）",
+          excerpt: "メキシコの主要製造拠点に生産拠点を構えるために必要な全情報 — コスト、スケジュール、USMCAの優位性。",
+          tags: ["ガイド", "戦略", "バハカリフォルニア", "ニアショアリング"],
+        },
+      },
       faqSchema: [
         { q: "Why is Baja California the top nearshoring destination for US companies?", a: "Baja California — specifically Tijuana and Mexicali — is the #1 nearshoring destination for US companies due to its land border with California, shared Pacific time zone, 50-year manufacturing ecosystem, and USMCA duty-free trade. A truck from Tijuana reaches Los Angeles in 3 hours. Labor rates are 70-80% below US equivalents. The region hosts over 1,000 maquiladoras with mature clusters in medical devices (Medtronic, DjO, Breg), aerospace (Honeywell, Collins Aerospace), and electronics (Samsung, Foxconn)." },
         { q: "How do I start manufacturing in Mexico for the first time?", a: "The fastest path for a US company's first Mexican manufacturing operation is a shelter service. The shelter acts as the legal employer of record in Mexico, holds the IMMEX permit, and manages HR, payroll, Mexican customs, and tax compliance on your behalf. You retain full control over your production process, equipment, and supply chain. Using a shelter, operations can begin in 90–120 days versus 6–12 months for a direct Mexican subsidiary. Nearshore Navigator conducts a free feasibility study including landed cost modeling to determine the right setup for your product." },
@@ -152,6 +164,18 @@ export const BLOG_POSTS_RAW = [
       slug: "tijuana-vs-asia-manufacturing-cost-comparison",
       imageUrl: "/images/factory-worker.jpg",
       tags: ["Cost Analysis", "Economics"],
+      locales: {
+        de: {
+          title: "Baja California vs. Asien: Fertigungskosten-Vergleich (2026)",
+          excerpt: "Datenbasierter Kostenvergleich zwischen Mexiko, China, Vietnam und Indien für US-Hersteller. Vollkosten, Zölle und ROI-Analyse.",
+          tags: ["Kostenanalyse", "Wirtschaft", "China Plus One", "USMCA"],
+        },
+        ja: {
+          title: "バハ・カリフォルニア対アジア：製造コスト比較（2026年）",
+          excerpt: "米国製造業者向けにメキシコ、中国、ベトナム、インドのコストをデータで比較。総コスト、関税、ROI分析。",
+          tags: ["コスト分析", "経済", "チャイナプラスワン", "USMCA"],
+        },
+      },
       faqSchema: [
         { q: "Is manufacturing in Mexico actually cheaper than China in 2026?", a: "Yes, for most product categories in 2026. When comparing Total Landed Cost (TLC), Mexico typically beats China by 20–40%. Mexican border zone labor (Tijuana, Juárez) costs $7.84/hr fully burdened versus $6–10/hr in China — comparable — but Mexico saves $2,000–$20,000 per container in ocean freight (replaced by 2-hour truck delivery), avoids the 25–100% Section 301 tariffs on Chinese goods, eliminates 30–45 day ocean lead times (replaced by same-day truck), and eliminates the 40–60 day buffer inventory required for Asia-Pacific sourcing." },
         { q: "What is Total Landed Cost and how does Mexico compare?", a: "Total Landed Cost (TLC) is the complete cost of manufacturing and delivering a product including: production cost (labor + materials + overhead), freight (ocean/air vs. truck), customs and tariffs, inventory carrying cost (tied capital during transit), and quality failure cost (rework, recalls). For US companies, Mexico typically achieves a TLC that is 20–35% lower than equivalent Chinese production after factoring in 2025–2026 tariff levels, because USMCA's 0% tariff replaces China's 25–100% Section 301 tariffs, and truck logistics (2–4 hours) replaces ocean freight (30–45 days + warehousing)." },
@@ -233,6 +257,18 @@ export const BLOG_POSTS_RAW = [
       slug: "how-shelter-services-work-in-tijuana",
       imageUrl: "/images/consulting.jpg",
       tags: ["Shelter", "Legal"],
+      locales: {
+        de: {
+          title: "Wie funktionieren Shelter-Dienste in Baja California? (Schritt-für-Schritt)",
+          excerpt: "Operativer Leitfaden zum Shelter-Modell: von der Standortauswahl bis zum Produktionsstart in 90 Tagen. IMMEX, Zoll und Personalwesen erklärt.",
+          tags: ["Shelter-Dienste", "Rechtliches", "IMMEX", "Mexiko-Fertigung"],
+        },
+        ja: {
+          title: "バハ・カリフォルニアのシェルターサービスの仕組み（ステップバイステップ）",
+          excerpt: "立地選定から90日での生産開始まで、シェルターモデルの業務フローを詳しく解説。IMMEX、通関、人事管理。",
+          tags: ["シェルターサービス", "法律", "IMMEX", "メキシコ製造"],
+        },
+      },
       faqSchema: [
         { q: "What is a shelter service in Mexico and how does it work?", a: "A Mexican shelter service is a legally established Mexican company that acts as the importer of record and employer of record for a foreign manufacturer operating in Mexico. The shelter holds the IMMEX (PITEX) permit that authorizes duty-free import of materials and equipment for export production. The US client company retains full operational control — directing production, managing quality, and controlling their supply chain — while the shelter handles all Mexican legal, tax, HR, payroll, IMSS social security enrollment, customs administration, and government compliance. The client never forms a Mexican legal entity." },
         { q: "How long does it take to start manufacturing with a shelter service?", a: "Using an established shelter service, a US manufacturer can begin production in Mexico in 90–120 days: 2–3 weeks for site selection and facility evaluation; 1–2 weeks for shelter agreement execution and IMMEX program enrollment; 3–4 weeks for facility preparation and equipment installation; 2–3 weeks for workforce recruitment, screening, and training; 2–3 weeks for pilot production runs and quality validation. By comparison, establishing a standalone Mexican S. de R.L. de C.V. corporation requires 6–12 months for SAT registration, IMSS enrollment, INFONAVIT compliance, IMMEX permit approval, and labor contract establishment." },
@@ -317,6 +353,18 @@ export const BLOG_POSTS_RAW = [
       slug: "industrial-parks-in-tijuana-map-and-overview",
       imageUrl: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80&w=800",
       tags: ["Real Estate", "Maps"],
+      locales: {
+        de: {
+          title: "Industrieparks in Tijuana: Karte und Überblick 2026",
+          excerpt: "Detaillierter Vergleich der Klasse-A-Industrieparks in Tijuana: Pacifico, El Florido, Finsa und Nordika. Mietpreise, Standorte und Verfügbarkeit.",
+          tags: ["Industrieparks", "Immobilien", "Tijuana", "Baja California"],
+        },
+        ja: {
+          title: "ティファナ工業団地：マップと概要（2026年）",
+          excerpt: "ティファナの主要クラスAパーク（パシフィコ、エルフロリド、フィンサ、ノルディカ）の詳細比較。賃料、立地、空き状況。",
+          tags: ["工業団地", "不動産", "ティファナ", "バハカリフォルニア"],
+        },
+      },
       faqSchema: [
         { q: "What are the main industrial parks in Tijuana?", a: "Tijuana's major industrial parks include: Otay Mesa Industrial Park (largest, 2,500+ acres, adjacent to Otay Mesa Port of Entry — ideal for distribution and light manufacturing); El Florido Industrial Park (medical device and aerospace cluster — Medtronic, DjO, Breg operate here); Pacifico Industrial Park (Class A, LEED-certified buildings, tech and electronics); Mesa de Otay (established maquiladora zone with deep logistics infrastructure); Tecate Industrial Corridor (pharmaceutical, food & beverage, lower land cost); and Tijuana Industrial Center (TIC — multi-tenant Class A, 24-hr security, fiber optic). Vacancy rates across Tijuana industrial parks fell below 2% in 2025 due to nearshoring demand surge." },
         { q: "What is the cost of industrial real estate in Tijuana in 2026?", a: "Industrial lease rates in Tijuana average $0.50–$0.75 per square foot per month for Class B existing space in established parks like Mesa de Otay and El Florido. Class A new construction in premium locations (Otay Mesa, Pacifico) commands $0.70–$1.00/sqft/month. Land sale prices range from $18–$35/m² for developable industrial land. Build-to-suit development costs run $45–$75/sqft for basic warehouse/manufacturing space and $80–$120/sqft for cleanroom or high-specification manufacturing facilities. These rates are 40–60% below equivalent San Diego industrial real estate, making cross-border operations financially compelling." },
@@ -381,6 +429,18 @@ export const BLOG_POSTS_RAW = [
       slug: "mexico-2025-nearshoring-boom-usmca-review",
       imageUrl: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=800",
       tags: ["Market Report", "Investment"],
+      locales: {
+        de: {
+          title: "Mexikos Nearshoring-Boom 2026: USMCA-Überprüfung und Marktausblick",
+          excerpt: "Marktüberblick: 6 Milliarden USD Nearshoring-Investitionen, USMCA-Überprüfung 2026 und warum Deutschland der drittstärkste Investor in Mexiko bleibt.",
+          tags: ["Marktbericht", "Investition", "USMCA", "Nearshoring"],
+        },
+        ja: {
+          title: "メキシコのニアショアリングブーム2026：USMCA見直しと市場展望",
+          excerpt: "60億ドルのニアショアリング投資、2026年USMCA見直し、そして日本が依然メキシコ最大の外国投資国である理由。",
+          tags: ["市場レポート", "投資", "USMCA", "ニアショアリング"],
+        },
+      },
       faqSchema: [
         { q: "How much foreign investment is flowing into Mexican nearshoring in 2025?", a: "Industrial real estate investment in Mexico is projected to reach US $6 billion in 2025, according to CBRE and Cushman & Wakefield Mexico market reports. This represents a 40% increase over 2023 levels. Foreign Direct Investment (FDI) in Mexico's manufacturing sector reached $18.6 billion in 2024, with the US, Japan, South Korea, and Germany as the top investors. Industrial park absorption in border cities — Tijuana, Juárez, Monterrey, Reynosa — set new records in 2024–2025, with vacancy rates falling below 1–2% in prime corridors. New industrial park development has not kept pace with demand, creating a supply-demand gap that will persist through 2026–2027." },
         { q: "What is the 2026 USMCA review and how does it affect manufacturers?", a: "USMCA includes a mandatory joint review by the US, Mexico, and Canada governments in 2026 (Article 34.7). This review is not an automatic renegotiation but an assessment of the agreement's functioning. If any party is unsatisfied, it can trigger formal dispute resolution or, ultimately, 6-year advance notice of withdrawal. The most contested issues for the 2026 review include: automotive Rules of Origin (US/Canada pushing for higher North American content requirements), agricultural market access disputes (dairy, sugar), energy policy (Mexico's state energy company preferences), and labor rights enforcement under USMCA's Rapid Response Mechanism. For manufacturers with USMCA-dependent supply chains, 2026 represents a key planning horizon." },
@@ -441,6 +501,18 @@ export const BLOG_POSTS_RAW = [
       slug: "ultimate-guide-nearshore-shelter-services-baja-california",
       imageUrl: "/images/consulting.jpg",
       tags: ["Nearshoring", "Shelter Services", "Baja California", "Supply Chain"],
+      locales: {
+        de: {
+          title: "Der ultimative Leitfaden zu Nearshore-Shelter-Diensten in Baja California",
+          excerpt: "Umfassende Erklärung der Shelter-Dienste: Funktionsweise, Kostenstrukturen, Anbieterauswahl und rechtliche Rahmenbedingungen unter IMMEX.",
+          tags: ["Nearshoring", "Shelter-Dienste", "Baja California", "IMMEX"],
+        },
+        ja: {
+          title: "バハ・カリフォルニア・ニアショアシェルターサービス完全ガイド",
+          excerpt: "シェルターサービスの仕組み、コスト構造、プロバイダー選定とIMMEXに基づく法的枠組みの包括的解説。",
+          tags: ["ニアショアリング", "シェルターサービス", "バハカリフォルニア", "IMMEX"],
+        },
+      },
       content: `
         <p>For US manufacturers looking to reduce operational costs without sacrificing quality or proximity to the North American market, Mexico has emerged as the premier destination. However, the complexities of establishing a foreign legal entity, navigating Mexican labor laws, and managing cross-border customs can be daunting.</p>
         <p>Enter the <strong>immex shelter model</strong>.</p>
@@ -508,6 +580,18 @@ export const BLOG_POSTS_RAW = [
       slug: "2025-tariffs-baja-california-supply-chain",
       imageUrl: "/images/warehouse.jpg",
       tags: ["Economics", "Tariffs", "Supply Chain", "USMCA"],
+      locales: {
+        de: {
+          title: "2025/2026 Zölle und Lieferkette: Wie USMCA+IMMEX Section 301 eliminiert",
+          excerpt: "Analyse der Auswirkungen von US Section 301-Zöllen auf China und wie Fertigung in Baja California diese komplett umgeht — 0% Zoll auf qualifizierte Waren.",
+          tags: ["Zölle", "USMCA", "Lieferkette", "Section 301"],
+        },
+        ja: {
+          title: "2025/2026年関税とサプライチェーン：USMCA+IMMEXによるセクション301回避策",
+          excerpt: "中国への米国Section 301関税の影響と、バハ・カリフォルニア製造がこれを完全に回避する方法 — 適格品の関税は0%。",
+          tags: ["関税", "USMCA", "サプライチェーン", "Section 301"],
+        },
+      },
       faqSchema: [
         { q: "How are 2025 tariffs affecting US manufacturers using Chinese supply chains?", a: "The 2025 tariff escalations have imposed 25–100% additional landed costs on a wide range of Chinese manufactured goods entering the United States. For US companies with China-based manufacturing or significant Chinese component sourcing, the financial impact is severe: a product with a 30% gross margin can be entirely wiped out by a 25% Section 301 tariff. Industries most affected include electronics assemblies, automotive wire harnesses, medical device components, precision machined parts, and consumer goods. Many companies are now executing emergency near-term supply chain diversification, with Baja California as the fastest-to-market alternative given its 90-day shelter service ramp-up timeline." },
         { q: "What is the USMCA safe harbor and how does it protect manufacturers from tariffs?", a: "The USMCA safe harbor refers to the tariff-free trade framework established by the United States-Mexico-Canada Agreement for goods that meet Regional Value Content (RVC) thresholds — meaning sufficient North American manufacturing content. Products manufactured in Mexico that qualify under USMCA enter the US at 0% tariff, completely bypassing the Section 301 tariffs applicable to Chinese goods. The IMMEX program further allows duty-free import of raw materials and components into Mexico for processing and re-export. Together, USMCA + IMMEX create a legal tariff mitigation strategy: import components tariff-free into Mexico, add value, and export to the US at 0% duty." },
@@ -549,6 +633,18 @@ export const BLOG_POSTS_RAW = [
       slug: "maquiladora-vs-shelter-services-mexico",
       imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
       tags: ["Nearshoring", "Strategy", "Mexico Manufacturing"],
+      locales: {
+        de: {
+          title: "Maquiladora vs. Shelter Services in Mexiko: Was ist der Unterschied? (Leitfaden 2026)",
+          excerpt: "Lernen Sie die wichtigsten Unterschiede zwischen Maquiladora und Shelter Services in Mexiko kennen. Vergleichen Sie Kosten, Haftung, Einrichtungszeit und welches Modell für Ihre Produktion geeignet ist.",
+          tags: ["Nearshoring", "Strategie", "Mexiko Produktion"],
+        },
+        ja: {
+          title: "メキシコのマキラドーラとシェルターサービスの違いとは？（2026年ガイド）",
+          excerpt: "メキシコにおけるマキラドーラとシェルターサービスの主な違いをご紹介します。コスト、責任、設置時間、そしてどちらのモデルが事業に適しているかを比較します。",
+          tags: ["ニアショアリング", "戦略", "メキシコ製造"],
+        },
+      },
       faqSchema: [
         { q: "What is a maquiladora and how does it differ from a shelter service?", a: "A maquiladora (formally IMMEX company) is a manufacturing plant in Mexico owned by or operating on behalf of a foreign company, using an IMMEX permit to import materials duty-free for export production. The term 'maquiladora' typically refers to a company operating its own Mexican legal entity. A shelter service, by contrast, is a third-party Mexican company that holds the IMMEX permit and acts as the legal employer and importer of record on behalf of a foreign manufacturer — eliminating the need to form a Mexican entity. Key difference: maquiladora = US company is legally present in Mexico; shelter = US company manufactures in Mexico without any Mexican legal presence or liability." },
         { q: "Which is better for a US company: maquiladora or shelter service?", a: "The optimal choice depends on scale, timeline, and risk tolerance: Choose a shelter service if you have fewer than 300–500 employees, are entering Mexico for the first time, need to start within 90–120 days, want to avoid Mexican legal entity formation, or are uncertain about long-term Mexico commitment. Choose a direct maquiladora (subsidiary) if you have 500+ employees, have a multi-year operational commitment, want maximum cost efficiency (no shelter management fee), need site control and customization, or have significant confidentiality requirements. At scale, the shelter management fee ($150–$350/employee/month) is more expensive than maintaining your own HR and legal infrastructure — the break-even is typically around 400–500 employees." },
@@ -875,7 +971,7 @@ Yes, both standalone maquiladoras and shelter operators utilize the IMMEX progra
       excerpt: "Discover why Mexico beats Vietnam, India, and Southeast Asia for China Plus One manufacturing. USMCA benefits, cost data, and city-by-city comparison for 2026.",
       date: "Mar 02, 2026",
       slug: "china-plus-one-strategy-mexico",
-      imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8ed74681fb?auto=format&fit=crop&q=80&w=1200",
+      imageUrl: "/images/china-plus-one-strategy.png",
       tags: ["China Plus One", "Nearshoring", "Supply Chain", "Mexico Manufacturing"],
       content: `
 <script type="application/ld+json">
@@ -896,7 +992,7 @@ Yes, both standalone maquiladoras and shelter operators utilize the IMMEX progra
     },
     "datePublished": "2026-03-03",
     "dateModified": "2026-03-03",
-    "image": "https://images.unsplash.com/photo-1586528116311-ad8ed74681fb?auto=format&fit=crop&q=80&w=1200"
+    "image": "/images/china-plus-one-strategy.png"
   },
   {
     "@context": "https://schema.org",
@@ -1213,7 +1309,7 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
     },
     "datePublished": "2026-03-03",
     "dateModified": "2026-03-03",
-    "image": "https://images.unsplash.com/photo-1586528116311-ad8ed74681fb?auto=format&fit=crop&q=80&w=1200"
+    "image": "/images/china-plus-one-strategy.png"
   },
   {
     "@context": "https://schema.org",
@@ -1347,7 +1443,7 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
     },
     "datePublished": "2026-03-03",
     "dateModified": "2026-03-03",
-    "image": "https://images.unsplash.com/photo-1586528116311-ad8ed74681fb?auto=format&fit=crop&q=80&w=1200"
+    "image": "/images/china-plus-one-strategy.png"
   },
   {
     "@context": "https://schema.org",
@@ -1730,7 +1826,7 @@ The fastest way to start is by partnering with an ISO-certified contract manufac
       excerpt: "Querétaro hosts Bombardier, Airbus, and GE Aviation. Learn about AS9100, NADCAP certification, labor costs, and how to set up aerospace manufacturing in Mexico.",
       date: "Mar 02, 2026",
       slug: "aerospace-manufacturing-queretaro-mexico",
-      imageUrl: "https://images.unsplash.com/photo-1544256718-3b62373aec17?auto=format&fit=crop&q=80&w=1200",
+      imageUrl: "/images/industrial-park-hero.jpg",
       tags: ["Aerospace", "Querétaro", "Advanced Manufacturing", "Nearshoring"],
       content: `
 <script type="application/ld+json">
@@ -1751,7 +1847,7 @@ The fastest way to start is by partnering with an ISO-certified contract manufac
     },
     "datePublished": "2026-03-03",
     "dateModified": "2026-03-03",
-    "image": "https://images.unsplash.com/photo-1544256718-3b62373aec17?auto=format&fit=crop&q=80&w=1200"
+    "image": "/images/industrial-park-hero.jpg"
   },
   {
     "@context": "https://schema.org",
@@ -2337,7 +2433,7 @@ Yes, both standalone maquiladoras and shelter operators utilize the IMMEX progra
       excerpt: "Discover why Mexico beats Vietnam, India, and Southeast Asia for China Plus One manufacturing. USMCA benefits, cost data, and city-by-city comparison for 2026.",
       date: "Mar 02, 2026",
       slug: "china-plus-one-strategy-mexico",
-      imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8ed74681fb?auto=format&fit=crop&q=80&w=1200",
+      imageUrl: "/images/china-plus-one-strategy.png",
       tags: ["China Plus One", "Nearshoring", "Supply Chain", "Mexico Manufacturing"],
       content: `
 <script type="application/ld+json">
@@ -2358,7 +2454,7 @@ Yes, both standalone maquiladoras and shelter operators utilize the IMMEX progra
     },
     "datePublished": "2026-03-03",
     "dateModified": "2026-03-03",
-    "image": "https://images.unsplash.com/photo-1586528116311-ad8ed74681fb?auto=format&fit=crop&q=80&w=1200"
+    "image": "/images/china-plus-one-strategy.png"
   },
   {
     "@context": "https://schema.org",
@@ -2697,7 +2793,7 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
     },
     "datePublished": "2026-03-03",
     "dateModified": "2026-03-03",
-    "image": "https://images.unsplash.com/photo-1586528116311-ad8ed74681fb?auto=format&fit=crop&q=80&w=1200"
+    "image": "/images/china-plus-one-strategy.png"
   },
   {
     "@context": "https://schema.org",
@@ -2831,7 +2927,7 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
     },
     "datePublished": "2026-03-03",
     "dateModified": "2026-03-03",
-    "image": "https://images.unsplash.com/photo-1586528116311-ad8ed74681fb?auto=format&fit=crop&q=80&w=1200"
+    "image": "/images/china-plus-one-strategy.png"
   },
   {
     "@context": "https://schema.org",
@@ -3223,7 +3319,7 @@ The fastest way to start is by partnering with an ISO-certified contract manufac
       excerpt: "Querétaro hosts Bombardier, Airbus, and GE Aviation. Learn about AS9100, NADCAP certification, labor costs, and how to set up aerospace manufacturing in Mexico.",
       date: "Mar 02, 2026",
       slug: "aerospace-manufacturing-queretaro-mexico",
-      imageUrl: "https://images.unsplash.com/photo-1544256718-3b62373aec17?auto=format&fit=crop&q=80&w=1200",
+      imageUrl: "/images/industrial-park-hero.jpg",
       tags: ["Aerospace", "Querétaro", "Advanced Manufacturing", "Nearshoring"],
       content: `
 <script type="application/ld+json">
@@ -3244,7 +3340,7 @@ The fastest way to start is by partnering with an ISO-certified contract manufac
     },
     "datePublished": "2026-03-03",
     "dateModified": "2026-03-03",
-    "image": "https://images.unsplash.com/photo-1544256718-3b62373aec17?auto=format&fit=crop&q=80&w=1200"
+    "image": "/images/industrial-park-hero.jpg"
   },
   {
     "@context": "https://schema.org",
@@ -3487,6 +3583,18 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
       slug: "how-to-start-manufacturing-in-mexico-2026",
       imageUrl: "/images/factory-worker.jpg",
       tags: ["Guide", "Strategy", "Shelter Services", "IMMEX"],
+      locales: {
+        de: {
+          title: "So starten Sie die Produktion in Mexiko: Der vollständige Leitfaden 2026",
+          excerpt: "Eine Schritt-für-Schritt-Anleitung für US-Unternehmen, die 2026 Produktionsbetriebe in Mexiko eröffnen möchten – von Shelter Services und IMMEX-Genehmigungen über Standortwahl, Arbeitskosten bis hin zur USMCA-Konformität.",
+          tags: ["Leitfaden", "Strategie", "Shelter Services", "IMMEX"],
+        },
+        ja: {
+          title: "メキシコで製造を始める方法：2026年完全ガイド",
+          excerpt: "2026年にメキシコで製造事業を立ち上げる米国企業向けのステップバイステップガイド。シェルターサービス、IMMEX許可、立地選定、人件費、USMCAコンプライアンスを網羅。",
+          tags: ["ガイド", "戦略", "シェルターサービス", "IMMEX"],
+        },
+      },
       faqSchema: [
         { q: "How do I start manufacturing in Mexico as a US company?", a: "The fastest path for a US company to start manufacturing in Mexico is through a shelter service. A shelter is a Mexican company that acts as your legal employer of record and importer of record, holding the IMMEX permit that allows duty-free import of materials for export production. Using a shelter, you can begin production in 90–120 days without forming a Mexican legal entity. The process: (1) feasibility study and landed cost analysis; (2) site selection in an industrial park; (3) shelter agreement execution; (4) facility setup and equipment installation; (5) workforce recruitment and training; (6) pilot production and quality validation." },
         { q: "What is an IMMEX permit and do I need one to manufacture in Mexico?", a: "An IMMEX permit (formerly PITEX) is issued by Mexico's SECRETARÍA DE ECONOMÍA and authorizes a company to temporarily import raw materials, components, machinery, and equipment into Mexico duty-free, provided the finished product is exported. Without an IMMEX permit, a manufacturer must pay 16% IVA (Mexican VAT) on all imported inputs, significantly increasing costs. If using a shelter service, the shelter's existing IMMEX permit covers your operation — you don't need your own. If forming a direct Mexican subsidiary (maquiladora), you must apply for your own IMMEX permit, which takes 2–6 months depending on industry classification." },

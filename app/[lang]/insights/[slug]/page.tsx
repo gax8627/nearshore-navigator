@@ -2,39 +2,48 @@ import { notFound } from "next/navigation";
 import { BlogPost } from "@/components/BlogPost";
 import { getAllPosts, getPostBySlug } from "@/app/constants/blog-data";
 import type { BlogPost as BlogPostType } from "@/app/constants/blog-data";
+import { INDEXABLE_LOCALES } from "@/app/constants/seo-config";
 import { Metadata } from "next";
+
+// Phase 1 indexable locales for insights: en, de, ja (es has same content as en for blog)
+const BLOG_INDEXABLE_LANGS = new Set(['en', 'de', 'ja']);
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }): Promise<Metadata> {
   const { lang, slug } = await params;
   const post = getPostBySlug(slug);
 
   if (!post) {
-    return {
-      title: "Post Not Found",
-    };
+    return { title: "Post Not Found" };
   }
 
-  // Insights articles are English-only content. Non-EN locale variants
-  // are noindexed to prevent cannibalization of the /en/ page in Google search.
+  const isIndexable = BLOG_INDEXABLE_LANGS.has(lang);
   const canonicalUrl = `https://nearshorenavigator.com/${lang}/insights/${slug}`;
-  const isNonEnglish = lang !== 'en';
+
+  // Use localized title/excerpt for de/ja if available, fall back to English
+  const localized = post.locales?.[lang];
+  const title = localized?.title || post.title;
+  const description = localized?.excerpt || post.excerpt;
 
   return {
-    title: post.title,
-    description: post.excerpt,
-    robots: isNonEnglish ? { index: false, follow: true } : undefined,
+    title,
+    description,
+    // Only non-indexable locales (es, zh, ko, etc.) get noindex
+    robots: isIndexable ? undefined : { index: false, follow: true },
     alternates: {
-      canonical: isNonEnglish 
-        ? `https://nearshorenavigator.com/en/insights/${slug}`
-        : canonicalUrl,
+      // Each indexable locale is its own canonical
+      canonical: isIndexable
+        ? canonicalUrl
+        : `https://nearshorenavigator.com/en/insights/${slug}`,
       languages: {
         'en': `https://nearshorenavigator.com/en/insights/${slug}`,
+        'de': `https://nearshorenavigator.com/de/insights/${slug}`,
+        'ja': `https://nearshorenavigator.com/ja/insights/${slug}`,
         'x-default': `https://nearshorenavigator.com/en/insights/${slug}`,
       },
     },
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title,
+      description,
       type: "article",
       url: canonicalUrl,
       images: [
@@ -42,7 +51,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
           url: post.imageUrl,
           width: 1200,
           height: 630,
-          alt: post.title,
+          alt: title,
         },
       ],
     },
@@ -171,6 +180,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
+  // Pre-render all slugs for all indexable locales (lang comes from parent [lang] segment)
   return posts.map((post) => ({
     slug: post.slug,
   }));
