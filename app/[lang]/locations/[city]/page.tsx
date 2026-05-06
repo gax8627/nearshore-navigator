@@ -34,6 +34,8 @@ export async function generateMetadata({ params }: Props) {
       languages: {
         'en': `https://nearshorenavigator.com/en/locations/${city}`,
         'es': `https://nearshorenavigator.com/es/locations/${city}`,
+        'de': `https://nearshorenavigator.com/de/locations/${city}`,
+        'ja': `https://nearshorenavigator.com/ja/locations/${city}`,
         'x-default': `https://nearshorenavigator.com/en/locations/${city}`,
       }
     }

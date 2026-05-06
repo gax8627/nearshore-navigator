@@ -5,14 +5,15 @@ dotenv.config({ path: path.join(process.cwd(), '.env.local') });
 
 async function main() {
   const { brevo } = await import(path.join(process.cwd(), 'lib/brevo.ts'));
-  const today = new Date().toISOString().split('T')[0];
+  const startDate = "2026-04-28";
+  const endDate = "2026-05-04";
   
-  console.log(`Dumping raw email events for: ${today}`);
+  console.log(`Dumping raw email events from ${startDate} to ${endDate}`);
   
   try {
     const data = await brevo.getEmailEvents({
-      startDate: today,
-      endDate: today,
+      startDate,
+      endDate,
       limit: 100
     });
     
