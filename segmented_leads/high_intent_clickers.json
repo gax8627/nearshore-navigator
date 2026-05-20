@@ -8,10 +8,6 @@
     "clickCount": 3
   },
   {
-    "email": "sarah@aviditybio.com",
-    "clickCount": 3
-  },
-  {
     "email": "karsten@jazzimaging.com",
     "clickCount": 2
   },
@@ -53,26 +49,6 @@
   },
   {
     "email": "gary@ptsmachinery.com",
-    "clickCount": 2
-  },
-  {
-    "email": "rcox@epirium.com",
-    "clickCount": 2
-  },
-  {
-    "email": "lkirkpatrick@ensysce.com",
-    "clickCount": 2
-  },
-  {
-    "email": "spelletier@evofem.com",
-    "clickCount": 2
-  },
-  {
-    "email": "jprzybylek@activcareliving.com",
-    "clickCount": 2
-  },
-  {
-    "email": "renee@activcareliving.com",
     "clickCount": 2
   },
   {
@@ -173,38 +149,6 @@
   },
   {
     "email": "jhumphrey@bechlercams.com",
-    "clickCount": 1
-  },
-  {
-    "email": "mkreps@xxiicentury.com",
-    "clickCount": 1
-  },
-  {
-    "email": "adam@abs-solutions.com",
-    "clickCount": 1
-  },
-  {
-    "email": "jacqueline.shea@inovio.com",
-    "clickCount": 1
-  },
-  {
-    "email": "mgresser@wildcatdiscovery.com",
-    "clickCount": 1
-  },
-  {
-    "email": "ariell.ortega@bionano.com",
-    "clickCount": 1
-  },
-  {
-    "email": "ssaint@betabionics.com",
-    "clickCount": 1
-  },
-  {
-    "email": "egonzalez@activcareliving.com",
-    "clickCount": 1
-  },
-  {
-    "email": "jmares@activcareliving.com",
     "clickCount": 1
   }
 ]

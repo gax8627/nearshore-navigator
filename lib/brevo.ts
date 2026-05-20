@@ -290,6 +290,31 @@ export const brevo = {
   },
 
   /**
+   * Update an Email Campaign
+   */
+  async updateCampaign(campaignId: number, body: any) {
+    const { key: BREVO_API_KEY, url: BREVO_API_URL } = getBrevoConfig();
+    if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
+
+    const response = await fetch(`${BREVO_API_URL}/emailCampaigns/${campaignId}`, {
+      method: 'PUT',
+      headers: {
+        'api-key': BREVO_API_KEY,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
+
+    if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(`Brevo Update Campaign Error: ${JSON.stringify(data)}`);
+    }
+
+    return true;
+  },
+
+  /**
    * Get email events (opens, clicks, etc.)
    * https://developers.brevo.com/reference/getemaileventreport
    */
@@ -410,6 +435,34 @@ export const brevo = {
   },
 
   /**
+   * Get all lists
+   */
+  async getLists({ limit = 50, offset = 0 }: { limit?: number; offset?: number } = {}) {
+    const { key: BREVO_API_KEY, url: BREVO_API_URL } = getBrevoConfig();
+    if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
+
+    const params = new URLSearchParams();
+    params.append('limit', limit.toString());
+    params.append('offset', offset.toString());
+
+    const response = await fetch(`${BREVO_API_URL}/contacts/lists?${params.toString()}`, {
+      method: 'GET',
+      headers: {
+        'api-key': BREVO_API_KEY,
+        'Accept': 'application/json',
+      },
+    });
+
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+       console.warn('Brevo getLists warning:', data);
+    }
+
+    return data;
+  },
+
+  /**
    * Update a transactional email template
    */
   async updateTemplate(templateId: number, {
@@ -471,5 +524,34 @@ export const brevo = {
       }
 
       return true;
+  },
+
+  /**
+   * Get blacklisted contacts (includes hard bounces)
+   */
+  async getBlacklistedContacts({ limit = 50, offset = 0 }: { limit?: number; offset?: number }) {
+    const { key: BREVO_API_KEY, url: BREVO_API_URL } = getBrevoConfig();
+    if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
+
+    const params = new URLSearchParams();
+    params.append('limit', limit.toString());
+    params.append('offset', offset.toString());
+    params.append('emailBlacklisted', 'true');
+
+    const response = await fetch(`${BREVO_API_URL}/contacts?${params.toString()}`, {
+      method: 'GET',
+      headers: {
+        'api-key': BREVO_API_KEY,
+        'Accept': 'application/json',
+      },
+    });
+
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+       console.warn('Brevo getBlacklistedContacts warning:', data);
+    }
+
+    return data;
   }
 };
