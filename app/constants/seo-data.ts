@@ -755,6 +755,18 @@ export const LOCATIONS: Location[] = [
         ],
         parks: ["Parque Industrial Bernardo Quintana", "Parque Industrial Querétaro", "Finsa Querétaro"],
         logistics: "10 hours to Nuevo Laredo by highway. Dedicated cargo services via Querétaro Intercontinental Airport (AIQ). Optimized for low-volume, high-value freight."
+      },
+      "contract-manufacturing": {
+        title: "How Contract Manufacturing Works in Querétaro",
+        seoTitle: "Aerospace & Precision Manufacturing in Querétaro | 2026",
+        seoDescription: "Querétaro precision manufacturers: AS9100 & NADCAP certified, 10hr highway to Laredo, cargo via AIQ. Safest tech hub in Mexico. Free vetted partner match.",
+        content: [
+          "Querétaro is Latin America's leading aerospace manufacturing hub, hosting facilities for Bombardier, Airbus, and GE Aviation. The local contract manufacturing base specializes in high-precision, high-mix/low-volume production rather than mass border assembly.",
+          "Operating costs in Querétaro are highly competitive, with skilled aerospace and mechatronics technician labor fully burdened at $5.80 to $7.20 per hour. Real estate lease rates for Class A space in premier parks (Aerotech, El Marqués, Finsa Querétaro) average $0.55 to $0.70 per square foot NNN.",
+          "Our network of vetted partners in Querétaro holds AS9100, ISO 9001, and NADCAP quality management certifications. They are fully integrated with the specialized Aerospace University (UNAQ) for continuous talent pipelines."
+        ],
+        parks: ["Aerotech Industrial Park", "Parque Industrial Querétaro", "El Marqués Industrial Park"],
+        logistics: "10-hour highway transit to the Laredo commercial crossing via MEX-57, and direct air cargo services via Querétaro Intercontinental Airport (AIQ)."
       }
     },
     serviceFaqs: {
@@ -764,6 +776,12 @@ export const LOCATIONS: Location[] = [
         { q: "How does IMMEX work in Querétaro?", a: "IMMEX in Querétaro operates exactly as it does on the border, but finished goods are usually consolidated for weekly shipments or exported via air freight." },
         { q: "What certifications do manufacturers in Querétaro hold?", a: "Due to the aerospace density, there is a very high concentration of AS9100 and NADCAP certified manufacturing facilities." },
         { q: "Is Querétaro safe for foreign manufacturing investment?", a: "Yes, Querétaro is consistently ranked as the safest industrial state in Mexico, attracting significant foreign direct investment and expatriate managers." }
+      ],
+      "contract-manufacturing": [
+        { q: "What certifications do Querétaro contract manufacturers hold?", a: "Due to the heavy aerospace density, Querétaro manufacturers frequently hold AS9100, ISO 9001, and NADCAP certifications for precision metal finishing and composites." },
+        { q: "What is the cost of contract manufacturing in Querétaro compared to the US?", a: "Querétaro offers 50-60% labor cost savings compared to the US, with fully burdened technician labor averaging $5.80-$7.20/hr and Class A real estate at $0.55-$0.70/sqft NNN." },
+        { q: "How long does it take to qualify a manufacturer in Querétaro?", a: "Typical supplier onboarding and qualification takes 60-90 days, depending on precision tolerances, tooling requirements, and quality audits." },
+        { q: "Are there injection molding and CNC machining partners in Querétaro?", a: "Yes, the Bajío region has a deep ecosystem of precision CNC machine shops, plastic injection molders, and metal mechanics serving the aerospace and automotive sectors." }
       ]
     },
     localFaqs: [
@@ -896,6 +914,18 @@ export const LOCATIONS: Location[] = [
         ],
         parks: ["Ramos Arizpe Industrial Corridor", "Parque Industrial Saltillo 400", "Finsa Saltillo"],
         logistics: "Saltillo distribution centers benefit from deep integration with Mexico's automotive supply base and direct 3.5-hour access to Laredo border crossing. The region's logistics ecosystem includes 200+ certified 3PLs, IMMEX specialists, customs brokers, and last-mile carriers optimized for high-velocity JIT operations and cross-border compliance."
+      },
+      "contract-manufacturing": {
+        title: "How Contract Manufacturing Works in Saltillo",
+        seoTitle: "Contract Manufacturing in Saltillo | Detroit of Mexico",
+        seoDescription: "Saltillo contract manufacturing: GM & Stellantis ecosystem, $5.50/hr labor, 3.5hrs to Laredo TX, Class A parks. Start manufacturing in 60-90 days.",
+        content: [
+          "Saltillo, known as the 'Detroit of Mexico', is the automotive and heavy-manufacturing capital of Coahuila. Nearshoring contract manufacturing here means plugging directly into the supply chains of General Motors, Stellantis, and Daimler Truck.",
+          "Our network of contract manufacturing partners in Saltillo Ramos Arizpe corridor holds IATF 16949, ISO 9001, and ISO 14001 certifications. They specialize in heavy stamping, precision metalworking, injection molding, and complex automotive assembly.",
+          "Labor rates in Saltillo are structurally competitive, averaging $5.50 to $6.50 per hour fully burdened for skilled mechanics. Class A industrial real estate averages $0.65 to $0.80 per square foot NNN."
+        ],
+        parks: ["Derramadero Industrial Corridor", "Ramos Arizpe Industrial Park", "Server Industrial Park"],
+        logistics: "Located on the Pan-American Highway 85 corridor, Saltillo is just 3.5 hours from the Laredo, Texas border crossing for same-day logistics."
       }
     },
     serviceFaqs: {
@@ -912,6 +942,12 @@ export const LOCATIONS: Location[] = [
         { q: "What warehouse specifications are standard in Saltillo distribution centers?", a: "Class A facilities in Saltillo offer 35-45 foot clear heights, heavy-duty power infrastructure (480V three-phase), dock-door ratios of 1:8,000 to 1:12,000 square feet, and WMS integration with real-time inventory visibility. Temperature-controlled and bonded warehouse options support pharma, food & beverage, and IMMEX importers." },
         { q: "How do IMMEX bonded warehouses in Saltillo reduce landed costs?", a: "IMMEX facilities allow importers to defer Mexican VAT (16%) and import duties on components stored in sealed warehouses, managing virtual inventory across the US-Mexico border using trusted trader programs (CTPAT, NEEC). Duty drawback provisions on re-exported finished goods recover 2-4% of landed costs, making Saltillo bonded DCs ideal for automotive suppliers serving both Mexican assembly plants and US distribution networks." },
         { q: "What is Nearshore Navigator's role in establishing distribution centers in Saltillo?", a: "Nearshore Navigator provides site selection across major parks (Ramos Arizpe, Parque Industrial Saltillo 400, Finsa), lease negotiation on favorable terms, and vetted introductions to certified 3PLs, IMMEX specialists, and border brokers. We charge no developer commissions—our fee comes from your company alone—ensuring unbiased advice on operational needs, cost targets, and compliance requirements." }
+      ],
+      "contract-manufacturing": [
+        { q: "Why is Saltillo called the Detroit of Mexico?", a: "Saltillo hosts the massive GM Ramos Arizpe complex and Stellantis Truck assembly plant, creating a dense cluster of Tier 1 and Tier 2 automotive contract manufacturers." },
+        { q: "What is the burdened labor rate for contract manufacturing in Saltillo?", a: "Fully burdened labor rates for skilled automotive operators average $5.50 to $6.50 USD per hour, presenting significant savings vs. border cities." },
+        { q: "How long does it take to transport goods from Saltillo to the US border?", a: "Saltillo is directly connected to Laredo, Texas via Highway 85, allowing commercial trucks to make the transit in approximately 3.5 hours." },
+        { q: "Are Saltillo contract manufacturers IATF 16949 certified?", a: "Yes, because they serve major automotive OEMs, almost all established contract manufacturers in the Saltillo-Ramos Arizpe corridor maintain current IATF 16949 and ISO 9001 certifications." }
       ]
     },
     localFaqs: [
