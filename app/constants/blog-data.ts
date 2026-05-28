@@ -601,7 +601,7 @@ export const BLOG_POSTS_RAW = [
         <h2>The Path Forward: Securing Your Supply Chain</h2>
         <p>Waiting out the tariff storm is no longer a viable corporate strategy. The fragmentation of the global supply chain is structural. The most resilient organizations are actively localizing their supply chains to the North American block.</p>
         <p><strong>Ready to analyze your Total Landed Cost?</strong><br>The first step is a data-driven comparison of your current tariff exposure versus nearshore production costs.</p>
-        <p><a href="https://calendly.com/denisse-martinez-nearshore/30min" target="_blank" rel="noopener noreferrer">Book a Strategic Discovery Call with Denisse Martinez</a> to evaluate the feasibility of a Baja California footprint for your specific product lines.</p>
+        <p><a href="https://calendly.com/denisse-nearshorenavigator/30min" target="_blank" rel="noopener noreferrer">Book a Strategic Discovery Call with Denisse Martinez</a> to evaluate the feasibility of a Baja California footprint for your specific product lines.</p>
       `
   }
 ,
@@ -3705,7 +3705,7 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
   <li><strong>Week 14+:</strong> Full production ramp. Ongoing: shelter provides weekly labor and compliance reports. Monthly: landed cost review. Quarterly: shelter performance review.</li>
 </ul>
 
-<p><strong>Ready to start?</strong> Nearshore Navigator conducts complimentary feasibility studies including landed cost modeling, site selection, and shelter partner introductions for qualified US manufacturers. <a href="https://calendly.com/denisse-martinez-nearshore/30min" target="_blank" rel="noopener noreferrer">Schedule your discovery call with Denisse Martinez.</a></p>
+<p><strong>Ready to start?</strong> Nearshore Navigator conducts complimentary feasibility studies including landed cost modeling, site selection, and shelter partner introductions for qualified US manufacturers. <a href="https://calendly.com/denisse-nearshorenavigator/30min" target="_blank" rel="noopener noreferrer">Schedule your discovery call with Denisse Martinez.</a></p>
 `
   },
 ];

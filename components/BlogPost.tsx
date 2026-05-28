@@ -107,12 +107,25 @@ export function BlogPost({ post }: { post: BlogPostType }) {
                             <p className="text-primary-100 text-sm mb-6 leading-relaxed opacity-90">
                                 Stop guessing. Speak directly with Denisse Martinez to model your nearshore footprint in Baja California and bypass 6 months of traditional research.
                             </p>
-                            <a href="https://calendly.com/denisse-nearshorenavigator/30min" target="_blank" rel="noopener noreferrer" className="block w-full">
-                                <Button className="w-full bg-white text-primary-900 hover:bg-gray-100 font-bold py-3 shadow-lg flex items-center justify-center gap-2 group">
-                                    Talk to Denisse
-                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                </Button>
-                            </a>
+                             <a 
+                               href="https://calendly.com/denisse-nearshorenavigator/30min" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               className="block w-full"
+                               onClick={() => {
+                                 if (typeof window !== 'undefined' && (window as any).gtag) {
+                                   (window as any).gtag('event', 'click_calendly', {
+                                     event_category: 'engagement',
+                                     event_label: 'blog_sidebar_cta'
+                                   });
+                                 }
+                               }}
+                             >
+                                 <Button className="w-full bg-white text-primary-900 hover:bg-gray-100 font-bold py-3 shadow-lg flex items-center justify-center gap-2 group">
+                                     Talk to Denisse
+                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                 </Button>
+                             </a>
                         </div>
                     </div>
                     

@@ -18,7 +18,7 @@ async function main() {
     while (true) {
       const res = await brevo.getEmailEvents({
         startDate: '2026-05-01',
-        endDate: '2026-05-08',
+        endDate: '2026-05-28',
         limit,
         offset,
         sort: 'desc'

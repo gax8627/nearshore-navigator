@@ -118,7 +118,19 @@ export default function IndustrialMapClient({ language }: { language: string }) 
             <p className="text-primary-100 text-lg mb-8 max-w-xl mx-auto">
                 {t('park_map.ctaDesc') || "Vacancy rates in Class A facilities are below 3%. Speak directly with Denisse Martinez to bypass waitlists and model your nearshore footprint."}
             </p>
-            <a href="https://calendly.com/denisse-nearshorenavigator/30min" target="_blank" rel="noopener noreferrer">
+            <a 
+              href="https://calendly.com/denisse-nearshorenavigator/30min" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={() => {
+                if (typeof window !== 'undefined' && (window as any).gtag) {
+                  (window as any).gtag('event', 'click_calendly', {
+                    event_category: 'engagement',
+                    event_label: 'industrial_map_cta'
+                  });
+                }
+              }}
+            >
                 <Button className="w-full sm:w-auto py-4 px-8 text-primary-900 bg-white hover:bg-gray-100 text-lg font-bold">
                     Talk to Denisse &rarr;
                 </Button>

@@ -215,7 +215,20 @@ export default function CostCalculatorClient({ language }: { language: string })
               </div>
 
               <div className="mt-8 pt-6 border-t border-primary-800 flex flex-col sm:flex-row gap-4">
-                 <a href="https://calendly.com/denisse-nearshorenavigator/30min" target="_blank" rel="noopener noreferrer" className="w-full">
+                 <a 
+                    href="https://calendly.com/denisse-nearshorenavigator/30min" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="w-full"
+                    onClick={() => {
+                      if (typeof window !== 'undefined' && (window as any).gtag) {
+                        (window as any).gtag('event', 'click_calendly', {
+                          event_category: 'engagement',
+                          event_label: 'cost_calculator_cta'
+                        });
+                      }
+                    }}
+                  >
                     <Button className="w-full py-4 text-primary-900 bg-white hover:bg-gray-100 text-lg">
                       Get Custom Cost Model <ArrowRight className="w-5 h-5 ml-2 inline" />
                     </Button>

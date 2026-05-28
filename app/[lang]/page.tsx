@@ -14,6 +14,8 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
       languages: {
         'en': 'https://nearshorenavigator.com/en',
         'es': 'https://nearshorenavigator.com/es',
+        'de': 'https://nearshorenavigator.com/de',
+        'ja': 'https://nearshorenavigator.com/ja',
         'x-default': 'https://nearshorenavigator.com/en',
       }
     }
@@ -29,7 +31,6 @@ export default function Home() {
         "name": "Nearshore Navigator",
         "description": "Strategic advisory for US companies expanding manufacturing to Tijuana and Baja California.",
         "url": "https://nearshorenavigator.com",
-        "telephone": "+1-800-000-0000",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Tijuana",

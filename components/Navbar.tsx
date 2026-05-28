@@ -287,7 +287,19 @@ export function Navbar() {
                             </motion.div>
                         </button>
 
-                        <a href="https://calendly.com/denisse-nearshorenavigator/30min" target="_blank" rel="noopener noreferrer">
+                        <a 
+                            href="https://calendly.com/denisse-nearshorenavigator/30min" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            onClick={() => {
+                                if (typeof window !== 'undefined' && (window as any).gtag) {
+                                    (window as any).gtag('event', 'click_calendly', {
+                                        event_category: 'engagement',
+                                        event_label: 'navbar_desktop_cta'
+                                    });
+                                }
+                            }}
+                        >
                             <Button variant="primary" size="sm">{t('nav.bookCall')}</Button>
                         </a>
                     </div>
@@ -435,9 +447,22 @@ export function Navbar() {
                             </div>
 
                             <div className="pt-2">
-                                <Link href={`/${language}/assessment`} onClick={() => setIsMobileMenuOpen(false)}>
-                                    <Button variant="primary" className="w-full">{t('nav.bookTour')}</Button>
-                                </Link>
+                                <a 
+                                    href="https://calendly.com/denisse-nearshorenavigator/30min" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    onClick={() => {
+                                        setIsMobileMenuOpen(false);
+                                        if (typeof window !== 'undefined' && (window as any).gtag) {
+                                            (window as any).gtag('event', 'click_calendly', {
+                                                event_category: 'engagement',
+                                                event_label: 'navbar_mobile_cta'
+                                            });
+                                        }
+                                    }}
+                                >
+                                    <Button variant="primary" className="w-full">{t('nav.bookCall')}</Button>
+                                </a>
                             </div>
                         </div>
                     </motion.div>

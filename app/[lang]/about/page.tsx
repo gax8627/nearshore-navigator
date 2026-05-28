@@ -14,6 +14,8 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
       languages: {
         'en': 'https://nearshorenavigator.com/en/about',
         'es': 'https://nearshorenavigator.com/es/about',
+        'de': 'https://nearshorenavigator.com/de/about',
+        'ja': 'https://nearshorenavigator.com/ja/about',
         'x-default': 'https://nearshorenavigator.com/en/about',
       }
     }

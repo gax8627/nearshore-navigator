@@ -1,110 +1,5 @@
 [
   {
-    "email": "jhapp@labcon.com",
-    "firstName": "Jim",
-    "company": "Labcon North America",
-    "industry": "Biotechnology",
-    "status": "0"
-  },
-  {
-    "email": "marknishi@nexgenpharma.com",
-    "firstName": "Mark",
-    "company": "Nexgen Pharma Inc",
-    "industry": "Pharmaceuticals",
-    "status": "Marketing Qualified Lead"
-  },
-  {
-    "email": "eholmes@theranos.com",
-    "firstName": "Elizabeth",
-    "company": "Therano's",
-    "industry": "Biotechnology",
-    "status": "0"
-  },
-  {
-    "email": "sbarnes@pacificbiosciences.com",
-    "firstName": "Susan",
-    "company": "Pacific Biosciences of California, Inc.",
-    "industry": "Biotechnology",
-    "status": "Marketing Qualified Lead"
-  },
-  {
-    "email": "gpk@nexgenpharma.com",
-    "firstName": "Gary",
-    "company": "Nexgen Pharma Inc",
-    "industry": "Pharmaceuticals",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "scottd@gene.com",
-    "firstName": "Scott",
-    "company": "Genentech Inc",
-    "industry": "Biotechnology",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "jim.hobart@sciton.com",
-    "firstName": "Jim",
-    "company": "Sciton",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "sjones@biocare.net",
-    "firstName": "Stephen",
-    "company": "Biocare Medical LLC",
-    "industry": "Biotechnology",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "thomas.appio@bausch.com",
-    "firstName": "Thomas",
-    "company": "Bausch & Lomb",
-    "industry": "Pharmaceuticals",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "dennis.asharin@bauschhealth.com",
-    "firstName": "Dennis",
-    "company": "Bausch & Lomb",
-    "industry": "Pharmaceuticals",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "rob.meyering@bausch.com",
-    "firstName": "Robert",
-    "company": "Bausch & Lomb",
-    "industry": "Pharmaceuticals",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "jwilson@otsuka-america.com",
-    "firstName": "John",
-    "company": "Otsuka America Pharmaceutical",
-    "industry": "Pharmaceuticals",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "wvannah@vibrac.com",
-    "firstName": "William",
-    "company": "Vibrac",
-    "industry": "Pharmaceuticals",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "charless@thomassci.com",
-    "firstName": "Charles",
-    "company": "Thomas Scientific",
-    "industry": "Biotechnology",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "ray.keane@intarcia.com",
-    "firstName": "Raymond",
-    "company": "Intarcia Therapeutics",
-    "industry": "Biotechnology",
-    "status": "Nurturing (Not active)"
-  },
-  {
     "email": "barry.simon@nantkwest.com",
     "firstName": "Barry",
     "company": "Nantkwest",
@@ -112,30 +7,9 @@
     "status": "Nurturing (Not active)"
   },
   {
-    "email": "mmorgan@ptsdiagnostics.com",
-    "firstName": "Mark",
-    "company": "PTS Diagnostics",
-    "industry": "Biotechnology",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "kpilcher@artel-usa.com",
-    "firstName": "Kirby",
-    "company": "Artel",
-    "industry": "Biotechnology",
-    "status": "Nurturing (Not active)"
-  },
-  {
     "email": "jveale@lighthouseinstruments.com",
     "firstName": "James",
     "company": "Lighthouse Instruments",
-    "industry": "Pharmaceuticals",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "cynthiaw@casipharmaceuticals.com",
-    "firstName": "Cynthia",
-    "company": "CASI Pharmaceuticals",
     "industry": "Pharmaceuticals",
     "status": "Nurturing (Not active)"
   },
@@ -154,24 +28,10 @@
     "status": "Nurturing (Not active)"
   },
   {
-    "email": "jlynch@abec.com",
-    "firstName": "Jim",
-    "company": "ABEC",
-    "industry": "Biotechnology",
-    "status": "Nurturing (Not active)"
-  },
-  {
     "email": "rrubino@aeriepharma.com",
     "firstName": "Richard",
     "company": "Aerie Pharmaceuticals",
     "industry": "Pharmaceuticals",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "lguarracina@highresbio.com",
-    "firstName": "Louis",
-    "company": "HighRes Biosolutions",
-    "industry": "Biotechnology",
     "status": "Nurturing (Not active)"
   },
   {
@@ -185,13 +45,6 @@
     "email": "vanido@aeriepharma.com",
     "firstName": "Vince",
     "company": "Aerie Pharmaceuticals",
-    "industry": "Pharmaceuticals",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "wmancoff@thomaseng.com",
-    "firstName": "Wesley",
-    "company": "Thomas Engineering",
     "industry": "Pharmaceuticals",
     "status": "Nurturing (Not active)"
   },
@@ -217,13 +70,6 @@
     "status": "Nurturing (Not active)"
   },
   {
-    "email": "christine.miller@melinta.com",
-    "firstName": "Christine",
-    "company": "Melinta Therapeutics",
-    "industry": "Biotechnology",
-    "status": "Nurturing (Not active)"
-  },
-  {
     "email": "tmitro@aeriepharma.com",
     "firstName": "Thomas",
     "company": "Aerie Pharmaceuticals",
@@ -234,13 +80,6 @@
     "email": "chris.nordhoff@ak-bio.com",
     "firstName": "Christopher",
     "company": "Asahi Kasei Biprocess",
-    "industry": "Biotechnology",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "margie@bioptechs.com",
-    "firstName": "Margie",
-    "company": "Bioptechs",
     "industry": "Biotechnology",
     "status": "Nurturing (Not active)"
   },
@@ -266,52 +105,10 @@
     "status": "Nurturing (Not active)"
   },
   {
-    "email": "stan.haas@thomassci.com",
-    "firstName": "Stanley",
-    "company": "Thomas Scientific",
-    "industry": "Biotechnology",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "mboyer@scapharma.com",
-    "firstName": "Milton",
-    "company": "SCA Pharma",
-    "industry": "Pharmaceuticals",
-    "status": "Nurturing (Not active)"
-  },
-  {
     "email": "andrew@rppl.com",
     "firstName": "Andrew",
     "company": "Ripple Neuro",
     "industry": "Biotechnology",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "nlessell@chroma.com",
-    "firstName": "Newell",
-    "company": "Chroma Technology",
-    "industry": "Biotechnology",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "csmith@protokinetix.com",
-    "firstName": "Clarence",
-    "company": "Protokinetix",
-    "industry": "Biotechnology",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "tmspeace@sentiss.us",
-    "firstName": "Thomas",
-    "company": "Sentiss Pharma Pvt",
-    "industry": "Pharmaceuticals",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "claplante@primomedicalgroup.com",
-    "firstName": "Christopher",
-    "company": "Primo Medical Group",
-    "industry": "Medical Devices & Equipment",
     "status": "Nurturing (Not active)"
   },
   {
@@ -329,34 +126,6 @@
     "status": "Nurturing (Not active)"
   },
   {
-    "email": "kevinmcgough@aircleansystems.com",
-    "firstName": "Kevin",
-    "company": "AirClean Systems",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "john.sweetland@winsford.com",
-    "firstName": "John",
-    "company": "The Winsford",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "bbrown@somnetics.com",
-    "firstName": "Bill",
-    "company": "Somnetics International",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "wwhite@kometusa.com",
-    "firstName": "Warren",
-    "company": "Komet USA",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Not active)"
-  },
-  {
     "email": "larry@voncomed.com",
     "firstName": "Larry",
     "company": "Vonco Medical , Rehab & Fitness",
@@ -364,22 +133,8 @@
     "status": "Nurturing (Interest in Mexico)"
   },
   {
-    "email": "hhoppenot@incyte.com",
-    "firstName": "Hervé",
-    "company": "Incyte",
-    "industry": "Pharmaceuticals",
-    "status": "Nurturing (Not active)"
-  },
-  {
     "email": "lmoyer@incyte.com",
     "firstName": "Luke",
-    "company": "Incyte",
-    "industry": "Pharmaceuticals",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "rmcmahon@incyte.com",
-    "firstName": "Robert",
     "company": "Incyte",
     "industry": "Pharmaceuticals",
     "status": "Nurturing (Not active)"
@@ -406,30 +161,9 @@
     "status": "Nurturing (Not active)"
   },
   {
-    "email": "jim.pieroth@directsupply.com",
-    "firstName": "Jim",
-    "company": "Direct Supply",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "cdenman@directs.com",
-    "firstName": "Corey",
-    "company": "Direct Supply",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Not active)"
-  },
-  {
     "email": "jaragon@coopervision.com",
     "firstName": "Juan Carlos",
     "company": "CooperVision",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "mt@codanus.com",
-    "firstName": "Mike",
-    "company": "CODAN",
     "industry": "Medical Devices & Equipment",
     "status": "Nurturing (Not active)"
   },
@@ -441,37 +175,9 @@
     "status": "Nurturing (Not active)"
   },
   {
-    "email": "yokomizo@rigaku.co.jp",
-    "firstName": "Yoichi",
-    "company": "Rigaku",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Not active)"
-  },
-  {
     "email": "paul.edmiston@rigaku.com",
     "firstName": "Paul",
     "company": "Rigaku",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "dsproat@ydnt.com",
-    "firstName": "Dave",
-    "company": "Young Innovations",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "dmcbride@coopervision.com",
-    "firstName": "Daniel",
-    "company": "CooperVision",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "cshumate@alignedmedicalsolutions.com",
-    "firstName": "Carl",
-    "company": "Aligned Medical Solutions",
     "industry": "Medical Devices & Equipment",
     "status": "Nurturing (Not active)"
   },
@@ -485,13 +191,6 @@
   {
     "email": "jsmith@therapak.com",
     "firstName": "Jeffery",
-    "company": "Therapak",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "pwellington@therapak.com",
-    "firstName": "Peter",
     "company": "Therapak",
     "industry": "Medical Devices & Equipment",
     "status": "Nurturing (Not active)"
@@ -518,31 +217,10 @@
     "status": "Nurturing (Active)"
   },
   {
-    "email": "nhanson@apothecaryproducts.com",
-    "firstName": "Nathan",
-    "company": "APOTHECARY PRODUCTS",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Not active)"
-  },
-  {
     "email": "rnichols@apothecaryproducts.com",
     "firstName": "Randy",
     "company": "APOTHECARY PRODUCTS",
     "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "melanie.tee@forefrontmedical.com",
-    "firstName": "Melanie",
-    "company": "Forefront Medical",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "ageorgiadis@gtigrows.com",
-    "firstName": "Anthony",
-    "company": "Green Thumb",
-    "industry": "Pharmaceuticals",
     "status": "Nurturing (Not active)"
   },
   {
@@ -560,37 +238,9 @@
     "status": ""
   },
   {
-    "email": "gsmith@sedecalusa.com",
-    "firstName": "Gary James",
-    "company": "Sedecal",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "bjorn.wildenau@orchid-ortho.com",
-    "firstName": "Bjorn",
-    "company": "Orchid",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "stephen.backer@orchid-ortho.com",
     "firstName": "Stephen",
     "company": "Orchid",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "paul@sightsciences.com",
-    "firstName": "Paul",
-    "company": "Sight Sciences",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "yhamada@us.medical.canon",
-    "firstName": "Yuji",
-    "company": "Canon Medical Systems",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -644,34 +294,6 @@
     "status": ""
   },
   {
-    "email": "tdralle@fillauer.com",
-    "firstName": "Traci B.",
-    "company": "Fillauer Companies",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "yairm@inmodemd.com",
-    "firstName": "Yair",
-    "company": "InMode",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "dominiquef@minervasurgical.com",
-    "firstName": "Dominique J.",
-    "company": "Minerva Surgical",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "jvuono@capsahealthcare.com",
-    "firstName": "John M.",
-    "company": "Capsa Healthcare",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "dean.schauer@confluentmedical.com",
     "firstName": "Dean",
     "company": "Confluent Medical Technologies",
@@ -679,23 +301,9 @@
     "status": "Nurturing (Active)"
   },
   {
-    "email": "sschwartz@lionprotects.com",
-    "firstName": "Steve",
-    "company": "LION",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "drew.davies@natus.com",
     "firstName": "Drew",
     "company": "Natus",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "jeff.black@apolloendo.com",
-    "firstName": "Jeffrey G.",
-    "company": "Apollo Endosurgery",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -1442,13 +1050,6 @@
     "status": ""
   },
   {
-    "email": "boris.fischer@apolloendo.com",
-    "firstName": "Boris",
-    "company": "Apollo Endosurgery",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "rollyson.deanna@aerocareusa.com",
     "firstName": "Deanna",
     "company": "AeroCare Holdings",
@@ -1564,13 +1165,6 @@
     "email": "rstudholme@staar.com",
     "firstName": "Robert M.",
     "company": "STAAR Surgical",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "cdesborough@x-spine.com",
-    "firstName": "Chris",
-    "company": "Xtant Medical",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -1753,13 +1347,6 @@
     "email": "krowland@kasonind.com",
     "firstName": "Kevin",
     "company": "Kason Industries",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "jeff.matthews@handicare.com",
-    "firstName": "Jeff",
-    "company": "Handicare",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -2075,13 +1662,6 @@
     "email": "barry.cooper@bioventus.com",
     "firstName": "Barry J.",
     "company": "Bioventus",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "dyount@atricure.com",
-    "firstName": "Deborah",
-    "company": "AtriCure",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -4011,13 +3591,6 @@
     "status": ""
   },
   {
-    "email": "jordan.smith@sanofi-aventis.com",
-    "firstName": "Jordan",
-    "company": "Sanofi",
-    "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
     "email": "sacha.cruz@criver.com",
     "firstName": "Sacha",
     "company": "Charles River",
@@ -4476,13 +4049,6 @@
     "email": "katie.jacobs@sanofipasteur.com",
     "firstName": "Katie",
     "company": "Sanofi",
-    "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
-    "email": "rose.eastman@crl.com",
-    "firstName": "Rose",
-    "company": "Charles River",
     "industry": "Pharmaceuticals",
     "status": ""
   },
@@ -5075,13 +4641,6 @@
     "status": ""
   },
   {
-    "email": "jim.hobart@sciton.com",
-    "firstName": "Jim",
-    "company": "Sciton",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "elena.forte@agilent.com",
     "firstName": "Elena",
     "company": "Agilent",
@@ -5453,13 +5012,6 @@
     "status": ""
   },
   {
-    "email": "dmowry@cutera.com",
-    "firstName": "David",
-    "company": "Cutera",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "enegrou@its.jnj.com",
     "firstName": "Elvira",
     "company": "Janssen",
@@ -5733,13 +5285,6 @@
     "status": ""
   },
   {
-    "email": "lwang@dexcom.com",
-    "firstName": "Liang",
-    "company": "Dexcom",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "paul.webber@resmed.com",
     "firstName": "Paul",
     "company": "ResMed",
@@ -5974,13 +5519,6 @@
     "email": "mike_mcmullen@agilent.com",
     "firstName": "Mike",
     "company": "Agilent",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "ginger.mueller@muellersportsmed.com",
-    "firstName": "Ginger",
-    "company": "Mueller Sports Medicine",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -7700,13 +7238,6 @@
     "status": ""
   },
   {
-    "email": "dmowry@cutera.com",
-    "firstName": "Dave",
-    "company": "Cutera",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "jriegler@paragon28.com",
     "firstName": "James",
     "company": "Paragon 28",
@@ -7903,13 +7434,6 @@
     "status": ""
   },
   {
-    "email": "barb.sullivan@nginstruments.com",
-    "firstName": "Barbara",
-    "company": "Avalign Technologies",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "frank.vizesi@seaspine.com",
     "firstName": "Frank",
     "company": "SeaSpine",
@@ -7952,13 +7476,6 @@
     "status": ""
   },
   {
-    "email": "jvuono@capsahealthcare.com",
-    "firstName": "John",
-    "company": "Capsa Healthcare",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "kevin.tesch@performancehealth.com",
     "firstName": "Kevin",
     "company": "Performance Health",
@@ -7980,13 +7497,6 @@
     "status": ""
   },
   {
-    "email": "f.whittaker@avaligntech.com",
-    "firstName": "Forrest",
-    "company": "Avalign Technologies",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "szink@treace.net",
     "firstName": "Shana",
     "company": "Treace Medical Concepts",
@@ -8004,13 +7514,6 @@
     "email": "mschaal@scapharma.com",
     "firstName": "Matt",
     "company": "SCA Pharma",
-    "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
-    "email": "lsabella@mannkindcorp.com",
-    "firstName": "Lauren",
-    "company": "MannKind",
     "industry": "Pharmaceuticals",
     "status": ""
   },
@@ -8125,13 +7628,6 @@
     "company": "Amphastar Pharmaceuticals",
     "industry": "Pharmaceuticals",
     "status": "Nurturing (Active)"
-  },
-  {
-    "email": "bwalsh@pulsetechnologies.com",
-    "firstName": "Bob",
-    "company": "Pulse Technologies",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
   },
   {
     "email": "hbriem@kerecis.com",
@@ -8729,13 +8225,6 @@
     "status": ""
   },
   {
-    "email": "ed.rebar@sana.com",
-    "firstName": "Edward",
-    "company": "Sana Biotechnology",
-    "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
     "email": "dnovack@dynavax.com",
     "firstName": "David",
     "company": "Dynavax Technologies",
@@ -9019,13 +8508,6 @@
     "email": "jtepper@ionispharma.com",
     "firstName": "Julie",
     "company": "Ionis Pharmaceuticals",
-    "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
-    "email": "jlee@virbio.onmicrosoft.com",
-    "firstName": "Ji-eun",
-    "company": "Vir Biotechnology",
     "industry": "Pharmaceuticals",
     "status": ""
   },
@@ -9492,13 +8974,6 @@
     "status": ""
   },
   {
-    "email": "paul@sightsciences.com",
-    "firstName": "Paul",
-    "company": "Sight Sciences",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "keith.valentine@seaspine.com",
     "firstName": "Keith",
     "company": "SeaSpine",
@@ -9853,13 +9328,6 @@
     "firstName": "Richard",
     "company": "Avid Bioservices",
     "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
-    "email": "yairm@inmodemd.com",
-    "firstName": "Yair",
-    "company": "InMode",
-    "industry": "Medical Devices & Equipment",
     "status": ""
   },
   {
@@ -10454,13 +9922,6 @@
     "email": "keckkeong.lee@ughcc.com",
     "firstName": "Lee",
     "company": "UG Healthcare Corporation",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "dmowry@cutera.com",
-    "firstName": "David",
-    "company": "Cutera",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },

@@ -4,6 +4,51 @@ import path from 'path';
 import { parse } from 'csv-parse/sync';
 import { stringify } from 'csv-stringify/sync';
 
+function getLeadEmailsFromRecord(item: any): string[] {
+  const emails: string[] = [];
+  const keys = Object.keys(item);
+  
+  // Find keys containing 'email' (case-insensitive) and not containing internal staff terms
+  const emailKeys = keys.filter(k => {
+    const lk = k.toLowerCase();
+    return lk.includes('email') && 
+           !lk.includes('owner') && 
+           !lk.includes('rep') && 
+           !lk.includes('agent') && 
+           !lk.includes('user') && 
+           !lk.includes('member') && 
+           !lk.includes('staff') && 
+           !lk.includes('assignee');
+  });
+
+  if (emailKeys.length > 0) {
+    emailKeys.forEach(k => {
+      const val = item[k];
+      if (typeof val === 'string' && val.includes('@')) {
+        emails.push(val.trim().toLowerCase());
+      }
+    });
+  } else {
+    // Fallback: search values for any string with '@' (excluding keys that are internal)
+    keys.forEach(k => {
+      const lk = k.toLowerCase();
+      if (!lk.includes('owner') && 
+          !lk.includes('rep') && 
+          !lk.includes('agent') && 
+          !lk.includes('user') && 
+          !lk.includes('member') && 
+          !lk.includes('staff') && 
+          !lk.includes('assignee')) {
+        const val = item[k];
+        if (typeof val === 'string' && val.includes('@')) {
+          emails.push(val.trim().toLowerCase());
+        }
+      }
+    });
+  }
+  return [...new Set(emails)];
+}
+
 async function main() {
   const badEmailsFile = path.join(process.cwd(), 'scratch/bad_emails.json');
   if (!fs.existsSync(badEmailsFile)) {
@@ -11,7 +56,7 @@ async function main() {
     return;
   }
 
-  const badEmails = new Set(JSON.parse(fs.readFileSync(badEmailsFile, 'utf-8')).map((e: string) => e.toLowerCase()));
+  const badEmails = new Set(JSON.parse(fs.readFileSync(badEmailsFile, 'utf-8')).map((e: string) => e.toLowerCase().trim()));
   console.log(`🧹 Loaded ${badEmails.size} bad emails for cleaning.`);
 
   const leadsDir = path.join(process.cwd(), 'segmented_leads');
@@ -48,8 +93,9 @@ async function main() {
         if (Array.isArray(content)) {
           const originalCount = content.length;
           const cleaned = content.filter((item: any) => {
-            const email = item.email || item.Email || item['Email Address'];
-            return email && !badEmails.has(email.toLowerCase());
+            const leadEmails = getLeadEmailsFromRecord(item);
+            const hasBadEmail = leadEmails.some(email => badEmails.has(email));
+            return !hasBadEmail;
           });
           if (originalCount !== cleaned.length) {
             fs.writeFileSync(file, JSON.stringify(cleaned, null, 2));
@@ -64,8 +110,9 @@ async function main() {
         const originalCount = records.length;
         
         const cleaned = records.filter((item: any) => {
-          const email = item.email || item.Email || item['Email Address'] || Object.values(item).find(v => typeof v === 'string' && v.includes('@'));
-          return email && !badEmails.has(email.toString().toLowerCase());
+          const leadEmails = getLeadEmailsFromRecord(item);
+          const hasBadEmail = leadEmails.some(email => badEmails.has(email));
+          return !hasBadEmail;
         });
 
         if (originalCount !== cleaned.length) {

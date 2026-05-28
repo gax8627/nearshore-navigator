@@ -40,6 +40,17 @@ async function main() {
       });
     }
 
+    // Also check scratch/hard_bounces.json for any hard bounces fetched in the previous step
+    const hardBouncesPath = path.join(process.cwd(), 'scratch/hard_bounces.json');
+    if (fs.existsSync(hardBouncesPath)) {
+      const hardBounces = JSON.parse(fs.readFileSync(hardBouncesPath, 'utf-8'));
+      if (Array.isArray(hardBounces)) {
+        hardBounces.forEach((email: string) => {
+          if (email) badEmails.add(email.toLowerCase());
+        });
+      }
+    }
+
     const uniqueBadEmails = Array.from(badEmails);
     console.log(`✅ Total unique "bad" emails identified: ${uniqueBadEmails.length}`);
 
