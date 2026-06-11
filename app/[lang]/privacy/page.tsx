@@ -1,3 +1,4 @@
+import { getAlternateLanguages } from '@/app/constants/seo-config';
 import { Metadata } from 'next';
 import PrivacyClient from './PrivacyClient';
 import { getDictionary } from '@/app/i18n/get-dictionary';
@@ -11,11 +12,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     description: dict.privacy.metaDescription || 'Legal privacy policy and data protection for Nearshore Navigator.',
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/privacy`,
-      languages: {
-        'en': 'https://nearshorenavigator.com/en/privacy',
-        'es': 'https://nearshorenavigator.com/es/privacy',
-        'x-default': 'https://nearshorenavigator.com/en/privacy',
-      }
+      languages: getAlternateLanguages('/privacy')
     }
   };
 }

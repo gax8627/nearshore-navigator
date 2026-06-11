@@ -1,3 +1,4 @@
+import { getAlternateLanguages } from '@/app/constants/seo-config';
 import ResourcesClient from "./ResourcesClient";
 import { Metadata } from 'next';
 import { getDictionary } from "@/app/i18n/get-dictionary";
@@ -11,11 +12,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     description: dict.resources.metaDescription || 'Industrial resources, tools, and guides for your Mexico expansion.',
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/resources`,
-      languages: {
-        'en': 'https://nearshorenavigator.com/en/resources',
-        'es': 'https://nearshorenavigator.com/es/resources',
-        'x-default': 'https://nearshorenavigator.com/en/resources',
-      }
+      languages: getAlternateLanguages('/resources')
     }
   };
 }

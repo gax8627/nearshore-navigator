@@ -1,3 +1,4 @@
+import { getAlternateLanguages } from '@/app/constants/seo-config';
 import { Metadata } from 'next';
 import Section321Client from './Section321Client';
 import { getDictionary } from '@/app/i18n/get-dictionary';
@@ -14,11 +15,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
         description,
         alternates: {
             canonical: `https://nearshorenavigator.com/${lang}/services/distribution-centers-tijuana/section-321-guide`,
-            languages: {
-              'en': 'https://nearshorenavigator.com/en/services/distribution-centers-tijuana/section-321-guide',
-              'es': 'https://nearshorenavigator.com/es/services/distribution-centers-tijuana/section-321-guide',
-              'x-default': 'https://nearshorenavigator.com/en/services/distribution-centers-tijuana/section-321-guide',
-            }
+            languages: getAlternateLanguages('/services/distribution-centers-tijuana/section-321-guide')
         }
     };
 }

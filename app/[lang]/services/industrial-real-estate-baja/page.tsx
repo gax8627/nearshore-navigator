@@ -1,3 +1,4 @@
+import { getAlternateLanguages } from '@/app/constants/seo-config';
 import { Metadata } from 'next';
 import RealEstateClient from './RealEstateClient';
 import { getDictionary } from '@/app/i18n/get-dictionary';
@@ -24,11 +25,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     },
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/services/industrial-real-estate-baja`,
-      languages: {
-        'en': 'https://nearshorenavigator.com/en/services/industrial-real-estate-baja',
-        'es': 'https://nearshorenavigator.com/es/services/industrial-real-estate-baja',
-        'x-default': 'https://nearshorenavigator.com/en/services/industrial-real-estate-baja',
-      }
+      languages: getAlternateLanguages('/services/industrial-real-estate-baja')
     }
   };
 }

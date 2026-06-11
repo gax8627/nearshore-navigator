@@ -1,3 +1,4 @@
+import { getAlternateLanguages } from '@/app/constants/seo-config';
 import { notFound } from "next/navigation";
 import { getLocation } from "@/app/constants/seo-data";
 import { INDUSTRY_VERTICALS } from "@/app/constants/industry-taxonomy";
@@ -83,11 +84,7 @@ export async function generateMetadata({ params }: Props) {
     robots: { index: isIndexable, follow: true },
     alternates: {
       canonical: canonicalUrl,
-      languages: {
-        'en': `https://nearshorenavigator.com/en/locations/${city}/industries/${industry}`,
-        'es': `https://nearshorenavigator.com/es/locations/${city}/industries/${industry}`,
-        'x-default': `https://nearshorenavigator.com/en/locations/${city}/industries/${industry}`,
-      }
+      languages: getAlternateLanguages(`/locations/${city}/industries/${industry}`)
     }
   };
 }

@@ -1,3 +1,4 @@
+import { getAlternateLanguages } from '@/app/constants/seo-config';
 import { Metadata } from 'next';
 import QuestionnaireClient from './QuestionnaireClient';
 import { getDictionary } from "@/app/i18n/get-dictionary";
@@ -11,11 +12,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     description: t.questionnaire.subtitle,
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/resources/questionnaire`,
-      languages: {
-        'en': 'https://nearshorenavigator.com/en/resources/questionnaire',
-        'es': 'https://nearshorenavigator.com/es/resources/questionnaire',
-        'x-default': 'https://nearshorenavigator.com/en/resources/questionnaire',
-      }
+      languages: getAlternateLanguages('/resources/questionnaire')
     }
   };
 }

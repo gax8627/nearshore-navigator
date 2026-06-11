@@ -1,3 +1,4 @@
+import { getAlternateLanguages } from '@/app/constants/seo-config';
 import { Metadata } from 'next';
 import DistributionClient from './DistributionClient';
 
@@ -17,11 +18,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     },
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/services/distribution-centers-tijuana`,
-      languages: {
-        'en': 'https://nearshorenavigator.com/en/services/distribution-centers-tijuana',
-        'es': 'https://nearshorenavigator.com/es/services/distribution-centers-tijuana',
-        'x-default': 'https://nearshorenavigator.com/en/services/distribution-centers-tijuana',
-      }
+      languages: getAlternateLanguages('/services/distribution-centers-tijuana')
     }
   };
 }

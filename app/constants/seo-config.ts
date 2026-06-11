@@ -42,3 +42,17 @@ export const DEPRECATED_LOCALES = ['fr', 'zh', 'ko', 'it', 'pt', 'ru'] as const;
 
 /** Base URL for canonical and hreflang generation. */
 export const BASE_URL = 'https://nearshorenavigator.com';
+
+/**
+ * Helper to generate hreflang alternates for any page path.
+ * Ensures all indexable locales (en, es, de, ja) are symmetrically advertised.
+ * 
+ * @param path The path of the page, starting with a slash (e.g. '/about')
+ */
+export function getAlternateLanguages(path: string) {
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  return Object.fromEntries([
+    ...INDEXABLE_LOCALES.map(lang => [lang, `${BASE_URL}/${lang}${cleanPath}`]),
+    ['x-default', `${BASE_URL}/en${cleanPath}`]
+  ]);
+}

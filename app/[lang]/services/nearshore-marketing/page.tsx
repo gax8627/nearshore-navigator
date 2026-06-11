@@ -1,3 +1,4 @@
+import { getAlternateLanguages } from '@/app/constants/seo-config';
 import { Metadata } from 'next';
 import MarketingClient from './MarketingClient';
 
@@ -12,11 +13,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     },
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/services/nearshore-marketing`,
-      languages: {
-        'en': 'https://nearshorenavigator.com/en/services/nearshore-marketing',
-        'es': 'https://nearshorenavigator.com/es/services/nearshore-marketing',
-        'x-default': 'https://nearshorenavigator.com/en/services/nearshore-marketing',
-      }
+      languages: getAlternateLanguages('/services/nearshore-marketing')
     }
   };
 }

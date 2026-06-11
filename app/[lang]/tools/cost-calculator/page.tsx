@@ -1,3 +1,4 @@
+import { getAlternateLanguages } from '@/app/constants/seo-config';
 import { Metadata } from 'next';
 import { getDictionary } from '@/app/i18n/get-dictionary';
 import CostCalculatorClient from './CostCalculatorClient';
@@ -17,11 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: dict.cost_calculator?.metaDesc || 'Estimate your fully-burdened manufacturing costs in Baja California vs. US domestic. Free interactive tool.',
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/tools/cost-calculator`,
-      languages: {
-        'en': 'https://nearshorenavigator.com/en/tools/cost-calculator',
-        'es': 'https://nearshorenavigator.com/es/tools/cost-calculator',
-        'x-default': 'https://nearshorenavigator.com/en/tools/cost-calculator',
-      }
+      languages: getAlternateLanguages('/tools/cost-calculator')
     }
   };
 }

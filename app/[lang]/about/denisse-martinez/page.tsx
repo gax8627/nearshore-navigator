@@ -1,3 +1,4 @@
+import { getAlternateLanguages } from '@/app/constants/seo-config';
 import { getDictionary } from '@/app/i18n/get-dictionary';
 import { Metadata } from 'next';
 import DenisseBioClient from './DenisseBioClient';
@@ -17,11 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: dict.bio_denisse?.backgroundDesc?.substring(0, 160) || 'Expert nearshore consultant in Baja California, helping US manufacturers with site selection, shelter services, and cross-border strategic expansion.',
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/about/denisse-martinez`,
-      languages: {
-        'en': 'https://nearshorenavigator.com/en/about/denisse-martinez',
-        'es': 'https://nearshorenavigator.com/es/about/denisse-martinez',
-        'x-default': 'https://nearshorenavigator.com/en/about/denisse-martinez',
-      }
+      languages: getAlternateLanguages('/about/denisse-martinez')
     }
   };
 }

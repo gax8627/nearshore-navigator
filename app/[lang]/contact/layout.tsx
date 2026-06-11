@@ -1,3 +1,4 @@
+import { getAlternateLanguages } from '@/app/constants/seo-config';
 import { Metadata } from 'next';
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -7,11 +8,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     description: 'Book a free consultation about nearshoring to Baja California. Talk to our experts about factory setup, cost savings, and industrial site selection in Tijuana.',
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/contact`,
-      languages: {
-        'en': 'https://nearshorenavigator.com/en/contact',
-        'es': 'https://nearshorenavigator.com/es/contact',
-        'x-default': 'https://nearshorenavigator.com/en/contact',
-      }
+      languages: getAlternateLanguages('/contact')
     }
   };
 }

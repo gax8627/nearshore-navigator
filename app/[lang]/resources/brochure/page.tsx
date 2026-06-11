@@ -1,3 +1,4 @@
+import { getAlternateLanguages } from '@/app/constants/seo-config';
 import BrochureClient from "./BrochureClient";
 import { Metadata } from 'next';
 import { getDictionary } from "@/app/i18n/get-dictionary";
@@ -11,11 +12,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     description: t.brochure.subtitle,
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/resources/brochure`,
-      languages: {
-        'en': 'https://nearshorenavigator.com/en/resources/brochure',
-        'es': 'https://nearshorenavigator.com/es/resources/brochure',
-        'x-default': 'https://nearshorenavigator.com/en/resources/brochure',
-      }
+      languages: getAlternateLanguages('/resources/brochure')
     }
   };
 }

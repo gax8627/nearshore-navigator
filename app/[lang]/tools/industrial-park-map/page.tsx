@@ -1,3 +1,4 @@
+import { getAlternateLanguages } from '@/app/constants/seo-config';
 import { Metadata } from 'next';
 import { getDictionary } from '@/app/i18n/get-dictionary';
 import IndustrialMapClient from './IndustrialMapClient';
@@ -18,11 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: dict.park_map?.metaDesc || 'Complete guide to Baja California industrial parks. Compare Class A availability, lease rates, and locations in Tijuana, Mexicali, and Tecate.',
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/tools/industrial-park-map`,
-      languages: {
-        'en': 'https://nearshorenavigator.com/en/tools/industrial-park-map',
-        'es': 'https://nearshorenavigator.com/es/tools/industrial-park-map',
-        'x-default': 'https://nearshorenavigator.com/en/tools/industrial-park-map',
-      }
+      languages: getAlternateLanguages('/tools/industrial-park-map')
     }
   };
 }

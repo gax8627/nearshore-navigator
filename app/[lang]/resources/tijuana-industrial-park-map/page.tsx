@@ -1,3 +1,4 @@
+import { getAlternateLanguages } from '@/app/constants/seo-config';
 import ResourceMapClient from "./ResourceMapClient";
 import { Metadata } from 'next';
 import { getDictionary } from "@/app/i18n/get-dictionary";
@@ -11,11 +12,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     description: t.resourceMap.heroSubtitle,
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/resources/tijuana-industrial-park-map`,
-      languages: {
-        'en': 'https://nearshorenavigator.com/en/resources/tijuana-industrial-park-map',
-        'es': 'https://nearshorenavigator.com/es/resources/tijuana-industrial-park-map',
-        'x-default': 'https://nearshorenavigator.com/en/resources/tijuana-industrial-park-map',
-      }
+      languages: getAlternateLanguages('/resources/tijuana-industrial-park-map')
     }
   };
 }

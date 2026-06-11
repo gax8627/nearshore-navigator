@@ -1,3 +1,4 @@
+import { getAlternateLanguages } from '@/app/constants/seo-config';
 import { InsightsClient } from "./InsightsClient";
 import { getDictionary } from "@/app/i18n/get-dictionary";
 import { Metadata } from "next";
@@ -14,11 +15,7 @@ export async function generateMetadata({ params }: { params: { lang: string } })
     },
     alternates: {
       canonical: `https://nearshorenavigator.com/${params.lang}/insights`,
-      languages: {
-        'en': 'https://nearshorenavigator.com/en/insights',
-        'es': 'https://nearshorenavigator.com/es/insights',
-        'x-default': 'https://nearshorenavigator.com/en/insights',
-      }
+      languages: getAlternateLanguages('/insights')
     }
   };
 }

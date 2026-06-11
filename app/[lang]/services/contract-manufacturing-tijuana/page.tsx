@@ -1,3 +1,4 @@
+import { getAlternateLanguages } from '@/app/constants/seo-config';
 import ContractClient from "./ContractClient";
 import { Metadata } from 'next';
 import { getDictionary } from '@/app/i18n/get-dictionary';
@@ -20,11 +21,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     description,
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/services/contract-manufacturing-tijuana`,
-      languages: {
-        'en': 'https://nearshorenavigator.com/en/services/contract-manufacturing-tijuana',
-        'es': 'https://nearshorenavigator.com/es/services/contract-manufacturing-tijuana',
-        'x-default': 'https://nearshorenavigator.com/en/services/contract-manufacturing-tijuana',
-      }
+      languages: getAlternateLanguages('/services/contract-manufacturing-tijuana')
     }
   };
 }

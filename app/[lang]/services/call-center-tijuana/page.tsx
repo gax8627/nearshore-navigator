@@ -1,3 +1,4 @@
+import { getAlternateLanguages } from '@/app/constants/seo-config';
 import { Metadata } from 'next';
 import CallCenterClient from './CallCenterClient';
 
@@ -13,11 +14,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     },
     alternates: {
       canonical: `https://nearshorenavigator.com/${lang}/services/call-center-tijuana`,
-      languages: {
-        'en': 'https://nearshorenavigator.com/en/services/call-center-tijuana',
-        'es': 'https://nearshorenavigator.com/es/services/call-center-tijuana',
-        'x-default': 'https://nearshorenavigator.com/en/services/call-center-tijuana',
-      }
+      languages: getAlternateLanguages('/services/call-center-tijuana')
     }
   };
 }
