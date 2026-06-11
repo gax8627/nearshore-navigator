@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getLocation } from "@/app/constants/seo-data";
 import CityOverviewClient from "./CityOverviewClient";
+import { TIER1_CITIES } from "@/app/constants/seo-config";
 
 type Props = {
   params: Promise<{
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: Props) {
   const location = getLocation(city);
   const dict = await getDictionary(lang);
 
-  if (!location || !dict) return {};
+  if (!location || !dict || !TIER1_CITIES.has(city)) return {};
 
   const cityName = dict.locations?.[city]?.name || location.name;
   const cityDesc = dict.locations?.[city]?.description || location.description;
@@ -46,9 +47,9 @@ export default async function CityPage({ params }: Props) {
   const { city } = await params;
   const location = getLocation(city);
 
-  if (!location) {
+  if (!location || !TIER1_CITIES.has(city)) {
     notFound();
   }
 
   return <CityOverviewClient city={city} />;
-  }
+}

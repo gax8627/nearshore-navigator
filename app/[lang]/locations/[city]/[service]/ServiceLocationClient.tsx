@@ -7,6 +7,7 @@ import { FounderBlock } from "@/components/FounderBlock";
 import { CheckCircle2, ArrowRight, MapPin, ChevronRight, Home } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { getLocation, getService, LOCATIONS } from "@/app/constants/seo-data";
+import { TIER1_CITIES } from "@/app/constants/seo-config";
 import { TrustSeal } from "@/components/TrustSeal";
 import { FloatingLeadDock } from "@/components/FloatingLeadDock";
 
@@ -357,20 +358,27 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
                     {t('industries.viewAllInfrastructure').replace('{location}', currentCityName)}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-                    {LOCATIONS.filter(l => l.slug !== city).slice(0, 6).map((loc) => (
-                        <Link 
-                            key={loc.slug} 
-                            href={`/${language}/locations/${loc.slug}/${serviceId}`}
-                            className="flex items-center gap-3 p-3 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700 hover:bg-white/60 dark:hover:bg-gray-800/60 transition-colors group"
-                        >
-                            <div className="bg-primary-100 dark:bg-primary-900/30 p-2 rounded-full group-hover:bg-primary-200 dark:group-hover:bg-primary-900/50 transition-colors">
-                                <MapPin className="w-4 h-4 text-primary-600 dark:text-primary-400" />
-                            </div>
-                            <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                                {loc.name}
-                            </span>
-                        </Link>
-                    ))}
+                    {LOCATIONS.filter(l => l.slug !== city && TIER1_CITIES.has(l.slug) && !!l.serviceHowItWorks?.[serviceId]).slice(0, 6).map((loc) => {
+                        const serviceConfig = loc.serviceHowItWorks?.[serviceId];
+                        let href = `/${language}/locations/${loc.slug}/${serviceId}`;
+                        if (language === "en" && serviceConfig?.canonicalOverride) {
+                            href = serviceConfig.canonicalOverride.replace("https://nearshorenavigator.com", "");
+                        }
+                        return (
+                            <Link 
+                                key={loc.slug} 
+                                href={href}
+                                className="flex items-center gap-3 p-3 bg-white/40 dark:bg-gray-800/40 rounded-lg border border-gray-100 dark:border-gray-700 hover:bg-white/60 dark:hover:bg-gray-800/60 transition-colors group"
+                            >
+                                <div className="bg-primary-100 dark:bg-primary-900/30 p-2 rounded-full group-hover:bg-primary-200 dark:group-hover:bg-primary-900/50 transition-colors">
+                                    <MapPin className="w-4 h-4 text-primary-600 dark:text-primary-400" />
+                                </div>
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                                    {loc.name}
+                                </span>
+                            </Link>
+                        );
+                    })}
                 </div>
             </section>
 
