@@ -85,7 +85,21 @@ export async function POST(req: Request) {
                 .set({ status: 'warm_interest', urgency: 'HIGH', tags: JSON.stringify(['MEETING_REQUEST']) })
                 .where(eq(leads.email, email));
                 
-            // Here you could trigger a "Priority Meeting" workflow
+            // Auto-Responder for Bookings
+            const { brevo } = await import('@/lib/brevo');
+            const autoReplyText = `Great! Feel free to grab a time that works best for you here: 
+https://calendly.com/denisse-nearshorenavigator/30min
+
+Talk soon,
+Denisse`;
+            
+            await brevo.sendEmail({
+              sender: { email: 'denisse@nearshorenavigator.com', name: 'Denisse Martinez' },
+              to: [{ email }],
+              subject: `Re: ${event.subject || 'Meeting Request'}`,
+              htmlContent: `<div style="font-family: sans-serif; font-size: 14px; color: #000;">${autoReplyText.replace(/\\n/g, '<br>')}</div>`,
+            });
+            console.log(`[Reply Handler] Sent automated Calendly link to ${email}`);
         } else if (classification.intent === 'UNSUBSCRIBE') {
             await db.update(leads)
                 .set({ status: 'archived', tags: JSON.stringify(['UNSUBSCRIBE']) })

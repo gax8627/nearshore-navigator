@@ -1,6 +1,8 @@
 
 import fs from 'fs';
 import path from 'path';
+import dotenv from 'dotenv';
+dotenv.config({ path: path.join(process.cwd(), '.env.local') });
 import { generateObject } from 'ai';
 import { google } from '@ai-sdk/google';
 import { z } from 'zod';
@@ -244,8 +246,8 @@ async function main() {
             await brevo.sendEmail({
                 to: [{ email, name: details.firstName }],
                 subject: subject,
-                htmlContent: htmlBody,
-                scheduledAt: scheduledTime
+                htmlContent: htmlBody
+                // scheduledAt: scheduledTime
             });
             incrementEmailUsage(1);
             console.log(`   ✅ Scheduled (Priority ${scoring.category}).`);

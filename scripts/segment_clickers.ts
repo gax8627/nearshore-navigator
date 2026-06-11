@@ -45,7 +45,7 @@ async function main() {
 
         for (const record of records as any[]) {
             // Normalize keys (some CSVs have different headers)
-            const email = record['Email'] || record['email'] || record['Business Email'];
+            const email = record['Contact Email'] || record['contact_email'] || record['Email'] || record['email'] || record['Business Email'];
             if (email) {
                 emailToRecordMap.set(email.toLowerCase().trim(), record);
             }
@@ -64,9 +64,9 @@ async function main() {
     
     if (record) {
         // Try to find name/company fields
-        const firstName = record['First Name'] || record['FirstName'] || record['first_name'] || '';
-        const lastName = record['Last Name'] || record['LastName'] || record['last_name'] || '';
-        const company = record['Company'] || record['CompanyName'] || record['company_name'] || '';
+        const firstName = record['First Name'] || record['FirstName'] || record['first_name'] || record['Contact First Name'] || record['contact_first_name'] || '';
+        const lastName = record['Last Name'] || record['LastName'] || record['last_name'] || record['Contact Last Name'] || record['contact_last_name'] || '';
+        const company = record['Company'] || record['CompanyName'] || record['company_name'] || record['Business'] || record['ï»¿Business'] || '';
         const industry = record['Industry'] || record['industry'] || '';
 
         return {

@@ -86,17 +86,29 @@ function processEvents(events: any[], type: 'opened' | 'clicked', data: Record<s
         messageId: event.messageId
     });
 
-    // Dedupe history
+    // Dedupe history & Filter bot clicks (60s window)
     const uniqueHistory = [];
-    const seen = new Set();
-    for (const h of existing.history.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())) {
-        const key = `${h.type}-${h.date}`;
-        if (!seen.has(key)) {
-            seen.add(key);
+    const seenExact = new Set();
+    const lastTimeType: Record<string, number> = {};
+    
+    const sortedHistory = existing.history.sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    
+    for (const h of sortedHistory) {
+        const exactKey = `${h.type}-${h.date}`;
+        if (seenExact.has(exactKey)) continue;
+        seenExact.add(exactKey);
+
+        const time = new Date(h.date).getTime();
+        const lastTime = lastTimeType[h.type] || 0;
+        
+        // If the event of the SAME type happened within 60 seconds, ignore it (bot click/open)
+        if (time - lastTime > 60000) {
             uniqueHistory.push(h);
+            lastTimeType[h.type] = time;
         }
     }
-    existing.history = uniqueHistory;
+    
+    existing.history = uniqueHistory.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
     data[email] = existing;
   }

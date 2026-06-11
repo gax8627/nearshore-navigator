@@ -180,8 +180,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
-  // Pre-render all slugs for all indexable locales (lang comes from parent [lang] segment)
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  return posts.flatMap((post) =>
+    INDEXABLE_LOCALES.map((lang) => ({
+      lang,
+      slug: post.slug,
+    }))
+  );
 }

@@ -83,8 +83,16 @@ async function main() {
         console.log('|------------|---------------------------|');
         
         const clickCounts: Record<string, number> = {};
-        clicks.forEach((e: any) => {
-          clickCounts[e.email] = (clickCounts[e.email] || 0) + 1;
+        const lastClickTime: Record<string, number> = {};
+        
+        clicks.sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())
+              .forEach((e: any) => {
+          const time = new Date(e.date).getTime();
+          const lastTime = lastClickTime[e.email] || 0;
+          if (time - lastTime > 60000) {
+             clickCounts[e.email] = (clickCounts[e.email] || 0) + 1;
+             lastClickTime[e.email] = time;
+          }
         });
 
         Object.entries(clickCounts)

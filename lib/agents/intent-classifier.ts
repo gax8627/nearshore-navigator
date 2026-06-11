@@ -23,8 +23,8 @@ export async function classifyReplyIntent(text: string): Promise<IntentResult> {
       """
       
       CATEGORIES:
-      - YES_PDF: User said "Yes", "Send it", "I want the shortlist", "Please provide the PDF", or similar agreement to receive a lead magnet.
-      - MEETING_REQUEST: User asked to talk, schedule a call, meet, or mentioned timing for a discussion.
+      - YES_PDF: User explicitly asks for a PDF, shortlist, or document.
+      - MEETING_REQUEST: User said "Yes", "Sure", "Let's do it", "Send info", asked to talk, schedule a call, meet, or gave an affirmative response to a "Soft CTA" (e.g. "Would you be open to a quick chat?").
       - UNSUBSCRIBE: User wants to be removed, says "No thanks", "Stop", or "Take me off".
       - QUESTION: User asks a specific question about Mexico, tariffs, or operations.
       - OTHER: General greeting, out of office, or unclear intent.

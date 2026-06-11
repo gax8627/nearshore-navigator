@@ -9,7 +9,7 @@ type Translations = any;
 
 // 2026-04 cleanup: only en + es are supported. The other locales were
 // 301-redirected to /en to eliminate canonical duplication in Google.
-export type Language = 'en' | 'es';
+export type Language = 'en' | 'es' | 'de' | 'ja';
 
 type LanguageContextType = {
     language: Language;
@@ -68,14 +68,12 @@ export const LanguageProvider = ({ children, lang }: { children: ReactNode, lang
             let targetLang: Language = 'en';
 
             // 1. Check localStorage first (normalize against supported locales)
-            const SUPPORTED: Language[] = ['en', 'es'];
+            const SUPPORTED: Language[] = ['en', 'es', 'de', 'ja'];
             const storedLang = localStorage.getItem('app_lang') as Language;
             if (storedLang && SUPPORTED.includes(storedLang)) {
                 targetLang = storedLang;
             } else {
                 // 2. IP Geolocation as primary fallback.
-                //    Only en + es are supported since the 2026-04 cleanup;
-                //    everyone else gets /en.
                 try {
                     const response = await fetch('https://ipapi.co/json/');
                     const data = await response.json();
@@ -88,11 +86,19 @@ export const LanguageProvider = ({ children, lang }: { children: ReactNode, lang
 
                     if (spanishSpeakingCountries.includes(country)) {
                         targetLang = 'es';
+                    } else if (['DE', 'AT', 'CH'].includes(country)) {
+                        targetLang = 'de';
+                    } else if (country === 'JP') {
+                        targetLang = 'ja';
                     }
                 } catch (error) {
                     console.warn('Geolocation failed, defaulting to en:', error);
                     const browserLang = navigator.language.split('-')[0].toLowerCase();
-                    targetLang = browserLang === 'es' ? 'es' : 'en';
+                    if (SUPPORTED.includes(browserLang as Language)) {
+                        targetLang = browserLang as Language;
+                    } else {
+                        targetLang = 'en';
+                    }
                 }
             }
 

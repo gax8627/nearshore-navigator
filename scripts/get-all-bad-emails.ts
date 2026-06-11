@@ -20,7 +20,9 @@ async function main() {
 
       if (res && res.contacts && res.contacts.length > 0) {
         res.contacts.forEach((c: any) => {
-          if (c.email) badEmails.add(c.email.toLowerCase());
+          if (c.email && c.emailBlacklisted === true) {
+            badEmails.add(c.email.toLowerCase());
+          }
         });
         console.log(`Fetched ${offset + res.contacts.length} blacklisted contacts...`);
         offset += limit;

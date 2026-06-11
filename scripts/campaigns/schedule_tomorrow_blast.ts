@@ -19,7 +19,7 @@ dotenv.config({ path: path.join(process.cwd(), '.env.local') });
 
 const DRY_RUN = process.argv.includes('--dry-run');
 const TARGET_PER_NICHE = 100;
-const SCHEDULED_TIME = '2026-05-28T14:00:00-07:00'; // Tomorrow, 2:00 PM local time (PDT)
+const SCHEDULED_TIME = '2026-06-01T08:00:00-07:00'; // June 1, 2026, 8:00 AM local time (PDT)
 
 const SENT_LOG_PATH = path.join(process.cwd(), 'segmented_leads/sent_generic_500.json');
 
@@ -373,14 +373,33 @@ async function main() {
   const totalSelected = finalSelectedEmails.length;
   console.log(`\n💎 Total Selected Leads across all niches: ${totalSelected} (Expected: 500)`);
 
-  if (totalSelected !== 500) {
-    console.warn(`⚠️ Warning: Selected count is ${totalSelected}, expected 500. Attempting to fill general or default pool to hit 500.`);
-    // (In our case we verified each niche has > 100 leads, so this shouldn't trigger).
+  if (totalSelected < 500) {
+    console.warn(`⚠️ Warning: Selected count is ${totalSelected}, expected 500. Attempting to fill General pool to hit 500.`);
+    const deficiency = 500 - totalSelected;
+    
+    const generalPool = pools['General'];
+    const uniqueGeneralPool: any[] = [];
+    const seen = new Set<string>();
+    generalPool.forEach(l => {
+      if (!seen.has(l.email)) {
+        seen.add(l.email);
+        uniqueGeneralPool.push(l);
+      }
+    });
+
+    const currentSelectedGeneralEmails = new Set(selectedNicheLeads['General'].map(l => l.email));
+    const unselectedGeneral = uniqueGeneralPool.filter(l => !currentSelectedGeneralEmails.has(l.email));
+    
+    const extraLeads = unselectedGeneral.slice(0, deficiency);
+    selectedNicheLeads['General'] = [...selectedNicheLeads['General'], ...extraLeads];
+    extraLeads.forEach(l => finalSelectedEmails.push(l.email));
+    
+    console.log(`✅ Topped up General niche with ${extraLeads.length} extra leads to reach exactly 500. New Total: ${finalSelectedEmails.length}`);
   }
 
   // 5. Create lists and schedule campaigns in Brevo
   for (const niche of niches) {
-    const listName = `Tomorrow-Blast-${niche}`;
+    const listName = `June1-Blast-${niche}`;
     const leads = selectedNicheLeads[niche];
 
     if (leads.length === 0) {

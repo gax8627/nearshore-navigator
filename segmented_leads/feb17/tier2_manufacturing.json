@@ -238,13 +238,6 @@
     "status": "Lead"
   },
   {
-    "email": "donbeverage@absolutetechnologies.com",
-    "firstName": "Don",
-    "company": "D & D Gear Inc",
-    "industry": "Manufacturing",
-    "status": "Lead"
-  },
-  {
     "email": "conver@aerovironment.com",
     "firstName": "Tim",
     "company": "Aerovironment, Inc.",
@@ -469,13 +462,6 @@
     "status": "Nurturing (Not active)"
   },
   {
-    "email": "f.brockmeyer@3dinstruments.com",
-    "firstName": "Felix",
-    "company": "your company",
-    "industry": "Electronics",
-    "status": "Marketing Qualified Lead"
-  },
-  {
     "email": "cberanek@clfd.net",
     "firstName": "Cheri",
     "company": "Clearfield",
@@ -583,13 +569,6 @@
   {
     "email": "kkappner@ea.com",
     "firstName": "Ken",
-    "company": "your company",
-    "industry": "Electronics",
-    "status": "Marketing Qualified Lead"
-  },
-  {
-    "email": "PLariviere@afcmail.com",
-    "firstName": "Peter",
     "company": "your company",
     "industry": "Electronics",
     "status": "Marketing Qualified Lead"
@@ -716,13 +695,6 @@
   {
     "email": "rdunningan@ikanos.com",
     "firstName": "Robert",
-    "company": "your company",
-    "industry": "Electronics",
-    "status": "Marketing Qualified Lead"
-  },
-  {
-    "email": "henry@entropic.com",
-    "firstName": "Patrick",
     "company": "your company",
     "industry": "Electronics",
     "status": "Marketing Qualified Lead"
@@ -1211,13 +1183,6 @@
     "status": "Marketing Qualified Lead"
   },
   {
-    "email": "dmccullagh@thermalelectronics.com",
-    "firstName": "David",
-    "company": "your company",
-    "industry": "Electronics",
-    "status": "Marketing Qualified Lead"
-  },
-  {
     "email": "fred.bonyadina@touchpage.com",
     "firstName": "Fred",
     "company": "your company",
@@ -1316,13 +1281,6 @@
     "status": "Marketing Qualified Lead"
   },
   {
-    "email": "denis.berlan@altera.com",
-    "firstName": "Denis",
-    "company": "your company",
-    "industry": "Electronics",
-    "status": "Marketing Qualified Lead"
-  },
-  {
     "email": "plee@oplink.com",
     "firstName": "Peter",
     "company": "your company",
@@ -1372,22 +1330,8 @@
     "status": "Marketing Qualified Lead"
   },
   {
-    "email": "michael.hadsell@photomask.com",
-    "firstName": "MIchael",
-    "company": "your company",
-    "industry": "Electronics",
-    "status": "Marketing Qualified Lead"
-  },
-  {
     "email": "gideon@netoptics.com",
     "firstName": "Gideon",
-    "company": "your company",
-    "industry": "Electronics",
-    "status": "Marketing Qualified Lead"
-  },
-  {
-    "email": "sean.hunkler@nxp.com",
-    "firstName": "Sean",
     "company": "your company",
     "industry": "Electronics",
     "status": "Marketing Qualified Lead"
@@ -1493,13 +1437,6 @@
   {
     "email": "ashok.krishnamurthi@xsigo.com",
     "firstName": "Ashok",
-    "company": "your company",
-    "industry": "Electronics",
-    "status": "Marketing Qualified Lead"
-  },
-  {
-    "email": "patti.robinson@wyle.com",
-    "firstName": "Patti",
     "company": "your company",
     "industry": "Electronics",
     "status": "Marketing Qualified Lead"
@@ -1652,20 +1589,6 @@
     "status": "Marketing Qualified Lead"
   },
   {
-    "email": "ivo.bolsens@xilinx.com",
-    "firstName": "Ivo",
-    "company": "your company",
-    "industry": "Electronics",
-    "status": "Marketing Qualified Lead"
-  },
-  {
-    "email": "bosak@xkl.com",
-    "firstName": "Leonard",
-    "company": "your company",
-    "industry": "Electronics",
-    "status": "Marketing Qualified Lead"
-  },
-  {
     "email": "greg.burner@wyle.com",
     "firstName": "Greg",
     "company": "your company",
@@ -1696,13 +1619,6 @@
   {
     "email": "acohen@xsigo.com",
     "firstName": "Ariel",
-    "company": "your company",
-    "industry": "Electronics",
-    "status": "Marketing Qualified Lead"
-  },
-  {
-    "email": "frank.tornaghi@xilinx.com",
-    "firstName": "Frank",
     "company": "your company",
     "industry": "Electronics",
     "status": "Marketing Qualified Lead"
@@ -1848,22 +1764,8 @@
     "status": "Marketing Qualified Lead"
   },
   {
-    "email": "rstraight@westbond.com",
-    "firstName": "Randy",
-    "company": "your company",
-    "industry": "Electronics",
-    "status": "Marketing Qualified Lead"
-  },
-  {
     "email": "uri.yulzari@wv-comm.com",
     "firstName": "Uri",
-    "company": "your company",
-    "industry": "Electronics",
-    "status": "Marketing Qualified Lead"
-  },
-  {
-    "email": "rhood@wems.com",
-    "firstName": "Ronald",
     "company": "your company",
     "industry": "Electronics",
     "status": "Marketing Qualified Lead"
@@ -2016,13 +1918,6 @@
     "status": "Marketing Qualified Lead"
   },
   {
-    "email": "petersekulic@winsusa.com",
-    "firstName": "Peter",
-    "company": "your company",
-    "industry": "Electronics",
-    "status": "Marketing Qualified Lead"
-  },
-  {
     "email": "mmaluy@winonics.com",
     "firstName": "Mike",
     "company": "your company",
@@ -2065,13 +1960,6 @@
     "status": "Marketing Qualified Lead"
   },
   {
-    "email": "john@westinghouselighting.com",
-    "firstName": "John",
-    "company": "your company",
-    "industry": "Electronics",
-    "status": "Marketing Qualified Lead"
-  },
-  {
     "email": "pblack@westak.com",
     "firstName": "Pam",
     "company": "your company",
@@ -2109,13 +1997,6 @@
   {
     "email": "htran@vitron.net",
     "firstName": "Huan",
-    "company": "your company",
-    "industry": "Electronics",
-    "status": "Marketing Qualified Lead"
-  },
-  {
-    "email": "rway@wascoinc.com",
-    "firstName": "Ron",
     "company": "your company",
     "industry": "Electronics",
     "status": "Marketing Qualified Lead"
@@ -2726,13 +2607,6 @@
     "email": "pzeyen@microplasticsinc.com",
     "firstName": "Patricia",
     "company": "Microplastics",
-    "industry": "Manufacturing",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "p.sweeney@lanco.net",
-    "firstName": "Patrick",
-    "company": "Lanco Integrated",
     "industry": "Manufacturing",
     "status": "Nurturing (Not active)"
   },
@@ -3927,13 +3801,6 @@
     "status": "Nurturing (Not active)"
   },
   {
-    "email": "michael.threet@caltrol.com",
-    "firstName": "Michael",
-    "company": "Caltrol",
-    "industry": "Manufacturing",
-    "status": "Nurturing (Not active)"
-  },
-  {
     "email": "jennifer.maassen@mccallie.com",
     "firstName": "Jennifer",
     "company": "McCallie Associates",
@@ -4050,13 +3917,6 @@
     "firstName": "Chuck",
     "company": "Neumann",
     "industry": "Manufacturing",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "jmetzger@braysalesco.com",
-    "firstName": "Joe",
-    "company": "Bray International",
-    "industry": "Industrial Machinery & Equipment",
     "status": "Nurturing (Not active)"
   },
   {
@@ -5058,13 +4918,6 @@
     "firstName": "Neal",
     "company": "Azurity Pharmaceuticals",
     "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "michaelb@us.sejasmi.com",
-    "firstName": "Michael",
-    "company": "Android Industries",
-    "industry": "Automotive Parts",
     "status": ""
   },
   {
@@ -6230,13 +6083,6 @@
     "status": ""
   },
   {
-    "email": "jennifer.saso@cpii.com",
-    "firstName": "Jennifer",
-    "company": "Communications & Power Industries",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
     "email": "hannah.salaya@marvintest.com",
     "firstName": "Hannah",
     "company": "Marvin Test Solutions",
@@ -6706,13 +6552,6 @@
     "status": ""
   },
   {
-    "email": "carol_lou@clontech.com",
-    "firstName": "Carol",
-    "company": "Takara Bio USA",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
     "email": "gkleinpeter@americanleakdetection.com",
     "firstName": "Greg",
     "company": "American Leak Detection",
@@ -6937,13 +6776,6 @@
     "status": ""
   },
   {
-    "email": "bmathur@masterworkelectronics.com",
-    "firstName": "Bhawnesh",
-    "company": "Masterwork Electronics",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
     "email": "angus.pacala@ouster.io",
     "firstName": "Angus",
     "company": "Ouster",
@@ -7088,13 +6920,6 @@
     "firstName": "Kam",
     "company": "IMG Companies",
     "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "sivakumar.cn@harman.com",
-    "firstName": "Sivakumar",
-    "company": "Harman",
-    "industry": "Electronics",
     "status": ""
   },
   {
@@ -7259,13 +7084,6 @@
     "status": ""
   },
   {
-    "email": "lindy.lu@fralock.com",
-    "firstName": "Lindy",
-    "company": "Fralock",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
     "email": "tim@atrump.com",
     "firstName": "Tim",
     "company": "Atrump Machinery",
@@ -7329,13 +7147,6 @@
     "status": ""
   },
   {
-    "email": "craig.jones@americanleak.com",
-    "firstName": "Craig",
-    "company": "American Leak Detection",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
     "email": "gru@gruber.com",
     "firstName": "Pete",
     "company": "Gruber Industries",
@@ -7368,13 +7179,6 @@
     "firstName": "John",
     "company": "CCS Southwest",
     "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "pgagnon@rhinolinings.com",
-    "firstName": "Pierre",
-    "company": "Rhino Linings",
-    "industry": "Automotive Parts",
     "status": ""
   },
   {
@@ -7417,13 +7221,6 @@
     "firstName": "Jason",
     "company": "ASC Engineered Solutions",
     "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "mike.hackworth@tymphany.com",
-    "firstName": "Michael",
-    "company": "Tymphany",
-    "industry": "Electronics",
     "status": ""
   },
   {
@@ -7749,13 +7546,6 @@
     "status": ""
   },
   {
-    "email": "srobinson@apctinc.com",
-    "firstName": "Steve",
-    "company": "APCT",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
     "email": "srobin@sensorantennas.com",
     "firstName": "Si",
     "company": "Sensor Systems",
@@ -7851,13 +7641,6 @@
     "firstName": "Jagdeep",
     "company": "QuantumScape",
     "industry": "Electronics",
-    "status": ""
-  },
-  {
-    "email": "rudin.matthew@tilindia.com",
-    "firstName": "Matthew",
-    "company": "TIL",
-    "industry": "Industrial Machinery & Equipment",
     "status": ""
   },
   {
@@ -8078,13 +7861,6 @@
     "status": ""
   },
   {
-    "email": "winger@ggec.com",
-    "firstName": "Winger",
-    "company": "Ggec",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
     "email": "ctobo@markssupply.net",
     "firstName": "Coco",
     "company": "Mark's",
@@ -8095,13 +7871,6 @@
     "email": "mary.vivit@onsemi.com",
     "firstName": "Mary",
     "company": "Onsemi",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
-    "email": "darla.walton@xilinx.com",
-    "firstName": "Darla",
-    "company": "Xilinx",
     "industry": "Electronics",
     "status": ""
   },
@@ -8281,13 +8050,6 @@
     "status": ""
   },
   {
-    "email": "amartin@rhinolinings.com",
-    "firstName": "Aaron",
-    "company": "Rhino Linings",
-    "industry": "Automotive Parts",
-    "status": ""
-  },
-  {
     "email": "swhiteside@summitinterconnect.com",
     "firstName": "Shane",
     "company": "Summit Interconnect",
@@ -8348,13 +8110,6 @@
     "firstName": "Bryan",
     "company": "Luminator Technology Group",
     "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "awang@trademarkplastics.com",
-    "firstName": "Alex",
-    "company": "Trademark Plastics",
-    "industry": "Manufacturing",
     "status": ""
   },
   {
@@ -8508,13 +8263,6 @@
     "email": "minhass.mughak@haascnc.com",
     "firstName": "Minhaas",
     "company": "Haas Automation",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "cpribus@providence-connect.com",
-    "firstName": "Chris",
-    "company": "Providence Enterprise",
     "industry": "Industrial Machinery & Equipment",
     "status": ""
   },
@@ -8862,13 +8610,6 @@
     "status": ""
   },
   {
-    "email": "bonnie_sherman@americanleak.com",
-    "firstName": "Bonnie",
-    "company": "American Leak Detection",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
     "email": "michele.shipley@amd.com",
     "firstName": "Michele",
     "company": "AMD",
@@ -9100,13 +8841,6 @@
     "status": ""
   },
   {
-    "email": "cewald@shur-co.com",
-    "firstName": "Carla",
-    "company": "Shur-Co",
-    "industry": "Automotive Parts",
-    "status": ""
-  },
-  {
     "email": "preet@elementalled.com",
     "firstName": "Preet",
     "company": "Elemental LED",
@@ -9236,13 +8970,6 @@
     "email": "rainier@swsboards.com",
     "firstName": "Rainier",
     "company": "SWS Sports Boards Industries",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "wfitzgerald@merlinindustries.com",
-    "firstName": "Warren",
-    "company": "Merlin Industries",
     "industry": "Manufacturing",
     "status": ""
   },
@@ -9485,13 +9212,6 @@
     "status": ""
   },
   {
-    "email": "talbertson@defiancestamping.com",
-    "firstName": "Timothy",
-    "company": "Defiance Stamping",
-    "industry": "Automotive Parts",
-    "status": ""
-  },
-  {
     "email": "jacob_lacourse@onsetcomp.com",
     "firstName": "Jacob",
     "company": "Onset Computer",
@@ -9614,13 +9334,6 @@
     "email": "thompson@sfreedman.com",
     "firstName": "J.J.",
     "company": "S. Freedman and Sons",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "pete@pyromation.com",
-    "firstName": "Peter",
-    "company": "Pyromation",
     "industry": "Manufacturing",
     "status": ""
   },
@@ -9832,13 +9545,6 @@
     "firstName": "David",
     "company": "Omega Moulding",
     "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "jennifer_chang@htc.com",
-    "firstName": "Jennifer",
-    "company": "Noodoe",
-    "industry": "Automotive Parts",
     "status": ""
   },
   {
@@ -10279,13 +9985,6 @@
     "email": "pmoroco@ptrgroup-mfg.com",
     "firstName": "Philip",
     "company": "PTR Group",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "sreston@coachandequipment.com",
-    "firstName": "Scott",
-    "company": "Coach & Equipment Manufacturing",
     "industry": "Manufacturing",
     "status": ""
   },
@@ -10920,13 +10619,6 @@
     "status": ""
   },
   {
-    "email": "scopp@transcoil.com",
-    "firstName": "Steven",
-    "company": "TCI",
-    "industry": "Automotive Parts",
-    "status": ""
-  },
-  {
     "email": "nchoueiri@mission1st.com",
     "firstName": "Nadine",
     "company": "Mission1st Group",
@@ -11032,13 +10724,6 @@
     "status": ""
   },
   {
-    "email": "dennis.konkol@erwagner.com",
-    "firstName": "Dennis",
-    "company": "ER Wagner",
-    "industry": "Automotive Parts",
-    "status": ""
-  },
-  {
     "email": "ggcallas@auburngear.com",
     "firstName": "George",
     "company": "Auburn Gear",
@@ -11067,13 +10752,6 @@
     "status": ""
   },
   {
-    "email": "kwillis@ee-co.com",
-    "firstName": "Kyle",
-    "company": "Double E",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
     "email": "jwarner@forceamerica.com",
     "firstName": "Jeff",
     "company": "FORCE America",
@@ -11092,13 +10770,6 @@
     "firstName": "Steve",
     "company": "DRT",
     "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "ryan.gray@planar.com",
-    "firstName": "Ryan",
-    "company": "Planar",
-    "industry": "Electronics",
     "status": ""
   },
   {
@@ -11207,13 +10878,6 @@
     "status": ""
   },
   {
-    "email": "john.sturm@naturalbalanceinc.com",
-    "firstName": "John",
-    "company": "Natural Balance Pet Foods",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
     "email": "kmedford@entek.com",
     "firstName": "Kimberly",
     "company": "ENTEK International",
@@ -11224,13 +10888,6 @@
     "email": "ahess@comsonics.com",
     "firstName": "Athena",
     "company": "COMSONICS",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "rayland@eotechinc.com",
-    "firstName": "Rayland",
-    "company": "EOTech",
     "industry": "Manufacturing",
     "status": ""
   },
@@ -11267,13 +10924,6 @@
     "firstName": "Michael",
     "company": "LVD",
     "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "kbuchheister@renksystems.com",
-    "firstName": "Kerstin",
-    "company": "RENK Systems",
-    "industry": "Manufacturing",
     "status": ""
   },
   {
@@ -12166,13 +11816,6 @@
     "status": ""
   },
   {
-    "email": "gweber@bhsequip.com",
-    "firstName": "Gary",
-    "company": "Bulk Handling Systems Companies",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
     "email": "jmoffatt@lynch-usa.com",
     "firstName": "James",
     "company": "Lynch Group of Companies",
@@ -12239,13 +11882,6 @@
     "email": "therrington@macleanpower.com",
     "firstName": "Tracey",
     "company": "MacLean Power Systems",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "pwhicks@sundyne.com",
-    "firstName": "Patrick",
-    "company": "Sundyne",
     "industry": "Industrial Machinery & Equipment",
     "status": ""
   },
@@ -12631,13 +12267,6 @@
     "email": "rzangri@rciwheels.com",
     "firstName": "Bob",
     "company": "Ross Casting and Innovation",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "raymond.bourque@raypak.com",
-    "firstName": "Raymond",
-    "company": "Raypak",
     "industry": "Industrial Machinery & Equipment",
     "status": ""
   },
@@ -14175,13 +13804,6 @@
     "status": ""
   },
   {
-    "email": "thomas.andersson@titanx.com",
-    "firstName": "Thomas",
-    "company": "TitanX Engine Cooling",
-    "industry": "Automotive Parts",
-    "status": ""
-  },
-  {
     "email": "hubert.twigg@thewengergroup.com",
     "firstName": "Hubert",
     "company": "Wenger Feeds",
@@ -14207,13 +13829,6 @@
     "firstName": "Jason",
     "company": "AWC",
     "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "keith.hutchison@tritium.com.au",
-    "firstName": "Keith",
-    "company": "Tritium",
-    "industry": "Electronics",
     "status": ""
   },
   {
@@ -14255,13 +13870,6 @@
     "email": "jim.anderson@latticesemi.com",
     "firstName": "Jim",
     "company": "Lattice Semiconductor",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
-    "email": "tglasheen@sonicmfg.com",
-    "firstName": "Tom",
-    "company": "Sonic Manufacturing PCB Assembly",
     "industry": "Electronics",
     "status": ""
   },
@@ -14987,13 +14595,6 @@
     "status": ""
   },
   {
-    "email": "david.hall@elginindustries.com",
-    "firstName": "David",
-    "company": "Elgin Separation Solutions",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
     "email": "jxvigil@republicsteel.com",
     "firstName": "Jaime",
     "company": "Republic Steel",
@@ -15316,13 +14917,6 @@
     "status": ""
   },
   {
-    "email": "cidema@eemfg.com",
-    "firstName": "Craig",
-    "company": "E & E Manufacturing Company",
-    "industry": "Automotive Parts",
-    "status": ""
-  },
-  {
     "email": "jgrippe@propergroupintl.com",
     "firstName": "Joe",
     "company": "Proper Group International",
@@ -15516,13 +15110,6 @@
     "firstName": "Antony",
     "company": "Fulham",
     "industry": "Electronics",
-    "status": ""
-  },
-  {
-    "email": "mark.jenkins@peterseninc.com",
-    "firstName": "Mark",
-    "company": "Petersen",
-    "industry": "Industrial Machinery & Equipment",
     "status": ""
   },
   {
@@ -15943,13 +15530,6 @@
     "firstName": "Lance",
     "company": "Promethean",
     "industry": "Electronics",
-    "status": ""
-  },
-  {
-    "email": "bruce.sills@trimarkusa.com",
-    "firstName": "Bruce",
-    "company": "TriMark USA",
-    "industry": "Industrial Machinery & Equipment",
     "status": ""
   },
   {
@@ -17171,24 +16751,10 @@
     "status": ""
   },
   {
-    "email": "dave.vrioni@eastekinternational.com",
-    "firstName": "David",
-    "company": "Eastek International",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
     "email": "cthomas@cbtcompany.com",
     "firstName": "Clifton",
     "company": "CBT",
     "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "michael.leonard@sigvaris.com",
-    "firstName": "Michael",
-    "company": "SIGVARIS",
-    "industry": "Manufacturing",
     "status": ""
   },
   {
@@ -18417,13 +17983,6 @@
     "status": ""
   },
   {
-    "email": "srobinson@apctinc.com",
-    "firstName": "Steve",
-    "company": "APCT",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
     "email": "jasong@stx.com",
     "firstName": "Jason",
     "company": "STX",
@@ -19236,13 +18795,6 @@
     "status": ""
   },
   {
-    "email": "w.buchanan@philagear.com",
-    "firstName": "William",
-    "company": "Philadelphia Gear",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
     "email": "waynes@scc-inc.com",
     "firstName": "Wayne",
     "company": "Static Control Components",
@@ -19373,13 +18925,6 @@
     "firstName": "George",
     "company": "Philadelphia Gear",
     "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "dlawson@euchner-usa.com",
-    "firstName": "Don",
-    "company": "Euchner-USA",
-    "industry": "Electronics",
     "status": ""
   },
   {
@@ -20468,13 +20013,6 @@
     "status": ""
   },
   {
-    "email": "amashal@xla.com",
-    "firstName": "Ahmad",
-    "company": "XL Associates",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
     "email": "soulton@xla.com",
     "firstName": "Sarah",
     "company": "XL Associates",
@@ -20500,13 +20038,6 @@
     "firstName": "Dana",
     "company": "Moose",
     "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "tmozny@euchner-usa.com",
-    "firstName": "Thomas",
-    "company": "Euchner-USA",
-    "industry": "Electronics",
     "status": ""
   },
   {
@@ -20652,13 +20183,6 @@
   {
     "email": "jeff.kohl@abxpackaging.com",
     "firstName": "Jeff",
-    "company": "ADVANCED BARRIER EXTRUSIONS",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "john.mosteller@abxpackaging.com",
-    "firstName": "John",
     "company": "ADVANCED BARRIER EXTRUSIONS",
     "industry": "Manufacturing",
     "status": ""
@@ -21245,13 +20769,6 @@
     "status": "Nurturing (Active)"
   },
   {
-    "email": "jeff.wilen@catapultsports.com",
-    "firstName": "Jeff",
-    "company": "Catapult",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
     "email": "john.christie@catapulthealth.com",
     "firstName": "John",
     "company": "Catapult",
@@ -21375,13 +20892,6 @@
     "firstName": "Matt",
     "company": "Groff Tractor & Equipment",
     "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "marshall@aimolding.com",
-    "firstName": "Marshall",
-    "company": "Pexco",
-    "industry": "Manufacturing",
     "status": ""
   },
   {
@@ -21644,13 +21154,6 @@
     "status": ""
   },
   {
-    "email": "kevin.j.rogers@vaupell.com",
-    "firstName": "Kevin",
-    "company": "Vaupell",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
     "email": "carl.brown@vaupell.com",
     "firstName": "Carl",
     "company": "Vaupell",
@@ -21772,13 +21275,6 @@
   {
     "email": "cklotzbier@plasticmoldingmfg.com",
     "firstName": "Christopher",
-    "company": "Plastic Molding Manufacturing",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "rbodeau@plasticmoldingmfg.com",
-    "firstName": "Ron",
     "company": "Plastic Molding Manufacturing",
     "industry": "Manufacturing",
     "status": ""
@@ -22666,13 +22162,6 @@
     "status": ""
   },
   {
-    "email": "ndernik@monosol.com",
-    "firstName": "Nicholas",
-    "company": "MonoSol",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
     "email": "sarah@aicompanies.com",
     "firstName": "Sara",
     "company": "Advanced Instruments",
@@ -23338,13 +22827,6 @@
     "status": ""
   },
   {
-    "email": "bdesmarais@segue-mfg.com",
-    "firstName": "Brian",
-    "company": "Segue Manufacturing Services",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
     "email": "debbie.capocaccia@ringcontainer.com",
     "firstName": "Debbie",
     "company": "Ring Container Technologies",
@@ -23688,13 +23170,6 @@
     "status": ""
   },
   {
-    "email": "kanderson@gwlisk.com",
-    "firstName": "Karl",
-    "company": "Lisk",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
     "email": "mchoi@melissaanddoug.com",
     "firstName": "Minhee",
     "company": "Melissa & Doug",
@@ -23793,13 +23268,6 @@
     "status": ""
   },
   {
-    "email": "michael.coop@bitrode.com",
-    "firstName": "Michael",
-    "company": "Laclede Chain Manufacturing",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
     "email": "john.barsic@spang.com",
     "firstName": "John",
     "company": "Spang & Company",
@@ -23835,23 +23303,9 @@
     "status": ""
   },
   {
-    "email": "scott.sloat@nikon.com",
-    "firstName": "Scott",
-    "company": "Nikon Precision",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
     "email": "sneils@xtantmedical.com",
     "firstName": "Scott",
     "company": "Xtant Medical",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "lcohee@rbccorp.com",
-    "firstName": "Lori",
-    "company": "Burd & Fletcher",
     "industry": "Manufacturing",
     "status": ""
   },
@@ -24766,13 +24220,6 @@
     "status": ""
   },
   {
-    "email": "mgallant@segue-mfg.com",
-    "firstName": "Michael",
-    "company": "Segue Manufacturing Services",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
     "email": "browe@segue-mfg.com",
     "firstName": "Bill",
     "company": "Segue Manufacturing Services",
@@ -25006,13 +24453,6 @@
   {
     "email": "rbahadur@rmf-sc.com",
     "firstName": "Rudy",
-    "company": "Roy Metal Finishing",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "bholcombe@roymetal.com",
-    "firstName": "Brian",
     "company": "Roy Metal Finishing",
     "industry": "Industrial Machinery & Equipment",
     "status": ""
@@ -25566,13 +25006,6 @@
   {
     "email": "slr@anomatic.com",
     "firstName": "Scott",
-    "company": "Anomatic",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "cmeyer@anomatic.com",
-    "firstName": "Casey",
     "company": "Anomatic",
     "industry": "Manufacturing",
     "status": ""
@@ -26280,13 +25713,6 @@
   {
     "email": "john.smith@spectralink.com",
     "firstName": "John",
-    "company": "Spectralink",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "grey.gibbs@spectralink.com",
-    "firstName": "Grey",
     "company": "Spectralink",
     "industry": "Manufacturing",
     "status": ""
@@ -29771,13 +29197,6 @@
     "status": ""
   },
   {
-    "email": "dsong@wyzecam.com",
-    "firstName": "Dongsheng",
-    "company": "Wyze",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
     "email": "sniu@wyze.com",
     "firstName": "Shawn",
     "company": "Wyze",
@@ -29963,13 +29382,6 @@
     "email": "ilanc@inettec.com",
     "firstName": "Ilan",
     "company": "Inet Technologies",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "mbones@aesclean.com",
-    "firstName": "Michael",
-    "company": "AES Clean Technology",
     "industry": "Manufacturing",
     "status": ""
   },
@@ -30167,13 +29579,6 @@
     "firstName": "Todd",
     "company": "Freshpet",
     "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "hawkinsj@weasler.com",
-    "firstName": "James",
-    "company": "Weasler Engineering",
-    "industry": "Automotive Parts",
     "status": ""
   },
   {
@@ -31164,13 +30569,6 @@
     "status": ""
   },
   {
-    "email": "maianh.ngo@robinsonpharma.com",
-    "firstName": "MaiAnh",
-    "company": "Robinson Pharma",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
     "email": "michael.frank@arteris.com",
     "firstName": "Michael",
     "company": "Arteris IP",
@@ -31203,20 +30601,6 @@
     "firstName": "Robert",
     "company": "Christie Digital Systems",
     "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "carlos.santiago@performancehealth.com",
-    "firstName": "Carlos",
-    "company": "Performance Health",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "bstanley@stowerscat.com",
-    "firstName": "Bill",
-    "company": "Stowers Cat",
-    "industry": "Industrial Machinery & Equipment",
     "status": ""
   },
   {
@@ -31301,13 +30685,6 @@
     "firstName": "Lindsey",
     "company": "Bison Gear & Engineering",
     "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "mgraham@lappinsulator.com",
-    "firstName": "Michael",
-    "company": "LAPP Insulators",
-    "industry": "Manufacturing",
     "status": ""
   },
   {
@@ -31899,20 +31276,6 @@
     "status": ""
   },
   {
-    "email": "nick_mcwilliams@caddi.jp",
-    "firstName": "Nick",
-    "company": "CADDi Inc.",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "sara_yellin@caddi-inc.com",
-    "firstName": "Sara",
-    "company": "CADDi Inc.",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
     "email": "chris.gentry@halton.com",
     "firstName": "Chris",
     "company": "Halton",
@@ -31990,13 +31353,6 @@
     "status": ""
   },
   {
-    "email": "jgreen@vzcontrols.com",
-    "firstName": "Jesse",
-    "company": "VanZandt Controls",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
     "email": "tim.pierce@halton.com",
     "firstName": "Tim",
     "company": "Halton",
@@ -32055,13 +31411,6 @@
   {
     "email": "mlaird@vzcontrols.com",
     "firstName": "Marc",
-    "company": "VanZandt Controls",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "rrohrdanz@vzcontrols.com",
-    "firstName": "Rick",
     "company": "VanZandt Controls",
     "industry": "Industrial Machinery & Equipment",
     "status": ""
@@ -32162,13 +31511,6 @@
     "firstName": "Bill",
     "company": "Idaho Steel",
     "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "savannah.priest@mobotix.com",
-    "firstName": "Savannah",
-    "company": "MOBOTIX",
-    "industry": "Manufacturing",
     "status": ""
   },
   {
@@ -32711,13 +32053,6 @@
     "status": ""
   },
   {
-    "email": "rbeal@indfab.biz",
-    "firstName": "Ryan",
-    "company": "Industrial Fabricators",
-    "industry": "Automotive Parts",
-    "status": ""
-  },
-  {
     "email": "robert.ricci@hbpsi.com",
     "firstName": "Robert",
     "company": "Hayes Performance Systems",
@@ -33156,13 +32491,6 @@
     "firstName": "Thomas",
     "company": "Fenner Dunlop Americas",
     "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "lchoong@rebeccaminkoff.com",
-    "firstName": "Leonard",
-    "company": "Rebecca Minkoff",
-    "industry": "Manufacturing",
     "status": ""
   },
   {
@@ -36624,13 +35952,6 @@
     "status": ""
   },
   {
-    "email": "wdaniel@shawmutcorporation.com",
-    "firstName": "Daniel",
-    "company": "Shawmut Corporation",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
     "email": "samwhite@first-spear.com",
     "firstName": "Sam",
     "company": "FirstSpear",
@@ -38094,13 +37415,6 @@
     "status": ""
   },
   {
-    "email": "dscheurich@energyrecovery.com",
-    "firstName": "Darlene",
-    "company": "Energy Recovery",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
     "email": "ccampagna@amerlux.com",
     "firstName": "Chuck",
     "company": "Amerlux",
@@ -38710,13 +38024,6 @@
     "status": ""
   },
   {
-    "email": "david.waldron@visualpak.com",
-    "firstName": "David",
-    "company": "The Visual Pak Companies",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
     "email": "christosa@srslabs.com",
     "firstName": "Christos",
     "company": "DTS",
@@ -38818,13 +38125,6 @@
     "email": "leah.harris@komarbrands.com",
     "firstName": "Leah",
     "company": "Komar",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "john_hall@tsi.com",
-    "firstName": "John",
-    "company": "TSI",
     "industry": "Manufacturing",
     "status": ""
   },
@@ -38955,13 +38255,6 @@
     "status": ""
   },
   {
-    "email": "andrew.moreno@gruntstyle.com",
-    "firstName": "Andrew",
-    "company": "Grunt Style",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
     "email": "jenny.swanson@tsi.com",
     "firstName": "Jenny",
     "company": "TSI",
@@ -39055,13 +38348,6 @@
   {
     "email": "rick.reith@ncirm.com",
     "firstName": "Rick",
-    "company": "TSI",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "bill.walls@tsi.com",
-    "firstName": "Bill",
     "company": "TSI",
     "industry": "Manufacturing",
     "status": ""
@@ -39518,13 +38804,6 @@
     "email": "chabra@bradburyco.com",
     "firstName": "Chad",
     "company": "The Bradbury Group",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "prannay.malu@fluenceenergy.com",
-    "firstName": "Prannay",
-    "company": "Fluence Energy",
     "industry": "Industrial Machinery & Equipment",
     "status": ""
   },
@@ -41139,13 +40418,6 @@
     "status": ""
   },
   {
-    "email": "jack.pacheco@smartm.com",
-    "firstName": "Jack",
-    "company": "SMART Modular",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
     "email": "mike.matthews@power.com",
     "firstName": "Mike",
     "company": "Power Integrations",
@@ -41184,13 +40456,6 @@
     "email": "hlee@eink.com",
     "firstName": "Hui",
     "company": "E Ink Holdings",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
-    "email": "debrak@hme.com",
-    "firstName": "Debra",
-    "company": "HM Electronics",
     "industry": "Electronics",
     "status": ""
   },
@@ -41885,13 +41150,6 @@
     "firstName": "Kimberly",
     "company": "APCT",
     "industry": "Electronics",
-    "status": ""
-  },
-  {
-    "email": "michael.threet@caltrol.com",
-    "firstName": "Michael",
-    "company": "Caltrol",
-    "industry": "Industrial Machinery & Equipment",
     "status": ""
   },
   {
@@ -42938,13 +42196,6 @@
     "status": ""
   },
   {
-    "email": "jack.pacheco@smartm.com",
-    "firstName": "Jack",
-    "company": "SMART Modular",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
     "email": "karl.dahlstrom@pne-ag.com",
     "firstName": "Karl",
     "company": "Pne Wind",
@@ -43005,13 +42256,6 @@
     "firstName": "Loren",
     "company": "BRENTWOOD ORIGINALS",
     "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "winger@ggec.com",
-    "firstName": "Winger",
-    "company": "Ggec",
-    "industry": "Electronics",
     "status": ""
   },
   {
@@ -43344,13 +42588,6 @@
     "status": ""
   },
   {
-    "email": "raymond.bourque@raypak.com",
-    "firstName": "Raymond",
-    "company": "Raypak",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
     "email": "cwlee@taihan.com",
     "firstName": "Chun",
     "company": "Taihan Cable & Solution",
@@ -43389,13 +42626,6 @@
     "email": "kraab@sonicmfg.com",
     "firstName": "Kenneth",
     "company": "Sonic Manufacturing PCB Assembly",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
-    "email": "debrak@hme.com",
-    "firstName": "Debra",
-    "company": "HM Electronics",
     "industry": "Electronics",
     "status": ""
   },
@@ -44408,13 +43638,6 @@
     "status": ""
   },
   {
-    "email": "pgagnon@rhinolinings.com",
-    "firstName": "Pierre",
-    "company": "Rhino Linings",
-    "industry": "Automotive Parts",
-    "status": ""
-  },
-  {
     "email": "kevin.chen@jlpkg.com",
     "firstName": "Kevin",
     "company": "JL Packaging Group",
@@ -44517,13 +43740,6 @@
     "firstName": "Anthony",
     "company": "Phillips Industries",
     "industry": "Automotive Parts",
-    "status": ""
-  },
-  {
-    "email": "hhall@loargroup.com",
-    "firstName": "Holly",
-    "company": "Loar Group",
-    "industry": "Aerospace & Defense",
     "status": ""
   },
   {
@@ -44800,13 +44016,6 @@
     "status": ""
   },
   {
-    "email": "doug.manya@linquest.com",
-    "firstName": "Douglas",
-    "company": "LinQuest",
-    "industry": "Aerospace & Defense",
-    "status": ""
-  },
-  {
     "email": "jlicht@tapplabel.com",
     "firstName": "Jeff",
     "company": "Tapp Label",
@@ -44965,13 +44174,6 @@
     "firstName": "Trent",
     "company": "HYTORC",
     "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "paul.m.carollo@rcoeng.com",
-    "firstName": "Paul",
-    "company": "RCO Engineering",
-    "industry": "Automotive Parts",
     "status": ""
   },
   {
@@ -47194,13 +46396,6 @@
     "status": ""
   },
   {
-    "email": "s.logan@astro.co.il",
-    "firstName": "Steve",
-    "company": "Astronautics Corporation of America",
-    "industry": "Aerospace & Defense",
-    "status": ""
-  },
-  {
     "email": "brianpeterson@q.com",
     "firstName": "Brian",
     "company": "Q Fiber",
@@ -48473,13 +47668,6 @@
     "company": "Noritz",
     "industry": "Industrial Machinery & Equipment",
     "status": "Nurturing (Active)"
-  },
-  {
-    "email": "sangbeom.lee@gmb.net",
-    "firstName": "SangBeom",
-    "company": "GMB North America",
-    "industry": "Automotive Parts",
-    "status": "Nurturing (Not active)"
   },
   {
     "email": "jash@dolphinaudio.com",
@@ -51275,13 +50463,6 @@
     "status": ""
   },
   {
-    "email": "ivictorero@aeroinst.com",
-    "firstName": "Ismary",
-    "company": "Aero Instruments & Avionics",
-    "industry": "Aerospace & Defense",
-    "status": ""
-  },
-  {
     "email": "ben.harman@woodsage.com",
     "firstName": "Ben",
     "company": "Woodsage",
@@ -52678,13 +51859,6 @@
     "email": "darrell.dison@atap.com",
     "firstName": "Darrell",
     "company": "ATAP",
-    "industry": "Aerospace & Defense",
-    "status": ""
-  },
-  {
-    "email": "pgranados@seniorssp.com",
-    "firstName": "Pamela",
-    "company": "Senior Aerospace SSP",
     "industry": "Aerospace & Defense",
     "status": ""
   },

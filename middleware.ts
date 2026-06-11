@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { LOCALES, DEPRECATED_LOCALES } from '@/app/constants/seo-config';
 
 // Phase 1 multilingual: en, es, de, ja are fully indexable.
-// fr, zh, ko, it, pt, ru are still 301-redirected to /en/ until Phase 2/3.
+// fr, zh, ko, it, pt, ru return 410 Gone.
 // de and ja have real localized content and proper hreflang — Google will
 // serve them to German/Japanese searchers without canonical conflicts.
-const locales = ['en', 'es', 'fr', 'de', 'ja', 'zh', 'ko', 'it', 'pt', 'ru'];
-const deprecatedLocales = new Set([]);
+const locales = LOCALES as readonly string[];
 
 // Check if Clerk is configured
 const isClerkConfigured = !!(
@@ -95,22 +95,42 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // ─── Deprecated Locales Redirect ──────────────────────
-  // We explicitly 301 redirect these to /en/ to consolidate link equity
-  // and resolve "Discovered - currently not indexed" crawl bloat.
-  // de and ja are Phase 1 indexable — do NOT redirect them.
-  const deprecatedLocalesList = ['fr', 'zh', 'ko', 'it', 'pt', 'ru'];
-  const hasDeprecatedLocale = deprecatedLocalesList.some(
+  // ─── Deprecated Locales - Return 410 Gone ──────────────
+  // We return a 410 Gone status code for deprecated/unreleased locales to signal
+  // to Googlebot that these pages are permanently removed and should be de-indexed.
+  const hasDeprecatedLocale = DEPRECATED_LOCALES.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
   if (hasDeprecatedLocale) {
-    const newPathname = pathname.replace(/^\/(fr|de|ja|zh|ko|it|pt|ru)(\/|$)/, '/en$2');
-    const redirectUrl = new URL(
-      `${newPathname}${request.nextUrl.search}`,
-      request.url
+    return new NextResponse(
+      `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>410 Gone</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-align: center; padding: 10% 5%; background: #ffffff; color: #1f2937; }
+    h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; color: #111827; }
+    p { font-size: 1.125rem; line-height: 1.75; color: #4b5563; margin-bottom: 24px; }
+    a { color: #0284c7; text-decoration: none; font-weight: 600; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+    a:hover { border-color: #0284c7; }
+  </style>
+</head>
+<body>
+  <h1>410 Gone</h1>
+  <p>This localized version of the page is no longer available.</p>
+  <p>Please visit our <a href="/en">English Homepage</a> or browse our <a href="/en/insights">Insights & Articles</a>.</p>
+</body>
+</html>`,
+      {
+        status: 410,
+        headers: {
+          'Content-Type': 'text/html; charset=utf-8',
+        },
+      }
     );
-    return NextResponse.redirect(redirectUrl, 301);
   }
   // Check if the pathname is missing a locale
   const pathnameIsMissingLocale = locales.every(
