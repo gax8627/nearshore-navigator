@@ -15,6 +15,7 @@ import { INDUSTRY_MATRIX } from "@/app/constants/city-industry-matrix";
 import { INDUSTRY_VERTICALS } from "@/app/constants/industry-taxonomy";
 import { ComparisonModule } from "@/components/ComparisonModule";
 import { Factory, TrendingUp, BarChart3, Building2, Activity } from "lucide-react";
+import { hasRealContent } from "@/app/constants/seo-config";
 import { FloatingLeadDock } from "@/components/FloatingLeadDock";
 
 // Map string icon names to components
@@ -176,8 +177,13 @@ export default function CityOverviewClient({ city }: Props) {
                         subtitle="Explore our comprehensive manufacturing and logistics solutions tailored for this region."
                     />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                        {SERVICES.map((service) => {
+                        {SERVICES.filter(service => !!location.serviceHowItWorks?.[service.slug]).map((service) => {
                             const Icon = iconMap[service.icon];
+                            const serviceConfig = location.serviceHowItWorks?.[service.slug];
+                            let href = `/${language}/locations/${location.slug}/${service.slug}`;
+                            if (language === "en" && serviceConfig?.canonicalOverride) {
+                                href = serviceConfig.canonicalOverride.replace("https://nearshorenavigator.com", "");
+                            }
                             return (
                                 <div className="relative group">
                                     {(city === 'tijuana' && (service.slug === 'contract-manufacturing-tijuana' || service.slug === 'industrial-real-estate-baja')) && (
@@ -189,7 +195,7 @@ export default function CityOverviewClient({ city }: Props) {
                                         key={service.slug}
                                         title={service.title}
                                         description={service.description}
-                                        href={`/${language}/locations/${location.slug}/${service.slug}`}
+                                        href={href}
                                         icon={<Icon className="w-6 h-6" />}
                                     />
                                 </div>
@@ -205,7 +211,7 @@ export default function CityOverviewClient({ city }: Props) {
                         subtitle={`Specialized manufacturing guides for ${t(`locations.${city}.name`) || location.name}'s key industrial clusters.`}
                     />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-                        {INDUSTRY_MATRIX.filter(m => m.citySlug === city).map((entry) => {
+                        {INDUSTRY_MATRIX.filter(m => m.citySlug === city && hasRealContent(m)).map((entry) => {
                             const vertical = INDUSTRY_VERTICALS.find(v => v.slug === entry.industrySlug);
                             if (!vertical) return null;
                             const indName = t(`industries.${entry.industrySlug}.name`) || vertical.slug;

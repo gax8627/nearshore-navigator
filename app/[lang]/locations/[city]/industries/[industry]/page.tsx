@@ -1,4 +1,4 @@
-import { getAlternateLanguages } from '@/app/constants/seo-config';
+import { getAlternateLanguages, TIER1_CITIES, hasRealContent } from '@/app/constants/seo-config';
 import { notFound } from "next/navigation";
 import { getLocation } from "@/app/constants/seo-data";
 import { INDUSTRY_VERTICALS } from "@/app/constants/industry-taxonomy";
@@ -16,42 +16,11 @@ type Props = {
 import { getDictionary } from "@/app/i18n/get-dictionary";
 import { INDEXABLE_LOCALES } from "@/app/constants/seo-config";
 
-/**
- * Tier 1 cities with rich, verified content in seo-data.ts.
- * Only these cities produce indexable industry vertical pages.
- * All other matrix entries are placeholder data and remain noindex.
- */
-const TIER1_CITIES = new Set([
-  'tijuana', 'mexicali', 'juarez', 'reynosa', 'nuevo-laredo',
-  'nogales', 'matamoros', 'monterrey', 'guadalajara', 'queretaro',
-  'san-luis-potosi', 'saltillo', 'hermosillo', 'silao', 'puebla',
-  'chihuahua-city',
-]);
 
-/**
- * Content quality gate: checks if a matrix entry has real data
- * (not the generic placeholder pattern).
- */
-function hasRealContent(entry: typeof INDUSTRY_MATRIX[number]): boolean {
-  const isPlaceholder = (
-    entry.topLocalEmployers.some(e => e.startsWith('Global ')) ||
-    entry.featuredParks.some(p => p.includes(' Industrial Zone'))
-  );
-  return !isPlaceholder && TIER1_CITIES.has(entry.citySlug);
-}
 
-/**
- * Only generate static pages for:
- *   - Indexable locales (en + es)
- *   - Tier 1 cities with real content
- *
- * This reduces page count from 2,510 → ~100-150 pages.
- * Other city/industry combos are still accessible via dynamic rendering
- * but are NOT pre-built at compile time.
- */
 export async function generateStaticParams() {
   const tier1Entries = INDUSTRY_MATRIX.filter(entry => 
-    TIER1_CITIES.has(entry.citySlug)
+    hasRealContent(entry)
   );
 
   return tier1Entries.flatMap(entry => 
@@ -95,9 +64,9 @@ export default async function IndustryVerticalPage({ params }: Props) {
   const vertical = INDUSTRY_VERTICALS.find(v => v.slug === industry);
   const matrixEntry = INDUSTRY_MATRIX.find(m => m.citySlug === city && m.industrySlug === industry);
 
-  if (!location || !vertical || !matrixEntry) {
+  if (!location || !vertical || !matrixEntry || !hasRealContent(matrixEntry)) {
     notFound();
   }
 
   return <IndustryVerticalClient city={city} industry={industry} />;
-    }
+}

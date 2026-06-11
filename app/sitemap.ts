@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { LOCATIONS } from '@/app/constants/seo-data'
 import { INDUSTRY_MATRIX } from '@/app/constants/city-industry-matrix'
-import { INDEXABLE_LOCALES, BASE_URL } from '@/app/constants/seo-config'
+import { INDEXABLE_LOCALES, BASE_URL, TIER1_CITIES, hasRealContent } from '@/app/constants/seo-config'
 
 /**
  * SITEMAP GENERATOR — 2026-04-27 Overhaul
@@ -14,14 +14,6 @@ import { INDEXABLE_LOCALES, BASE_URL } from '@/app/constants/seo-config'
  * cities with real, verified content are submitted. Placeholder entries
  * are excluded to prevent "Discovered - currently not indexed" buildup.
  */
-
-/** Tier 1 cities with verified deep content in seo-data.ts */
-const TIER1_CITIES = new Set([
-  'tijuana', 'mexicali', 'juarez', 'reynosa', 'nuevo-laredo',
-  'nogales', 'matamoros', 'monterrey', 'guadalajara', 'queretaro',
-  'san-luis-potosi', 'saltillo', 'hermosillo', 'silao', 'puebla',
-  'chihuahua-city',
-]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const routes: MetadataRoute.Sitemap = [];
@@ -93,6 +85,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
         const cityServices = city.serviceHowItWorks ? Object.keys(city.serviceHowItWorks) : [];
         cityServices.forEach(serviceSlug => {
+            const serviceConfig = city.serviceHowItWorks?.[serviceSlug];
+            // Exclude if it lacks substantial content or has a canonicalOverride redirect
+            if (!serviceConfig || serviceConfig.canonicalOverride) {
+                return;
+            }
             const isPremium = ['tijuana', 'mexicali', 'hermosillo', 'monterrey'].includes(city.slug);
             cityPaths.push({
                 path: `/locations/${city.slug}/${serviceSlug}`,
@@ -110,18 +107,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
      */
     const matrixPaths: { path: string, priority: number }[] = [];
     INDUSTRY_MATRIX.forEach(entry => {
-        if (TIER1_CITIES.has(entry.citySlug)) {
-            // Check for non-placeholder data (real company names, real parks)
-            const isPlaceholder = (
-                entry.topLocalEmployers.some(e => e.startsWith('Global ')) ||
-                entry.featuredParks.some(p => p.includes(' Industrial Zone'))
-            );
-            if (!isPlaceholder) {
-                matrixPaths.push({
-                    path: `/locations/${entry.citySlug}/industries/${entry.industrySlug}`,
-                    priority: 0.85,
-                });
-            }
+        if (hasRealContent(entry)) {
+            matrixPaths.push({
+                path: `/locations/${entry.citySlug}/industries/${entry.industrySlug}`,
+                priority: 0.85,
+            });
         }
     });
 

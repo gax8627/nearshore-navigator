@@ -1,3 +1,5 @@
+import { IndustryMatrixEntry } from './city-industry-matrix';
+
 /**
  * Shared SEO configuration constants.
  * Single source of truth — import from here, never redefine locally.
@@ -55,4 +57,23 @@ export function getAlternateLanguages(path: string) {
     ...INDEXABLE_LOCALES.map(lang => [lang, `${BASE_URL}/${lang}${cleanPath}`]),
     ['x-default', `${BASE_URL}/en${cleanPath}`]
   ]);
+}
+
+export const TIER1_CITIES = new Set([
+  'tijuana', 'mexicali', 'juarez', 'reynosa', 'nuevo-laredo',
+  'nogales', 'matamoros', 'monterrey', 'guadalajara', 'queretaro',
+  'san-luis-potosi', 'saltillo', 'hermosillo', 'silao', 'puebla',
+  'chihuahua-city',
+]);
+
+/**
+ * Content quality gate: checks if a matrix entry has real data
+ * (not the generic placeholder pattern).
+ */
+export function hasRealContent(entry: IndustryMatrixEntry): boolean {
+  const isPlaceholder = (
+    entry.topLocalEmployers.some(e => e.startsWith('Global ')) ||
+    entry.featuredParks.some(p => p.includes(' Industrial Zone'))
+  );
+  return !isPlaceholder && TIER1_CITIES.has(entry.citySlug);
 }

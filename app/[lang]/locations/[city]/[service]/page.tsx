@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { getLocation, getService } from "@/app/constants/seo-data";
 import ServiceLocationClient from "./ServiceLocationClient";
 import { getLocalizedSeoContent } from "@/app/i18n/get-seo-content";
@@ -72,8 +72,14 @@ export default async function ServiceLocationPage({ params }: Props) {
   const location = getLocation(city);
   const service = getService(serviceParam);
 
-  if (!location || !service) {
+  if (!location || !service || !location.serviceHowItWorks?.[serviceParam]) {
     notFound();
+  }
+
+  const serviceHowItWorks = location.serviceHowItWorks?.[serviceParam];
+  const canonicalOverride = lang === 'en' ? serviceHowItWorks?.canonicalOverride : undefined;
+  if (canonicalOverride) {
+    permanentRedirect(canonicalOverride);
   }
 
   const localizedData = await getLocalizedSeoContent(lang, city, serviceParam);
