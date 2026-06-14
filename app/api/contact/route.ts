@@ -38,9 +38,13 @@ export async function POST(req: Request) {
             );
         }
 
-        // CAPTCHA Verification
+        // CAPTCHA Verification — hard-fail if key is missing
         if (!process.env.TURNSTILE_SECRET_KEY) {
-            console.warn('[Contact API] TURNSTILE_SECRET_KEY is missing. Skipping CAPTCHA verification.');
+            console.error('[Contact API] TURNSTILE_SECRET_KEY is not configured. Rejecting request.');
+            return NextResponse.json(
+                { error: 'Security configuration error. Please try again later.' },
+                { status: 503 }
+            );
         } else if (!cfToken) {
             return NextResponse.json(
                 { error: 'Security token missing. Please try again.' },

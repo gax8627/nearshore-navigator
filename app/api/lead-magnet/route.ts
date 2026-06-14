@@ -12,9 +12,14 @@ export async function POST(req: Request) {
         return NextResponse.json({ success: true, message: 'Your guide is on its way!' });
     }
 
-    // Turnstile CAPTCHA verification (same pattern as contact route)
+    // Turnstile CAPTCHA verification — hard-fail if key is missing so the
+    // endpoint can't be abused in environments where the key wasn't set.
     if (!process.env.TURNSTILE_SECRET_KEY) {
-      console.warn('[Lead Magnet] TURNSTILE_SECRET_KEY missing. Skipping CAPTCHA verification.');
+      console.error('[Lead Magnet] TURNSTILE_SECRET_KEY is not configured. Rejecting request.');
+      return NextResponse.json(
+        { error: 'Security configuration error. Please try again later.' },
+        { status: 503 }
+      );
     } else if (!cfToken) {
       return NextResponse.json(
         { error: 'Security token missing. Please try again.' },

@@ -46,7 +46,6 @@ __pycache__/
 *$py.class
 
 # OS
-.DS_Store
 Thumbs.db
 
 # local
@@ -57,4 +56,7 @@ Thumbs.db
 ! .env.example
 yes/
 google-token.json
-google-token.json
+
+# Scratch / one-off operational scripts (never deploy)
+scratch/
+*.bak
