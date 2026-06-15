@@ -13,7 +13,9 @@ async function seed() {
     'maquiladora-vs-shelter-services-mexico',
     'china-plus-one-strategy-mexico',
     'medical-device-manufacturing-tijuana',
-    'aerospace-manufacturing-queretaro-mexico'
+    'aerospace-manufacturing-queretaro-mexico',
+    '2025-tariffs-baja-california-supply-chain',
+    'ultimate-guide-nearshore-shelter-services-baja-california'
   ];
 
   for (const slug of newSlugs) {

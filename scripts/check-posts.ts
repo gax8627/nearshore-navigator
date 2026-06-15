@@ -4,7 +4,7 @@ import { posts } from '@/lib/db/schema';
 
 async function check() {
   try {
-    const all = await db.select().from(posts).limit(5);
+    const all = await db.select().from(posts);
     console.log(`✅ Posts table accessible. Found ${all.length} posts.`);
     all.forEach(p => console.log(` - ${p.title} (${p.slug})`));
   } catch (e: any) {
