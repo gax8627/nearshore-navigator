@@ -924,13 +924,6 @@
     "status": ""
   },
   {
-    "email": "robert.werge@cadenceinc.com",
-    "firstName": "Robert",
-    "company": "Cadence Inc",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "aideker@argen.com",
     "firstName": "Aaron D.",
     "company": "The Argen",
@@ -1109,13 +1102,6 @@
     "email": "cmccall@microvention.com",
     "firstName": "Christopher",
     "company": "MicroVention",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "sven.rosenbeiger@freudenbergmedical.com",
-    "firstName": "Sven",
-    "company": "Freudenberg Medical",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -1603,13 +1589,6 @@
     "status": ""
   },
   {
-    "email": "kirk.ellis@apolloendo.com",
-    "firstName": "Kirk",
-    "company": "Apollo Endosurgery",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "kristin.leary@microvention.com",
     "firstName": "Kristin",
     "company": "MicroVention",
@@ -1697,13 +1676,6 @@
     "email": "sshadiow@shockwavemedical.com",
     "firstName": "Scott",
     "company": "Shockwave Medical",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "calvin.vang@vitalpath.com",
-    "firstName": "Calvin",
-    "company": "VitalPath",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -1848,13 +1820,6 @@
     "status": "Nurturing (Active)"
   },
   {
-    "email": "keith.facer@biofiredx.com",
-    "firstName": "Keith",
-    "company": "BioFire Diagnostics",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Active)"
-  },
-  {
     "email": "maureen.winter@sekisuidiagnostics.com",
     "firstName": "Maureen",
     "company": "Sekisui Diagnostics",
@@ -1942,13 +1907,6 @@
     "email": "allen.joel@cryolife.com",
     "firstName": "Joel",
     "company": "Artivion",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "rmeier@intersectent.com",
-    "firstName": "Randy A.",
-    "company": "Intersect ENT",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -2208,13 +2166,6 @@
     "email": "doua.vang@vitalpath.com",
     "firstName": "Doua",
     "company": "VitalPath",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "sdeitsch@paragon28.com",
-    "firstName": "Stephen M.",
-    "company": "Paragon 28",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -3871,13 +3822,6 @@
     "status": ""
   },
   {
-    "email": "aoife.varian@varian.com",
-    "firstName": "Aoife",
-    "company": "Varian Medical Systems",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "elane.tohmc@crl.com",
     "firstName": "Elane",
     "company": "Charles River",
@@ -4560,13 +4504,6 @@
     "email": "ktartoussia@insulet.com",
     "firstName": "Karim",
     "company": "Insulet",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "aoife.varian@varian.com",
-    "firstName": "Aoife",
-    "company": "Varian Medical Systems",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -5740,13 +5677,6 @@
     "status": ""
   },
   {
-    "email": "sbeverly@norco-inc.com",
-    "firstName": "Steven",
-    "company": "Norco Inc.",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "tcathey@auruminstitute.org",
     "firstName": "Thomas",
     "company": "The Aurum Group",
@@ -6328,13 +6258,6 @@
     "status": ""
   },
   {
-    "email": "shaned@norco-inc.com",
-    "firstName": "Shane",
-    "company": "Norco Inc.",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "phart@ecg-hq.com",
     "firstName": "Patrick",
     "company": "Electronic Caregiver",
@@ -6345,13 +6268,6 @@
     "email": "ewilliams@nsm-seating.com",
     "firstName": "Emily",
     "company": "National Seating & Mobility",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "marie@itamar-medical.com",
-    "firstName": "Marie",
-    "company": "Itamar Medical",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -6615,13 +6531,6 @@
     "status": ""
   },
   {
-    "email": "jtomayko@ttgimagingsolutions.com",
-    "firstName": "Jack",
-    "company": "TTG Imaging Solutions",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "brad.playford@avasure.com",
     "firstName": "Brad",
     "company": "AvaSure",
@@ -6769,13 +6678,6 @@
     "status": ""
   },
   {
-    "email": "nrickard@thorne.com",
-    "firstName": "Nathan",
-    "company": "Thorne",
-    "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
     "email": "ssouney@acumed.net",
     "firstName": "Sean",
     "company": "Acumed",
@@ -6786,13 +6688,6 @@
     "email": "todd@lioninc.us",
     "firstName": "Todd",
     "company": "LION",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "sdeitsch@paragon28.com",
-    "firstName": "Steve",
-    "company": "Paragon 28",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -6888,13 +6783,6 @@
     "status": ""
   },
   {
-    "email": "robert.werge@cadenceinc.com",
-    "firstName": "Robert",
-    "company": "Cadence Inc",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "cglase@nutramaxlabs.com",
     "firstName": "Christopher",
     "company": "Nutramax Laboratories Veterinary Sciences",
@@ -6937,13 +6825,6 @@
     "status": ""
   },
   {
-    "email": "pmin@aphenapharma.com",
-    "firstName": "Patrick",
-    "company": "Aphena",
-    "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
     "email": "mkidd@scapharma.com",
     "firstName": "Michael",
     "company": "SCA Pharma",
@@ -6961,13 +6842,6 @@
     "email": "bscott@aphenapharma.com",
     "firstName": "Robert",
     "company": "Aphena",
-    "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
-    "email": "mross@thorne.com",
-    "firstName": "Mary Kay",
-    "company": "Thorne",
     "industry": "Pharmaceuticals",
     "status": ""
   },
@@ -7234,13 +7108,6 @@
     "email": "sward@csi360.com",
     "firstName": "Scott",
     "company": "CSI",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "robert.werge@cadenceinc.com",
-    "firstName": "Robert",
-    "company": "Cadence Inc",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -9146,13 +9013,6 @@
     "firstName": "Nina",
     "company": "NEILMED PHARMACEUTICALS",
     "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
-    "email": "sven.rosenbeiger@freudenbergmedical.com",
-    "firstName": "Sven",
-    "company": "Freudenberg Medical",
-    "industry": "Medical Devices & Equipment",
     "status": ""
   },
   {

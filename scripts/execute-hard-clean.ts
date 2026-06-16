@@ -49,6 +49,22 @@ function getLeadEmailsFromRecord(item: any): string[] {
   return [...new Set(emails)];
 }
 
+function getAllFiles(dirPath: string, arrayOfFiles: string[] = []): string[] {
+  if (!fs.existsSync(dirPath)) return arrayOfFiles;
+  const files = fs.readdirSync(dirPath);
+  files.forEach((file) => {
+    const fullPath = path.join(dirPath, file);
+    if (fs.statSync(fullPath).isDirectory()) {
+      getAllFiles(fullPath, arrayOfFiles);
+    } else {
+      if (file.endsWith('.csv') || file.endsWith('.json')) {
+        arrayOfFiles.push(fullPath);
+      }
+    }
+  });
+  return arrayOfFiles;
+}
+
 async function main() {
   const badEmailsFile = path.join(process.cwd(), 'scratch/bad_emails.json');
   if (!fs.existsSync(badEmailsFile)) {
@@ -60,24 +76,7 @@ async function main() {
   console.log(`🧹 Loaded ${badEmails.size} bad emails for cleaning.`);
 
   const leadsDir = path.join(process.cwd(), 'segmented_leads');
-  const filesToClean = [
-    path.join(leadsDir, 'feb17/tier1_med_device.json'),
-    path.join(leadsDir, 'feb17/tier2_manufacturing.json'),
-    path.join(leadsDir, 'segmented_leads_tier_1.csv'),
-    path.join(leadsDir, 'segmented_leads_tier_2.csv'),
-    path.join(leadsDir, 'segmented_leads_tier_3.csv')
-  ];
-
-  // Also find all .csv files in the root of segmented_leads
-  const allFiles = fs.readdirSync(leadsDir);
-  allFiles.forEach(file => {
-    if (file.endsWith('.csv') || file.endsWith('.json')) {
-      const fullPath = path.join(leadsDir, file);
-      if (!filesToClean.includes(fullPath)) {
-        filesToClean.push(fullPath);
-      }
-    }
-  });
+  const filesToClean = getAllFiles(leadsDir);
 
   console.log(`📂 Found ${filesToClean.length} potential files to clean.`);
 

@@ -1,13 +1,5 @@
 [
   {
-    "email": "rstafford@axisproductdevelopment.com",
-    "firstName": "Richard",
-    "lastName": "Stafford",
-    "company": "Axis Product Development",
-    "industry": "",
-    "lastInteraction": "2026-03-09T16:51:01.171+01:00"
-  },
-  {
     "email": "bryan@connellymachine.com",
     "firstName": "Bryan",
     "lastName": "Coronado",
@@ -880,14 +872,6 @@
     "missingDetails": true
   },
   {
-    "email": "keith.facer@biofiredx.com",
-    "firstName": "there",
-    "lastName": "",
-    "company": "your company",
-    "lastInteraction": "2026-03-09T16:06:08+01:00",
-    "missingDetails": true
-  },
-  {
     "email": "jalbers@blueprintmedicines.com",
     "firstName": "there",
     "lastName": "",
@@ -1648,14 +1632,6 @@
     "lastInteraction": "2026-03-09T16:02:27.046+01:00"
   },
   {
-    "email": "baylsworth@trisearch.com",
-    "firstName": "Bob",
-    "lastName": "Aylsworth",
-    "company": "Tri-Search",
-    "industry": "Business Services",
-    "lastInteraction": "2026-03-23T22:20:14.891-07:00"
-  },
-  {
     "email": "robert@motivational.com",
     "firstName": "Robert",
     "lastName": "Young",
@@ -1838,14 +1814,6 @@
     "company": "Scale Biosciences",
     "industry": "Business Services",
     "lastInteraction": "2026-03-09T16:26:07.791+01:00"
-  },
-  {
-    "email": "trevor@shipware.com",
-    "firstName": "Trevor",
-    "lastName": "Outman",
-    "company": "Shipware",
-    "industry": "Business Services",
-    "lastInteraction": "2026-03-09T16:02:48.673+01:00"
   },
   {
     "email": "john@printtechofwpa.com",
@@ -3208,14 +3176,6 @@
     "missingDetails": true
   },
   {
-    "email": "mamanti@advancemfg.com",
-    "firstName": "there",
-    "lastName": "",
-    "company": "your company",
-    "lastInteraction": "2026-03-24T08:02:54.126-07:00",
-    "missingDetails": true
-  },
-  {
     "email": "nadeem.shafi@mlogica.com",
     "firstName": "there",
     "lastName": "",
@@ -3448,14 +3408,6 @@
     "missingDetails": true
   },
   {
-    "email": "mtaylor@sorinc.com",
-    "firstName": "there",
-    "lastName": "",
-    "company": "your company",
-    "lastInteraction": "2026-03-24T08:02:48.088-07:00",
-    "missingDetails": true
-  },
-  {
     "email": "psiepmann@brewercompany.com",
     "firstName": "there",
     "lastName": "",
@@ -3501,14 +3453,6 @@
     "lastName": "",
     "company": "your company",
     "lastInteraction": "2026-03-24T08:02:48.259-07:00",
-    "missingDetails": true
-  },
-  {
-    "email": "gfischer@axt.com",
-    "firstName": "there",
-    "lastName": "",
-    "company": "your company",
-    "lastInteraction": "2026-03-24T08:02:07.088-07:00",
     "missingDetails": true
   },
   {
@@ -3917,14 +3861,6 @@
     "lastName": "",
     "company": "your company",
     "lastInteraction": "2026-03-24T08:01:22.046-07:00",
-    "missingDetails": true
-  },
-  {
-    "email": "cathy.zoi@evgo.com",
-    "firstName": "there",
-    "lastName": "",
-    "company": "your company",
-    "lastInteraction": "2026-03-24T08:00:56.911-07:00",
     "missingDetails": true
   },
   {
