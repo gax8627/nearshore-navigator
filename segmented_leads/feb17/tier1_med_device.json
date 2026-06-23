@@ -2464,13 +2464,6 @@
     "status": ""
   },
   {
-    "email": "plin@immucor.com",
-    "firstName": "Peter",
-    "company": "Immucor",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "jrlong@deroyal.com",
     "firstName": "J.R.",
     "company": "DeRoyal",
@@ -2502,13 +2495,6 @@
     "email": "ernesto.gonzalez@microvention.com",
     "firstName": "Ernesto",
     "company": "MicroVention",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "ted.sutton@bkmedical.com",
-    "firstName": "Ted W.",
-    "company": "BK Medical",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -2968,13 +2954,6 @@
     "status": ""
   },
   {
-    "email": "mariah.robbins@a-dec.com",
-    "firstName": "Mariah",
-    "company": "A-Dec",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Active)"
-  },
-  {
     "email": "jmarsh@drivemedical.com",
     "firstName": "Jordan D.",
     "company": "Drive DeVilbiss Healthcare",
@@ -3112,13 +3091,6 @@
     "firstName": "Christopher",
     "company": "Haemonetics",
     "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "philip@replimune.com",
-    "firstName": "Philip",
-    "company": "Replimune",
-    "industry": "Pharmaceuticals",
     "status": ""
   },
   {
@@ -3297,13 +3269,6 @@
     "status": ""
   },
   {
-    "email": "lisa.jarek@bsci.com",
-    "firstName": "Lisa",
-    "company": "Boston Scientific",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "kate.wynne@karyopharm.com",
     "firstName": "Kate",
     "company": "Karyopharm Therapeutics",
@@ -3384,13 +3349,6 @@
     "email": "jennifer.tyrrell@bsci.com",
     "firstName": "Jennifer",
     "company": "Boston Scientific",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "jfetterolf@zoll.com",
-    "firstName": "James",
-    "company": "ZOLL Medical",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -3563,13 +3521,6 @@
     "status": ""
   },
   {
-    "email": "steve.zolud@modernatx.com",
-    "firstName": "Steve",
-    "company": "Moderna",
-    "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
     "email": "raju.channaveerappa@biogen.com",
     "firstName": "Raju",
     "company": "Biogen",
@@ -3636,13 +3587,6 @@
     "email": "yzohar@gelesis.com",
     "firstName": "Yishai",
     "company": "Gelesis",
-    "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
-    "email": "james.foster@criver.com",
-    "firstName": "James",
-    "company": "Charles River",
     "industry": "Pharmaceuticals",
     "status": ""
   },
@@ -3892,23 +3836,9 @@
     "status": ""
   },
   {
-    "email": "amisha.kapoor@biogen.com",
-    "firstName": "Amisha",
-    "company": "Biogen",
-    "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
     "email": "mohan.mohta@biogen.com",
     "firstName": "Mohan",
     "company": "Biogen",
-    "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
-    "email": "daniel.rudmann@crl.com",
-    "firstName": "Daniel",
-    "company": "Charles River",
     "industry": "Pharmaceuticals",
     "status": ""
   },
@@ -4018,13 +3948,6 @@
     "status": ""
   },
   {
-    "email": "sarah.coy@bsci.com",
-    "firstName": "Sarah",
-    "company": "Boston Scientific",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "don.watson@bsci.com",
     "firstName": "Donald",
     "company": "Boston Scientific",
@@ -4049,13 +3972,6 @@
     "email": "whassanein@transmedics.com",
     "firstName": "Waleed",
     "company": "TransMedics",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "frossini@jacoinc.com",
-    "firstName": "Alfred",
-    "company": "Jaco",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -4158,13 +4074,6 @@
     "status": ""
   },
   {
-    "email": "joanna.opalinski@albireopharma.com",
-    "firstName": "Joanna",
-    "company": "Albireo Pharma, Inc",
-    "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
     "email": "lisa.ballard@alexion.com",
     "firstName": "Lisa",
     "company": "Alexion",
@@ -4207,23 +4116,9 @@
     "status": "Nurturing (Active)"
   },
   {
-    "email": "amora@formulaplastics.com",
-    "firstName": "Alexander E.",
-    "company": "Formula Plastics",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "jmault@biointellisense.com",
     "firstName": "James",
     "company": "BioIntelliSense",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "surya.gobi@dexcom.com",
-    "firstName": "Surya",
-    "company": "Dexcom",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -4438,24 +4333,10 @@
     "status": ""
   },
   {
-    "email": "nkehoe@keystonedental.com",
-    "firstName": "Nate",
-    "company": "Keystone Dental",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "mike.lonetto@modernatx.com",
     "firstName": "Michael",
     "company": "Moderna",
     "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
-    "email": "chad.jay@seaspine.com",
-    "firstName": "Chad",
-    "company": "SeaSpine",
-    "industry": "Medical Devices & Equipment",
     "status": ""
   },
   {
@@ -4484,13 +4365,6 @@
     "firstName": "Marie",
     "company": "Allogene Therapeutics",
     "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
-    "email": "mark.hawkins@nsm-seating.com",
-    "firstName": "Mark",
-    "company": "National Seating & Mobility",
-    "industry": "Medical Devices & Equipment",
     "status": ""
   },
   {
@@ -4722,13 +4596,6 @@
     "firstName": "Daphne",
     "company": "Bio-Rad",
     "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "denny.lanfear@coherus.com",
-    "firstName": "Dennis",
-    "company": "Coherus BioSciences",
-    "industry": "Pharmaceuticals",
     "status": ""
   },
   {
@@ -5208,13 +5075,6 @@
     "status": ""
   },
   {
-    "email": "scott.wolchko@fatetherapeutics.com",
-    "firstName": "Scott",
-    "company": "Fate Therapeutics",
-    "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
     "email": "sstruthers@crinetics.com",
     "firstName": "R Scott",
     "company": "Crinetics Pharmaceuticals",
@@ -5267,13 +5127,6 @@
     "email": "awhite@cooperco.com",
     "firstName": "Albert G.",
     "company": "CooperCompanies",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "mike_mcmullen@agilent.com",
-    "firstName": "Mike",
-    "company": "Agilent",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -5572,13 +5425,6 @@
     "status": ""
   },
   {
-    "email": "eiji@morita.com.au",
-    "firstName": "Eiji",
-    "company": "Morita Corporation",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "scott@pridemobility.com",
     "firstName": "Scott",
     "company": "Pride Mobility Products",
@@ -5600,13 +5446,6 @@
     "status": ""
   },
   {
-    "email": "rbchis@midwestbeltone.com",
-    "firstName": "Rodney",
-    "company": "Beltone",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "ocolon@mauijim.com",
     "firstName": "Octavio",
     "company": "MAUI JIM",
@@ -5617,13 +5456,6 @@
     "email": "lilianapv@norco-inc.com",
     "firstName": "Liliana",
     "company": "Norco Inc.",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "cindycook@netscape.com",
-    "firstName": "Cynthia",
-    "company": "Hardy Diagnostics",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -5649,13 +5481,6 @@
     "status": ""
   },
   {
-    "email": "keithp@norco-inc.com",
-    "firstName": "Keith",
-    "company": "Norco Inc.",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "cpotter@reliance-medical.com",
     "firstName": "Cheryl",
     "company": "Haag-Streit",
@@ -5677,13 +5502,6 @@
     "status": ""
   },
   {
-    "email": "tcathey@auruminstitute.org",
-    "firstName": "Thomas",
-    "company": "The Aurum Group",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "stuartw@norco-inc.com",
     "firstName": "Stuart",
     "company": "Norco Inc.",
@@ -5693,13 +5511,6 @@
   {
     "email": "brolinb@norco-inc.com",
     "firstName": "Brolin",
-    "company": "Norco Inc.",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "danielr@norco-inc.com",
-    "firstName": "Daniel",
     "company": "Norco Inc.",
     "industry": "Medical Devices & Equipment",
     "status": ""
@@ -6006,27 +5817,6 @@
     "status": ""
   },
   {
-    "email": "allan.klotsche@alphasource.com",
-    "firstName": "Allan",
-    "company": "Alpha Source",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "scott.hirsch@solta.com",
-    "firstName": "Scott",
-    "company": "Solta Medical",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "thomas.fleetwood@crosslinkortho.com",
-    "firstName": "Thomas",
-    "company": "CrossLink Life Sciences",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "taylor.smith@joerns.com",
     "firstName": "Taylor",
     "company": "Joerns Healthcare",
@@ -6118,13 +5908,6 @@
     "status": ""
   },
   {
-    "email": "andrew.holman@vitalpath.com",
-    "firstName": "Andrew",
-    "company": "VitalPath",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "jmattys@tactilemedical.com",
     "firstName": "Jerry",
     "company": "Tactile Medical",
@@ -6174,20 +5957,6 @@
     "status": ""
   },
   {
-    "email": "tdavis@biotissue.com",
-    "firstName": "Ted",
-    "company": "Bio-Tissue",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "tom.rolick@handicare.com",
-    "firstName": "Tom",
-    "company": "Handicare",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "raymonda@orrcorp.com",
     "firstName": "Raymond",
     "company": "Orr Safety",
@@ -6219,13 +5988,6 @@
     "email": "andy.suh@idsplc.com",
     "firstName": "Andy",
     "company": "Immunodiagnostic Systems",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "a.aa@microstamping.com",
-    "firstName": "A.",
-    "company": "Micro",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -6275,13 +6037,6 @@
     "email": "benjaminl@norco-inc.com",
     "firstName": "Benjamin",
     "company": "Norco Inc.",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "jnase@microstamping.com",
-    "firstName": "Jon",
-    "company": "Micro",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -8015,13 +7770,6 @@
     "status": ""
   },
   {
-    "email": "scott.wolchko@fatetherapeutics.com",
-    "firstName": "Scott",
-    "company": "Fate Therapeutics",
-    "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
     "email": "rspencer@dynavax.com",
     "firstName": "Ryan",
     "company": "Dynavax Technologies",
@@ -8582,13 +8330,6 @@
     "status": ""
   },
   {
-    "email": "denny.lanfear@coherus.com",
-    "firstName": "Dennis",
-    "company": "Coherus BioSciences",
-    "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
     "email": "jfarquhar@heartflow.com",
     "firstName": "John",
     "company": "HeartFlow",
@@ -9034,13 +8775,6 @@
     "firstName": "Chad",
     "company": "ASP",
     "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "scott.wolchko@fatetherapeutics.com",
-    "firstName": "Scott",
-    "company": "Fate Therapeutics",
-    "industry": "Pharmaceuticals",
     "status": ""
   },
   {
