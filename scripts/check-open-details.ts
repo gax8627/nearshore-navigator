@@ -8,9 +8,10 @@ async function main() {
   console.log('🔍 Querying Brevo for opened event details from June 15 to today...');
 
   try {
+    const todayStr = new Date().toISOString().split('T')[0];
     const res = await brevo.getEmailEvents({
       startDate: '2026-06-15',
-      endDate: '2026-06-23',
+      endDate: todayStr,
       event: 'opened',
       limit: 1000
     });
