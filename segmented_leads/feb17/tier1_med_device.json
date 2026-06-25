@@ -2009,13 +2009,6 @@
     "status": "Nurturing (Active)"
   },
   {
-    "email": "claire.sears@neurostar.com",
-    "firstName": "Claire",
-    "company": "NeuroStar",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Active)"
-  },
-  {
     "email": "mwaxman@atecspine.com",
     "firstName": "Madeline C.",
     "company": "ATEC Spine",
@@ -2030,27 +2023,6 @@
     "status": ""
   },
   {
-    "email": "christopher.swayngim@aeroflowinc.com",
-    "firstName": "Christopher",
-    "company": "Aeroflow Healthcare",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "ben.fishburn@bioventus.com",
-    "firstName": "Ben",
-    "company": "Bioventus",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "mtellado@heartflow.com",
-    "firstName": "Monica",
-    "company": "HeartFlow",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "dgodshall@shockwavemedical.com",
     "firstName": "Douglas Evan",
     "company": "Shockwave Medical",
@@ -2061,13 +2033,6 @@
     "email": "rgustad@tactilemedical.com",
     "firstName": "Rachel L.",
     "company": "Tactile Medical",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "steve.bosrock@apolloendo.com",
-    "firstName": "Steve",
-    "company": "Apollo Endosurgery",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -2128,13 +2093,6 @@
     "status": ""
   },
   {
-    "email": "connie.beck@vitalpath.com",
-    "firstName": "Connie",
-    "company": "VitalPath",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "tfry@irhythmtech.com",
     "firstName": "Thomas",
     "company": "iRhythm Technologies",
@@ -2152,13 +2110,6 @@
     "email": "bmondore@avalign.com",
     "firstName": "Robert",
     "company": "Avalign Technologies",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "felix.nieves@apolloendo.com",
-    "firstName": "Felix L.",
-    "company": "Apollo Endosurgery",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -2205,23 +2156,9 @@
     "status": ""
   },
   {
-    "email": "todd.smith@ortho.microport.com",
-    "firstName": "Todd E.",
-    "company": "MicroPort Orthopedics",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "thomas.mcnamara@gobio.com",
     "firstName": "Thomas J.",
     "company": "BioTelemetry",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "jeff.sadtler@joerns.com",
-    "firstName": "Jeff",
-    "company": "Joerns Healthcare",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -2254,30 +2191,9 @@
     "status": ""
   },
   {
-    "email": "kevin.cato@ormco.com",
-    "firstName": "Kevin",
-    "company": "Ormco",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "patrick.tormey@joerns.com",
     "firstName": "Patrick S.",
     "company": "Joerns Healthcare",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
-    "email": "dave.morgan@a-dec.com",
-    "firstName": "Dave",
-    "company": "A-Dec",
-    "industry": "Medical Devices & Equipment",
-    "status": "Nurturing (Active)"
-  },
-  {
-    "email": "nhirji@intersectent.com",
-    "firstName": "Nabeel",
-    "company": "Intersect ENT",
     "industry": "Medical Devices & Equipment",
     "status": ""
   },
@@ -2394,13 +2310,6 @@
     "status": ""
   },
   {
-    "email": "christopher.gostout@apolloendo.com",
-    "firstName": "Christopher J.",
-    "company": "Apollo Endosurgery",
-    "industry": "Medical Devices & Equipment",
-    "status": ""
-  },
-  {
     "email": "tkoning@atecspine.com",
     "firstName": "Todd",
     "company": "ATEC Spine",
@@ -2447,13 +2356,6 @@
     "firstName": "Gerry E.",
     "company": "Aerie Pharmaceuticals",
     "industry": "Pharmaceuticals",
-    "status": ""
-  },
-  {
-    "email": "apartida@cutera.com",
-    "firstName": "Arnold",
-    "company": "Cutera",
-    "industry": "Medical Devices & Equipment",
     "status": ""
   },
   {

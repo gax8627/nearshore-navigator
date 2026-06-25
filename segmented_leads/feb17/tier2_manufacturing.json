@@ -22232,13 +22232,6 @@
     "status": ""
   },
   {
-    "email": "howe@wendtcorp.com",
-    "firstName": "Richard",
-    "company": "WENDT",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
     "email": "charlie.tucci@spectralink.com",
     "firstName": "Charlie",
     "company": "Spectralink",
@@ -22358,13 +22351,6 @@
     "status": ""
   },
   {
-    "email": "weaker@monosol.com",
-    "firstName": "Woody",
-    "company": "MonoSol",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
     "email": "jwhitehead@westerntrailer.com",
     "firstName": "Jerry",
     "company": "Western Trailers",
@@ -22428,13 +22414,6 @@
     "status": ""
   },
   {
-    "email": "tim.ferrel@ringcontainer.com",
-    "firstName": "Tim",
-    "company": "Ring Container Technologies",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
     "email": "rebeccac@newpig.com",
     "firstName": "Rebecca",
     "company": "New Pig Corporation",
@@ -22445,13 +22424,6 @@
     "email": "rapini@wendtcorp.com",
     "firstName": "Phillip",
     "company": "WENDT",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "ccantwell@stellaandchewys.com",
-    "firstName": "Chris",
-    "company": "Stella & Chewy's",
     "industry": "Manufacturing",
     "status": ""
   },
@@ -22582,30 +22554,9 @@
     "status": ""
   },
   {
-    "email": "bkirkpatrick@reliablesprinkler.com",
-    "firstName": "William",
-    "company": "Reliable Automatic Sprinkler",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "cfink@inductotherm.com",
-    "firstName": "Charles",
-    "company": "Inductotherm",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
     "email": "phil.schmitt@osprey.com",
     "firstName": "Philip",
     "company": "Osprey Packs",
-    "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "al.bosma@rtspackaging.com",
-    "firstName": "Alan",
-    "company": "RTS Packaging",
     "industry": "Manufacturing",
     "status": ""
   },
@@ -22652,13 +22603,6 @@
     "status": ""
   },
   {
-    "email": "akim@kiotitractor.com",
-    "firstName": "Anna",
-    "company": "DAEDONG - USA",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
     "email": "syamamura@mizuhosi.com",
     "firstName": "Shigeru",
     "company": "Mizuho OSI",
@@ -22694,13 +22638,6 @@
     "status": ""
   },
   {
-    "email": "bhultgren@reliablesprinkler.com",
-    "firstName": "Bob",
-    "company": "Reliable Automatic Sprinkler",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
     "email": "bmiller@aicompanies.com",
     "firstName": "Bob",
     "company": "Advanced Instruments",
@@ -22712,13 +22649,6 @@
     "firstName": "Kelly",
     "company": "The Cary Company",
     "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "debbie.capocaccia@ringcontainer.com",
-    "firstName": "Debbie",
-    "company": "Ring Container Technologies",
-    "industry": "Manufacturing",
     "status": ""
   },
   {
@@ -22740,20 +22670,6 @@
     "firstName": "Chris",
     "company": "Yakima Products",
     "industry": "Automotive Parts",
-    "status": ""
-  },
-  {
-    "email": "eleanor.arnold@stucki.com",
-    "firstName": "Eleanor",
-    "company": "A. Stucki",
-    "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "alan.oak@rhinestahl.com",
-    "firstName": "Alan",
-    "company": "Rhinestahl",
-    "industry": "Industrial Machinery & Equipment",
     "status": ""
   },
   {
@@ -36778,29 +36694,8 @@
     "status": ""
   },
   {
-    "email": "tim.lenihan@sheldahl.com",
-    "firstName": "Timothy",
-    "company": "Sheldahl",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
-    "email": "mike.schmaedeke@sheldahl.com",
-    "firstName": "Mike",
-    "company": "Sheldahl",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
     "email": "tammy.krienke@sheldahl.com",
     "firstName": "Tammy",
-    "company": "Sheldahl",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
-    "email": "charles.hayes@sheldahl.com",
-    "firstName": "Charlie",
     "company": "Sheldahl",
     "industry": "Electronics",
     "status": ""
@@ -36939,13 +36834,6 @@
     "status": ""
   },
   {
-    "email": "yu-chun.c@shpcb.com",
-    "firstName": "Yu-Chun",
-    "company": "Victory Giant Technology",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
     "email": "brad.kurtzweil@steckermachine.com",
     "firstName": "Brad",
     "company": "Stecker Machine",
@@ -36999,13 +36887,6 @@
     "firstName": "Kevin",
     "company": "Resource Management Concepts",
     "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "heather.wang@invengo.com",
-    "firstName": "Heather",
-    "company": "Invengo Technology",
-    "industry": "Electronics",
     "status": ""
   },
   {
@@ -37475,13 +37356,6 @@
     "firstName": "Marc",
     "company": "Waterco",
     "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "richard.hunter@eaglepicher.com",
-    "firstName": "Richard",
-    "company": "EaglePicher Technologies",
-    "industry": "Electronics",
     "status": ""
   },
   {
@@ -38168,13 +38042,6 @@
     "firstName": "Morris",
     "company": "Ascentec Engineering",
     "industry": "Manufacturing",
-    "status": ""
-  },
-  {
-    "email": "jwhang@amtechsystems.com",
-    "firstName": "Jong",
-    "company": "Amtech Group",
-    "industry": "Electronics",
     "status": ""
   },
   {
@@ -38962,13 +38829,6 @@
     "status": ""
   },
   {
-    "email": "tracy.tierney@ulbi.com",
-    "firstName": "Tracy",
-    "company": "Ultralife",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
     "email": "lisa.english@evgo.com",
     "firstName": "Lisa",
     "company": "EVgo",
@@ -39065,13 +38925,6 @@
     "company": "Empire Electronics",
     "industry": "Automotive Parts",
     "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "brooks.robinson@powr2.com",
-    "firstName": "Brooks",
-    "company": "Powr2",
-    "industry": "Electronics",
-    "status": "Nurturing (Active)"
   },
   {
     "email": "kmatheis@completeco.com",
@@ -39291,23 +39144,9 @@
     "status": ""
   },
   {
-    "email": "seanb@infiniteelectric.com",
-    "firstName": "Sean",
-    "company": "Infinite Electronics",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
     "email": "brady.watkins@softbankrobotics.com",
     "firstName": "Brady",
     "company": "SoftBank Robotics",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
-    "email": "morris_young@axt.com",
-    "firstName": "Morris",
-    "company": "AXT",
     "industry": "Electronics",
     "status": ""
   },
@@ -39392,13 +39231,6 @@
     "email": "atiq@amperecomputing.com",
     "firstName": "Atiq",
     "company": "Ampere Computing",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
-    "email": "rohini.panakala@ctscorp.com",
-    "firstName": "Rohini",
-    "company": "CTS",
     "industry": "Electronics",
     "status": ""
   },
@@ -39560,13 +39392,6 @@
     "email": "cstone@macktech.com",
     "firstName": "Charles",
     "company": "Mack Technologies",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
-    "email": "briand@us.nanya.com",
-    "firstName": "Brian",
-    "company": "Nanya Technology",
     "industry": "Electronics",
     "status": ""
   },
@@ -42168,13 +41993,6 @@
     "status": ""
   },
   {
-    "email": "morris_young@axt.com",
-    "firstName": "Morris",
-    "company": "AXT",
-    "industry": "Electronics",
-    "status": ""
-  },
-  {
     "email": "dieter@temfilter.com",
     "firstName": "Dieter",
     "company": "Porvair Filtration Group",
@@ -43883,13 +43701,6 @@
     "status": "Rejected - does not meet target profile"
   },
   {
-    "email": "sean.glass@evgo.com",
-    "firstName": "Sean",
-    "company": "EVgo",
-    "industry": "Automotive Parts",
-    "status": "Rejected - does not meet target profile"
-  },
-  {
     "email": "anya.zabavsky@sourceability.com",
     "firstName": "Anya",
     "company": "Sourceability",
@@ -44863,13 +44674,6 @@
     "status": "Nurturing (Active)"
   },
   {
-    "email": "dhenthorn@bendpak.com",
-    "firstName": "Donald",
-    "company": "BendPak",
-    "industry": "Automotive Parts",
-    "status": ""
-  },
-  {
     "email": "goconnor@gcxworx.com",
     "firstName": "Greg",
     "company": "GCX",
@@ -45493,13 +45297,6 @@
     "status": "Nurturing (Active)"
   },
   {
-    "email": "jeff.pfaff@anchor-mfg.com",
-    "firstName": "Jeffrey",
-    "company": "Anchor Manufacturing Group",
-    "industry": "Automotive Parts",
-    "status": "Nurturing (Not active)"
-  },
-  {
     "email": "swells@formtech.org",
     "firstName": "Shaun",
     "company": "Forming Technologies",
@@ -45659,13 +45456,6 @@
     "company": "Matrix Technologies",
     "industry": "Automotive Parts",
     "status": "Nurturing (Active)"
-  },
-  {
-    "email": "brandon@embarktrucks.com",
-    "firstName": "Brandon",
-    "company": "Embark Trucks",
-    "industry": "Automotive Parts",
-    "status": ""
   },
   {
     "email": "jstefanini@petsafe.net",
@@ -46207,20 +45997,6 @@
     "status": ""
   },
   {
-    "email": "brad.gorski@walterscheid.com",
-    "firstName": "Brad",
-    "company": "Walterscheid Powertrain Group companies",
-    "industry": "Automotive Parts",
-    "status": "Nurturing (Not active)"
-  },
-  {
-    "email": "mariam.girgis@walterscheid.com",
-    "firstName": "Mariam",
-    "company": "Walterscheid Powertrain Group companies",
-    "industry": "Automotive Parts",
-    "status": "Nurturing (Active)"
-  },
-  {
     "email": "yukol@americanextrusion.com",
     "firstName": "Yuko",
     "company": "American Extrusion International",
@@ -46239,13 +46015,6 @@
     "firstName": "Robert",
     "company": "The Armored Group",
     "industry": "Industrial Machinery & Equipment",
-    "status": "Nurturing (Active)"
-  },
-  {
-    "email": "dale.emerson@sealcocvp.com",
-    "firstName": "Dale",
-    "company": "Sealco Commercial Vehicle Products",
-    "industry": "Automotive Parts",
     "status": "Nurturing (Active)"
   },
   {
@@ -47169,13 +46938,6 @@
     "email": "v.pfefer@fmpco.com",
     "firstName": "Vic",
     "company": "Factory Motor Parts",
-    "industry": "Automotive Parts",
-    "status": ""
-  },
-  {
-    "email": "jbarrett@motorcarparts.com",
-    "firstName": "Joe",
-    "company": "Motorcar Parts of America",
     "industry": "Automotive Parts",
     "status": ""
   },
@@ -48437,13 +48199,6 @@
     "firstName": "David",
     "company": "Fairbanks Morse Defense",
     "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "sepersun@newstandard.com",
-    "firstName": "Scott",
-    "company": "New Standard",
-    "industry": "Automotive Parts",
     "status": ""
   },
   {
@@ -51709,13 +51464,6 @@
     "status": ""
   },
   {
-    "email": "terry.folsom@vseaviation.com",
-    "firstName": "Terry",
-    "company": "VSE Aviation",
-    "industry": "Aerospace & Defense",
-    "status": ""
-  },
-  {
     "email": "azorr@csphouston.com",
     "firstName": "Azor",
     "company": "CS&P Technologies",
@@ -51762,13 +51510,6 @@
     "firstName": "Jason",
     "company": "Dynabrade",
     "industry": "Industrial Machinery & Equipment",
-    "status": ""
-  },
-  {
-    "email": "nancy.meehan@airindustriesgroup.com",
-    "firstName": "Nancy",
-    "company": "Air Industries Group",
-    "industry": "Aerospace & Defense",
     "status": ""
   },
   {
