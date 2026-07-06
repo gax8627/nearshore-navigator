@@ -126,7 +126,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 url: `${BASE_URL}/${lang}${path}`,
                 lastModified,
                 changeFrequency: path === '' ? 'daily' : 'weekly',
-                priority: path === '' ? 1.0 : 0.7,
+                priority: path === '' ? 1.0 : (path.startsWith('/services/') ? 0.9 : 0.7),
                 alternates: getAlternates(path)
             });
         });
