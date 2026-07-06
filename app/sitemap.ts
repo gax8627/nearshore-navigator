@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Bump lastModified on each deploy of SEO-affecting changes so Google
     // re-crawls and re-evaluates canonical/hreflang after the cleanup.
-    const lastModified = new Date('2026-04-28');
+    const lastModified = new Date('2026-07-06');
 
     // Helper to generate hreflang alternates for any path.
     // ONLY indexable locales go in here — advertising deprecated locales
