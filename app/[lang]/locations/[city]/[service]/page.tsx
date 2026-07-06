@@ -46,14 +46,18 @@ export async function generateMetadata({ params }: Props) {
   // canonicalizes to /en/services/contract-manufacturing-tijuana).
   // Additionally, pages without dedicated substantial content are thin and should be noindexed.
   const hasSubstantialContent = lang === 'en' ? !!serviceHowItWorks : !!localized?.service;
-  const shouldNoindex = (lang === 'en' && !!canonicalOverride) || !hasSubstantialContent || !location.serviceHowItWorks?.[serviceParam];
+  
+  if (!hasSubstantialContent || !location.serviceHowItWorks?.[serviceParam]) {
+    return {
+      robots: { index: false, follow: false }
+    };
+  }
 
   const finalCanonical = canonicalUrl;
 
   return {
     title,
     description,
-    robots: shouldNoindex ? { index: false, follow: true } : undefined,
     alternates: {
       canonical: finalCanonical,
       languages: {
@@ -83,6 +87,10 @@ export default async function ServiceLocationPage({ params }: Props) {
   }
 
   const localizedData = await getLocalizedSeoContent(lang, city, serviceParam);
+  const hasSubstantialContent = lang === 'en' ? !!serviceHowItWorks : !!localizedData?.service;
+  if (!hasSubstantialContent) {
+    notFound();
+  }
 
   // FAQ schema is handled exclusively by ServiceLocationClient (dynamic, city+service-specific).
   // Removed duplicate generic FAQPage here to fix "Duplicate field FAQPage" GSC rich-result error.
