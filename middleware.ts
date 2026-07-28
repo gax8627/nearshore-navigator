@@ -1,12 +1,13 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { LOCALES, DEPRECATED_LOCALES } from '@/app/constants/seo-config';
+import { LOCALES, DEPRECATED_LOCALES, INDEXABLE_LOCALES } from '@/app/constants/seo-config';
 
 // Phase 1 multilingual: en, es, de, ja are fully indexable.
 // fr, zh, ko, it, pt, ru return 410 Gone.
 // de and ja have real localized content and proper hreflang — Google will
 // serve them to German/Japanese searchers without canonical conflicts.
 const locales = LOCALES as readonly string[];
+const indexableLocales = INDEXABLE_LOCALES as readonly string[];
 
 // Check if Clerk is configured
 const isClerkConfigured = !!(
@@ -15,12 +16,12 @@ const isClerkConfigured = !!(
 );
 
 // Helper to match locales from Accept-Language header.
-// Only returns supported (indexable) locales: en, es. Unsupported browser
+// Only returns supported (indexable) locales: en, es, de, ja. Unsupported browser
 // languages fall through to the default /en (see redirect block below).
 function getPreferredLocale(request: NextRequest): string | undefined {
   // 1. Check for cookie first (User Preference)
   const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value;
-  if (cookieLocale && locales.includes(cookieLocale)) {
+  if (cookieLocale && indexableLocales.includes(cookieLocale)) {
     return cookieLocale;
   }
 
@@ -34,9 +35,9 @@ function getPreferredLocale(request: NextRequest): string | undefined {
   }).sort((a, b) => b.q - a.q);
 
   for (const { locale } of preferredLocales) {
-    if (locales.includes(locale)) return locale;
+    if (indexableLocales.includes(locale)) return locale;
     const baseLocale = locale.split('-')[0];
-    if (locales.includes(baseLocale)) return baseLocale;
+    if (indexableLocales.includes(baseLocale)) return baseLocale;
   }
 
   return undefined;

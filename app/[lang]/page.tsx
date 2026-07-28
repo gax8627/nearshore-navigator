@@ -42,7 +42,7 @@ export default function Home() {
         "@type": "Person",
         "name": "Denisse Martinez",
         "jobTitle": "Marketing Director & Advisor",
-        "url": "https://nearshorenavigator.com/about/denisse"
+        "url": "https://nearshorenavigator.com/en/about/denisse-martinez"
       },
       {
         "@type": "WebSite",

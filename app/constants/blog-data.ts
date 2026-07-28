@@ -3708,6 +3708,98 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
 <p><strong>Ready to start?</strong> Nearshore Navigator conducts complimentary feasibility studies including landed cost modeling, site selection, and shelter partner introductions for qualified US manufacturers. <a href="https://calendly.com/denisse-nearshorenavigator/30min" target="_blank" rel="noopener noreferrer">Schedule your discovery call with Denisse Martinez.</a></p>
 `
   },
+  {
+    title: "Section 321 vs IMMEX Maquiladora: 2026 Customs Exemption & Fulfillment Guide",
+    excerpt: "Compare Section 321 de minimis duty-free fulfillment ($800/day limit) with the IMMEX Maquiladora regime. Learn how combining both in Tijuana slashes Section 301 tariffs and warehouse labor costs.",
+    date: "Apr 28, 2026",
+    slug: "section-321-vs-immex-maquiladora-fulfillment-guide",
+    imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
+    tags: ["Section 321", "IMMEX", "Customs", "Logistics", "Tijuana", "Tariffs"],
+    faqSchema: [
+      {
+        q: "What is the difference between Section 321 and IMMEX in Mexico?",
+        a: "Section 321 (19 U.S.C. § 1321) is a US Customs law allowing goods valued under $800 to enter the United States duty-free and tax-free per shipment per day. IMMEX (Maquiladora Program) is a Mexican federal tax incentive that allows foreign companies to temporarily import raw materials and equipment into Mexico 100% free of Mexican import duties and 16% VAT. Section 321 applies to US import entries, while IMMEX applies to Mexican manufacturing/warehousing operations."
+      },
+      {
+        q: "Can you combine IMMEX manufacturing with Section 321 fulfillment in Tijuana?",
+        a: "Yes. This is known as the 'Tijuana Border Hybrid Model'. Components are imported into Mexico under the IMMEX program duty-free and VAT-free for assembly or warehousing in Tijuana. Once assembled or order-picked, individual consumer parcels valued under $800 are shipped into the US using Section 321 Entry Type 86 clearance, eliminating both Mexican import duties and US Section 301 tariffs legally."
+      },
+      {
+        q: "How does Section 321 help mitigate Section 301 tariffs on Chinese goods?",
+        a: "Section 301 tariffs apply to bulk commercial shipments entering the US. Under 19 U.S.C. § 1321 (Section 321), individual B2C e-commerce shipments valued at $800 or less per recipient per day are exempt from Section 301 tariffs, merchandise processing fees (MPF), and formal customs entry, provided they are cleared under approved CBP Type 86 procedures."
+      },
+      {
+        q: "What are the labor cost savings of warehousing in Tijuana vs California?",
+        a: "California industrial warehouse labor averages $22 to $28 per hour fully burdened, plus high real estate rents ($1.50–$2.20/sqft/mo). In Tijuana border industrial parks, fully burdened labor costs $4.50 to $6.50 per hour, and Class A warehouse space ranges from $0.65 to $0.95/sqft/mo, delivering 60–75% operational cost savings."
+      }
+    ],
+    content: `
+      <p>As US supply chain executives face intensifying <strong>Section 301 tariffs</strong> (25%–100% on Asian components), skyrocketing California warehouse labor costs ($22–$28/hr), and tightening CBP scrutiny, nearshoring to Baja California has evolved from simple contract manufacturing into <strong>high-velocity cross-border fulfillment</strong>.</p>
+
+      <h2>Executive Comparison: Section 321 vs. IMMEX</h2>
+      <p>While often mentioned together in nearshoring strategies, <strong>Section 321</strong> and <strong>IMMEX</strong> are distinct legal regimes under two different national customs authorities:</p>
+
+      <table class="w-full text-left border-collapse border border-gray-200 my-6">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="border border-gray-200 px-4 py-2">Operational Dimension</th>
+            <th class="border border-gray-200 px-4 py-2">Section 321 (US Customs / CBP)</th>
+            <th class="border border-gray-200 px-4 py-2">IMMEX Maquiladora (Mexico SAT)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border border-gray-200 px-4 py-2">Governing Authority</td>
+            <td class="border border-gray-200 px-4 py-2">US Customs & Border Protection (19 U.S.C. § 1321)</td>
+            <td class="border border-gray-200 px-4 py-2">Secretaría de Economía & SAT (Mexico)</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 px-4 py-2">Primary Tax Benefit</td>
+            <td class="border border-gray-200 px-4 py-2">0% US import duty & Section 301 tariff exemption on &lt;$800/day shipments</td>
+            <td class="border border-gray-200 px-4 py-2">100% exemption from 16% Mexican VAT & import duties on raw inputs</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 px-4 py-2">Core Function</td>
+            <td class="border border-gray-200 px-4 py-2">US De Minimis Parcel Import & Order Fulfillment</td>
+            <td class="border border-gray-200 px-4 py-2">Temporary Import for Manufacturing, Assembly & Bonded Warehousing</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 px-4 py-2">Labor Rate Benchmark</td>
+            <td class="border border-gray-200 px-4 py-2">US Warehousing ($22–$28/hr)</td>
+            <td class="border border-gray-200 px-4 py-2">Tijuana Border Warehousing ($4.50–$6.50/hr)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Understanding Section 321 (19 U.S.C. § 1321)</h2>
+      <p>Section 321 of the US Tariff Act authorizes US Customs and Border Protection (CBP) to admit qualified shipments duty-free and tax-free, provided the aggregate fair retail value of articles imported by one person in one day does not exceed <strong>$800 USD</strong>.</p>
+      
+      <p>Key requirements for Section 321 clearance under CBP Entry Type 86:</p>
+      <ul>
+        <li><strong>Individual B2C Shipments:</strong> Each parcel must be addressed to an individual end consumer in the United States.</li>
+        <li><strong>Daily Limit Enforcement:</strong> Single importer/consignee limit of $800 per 24-hour period.</li>
+        <li><strong>PGA Exclusions:</strong> Goods subject to Partner Government Agency (PGA) regulations (FDA, EPA, DOT, CPSC) require electronic Entry Type 86 filing.</li>
+      </ul>
+
+      <h2>Understanding the IMMEX Maquiladora Program</h2>
+      <p>The IMMEX program (<em>Industria Manufacturera, Maquiladora y de Servicios de Exportación</em>) allows foreign companies to import raw materials, machinery, and inventory temporarily into Mexico <strong>without paying 16% Mexican Value Added Tax (VAT/IVA)</strong> or general import duties, provided the finished products are subsequently re-exported within statutory timeframes.</p>
+
+      <h2>The Tijuana Border Hybrid Fulfillment Model</h2>
+      <p>By establishing a warehouse or assembly plant in Tijuana (2 miles from the Otay Mesa Port of Entry), companies combine IMMEX and Section 321 into a seamless operational pipeline:</p>
+
+      <ol>
+        <li><strong>Inbound Input:</strong> Containerized components or bulk goods arrive at the Port of Ensenada or Long Beach and are trucked into Tijuana under IMMEX in-bond movement (0% duty, 0% VAT).</li>
+        <li><strong>Tijuana Kitting & Pick/Pack:</strong> Labor-intensive kitting, packaging, quality control, or light assembly takes place using Tijuana labor ($4.50–$6.50/hr vs $25/hr in San Diego).</li>
+        <li><strong>Section 321 Cross-Border Dispatch:</strong> As individual D2C orders are placed, packages are picked, labeled with US carrier labels (USPS, FedEx, UPS), and cross the Otay Mesa border under Section 321 Type 86 clearance (0% US duty, 0% Section 301 tariff).</li>
+        <li><strong>Same-Day Injection:</strong> Parcels are injected directly into USPS or regional carrier hubs in San Diego within 2 to 4 hours of order picking.</li>
+      </ol>
+
+      <h2>Strategic Recommendation & Next Steps</h2>
+      <p>For D2C brands, electronics assemblers, and manufacturers shipping over 500 orders per day into North America, the Tijuana Hybrid Model delivers a <strong>40% to 65% reduction in total landed fulfillment cost</strong>.</p>
+
+      <p>To evaluate feasibility for your product lines, explore our <a href="/en/services/distribution-centers-tijuana/section-321-guide">Section 321 Distribution Center Guide</a> or calculate your cost savings with the <a href="/en/tools/cost-calculator">Nearshore Cost Calculator</a>.</p>
+    `
+  }
 ];
 
 export const BLOG_POSTS: BlogPost[] = (BLOG_POSTS_RAW.filter(Boolean) as unknown) as BlogPost[];

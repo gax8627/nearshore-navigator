@@ -2,29 +2,19 @@ import { MetadataRoute } from 'next'
 import { LOCATIONS } from '@/app/constants/seo-data'
 import { INDUSTRY_MATRIX } from '@/app/constants/city-industry-matrix'
 import { INDEXABLE_LOCALES, BASE_URL, TIER1_CITIES, hasRealContent } from '@/app/constants/seo-config'
+import { getAllPosts } from '@/app/constants/blog-data'
 
 /**
- * SITEMAP GENERATOR — 2026-04-27 Overhaul
+ * SITEMAP GENERATOR — 2026-07 Dynamic Overhaul
  *
- * Only submits en + es locales (the only indexable ones).
- * The 8 deprecated locales (fr/de/ja/zh/ko/it/pt/ru) are 301-redirected
- * by middleware.ts and must NOT appear in the sitemap.
- *
- * Industry matrix pages are now conditionally included: only Tier 1
- * cities with real, verified content are submitted. Placeholder entries
- * are excluded to prevent "Discovered - currently not indexed" buildup.
+ * Submits indexable locales (en, es, de, ja).
+ * Deprecated locales are excluded from sitemap.
  */
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const routes: MetadataRoute.Sitemap = [];
+    const lastModified = new Date();
 
-    // Bump lastModified on each deploy of SEO-affecting changes so Google
-    // re-crawls and re-evaluates canonical/hreflang after the cleanup.
-    const lastModified = new Date('2026-07-06');
-
-    // Helper to generate hreflang alternates for any path.
-    // ONLY indexable locales go in here — advertising deprecated locales
-    // tells Google to crawl them, and they all now 301 to /en anyway.
     const getAlternates = (path: string) => ({
         languages: Object.fromEntries([
             ...INDEXABLE_LOCALES.map(l => [l, `${BASE_URL}/${l}${path}`]),
@@ -33,8 +23,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
 
     /**
-     * 1. STATIC CORE PAGES
+     * 1. STATIC CORE PAGES & DYNAMIC BLOG POSTS
      */
+    const posts = getAllPosts();
+    const blogPaths = posts.map(post => `/insights/${post.slug}`);
+
     const staticPaths = [
         '',
         '/about',
@@ -55,16 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/services/call-center-tijuana',
         '/services/nearshore-marketing',
         '/services/distribution-centers-tijuana/section-321-guide',
-        // Blog/Insight Pillars
-        '/insights/nearshoring-in-tijuana-guide-for-us-companies',
-        '/insights/tijuana-vs-asia-manufacturing-cost-comparison',
-        '/insights/industrial-parks-in-tijuana-map-and-overview',
-        '/insights/ultimate-guide-nearshore-shelter-services-baja-california',
-        '/insights/2025-tariffs-baja-california-supply-chain',
-        '/insights/how-shelter-services-work-in-tijuana',
-        '/insights/maquiladora-vs-shelter-services-mexico',
-        '/insights/mexico-2025-nearshoring-boom-usmca-review',
-        '/insights/how-to-start-manufacturing-in-mexico-2026',
+        ...blogPaths,
     ];
 
     /**

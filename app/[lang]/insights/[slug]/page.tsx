@@ -5,8 +5,8 @@ import type { BlogPost as BlogPostType } from "@/app/constants/blog-data";
 import { INDEXABLE_LOCALES } from "@/app/constants/seo-config";
 import { Metadata } from "next";
 
-// Phase 1 indexable locales for insights: en, de, ja (es has same content as en for blog)
-const BLOG_INDEXABLE_LANGS = new Set(['en', 'de', 'ja']);
+// Indexable locales for insights: en, es, de, ja
+const BLOG_INDEXABLE_LANGS = new Set(['en', 'es', 'de', 'ja']);
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }): Promise<Metadata> {
   const { lang, slug } = await params;
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isIndexable = BLOG_INDEXABLE_LANGS.has(lang);
   const canonicalUrl = `https://nearshorenavigator.com/${lang}/insights/${slug}`;
 
-  // Use localized title/excerpt for de/ja if available, fall back to English
+  // Use localized title/excerpt for es/de/ja if available, fall back to English
   const localized = post.locales?.[lang];
   const title = localized?.title || post.title;
   const description = localized?.excerpt || post.excerpt;
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title,
     description,
-    // Only non-indexable locales (es, zh, ko, etc.) get noindex
+    // Only non-indexable locales get noindex
     robots: isIndexable ? undefined : { index: false, follow: true },
     alternates: {
       // Each indexable locale is its own canonical
@@ -36,6 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : `https://nearshorenavigator.com/en/insights/${slug}`,
       languages: {
         'en': `https://nearshorenavigator.com/en/insights/${slug}`,
+        'es': `https://nearshorenavigator.com/es/insights/${slug}`,
         'de': `https://nearshorenavigator.com/de/insights/${slug}`,
         'ja': `https://nearshorenavigator.com/ja/insights/${slug}`,
         'x-default': `https://nearshorenavigator.com/en/insights/${slug}`,
