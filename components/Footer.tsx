@@ -58,7 +58,8 @@ export function Footer() {
                             </li>
                             <li>
                                 <span className="block font-medium text-gray-400 mb-1">Mexico Operations</span>
-                                Blvd. Agua Caliente 10611, Tijuana
+                                Blvd. Agua Caliente 10611, Tijuana<br />
+                                <a href="tel:+526641237199" className="hover:text-primary-400 text-xs text-gray-400 mt-1 inline-block">+52 664 123 7199</a>
                             </li>
                             <li className="pt-2 flex items-center gap-4">
                                 <a href="mailto:denisse@nearshorenavigator.com" className="hover:text-primary-400 font-medium" aria-label="Send email to Nearshore Navigator">denisse@nearshorenavigator.com</a>

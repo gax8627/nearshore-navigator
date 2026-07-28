@@ -30,6 +30,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     const staticPaths = [
         '',
+        '/locations',
+        '/services',
         '/about',
         '/about/denisse-martinez',
         '/contact',
