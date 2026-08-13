@@ -12,6 +12,19 @@ type Props = {
 
 import { getDictionary } from "@/app/i18n/get-dictionary";
 
+export async function generateStaticParams() {
+  const indexableLangs = ['en', 'es', 'de', 'ja'];
+  const cities = Array.from(TIER1_CITIES);
+
+  const params: { lang: string; city: string }[] = [];
+  for (const lang of indexableLangs) {
+    for (const city of cities) {
+      params.push({ lang, city });
+    }
+  }
+  return params;
+}
+
 export async function generateMetadata({ params }: Props) {
   const { lang, city } = await params;
   const location = getLocation(city);

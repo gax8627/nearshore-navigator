@@ -7,13 +7,13 @@ async function main() {
   const { brevo } = await import(path.join(process.cwd(), 'lib/brevo'));
   console.log('🔍 Querying Brevo for SMTP events (clicks, unsubscribes, complaints) from June 15 to today...');
 
-  const events = ['clicks', 'unsubscribed', 'spam', 'bounces'];
+  const events = ['clicks', 'opened', 'unsubscribed', 'spam', 'bounces'];
   
   for (const eventType of events) {
     try {
       const res = await brevo.getEmailEvents({
-        startDate: '2026-06-15',
-        endDate: '2026-06-23',
+        startDate: '2026-07-06',
+        endDate: '2026-07-07',
         event: eventType as any,
         limit: 1000
       });

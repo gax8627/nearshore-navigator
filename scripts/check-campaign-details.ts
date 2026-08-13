@@ -12,12 +12,11 @@ async function main() {
     const res = await brevo.getCampaigns({ limit: 10 });
     if (res && res.campaigns) {
        for (const c of res.campaigns) {
-         if (c.scheduledAt && c.scheduledAt.startsWith('2026-03-03')) {
+         if (c.scheduledAt && c.scheduledAt.includes('2026-07-')) {
            console.log(`\nCampaign: ${c.name} [ID: ${c.id}]`);
            console.log(`Status: ${c.status}`);
-           // Fetching individual campaign details might yield sent count
-           // But getCampaigns usually returns sent count in 'statistics' or similar if available
-           console.log(`Statistics:`, JSON.stringify(c.statistics, null, 2));
+           console.log(`Sent: ${c.sentValue || 0}`);
+           console.log(`Statistics:`, JSON.stringify(c.statistics || {}, null, 2));
          }
        }
     }

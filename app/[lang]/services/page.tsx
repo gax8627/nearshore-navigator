@@ -22,6 +22,16 @@ export default async function ServicesHubPage(props: { params: Promise<{ lang: s
 
   const services = [
     {
+      title: 'Shelter Services & IMMEX Advisory',
+      slug: 'shelter-services',
+      description: 'Turnkey legal framework, labor administration, 0% VAT exemption, and corporate risk mitigation in Baja California.'
+    },
+    {
+      title: 'Customs Brokerage & USMCA Compliance',
+      slug: 'customs-brokerage',
+      description: 'Pedimentos clearance, Annex 24/31 tracking, 0% USMCA preferential tariffs, and Section 301 mitigation.'
+    },
+    {
       title: 'Industrial Real Estate & Site Selection',
       slug: 'industrial-real-estate-baja',
       description: 'Lease representation, build-to-suit negotiation, and energy audit analysis across Baja California industrial parks.'

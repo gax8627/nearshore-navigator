@@ -1,0 +1,785 @@
+{
+  "blogData": {
+    "typeDefinition": "1: export type BlogPost = {\n2:   title: string;\n3:   excerpt: string;\n4:   date: string;\n5:   slug: string;\n6:   imageUrl: string;\n7:   tags: string[];\n8:   content?: string; // HTML content or markdown\n9:   faqSchema?: { q: string; a: string }[]; // PAA-optimized FAQ pairs for FAQPage schema\n10:   locales?: {\n11:     [key: string]: {\n12:       title: string;\n13:       excerpt: string;\n14:       content?: string;\n15:       tags?: string[];\n16:     }\n17:   }\n18: };",
+    "posts": [
+      {
+        "startLine": 22,
+        "title": "Monterrey Power Map: 5 Industrial Parks with Private Substations",
+        "slug": "monterrey-industrial-parks-energy-resilience",
+        "imageUrl": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
+        "imageLineNum": 26,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 57,
+        "title": "Nearshoring in Baja California: A Guide for US Companies",
+        "slug": "nearshoring-in-tijuana-guide-for-us-companies",
+        "imageUrl": "/images/warehouse.jpg",
+        "imageLineNum": 61,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 65,
+        "title": "Nearshoring in Baja California: Leitfaden für US-Unternehmen (2026)",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 70,
+        "title": "バハ・カリフォルニアでのニアショアリング：米国企業向けガイド",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 154,
+        "title": "Baja California vs Asia: Manufacturing Cost Comparison",
+        "slug": "tijuana-vs-asia-manufacturing-cost-comparison",
+        "imageUrl": "/images/factory-worker.jpg",
+        "imageLineNum": 158,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 162,
+        "title": "Baja California vs. Asien: Fertigungskosten-Vergleich (2026)",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 167,
+        "title": "バハ・カリフォルニア対アジア：製造コスト比較",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 240,
+        "title": "How Shelter Services Work in Baja California",
+        "slug": "how-shelter-services-work-in-tijuana",
+        "imageUrl": "/images/consulting.jpg",
+        "imageLineNum": 244,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 248,
+        "title": "Wie funktionieren Shelter-Dienste in Baja California? (Schritt-für-Schritt)",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 253,
+        "title": "バハ・カリフォルニアでのシェルターサービスの仕組み",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 329,
+        "title": "Industrial Parks Map Overview 2026",
+        "slug": "industrial-parks-in-tijuana-map-and-overview",
+        "imageUrl": "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80&w=800",
+        "imageLineNum": 333,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 337,
+        "title": "Industrieparks in Tijuana: Karte und Überblick 2026",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 342,
+        "title": "ティファナ工業団地：マップと概要（2026年）",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 405,
+        "title": "The $6B Investment: Mexico",
+        "slug": "mexico-2025-nearshoring-boom-usmca-review",
+        "imageUrl": "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=800",
+        "imageLineNum": 409,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 413,
+        "title": "Mexikos Nearshoring-Boom 2026: USMCA-Überprüfung und Marktausblick",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 418,
+        "title": "メキシコのニアショアリングブーム2026：USMCA見直しと市場展望",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 477,
+        "title": "The Ultimate Guide to Nearshore Shelter Services in Baja California",
+        "slug": "ultimate-guide-nearshore-shelter-services-baja-california",
+        "imageUrl": "/images/consulting.jpg",
+        "imageLineNum": 481,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 485,
+        "title": "Der ultimative Leitfaden zu Nearshore-Shelter-Diensten in Baja California",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 490,
+        "title": "バハ・カリフォルニア・ニアショアシェルターサービス完全ガイド",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 556,
+        "title": "2025 Mexico Tariffs Guide: Escape Section 301 with Baja California USMCA Manufacturing",
+        "slug": "2025-tariffs-baja-california-supply-chain",
+        "imageUrl": "/images/warehouse.jpg",
+        "imageLineNum": 560,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 564,
+        "title": "2025/2026 Zölle und Lieferkette: Wie USMCA+IMMEX Section 301 eliminiert",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 569,
+        "title": "2025/2026年関税とサプライチェーン：USMCA+IMMEXによるセクション301回避策",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 609,
+        "title": "Maquiladora vs. Shelter Services in Mexico: What",
+        "slug": "maquiladora-vs-shelter-services-mexico",
+        "imageUrl": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
+        "imageLineNum": 613,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 617,
+        "title": "Maquiladora vs. Shelter Services in Mexiko: Was ist der Unterschied? (Leitfaden 2026)",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 622,
+        "title": "メキシコのマキラドーラとシェルターサービスの違いとは？（2026年ガイド）",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 949,
+        "title": "China Plus One Strategy: Why Mexico Is the #1 Alternative for US-Bound Manufacturing (2026)",
+        "slug": "china-plus-one-strategy-mexico",
+        "imageUrl": "/images/china-plus-one-strategy.png",
+        "imageLineNum": 953,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 1270,
+        "title": "China Plus One Strategy: Why Mexico Is the #1 Alternative for US-Bound Manufacturing (2026)",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 1404,
+        "title": "China Plus One Strategy: Why Mexico Is the #1 Alternative for US-Bound Manufacturing (2026)",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 1540,
+        "title": "Medical Device Manufacturing in Tijuana: Inside the World",
+        "slug": "medical-device-manufacturing-tijuana",
+        "imageUrl": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200",
+        "imageLineNum": 1544,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 1804,
+        "title": "Aerospace Manufacturing in Querétaro: Mexico",
+        "slug": "aerospace-manufacturing-queretaro-mexico",
+        "imageUrl": "/images/industrial-park-hero.jpg",
+        "imageLineNum": 1808,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 2067,
+        "title": "Maquiladora vs. Shelter Services in Mexico: What",
+        "slug": "maquiladora-vs-shelter-services-mexico",
+        "imageUrl": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
+        "imageLineNum": 2071,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 2411,
+        "title": "China Plus One Strategy: Why Mexico Is the #1 Alternative for US-Bound Manufacturing (2026)",
+        "slug": "china-plus-one-strategy-mexico",
+        "imageUrl": "/images/china-plus-one-strategy.png",
+        "imageLineNum": 2415,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 2754,
+        "title": "China Plus One Strategy: Why Mexico Is the #1 Alternative for US-Bound Manufacturing (2026)",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 2888,
+        "title": "China Plus One Strategy: Why Mexico Is the #1 Alternative for US-Bound Manufacturing (2026)",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 3024,
+        "title": "Medical Device Manufacturing in Tijuana: Inside the World",
+        "slug": "medical-device-manufacturing-tijuana",
+        "imageUrl": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200",
+        "imageLineNum": 3028,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 3297,
+        "title": "Aerospace Manufacturing in Querétaro: Mexico",
+        "slug": "aerospace-manufacturing-queretaro-mexico",
+        "imageUrl": "/images/industrial-park-hero.jpg",
+        "imageLineNum": 3301,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 3559,
+        "title": "How to Start Manufacturing in Mexico: The Complete 2026 Guide",
+        "slug": "how-to-start-manufacturing-in-mexico-2026",
+        "imageUrl": "/images/factory-worker.jpg",
+        "imageLineNum": 3563,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 3567,
+        "title": "So starten Sie die Produktion in Mexiko: Der vollständige Leitfaden 2026",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 3572,
+        "title": "メキシコで製造を始める方法：2026年完全ガイド",
+        "slug": "",
+        "imageUrl": "",
+        "imageLineNum": 0,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      },
+      {
+        "startLine": 3712,
+        "title": "Section 321 vs IMMEX Maquiladora: 2026 Customs Exemption & Fulfillment Guide",
+        "slug": "section-321-vs-immex-maquiladora-fulfillment-guide",
+        "imageUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
+        "imageLineNum": 3716,
+        "hasAltPropertyInObj": false,
+        "localesWithImages": []
+      }
+    ],
+    "missingImageAltProperty": true,
+    "totalPosts": 40,
+    "unsplashUrls": [
+      {
+        "slug": "monterrey-industrial-parks-energy-resilience",
+        "lineNum": 26,
+        "url": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        "slug": "industrial-parks-in-tijuana-map-and-overview",
+        "lineNum": 333,
+        "url": "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        "slug": "mexico-2025-nearshoring-boom-usmca-review",
+        "lineNum": 409,
+        "url": "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        "slug": "maquiladora-vs-shelter-services-mexico",
+        "lineNum": 613,
+        "url": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200"
+      },
+      {
+        "slug": "medical-device-manufacturing-tijuana",
+        "lineNum": 1544,
+        "url": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200"
+      },
+      {
+        "slug": "maquiladora-vs-shelter-services-mexico",
+        "lineNum": 2071,
+        "url": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200"
+      },
+      {
+        "slug": "medical-device-manufacturing-tijuana",
+        "lineNum": 3028,
+        "url": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200"
+      },
+      {
+        "slug": "section-321-vs-immex-maquiladora-fulfillment-guide",
+        "lineNum": 3716,
+        "url": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "localUrls": [
+      {
+        "slug": "nearshoring-in-tijuana-guide-for-us-companies",
+        "lineNum": 61,
+        "url": "/images/warehouse.jpg",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "tijuana-vs-asia-manufacturing-cost-comparison",
+        "lineNum": 158,
+        "url": "/images/factory-worker.jpg",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "how-shelter-services-work-in-tijuana",
+        "lineNum": 244,
+        "url": "/images/consulting.jpg",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "ultimate-guide-nearshore-shelter-services-baja-california",
+        "lineNum": 481,
+        "url": "/images/consulting.jpg",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "2025-tariffs-baja-california-supply-chain",
+        "lineNum": 560,
+        "url": "/images/warehouse.jpg",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "china-plus-one-strategy-mexico",
+        "lineNum": 953,
+        "url": "/images/china-plus-one-strategy.png",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "aerospace-manufacturing-queretaro-mexico",
+        "lineNum": 1808,
+        "url": "/images/industrial-park-hero.jpg",
+        "exists": true
+      },
+      {
+        "slug": "china-plus-one-strategy-mexico",
+        "lineNum": 2415,
+        "url": "/images/china-plus-one-strategy.png",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "aerospace-manufacturing-queretaro-mexico",
+        "lineNum": 3301,
+        "url": "/images/industrial-park-hero.jpg",
+        "exists": true
+      },
+      {
+        "slug": "how-to-start-manufacturing-in-mexico-2026",
+        "lineNum": 3563,
+        "url": "/images/factory-worker.jpg",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      },
+      {
+        "slug": "",
+        "lineNum": 0,
+        "url": "",
+        "exists": true
+      }
+    ],
+    "missingLocalFiles": [],
+    "inlineImages": []
+  },
+  "contentDirectory": {
+    "filesAudited": [
+      {
+        "file": "content/blogs/asian-capital-expansion-mexico-immex-optimized.md",
+        "totalLines": 348,
+        "frontmatterImage": {
+          "lineNum": 10,
+          "url": "https://images.unsplash.com/photo-1586528116311-ad8ed74681fb?auto=format&fit=crop&q=80&w=1200",
+          "isExternal": true
+        },
+        "images": []
+      },
+      {
+        "file": "content/blogs/asian-capital-expansion-mexico-immex.md",
+        "totalLines": 350,
+        "frontmatterImage": {
+          "lineNum": 7,
+          "url": "https://images.unsplash.com/photo-1586528116311-ad8ed74681fb?auto=format&fit=crop&q=80&w=1200",
+          "isExternal": true
+        },
+        "images": []
+      },
+      {
+        "file": "content/blogs/baja-shelter-services-guide.md",
+        "totalLines": 419,
+        "frontmatterImage": null,
+        "images": []
+      },
+      {
+        "file": "content/blogs/china-plus-one-tijuana-vs-vietnam-optimized.md",
+        "totalLines": 245,
+        "frontmatterImage": {
+          "lineNum": 10,
+          "url": "https://images.unsplash.com/photo-1586528116311-ad8ed74681fb?auto=format&fit=crop&q=80&w=1200",
+          "isExternal": true
+        },
+        "images": []
+      },
+      {
+        "file": "content/blogs/china-plus-one-tijuana-vs-vietnam.md",
+        "totalLines": 320,
+        "frontmatterImage": null,
+        "images": []
+      },
+      {
+        "file": "content/blogs/contract-manufacturing-mexicali-2026-optimized.md",
+        "totalLines": 387,
+        "frontmatterImage": {
+          "lineNum": 8,
+          "url": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
+          "isExternal": true
+        },
+        "images": []
+      },
+      {
+        "file": "content/blogs/contract-manufacturing-mexicali-2026.md",
+        "totalLines": 26,
+        "frontmatterImage": null,
+        "images": []
+      },
+      {
+        "file": "content/blogs/section-321-vs-immex-2026.md",
+        "totalLines": 346,
+        "frontmatterImage": null,
+        "images": []
+      },
+      {
+        "file": "content/insights/2025-tariffs-baja-california-supply-chain.mdx",
+        "totalLines": 63,
+        "frontmatterImage": null,
+        "images": []
+      },
+      {
+        "file": "content/insights/aerospace-manufacturing-queretaro-mexico.mdx",
+        "totalLines": 355,
+        "frontmatterImage": {
+          "lineNum": 8,
+          "url": "https://images.unsplash.com/photo-1544256718-3b62373aec17?auto=format&fit=crop&q=80&w=1200",
+          "isExternal": true
+        },
+        "images": []
+      },
+      {
+        "file": "content/insights/china-plus-one-strategy-mexico.mdx",
+        "totalLines": 446,
+        "frontmatterImage": {
+          "lineNum": 8,
+          "url": "https://images.unsplash.com/photo-1586528116311-ad8ed74681fb?auto=format&fit=crop&q=80&w=1200",
+          "isExternal": true
+        },
+        "images": []
+      },
+      {
+        "file": "content/insights/ko/china-plus-one-strategy-mexico.mdx",
+        "totalLines": 138,
+        "frontmatterImage": {
+          "lineNum": 8,
+          "url": "https://images.unsplash.com/photo-1586528116311-ad8ed74681fb?auto=format&fit=crop&q=80&w=1200",
+          "isExternal": true
+        },
+        "images": []
+      },
+      {
+        "file": "content/insights/maquiladora-vs-shelter-services-mexico.mdx",
+        "totalLines": 441,
+        "frontmatterImage": {
+          "lineNum": 8,
+          "url": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
+          "isExternal": true
+        },
+        "images": []
+      },
+      {
+        "file": "content/insights/medical-device-manufacturing-tijuana.mdx",
+        "totalLines": 369,
+        "frontmatterImage": {
+          "lineNum": 8,
+          "url": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200",
+          "isExternal": true
+        },
+        "images": []
+      },
+      {
+        "file": "content/insights/ultimate-guide-nearshore-shelter-services-baja-california.mdx",
+        "totalLines": 94,
+        "frontmatterImage": null,
+        "images": []
+      },
+      {
+        "file": "content/insights/zh/china-plus-one-strategy-mexico.mdx",
+        "totalLines": 138,
+        "frontmatterImage": {
+          "lineNum": 8,
+          "url": "https://images.unsplash.com/photo-1586528116311-ad8ed74681fb?auto=format&fit=crop&q=80&w=1200",
+          "isExternal": true
+        },
+        "images": []
+      },
+      {
+        "file": "content/outreach/association-outreach-EN.md",
+        "totalLines": 99,
+        "frontmatterImage": null,
+        "images": []
+      },
+      {
+        "file": "content/outreach/media-pitches-EN.md",
+        "totalLines": 129,
+        "frontmatterImage": null,
+        "images": []
+      },
+      {
+        "file": "content/outreach/partner-outreach-ES.md",
+        "totalLines": 64,
+        "frontmatterImage": null,
+        "images": []
+      },
+      {
+        "file": "content/reports/2026-tijuana-vs-asia-landed-cost-index.md",
+        "totalLines": 175,
+        "frontmatterImage": null,
+        "images": []
+      }
+    ],
+    "frontmatterImages": [],
+    "inlineImages": [],
+    "missingAltTags": [],
+    "missingLocalFiles": []
+  },
+  "insightsPages": {
+    "components": [
+      {
+        "file": "app/[lang]/insights/InsightsClient.tsx",
+        "lineNum": 56,
+        "codeSnippet": "<Image"
+      }
+    ]
+  },
+  "summaryStats": {}
+}

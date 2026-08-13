@@ -8,6 +8,14 @@ import { Metadata } from "next";
 // Indexable locales for insights: en, es, de, ja
 const BLOG_INDEXABLE_LANGS = new Set(['en', 'es', 'de', 'ja']);
 
+function formatImageUrl(imageUrl: string, baseUrl: string = 'https://nearshorenavigator.com'): string {
+  if (!imageUrl) return `${baseUrl}/images/nearshore-logo-brand.png`;
+  if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
+    return imageUrl;
+  }
+  return `${baseUrl}${imageUrl.startsWith('/') ? '' : '/'}${imageUrl}`;
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }): Promise<Metadata> {
   const { lang, slug } = await params;
   const post = getPostBySlug(slug);
@@ -23,6 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const localized = post.locales?.[lang];
   const title = localized?.title || post.title;
   const description = localized?.excerpt || post.excerpt;
+  const fullImageUrl = formatImageUrl(post.imageUrl);
 
   return {
     title,
@@ -49,12 +58,18 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       url: canonicalUrl,
       images: [
         {
-          url: post.imageUrl,
+          url: fullImageUrl,
           width: 1200,
           height: 630,
           alt: title,
         },
       ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [fullImageUrl],
     },
   };
 }
@@ -63,13 +78,14 @@ function getStructuredData(post: BlogPostType, lang: string) {
   const baseUrl = 'https://nearshorenavigator.com';
   const articleUrl = `${baseUrl}/${lang}/insights/${post.slug}`;
   const publishedDate = new Date(post.date).toISOString();
+  const fullImageUrl = formatImageUrl(post.imageUrl, baseUrl);
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": post.title,
     "description": post.excerpt,
-    "image": `${baseUrl}${post.imageUrl}`,
+    "image": fullImageUrl,
     "url": articleUrl,
     "datePublished": publishedDate,
     "dateModified": publishedDate,
@@ -83,7 +99,7 @@ function getStructuredData(post: BlogPostType, lang: string) {
       "name": "Nearshore Navigator",
       "logo": {
         "@type": "ImageObject",
-        "url": `${baseUrl}/logo.png`
+        "url": `${baseUrl}/images/nearshore-logo-brand.png`
       }
     }
   };

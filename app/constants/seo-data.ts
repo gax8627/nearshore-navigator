@@ -108,8 +108,9 @@ export const LOCATIONS: Location[] = [
       },
       "shelter-services": {
         title: "How Shelter Services Work in Tijuana",
-        seoTitle: "Shelter Services in Tijuana, Mexico | IMMEX 2026",
-        seoDescription: "Tijuana shelter: IMMEX in 90 days, $350–550/emp/mo, Class A parks (Pacifico, El Florido, Finsa), 20 min from San Diego. Free vetted shelter match.",
+        seoTitle: "Shelter Services Baja California | IMMEX & 90-Day Setup",
+        seoDescription: "Baja California shelter services in Tijuana & Mexicali. 90-day IMMEX setup, $350/mo fee, zero corporate risk. Compare top shelter providers.",
+        canonicalOverride: "https://nearshorenavigator.com/en/insights/ultimate-guide-nearshore-shelter-services-baja-california",
         content: [
           "Tijuana has more active shelter service operators than any other city in Mexico, and for good reason: the city's 50+ year maquiladora heritage has created the deepest ecosystem of IMMEX-registered shelter companies, experienced labor lawyers, customs brokers, and compliance specialists anywhere on the border. For US manufacturers evaluating Mexico for the first time, a Tijuana shelter service eliminates the single biggest barrier to entry — the need to form a Mexican legal entity, navigate SAT tax registration, register with IMSS and INFONAVIT, and manage the complex web of Mexican labor law compliance.",
 
@@ -128,6 +129,9 @@ export const LOCATIONS: Location[] = [
       },
       "industrial-real-estate": {
         title: "Industrial Real Estate Market in Tijuana — 2026 Guide",
+        seoTitle: "Industrial Real Estate Tijuana: 2026 Lease Rates & Parks",
+        seoDescription: "Compare Tijuana Class A industrial real estate lease rates ($0.47–$0.83/SF). Access Pacifico & Mesa de Otay park inventory. Zero developer fees.",
+        canonicalOverride: "https://nearshorenavigator.com/en/services/industrial-real-estate-baja",
         content: [
           "Tijuana's industrial real estate market is the largest on the entire US-Mexico border, encompassing over 100 million square feet of total industrial inventory spread across dozens of industrial parks and free-standing facilities. As of Q1 2026, the market has undergone a significant shift that heavily favors tenants and buyers: the vacancy rate has climbed to approximately 8% — up from the near-zero rates that characterized the 2021-2023 boom — driven by over 3 million square feet of new Class A speculative supply delivered in 2024 and 2025. For US companies evaluating industrial space in Tijuana, this is the most favorable negotiating environment in over five years.",
 
@@ -222,8 +226,8 @@ export const LOCATIONS: Location[] = [
     serviceHowItWorks: {
       "contract-manufacturing": {
         title: "How Contract Manufacturing Works in Mexicali",
-        seoTitle: "Contract Manufacturing in Mexicali, Mexico | 2026",
-        seoDescription: "Mexicali contract manufacturers: AS9100 aerospace, Honeywell & Collins supplier base, Calexico CA border, $7.84/hr USMCA. Free vetted partner match.",
+        seoTitle: "Contract Manufacturing Mexicali | ISO Plants & $7.84/hr",
+        seoDescription: "Vetted Mexicali contract manufacturers for aerospace, medical & electronics. $7.84/hr labor, 0% USMCA duty, 60-day launch. Get 2026 cost quotes.",
         content: [
           "Mexicali's contract manufacturing ecosystem is uniquely positioned at the intersection of aerospace precision and border-city cost efficiency. While Tijuana dominates the medical device conversation, Mexicali has quietly built the strongest aerospace and defense manufacturing cluster in all of northwest Mexico. The presence of Honeywell, Rockwell Collins (now Collins Aerospace), Gulfstream, and UTC Aerospace Systems as anchor tenants has created a gravitational pull for Tier 1 and Tier 2 suppliers specializing in precision machining, composite fabrication, wire harness assembly, and avionics testing. For US companies seeking a contract manufacturer with AS9100-certified quality systems and experience with ITAR-adjacent defense programs, Mexicali offers a deeper bench than Tijuana.",
 
@@ -1000,7 +1004,7 @@ export const LOCATIONS: Location[] = [
       "shelter-services": {
         title: "How Shelter Services Work in Hermosillo",
         seoTitle: "Shelter Services in Hermosillo, Mexico | IMMEX 2026",
-        seoDescription: "Start manufacturing in Hermosillo in 90 days via IMMEX shelter. $5.27/hr labor — 33% below border rates. Ford automotive ecosystem. Free vetted partner match.",
+        seoDescription: "Start in Hermosillo in 90 days via IMMEX shelter. $5.27/hr labor — 33% below border rates. Ford automotive ecosystem. Free vetted partner match.",
         content: [
           "Hermosillo has emerged as a powerhouse of Mexican automotive manufacturing, anchored by the Ford Hermosillo Stamping and Assembly Plant, which is widely regarded as one of Ford's most modern and efficient assembly facilities globally. This massive industrial anchor is responsible for the production of high-demand vehicles like the Ford Maverick and the Bronco Sport, and it has directly catalyzed the development of a sophisticated Tier 1 and Tier 2 supplier ecosystem perfectly suited for shelter service integration. Operating under a shelter in Hermosillo allows foreign manufacturers to plug directly into this world-class automotive supply chain, leveraging the region's proven quality systems and trained industrial workforce while the shelter provider manages the intricate administrative, legal, and regulatory requirements of the IMMEX program.",
 

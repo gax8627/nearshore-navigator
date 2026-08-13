@@ -35,9 +35,16 @@ export function LeadForm({ title, subtitle, source, className }: LeadFormProps) 
         }
 
         const formData = new FormData(e.currentTarget);
+        const searchParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+        
         const data = {
             ...Object.fromEntries(formData.entries()),
             source: source || 'website_contact_form',
+            utmSource: searchParams?.get('utm_source') || '',
+            utmMedium: searchParams?.get('utm_medium') || '',
+            utmCampaign: searchParams?.get('utm_campaign') || '',
+            utmContent: searchParams?.get('utm_content') || '',
+            utmTerm: searchParams?.get('utm_term') || '',
             cfToken 
         };
 
@@ -49,6 +56,12 @@ export function LeadForm({ title, subtitle, source, className }: LeadFormProps) 
             });
 
             if (response.ok) {
+                if (typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'generate_lead', {
+                        event_category: 'engagement',
+                        event_label: source || 'website_contact_form'
+                    });
+                }
                 setSubmitted(true);
             } else {
                 const errorData = await response.json();

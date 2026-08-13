@@ -3,6 +3,25 @@ import { getLocation, getService } from "@/app/constants/seo-data";
 import ServiceLocationClient from "./ServiceLocationClient";
 import { getLocalizedSeoContent } from "@/app/i18n/get-seo-content";
 
+import { TIER1_CITIES } from "@/app/constants/seo-config";
+
+export async function generateStaticParams() {
+  const indexableLangs = ['en', 'es', 'de', 'ja'];
+  const cities = Array.from(TIER1_CITIES);
+  const services = ['contract-manufacturing', 'shelter-services', 'customs-brokerage', 'distribution-centers', 'industrial-real-estate'];
+
+  const params: { lang: string; city: string; service: string }[] = [];
+  for (const lang of indexableLangs) {
+    for (const city of cities) {
+      for (const service of services) {
+        params.push({ lang, city, service });
+      }
+    }
+  }
+  return params;
+}
+
+
 type Props = {
   params: Promise<{
     lang: string;
@@ -10,7 +29,6 @@ type Props = {
     service: string;
   }>;
 };
-
 
 export async function generateMetadata({ params }: Props) {
   const { lang, city, service: serviceParam } = await params;

@@ -29,6 +29,11 @@ export const leads = pgTable('leads', {
   category: varchar('category', { length: 50 }).default('Standard'), // High, Standard, Low
   tags: text('tags').notNull().default('[]'),
   source: varchar('source', { length: 50 }).default('website'), // website, csv_upload, manual
+  utmSource: varchar('utm_source', { length: 100 }).default(''),
+  utmMedium: varchar('utm_medium', { length: 100 }).default(''),
+  utmCampaign: varchar('utm_campaign', { length: 100 }).default(''),
+  utmContent: varchar('utm_content', { length: 100 }).default(''),
+  utmTerm: varchar('utm_term', { length: 100 }).default(''),
   intentCategory: varchar('intent_category', { length: 50 }).default('GENERAL_EXPLORATION'),
   intentScore: integer('intent_score').default(0),
   urgency: varchar('urgency', { length: 20 }).default('LOW'),

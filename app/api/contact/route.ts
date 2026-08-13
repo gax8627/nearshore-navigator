@@ -21,7 +21,7 @@ function isDbConfigured() {
 export async function POST(req: Request) {
     try {
         const body = await req.json();
-        const { name, email, company, phone, message, source, honeypot, cfToken } = body;
+        const { name, email, company, phone, message, source, honeypot, cfToken, utmSource, utmMedium, utmCampaign, utmContent, utmTerm } = body;
 
         // Honeypot check
         if (honeypot) {
@@ -94,6 +94,11 @@ export async function POST(req: Request) {
                     phone: phone || '',
                     message: message || '',
                     source: source || 'website_contact_form',
+                    utmSource: utmSource || '',
+                    utmMedium: utmMedium || '',
+                    utmCampaign: utmCampaign || '',
+                    utmContent: utmContent || '',
+                    utmTerm: utmTerm || '',
                     intentCategory: intentResult.category,
                     intentScore: intentResult.score,
                     urgency: intentResult.urgency,
