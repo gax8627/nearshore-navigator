@@ -1,0 +1,81 @@
+{
+  "timestamp": "2026-08-13T18:35:23.953Z",
+  "totalUrlsDiscovered": 954,
+  "localeBreakdown": {
+    "en": 159,
+    "es": 159,
+    "de": 159,
+    "ja": 159,
+    "zh": 159,
+    "ko": 159
+  },
+  "googleGsc": {
+    "success": false,
+    "message": "GSC API Submission failed: request to https://oauth2.googleapis.com/token failed, reason: getaddrinfo ENOTFOUND oauth2.googleapis.com"
+  },
+  "googlePing": {
+    "success": false,
+    "message": "Google Legacy Ping failed: fetch failed"
+  },
+  "indexNowProtocol": {
+    "submittedUrls": 954,
+    "batchCount": 1,
+    "endpoints": [
+      {
+        "engine": "Bing",
+        "endpoint": "https://www.bing.com/indexnow",
+        "success": false,
+        "message": "Fetch failed: fetch failed"
+      },
+      {
+        "engine": "IndexNow Central",
+        "endpoint": "https://api.indexnow.org/indexnow",
+        "success": false,
+        "message": "Fetch failed: fetch failed"
+      },
+      {
+        "engine": "Yandex",
+        "endpoint": "https://yandex.com/indexnow",
+        "success": false,
+        "message": "Fetch failed: fetch failed"
+      },
+      {
+        "engine": "Naver",
+        "endpoint": "https://searchadvisor.naver.com/indexnow",
+        "success": false,
+        "message": "Fetch failed: fetch failed"
+      },
+      {
+        "engine": "Seznam",
+        "endpoint": "https://search.seznam.cz/indexnow",
+        "success": false,
+        "message": "Fetch failed: fetch failed"
+      },
+      {
+        "engine": "Yep (Ahrefs)",
+        "endpoint": "https://indexnow.yep.com/indexnow",
+        "success": false,
+        "message": "Fetch failed: fetch failed"
+      }
+    ],
+    "overallSuccess": true
+  },
+  "bingPing": {
+    "success": false,
+    "message": "Bing Sitemap Ping failed: fetch failed"
+  },
+  "aiCrawlerAudit": {
+    "robotsTxtAllowed": true,
+    "crawlersVerified": [
+      "GPTBot (OpenAI / ChatGPT)",
+      "PerplexityBot (Perplexity AI)",
+      "ClaudeBot (Anthropic Claude)",
+      "ByteSpider (ByteDance / TikTok AI)",
+      "Google-Extended (Gemini / Vertex)",
+      "Applebot-Extended (Apple Intelligence)",
+      "CCBot (Common Crawl Data Mining)"
+    ],
+    "http200PayloadVerified": true,
+    "headerRulesVerified": true
+  }
+}

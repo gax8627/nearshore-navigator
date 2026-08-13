@@ -631,7 +631,7 @@ export default async function AsianCapitalExpansionPage(props: { params: PagePar
             {curr.comparisonTitle}
           </h2>
           <div className="overflow-x-auto rounded-2xl border border-gray-800 bg-gray-900 shadow-2xl">
-            <table className="w-full text-left border-collapse min-w-[700px]">
+            <table itemScope itemType="https://schema.org/Table" className="w-full text-left border-collapse min-w-[700px]">
               <thead>
                 <tr className="bg-gray-800/90 text-primary-400 text-sm font-semibold border-b border-gray-700">
                   <th className="p-4">{curr.comparisonHeaders[0]}</th>
