@@ -35,12 +35,12 @@ export type Locale = typeof LOCALES[number];
  * Phase 1: en, es, de, ja
  * Use this in generateStaticParams() and sitemap.ts.
  */
-export const INDEXABLE_LOCALES: readonly string[] = ['en', 'es', 'de', 'ja'] as const;
+export const INDEXABLE_LOCALES: readonly string[] = ['en', 'es', 'de', 'ja', 'zh', 'ko'] as const;
 
 /**
- * Locales still being redirected to /en/ (Phase 2/3 candidates).
+ * Locales still being redirected to /en/ (Phase 3 candidates).
  */
-export const DEPRECATED_LOCALES = ['fr', 'zh', 'ko', 'it', 'pt', 'ru'] as const;
+export const DEPRECATED_LOCALES = ['fr', 'it', 'pt', 'ru'] as const;
 
 /** Base URL for canonical and hreflang generation. */
 export const BASE_URL = 'https://nearshorenavigator.com';

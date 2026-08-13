@@ -45,13 +45,13 @@ export default function ContractClient() {
         },
         {
             name: t('contractPage.furniture'),
-            img: "/images/services/furniture_mfg.png",
+            img: "/images/services/furniture_mfg.webp",
             desc: t('contractPage.furnitureDesc'),
             certifications: ["Commercial Furniture", "Wood/Metal Fab", "Packaging Design"],
         },
         {
             name: t('contractPage.cnc'),
-            img: "/images/services/cnc_machining.png",
+            img: "/images/services/cnc_machining.webp",
             desc: t('contractPage.cncDesc'),
             certifications: ["Lathe/Milling", "AS9100D", "Tight-Tolerance"],
         },
@@ -96,7 +96,19 @@ export default function ContractClient() {
                     "serviceType": "Contract Manufacturing",
                     "areaServed": { "@type": "City", "name": "Tijuana", "address": { "@type": "PostalAddress", "addressRegion": "Baja California", "addressCountry": "MX" } },
                     "description": "Contract manufacturing in Tijuana specializing in electronics, medical devices, aerospace components, and automotive parts with ISO-certified facilities and 30-50% cost savings.",
-                    "offers": { "@type": "Offer", "url": "https://nearshorenavigator.com/en/services/contract-manufacturing-tijuana" }
+                    "offers": { "@type": "Offer", "url": "https://nearshorenavigator.com/en/services/contract-manufacturing-tijuana" },
+                    "speakable": {
+                        "@type": "SpeakableSpecification",
+                        "cssSelector": [
+                            ".speakable-direct-answer",
+                            ".speakable-summary",
+                            ".direct-answer-capsule",
+                            ".faq-answer",
+                            "#faq-direct-response",
+                            "h1",
+                            "h2"
+                        ]
+                    }
                 }) }}
             />
             <script

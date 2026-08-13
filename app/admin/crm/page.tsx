@@ -250,7 +250,7 @@ export default function CrmPage() {
                     </button>
                 </div>
             ) : (
-                <table className="w-full">
+                <table itemScope itemType="https://schema.org/Table" className="w-full">
                     <thead>
                         <tr className="border-b border-gray-800 text-left">
                             <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Name</th>

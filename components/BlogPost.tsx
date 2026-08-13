@@ -72,7 +72,7 @@ export function BlogPost({ post }: { post: BlogPostType }) {
             {/* Main Content Area */}
             <div className="lg:w-2/3">
                 <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 dark:border-gray-700">
-                    <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-light leading-relaxed mb-12 border-l-4 border-primary-500 pl-6 italic">
+                    <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-light leading-relaxed mb-12 border-l-4 border-primary-500 pl-6 italic speakable-summary speakable-direct-answer direct-answer-capsule">
                         {currentExcerpt}
                     </p>
 

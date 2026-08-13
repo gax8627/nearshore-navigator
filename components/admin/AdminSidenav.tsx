@@ -27,7 +27,7 @@ export function AdminSidenav() {
         <Link href="/admin" className="relative z-10 block">
            <div className="relative h-12 w-48 transition-all group-hover:scale-105 duration-300">
                {/* Use public brand logo */}
-               <img src="/images/nearshore-logo-brand.png" alt="Nearshore Navigator" className="object-contain h-full w-full dark:brightness-[1.2] dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.1)]" />
+               <img src="/images/nearshore-logo-brand.webp" alt="Nearshore Navigator" className="object-contain h-full w-full dark:brightness-[1.2] dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.1)]" />
            </div>
         </Link>
       </div>

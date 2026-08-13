@@ -51,6 +51,27 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
   }
 
   // Schema for industrial authority
+  const verticalTitle = t(`industries.${industry}.name`) || industry.charAt(0).toUpperCase() + industry.slice(1).replace(/-/g, ' ');
+  const itemPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemPage",
+    "name": `${verticalTitle} Manufacturing in ${location.name}`,
+    "url": `https://nearshorenavigator.com/${language}/locations/${city}/industries/${industry}`,
+    "description": (matrixEntry as any)?.summary || (matrixEntry as any)?.overview || `Comprehensive guide to ${verticalTitle} manufacturing in ${location.name}.`,
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".speakable-direct-answer",
+        ".speakable-summary",
+        ".direct-answer-capsule",
+        ".faq-answer",
+        "#faq-direct-response",
+        "h1",
+        "h2"
+      ]
+    }
+  };
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -64,6 +85,10 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
 
   return (
     <div className="pb-20 overflow-hidden bg-gray-50 dark:bg-gray-950">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

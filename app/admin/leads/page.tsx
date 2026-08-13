@@ -91,7 +91,7 @@ export default function LeadsPage() {
       </div>
 
       <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm">
-        <table className="w-full">
+        <table itemScope itemType="https://schema.org/Table" className="w-full">
             <thead>
                 <tr className="border-b border-gray-200 dark:border-gray-800 text-left bg-gray-50 dark:bg-gray-800/50">
                     <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Lead</th>

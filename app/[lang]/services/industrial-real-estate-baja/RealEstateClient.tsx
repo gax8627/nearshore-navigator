@@ -59,7 +59,19 @@ export default function IndustrialRealEstatePage() {
                     "serviceType": "Industrial Real Estate Advisory",
                     "areaServed": { "@type": "State", "name": "Baja California", "address": { "@type": "PostalAddress", "addressRegion": "Baja California", "addressCountry": "MX" } },
                     "description": "Site selection, lease negotiation, and industrial park advisory for Class A manufacturing facilities in Tijuana, Mexicali, Ensenada, and Tecate, Baja California.",
-                    "offers": { "@type": "Offer", "url": "https://nearshorenavigator.com/en/services/industrial-real-estate-baja" }
+                    "offers": { "@type": "Offer", "url": "https://nearshorenavigator.com/en/services/industrial-real-estate-baja" },
+                    "speakable": {
+                        "@type": "SpeakableSpecification",
+                        "cssSelector": [
+                            ".speakable-direct-answer",
+                            ".speakable-summary",
+                            ".direct-answer-capsule",
+                            ".faq-answer",
+                            "#faq-direct-response",
+                            "h1",
+                            "h2"
+                        ]
+                    }
                 }) }}
             />
             <script

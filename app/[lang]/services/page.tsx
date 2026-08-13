@@ -52,23 +52,57 @@ export default async function ServicesHubPage(props: { params: Promise<{ lang: s
       description: 'Bilingual customer support, technical helpdesk, and sales teams operating in Tijuana.'
     },
     {
+      title: 'Asian Capital Expansion & USMCA RVC Advisory',
+      slug: 'asian-capital-expansion',
+      description: 'USMCA 75% RVC compliance, Section 301 tariff mitigation, and IMMEX shelter setup for Korean and Chinese manufacturers in Mexico.'
+    },
+    {
       title: 'Nearshore B2B Marketing Advisory',
       slug: 'nearshore-marketing',
       description: 'B2B lead generation, market entry positioning, and demand generation for cross-border operations.'
     }
   ];
 
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Nearshore Navigator Advisory Services Directory",
-    "itemListElement": services.map((svc, idx) => ({
-      "@type": "ListItem",
-      "position": idx + 1,
-      "name": svc.title,
-      "url": `${BASE_URL}/${lang}/services/${svc.slug}`
-    }))
-  };
+  const schemaData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Nearshore Navigator Advisory Services Directory",
+      "itemListElement": services.map((svc, idx) => ({
+        "@type": "ListItem",
+        "position": idx + 1,
+        "name": svc.title,
+        "url": `${BASE_URL}/${lang}/services/${svc.slug}`
+      }))
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Nearshore Advisory & Manufacturing Services in Mexico",
+      "url": `${BASE_URL}/${lang}/services`,
+      "description": "Strategic nearshore advisory services including industrial real estate site selection, contract manufacturing, distribution centers, and shelter services in Tijuana.",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".speakable-direct-answer",
+          ".speakable-summary",
+          ".direct-answer-capsule",
+          ".faq-answer",
+          "#faq-direct-response",
+          "h1",
+          "h2"
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${BASE_URL}/${lang}` },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": `${BASE_URL}/${lang}/services` }
+      ]
+    }
+  ];
 
   return (
     <main className="min-h-screen bg-gray-900 text-white py-16 px-4 md:px-8">

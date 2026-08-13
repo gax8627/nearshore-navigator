@@ -34,7 +34,28 @@ export default async function ShelterServicesPage(props: { params: Promise<{ lan
           "url": BASE_URL
         },
         "areaServed": ["Tijuana", "Mexicali", "Tecate", "Baja California", "Mexico"],
-        "description": "Turnkey IMMEX shelter service setup, labor administration, tax compliance, and facility management in Baja California."
+        "description": "Turnkey IMMEX shelter service setup, labor administration, tax compliance, and facility management in Baja California.",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [
+            ".speakable-direct-answer",
+            ".speakable-summary",
+            ".direct-answer-capsule",
+            ".faq-answer",
+            "#faq-direct-response",
+            "h1",
+            "h2"
+          ]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${BASE_URL}/${lang}/services/shelter-services#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${BASE_URL}/${lang}` },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": `${BASE_URL}/${lang}/services` },
+          { "@type": "ListItem", "position": 3, "name": "Shelter Services", "item": `${BASE_URL}/${lang}/services/shelter-services` }
+        ]
       },
       {
         "@type": "FAQPage",
@@ -97,7 +118,7 @@ export default async function ShelterServicesPage(props: { params: Promise<{ lan
           </p>
 
           <div className="overflow-x-auto my-6">
-            <table className="w-full text-left border-collapse border border-gray-800 bg-gray-900 rounded-xl">
+            <table itemScope itemType="https://schema.org/Table" className="w-full text-left border-collapse border border-gray-800 bg-gray-900 rounded-xl">
               <thead>
                 <tr className="bg-gray-800 text-primary-400 text-sm">
                   <th className="p-4 border-b border-gray-700">Feature / Metric</th>

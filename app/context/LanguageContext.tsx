@@ -9,7 +9,7 @@ type Translations = any;
 
 // 2026-04 cleanup: only en + es are supported. The other locales were
 // 301-redirected to /en to eliminate canonical duplication in Google.
-export type Language = 'en' | 'es' | 'de' | 'ja';
+export type Language = 'en' | 'es' | 'de' | 'ja' | 'zh' | 'ko';
 
 type LanguageContextType = {
     language: Language;
@@ -68,7 +68,7 @@ export const LanguageProvider = ({ children, lang }: { children: ReactNode, lang
             let targetLang: Language = 'en';
 
             // 1. Check localStorage first (normalize against supported locales)
-            const SUPPORTED: Language[] = ['en', 'es', 'de', 'ja'];
+            const SUPPORTED: Language[] = ['en', 'es', 'de', 'ja', 'zh', 'ko'];
             const storedLang = localStorage.getItem('app_lang') as Language;
             if (storedLang && SUPPORTED.includes(storedLang)) {
                 targetLang = storedLang;
@@ -90,6 +90,10 @@ export const LanguageProvider = ({ children, lang }: { children: ReactNode, lang
                         targetLang = 'de';
                     } else if (country === 'JP') {
                         targetLang = 'ja';
+                    } else if (['CN', 'TW', 'HK'].includes(country)) {
+                        targetLang = 'zh';
+                    } else if (country === 'KR') {
+                        targetLang = 'ko';
                     }
                 } catch (error) {
                     console.warn('Geolocation failed, defaulting to en:', error);

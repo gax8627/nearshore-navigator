@@ -95,6 +95,7 @@ export const brevo = {
     replyTo,
     scheduledAt,
     tags,
+    attachment,
   }: {
     to: { email: string; name?: string }[];
     subject: string;
@@ -103,6 +104,7 @@ export const brevo = {
     replyTo?: { email: string; name?: string };
     scheduledAt?: string;
     tags?: string[];
+    attachment?: { name: string; content: string; url?: string }[];
   }) {
     const { key: BREVO_API_KEY, url: BREVO_API_URL } = getBrevoConfig();
     if (!BREVO_API_KEY) throw new Error('BREVO_API_KEY not configured');
@@ -116,6 +118,14 @@ export const brevo = {
       subject,
       htmlContent,
     };
+
+    if (attachment) {
+      body.attachment = attachment;
+    }
+
+    if (tags) {
+      body.tags = tags;
+    }
 
     if (scheduledAt) {
       body.scheduledAt = scheduledAt;

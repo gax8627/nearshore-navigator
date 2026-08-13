@@ -68,7 +68,19 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
         "addressCountry": "MX"
       }
     },
-    "description": subtitle
+    "description": subtitle,
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".speakable-direct-answer",
+        ".speakable-summary",
+        ".direct-answer-capsule",
+        ".faq-answer",
+        "#faq-direct-response",
+        "h1",
+        "h2"
+      ]
+    }
   };
 
   const faqSchema = faqs.length > 0 ? {
@@ -116,6 +128,18 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
       "@type": "Organization",
       "name": "Nearshore Navigator",
       "url": "https://nearshorenavigator.com"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".speakable-direct-answer",
+        ".speakable-summary",
+        ".direct-answer-capsule",
+        ".faq-answer",
+        "#faq-direct-response",
+        "h1",
+        "h2"
+      ]
     }
   };
 
@@ -218,7 +242,7 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
 
               {/* AI-SEO: Structured Data Table */}
               <div className="overflow-x-auto mb-8 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
-                <table className="min-w-full text-left text-sm">
+                <table itemScope itemType="https://schema.org/Table" className="min-w-full text-left text-sm">
                   <thead className="bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300">
                     <tr>
                       <th className="px-6 py-4 font-semibold">Key Metric</th>

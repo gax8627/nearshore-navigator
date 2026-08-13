@@ -95,7 +95,19 @@ export default function MarketingClient() {
                     "serviceType": "B2B Marketing & Lead Generation",
                     "areaServed": { "@type": "Country", "name": "United States" },
                     "description": "Specialized B2B marketing services for companies expanding to Mexico: ICP research, outbound campaigns, content marketing, and nearshore positioning strategy.",
-                    "offers": { "@type": "Offer", "url": "https://nearshorenavigator.com/en/services/nearshore-marketing" }
+                    "offers": { "@type": "Offer", "url": "https://nearshorenavigator.com/en/services/nearshore-marketing" },
+                    "speakable": {
+                        "@type": "SpeakableSpecification",
+                        "cssSelector": [
+                            ".speakable-direct-answer",
+                            ".speakable-summary",
+                            ".direct-answer-capsule",
+                            ".faq-answer",
+                            "#faq-direct-response",
+                            "h1",
+                            "h2"
+                        ]
+                    }
                 }) }}
             />
             <script
@@ -114,7 +126,7 @@ export default function MarketingClient() {
             <section className="relative bg-teal-900 border-b border-teal-800 text-white overflow-hidden py-24">
                 <div className="absolute inset-0 z-0">
                     <Image 
-                        src="/images/hero/marketing_hero.png"
+                        src="/images/hero/marketing_hero.webp"
                         alt="Denisse Martinez — Fractional Marketing Consultant"
                         fill
                         className="object-cover object-center opacity-40 mix-blend-luminosity"

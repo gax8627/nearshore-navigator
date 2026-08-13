@@ -15,7 +15,7 @@ export function Footer() {
                         <Link href={`/${language}`} className="block group" aria-label="Nearshore Navigator Home">
                             <div className="relative w-44 md:w-60 h-12 md:h-16 transition-all group-hover:scale-105 duration-300">
                                 <Image
-                                    src="/images/nearshore-logo-brand.png"
+                                    src="/images/nearshore-logo-brand.webp"
                                     alt="Nearshore Navigator Logo"
                                     fill
                                     className="object-contain opacity-80 group-hover:opacity-100 transition-opacity"

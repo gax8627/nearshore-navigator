@@ -55,7 +55,7 @@ export default function IndustrialMapClient({ language }: { language: string }) 
             </div>
 
             <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
+              <table itemScope itemType="https://schema.org/Table" className="w-full text-left border-collapse">
                 <thead>
                   <tr className="bg-gray-50 dark:bg-gray-900/50 text-gray-600 dark:text-gray-400 text-sm uppercase tracking-wider">
                     <th className="p-6 font-semibold">Park Name</th>

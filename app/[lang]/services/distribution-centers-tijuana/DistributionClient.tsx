@@ -68,7 +68,19 @@ export default function DistributionPage() {
                     "serviceType": "Distribution & Logistics",
                     "areaServed": { "@type": "City", "name": "Tijuana", "address": { "@type": "PostalAddress", "addressRegion": "Baja California", "addressCountry": "MX" } },
                     "description": "Strategic distribution centers in Tijuana offering same-day delivery to Southern California, Section 321 duty-free fulfillment, 24-hour customs brokerage, and Class A warehouse space at competitive rates.",
-                    "offers": { "@type": "Offer", "url": "https://nearshorenavigator.com/en/services/distribution-centers-tijuana" }
+                    "offers": { "@type": "Offer", "url": "https://nearshorenavigator.com/en/services/distribution-centers-tijuana" },
+                    "speakable": {
+                        "@type": "SpeakableSpecification",
+                        "cssSelector": [
+                            ".speakable-direct-answer",
+                            ".speakable-summary",
+                            ".direct-answer-capsule",
+                            ".faq-answer",
+                            "#faq-direct-response",
+                            "h1",
+                            "h2"
+                        ]
+                    }
                 }) }}
             />
             <script

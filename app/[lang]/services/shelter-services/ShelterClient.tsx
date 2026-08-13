@@ -243,7 +243,7 @@ export default function ShelterClient() {
               "@type": "Organization",
               "name": "Nearshore Navigator",
               "url": "https://nearshorenavigator.com",
-              "logo": "https://nearshorenavigator.com/images/logo.png"
+              "logo": "https://nearshorenavigator.com/logo.webp"
             },
             "serviceType": "IMMEX Shelter Operations, Tax Compliance & HR Administration",
             "areaServed": [
@@ -743,7 +743,7 @@ export default function ShelterClient() {
           </div>
 
           <div className="overflow-x-auto rounded-2xl border border-gray-800 bg-gray-900">
-            <table className="w-full text-left text-xs md:text-sm">
+            <table itemScope itemType="https://schema.org/Table" className="w-full text-left text-xs md:text-sm">
               <thead className="bg-gray-950 border-b border-gray-800 text-gray-300">
                 <tr>
                   <th className="p-4 font-bold min-w-[200px]">Decision Criteria</th>

@@ -27,7 +27,7 @@ export const ComparisonModule = ({ type, selection }: ComparisonModuleProps) => 
         return (
             <div className="w-full space-y-8">
                 <div className="overflow-x-auto rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                    <table className="w-full text-left border-collapse bg-white dark:bg-gray-900">
+                    <table itemScope itemType="https://schema.org/Table" className="w-full text-left border-collapse bg-white dark:bg-gray-900">
                         <thead>
                             <tr className="bg-gray-50 dark:bg-gray-800/50">
                                 <th className="p-6 text-sm font-bold text-gray-500 uppercase tracking-wider border-b border-gray-100 dark:border-gray-800">Key Performance Metric</th>

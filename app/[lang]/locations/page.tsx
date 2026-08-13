@@ -22,17 +22,46 @@ export default async function LocationsHubPage(props: { params: Promise<{ lang: 
   const { lang } = await props.params;
   const tier1Locations = LOCATIONS.filter(loc => TIER1_CITIES.has(loc.slug));
 
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Mexico Industrial Manufacturing Cities Directory",
-    "itemListElement": tier1Locations.map((loc, idx) => ({
-      "@type": "ListItem",
-      "position": idx + 1,
-      "name": loc.name,
-      "url": `${BASE_URL}/${lang}/locations/${loc.slug}`
-    }))
-  };
+  const schemaData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Mexico Industrial Manufacturing Cities Directory",
+      "itemListElement": tier1Locations.map((loc, idx) => ({
+        "@type": "ListItem",
+        "position": idx + 1,
+        "name": loc.name,
+        "url": `${BASE_URL}/${lang}/locations/${loc.slug}`
+      }))
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Mexico Manufacturing Hubs & Industrial City Directory",
+      "url": `${BASE_URL}/${lang}/locations`,
+      "description": "Explore top nearshore manufacturing locations across Mexico including Tijuana, Mexicali, Monterrey, Juárez, and Querétaro.",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".speakable-direct-answer",
+          ".speakable-summary",
+          ".direct-answer-capsule",
+          ".faq-answer",
+          "#faq-direct-response",
+          "h1",
+          "h2"
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${BASE_URL}/${lang}` },
+        { "@type": "ListItem", "position": 2, "name": "Locations", "item": `${BASE_URL}/${lang}/locations` }
+      ]
+    }
+  ];
 
   return (
     <main className="min-h-screen bg-gray-900 text-white py-16 px-4 md:px-8">

@@ -118,7 +118,7 @@ export const BLOG_POSTS_RAW = [
 
         <h2>The Workforce Advantage</h2>
         <p><strong>Tijuana and Mexicali provide a mature, 50-year industrial workforce that graduates over 3,000 highly skilled engineers annually from top regional universities, supporting deep ecosystems in medical devices, aerospace, and electronics.</strong></p>
-        <table class="w-full text-left border-collapse border border-gray-200 my-6">
+        <table itemscope itemType="https://schema.org/Table" class="w-full text-left border-collapse border border-gray-200 my-6">
           <thead class="bg-gray-100">
             <tr>
               <th class="border border-gray-200 px-4 py-2">Industry Sector</th>
@@ -204,7 +204,7 @@ export const BLOG_POSTS_RAW = [
 
         <h2>Labor vs. Automation</h2>
         <p><strong>Tijuana offers a highly productive "sweet spot" for skilled manufacturing labor, with fully burdened assembly operator rates averaging $7.84 per hour in 2026, delivering high-quality output matching US standards.</strong></p>
-        <table class="w-full text-left border-collapse border border-gray-200 my-6">
+        <table itemscope itemType="https://schema.org/Table" class="w-full text-left border-collapse border border-gray-200 my-6">
           <thead class="bg-gray-100">
             <tr>
               <th class="border border-gray-200 px-4 py-2">Cost Metric (2026)</th>
@@ -286,7 +286,7 @@ export const BLOG_POSTS_RAW = [
 
         <h2>Why Choose a Shelter?</h2>
         <p><strong>Foreign manufacturers overwhelming choose the shelter model because it slashes market entry timelines from 12 months down to 90 days, grants immediate VAT tax exemptions, and eliminates catastrophic Mexican labor law liability.</strong></p>
-        <table class="w-full text-left border-collapse border border-gray-200 my-6">
+        <table itemscope itemType="https://schema.org/Table" class="w-full text-left border-collapse border border-gray-200 my-6">
           <thead class="bg-gray-100">
             <tr>
               <th class="border border-gray-200 px-4 py-2">Operational Dimension</th>
@@ -369,7 +369,7 @@ export const BLOG_POSTS_RAW = [
 
         <h2>Pacifico / Nordika</h2>
         <p><strong>The Pacifico zone provides highly stable, legacy industrial frameworks offering excellent mid-tier manufacturing facilities with fluid highway access toward Rosarito and Ensenada ports.</strong></p>
-        <table class="w-full text-left border-collapse border border-gray-200 my-6">
+        <table itemscope itemType="https://schema.org/Table" class="w-full text-left border-collapse border border-gray-200 my-6">
           <thead class="bg-gray-100">
             <tr>
               <th class="border border-gray-200 px-4 py-2">Industrial Zone</th>
@@ -435,7 +435,7 @@ export const BLOG_POSTS_RAW = [
 
         <h2>Vacancy Rates & Rents</h2>
         <p><strong>Record-breaking demand for Class A Mexican industrial real estate has driven Tijuana's vacancy rates below an astonishing 2%, forcing incoming US manufacturers into competitive 6-9 month pre-leasing agreements.</strong></p>
-        <table class="w-full text-left border-collapse border border-gray-200 my-6">
+        <table itemscope itemType="https://schema.org/Table" class="w-full text-left border-collapse border border-gray-200 my-6">
           <thead class="bg-gray-100">
             <tr>
               <th class="border border-gray-200 px-4 py-2">Real Estate Metric (2025)</th>
@@ -769,6 +769,21 @@ export const BLOG_POSTS_RAW = [
   {
     "@context": "https://schema.org",
     "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".speakable-direct-answer",
+      ".speakable-summary",
+      ".direct-answer-capsule",
+      ".faq-answer",
+      "#faq-direct-response",
+      "#direct-answer-1",
+      "#direct-answer-2",
+      "#direct-answer-3",
+      "#direct-answer-4",
+      "#direct-answer-5",
+      "#direct-answer-6",
+      "h1",
+      "h2"
+    ],
     "xpath": [
       "/html/body/main/article/div[1]",
       "//*[@id='direct-answer-1']",
@@ -801,7 +816,7 @@ export const BLOG_POSTS_RAW = [
 
 <p>To help visualize these structural differences, consider this comprehensive comparison table detailing how the two models diverge structurally, financially, and operationally.</p>
 
-<table border="1" style="width:100%; text-align:left;">
+<table itemscope itemType="https://schema.org/Table" border="1" style="width:100%; text-align:left;">
   <thead>
     <tr>
       <th>Factor</th>
@@ -889,7 +904,7 @@ Under the IMMEX timeline requirements, ship the fully assembled and packaged goo
 
 <p>The cost arbitrage of Mexico is undeniable—particularly in major industrial zones hugging the US border. According to IMMEX data, over 5,000 companies operate under Mexico's shelter program as of 2026. Let's look at the financial realities associated with establishing an operation today.</p>
 
-<table border="1" style="width:100%; text-align:left;">
+<table itemscope itemType="https://schema.org/Table" border="1" style="width:100%; text-align:left;">
   <thead>
     <tr>
       <th>Cost Category</th>
@@ -950,7 +965,7 @@ Yes, both standalone maquiladoras and shelter operators utilize the IMMEX progra
       excerpt: "Discover why Mexico beats Vietnam, India, and Southeast Asia for China Plus One manufacturing. USMCA benefits, cost data, and city-by-city comparison for 2026.",
       date: "Mar 02, 2026",
       slug: "china-plus-one-strategy-mexico",
-      imageUrl: "/images/china-plus-one-strategy.png",
+      imageUrl: "/images/china-plus-one-strategy.webp",
       tags: ["China Plus One", "Nearshoring", "Supply Chain", "Mexico Manufacturing"],
       content: `
 <script type="application/ld+json">
@@ -971,7 +986,7 @@ Yes, both standalone maquiladoras and shelter operators utilize the IMMEX progra
     },
     "datePublished": "2026-03-03",
     "dateModified": "2026-03-03",
-    "image": "/images/china-plus-one-strategy.png"
+    "image": "/images/china-plus-one-strategy.webp"
   },
   {
     "@context": "https://schema.org",
@@ -1091,6 +1106,19 @@ Yes, both standalone maquiladoras and shelter operators utilize the IMMEX progra
   {
     "@context": "https://schema.org",
     "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".speakable-direct-answer",
+      ".speakable-summary",
+      ".direct-answer-capsule",
+      ".faq-answer",
+      "#faq-direct-response",
+      "#direct-answer-1",
+      "#direct-answer-2",
+      "#direct-answer-3",
+      "#direct-answer-4",
+      "h1",
+      "h2"
+    ],
     "xpath": [
       "/html/body/main/article/div[1]",
       "//*[@id='direct-answer-1']",
@@ -1114,7 +1142,7 @@ Yes, both standalone maquiladoras and shelter operators utilize the IMMEX progra
 
 <p>When Asian, European, and US companies look to diversify their supply chains, they typically evaluate Mexico against Vietnam, India, and Malaysia. While Southeast Asia might offer cheap labor, it fails to solve the two biggest structural vulnerabilities: 30-day ocean transit times and eventual tariff exposure. Mexico solves both instantly.</p>
 
-<table border="1" style="width:100%; text-align:left;">
+<table itemscope itemType="https://schema.org/Table" border="1" style="width:100%; text-align:left;">
   <thead>
     <tr>
       <th>Factor</th>
@@ -1212,7 +1240,7 @@ Yes, both standalone maquiladoras and shelter operators utilize the IMMEX progra
 <h2>Real Cost Comparison: China vs Mexico</h2>
 <p>To finalize your board-level justification, look at the Total Landed Cost. While hourly wages in rural China might appear cheaper on a spreadsheet, the aggregation of US tariffs, 30-day ocean freight, and inventory holding costs completely erase those savings. A standardized 2026 model for high-mix electronic assembly yields the following realities:</p>
 
-<table border="1" style="width:100%; text-align:left;">
+<table itemscope itemType="https://schema.org/Table" border="1" style="width:100%; text-align:left;">
   <thead>
     <tr>
       <th>Expense Line</th>
@@ -1288,7 +1316,7 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
     },
     "datePublished": "2026-03-03",
     "dateModified": "2026-03-03",
-    "image": "/images/china-plus-one-strategy.png"
+    "image": "/images/china-plus-one-strategy.webp"
   },
   {
     "@context": "https://schema.org",
@@ -1347,6 +1375,15 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
   {
     "@context": "https://schema.org",
     "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".speakable-direct-answer",
+      ".speakable-summary",
+      ".direct-answer-capsule",
+      ".faq-answer",
+      "#faq-direct-response",
+      "h1",
+      "h2"
+    ],
     "xpath": [
       "/html/body/main/article/div[1]"
     ]
@@ -1364,7 +1401,7 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
 <h2>Why Mexico Leads China Plus One Alternatives</h2>
 <div id="direct-answer-2">Mexico leads all China Plus One alternatives because it provides immediate land-border access to the massive US market, effectively eliminating trans-Pacific shipping delays and sidestepping the severe Section 301 tariffs on Asian goods through its powerful USMCA free-trade agreements.</div>
 
-<table border="1" style="width:100%; text-align:left;">
+<table itemscope itemType="https://schema.org/Table" border="1" style="width:100%; text-align:left;">
   <thead>
     <tr>
       <th>Factor</th>
@@ -1422,7 +1459,7 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
     },
     "datePublished": "2026-03-03",
     "dateModified": "2026-03-03",
-    "image": "/images/china-plus-one-strategy.png"
+    "image": "/images/china-plus-one-strategy.webp"
   },
   {
     "@context": "https://schema.org",
@@ -1481,6 +1518,15 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
   {
     "@context": "https://schema.org",
     "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".speakable-direct-answer",
+      ".speakable-summary",
+      ".direct-answer-capsule",
+      ".faq-answer",
+      "#faq-direct-response",
+      "h1",
+      "h2"
+    ],
     "xpath": [
       "/html/body/main/article/div[1]"
     ]
@@ -1498,7 +1544,7 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
 <h2>Why Mexico Leads China Plus One Alternatives</h2>
 <div id="direct-answer-2">Mexico leads all China Plus One alternatives because it provides immediate land-border access to the massive US market, effectively eliminating trans-Pacific shipping delays and sidestepping the severe Section 301 tariffs on Asian goods through its powerful USMCA free-trade agreements.</div>
 
-<table border="1" style="width:100%; text-align:left;">
+<table itemscope itemType="https://schema.org/Table" border="1" style="width:100%; text-align:left;">
   <thead>
     <tr>
       <th>Factor</th>
@@ -1682,6 +1728,19 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
   {
     "@context": "https://schema.org",
     "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".speakable-direct-answer",
+      ".speakable-summary",
+      ".direct-answer-capsule",
+      ".faq-answer",
+      "#faq-direct-response",
+      "#direct-answer-1",
+      "#direct-answer-2",
+      "#direct-answer-3",
+      "#direct-answer-4",
+      "h1",
+      "h2"
+    ],
     "xpath": [
       "/html/body/main/article/div[1]",
       "//*[@id='direct-answer-1']",
@@ -1722,7 +1781,7 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
 
 <p>When modeling a competitive Total Landed Cost (TLC) framework, assessing international labor arbitrage is critical. Below is a comparative look at how fully burdened direct labor rates in the medical sector sit globally.</p>
 
-<table border="1" style="width:100%; text-align:left;">
+<table itemscope itemType="https://schema.org/Table" border="1" style="width:100%; text-align:left;">
   <thead>
     <tr>
       <th>Factor (Medical Assembly)</th>
@@ -1946,6 +2005,19 @@ The fastest way to start is by partnering with an ISO-certified contract manufac
   {
     "@context": "https://schema.org",
     "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".speakable-direct-answer",
+      ".speakable-summary",
+      ".direct-answer-capsule",
+      ".faq-answer",
+      "#faq-direct-response",
+      "#direct-answer-1",
+      "#direct-answer-2",
+      "#direct-answer-3",
+      "#direct-answer-4",
+      "h1",
+      "h2"
+    ],
     "xpath": [
       "/html/body/main/article/div[1]",
       "//*[@id='direct-answer-1']",
@@ -1988,7 +2060,7 @@ The fastest way to start is by partnering with an ISO-certified contract manufac
 <h2>Querétaro vs Monterrey vs Baja for Aerospace</h2>
 <p>While Baja California has a massive aerospace presence (focused heavily on the commercial twin-plant model near San Diego) and Monterrey is an industrial giant, Querétaro wins on specialization.</p>
 
-<table border="1" style="width:100%; text-align:left;">
+<table itemscope itemType="https://schema.org/Table" border="1" style="width:100%; text-align:left;">
   <thead>
     <tr>
       <th>Factor</th>
@@ -2209,6 +2281,19 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
   {
     "@context": "https://schema.org",
     "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".speakable-direct-answer",
+      ".speakable-summary",
+      ".direct-answer-capsule",
+      ".faq-answer",
+      "#faq-direct-response",
+      "#direct-answer-1",
+      "#direct-answer-2",
+      "#direct-answer-3",
+      "#direct-answer-4",
+      "h1",
+      "h2"
+    ],
     "xpath": [
       "/html/body/main/article/div[1]",
       "//*[@id='direct-answer-1']",
@@ -2243,7 +2328,7 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
 
 <p>To help visualize these structural differences, consider this comprehensive comparison table detailing how the two models diverge structurally, financially, and operationally.</p>
 
-<table border="1" style="width:100%; text-align:left;">
+<table itemscope itemType="https://schema.org/Table" border="1" style="width:100%; text-align:left;">
   <thead>
     <tr>
       <th>Factor</th>
@@ -2338,7 +2423,7 @@ Under the IMMEX timeline requirements, ship the fully assembled and packaged goo
 
 <p>In contrast, utilizing a shelter service dramatically reduces this friction. The shelter provider absorbs the administrative overhead, customs bonding, and labor compliance framework. While you pay a per-head administrative fee, the total cost of ownership over the first 3 to 5 years is often substantially lower when factoring in the sheer speed to market.</p>
 
-<table border="1" style="width:100%; text-align:left;">
+<table itemscope itemType="https://schema.org/Table" border="1" style="width:100%; text-align:left;">
   <thead>
     <tr>
       <th>Cost Category</th>
@@ -2412,7 +2497,7 @@ Yes, both standalone maquiladoras and shelter operators utilize the IMMEX progra
       excerpt: "Discover why Mexico beats Vietnam, India, and Southeast Asia for China Plus One manufacturing. USMCA benefits, cost data, and city-by-city comparison for 2026.",
       date: "Mar 02, 2026",
       slug: "china-plus-one-strategy-mexico",
-      imageUrl: "/images/china-plus-one-strategy.png",
+      imageUrl: "/images/china-plus-one-strategy.webp",
       tags: ["China Plus One", "Nearshoring", "Supply Chain", "Mexico Manufacturing"],
       content: `
 <script type="application/ld+json">
@@ -2433,7 +2518,7 @@ Yes, both standalone maquiladoras and shelter operators utilize the IMMEX progra
     },
     "datePublished": "2026-03-03",
     "dateModified": "2026-03-03",
-    "image": "/images/china-plus-one-strategy.png"
+    "image": "/images/china-plus-one-strategy.webp"
   },
   {
     "@context": "https://schema.org",
@@ -2553,6 +2638,18 @@ Yes, both standalone maquiladoras and shelter operators utilize the IMMEX progra
   {
     "@context": "https://schema.org",
     "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".speakable-direct-answer",
+      ".speakable-summary",
+      ".direct-answer-capsule",
+      ".faq-answer",
+      "#faq-direct-response",
+      "#direct-answer-1",
+      "#direct-answer-2",
+      "#direct-answer-3",
+      "h1",
+      "h2"
+    ],
     "xpath": [
       "/html/body/main/article/div[1]",
       "//*[@id='direct-answer-1']",
@@ -2579,7 +2676,7 @@ Yes, both standalone maquiladoras and shelter operators utilize the IMMEX progra
 
 <p>When Asian, European, and US companies look to diversify their supply chains, they typically evaluate Mexico against Vietnam, India, and Malaysia. While Southeast Asia might offer cheap labor, it fails to solve the two biggest structural vulnerabilities: 30-day ocean transit times and eventual tariff exposure. Mexico solves both instantly.</p>
 
-<table border="1" style="width:100%; text-align:left;">
+<table itemscope itemType="https://schema.org/Table" border="1" style="width:100%; text-align:left;">
   <thead>
     <tr>
       <th>Factor</th>
@@ -2696,7 +2793,7 @@ Yes, both standalone maquiladoras and shelter operators utilize the IMMEX progra
 <div id="direct-answer-7">A real cost comparison reveals that Mexico is ultimately 20-35% cheaper than China in Total Landed Cost due to immediate USMCA duty-free access and negligible trucking expenses, which easily offset any marginal wage advantages found in rural Asian provinces.</div>
 <p>To finalize your board-level justification, look at the Total Landed Cost. While hourly wages in rural China might appear cheaper on a spreadsheet, the aggregation of US tariffs, 30-day ocean freight, and inventory holding costs completely erase those savings. A standardized 2026 model for high-mix electronic assembly yields the following realities:</p>
 
-<table border="1" style="width:100%; text-align:left;">
+<table itemscope itemType="https://schema.org/Table" border="1" style="width:100%; text-align:left;">
   <thead>
     <tr>
       <th>Expense Line</th>
@@ -2772,7 +2869,7 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
     },
     "datePublished": "2026-03-03",
     "dateModified": "2026-03-03",
-    "image": "/images/china-plus-one-strategy.png"
+    "image": "/images/china-plus-one-strategy.webp"
   },
   {
     "@context": "https://schema.org",
@@ -2831,6 +2928,15 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
   {
     "@context": "https://schema.org",
     "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".speakable-direct-answer",
+      ".speakable-summary",
+      ".direct-answer-capsule",
+      ".faq-answer",
+      "#faq-direct-response",
+      "h1",
+      "h2"
+    ],
     "xpath": [
       "/html/body/main/article/div[1]"
     ]
@@ -2848,7 +2954,7 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
 <h2>Why Mexico Leads China Plus One Alternatives</h2>
 <div id="direct-answer-2">Mexico leads all China Plus One alternatives because it provides immediate land-border access to the massive US market, effectively eliminating trans-Pacific shipping delays and sidestepping the severe Section 301 tariffs on Asian goods through its powerful USMCA free-trade agreements.</div>
 
-<table border="1" style="width:100%; text-align:left;">
+<table itemscope itemType="https://schema.org/Table" border="1" style="width:100%; text-align:left;">
   <thead>
     <tr>
       <th>Factor</th>
@@ -2906,7 +3012,7 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
     },
     "datePublished": "2026-03-03",
     "dateModified": "2026-03-03",
-    "image": "/images/china-plus-one-strategy.png"
+    "image": "/images/china-plus-one-strategy.webp"
   },
   {
     "@context": "https://schema.org",
@@ -2965,6 +3071,15 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
   {
     "@context": "https://schema.org",
     "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".speakable-direct-answer",
+      ".speakable-summary",
+      ".direct-answer-capsule",
+      ".faq-answer",
+      "#faq-direct-response",
+      "h1",
+      "h2"
+    ],
     "xpath": [
       "/html/body/main/article/div[1]"
     ]
@@ -2982,7 +3097,7 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
 <h2>Why Mexico Leads China Plus One Alternatives</h2>
 <div id="direct-answer-2">Mexico leads all China Plus One alternatives because it provides immediate land-border access to the massive US market, effectively eliminating trans-Pacific shipping delays and sidestepping the severe Section 301 tariffs on Asian goods through its powerful USMCA free-trade agreements.</div>
 
-<table border="1" style="width:100%; text-align:left;">
+<table itemscope itemType="https://schema.org/Table" border="1" style="width:100%; text-align:left;">
   <thead>
     <tr>
       <th>Factor</th>
@@ -3166,6 +3281,20 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
   {
     "@context": "https://schema.org",
     "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".speakable-direct-answer",
+      ".speakable-summary",
+      ".direct-answer-capsule",
+      ".faq-answer",
+      "#faq-direct-response",
+      "#direct-answer-1",
+      "#direct-answer-2",
+      "#direct-answer-3",
+      "#direct-answer-4",
+      "#direct-answer-5",
+      "h1",
+      "h2"
+    ],
     "xpath": [
       "/html/body/main/article/div[1]",
       "//*[@id='direct-answer-1']",
@@ -3211,7 +3340,7 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
 
 <p>Furthermore, local universities like CETYS and UABC are graduating thousands of bilingual biomedical and mechanical engineers every year perfectly calibrated to manage complex ISO 13485 production lines. When modeling a competitive Total Landed Cost (TLC) framework, assessing this specific, highly trained international labor arbitrage is critical. Below is a comparative look at how fully burdened direct labor rates in the medical sector sit globally.</p>
 
-<table border="1" style="width:100%; text-align:left;">
+<table itemscope itemType="https://schema.org/Table" border="1" style="width:100%; text-align:left;">
   <thead>
     <tr>
       <th>Factor (Medical Assembly)</th>
@@ -3439,6 +3568,19 @@ The fastest way to start is by partnering with an ISO-certified contract manufac
   {
     "@context": "https://schema.org",
     "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".speakable-direct-answer",
+      ".speakable-summary",
+      ".direct-answer-capsule",
+      ".faq-answer",
+      "#faq-direct-response",
+      "#direct-answer-1",
+      "#direct-answer-2",
+      "#direct-answer-3",
+      "#direct-answer-4",
+      "h1",
+      "h2"
+    ],
     "xpath": [
       "/html/body/main/article/div[1]",
       "//*[@id='direct-answer-1']",
@@ -3481,7 +3623,7 @@ The fastest way to start is by partnering with an ISO-certified contract manufac
 <h2>Querétaro vs Monterrey vs Baja for Aerospace</h2>
 <p>While Baja California has a massive aerospace presence (focused heavily on the commercial twin-plant model near San Diego) and Monterrey is an industrial giant, Querétaro wins on specialization.</p>
 
-<table border="1" style="width:100%; text-align:left;">
+<table itemscope itemType="https://schema.org/Table" border="1" style="width:100%; text-align:left;">
   <thead>
     <tr>
       <th>Factor</th>
@@ -3588,7 +3730,7 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
 <h2>Step 1: Choose Your Entry Model</h2>
 <div id="direct-answer-1">There are three legal structures for US companies manufacturing in Mexico: (1) contract manufacturing — hire an existing Mexican manufacturer; (2) shelter service — use a Mexican legal entity as employer of record with your own production; (3) direct maquiladora — form your own Mexican subsidiary. The right choice depends on volume, timeline, and control requirements.</div>
 
-<table>
+<table itemscope itemType="https://schema.org/Table">
   <thead>
     <tr>
       <th>Model</th>
@@ -3739,7 +3881,7 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
       <h2>Executive Comparison: Section 321 vs. IMMEX</h2>
       <p>While often mentioned together in nearshoring strategies, <strong>Section 321</strong> and <strong>IMMEX</strong> are distinct legal regimes under two different national customs authorities:</p>
 
-      <table class="w-full text-left border-collapse border border-gray-200 my-6">
+      <table itemscope itemType="https://schema.org/Table" class="w-full text-left border-collapse border border-gray-200 my-6">
         <thead class="bg-gray-100">
           <tr>
             <th class="border border-gray-200 px-4 py-2">Operational Dimension</th>

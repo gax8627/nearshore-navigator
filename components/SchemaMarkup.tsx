@@ -11,7 +11,7 @@ export default function SchemaMarkup() {
         "@type": "Organization",
         "name": "Nearshore Navigator",
         "url": "https://nearshorenavigator.com",
-        "logo": "https://nearshorenavigator.com/logo.png",
+        "logo": "https://nearshorenavigator.com/logo.webp",
         "description": "Your partner for industrial nearshoring, shelter services, and contract manufacturing in Tijuana, Mexico.",
         "contactPoint": {
             "@type": "ContactPoint",
@@ -43,7 +43,7 @@ export default function SchemaMarkup() {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Nearshore Navigator Mexico Operations",
-        "image": "https://nearshorenavigator.com/logo.png",
+        "image": "https://nearshorenavigator.com/logo.webp",
         "@id": "https://nearshorenavigator.com/#mexico-office",
         "url": "https://nearshorenavigator.com",
         "telephone": "+52-664-123-7199",
@@ -67,14 +67,26 @@ export default function SchemaMarkup() {
             "opens": "09:00",
             "closes": "17:00"
         },
-        "priceRange": "$$$$"
+        "priceRange": "$$$$",
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [
+                ".speakable-direct-answer",
+                ".speakable-summary",
+                ".direct-answer-capsule",
+                ".faq-answer",
+                "#faq-direct-response",
+                "h1",
+                "h2"
+            ]
+        }
     };
 
     const mexicaliBusinessSchema = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Nearshore Navigator Mexicali Operations",
-        "image": "https://nearshorenavigator.com/logo.png",
+        "image": "https://nearshorenavigator.com/logo.webp",
         "@id": "https://nearshorenavigator.com/#mexicali-office",
         "url": "https://nearshorenavigator.com",
         "telephone": "+52-664-123-7199",
@@ -106,6 +118,18 @@ export default function SchemaMarkup() {
         "provider": {
             "@type": "Organization",
             "name": "Nearshore Navigator"
+        },
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [
+                ".speakable-direct-answer",
+                ".speakable-summary",
+                ".direct-answer-capsule",
+                ".faq-answer",
+                "#faq-direct-response",
+                "h1",
+                "h2"
+            ]
         },
         "hasOfferCatalog": {
             "@type": "OfferCatalog",

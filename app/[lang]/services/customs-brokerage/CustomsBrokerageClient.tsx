@@ -362,7 +362,7 @@ export default function CustomsBrokerageClient() {
         </div>
 
         <div className="overflow-x-auto rounded-2xl border border-gray-800 bg-gray-900/60 shadow-2xl">
-          <table className="w-full text-left border-collapse">
+          <table itemScope itemType="https://schema.org/Table" className="w-full text-left border-collapse">
             <thead>
               <tr className="border-b border-gray-800 bg-gray-900 text-xs sm:text-sm text-gray-300 uppercase tracking-wider">
                 <th className="py-5 px-6 font-bold w-1/4">{t('customsPage.compHeaderFeature') || "Operational Feature"}</th>

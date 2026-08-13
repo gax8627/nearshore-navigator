@@ -9,7 +9,7 @@ import { Metadata } from "next";
 const BLOG_INDEXABLE_LANGS = new Set(['en', 'es', 'de', 'ja']);
 
 function formatImageUrl(imageUrl: string, baseUrl: string = 'https://nearshorenavigator.com'): string {
-  if (!imageUrl) return `${baseUrl}/images/nearshore-logo-brand.png`;
+  if (!imageUrl) return `${baseUrl}/images/nearshore-logo-brand.webp`;
   if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
     return imageUrl;
   }
@@ -99,8 +99,20 @@ function getStructuredData(post: BlogPostType, lang: string) {
       "name": "Nearshore Navigator",
       "logo": {
         "@type": "ImageObject",
-        "url": `${baseUrl}/images/nearshore-logo-brand.png`
+        "url": `${baseUrl}/images/nearshore-logo-brand.webp`
       }
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".speakable-direct-answer",
+        ".speakable-summary",
+        ".direct-answer-capsule",
+        ".faq-answer",
+        "#faq-direct-response",
+        "h1",
+        "h2"
+      ]
     }
   };
 

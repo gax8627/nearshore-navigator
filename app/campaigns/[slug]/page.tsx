@@ -8,25 +8,25 @@ const campaignData: Record<string, { title: string; subtitle: string; heroImage:
   'cnc-machining': {
     title: 'Precision CNC Machining in Mexico',
     subtitle: 'Reduce costs by up to 40% while maintaining AS9100 and ISO 9001 quality standards. Find your ideal nearshore manufacturing partner today.',
-    heroImage: '/images/hero/factory-floor.png',
+    heroImage: '/images/hero/factory-floor.webp',
     features: ['Access to certified machinists', 'Same time-zone collaboration', 'IP Protection guarantees', 'Logistics and cross-border support']
   },
   'medical-device': {
     title: 'Medical Device Manufacturing Nearshore',
     subtitle: 'Accelerate your time to market with ISO 13485 certified facilities just minutes from the US border.',
-    heroImage: '/images/hero/medical-facility.png',
+    heroImage: '/images/hero/medical-facility.webp',
     features: ['Class II and III device experience', 'Cleanroom assembly (ISO Class 7/8)', 'FDA registered facilities', 'Supply chain resilience']
   },
   'furniture': {
     title: 'Contract Furniture Manufacturing',
     subtitle: 'Scale your furniture brand with high-quality upholstery, woodcraft, and metal fabrication in Mexico.',
-    heroImage: '/images/hero/furniture-shop.png',
+    heroImage: '/images/hero/furniture-shop.webp',
     features: ['Skilled artisans and upholstery', 'Sustainably sourced materials', 'Fast prototyping and scaling', 'Direct-to-consumer fulfillment options']
   },
   'nearshore-marketing': {
     title: 'Nearshore Marketing OS',
     subtitle: 'Automate your B2B marketing engine with AI-driven lead enrichment, CRM routing, and LinkedIn content generation for a flat $3,450/month retainer.',
-    heroImage: '/images/hero/marketing_hero.png',
+    heroImage: '/images/hero/marketing_hero.webp',
     features: ['Automated CRM Routing', 'AI Lead Enrichment', 'Autonomous LinkedIn Content', 'Live Growth ROI Dashboards']
   }
 };

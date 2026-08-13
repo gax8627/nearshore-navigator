@@ -59,7 +59,19 @@ export default function CallCenterPage() {
                     "serviceType": "Business Process Outsourcing",
                     "areaServed": { "@type": "City", "name": "Tijuana", "address": { "@type": "PostalAddress", "addressRegion": "Baja California", "addressCountry": "MX" } },
                     "description": "World-class call center and BPO operations in Tijuana with 50,000+ bilingual agents, PST time-zone alignment, and 40–60% labor cost savings vs. the US.",
-                    "offers": { "@type": "Offer", "url": "https://nearshorenavigator.com/en/services/call-center-tijuana" }
+                    "offers": { "@type": "Offer", "url": "https://nearshorenavigator.com/en/services/call-center-tijuana" },
+                    "speakable": {
+                        "@type": "SpeakableSpecification",
+                        "cssSelector": [
+                            ".speakable-direct-answer",
+                            ".speakable-summary",
+                            ".direct-answer-capsule",
+                            ".faq-answer",
+                            "#faq-direct-response",
+                            "h1",
+                            "h2"
+                        ]
+                    }
                 }) }}
             />
             <script

@@ -120,7 +120,7 @@ export function Navbar() {
                     <Link href={`/${language}`} className="flex items-center group" aria-label="Nearshore Navigator Home">
                         <div className="relative w-44 md:w-60 h-12 md:h-16 transition-all group-hover:scale-105 duration-300">
                             <Image
-                                src="/images/nearshore-logo-brand.png"
+                                src="/images/nearshore-logo-brand.webp"
                                 alt="Nearshore Navigator Logo"
                                 fill
                                 className="object-contain dark:brightness-[1.2] dark:contrast-[1.1] dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.1)]"

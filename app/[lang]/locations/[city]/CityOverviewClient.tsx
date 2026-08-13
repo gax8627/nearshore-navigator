@@ -60,7 +60,29 @@ export default function CityOverviewClient({ city }: Props) {
       "@type": "Organization",
       "name": "Nearshore Navigator",
       "url": "https://nearshorenavigator.com"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".speakable-direct-answer",
+        ".speakable-summary",
+        ".direct-answer-capsule",
+        ".faq-answer",
+        "#faq-direct-response",
+        "h1",
+        "h2"
+      ]
     }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": `https://nearshorenavigator.com/${language}` },
+      { "@type": "ListItem", "position": 2, "name": "Locations", "item": `https://nearshorenavigator.com/${language}/locations` },
+      { "@type": "ListItem", "position": 3, "name": location.name, "item": `https://nearshorenavigator.com/${language}/locations/${city}` }
+    ]
   };
 
   return (
@@ -68,6 +90,10 @@ export default function CityOverviewClient({ city }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">

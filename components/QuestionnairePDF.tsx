@@ -103,98 +103,124 @@ const styles = StyleSheet.create({
   }
 });
 
-const PdfField = ({ label, lines = 1 }: { label: string, lines?: number }) => (
+export interface QuestionnairePDFProps {
+  companyName?: string;
+  contactName?: string;
+  email?: string;
+  pdfRequested?: string;
+  sqft?: string;
+  productType?: string;
+  dailyVolume?: string;
+  estimatedSavings?: string;
+  landedCostIndex?: string;
+  generatedDate?: string;
+  data?: Record<string, string>;
+}
+
+const PdfField = ({ label, value, lines = 1 }: { label: string; value?: string; lines?: number }) => (
   <View style={[styles.row, { alignItems: 'flex-start' }]}>
     <Text style={styles.fieldLabel}>{label}</Text>
     <View style={{ width: '60%' }}>
-      {Array.from({ length: lines }).map((_, i) => (
-        <View key={i} style={[
-            styles.fieldValue, 
-            { width: '100%', marginTop: i > 0 ? 8 : 0 } 
-        ]} />
-      ))}
+      {value ? (
+        <Text style={{ fontSize: 9, color: '#111827', fontWeight: 'bold', paddingBottom: 2 }}>{value}</Text>
+      ) : (
+        Array.from({ length: lines }).map((_, i) => (
+          <View key={i} style={[
+              styles.fieldValue, 
+              { width: '100%', marginTop: i > 0 ? 8 : 0 } 
+          ]} />
+        ))
+      )}
     </View>
   </View>
 );
 
-export const QuestionnairePDF = () => (
-  <Document>
-    <Page size="A4" style={styles.page}>
-      
-      {/* Header */}
-      <View style={styles.header}>
-        <View style={styles.headerLeft}>
-          <Text style={styles.title}>Nearshore Navigator</Text>
-          <Text style={styles.subtitle}>Industrial Logistics • Baja California</Text>
+export const QuestionnairePDF: React.FC<QuestionnairePDFProps> = ({
+  companyName,
+  contactName,
+  email,
+  pdfRequested,
+  sqft,
+  productType,
+  dailyVolume,
+  estimatedSavings,
+  landedCostIndex,
+  generatedDate,
+  data = {},
+}) => {
+  const compName = companyName || data.company || 'Client Organization';
+  const name = contactName || data.name || 'Valued Partner';
+  const mail = email || data.email || 'N/A';
+  const dateStr = generatedDate || new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+  return (
+    <Document>
+      <Page size="A4" style={styles.page}>
+        
+        {/* Header */}
+        <View style={styles.header}>
+          <View style={styles.headerLeft}>
+            <Text style={styles.title}>Nearshore Navigator</Text>
+            <Text style={styles.subtitle}>Industrial Logistics • Baja California</Text>
+          </View>
+          <View style={styles.headerRight}>
+            <Text style={styles.docTitle}>{pdfRequested || 'Landed Cost & 3PL Report'}</Text>
+            <Text style={styles.confidential}>CONFIDENTIAL • {dateStr}</Text>
+          </View>
         </View>
-        <View style={styles.headerRight}>
-          <Text style={styles.docTitle}>3PL Operation Questionnaire</Text>
-          <Text style={styles.confidential}>CONFIDENTIAL • {new Date().getFullYear()}</Text>
+
+        {/* Client Metadata Summary Block */}
+        <View style={{ backgroundColor: '#F3F4F6', padding: 8, borderRadius: 4, marginBottom: 14 }}>
+          <Text style={{ fontSize: 9, fontWeight: 'bold', color: '#1F2937' }}>
+            Prepared For: {compName} ({name} - {mail})
+          </Text>
+          <Text style={{ fontSize: 8, color: '#4B5563', marginTop: 2 }}>
+            Custom Nearshore Feasibility Analysis • Baja California Manufacturing Corridor
+          </Text>
         </View>
-      </View>
 
-      <Text style={{ fontStyle: 'italic', marginBottom: 20, fontSize: 9, color: '#666' }}>
-        Please complete this assessment to help us engineer your optimal supply chain solution.
-      </Text>
-
-      {/* Section 1 */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>1. Operational Basics</Text>
-        <PdfField label="1. Total square footage required?" />
-        <PdfField label="2. Type of products?" lines={2} />
-        <PdfField label="3. Product presentation?" />
-        <PdfField label="4. Dimensions (L x W x H)?" />
-        <PdfField label="5. Avg. Weight per pallet?" />
-      </View>
-
-      {/* Section 2 */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>2. Inventory & Handling</Text>
-        <PdfField label="6. Tariff fractions/HS Codes?" />
-        <PdfField label="7. Hazmat / Dangerous Goods?" />
-        <PdfField label="8. Max stackability (levels)?" />
-        <PdfField label="9. Daily order volume?" />
-        <PdfField label="10. Avg. pieces per order?" />
-        <PdfField label="11. Processing requirements?" lines={2} />
-      </View>
-
-      {/* Section 3 */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>3. Systems & Connectivity</Text>
-        <View style={styles.row}>
-            <Text style={styles.fieldLabel}>13. Order Transmission Method:</Text>
+        {/* Section 1 */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>1. Operational Blueprint</Text>
+          <PdfField label="1. Total square footage required?" value={sqft || data.q1} />
+          <PdfField label="2. Type of products?" value={productType || data.q2} lines={2} />
+          <PdfField label="3. Product presentation?" value={data.q3} />
+          <PdfField label="4. Dimensions (L x W x H)?" value={data.q4} />
+          <PdfField label="5. Avg. Weight per pallet?" value={data.q5} />
         </View>
-        <View style={styles.checkboxGroup}>
-             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <View style={styles.checkbox} />
-                <Text style={styles.checkboxLabel}>EDI</Text>
-             </View>
-             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <View style={styles.checkbox} />
-                <Text style={styles.checkboxLabel}>Email</Text>
-             </View>
-             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <View style={styles.checkbox} />
-                <Text style={styles.checkboxLabel}>API</Text>
-             </View>
-        </View>
-        <View style={{ marginTop: 10 }}>
-            <PdfField label="14. Current ERP / WMS System?" />
-        </View>
-      </View>
 
-       {/* Section 4 */}
-       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>4. Volume & Logistics</Text>
-        <PdfField label="15. Est. personnel required?" />
-        <PdfField label="16. Total pallet positions?" />
-        <PdfField label="17. Inbound trailers per week?" />
-      </View>
+        {/* Section 2 */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>2. Inventory, Handling & Cost Benchmarks</Text>
+          <PdfField label="6. Tariff fractions/HS Codes?" value={data.q6} />
+          <PdfField label="7. Hazmat / Dangerous Goods?" value={data.q7} />
+          <PdfField label="8. Max stackability (levels)?" value={data.q8} />
+          <PdfField label="9. Daily order volume?" value={dailyVolume || data.q9} />
+          <PdfField label="10. Est. Labor / Landed Savings:" value={estimatedSavings || landedCostIndex || data.q32 || '35% - 52% vs US Base'} />
+          <PdfField label="11. Processing requirements?" value={data.q11} lines={2} />
+        </View>
 
-      {/* Footer */}
-      <Text style={styles.footer}>
-        www.nearshorenavigator.com • Tijuana, Baja California, Mexico
-      </Text>
-    </Page>
-  </Document>
-);
+        {/* Section 3 */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>3. Systems & Connectivity</Text>
+          <PdfField label="13. Order Transmission Method:" value={data.q13 || 'EDI / API Integrated'} />
+          <PdfField label="14. Current ERP / WMS System?" value={data.q14} />
+        </View>
+
+         {/* Section 4 */}
+         <View style={styles.section}>
+          <Text style={styles.sectionTitle}>4. Volume & Logistics Strategy</Text>
+          <PdfField label="15. Est. personnel required?" value={data.q15 || data.q6} />
+          <PdfField label="16. Total pallet positions?" value={data.q16 || data.q20} />
+          <PdfField label="17. Shelter / Direct Operation:" value={data.q35 || 'Baja California IMMEX Shelter Model'} />
+        </View>
+
+        {/* Footer */}
+        <Text style={styles.footer}>
+          www.nearshorenavigator.com • Tijuana, Baja California, Mexico
+        </Text>
+      </Page>
+    </Document>
+  );
+};
+

@@ -49,6 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/services/distribution-centers-tijuana',
         '/services/call-center-tijuana',
         '/services/nearshore-marketing',
+        '/services/asian-capital-expansion',
         '/services/distribution-centers-tijuana/section-321-guide',
         ...blogPaths,
     ];

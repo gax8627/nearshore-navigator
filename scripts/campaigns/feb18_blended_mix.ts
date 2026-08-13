@@ -94,7 +94,7 @@ function wrapHtml(content: string, ctaText: string, ctaUrl: string) {
                 <table border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 48px;">
                   <tr>
                     <td>
-                      <img src="https://nearshorenavigator.com/images/nearshore-logo-v5.png" alt="Nearshore Navigator" width="200" style="display: block; width: 200px; height: auto;" />
+                      <img src="https://nearshorenavigator.com/images/nearshore-logo-v5.webp" alt="Nearshore Navigator" width="200" style="display: block; width: 200px; height: auto;" />
                     </td>
                   </tr>
                 </table>

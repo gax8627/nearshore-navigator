@@ -35,6 +35,25 @@ export default async function Section321GuidePage(props: { params: Promise<{ lan
         },
         {
             "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Section 321 Master Guide | Tijuana Distribution Centers",
+            "url": `https://nearshorenavigator.com/${lang}/services/distribution-centers-tijuana/section-321-guide`,
+            "description": "Navigate the de minimis suspension and discover compliant Section 321 distribution strategies in Mexico.",
+            "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": [
+                    ".speakable-direct-answer",
+                    ".speakable-summary",
+                    ".direct-answer-capsule",
+                    ".faq-answer",
+                    "#faq-direct-response",
+                    "h1",
+                    "h2"
+                ]
+            }
+        },
+        {
+            "@context": "https://schema.org",
             "@type": "HowTo",
             "name": "How to Set Up Section 321 Distribution from a Tijuana Distribution Center",
             "description": "Step-by-step guide to establishing compliant Section 321 de minimis cross-border distribution operations using Tijuana as a nearshore fulfillment hub.",
