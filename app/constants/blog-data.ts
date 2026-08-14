@@ -3943,19 +3943,17 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
     `
   },
   {
-    id: "usmca-2026-joint-review-rules-of-origin",
-    slug: "usmca-2026-joint-review-rules-of-origin",
     title: "USMCA 2026 Joint Review & Rules of Origin: Trade Compliance, RVC & Nearshore Guide",
     excerpt: "Master the July 2026 USMCA Joint Review under Article 34.7, 75% Regional Value Content (RVC) net cost formulas, $16/hr LVC audits, and customs brokerage strategies for Mexico nearshoring.",
-    date: "August 13, 2026",
-    author: {
-      name: "Denisse Martinez",
-      title: "Marketing & Supply Chain Strategy Director",
-      avatar: "/images/denisse-martinez.webp"
-    },
-    category: "Trade & Compliance",
-    readTime: "15 min read",
-    image: "/images/china-plus-one-strategy.webp",
+    date: "Aug 13, 2026",
+    slug: "usmca-2026-joint-review-rules-of-origin",
+    imageUrl: "/images/china-plus-one-strategy.webp",
+    tags: ["USMCA 2026", "Rules of Origin", "Customs Brokerage", "Trade Compliance", "Tijuana"],
+    faqSchema: [
+      { q: "What is the 2026 USMCA Joint Review under Article 34.7?", a: "The 2026 USMCA Joint Review is a mandatory 6-year evaluation conducted by the trade representatives of the United States, Mexico, and Canada under Article 34.7. It assesses the functioning of the agreement, audits Rules of Origin compliance, reviews Labor Value Content (LVC) benchmarks, and determines whether to extend USMCA's 16-year term for another full 16-year period." },
+      { q: "How is Regional Value Content (RVC) calculated under USMCA?", a: "RVC is calculated using the Net Cost Method: RVC = ((NC - VNM) / NC) * 100, where NC is net production cost and VNM is the value of non-originating imported materials. Automotive passenger vehicles and heavy industrial machinery mandate a strict 75% RVC Net Cost threshold." },
+      { q: "What are the Labor Value Content (LVC) requirements for automotive manufacturing in Mexico?", a: "Under USMCA Article 3, 40% to 45% of a qualifying vehicle or industrial product must originate from manufacturing facilities where direct production workers earn a minimum baseline wage of $16.00 USD per hour." }
+    ],
     content: `
       <script type="application/ld+json">
       [
