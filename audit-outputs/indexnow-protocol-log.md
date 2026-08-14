@@ -1,9 +1,9 @@
 # ⚡ IndexNow Protocol & Sitemap Audit Log
 
 **Target Domain:** `nearshorenavigator.com`  
-**Date:** 2026-08-13  
+**Date:** 2026-08-14  
 **Auditor:** Senior SEO & AEO Competitive Analyst  
-**Total Static URLs Discovered:** **954**  
+**Total Static URLs Discovered:** **960**  
 **IndexNow Key:** `9c6ec652f75d4967a5f6e8c894982637`  
 **Key Location:** `https://nearshorenavigator.com/9c6ec652f75d4967a5f6e8c894982637.txt`  
 
@@ -11,7 +11,7 @@
 
 ## 📌 Executive Summary
 
-Nearshore Navigator’s sitemap engine dynamically generates **954 static SSG URLs** across 6 indexable global locales (`en`, `es`, `de`, `ja`, `zh`, `ko` — 159 URLs per locale). This audit verifies IndexNow protocol payload formatting, multi-engine ping responses (Bing, Yandex, Naver, Seznam, Yep, IndexNow Central), Google Search Console API status, and AI crawler accessibility across traditional search engines and LLM/AI RAG platforms (SearchGPT, Perplexity, Claude, Gemini).
+Nearshore Navigator’s sitemap engine dynamically generates **960 static SSG URLs** across 6 indexable global locales (`en`, `es`, `de`, `ja`, `zh`, `ko` — 159 URLs per locale). This audit verifies IndexNow protocol payload formatting, multi-engine ping responses (Bing, Yandex, Naver, Seznam, Yep, IndexNow Central), Google Search Console API status, and AI crawler accessibility across traditional search engines and LLM/AI RAG platforms (SearchGPT, Perplexity, Claude, Gemini).
 
 ---
 

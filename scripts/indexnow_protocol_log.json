@@ -1,68 +1,76 @@
 {
-  "timestamp": "2026-08-13T18:35:23.953Z",
-  "totalUrlsDiscovered": 954,
+  "timestamp": "2026-08-14T02:06:54.417Z",
+  "totalUrlsDiscovered": 960,
   "localeBreakdown": {
-    "en": 159,
-    "es": 159,
-    "de": 159,
-    "ja": 159,
-    "zh": 159,
-    "ko": 159
+    "en": 160,
+    "es": 160,
+    "de": 160,
+    "ja": 160,
+    "zh": 160,
+    "ko": 160
   },
   "googleGsc": {
     "success": false,
-    "message": "GSC API Submission failed: request to https://oauth2.googleapis.com/token failed, reason: getaddrinfo ENOTFOUND oauth2.googleapis.com"
+    "message": "GSC API Submission failed: invalid_grant"
   },
   "googlePing": {
     "success": false,
-    "message": "Google Legacy Ping failed: fetch failed"
+    "status": 404,
+    "message": "Google Sitemap Ping response: HTTP 404"
   },
   "indexNowProtocol": {
-    "submittedUrls": 954,
+    "submittedUrls": 960,
     "batchCount": 1,
     "endpoints": [
       {
         "engine": "Bing",
         "endpoint": "https://www.bing.com/indexnow",
-        "success": false,
-        "message": "Fetch failed: fetch failed"
+        "status": 200,
+        "success": true,
+        "message": "HTTP 200 OK (Payload accepted for 960 URLs)"
       },
       {
         "engine": "IndexNow Central",
         "endpoint": "https://api.indexnow.org/indexnow",
-        "success": false,
-        "message": "Fetch failed: fetch failed"
+        "status": 200,
+        "success": true,
+        "message": "HTTP 200 OK (Payload accepted for 960 URLs)"
       },
       {
         "engine": "Yandex",
         "endpoint": "https://yandex.com/indexnow",
-        "success": false,
-        "message": "Fetch failed: fetch failed"
+        "status": 200,
+        "success": true,
+        "message": "HTTP 200 OK (Payload accepted for 960 URLs)"
       },
       {
         "engine": "Naver",
         "endpoint": "https://searchadvisor.naver.com/indexnow",
-        "success": false,
-        "message": "Fetch failed: fetch failed"
+        "status": 200,
+        "success": true,
+        "message": "HTTP 200 OK (Payload accepted for 960 URLs)"
       },
       {
         "engine": "Seznam",
         "endpoint": "https://search.seznam.cz/indexnow",
-        "success": false,
-        "message": "Fetch failed: fetch failed"
+        "status": 200,
+        "success": true,
+        "message": "HTTP 200 OK (Payload accepted for 960 URLs)"
       },
       {
         "engine": "Yep (Ahrefs)",
         "endpoint": "https://indexnow.yep.com/indexnow",
-        "success": false,
-        "message": "Fetch failed: fetch failed"
+        "status": 200,
+        "success": true,
+        "message": "HTTP 200 OK (Payload accepted for 960 URLs)"
       }
     ],
     "overallSuccess": true
   },
   "bingPing": {
     "success": false,
-    "message": "Bing Sitemap Ping failed: fetch failed"
+    "status": 410,
+    "message": "Bing Sitemap Ping response: HTTP 410"
   },
   "aiCrawlerAudit": {
     "robotsTxtAllowed": true,
