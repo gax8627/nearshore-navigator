@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-08-14T02:06:54.417Z",
-  "totalUrlsDiscovered": 960,
+  "timestamp": "2026-08-14T02:11:35.701Z",
+  "totalUrlsDiscovered": 984,
   "localeBreakdown": {
-    "en": 160,
-    "es": 160,
-    "de": 160,
-    "ja": 160,
-    "zh": 160,
-    "ko": 160
+    "en": 164,
+    "es": 164,
+    "de": 164,
+    "ja": 164,
+    "zh": 164,
+    "ko": 164
   },
   "googleGsc": {
     "success": false,
@@ -19,7 +19,7 @@
     "message": "Google Sitemap Ping response: HTTP 404"
   },
   "indexNowProtocol": {
-    "submittedUrls": 960,
+    "submittedUrls": 984,
     "batchCount": 1,
     "endpoints": [
       {
@@ -27,42 +27,42 @@
         "endpoint": "https://www.bing.com/indexnow",
         "status": 200,
         "success": true,
-        "message": "HTTP 200 OK (Payload accepted for 960 URLs)"
+        "message": "HTTP 200 OK (Payload accepted for 984 URLs)"
       },
       {
         "engine": "IndexNow Central",
         "endpoint": "https://api.indexnow.org/indexnow",
         "status": 200,
         "success": true,
-        "message": "HTTP 200 OK (Payload accepted for 960 URLs)"
+        "message": "HTTP 200 OK (Payload accepted for 984 URLs)"
       },
       {
         "engine": "Yandex",
         "endpoint": "https://yandex.com/indexnow",
         "status": 200,
         "success": true,
-        "message": "HTTP 200 OK (Payload accepted for 960 URLs)"
+        "message": "HTTP 200 OK (Payload accepted for 984 URLs)"
       },
       {
         "engine": "Naver",
         "endpoint": "https://searchadvisor.naver.com/indexnow",
         "status": 200,
         "success": true,
-        "message": "HTTP 200 OK (Payload accepted for 960 URLs)"
+        "message": "HTTP 200 OK (Payload accepted for 984 URLs)"
       },
       {
         "engine": "Seznam",
         "endpoint": "https://search.seznam.cz/indexnow",
         "status": 200,
         "success": true,
-        "message": "HTTP 200 OK (Payload accepted for 960 URLs)"
+        "message": "HTTP 200 OK (Payload accepted for 984 URLs)"
       },
       {
         "engine": "Yep (Ahrefs)",
         "endpoint": "https://indexnow.yep.com/indexnow",
         "status": 200,
         "success": true,
-        "message": "HTTP 200 OK (Payload accepted for 960 URLs)"
+        "message": "HTTP 200 OK (Payload accepted for 984 URLs)"
       }
     ],
     "overallSuccess": true
