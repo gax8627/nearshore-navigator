@@ -27,27 +27,45 @@ export default function Home() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
+        "@type": "Organization",
+        "@id": "https://nearshorenavigator.com/#organization",
         "name": "Nearshore Navigator",
-        "description": "Strategic advisory for US companies expanding manufacturing to Tijuana and Baja California.",
         "url": "https://nearshorenavigator.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Tijuana",
-          "addressRegion": "Baja California",
-          "addressCountry": "MX"
-        }
+        "logo": "https://nearshorenavigator.com/logo.webp",
+        "description": "Premier North American trade compliance, industrial shelter services, and nearshore manufacturing advisory headquartered in San Diego and Tijuana.",
+        "sameAs": [
+          "https://www.linkedin.com/company/nearshore-navigator",
+          "https://x.com/nearshorenav",
+          "https://twitter.com/nearshorenavigator",
+          "https://www.crunchbase.com/organization/nearshore-navigator",
+          "https://www.wikidata.org/wiki/Q125999000"
+        ]
       },
       {
         "@type": "Person",
+        "@id": "https://nearshorenavigator.com/en/about/denisse-martinez#person",
         "name": "Denisse Martinez",
-        "jobTitle": "Marketing Director & Advisor",
-        "url": "https://nearshorenavigator.com/en/about/denisse-martinez"
+        "jobTitle": "Senior Technical SEO, Trade Compliance & Nearshoring Strategy Director",
+        "worksFor": {
+          "@type": "Organization",
+          "@id": "https://nearshorenavigator.com/#organization"
+        },
+        "url": "https://nearshorenavigator.com/en/about/denisse-martinez",
+        "sameAs": [
+          "https://www.linkedin.com/in/denissemartinez",
+          "https://x.com/denisse_nearshore",
+          "https://www.crunchbase.com/person/denisse-martinez"
+        ]
       },
       {
         "@type": "WebSite",
+        "@id": "https://nearshorenavigator.com/#website",
         "name": "Nearshore Navigator",
-        "url": "https://nearshorenavigator.com"
+        "url": "https://nearshorenavigator.com",
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://nearshorenavigator.com/#organization"
+        }
       }
     ]
   };

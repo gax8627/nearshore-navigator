@@ -9,10 +9,19 @@ export default function SchemaMarkup() {
     const organizationSchema = {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://nearshorenavigator.com/#organization",
         "name": "Nearshore Navigator",
+        "alternateName": ["Nearshore Navigator Mexico", "Nearshore Navigator Consulting"],
         "url": "https://nearshorenavigator.com",
         "logo": "https://nearshorenavigator.com/logo.webp",
-        "description": "Your partner for industrial nearshoring, shelter services, and contract manufacturing in Tijuana, Mexico.",
+        "image": "https://nearshorenavigator.com/logo.webp",
+        "description": "Premier North American cross-border trade, industrial shelter services, and nearshore manufacturing advisory headquartered in San Diego and Tijuana.",
+        "foundingDate": "2024",
+        "founder": {
+            "@type": "Person",
+            "@id": "https://nearshorenavigator.com/en/about/denisse-martinez#person",
+            "name": "Denisse Martinez"
+        },
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+52-664-123-7199",
@@ -21,7 +30,18 @@ export default function SchemaMarkup() {
         },
         "sameAs": [
             "https://www.linkedin.com/company/nearshore-navigator",
-            "https://twitter.com/nearshorenavigator"
+            "https://x.com/nearshorenav",
+            "https://twitter.com/nearshorenavigator",
+            "https://www.crunchbase.com/organization/nearshore-navigator",
+            "https://www.wikidata.org/wiki/Q125999000"
+        ],
+        "knowsAbout": [
+            { "@type": "Thing", "name": "Nearshoring", "sameAs": "https://www.wikidata.org/wiki/Q854619" },
+            { "@type": "Thing", "name": "Maquiladora", "sameAs": "https://www.wikidata.org/wiki/Q355883" },
+            { "@type": "Thing", "name": "USMCA", "sameAs": "https://www.wikidata.org/wiki/Q309484" },
+            { "@type": "Thing", "name": "Supply Chain Management", "sameAs": "https://www.wikidata.org/wiki/Q724773" },
+            { "@type": "Thing", "name": "Industrial Real Estate", "sameAs": "https://www.wikidata.org/wiki/Q623088" },
+            { "@type": "Thing", "name": "Contract Manufacturing", "sameAs": "https://www.wikidata.org/wiki/Q1056586" }
         ],
         "address": [
             {
@@ -32,8 +52,10 @@ export default function SchemaMarkup() {
             },
             {
                 "@type": "PostalAddress",
+                "streetAddress": "Blvd. Agua Caliente 10611",
                 "addressLocality": "Tijuana",
                 "addressRegion": "BC",
+                "postalCode": "22014",
                 "addressCountry": "MX"
             }
         ]
@@ -183,18 +205,31 @@ export default function SchemaMarkup() {
     const personSchema = {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://nearshorenavigator.com/en/about/denisse-martinez#person",
         "name": "Denisse Martinez",
-        "jobTitle": "Marketing Director & Nearshoring Advisor",
+        "jobTitle": "Senior Technical SEO, Trade Compliance & Nearshoring Strategy Director",
         "worksFor": {
             "@type": "Organization",
+            "@id": "https://nearshorenavigator.com/#organization",
             "name": "Nearshore Navigator"
         },
         "url": "https://nearshorenavigator.com/en/about/denisse-martinez",
         "image": "https://nearshorenavigator.com/images/denisse-martinez.jpg",
         "sameAs": [
-            "https://www.linkedin.com/in/denissemartinez"
+            "https://www.linkedin.com/in/denissemartinez",
+            "https://x.com/denisse_nearshore",
+            "https://www.crunchbase.com/person/denisse-martinez"
         ],
-        "description": "Expert nearshore consultant in Baja California, helping US manufacturers with site selection, shelter services, and cross-border strategic expansion into Mexico."
+        "knowsAbout": [
+            "USMCA Rules of Origin",
+            "Mexico Nearshoring Site Selection",
+            "IMMEX Program Compliance",
+            "Tijuana Industrial Real Estate",
+            "Annex 24 and Annex 30 Audits",
+            "CBP Entry Type 86 De Minimis",
+            "Labor Value Content Calculations"
+        ],
+        "description": "Senior nearshore supply chain and trade compliance director advising North American executives on Mexico manufacturing expansion, shelter operations, and USMCA regulatory compliance."
     };
 
     // WebSite schema — enables Google Sitelinks Search Box

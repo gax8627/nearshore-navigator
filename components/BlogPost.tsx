@@ -80,6 +80,32 @@ export function BlogPost({ post }: { post: BlogPostType }) {
                       className="prose prose-lg md:prose-xl dark:prose-invert max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-a:no-underline hover:prose-a:underline prose-img:rounded-2xl prose-img:shadow-lg prose-hr:border-gray-200 dark:prose-hr:border-gray-800"
                       dangerouslySetInnerHTML={{ __html: currentContent }}
                     />
+
+                    {/* Strategic PageRank Funnel & Authority Pillar Silo */}
+                    <div className="mt-12 p-8 bg-gradient-to-r from-gray-50 to-primary-50/30 dark:from-gray-800 dark:to-primary-950/20 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                            <span>Strategic Nearshoring & Industrial Intelligence</span>
+                        </h3>
+                        <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed m-0">
+                            For North American executives, CFOs, and supply chain directors evaluating cross-border manufacturing, explore our master portal on{' '}
+                            <Link href={`/${language}`} className="text-primary-600 dark:text-primary-400 font-semibold hover:underline">
+                                nearshoring Mexico
+                            </Link>
+                            , review Class A availability and park vacancy in our comprehensive dossier on{' '}
+                            <Link href={`/${language}/locations/tijuana/master-guide`} className="text-primary-600 dark:text-primary-400 font-semibold hover:underline">
+                                industrial real estate Tijuana
+                            </Link>
+                            , evaluate operational risk mitigation under{' '}
+                            <Link href={`/${language}/services/shelter-services`} className="text-primary-600 dark:text-primary-400 font-semibold hover:underline">
+                                maquiladora advisory and shelter services
+                            </Link>
+                            , or model your exact multi-state savings using the interactive{' '}
+                            <Link href={`/${language}/tools/cost-calculator`} className="text-primary-600 dark:text-primary-400 font-semibold hover:underline">
+                                nearshore landed cost calculator
+                            </Link>
+                            .
+                        </p>
+                    </div>
                 </div>
             </div>
 
