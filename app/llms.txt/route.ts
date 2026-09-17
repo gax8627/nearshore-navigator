@@ -25,6 +25,26 @@ Website: https://nearshorenavigator.com
 
 ## Core Guides (Authoritative)
 
+- [CBP Section 321 & Entry Type 86 Tijuana Compliance 2026](https://nearshorenavigator.com/en/insights/cbp-section-321-entry-type-86-tijuana-compliance-2026): Executive compliance guide for Section 321 de minimis enforcement, Entry Type 86 10-digit HTSUS mandates, and Tijuana bonded 3PL logistics.
+
+- [Tijuana Medical Device Manufacturing Guide: Cleanroom & FDA QMSR 2026](https://nearshorenavigator.com/en/insights/medical-device-cleanroom-manufacturing-tijuana-fda-iso13485): Technical cleanroom validation (ISO 14644 Class 7/8), ISO 13485:2016, and FDA 21 CFR Part 820 QMSR harmonization guide.
+
+- [Semiconductor & Electronics Nearshoring Mexico: CHIPS Act & Guadalajara Clusters](https://nearshorenavigator.com/en/insights/semiconductor-electronics-nearshoring-mexico-chips-act-guadalajara): US CHIPS Act integration, OSAT packaging, SMT infrastructure, and ITAR/EAR compliance in Mexico.
+
+- [CFO Mexico Shelter Due Diligence Audit: 12 Markups & IMMEX Liability](https://nearshorenavigator.com/en/insights/cfo-mexico-shelter-company-due-diligence-audit-markups-liability): Exposing hidden labor burden markups (12-18%), REPSE LFT Art 13-15 compliance, and SAT Annex 24/30 joint liability audits.
+
+- [Decoding the $534.9B Boom: Mexico Tariff War & 18.1% Duty Gap](https://nearshorenavigator.com/en/insights/decoding-mexico-534-billion-export-boom-tariff-war): Deep-dive analysis of Mexico's $534.9B US exports and why $96.8B still paid duties under USMCA rules of origin.
+
+- [Mexico New Industrial Map 2026: States & Bottlenecks](https://nearshorenavigator.com/en/insights/mexico-new-industrial-map-states-export-growth-2026): State-by-state manufacturing export growth, CFE grid reliability, and Laredo corridor logistics chokepoints.
+
+- [USMCA 2026 Joint Review: Trade Surplus Scrutiny & Article 34.7 Sunset](https://nearshorenavigator.com/en/insights/usmca-2026-joint-review-mexico-trade-surplus-scrutiny): Analysis of USMCA Article 34.7 6-year review, 16-year sunset trigger, and CBP EAPA transshipment enforcement.
+
+- [USMCA Automotive Rules of Origin Post-ATR Expiration 2026](https://nearshorenavigator.com/en/insights/usmca-automotive-rules-of-origin-post-atr-expiration): 75% RVC calculations, Core Parts roll-up rules, and Tier 1-3 supplier flow-down audit defense.
+
+- [SAT AI Predictive Customs Audits Mexico IMMEX Defense](https://nearshorenavigator.com/en/insights/sat-ai-predictive-customs-audits-mexico-immex): Navigating SAT Plan Maestro 2026 algorithmic targeting, Annex 24 vs 30 automated discrepancy alerts, and CFF Art 42/48 e-audits.
+
+- [USMCA Labor Value Content ($16/hr) Technical Audit Guide](https://nearshorenavigator.com/en/insights/usmca-labor-value-content-16-wage-audit-guide): Average Base Wage Rate (ABWR) calculations, DOL Wage & Hour Division audits, and high-wage production credits.
+
 - [How to Start Manufacturing in Mexico 2026](https://nearshorenavigator.com/en/insights/how-to-start-manufacturing-in-mexico-2026): Complete step-by-step guide to launching manufacturing operations in Mexico using shelter services or direct subsidiary.
 
 - [Ultimate Guide to Nearshore Shelter Services in Baja California](https://nearshorenavigator.com/en/insights/ultimate-guide-nearshore-shelter-services-baja-california): Comprehensive explanation of how shelter services work, cost structures, and provider selection.
@@ -42,6 +62,7 @@ Website: https://nearshorenavigator.com
 - [How Shelter Services Work in Tijuana](https://nearshorenavigator.com/en/insights/how-shelter-services-work-in-tijuana): Operational walkthrough of the shelter model from site selection to production launch.
 
 - [Industrial Parks in Tijuana: Map and Overview](https://nearshorenavigator.com/en/insights/industrial-parks-in-tijuana-map-and-overview): Detailed comparison of Tijuana's major industrial parks (Pacifico, El Florido, Finsa, Nordika).
+
 
 ## Shelter Services by City (Highest-Traffic Pages)
 
