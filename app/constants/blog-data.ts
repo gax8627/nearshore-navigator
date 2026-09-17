@@ -23,6 +23,7 @@ export const BLOG_POSTS_RAW = [
       excerpt: "Energy reliability is the #1 bottleneck for nearshoring in Monterrey. We've mapped the parks with redundant power and private infrastructure.",
       date: "Apr 21, 2026",
       slug: "monterrey-industrial-parks-energy-resilience",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
       imageUrl: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
       tags: ["Monterrey", "Energy", "Infrastructure", "Industrial Parks"],
       faqSchema: [
@@ -58,6 +59,7 @@ export const BLOG_POSTS_RAW = [
       excerpt: "Everything you need to know about setting up operations in Mexico's manufacturing hub.",
       date: "Oct 24, 2025",
       slug: "nearshoring-in-tijuana-guide-for-us-companies",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
       imageUrl: "/images/warehouse.jpg",
       tags: ["Guide", "Strategy"],
       locales: {
@@ -155,6 +157,7 @@ export const BLOG_POSTS_RAW = [
       excerpt: "Analyze the total landed cost benefits of manufacturing in Baja California versus traditional Asian hubs.",
       date: "Nov 12, 2025",
       slug: "tijuana-vs-asia-manufacturing-cost-comparison",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
       imageUrl: "/images/factory-worker.jpg",
       tags: ["Cost Analysis", "Economics"],
       locales: {
@@ -241,6 +244,7 @@ export const BLOG_POSTS_RAW = [
       excerpt: "Understanding the shelter model: the fastest, lowest-risk way to start manufacturing in Mexico.",
       date: "Dec 05, 2025",
       slug: "how-shelter-services-work-in-tijuana",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
       imageUrl: "/images/consulting.jpg",
       tags: ["Shelter", "Legal"],
       locales: {
@@ -330,6 +334,7 @@ export const BLOG_POSTS_RAW = [
       excerpt: "A deep dive into the top industrial zones: Otay, El Florido, and Pacifico.",
       date: "Jan 10, 2026",
       slug: "industrial-parks-in-tijuana-map-and-overview",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
       imageUrl: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80&w=800",
       tags: ["Real Estate", "Maps"],
       locales: {
@@ -406,6 +411,7 @@ export const BLOG_POSTS_RAW = [
       excerpt: "Why 2025 is the most critical year for industrial expansion and the upcoming 2026 USMCA review.",
       date: "Feb 11, 2026",
       slug: "mexico-2025-nearshoring-boom-usmca-review",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
       imageUrl: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=800",
       tags: ["Market Report", "Investment"],
       locales: {
@@ -478,6 +484,7 @@ export const BLOG_POSTS_RAW = [
       excerpt: "Learn how US manufacturers use the Mexican shelter model to rapidly bypass red tape, slash costs by 40%, and launch operations in Baja California within 90 days.",
       date: "Mar 02, 2026",
       slug: "ultimate-guide-nearshore-shelter-services-baja-california",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
       imageUrl: "/images/consulting.jpg",
       tags: ["Nearshoring", "Shelter Services", "Baja California", "Supply Chain"],
       locales: {
@@ -557,6 +564,7 @@ export const BLOG_POSTS_RAW = [
       excerpt: "Section 301 tariffs added 25–100% to Chinese imports. Manufacturers moving to Baja California pay 0% under USMCA — and can be operational in 90 days. Here's the complete playbook.",
       date: "Mar 02, 2026",
       slug: "2025-tariffs-baja-california-supply-chain",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
       imageUrl: "/images/warehouse.jpg",
       tags: ["Economics", "Tariffs", "Supply Chain", "USMCA"],
       locales: {
@@ -610,6 +618,7 @@ export const BLOG_POSTS_RAW = [
       excerpt: "Learn the key differences between maquiladora and shelter services in Mexico. Compare costs, liability, setup time, and which model is right for your operation.",
       date: "Mar 02, 2026",
       slug: "maquiladora-vs-shelter-services-mexico",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
       imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
       tags: ["Nearshoring", "Strategy", "Mexico Manufacturing"],
       locales: {
@@ -965,6 +974,7 @@ Yes, both standalone maquiladoras and shelter operators utilize the IMMEX progra
       excerpt: "Discover why Mexico beats Vietnam, India, and Southeast Asia for China Plus One manufacturing. USMCA benefits, cost data, and city-by-city comparison for 2026.",
       date: "Mar 02, 2026",
       slug: "china-plus-one-strategy-mexico",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
       imageUrl: "/images/china-plus-one-strategy.webp",
       tags: ["China Plus One", "Nearshoring", "Supply Chain", "Mexico Manufacturing"],
       content: `
@@ -1587,6 +1597,7 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
       excerpt: "Tijuana hosts 1,200+ medical device companies — the world's second largest cluster. Learn about FDA-compliant manufacturing, ISO 13485, labor costs, and how to start.",
       date: "Mar 02, 2026",
       slug: "medical-device-manufacturing-tijuana",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
       imageUrl: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200",
       tags: ["Medical Devices", "Tijuana", "FDA Manufacturing", "Nearshoring"],
       content: `
@@ -1864,6 +1875,7 @@ The fastest way to start is by partnering with an ISO-certified contract manufac
       excerpt: "Querétaro hosts Bombardier, Airbus, and GE Aviation. Learn about AS9100, NADCAP certification, labor costs, and how to set up aerospace manufacturing in Mexico.",
       date: "Mar 02, 2026",
       slug: "aerospace-manufacturing-queretaro-mexico",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
       imageUrl: "/images/industrial-park-hero.jpg",
       tags: ["Aerospace", "Querétaro", "Advanced Manufacturing", "Nearshoring"],
       content: `
@@ -2140,6 +2152,7 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
       excerpt: "Learn the key differences between maquiladora and shelter services in Mexico. Compare costs, liability, setup time, and which model is right for your operation.",
       date: "Mar 02, 2026",
       slug: "maquiladora-vs-shelter-services-mexico",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
       imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
       tags: ["Nearshoring", "Strategy", "Mexico Manufacturing"],
       content: `
@@ -2497,6 +2510,7 @@ Yes, both standalone maquiladoras and shelter operators utilize the IMMEX progra
       excerpt: "Discover why Mexico beats Vietnam, India, and Southeast Asia for China Plus One manufacturing. USMCA benefits, cost data, and city-by-city comparison for 2026.",
       date: "Mar 02, 2026",
       slug: "china-plus-one-strategy-mexico",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
       imageUrl: "/images/china-plus-one-strategy.webp",
       tags: ["China Plus One", "Nearshoring", "Supply Chain", "Mexico Manufacturing"],
       content: `
@@ -3140,6 +3154,7 @@ Heavy, freight-sensitive, or highly regulated industries—such as automotive, a
       excerpt: "Tijuana hosts 1,200+ medical device companies — the world's second largest cluster. Learn about FDA-compliant manufacturing, ISO 13485, labor costs, and how to start.",
       date: "Mar 02, 2026",
       slug: "medical-device-manufacturing-tijuana",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
       imageUrl: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200",
       tags: ["Medical Devices", "Tijuana", "FDA Manufacturing", "Nearshoring"],
       content: `
@@ -3427,6 +3442,7 @@ The fastest way to start is by partnering with an ISO-certified contract manufac
       excerpt: "Querétaro hosts Bombardier, Airbus, and GE Aviation. Learn about AS9100, NADCAP certification, labor costs, and how to set up aerospace manufacturing in Mexico.",
       date: "Mar 02, 2026",
       slug: "aerospace-manufacturing-queretaro-mexico",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
       imageUrl: "/images/industrial-park-hero.jpg",
       tags: ["Aerospace", "Querétaro", "Advanced Manufacturing", "Nearshoring"],
       content: `
@@ -3702,6 +3718,7 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
       excerpt: "A step-by-step guide for US companies launching manufacturing operations in Mexico in 2026 — covering shelter services, IMMEX permits, site selection, labor costs, and USMCA compliance.",
       date: "Mar 06, 2026",
       slug: "how-to-start-manufacturing-in-mexico-2026",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
       imageUrl: "/images/factory-worker.jpg",
       tags: ["Guide", "Strategy", "Shelter Services", "IMMEX"],
       locales: {
@@ -3855,6 +3872,7 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
     excerpt: "Compare Section 321 de minimis duty-free fulfillment ($800/day limit) with the IMMEX Maquiladora regime. Learn how combining both in Tijuana slashes Section 301 tariffs and warehouse labor costs.",
     date: "Apr 28, 2026",
     slug: "section-321-vs-immex-maquiladora-fulfillment-guide",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
     imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
     tags: ["Section 321", "IMMEX", "Customs", "Logistics", "Tijuana", "Tariffs"],
     faqSchema: [
@@ -3947,6 +3965,7 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
     excerpt: "Master the July 2026 USMCA Joint Review under Article 34.7, 75% Regional Value Content (RVC) net cost formulas, $16/hr LVC audits, and customs brokerage strategies for Mexico nearshoring.",
     date: "Aug 13, 2026",
     slug: "usmca-2026-joint-review-rules-of-origin",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
     imageUrl: "/images/china-plus-one-strategy.webp",
     tags: ["USMCA 2026", "Rules of Origin", "Customs Brokerage", "Trade Compliance", "Tijuana"],
     faqSchema: [
@@ -4022,6 +4041,7 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
     excerpt: "Master Mexico's 2026 Customs Law Reform & IMMEX 4.0. Learn how SAT automated enforcement targets Annex 24/30 variances, joint liability rules, and 30-day shelter setups.",
     date: "Aug 13, 2026",
     slug: "immex-4-0-customs-law-reform-2026",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
     imageUrl: "/images/blogs/immex-4-0-customs-law-reform-2026.jpg",
     tags: ["IMMEX 4.0", "Mexico Customs Law 2026", "SAT Audit", "Annex 24 Annex 30", "Shelter Manufacturing", "Nearshoring Compliance"],
     faqSchema: [
@@ -4054,6 +4074,7 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
     excerpt: "Master 2026 Section 321 de minimis duty restructuring. Learn how CBP Entry Type 86 compliance and Tijuana hybrid IMMEX fulfillment cut landed costs by 35%.",
     date: "Aug 13, 2026",
     slug: "section-321-duty-restructuring-2026",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
     imageUrl: "/images/blogs/section-321-duty-restructuring-2026.jpg",
     tags: ["Section 321 duty restructuring 2026", "de minimis entry rules", "CBP Type 86 compliance", "cross-border fulfillment Tijuana", "IMMEX vs Section 321"],
     faqSchema: [
@@ -4082,6 +4103,7 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
     excerpt: "Benchmark Tijuana Class A industrial park vacancies (2.0%-3.5%), lease rates ($0.78-$0.88 NNN), CFE electrical power drop availability, and substation lead times for 2026.",
     date: "Aug 13, 2026",
     slug: "industrial-park-vacancies-power-drops-2026",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
     imageUrl: "/images/blogs/industrial-park-vacancies-power-drops-2026.jpg",
     tags: ["Tijuana Industrial Real Estate", "CFE Power Drops", "Industrial Park Vacancy 2026", "Baja California Nearshoring", "Class A Real Estate", "Otay Mesa"],
     faqSchema: [
@@ -4110,6 +4132,7 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
     excerpt: "Master USMCA Regional Value Content (RVC) calculations, Net Cost formulas, tariff shifts & IMMEX trade compliance for 0% duty Mexico manufacturing in 2026.",
     date: "Aug 13, 2026",
     slug: "compliance-as-architecture-usmca-rvc",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
     imageUrl: "/images/blogs/compliance-as-architecture-usmca-rvc.jpg",
     tags: ["USMCA", "Regional Value Content", "Trade Compliance", "Mexico Nearshoring", "Customs Brokerage", "IMMEX Program"],
     faqSchema: [
@@ -4139,6 +4162,7 @@ By utilizing a shelter service that already holds IMMEX and IVA certifications, 
     excerpt: "Master USMCA automotive Rules of Origin post-ATR expiration. Executive guide to 75% RVC Net Cost, core parts roll-up ruling, LVC, and supplier flow-down audits.",
     date: "Aug 24, 2026",
     slug: "usmca-automotive-rules-of-origin-post-atr-expiration",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
     imageUrl: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
     tags: ["USMCA Automotive Rules","Rules of Origin","Regional Value Content","Core Parts Roll-Up","Labor Value Content","Supplier Flow-Down"],
     faqSchema: [
@@ -4575,6 +4599,7 @@ Failure to substantiate USMCA origin during a CBP Form 28/29 verification or SAT
     excerpt: "Master SAT AI predictive customs audits in Mexico. Learn AGACE algorithmic risk triggers, Annex 24/30 SCCC-VE reconciliation, CFF Art. 26 liability, and IMMEX defense.",
     date: "Aug 31, 2026",
     slug: "sat-ai-predictive-customs-audits-mexico-immex",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
     imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
     tags: ["SAT AI Customs Audits","Plan Maestro SAT 2026","IMMEX Compliance","Annex 24 Annex 30","AGACE Audit Enforcement","Responsabilidad Solidaria Article 26"],
     faqSchema: [
@@ -5058,6 +5083,7 @@ Transitioning production from a standalone Mexican corporate entity to an establ
     excerpt: "Master USMCA Labor Value Content ($16/hr) compliance. Expert guide to DOL 29 CFR Part 810 ABWR formulas, high-wage credits, Banxico FX & CBP audit defense.",
     date: "Sep 07, 2026",
     slug: "usmca-labor-value-content-16-wage-audit-guide",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
     imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
     tags: ["USMCA Labor Value Content","LVC Audit Guide","DOL Wage and Hour Division","29 CFR Part 810","ABWR Calculation","CBP Verification"],
     faqSchema: [
@@ -5449,6 +5475,7 @@ If a facility fails an LVC audit, CBP revokes USMCA preferential 0% tariff treat
     excerpt: "Mexico reached $534.9B in U.S. exports and a $771M surplus, yet 18.1% ($96.8B) paid tariffs. Discover the compliance gap before the 2026 USMCA Joint Review.",
     date: "Sep 02, 2026",
     slug: "decoding-mexico-534-billion-export-boom-tariff-war",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
     imageUrl: "/images/blogs/decoding-mexico-534-billion-export-boom-tariff-war.jpg",
     tags: ["Mexico US Trade","USMCA Duty Free","Tariff War 2026","Export Boom","Rules of Origin","Trade Compliance"],
     faqSchema: [
@@ -5761,6 +5788,7 @@ Under USMCA Article 34.7, the 2026 Joint Review represents a critical inflection
     excerpt: "Explore Mexico's 2026 industrial map driving $534.9B in U.S. exports across Nuevo León, Baja California, and Chihuahua vs. CFE energy and Laredo bottlenecks.",
     date: "Sep 02, 2026",
     slug: "mexico-new-industrial-map-states-export-growth-2026",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
     imageUrl: "/images/blogs/mexico-new-industrial-map-states-export-growth-2026.jpg",
     tags: ["Mexico Industrial Map","Nearshoring Site Selection","Mexico Export States","CFE Energy Bottlenecks","Laredo Logistics","Class A Industrial Vacancy"],
     faqSchema: [
@@ -6037,6 +6065,7 @@ Leaders must execute a formal site selection feasibility audit: verify CFE trans
     excerpt: "Analyze the 2026 USMCA Joint Review (Article 34.7), Washington's scrutiny of Mexico's $534.9B exports and $771M surplus, CBP EAPA audits, and CFO scenario models.",
     date: "Sep 02, 2026",
     slug: "usmca-2026-joint-review-mexico-trade-surplus-scrutiny",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
     imageUrl: "/images/blogs/usmca-2026-joint-review-mexico-trade-surplus-scrutiny.jpg",
     tags: ["USMCA 2026 Joint Review","Mexico Trade Surplus","Article 34.7 Sunset","CBP EAPA Audits","Trade Compliance Nearshoring","Mexico Tariff Risk"],
     faqSchema: [
@@ -6305,6 +6334,7 @@ Corporations should execute a 5-step compliance hardening protocol: audit all su
     excerpt: "Master 2026 CBP Section 321 and Entry Type 86 compliance for Tijuana cross-border logistics. Learn 10-digit HTSUS rules, Section 301 enforcement, and bonded 3PL models.",
     date: "Sep 15, 2026",
     slug: "cbp-section-321-entry-type-86-tijuana-compliance-2026",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
     imageUrl: "/images/blogs/cbp-section-321-entry-type-86-tijuana-compliance-2026.jpg",
     tags: ["CBP Section 321","Entry Type 86","Tijuana cross-border logistics","10-digit HTSUS mandate","Section 301 tariff circumvention","Otay Mesa bonded fulfillment","de minimis 2026","19 USC 1321","IMMEX bonded storage","USMCA compliance"],
     faqSchema: [
@@ -6340,6 +6370,7 @@ Corporations should execute a 5-step compliance hardening protocol: audit all su
     excerpt: "Master Tijuana medical device manufacturing. Technical guide to ISO Class 7/8 cleanrooms, ISO 13485 & FDA QMSR harmonization, IQ/OQ/PQ & Otay Mesa logistics.",
     date: "Sep 15, 2026",
     slug: "medical-device-cleanroom-manufacturing-tijuana-fda-iso13485",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
     imageUrl: "/images/blogs/medical-device-cleanroom-manufacturing-tijuana-fda-iso13485.jpg",
     tags: ["Medical Device Manufacturing","Tijuana Cleanrooms","FDA QMSR Compliance","ISO 13485:2016","ISO 14644-1","COFEPRIS","Otay Mesa Sterilization","IMMEX Shelter"],
     faqSchema: [
@@ -6375,6 +6406,7 @@ Corporations should execute a 5-step compliance hardening protocol: audit all su
     excerpt: "Master semiconductor & electronics nearshoring to Mexico. Technical guide on U.S. CHIPS Act OSAT integration, Guadalajara vs. Baja clusters, ITAR/EAR compliance & USMCA RVC.",
     date: "Sep 15, 2026",
     slug: "semiconductor-electronics-nearshoring-mexico-chips-act-guadalajara",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
     imageUrl: "/images/blogs/semiconductor-electronics-nearshoring-mexico-chips-act-guadalajara.jpg",
     tags: ["Semiconductor Nearshoring","Mexico Electronics Manufacturing","CHIPS Act Mexico","Guadalajara Silicon Valley","ITAR Compliance Mexico","EAR Dual-Use Electronics","SMT Cleanroom Infrastructure","USMCA Rules of Origin","OSAT Packaging"],
     faqSchema: [
@@ -6410,6 +6442,7 @@ Corporations should execute a 5-step compliance hardening protocol: audit all su
     excerpt: "Master Mexico shelter company due diligence. Audit hidden labor burden markups (12-18%), REPSE LFT Art. 13-15 liability, SAT Annex 24/30 clawbacks, and direct leases.",
     date: "Sep 15, 2026",
     slug: "cfo-mexico-shelter-company-due-diligence-audit-markups-liability",
+      speakable: { xpaths: ["/html/head/title", "/html/head/meta[@name='description']"] },
     imageUrl: "/images/blogs/cfo-mexico-shelter-company-due-diligence-audit-markups-liability.jpg",
     tags: ["Mexico Shelter Services","CFO Due Diligence","IMMEX Compliance","REPSE Subcontracting Reform","Annex 24 Annex 30","Labor Burden Markups","Responsabilidad Solidaria Article 26","Industrial Lease Negotiation","Nearshore Manufacturing Mexico"],
     faqSchema: [

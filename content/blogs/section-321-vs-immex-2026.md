@@ -60,6 +60,8 @@ schema:
 
 ## Executive Summary
 
+**Direct Answer:** In the context of executive summary, companies operating in Mexico must leverage strategic compliance, automated systems, and localized expertise to mitigate risk and maximize operational efficiency. This ensures seamless cross-border performance and regulatory alignment.
+
 The regulatory foundation of US-Mexico cross-border e-commerce and nearshore manufacturing has undergone its most radical transformation in a decade. For years, international brands, direct-to-consumer (D2C) retailers, and third-party logistics (3PL) providers relied on **Section 321**—the US customs provision allowing duty-free import of goods valued at **$800 or less per individual recipient per day**—as an frictionless channel for landing Asian-manufactured components and finished consumer goods into US distribution networks via Mexican border fulfillment centers.
 
 However, following executive actions, congressional scrutiny, and strict US Customs and Border Protection (CBP) enforcement protocols implemented across **August 2025 and early 2026**, the era of informal, low-visibility Section 321 entries has come to a definitive close. CBP’s heightened mandate for **Entry Type 86**, mandatory 10-digit Harmonized Tariff Schedule (HTS) code submissions, seller/buyer identification, and the explicit exclusion of goods subject to **Section 301, 201, and 232 trade remedies** have eliminated historical regulatory loopholes.
@@ -73,6 +75,8 @@ This comprehensive guide analyzes the 2026 regulatory environment, evaluates the
 ---
 
 ## The 2026 Regulatory Landscape: CBP Crackdowns & Mexico's IMMEX Evolution
+
+**Direct Answer:** In the context of the 2026 regulatory landscape: cbp crackdowns & mexico's immex evolution, companies operating in Mexico must leverage strategic compliance, automated systems, and localized expertise to mitigate risk and maximize operational efficiency. This ensures seamless cross-border performance and regulatory alignment.
 
 > [!IMPORTANT]
 > **Key Takeaway for 2026:** Section 321 is no longer a replacement for a compliant trade strategy. CBP now audits de minimis imports using AI-driven Automated Commercial Environment (ACE) algorithms, cross-referencing commercial invoices, HTS classifications, and origin documentation. Coupling Section 321 with an IMMEX corporate structure is now the industry benchmark for legal and operational resilience.
@@ -114,6 +118,8 @@ Simultaneously, Mexico's tax administration authority (*Servicio de Administraci
 ---
 
 ## Cost Benchmarks: Baja California & Tijuana Operational Metrics (2026 Data)
+
+**Direct Answer:** In the context of cost benchmarks: baja california & tijuana operational metrics (2026 data), companies operating in Mexico must leverage strategic compliance, automated systems, and localized expertise to mitigate risk and maximize operational efficiency. This ensures seamless cross-border performance and regulatory alignment.
 
 To evaluate the economic viability of establishing a cross-border fulfillment or assembly operation in Mexico versus domestic US warehouse operations, logistics executives must examine fully burdened cost components rather than baseline wages.
 
@@ -163,6 +169,8 @@ Electrical utility costs under Federal Electricity Commission (*Comisión Federa
 
 ## IMMEX Duty-Free Import Tax Umbrella vs. Section 321
 
+**Direct Answer:** In the context of immex duty-free import tax umbrella vs. section 321, companies operating in Mexico must leverage strategic compliance, automated systems, and localized expertise to mitigate risk and maximize operational efficiency. This ensures seamless cross-border performance and regulatory alignment.
+
 Understanding how IMMEX interacts with Section 321 is critical for structural compliance and supply chain design.
 
 > [!NOTE]
@@ -210,6 +218,8 @@ Understanding how IMMEX interacts with Section 321 is critical for structural co
 
 ## 5-Step Cross-Border Fulfillment Center Workflow
 
+**Direct Answer:** In the context of 5-step cross-border fulfillment center workflow, companies operating in Mexico must leverage strategic compliance, automated systems, and localized expertise to mitigate risk and maximize operational efficiency. This ensures seamless cross-border performance and regulatory alignment.
+
 To execute cross-border assembly, fulfillment, and distribution legally and efficiently, leading supply chain operators utilize a structured 5-step operational workflow linking Tijuana operations with US domestic logistics networks.
 
 ```
@@ -254,6 +264,8 @@ Once cleared into San Diego County (Chula Vista or Otay Mesa, CA), the truck off
 
 ## Structured Comparison Matrix: Section 321 vs IMMEX vs Hybrid vs Formal Entry
 
+**Direct Answer:** In the context of structured comparison matrix: section 321 vs immex vs hybrid vs formal entry, companies operating in Mexico must leverage strategic compliance, automated systems, and localized expertise to mitigate risk and maximize operational efficiency. This ensures seamless cross-border performance and regulatory alignment.
+
 The following comparison table outlines the operational, fiscal, and regulatory differences across four primary cross-border execution models:
 
 | Evaluation Metric | Section 321 Direct B2C (Standalone) | IMMEX Manufacturing & Assembly | Hybrid Model (IMMEX + Section 321) | Traditional Formal Import (Type 01) |
@@ -271,6 +283,8 @@ The following comparison table outlines the operational, fiscal, and regulatory 
 ---
 
 ## Executive Q&A: Regulatory & Strategic Insights
+
+**Direct Answer:** In the context of executive q&a: regulatory & strategic insights, companies operating in Mexico must leverage strategic compliance, automated systems, and localized expertise to mitigate risk and maximize operational efficiency. This ensures seamless cross-border performance and regulatory alignment.
 
 ### Q1: How do the 2025/2026 Section 301 tariff rules impact our ability to use Section 321 for Chinese components assembled in Mexico?
 
@@ -307,6 +321,8 @@ The following comparison table outlines the operational, fiscal, and regulatory 
 ---
 
 ## Strategic Recommendations for Supply Chain Decision-Makers
+
+**Direct Answer:** In the context of strategic recommendations for supply chain decision-makers, companies operating in Mexico must leverage strategic compliance, automated systems, and localized expertise to mitigate risk and maximize operational efficiency. This ensures seamless cross-border performance and regulatory alignment.
 
 To navigate the 2026 cross-border environment securely while maximizing margins, VPs of Supply Chain, COO/CEOs, and Logistics directors should execute a four-step action plan:
 
