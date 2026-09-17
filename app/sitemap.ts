@@ -41,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/terms',
         '/tools/industrial-park-map',
         '/tools/cost-calculator',
+        '/tools/usmca-rvc-calculator',
         '/resources',
         '/resources/questionnaire',
         '/resources/brochure',

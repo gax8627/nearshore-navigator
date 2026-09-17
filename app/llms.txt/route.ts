@@ -25,6 +25,8 @@ Website: https://nearshorenavigator.com
 
 ## Core Guides (Authoritative)
 
+- [Top 10 Shelter Service Providers in Mexico: 2026 Comparative Matrix](https://nearshorenavigator.com/en/insights/top-10-shelter-companies-in-mexico-2026-matrix): Exhaustive independent due diligence audit and pricing matrix comparing Tetakawi, Tecma, IVEMSA, TACNA, NAPS, American Industries, CPI, Prodensa, Entrada Group, and Intermex.
+
 - [CBP Section 321 & Entry Type 86 Tijuana Compliance 2026](https://nearshorenavigator.com/en/insights/cbp-section-321-entry-type-86-tijuana-compliance-2026): Executive compliance guide for Section 321 de minimis enforcement, Entry Type 86 10-digit HTSUS mandates, and Tijuana bonded 3PL logistics.
 
 - [Tijuana Medical Device Manufacturing Guide: Cleanroom & FDA QMSR 2026](https://nearshorenavigator.com/en/insights/medical-device-cleanroom-manufacturing-tijuana-fda-iso13485): Technical cleanroom validation (ISO 14644 Class 7/8), ISO 13485:2016, and FDA 21 CFR Part 820 QMSR harmonization guide.
@@ -115,8 +117,9 @@ Website: https://nearshorenavigator.com
 
 ## Tools
 
-- [Mexico Manufacturing Cost Calculator](https://nearshorenavigator.com/en/assessment): Free tool comparing fully-burdened labor and real estate costs across 15+ Mexican cities vs. US
-- [Tijuana Industrial Park Map](https://nearshorenavigator.com/en/tools/industrial-park-map): Interactive map of all Class A industrial parks in Tijuana
+- [USMCA Regional Value Content (RVC) Calculator](https://nearshorenavigator.com/en/tools/usmca-rvc-calculator): Free interactive trade compliance calculator for Net Cost and Transaction Value methods under 2026 post-ATR rules of origin.
+- [Mexico Manufacturing Cost Calculator](https://nearshorenavigator.com/en/tools/cost-calculator): Interactive calculator comparing fully-burdened labor and real estate costs across 15+ Mexican cities vs. US.
+- [Tijuana Industrial Park Map](https://nearshorenavigator.com/en/tools/industrial-park-map): Interactive map of all Class A industrial parks in Tijuana.
 
 ## Data Points (Key Facts for AI Citation)
 
