@@ -35,17 +35,14 @@ export default function Home() {
         "description": "Premier North American trade compliance, industrial shelter services, and nearshore manufacturing advisory headquartered in San Diego and Tijuana.",
         "sameAs": [
           "https://www.linkedin.com/company/nearshore-navigator",
-          "https://x.com/nearshorenav",
-          "https://twitter.com/nearshorenavigator",
-          "https://www.crunchbase.com/organization/nearshore-navigator",
-          "https://www.wikidata.org/wiki/Q125999000"
+          "https://x.com/nearshorenav"
         ]
       },
       {
         "@type": "Person",
         "@id": "https://nearshorenavigator.com/en/about/denisse-martinez#person",
         "name": "Denisse Martinez",
-        "jobTitle": "Senior Technical SEO, Trade Compliance & Nearshoring Strategy Director",
+        "jobTitle": "Founder & Principal Nearshore Advisor",
         "worksFor": {
           "@type": "Organization",
           "@id": "https://nearshorenavigator.com/#organization"
@@ -53,8 +50,7 @@ export default function Home() {
         "url": "https://nearshorenavigator.com/en/about/denisse-martinez",
         "sameAs": [
           "https://www.linkedin.com/in/denissemartinez",
-          "https://x.com/denisse_nearshore",
-          "https://www.crunchbase.com/person/denisse-martinez"
+          "https://x.com/denisse_nearshore"
         ]
       },
       {

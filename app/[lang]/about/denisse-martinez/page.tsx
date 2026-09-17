@@ -30,7 +30,7 @@ export default async function DenisseBioPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Denisse Martinez",
-    "jobTitle": "Marketing Director & Advisor",
+    "jobTitle": "Founder & Principal Nearshore Advisor",
     "url": "https://nearshorenavigator.com/about/denisse-martinez",
     "image": "https://nearshorenavigator.com/images/denisse-martinez.jpg",
     "sameAs": [
