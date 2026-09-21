@@ -3,15 +3,14 @@ import { getLocation, getService } from "@/app/constants/seo-data";
 import ServiceLocationClient from "./ServiceLocationClient";
 import { getLocalizedSeoContent } from "@/app/i18n/get-seo-content";
 
-import { TIER1_CITIES } from "@/app/constants/seo-config";
+import { TIER1_CITIES, INDEXABLE_LOCALES, getAlternateLanguages } from "@/app/constants/seo-config";
 
 export async function generateStaticParams() {
-  const indexableLangs = ['en', 'es', 'de', 'ja'];
   const cities = Array.from(TIER1_CITIES);
   const services = ['contract-manufacturing', 'shelter-services', 'customs-brokerage', 'distribution-centers', 'industrial-real-estate'];
 
   const params: { lang: string; city: string; service: string }[] = [];
-  for (const lang of indexableLangs) {
+  for (const lang of INDEXABLE_LOCALES) {
     for (const city of cities) {
       for (const service of services) {
         params.push({ lang, city, service });
@@ -78,13 +77,7 @@ export async function generateMetadata({ params }: Props) {
     description,
     alternates: {
       canonical: finalCanonical,
-      languages: {
-        'en': `https://nearshorenavigator.com/en/locations/${city}/${serviceParam}`,
-        'es': `https://nearshorenavigator.com/es/locations/${city}/${serviceParam}`,
-        'de': `https://nearshorenavigator.com/de/locations/${city}/${serviceParam}`,
-        'ja': `https://nearshorenavigator.com/ja/locations/${city}/${serviceParam}`,
-        'x-default': `https://nearshorenavigator.com/en/locations/${city}/${serviceParam}`,
-      }
+      languages: getAlternateLanguages(`/locations/${city}/${serviceParam}`)
     }
   };
 }

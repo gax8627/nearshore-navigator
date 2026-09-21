@@ -5,8 +5,8 @@ import type { BlogPost as BlogPostType } from "@/app/constants/blog-data";
 import { INDEXABLE_LOCALES } from "@/app/constants/seo-config";
 import { Metadata } from "next";
 
-// Indexable locales for insights: en, es, de, ja
-const BLOG_INDEXABLE_LANGS = new Set(['en', 'es', 'de', 'ja']);
+// Indexable locales for insights: en, es, de, ja (synced with INDEXABLE_LOCALES)
+const BLOG_INDEXABLE_LANGS = new Set(INDEXABLE_LOCALES);
 
 function formatImageUrl(imageUrl: string, baseUrl: string = 'https://nearshorenavigator.com'): string {
   if (!imageUrl) return `${baseUrl}/images/nearshore-logo-brand.webp`;
@@ -43,13 +43,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: isIndexable
         ? canonicalUrl
         : `https://nearshorenavigator.com/en/insights/${slug}`,
-      languages: {
-        'en': `https://nearshorenavigator.com/en/insights/${slug}`,
-        'es': `https://nearshorenavigator.com/es/insights/${slug}`,
-        'de': `https://nearshorenavigator.com/de/insights/${slug}`,
-        'ja': `https://nearshorenavigator.com/ja/insights/${slug}`,
-        'x-default': `https://nearshorenavigator.com/en/insights/${slug}`,
-      },
+      languages: Object.fromEntries([
+        ...INDEXABLE_LOCALES.map(l => [l, `https://nearshorenavigator.com/${l}/insights/${slug}`]),
+        ['x-default', `https://nearshorenavigator.com/en/insights/${slug}`]
+      ]),
     },
     openGraph: {
       title,

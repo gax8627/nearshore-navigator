@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getLocation } from "@/app/constants/seo-data";
 import CityOverviewClient from "./CityOverviewClient";
-import { TIER1_CITIES } from "@/app/constants/seo-config";
+import { TIER1_CITIES, INDEXABLE_LOCALES, getAlternateLanguages } from "@/app/constants/seo-config";
 
 type Props = {
   params: Promise<{
@@ -13,11 +13,10 @@ type Props = {
 import { getDictionary } from "@/app/i18n/get-dictionary";
 
 export async function generateStaticParams() {
-  const indexableLangs = ['en', 'es', 'de', 'ja'];
   const cities = Array.from(TIER1_CITIES);
 
   const params: { lang: string; city: string }[] = [];
-  for (const lang of indexableLangs) {
+  for (const lang of INDEXABLE_LOCALES) {
     for (const city of cities) {
       params.push({ lang, city });
     }
@@ -45,13 +44,7 @@ export async function generateMetadata({ params }: Props) {
     robots: hasSubstantialContent ? undefined : { index: false, follow: true },
     alternates: {
       canonical: canonicalUrl,
-      languages: {
-        'en': `https://nearshorenavigator.com/en/locations/${city}`,
-        'es': `https://nearshorenavigator.com/es/locations/${city}`,
-        'de': `https://nearshorenavigator.com/de/locations/${city}`,
-        'ja': `https://nearshorenavigator.com/ja/locations/${city}`,
-        'x-default': `https://nearshorenavigator.com/en/locations/${city}`,
-      }
+      languages: getAlternateLanguages(`/locations/${city}`)
     }
   };
 }

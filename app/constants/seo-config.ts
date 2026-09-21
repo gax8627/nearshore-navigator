@@ -35,7 +35,7 @@ export type Locale = typeof LOCALES[number];
  * Phase 1: en, es, de, ja
  * Use this in generateStaticParams() and sitemap.ts.
  */
-export const INDEXABLE_LOCALES: readonly string[] = ['en', 'es', 'de', 'ja', 'zh', 'ko'] as const;
+export const INDEXABLE_LOCALES: readonly string[] = ['en', 'es', 'de', 'ja'] as const;
 
 /**
  * Locales still being redirected to /en/ (Phase 3 candidates).

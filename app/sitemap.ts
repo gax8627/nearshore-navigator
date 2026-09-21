@@ -23,11 +23,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
 
     /**
-     * 1. STATIC CORE PAGES & DYNAMIC BLOG POSTS
+     * 1. STATIC CORE PAGES
      */
-    const posts = getAllPosts();
-    const blogPaths = posts.map(post => `/insights/${post.slug}`);
-
     const staticPaths = [
         '',
         '/locations',
@@ -52,8 +49,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/services/nearshore-marketing',
         '/services/asian-capital-expansion',
         '/services/distribution-centers-tijuana/section-321-guide',
-        ...blogPaths,
     ];
+
+    /**
+     * 1b. EDITORIAL BLOG POSTS
+     * Only submitted for indexable blog locales (en, es, de, ja) where content is published.
+     * Prevents GSC "Excluded by 'noindex' tag" alerts on untranslated locales.
+     */
+    const posts = getAllPosts();
+    const blogPaths = posts.map(post => `/insights/${post.slug}`);
 
     /**
      * 2. PROGRAMMATIC LOCATION PAGES
@@ -138,6 +142,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 changeFrequency: 'weekly',
                 priority: item.priority,
                 alternates: getAlternates(item.path)
+            });
+        });
+    });
+
+    /**
+     * 4. BLOG POSTS (Only in locales where blogs are localized & indexable)
+     * Hardcoded to 'en', 'es', 'de', 'ja' so unlocalized locales never get submitted.
+     */
+    const BLOG_LOCALES = ['en', 'es', 'de', 'ja'] as const;
+    BLOG_LOCALES.forEach(lang => {
+        blogPaths.forEach(path => {
+            routes.push({
+                url: `${BASE_URL}/${lang}${path}`,
+                lastModified,
+                changeFrequency: 'weekly',
+                priority: 0.8,
+                alternates: {
+                    languages: Object.fromEntries([
+                        ...BLOG_LOCALES.map(l => [l, `${BASE_URL}/${l}${path}`]),
+                        ['x-default', `${BASE_URL}/en${path}`]
+                    ])
+                }
             });
         });
     });

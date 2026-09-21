@@ -1230,18 +1230,88 @@ export const LOCATIONS: Location[] = [
     name: "Chihuahua City",
     state: "Chihuahua",
     country: "Mexico",
-    description: "Major electronics and automotive hub with a highly skilled workforce.",
+    description: "Mexico's premier aerospace and advanced electronics manufacturing hub. Benefit from deep engineering talent, lower operating costs than the border, and established multinational OEM clusters.",
     image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=2000",
     stats: {
-      population: "Varies",
-      laborForce: "High Availability",
-      proximity: "Strategic Location",
+      population: "1.05 Million",
+      laborForce: "450,000+",
+      proximity: "4 hours to El Paso, TX / Ciudad Juárez",
     },
     advantages: [
-      "Lower operating costs than border cities",
-      "Stable and abundant labor force",
-      "Strategic highway and rail connectivity",
-      "Established industrial infrastructure"
+      "Aerospace capital of Mexico: Safran, Honeywell Aerospace, Textron, Bell Helicopter",
+      "15-25% lower labor and operating costs compared to immediate border cities",
+      "Deep engineering and technical talent pool anchored by ITCH and Tec de Monterrey",
+      "Direct rail and Highway 45 connectivity to El Paso/Juárez and Presidio/Ojinaga ports of entry"
+    ],
+    howItWorksSection: {
+      title: "How Nearshoring Works in Chihuahua City",
+      content: [
+        "Chihuahua City represents the high-tech, aerospace, and precision engineering nucleus of Northern Mexico. Located 230 miles south of the US-Mexico border at El Paso, Texas, the state capital offers a sophisticated manufacturing ecosystem that combines the logistical reliability of the North with the cost stability of interior Mexico.",
+        "The city is globally recognized as Mexico's aerospace capital, hosting five Tier 1 aerospace OEMs including Safran (aero-engines and wiring), Honeywell Aerospace, Textron Aviation (Beechcraft and Cessna fuselage subassemblies), Bell Helicopter, and EZ Air. Beyond aerospace, Chihuahua City anchors a major automotive engine hub (Ford Motor Company's Chihuahua Engine Plant) and an advanced electronics and medical cluster featuring Foxconn, Jabil, and Honeywell.",
+        "Operating in Chihuahua City provides structural advantages over border-adjacent cities: labor turnover averages under 2.5% monthly (compared to 6-10% in border hubs), fully burdened labor rates are approximately 15-20% lower than Ciudad Juárez or Tijuana, and the local university system graduates over 4,500 engineers and technicians annually."
+      ],
+      parks: ["Complejo Industrial Chihuahua", "Parque Industrial Las Américas", "Parque Industrial Chihuahua Sur", "Intermex Industrial Park"],
+      logistics: "Direct 4-hour transit via Highway 45 to El Paso/Ciudad Juárez commercial crossing (BOTA and Zaragoza ports of entry) and Ferromex rail corridor connecting directly to BNSF and Union Pacific networks."
+    },
+    serviceHowItWorks: {
+      "shelter-services": {
+        title: "How Shelter Services Work in Chihuahua City",
+        seoTitle: "Shelter Services in Chihuahua City, Mexico | IMMEX 2026",
+        seoDescription: "Chihuahua City IMMEX shelter: aerospace & automotive cluster, $5.80/hr labor, 4hrs to El Paso TX, Class A parks. Launch in 90 days with zero liability.",
+        content: [
+          "Chihuahua City's shelter ecosystem is uniquely tailored for aerospace, high-precision machining, and advanced automotive manufacturing. Operating under a shelter provider in Chihuahua City enables foreign manufacturers to bypass the 6-12 month lead time of establishing a standalone Mexican entity (Sociedad Anónima or S. de R.L.) and instead deploy operations within 90 days under the shelter's active IMMEX license, VAT (IVA) certification, and environmental permits.",
+          "The shelter provider assumes the role of legal employer of record, administering Mexican labor compliance, payroll, IMSS/INFONAVIT contributions, collective bargaining with local unions, and customs brokerage for temporary import of capital equipment and raw materials. Your company retains complete operational control over production processes, quality assurance, engineering standards, and proprietary intellectual property.",
+          "Shelter providers in Chihuahua City have specialized experience with aerospace quality standards (AS9100, NADCAP) and automotive quality systems (IATF 16949). This specialized capability ensures that regulatory compliance, cleanroom maintenance, and hazardous materials handling meet the rigorous demands of US and European defense and aviation prime contractors.",
+          "Cost-wise, shelter operations in Chihuahua City benefit from lower overhead: shelter administrative fees average $280 to $450 per direct labor employee monthly, while direct wages reflect the general national minimum wage rather than the elevated Northern Border Free Zone rate, generating substantial annual operating savings."
+        ],
+        parks: ["Complejo Industrial Chihuahua", "Parque Industrial Las Américas", "Parque Industrial Chihuahua Sur"],
+        logistics: "4-hour highway haul to El Paso commercial border crossing via Highway 45. Direct rail access via Ferromex for high-volume freight."
+      },
+      "contract-manufacturing": {
+        title: "How Contract Manufacturing Works in Chihuahua City",
+        seoTitle: "Contract Manufacturing in Chihuahua City | Aerospace & Electronics",
+        seoDescription: "Chihuahua City contract manufacturing: AS9100 & IATF 16949 certified partners, aerospace precision CNC, electronics assembly, $5.80/hr labor.",
+        content: [
+          "Chihuahua City boasts one of North America's most capable contract manufacturing bases for precision metal mechanics, aerospace wire harnesses, composite materials, and surface-mount technology (SMT) electronics.",
+          "Our vetted contract manufacturing network in Chihuahua City includes AS9100 Rev D, ISO 13485 (medical), and IATF 16949 certified suppliers capable of high-mix, low-volume aerospace components as well as high-volume automotive assemblies.",
+          "Contract manufacturing eliminates the capital expenditure of building or leasing a plant in Mexico. Partner facilities provide turnkey production, supply chain procurement, customs clearing under established IMMEX programs, and direct-to-dock delivery across North America."
+        ],
+        parks: ["Complejo Industrial Chihuahua", "Parque Industrial Las Américas"],
+        logistics: "4 hours to El Paso/Juárez border ports of entry. FAST and CTPAT expedited commercial lanes."
+      },
+      "industrial-real-estate": {
+        title: "Industrial Real Estate in Chihuahua City",
+        seoTitle: "Industrial Real Estate Chihuahua City | Class A Parks & Lease Rates 2026",
+        seoDescription: "Chihuahua City industrial real estate: Class A lease rates $0.62–$0.78/sqft NNN, Las Américas & Complejo Industrial parks, build-to-suit available.",
+        content: [
+          "Chihuahua City's industrial real estate market comprises over 35 million square feet of inventory with healthy vacancy rates between 4% and 6%, offering available Class A and Class B spec space for rapid tenant occupancy.",
+          "Average Class A industrial lease rates range from $0.62 to $0.78 per square foot NNN, providing an attractive 15-25% rent advantage over border markets like Tijuana ($0.75-$0.85/sqft) and Ciudad Juárez ($0.72-$0.82/sqft).",
+          "Major industrial parks including Complejo Industrial Chihuahua, Parque Industrial Las Américas, and Intermex feature robust electrical substations (115kV/230kV transmission lines), abundant natural gas, redundant fiber optic connectivity, and rail spurs directly connected to Ferromex."
+        ],
+        parks: ["Complejo Industrial Chihuahua", "Parque Industrial Las Américas", "Parque Industrial Chihuahua Sur", "Intermex Industrial Park"],
+        logistics: "Direct highway access to Highway 45 and rail corridors serving central and northern trade corridors."
+      },
+      "distribution-centers": {
+        title: "Distribution Centers & Logistics in Chihuahua City",
+        seoTitle: "Distribution Centers in Chihuahua City | 2026 Logistics Guide",
+        seoDescription: "Chihuahua City distribution centers: 3PL warehousing, bonded IMMEX storage, cross-docking, 4hrs to El Paso TX border. Class A facilities from $0.58/sqft.",
+        content: [
+          "Chihuahua City serves as a strategic regional distribution and consolidation hub for goods moving between interior Mexican manufacturing states and the El Paso/Ciudad Juárez border gateway.",
+          "Distribution centers in the city support 3PL warehousing, cross-docking, bonded storage under IMMEX, and vendor-managed inventory (VMI) programs for Tier 1 aerospace and automotive suppliers.",
+          "With modern 32-36 foot clear height facilities, ESFR sprinkler systems, and dedicated truck staging, Chihuahua City distribution hubs provide cost-efficient staging buffers that reduce inventory holding costs compared to US-side warehouses in Texas."
+        ],
+        parks: ["Complejo Industrial Chihuahua", "Parque Industrial Chihuahua Sur"],
+        logistics: "4 hours to El Paso/Juárez border crossings via Highway 45; rail connectivity to Dallas/Fort Worth and Chicago via Ferromex/BNSF interchange."
+      }
+    },
+    localFaqs: [
+      { q: "Why is Chihuahua City known for aerospace manufacturing?", a: "Chihuahua City hosts Mexico's largest aerospace cluster, including Safran, Honeywell Aerospace, Textron, and Bell Helicopter. The region offers NADCAP and AS9100 certified supply chain infrastructure and specialized aerospace engineering programs." },
+      { q: "How far is Chihuahua City from the US border?", a: "Chihuahua City is approximately 230 miles (370 km) south of the US border at El Paso, Texas / Ciudad Juárez, representing a 4-hour drive via Mexican Federal Highway 45." },
+      { q: "What are industrial lease rates in Chihuahua City in 2026?", a: "Class A industrial lease rates in Chihuahua City range from $0.62 to $0.78 per square foot NNN, which is 15-25% lower than border cities like Tijuana and Ciudad Juárez." }
+    ],
+    relatedInsights: [
+      { title: "Top 10 Shelter Service Providers in Mexico: 2026 Comparative Matrix", url: "/insights/top-10-shelter-companies-in-mexico-2026-matrix" },
+      { title: "USMCA Automotive Rules of Origin & RVC Compliance", url: "/insights/usmca-automotive-rules-of-origin-post-atr-expiration" }
     ]
   },
   {
