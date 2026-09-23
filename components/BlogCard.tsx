@@ -15,6 +15,8 @@ export function BlogCard({ post }: { post: BlogPost }) {
     const title = localized?.title || post.title;
     const excerpt = localized?.excerpt || post.excerpt;
     const tags = localized?.tags || post.tags;
+    const wordCount = (post.content || '').replace(/<[^>]*>?/gm, '').split(/\s+/).length;
+    const readTime = Math.max(3, Math.ceil(wordCount / 200));
 
     return (
         <Link href={href} className="group block h-full">
@@ -60,7 +62,9 @@ export function BlogCard({ post }: { post: BlogPost }) {
 
                     <div className="mt-auto pt-6 border-t border-gray-100 dark:border-gray-800/50 flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
                         <span className="flex items-center gap-2 font-medium">
-                             {post.date}
+                            <span>{post.date}</span>
+                            <span className="text-gray-300 dark:text-gray-600">&bull;</span>
+                            <span className="text-primary-600 dark:text-primary-400 font-semibold">{readTime} min read</span>
                         </span>
                         <span className="font-bold text-primary-600 dark:text-primary-400 flex items-center gap-1 group-hover/card:gap-3 transition-all">
                             {t('resources.ctaReadInsights') || "Read Article"}

@@ -656,6 +656,11 @@ export const LOCATIONS: Location[] = [
         { q: "What industrial real estate options and lease terms are available for contract manufacturing in Monterrey?", a: "Monterrey's industrial park infrastructure includes Parque Industrial Stiva (one of Mexico's largest purpose-built parks), Finsa Monterrey, Vesta Monterrey, Prologis Monterrey, and Interpuerto Monterrey near the airport. Monthly rental rates range from $3.50 to $5.50 per square foot depending on facility specifications, climate control requirements, and lease term length — substantially below equivalent Class A industrial space in the United States. Most parks offer flexible lease terms including 3-5 year standard leases, shorter-term options for pilot production, and project-specific arrangements suitable for contract manufacturers with variable space requirements. Facilities typically include 24-hour security, dedicated utility substations supporting heavy equipment loads, truck dock access, and some parks provide integrated customs brokerage and IMMEX documentation support." }
       ]
     },
+    relatedInsights: [
+      { title: "Industrial Water Rights & CONAGUA Playbook (Monterrey & Northern Mexico)", url: "/insights/industrial-water-concessions-conagua-compliance-monterrey-saltillo-baja" },
+      { title: "Monterrey Industrial Parks Energy Resilience & Power Drops", url: "/insights/monterrey-industrial-parks-energy-resilience" },
+      { title: "Manufacturing Campus vs. Industrial Park: Avoiding Cost Lock-In", url: "/insights/manufacturing-campus-vs-industrial-park-mexico-cost-lock-in" }
+    ]
   },
   {
     slug: "guadalajara",
@@ -961,9 +966,9 @@ export const LOCATIONS: Location[] = [
       { q: "What are industrial lease rates in Saltillo?", a: "Class A industrial lease rates in Saltillo typically range from $0.65 to $0.80 USD per square foot per month (NNN), depending on the park and infrastructure." }
     ],
     relatedInsights: [
-      { title: "Maquiladora vs. Shelter Services: Key Differences", url: "/insights/maquiladora-vs-shelter-services-mexico" },
-      { title: "Ultimate Guide to Nearshore Shelter Services", url: "/insights/ultimate-guide-nearshore-shelter-services-baja-california" },
-      { title: "How 2025 Tariffs Reshape Supply Chains", url: "/insights/2025-tariffs-baja-california-supply-chain" }
+      { title: "Manufacturing Campus vs Industrial Park: Cost Lock-In Analysis", url: "/insights/manufacturing-campus-vs-industrial-park-mexico-cost-lock-in" },
+      { title: "Industrial Water Concessions & CONAGUA Compliance in Saltillo", url: "/insights/industrial-water-concessions-conagua-compliance-monterrey-saltillo-baja" },
+      { title: "USMCA Rapid Response Labor Mechanism & Automotive Union Compliance", url: "/insights/usmca-rapid-response-labor-mechanism-mexico-union-compliance" }
     ]
   },
   {
@@ -1069,9 +1074,9 @@ export const LOCATIONS: Location[] = [
       { q: "How far is Hermosillo from the US border?", a: "Hermosillo is approximately 180 miles (290 km) from the Nogales, Arizona commercial port of entry — about a 3-hour drive via Mexico Highway 15D. The city also has access to the deep-water Port of Guaymas for ocean freight, providing connectivity to Asian and South American markets." }
     ],
     relatedInsights: [
-      { title: "Maquiladora vs. Shelter Services: Key Differences", url: "/insights/maquiladora-vs-shelter-services-mexico" },
-      { title: "Ultimate Guide to Nearshore Shelter Services", url: "/insights/ultimate-guide-nearshore-shelter-services-baja-california" },
-      { title: "How 2025 Tariffs Reshape Supply Chains", url: "/insights/2025-tariffs-baja-california-supply-chain" }
+      { title: "Manufacturing Campus vs Standalone Industrial Park: Cost Lock-In", url: "/insights/manufacturing-campus-vs-industrial-park-mexico-cost-lock-in" },
+      { title: "Top 10 Shelter Companies in Mexico: 2026 Matrix", url: "/insights/top-10-shelter-companies-in-mexico-2026-matrix" },
+      { title: "CFO Mexico Shelter Due Diligence & Markups Audit", url: "/insights/cfo-mexico-shelter-company-due-diligence-audit-markups-liability" }
     ]
   },
   {
@@ -1119,6 +1124,11 @@ export const LOCATIONS: Location[] = [
         { q: "What is the distance from Silao to the US border, and how does this affect logistics?", a: "Silao is approximately 600 miles from the US border at Laredo, Texas, requiring 18-24 hour truck transit times to major North American distribution centers. Despite not being in a border region, Silao offers logistics performance matching or exceeding domestic US manufacturing options through its integrated logistics infrastructure — Puerto Interior dry port, Del Bajío Airport (GBJ, 45 minutes away), modern truck networks. The regional location provides additional advantages: manufacturers can consolidate cargo via rail to border consolidation points, reducing per-unit transportation costs for bulk shipments, while maintaining flexibility to use air transport for urgent deliveries. Distance to major US markets means contract manufacturers in Silao effectively operate as extensions of North American manufacturing operations, providing customers with supply chain resilience and flexibility superior to overseas alternatives." }
       ]
     },
+    relatedInsights: [
+      { title: "USMCA Rapid Response Labor Mechanism (RRLM) & SINTTIA Case Study", url: "/insights/usmca-rapid-response-labor-mechanism-mexico-union-compliance" },
+      { title: "USMCA Labor Value Content ($16/hr) Audit Compliance Guide", url: "/insights/usmca-labor-value-content-16-wage-audit-guide" },
+      { title: "USMCA Automotive Rules of Origin Post-ATR Expiration", url: "/insights/usmca-automotive-rules-of-origin-post-atr-expiration" }
+    ]
   },
   {
     slug: "puebla",

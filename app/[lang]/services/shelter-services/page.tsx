@@ -168,7 +168,9 @@ export default async function ShelterServicesPage(props: { params: Promise<{ lan
             </div>
             <div className="space-y-2">
               <h3 className="text-lg font-semibold text-primary-400">Payroll & Labor Compliance</h3>
-              <p className="text-sm text-gray-300">Management of IMSS social security, INFONAVIT housing tax, Aguinaldo bonuses, and Ley Federal del Trabajo compliance.</p>
+              <p className="text-sm text-gray-300">
+                Management of IMSS social security, INFONAVIT housing tax, Aguinaldo bonuses, and Ley Federal del Trabajo compliance, including <Link href={`/${lang}/insights/usmca-rapid-response-labor-mechanism-mexico-union-compliance`} className="text-primary-400 underline hover:text-primary-300">USMCA union compliance and RRLM audit defense</Link> to eliminate export tariff risks.
+              </p>
             </div>
             <div className="space-y-2">
               <h3 className="text-lg font-semibold text-primary-400">Customs & Pedimentos Clearances</h3>
@@ -176,7 +178,9 @@ export default async function ShelterServicesPage(props: { params: Promise<{ lan
             </div>
             <div className="space-y-2">
               <h3 className="text-lg font-semibold text-primary-400">Industrial Facility Leasing</h3>
-              <p className="text-sm text-gray-300">Lease administration in Class A industrial parks (Otay Mesa, Pacifico, El Florido, PIMSA) with NNN rates ($0.47–$0.83/SF).</p>
+              <p className="text-sm text-gray-300">
+                Lease administration in Class A industrial parks (Otay Mesa, Pacifico, El Florido, PIMSA) with NNN rates ($0.47–$0.83/SF), evaluating <Link href={`/${lang}/insights/manufacturing-campus-vs-industrial-park-mexico-cost-lock-in`} className="text-primary-400 underline hover:text-primary-300">manufacturing campus vs standalone industrial park</Link> cost structures to eliminate long-term lease lock-in.
+              </p>
             </div>
           </div>
         </section>

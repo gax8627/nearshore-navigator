@@ -207,7 +207,7 @@ To evaluate these options objectively, executives must understand the structural
 ```
 
 ### The Proprietary Manufacturing Campus Architecture
-Pioneered in the 1980s by companies such as The Offshore Group (now Tetakawi) in Sonora and Coahuila, and later adopted by Entrada Group in the Bajío region, the manufacturing campus was created to resolve infrastructure vacuums in secondary Mexican markets. In these locations, municipal water, high-voltage electrical grid connections, and specialized technical labor were historically absent.
+Pioneered in the 1980s by companies such as The Offshore Group (now Tetakawi) in the [Hermosillo and Guaymas manufacturing corridor](/en/locations/hermosillo) and the [Saltillo and Ramos Arizpe automotive cluster](/en/locations/saltillo), and cross-referenced in our [2026 Top Mexico Shelter Companies Matrix](/en/insights/top-10-shelter-companies-in-mexico-2026-matrix), the manufacturing campus was created to resolve infrastructure vacuums in secondary Mexican markets. In these locations, municipal water, high-voltage electrical grid connections, and specialized technical labor were historically absent.
 
 In a proprietary campus:
 * **Real Estate Ownership:** The campus operator owns or long-term master-leases the entire industrial acreage and constructs the industrial buildings.
@@ -216,7 +216,7 @@ In a proprietary campus:
 * **Operating Shell:** The foreign corporation operates under the single IMMEX program and legal tax umbrella of the campus operator.
 
 ### The Independent Class A Industrial Park Architecture
-Modern Mexican industrial real estate is dominated by institutional real estate investment trusts—known as FIBRAs (*Fideicomisos de Inversión en Bienes Raíces*)—and world-class private developers certified by **AMPIP** (*Asociación Mexicana de Parques Industriales Privados*) under standard **NMX-R-046-SCFI-2015**. Leaders include Prologis, Vesta, FINSA, Fibra Uno, Fibra Monterrey, and CPA.
+Modern Mexican industrial real estate is dominated by institutional real estate investment trusts—known as FIBRAs (*Fideicomisos de Inversión en Bienes Raíces*)—and world-class private developers certified by **AMPIP** (*Asociación Mexicana de Parques Industriales Privados*) under standard **NMX-R-046-SCFI-2015**. Leaders include Prologis, Vesta, FINSA, Fibra Uno, Fibra Monterrey, and CPA. Explore Class A inventory across the border and [Monterrey Class A industrial market](/en/locations/monterrey) using our [interactive Mexico industrial park map](/en/tools/industrial-park-map).
 
 In an independent industrial park:
 * **Pure Landlord Relationship:** The developer is strictly a commercial real estate landlord. They build to institutional Class A specifications (32- to 36-foot clear heights, 6- to 8-inch laser-screed reinforced floor slabs, dedicated truck courts, and FM Global fire protection).
@@ -233,7 +233,7 @@ In an independent industrial park:
 <strong>Proprietary manufacturing campuses charge a 15% to 30% premium over open-market Class A lease rates, often embedding administrative overhead into common area maintenance (CAM) fees and utility redistribution. Independent industrial parks offer transparent NNN leases ($0.55–$0.78/SF/mo) with competitive CAM charges ($0.03–$0.06/SF/mo) and unbundled, negotiated administrative shelter fees.</strong>
 </div>
 
-When reviewing preliminary marketing proposals, corporate decision-makers frequently fall victim to headline lease rate illusions. A campus proposal may appear competitive on initial inspection because legal setup fees and environmental permitting line-items are waived. However, a forensic 5-year Total Cost of Occupancy (TCO) audit reveals substantial structural cost inflation.
+When reviewing preliminary marketing proposals, corporate decision-makers frequently fall victim to headline lease rate illusions. A campus proposal may appear competitive on initial inspection because legal setup fees and environmental permitting line-items are waived. However, a forensic 5-year Total Cost of Occupancy (TCO) audit reveals substantial structural cost inflation. Before committing capital, model your exact headcount and utility loads on our [fully burdened Mexico manufacturing cost calculator](/en/tools/cost-calculator).
 
 ```
 +---------------------------------------------------------------------------------------------------+
@@ -254,7 +254,7 @@ When reviewing preliminary marketing proposals, corporate decision-makers freque
 ### 1. Base Rent & CAM Fee Forensic Audit
 In open industrial corridors such as Saltillo, Monterrey, Querétaro, or Ciudad Juárez, institutional Class A NNN lease rates benchmarked by CBRE and JLL range from **\$0.58 to \$0.78 USD per square foot per month** (depending on submarket vacancy and tenant improvement allowances). Common Area Maintenance (CAM) fees in institutional parks are competitively audited, typically running **\$0.03 to \$0.06 USD per square foot per month**, covering external perimeter security, landscaping, storm-water basin maintenance, and common lighting.
 
-In contrast, proprietary manufacturing campuses frequently structure lease rates between **\$0.85 and \$1.15 USD per square foot per month equivalent**. More critically, CAM fees inside proprietary campuses frequently surge to **\$0.09 to \$0.16 USD per square foot per month**. Because the campus operator controls the private security force, on-site fire brigades, internal road repairs, and communal amenities, these CAM charges represent a significant profit center rather than an audited pass-through expense.
+In contrast, proprietary manufacturing campuses frequently structure lease rates between **\$0.85 and \$1.15 USD per square foot per month equivalent**. More critically, CAM fees inside proprietary campuses frequently surge to **\$0.09 to \$0.16 USD per square foot per month**. Because the campus operator controls the private security force, on-site fire brigades, internal road repairs, and communal amenities, these CAM charges represent a significant profit center rather than an audited pass-through expense. For forensic audit protocols on unbundling these fees, review our [CFO forensic audit of shelter markups and hidden lease liabilities](/en/insights/cfo-mexico-shelter-company-due-diligence-audit-markups-liability). Furthermore, if your production process requires heavy extraction or industrial wastewater treatment, audit park rights under our guide on [industrial water concessions and CONAGUA compliance](/en/insights/industrial-water-concessions-conagua-compliance-monterrey-saltillo-baja).
 
 ### 2. Utility Redistribution & Sub-metering Premiums
 Under Mexican energy law, industrial consumers connected to the National Electric System (SEN) pay tariffs regulated by the Energy Regulatory Commission (CRE) and billed directly by CFE Suministrador de Servicios Básicos (typically under the GDMTH - *Gran Demanda Media Tensión Horaria* tariff).
@@ -529,6 +529,11 @@ To assist C-level corporate committees in evaluating real estate and operational
 4. **Long-Term Enterprise Value Creation:** If your corporate board views Mexican operations as a strategic core asset that enhances enterprise valuation, you must maintain real estate lease portability, direct vendor accountability, and an unencumbered path to full corporate independence.
 
 ---
+
+### Take the Next Step in Your Site Selection Due Diligence
+Before committing capital to an irreversible 7-to-10 year industrial lease agreement, validate your operational assumptions:
+1. Complete our interactive [Nearshore Manufacturing Feasibility & Lease Assessment](/en/assessment) to benchmark your labor volume and real estate risk profile.
+2. [Book an unbundled lease and shelter due diligence consultation with Denisse Martinez](https://calendly.com/denisse-nearshorenavigator/30min) to review your proposed Master Services Agreement (MSA) and inspect Class A park alternatives.
 
 ## How Nearshore Navigator Protects Your Expansion
 

@@ -2,12 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { BlogPost as BlogPostType } from "@/app/constants/blog-data";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { ChevronLeft, Calendar, Clock, Share2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/Button";
 
 export function BlogPost({ post }: { post: BlogPostType }) {
+  const [copied, setCopied] = useState(false);
   const { language, t } = useLanguage();
 
   // Handle localization
@@ -24,7 +26,7 @@ export function BlogPost({ post }: { post: BlogPostType }) {
     <article className="min-h-screen bg-gray-50 dark:bg-gray-900/40">
       
       {/* Premium Full-Bleed Hero Banner */}
-      <div className="relative w-full h-[60vh] min-h-[500px] flex items-end pb-16 overflow-hidden">
+      <div className="relative w-full h-[50vh] md:h-[60vh] min-h-[380px] md:min-h-[500px] flex items-end pb-10 md:pb-16 overflow-hidden">
         <Image
             src={post.imageUrl}
             alt={`${currentTitle} - Nearshore Navigator Industrial Insight`}
@@ -61,7 +63,7 @@ export function BlogPost({ post }: { post: BlogPostType }) {
               <span className="flex items-center gap-2"><Calendar className="w-4 h-4 text-primary-400" /> {post.date}</span>
               <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-primary-400" /> {readTime} Min Read</span>
               <span className="text-gray-400">|</span>
-              <span className="text-white">By Denisse Martinez</span>
+              <Link href={`/${language}/about/denisse-martinez`} className="text-white hover:text-primary-300 transition-colors underline font-medium">By Denisse Martinez</Link>
             </div>
         </div>
       </div>
@@ -119,8 +121,26 @@ export function BlogPost({ post }: { post: BlogPostType }) {
                            <Share2 className="w-4 h-4" /> Share Insight
                         </div>
                         <div className="flex gap-2">
-                            <button className="flex-1 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-lg text-sm font-semibold hover:bg-blue-100 transition-colors">LinkedIn</button>
-                            <button className="flex-1 py-2 bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-lg text-sm font-semibold hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">Copy Link</button>
+                            <a
+        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex-1 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-lg text-sm font-semibold hover:bg-blue-100 dark:hover:bg-blue-900/40 text-center transition-colors"
+      >
+        LinkedIn
+      </a>
+      <button
+        onClick={() => {
+          if (typeof window !== 'undefined') {
+            navigator.clipboard.writeText(window.location.href);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+          }
+        }}
+        className="flex-1 py-2 bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-lg text-sm font-semibold hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
+      >
+        {copied ? "Copied!" : "Copy Link"}
+      </button>
                         </div>
                     </div>
 

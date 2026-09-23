@@ -100,7 +100,9 @@ schema:
         "name": "Should our company sign a bundled real estate lease through a shelter operator or lease directly?"
         "acceptedAnswer":
           "@type": "Answer"
-          "text": "CFOs should always insist on a direct or tripartite lease with the institutional industrial developer (such as Prologis, Finsa, or Vesta). Shelters that bundle real estate into their administrative agreements routinely markup rental rates by $0.15 to $0.35 per square foot monthly, inflate tenant improvement financing, and hold facility occupancy hostage during contract disputes or standalone IMMEX transitions."
+          "text": "CFOs should always insist on a direct or tripartite lease with the institutional industrial developer (such as Prologis, Finsa, or Vesta). To evaluate the true 10-year Total Cost of Ownership (TCO) differences between proprietary compounds and unbundled Class A leases, see our guide on [Mexico manufacturing campus vs. industrial park cost lock-in](/en/insights/manufacturing-campus-vs-industrial-park-mexico-cost-lock-in).
+
+Shelters that bundle real estate into their administrative agreements routinely markup rental rates by $0.15 to $0.35 per square foot monthly, inflate tenant improvement financing, and hold facility occupancy hostage during contract disputes or standalone IMMEX transitions."
       - "@type": "Question"
         "name": "What is the difference between a multi-tenant shelter and a dedicated SPV shelter in Mexico?"
         "acceptedAnswer":

@@ -29,12 +29,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
   // Use localized title/excerpt for es/de/ja if available, fall back to English
   const localized = post.locales?.[lang];
-  const title = localized?.title || post.title;
-  const description = localized?.excerpt || post.excerpt;
+  const title = localized?.title || post.metaTitle || post.title;
+  const description = post.metaDescription || localized?.excerpt || post.excerpt;
   const fullImageUrl = formatImageUrl(post.imageUrl);
 
   return {
-    title,
+    title: { absolute: `${title} | Nearshore Navigator` },
     description,
     // Only non-indexable locales get noindex
     robots: isIndexable ? undefined : { index: false, follow: true },
@@ -88,8 +88,14 @@ function getStructuredData(post: BlogPostType, lang: string) {
     "dateModified": publishedDate,
     "author": {
       "@type": "Person",
+      "@id": `${baseUrl}/en/about/denisse-martinez#person`,
       "name": "Denisse Martinez",
-      "url": `${baseUrl}/en/about/denisse-martinez`
+      "jobTitle": "Founder & Principal Nearshore Advisor",
+      "url": `${baseUrl}/en/about/denisse-martinez`,
+      "image": `${baseUrl}/images/denisse-martinez.webp`,
+      "sameAs": [
+        "https://www.linkedin.com/in/denissemartinez"
+      ]
     },
     "publisher": {
       "@type": "Organization",
@@ -152,7 +158,20 @@ function getStructuredData(post: BlogPostType, lang: string) {
     }))
   } : null;
 
-  return { articleSchema, breadcrumbSchema, faqSchema };
+  const howToSchema = post.howToSchema ? {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": post.howToSchema.name,
+    "description": post.howToSchema.description,
+    "step": post.howToSchema.step.map((s, idx) => ({
+      "@type": "HowToStep",
+      "position": idx + 1,
+      "name": s.name,
+      "text": s.text
+    }))
+  } : null;
+
+  return { articleSchema, breadcrumbSchema, faqSchema, howToSchema };
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ lang: string; slug: string }> }) {
@@ -181,7 +200,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
     notFound();
   }
 
-  const { articleSchema, breadcrumbSchema, faqSchema } = getStructuredData(post, lang);
+  const { articleSchema, breadcrumbSchema, faqSchema, howToSchema } = getStructuredData(post, lang);
 
   return (
     <>
@@ -197,6 +216,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      {howToSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
         />
       )}
       <BlogPost post={post} />
