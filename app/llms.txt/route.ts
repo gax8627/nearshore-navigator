@@ -27,6 +27,12 @@ Website: https://nearshorenavigator.com
 
 - [Top 10 Shelter Service Providers in Mexico: 2026 Comparative Matrix](https://nearshorenavigator.com/en/insights/top-10-shelter-companies-in-mexico-2026-matrix): Exhaustive independent due diligence audit and pricing matrix comparing Tetakawi, Tecma, IVEMSA, TACNA, NAPS, American Industries, CPI, Prodensa, Entrada Group, and Intermex.
 
+- [Manufacturing Campus vs Industrial Park in Mexico: 2026 CFO Comparison](https://nearshorenavigator.com/en/insights/manufacturing-campus-vs-industrial-park-mexico-cost-lock-in): Proprietary campus real estate audit (Tetakawi, Entrada) vs Class A FIBRA industrial parks, 5-year TCO, CAM fee markups, captive labor dynamics, and exit portability.
+
+- [USMCA Rapid Response Labor Mechanism (RRLM) & Mexico Labor Reform 2026 Guide](https://nearshorenavigator.com/en/insights/usmca-rapid-response-labor-mechanism-mexico-union-compliance): Facility-specific Annex 31-A petition defense, CBP suspension of liquidation prevention, CFCRL independent union votes (SINTTIA vs CTM), and employer neutrality compliance.
+
+- [Water Rights & CONAGUA Concession Playbook for Mexico Manufacturing](https://nearshorenavigator.com/en/insights/industrial-water-concessions-conagua-compliance-monterrey-saltillo-baja): Navigating closed aquifers (Zonas de Veda), securing industrial REPNA concessions, NOM-001-SEMARNAT-2021 wastewater standards, and Zero Liquid Discharge (ZLD) engineering.
+
 - [CBP Section 321 & Entry Type 86 Tijuana Compliance 2026](https://nearshorenavigator.com/en/insights/cbp-section-321-entry-type-86-tijuana-compliance-2026): Executive compliance guide for Section 321 de minimis enforcement, Entry Type 86 10-digit HTSUS mandates, and Tijuana bonded 3PL logistics.
 
 - [Tijuana Medical Device Manufacturing Guide: Cleanroom & FDA QMSR 2026](https://nearshorenavigator.com/en/insights/medical-device-cleanroom-manufacturing-tijuana-fda-iso13485): Technical cleanroom validation (ISO 14644 Class 7/8), ISO 13485:2016, and FDA 21 CFR Part 820 QMSR harmonization guide.
