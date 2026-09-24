@@ -9,7 +9,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
 
   const title = lang === 'en'
     ? 'Customs Brokerage & Trade Compliance Mexico | Pedimentos, Annex 24/31 & USMCA'
-    : `${dict.customsPage?.heroTitle || 'Customs Brokerage & Trade Compliance'} ${dict.customsPage?.heroTitleHighlight || 'in Mexico'} | Nearshore Navigator`;
+    : `${dict.customsPage?.heroTitle || 'Customs Brokerage & Trade Compliance'} ${dict.customsPage?.heroTitleHighlight || 'in Mexico'}`;
 
   const description = lang === 'en'
     ? 'Standalone unbundled customs brokerage in Mexico: Pedimentos clearance, Annex 24/31 IMMEX digital inventory control, USMCA tariff mitigation & Section 301 China tariff elimination. Direct Agente Aduanal access.'

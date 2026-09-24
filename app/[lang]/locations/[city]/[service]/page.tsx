@@ -73,7 +73,7 @@ export async function generateMetadata({ params }: Props) {
   const finalCanonical = canonicalUrl;
 
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: {
       canonical: finalCanonical,

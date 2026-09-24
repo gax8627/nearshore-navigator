@@ -18,8 +18,10 @@ import { google } from 'googleapis';
 import { readFileSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: resolve(__dirname, '../.env.local') });
 const PROPERTY_ID = '528048108';
 
 const args = process.argv.slice(2);
@@ -29,19 +31,38 @@ const showSources = args.includes('--sources');
 const showCountries = args.includes('--countries');
 const showAll = !showPages && !showSources && !showCountries;
 
-// Auth — uses local .gcloud-adc.json if present (for Cowork), otherwise falls back to ADC
+// Auth — checks google-token.json first, then .gcloud-adc.json, otherwise falls back to ADC
+const tokenPath = resolve(__dirname, '../google-token.json');
 const localCreds = resolve(__dirname, '../.gcloud-adc.json');
 let auth;
-if (existsSync(localCreds)) {
-  const keyFile = JSON.parse(readFileSync(localCreds, 'utf8'));
-  auth = new google.auth.GoogleAuth({
-    credentials: keyFile,
-    scopes: ['https://www.googleapis.com/auth/analytics.readonly'],
-  });
-} else {
-  auth = new google.auth.GoogleAuth({
-    scopes: ['https://www.googleapis.com/auth/analytics.readonly'],
-  });
+
+if (existsSync(tokenPath)) {
+  try {
+    const tokens = JSON.parse(readFileSync(tokenPath, 'utf8'));
+    const oauth2Client = new google.auth.OAuth2(
+      process.env.GOOGLE_CLIENT_ID,
+      process.env.GOOGLE_CLIENT_SECRET,
+      'http://localhost:3000'
+    );
+    oauth2Client.setCredentials(tokens);
+    auth = oauth2Client;
+  } catch (e) {
+    // fallback
+  }
+}
+
+if (!auth) {
+  if (existsSync(localCreds)) {
+    const keyFile = JSON.parse(readFileSync(localCreds, 'utf8'));
+    auth = new google.auth.GoogleAuth({
+      credentials: keyFile,
+      scopes: ['https://www.googleapis.com/auth/analytics.readonly'],
+    });
+  } else {
+    auth = new google.auth.GoogleAuth({
+      scopes: ['https://www.googleapis.com/auth/analytics.readonly'],
+    });
+  }
 }
 
 const analyticsdata = google.analyticsdata({ version: 'v1beta', auth });

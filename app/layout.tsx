@@ -2,6 +2,8 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { Providers } from '@/components/providers';
 import Script from 'next/script';
+import { Suspense } from 'react';
+import { AnalyticsTracker } from '@/components/AnalyticsTracker';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' });
@@ -28,6 +30,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning={true}>
       <head>
+        <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Knowledge Base" />
+        <link rel="alternate" type="text/markdown" href="/llms-full.txt" title="Full LLM Codex" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-7RHTT5QR43"
           strategy="afterInteractive"
@@ -38,12 +42,24 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'G-7RHTT5QR43');
+            var isBot = Boolean(
+              (window.navigator && window.navigator.webdriver) ||
+              /HeadlessChrome|Bytespider|PetalBot|crawler|spider|bot|preview/i.test(navigator.userAgent) ||
+              (window.outerWidth === 0 && window.outerHeight === 0)
+            );
+
+            gtag('config', 'G-7RHTT5QR43', {
+              traffic_type: isBot ? 'datacenter_bot' : 'production',
+              transport_type: 'beacon'
+            });
           `}
         </Script>
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`} suppressHydrationWarning={true}>
         <Providers>
+          <Suspense fallback={null}>
+            <AnalyticsTracker />
+          </Suspense>
           {children}
         </Providers>
       </body>

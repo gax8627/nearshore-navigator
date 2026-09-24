@@ -5,7 +5,7 @@ import MarketingClient from './MarketingClient';
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await props.params;
   return {
-    title: 'B2B Marketing for Nearshore Companies | Outbound & SEO | Nearshore Navigator',
+    title: { absolute: 'B2B Marketing for Nearshore Companies | Outbound & SEO | Nearshore Navigator' },
     description: 'Specialized B2B marketing services for companies expanding to Mexico. ICP research, outbound campaigns, LinkedIn strategy, and SEO for nearshore audiences.',
     openGraph: {
       title: 'B2B Marketing for Nearshore Companies | Nearshore Navigator',

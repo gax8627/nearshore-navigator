@@ -36,15 +36,18 @@ export function LeadForm({ title, subtitle, source, className }: LeadFormProps) 
 
         const formData = new FormData(e.currentTarget);
         const searchParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+        const getSessionVal = (key: string) => {
+            try { return typeof window !== 'undefined' ? (sessionStorage.getItem(key) || '') : ''; } catch { return ''; }
+        };
         
         const data = {
             ...Object.fromEntries(formData.entries()),
             source: source || 'website_contact_form',
-            utmSource: searchParams?.get('utm_source') || '',
-            utmMedium: searchParams?.get('utm_medium') || '',
-            utmCampaign: searchParams?.get('utm_campaign') || '',
-            utmContent: searchParams?.get('utm_content') || '',
-            utmTerm: searchParams?.get('utm_term') || '',
+            utmSource: searchParams?.get('utm_source') || getSessionVal('nn_utm_source'),
+            utmMedium: searchParams?.get('utm_medium') || getSessionVal('nn_utm_medium'),
+            utmCampaign: searchParams?.get('utm_campaign') || getSessionVal('nn_utm_campaign'),
+            utmContent: searchParams?.get('utm_content') || getSessionVal('nn_utm_content'),
+            utmTerm: searchParams?.get('utm_term') || getSessionVal('nn_utm_term'),
             cfToken 
         };
 

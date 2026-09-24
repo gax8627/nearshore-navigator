@@ -5,7 +5,7 @@ import { BASE_URL, INDEXABLE_LOCALES } from '@/app/constants/seo-config';
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await props.params;
   return {
-    title: 'Nearshore Advisory & Manufacturing Services in Mexico | Nearshore Navigator',
+    title: { absolute: 'Nearshore Advisory & Manufacturing Services in Mexico | Nearshore Navigator' },
     description: 'Strategic nearshore advisory services including industrial real estate site selection, contract manufacturing, distribution centers, and shelter services in Tijuana.',
     alternates: {
       canonical: `${BASE_URL}/${lang}/services`,

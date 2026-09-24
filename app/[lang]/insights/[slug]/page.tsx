@@ -32,9 +32,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const title = localized?.title || post.metaTitle || post.title;
   const description = post.metaDescription || localized?.excerpt || post.excerpt;
   const fullImageUrl = formatImageUrl(post.imageUrl);
+  const pageTitle = (post.metaTitle || title.length > 42)
+    ? title
+    : `${title} | Nearshore Navigator`;
 
   return {
-    title: { absolute: `${title} | Nearshore Navigator` },
+    title: { absolute: pageTitle },
     description,
     // Only non-indexable locales get noindex
     robots: isIndexable ? undefined : { index: false, follow: true },

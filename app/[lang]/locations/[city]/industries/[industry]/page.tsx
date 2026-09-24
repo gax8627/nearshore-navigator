@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: Props) {
   const canonicalUrl = `https://nearshorenavigator.com/${lang}/locations/${city}/industries/${industry}`;
 
   return {
-    title: `${industryName} in ${location.name}, Mexico | 2026 Industrial Guide`,
+    title: { absolute: `${industryName} in ${location.name}: 2026 Industrial Guide` },
     description: `Expert guide to ${industryName} manufacturing in ${location.name}. Scale your production with ${location.name}'s specialized workforce and AS9100/FDA-compliant infrastructure.`,
     // Only index pages with verified, real content. Placeholder pages remain noindex.
     robots: { index: isIndexable, follow: true },

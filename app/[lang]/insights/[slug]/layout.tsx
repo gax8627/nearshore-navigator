@@ -15,7 +15,7 @@ export default async function Layout({
   params: Promise<{ slug: string }>;
 }) {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-24 pb-12">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pb-12">
       {children}
     </div>
   );

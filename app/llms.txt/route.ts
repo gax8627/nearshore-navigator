@@ -95,6 +95,9 @@ Website: https://nearshorenavigator.com
 - [Contract Manufacturing in Silao](https://nearshorenavigator.com/en/locations/silao/contract-manufacturing): $4.80–$5.80/hr (Mexico's lowest). GM Silverado plant. Puerto Interior dry port.
 - [Contract Manufacturing in Matamoros](https://nearshorenavigator.com/en/locations/matamoros/contract-manufacturing): $7.84/hr. IATF 16949. 24/7 FAST-lane to Brownsville TX.
 - [Contract Manufacturing in Reynosa](https://nearshorenavigator.com/en/locations/reynosa/contract-manufacturing): TI, GE & Emerson electronics cluster. Medical device growth 18–22%/yr.
+- [Contract Manufacturing in Mexicali](https://nearshorenavigator.com/en/locations/mexicali/contract-manufacturing): AS9100 aerospace & electronics hub, Calexico port of entry, 15–25% lower real estate costs than Tijuana.
+- [Contract Manufacturing in Guadalajara](https://nearshorenavigator.com/en/locations/guadalajara/contract-manufacturing): Electronics capital of Mexico. Intel, HP, Jabil & Flextronics, $5–$6.50/hr labor.
+- [3PL & Distribution in Guadalajara](https://nearshorenavigator.com/en/locations/guadalajara/distribution-centers): Western Mexico logistics hub, bonded warehousing, GDL air cargo terminal, and Manzanillo ocean port drayage.
 
 ## Key Service Pages
 

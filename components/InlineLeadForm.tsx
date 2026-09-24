@@ -31,6 +31,13 @@ export const InlineLeadForm = () => {
 
             if (res.ok) {
                 setStatus('success');
+                if (typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'generate_lead', {
+                        event_category: 'lead',
+                        event_label: 'Homepage_Inline_Form',
+                        value: 1
+                    });
+                }
             } else {
                 setStatus('error');
             }
