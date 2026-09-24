@@ -44,10 +44,14 @@ export async function POST(req: Request) {
     }
 
     // Dispatch an Inngest event to trigger deliverLeadMagnet background function
-    await inngest.send({
-      name: 'lead.requested.magnet',
-      data: { email, name, company, pdfRequested, data }
-    });
+    try {
+      await inngest.send({
+        name: 'lead.requested.magnet',
+        data: { email, name, company, pdfRequested, data }
+      });
+    } catch (inngestErr) {
+      console.warn('[Lead Magnet] Inngest dispatch warning:', inngestErr);
+    }
 
     return NextResponse.json({ success: true, message: 'Your guide is on its way!' });
   } catch (error) {
