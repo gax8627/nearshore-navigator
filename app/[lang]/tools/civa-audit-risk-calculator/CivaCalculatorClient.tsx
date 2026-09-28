@@ -15,13 +15,9 @@ import {
   Scale,
   Award,
   DollarSign,
-  TrendingDown,
   Building2,
-  Lock,
   RefreshCw,
   ExternalLink,
-  ChevronDown,
-  ChevronUp,
   Copy,
   Check,
   Flame,
@@ -228,7 +224,6 @@ export default function CivaCalculatorClient({ language }: { language: string })
   // UI state
   const [copiedLink, setCopiedLink] = useState(false);
   const [copiedSummary, setCopiedSummary] = useState(false);
-  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   // Sync inputs from URL params on mount
   useEffect(() => {
@@ -289,11 +284,20 @@ export default function CivaCalculatorClient({ language }: { language: string })
   const handleInputChange = (text: string) => {
     setImportInputText(text);
     const numeric = Number(text.replace(/[^0-9]/g, ""));
-    if (!isNaN(numeric)) {
-      const bounded = Math.max(500000, Math.min(50000000, numeric));
-      setMonthlyImports(bounded);
-      updateUrl(bounded, certification, answers);
+    if (!isNaN(numeric) && numeric >= 500000 && numeric <= 50000000) {
+      setMonthlyImports(numeric);
+      updateUrl(numeric, certification, answers);
     }
+  };
+
+  const handleInputBlur = () => {
+    const numeric = Number(importInputText.replace(/[^0-9]/g, ""));
+    const bounded = isNaN(numeric) || numeric < 500000
+      ? 500000
+      : Math.min(50000000, numeric);
+    setMonthlyImports(bounded);
+    setImportInputText(bounded.toLocaleString("en-US"));
+    updateUrl(bounded, certification, answers);
   };
 
   const handleCertificationChange = (cert: CertificationModality) => {
@@ -316,9 +320,14 @@ export default function CivaCalculatorClient({ language }: { language: string })
     const monthlyVatRisk = monthlyImports * 0.16;
     const annualCapitalFreeze = monthlyVatRisk * 12;
 
-    // Minimum statutory penalty under Ley Aduanera Art. 178 is 70% of omitted duties
+    // Statutory fines under Ley Aduanera Art. 178: 70% to 100% of omitted duties
     const penaltyMin = annualCapitalFreeze * 0.70;
     const penaltyMax = annualCapitalFreeze * 1.00;
+
+    // CFF Art. 21 inflation & surcharges (actualización e recargos): estimated at ~22.5% per annum
+    const surchargeAndInflation = annualCapitalFreeze * 0.225;
+    const totalExposureMin = annualCapitalFreeze + penaltyMin + surchargeAndInflation;
+    const totalExposureMax = annualCapitalFreeze + penaltyMax + surchargeAndInflation;
 
     // Calculate questionnaire penalty points
     let rawFailedPoints = 0;
@@ -331,12 +340,14 @@ export default function CivaCalculatorClient({ language }: { language: string })
     });
 
     const modalityConfig = MODALITY_DETAILS[certification];
-    let calculatedScore = 0;
+    let calculatedScore = Math.round(modalityConfig.basePenalty + rawFailedPoints * modalityConfig.multiplier);
 
-    if (certification === "uncertified") {
-      calculatedScore = Math.round(modalityConfig.basePenalty + rawFailedPoints * modalityConfig.multiplier);
-    } else {
-      calculatedScore = Math.round(modalityConfig.basePenalty + rawFailedPoints * modalityConfig.multiplier);
+    // Critical Discrepancy Rule: Under SAT Plan Maestro 2026, failing Anexo 24 reconciliation
+    // or Anexo 30 discharge filings triggers automatic CFF Article 53-B electronic audit notices,
+    // precluding a "Low Risk" classification even under Modality AAA.
+    const criticalDiscrepancy = !answers.anexo24_vucem || !answers.anexo30_discharge;
+    if (criticalDiscrepancy && calculatedScore < 35) {
+      calculatedScore = 35;
     }
 
     const auditVulnerabilityScore = Math.min(100, Math.max(0, calculatedScore));
@@ -355,6 +366,9 @@ export default function CivaCalculatorClient({ language }: { language: string })
       annualCapitalFreeze,
       penaltyMin,
       penaltyMax,
+      surchargeAndInflation,
+      totalExposureMin,
+      totalExposureMax,
       failedCount,
       auditVulnerabilityScore,
       riskTier
@@ -376,7 +390,14 @@ export default function CivaCalculatorClient({ language }: { language: string })
   const handleShareLink = async () => {
     if (typeof window !== "undefined") {
       try {
-        await navigator.clipboard.writeText(window.location.href);
+        const params = new URLSearchParams();
+        params.set("vol", monthlyImports.toString());
+        params.set("cert", certification);
+        QUESTIONNAIRE_ITEMS.forEach((item, idx) => {
+          params.set(`q${idx + 1}`, answers[item.id] ? "1" : "0");
+        });
+        const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+        await navigator.clipboard.writeText(shareUrl);
         setCopiedLink(true);
         setTimeout(() => setCopiedLink(false), 2500);
       } catch (err) {
@@ -394,7 +415,9 @@ Audit Vulnerability Score: ${calculations.auditVulnerabilityScore}% (${calculati
 FINANCIAL IMPACT:
 • Immediate Monthly 16% VAT Cash Outflow: ${formatCurrency(calculations.monthlyVatRisk)} / month
 • Annual Working Capital Freeze: ${formatCurrency(calculations.annualCapitalFreeze)} / year
-• Potential Statutory Fines (Art. 178 LA): ${formatCurrency(calculations.penaltyMin)} - ${formatCurrency(calculations.penaltyMax)}
+• Statutory Fines (Art. 178 LA, 70%-100%): ${formatCurrency(calculations.penaltyMin)} - ${formatCurrency(calculations.penaltyMax)}
+• Estimated CFF Art. 21 Surcharges & Inflation (~22.5%): ${formatCurrency(calculations.surchargeAndInflation)}
+• Total Potential Fiscal Exposure: ${formatCurrency(calculations.totalExposureMin)} - ${formatCurrency(calculations.totalExposureMax)}
 
 AUDIT FINDINGS (${calculations.failedCount} High-Impact Deficiencies):
 ${
@@ -412,6 +435,20 @@ Confidential Advisor: Denisse Martinez, Principal Nearshore Advisor`;
       setTimeout(() => setCopiedSummary(false), 2500);
     } catch (err) {
       console.error("Copy summary failed", err);
+    }
+  };
+
+  const calendlyUrl = `https://calendly.com/denisse-nearshorenavigator/30min?utm_source=civa_calculator&utm_medium=interactive_tool&utm_campaign=civa_audit_risk&utm_content=${certification}_${calculations.riskTier}`;
+
+  const handleCalendlyClick = () => {
+    if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: Function }).gtag === "function") {
+      (window as unknown as { gtag: Function }).gtag("event", "click_calendly", {
+        event_category: "lead_generation",
+        event_label: "civa_calculator_consultation",
+        value: calculations.monthlyVatRisk,
+        modality: certification,
+        risk_tier: calculations.riskTier
+      });
     }
   };
 
@@ -461,7 +498,7 @@ Confidential Advisor: Denisse Martinez, Principal Nearshore Advisor`;
             <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-800">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                 <div>
-                  <label htmlFor="import-volume-slider" className="block text-base font-bold text-slate-900 dark:text-white">
+                  <label htmlFor="import-volume-input" className="block text-base font-bold text-slate-900 dark:text-white">
                     Monthly Temporary Import Volume (USD)
                   </label>
                   <p className="text-xs text-slate-500 dark:text-slate-400">
@@ -474,9 +511,11 @@ Confidential Advisor: Denisse Martinez, Principal Nearshore Advisor`;
                   </span>
                   <input
                     type="text"
-                    id="import-volume-slider"
+                    id="import-volume-input"
+                    aria-label="Monthly Temporary Import Volume numeric entry"
                     value={importInputText}
                     onChange={(e) => handleInputChange(e.target.value)}
+                    onBlur={handleInputBlur}
                     className="w-full sm:w-44 pl-7 pr-3 py-2 text-right text-lg font-black bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:ring-2 focus:ring-emerald-500 focus:outline-none"
                   />
                 </div>
@@ -486,6 +525,11 @@ Confidential Advisor: Denisse Martinez, Principal Nearshore Advisor`;
               <div className="space-y-3 pt-2">
                 <input
                   type="range"
+                  id="import-volume-range"
+                  aria-label="Monthly Temporary Import Volume in USD"
+                  aria-valuenow={monthlyImports}
+                  aria-valuemin={500000}
+                  aria-valuemax={50000000}
                   min="500000"
                   max="50000000"
                   step="250000"
@@ -542,7 +586,11 @@ Confidential Advisor: Denisse Martinez, Principal Nearshore Advisor`;
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div
+                className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+                role="radiogroup"
+                aria-label="CIVA Certification Modality Selection"
+              >
                 {(
                   [
                     { key: "AAA", title: "Modality AAA", desc: "3-Yr Validity • 10-Day Refunds • Top Tier", badge: "Preferred" },
@@ -554,6 +602,9 @@ Confidential Advisor: Denisse Martinez, Principal Nearshore Advisor`;
                   <button
                     key={tier.key}
                     type="button"
+                    role="radio"
+                    aria-checked={certification === tier.key}
+                    aria-label={`${tier.title}: ${tier.desc}`}
                     onClick={() => handleCertificationChange(tier.key)}
                     className={`p-4 rounded-xl border text-left transition-all relative ${
                       certification === tier.key
@@ -647,6 +698,9 @@ Confidential Advisor: Denisse Martinez, Principal Nearshore Advisor`;
                         {/* Interactive Status Switch */}
                         <button
                           type="button"
+                          role="switch"
+                          aria-checked={isChecked}
+                          aria-label={`Toggle Item ${item.number}: ${item.question}. Status: ${isChecked ? "Compliant" : "At Risk"}`}
                           onClick={() => handleToggleAnswer(item.id)}
                           className={`shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all shadow-sm ${
                             isChecked
@@ -773,10 +827,10 @@ Confidential Advisor: Denisse Martinez, Principal Nearshore Advisor`;
             <div
               className={`rounded-2xl p-6 md:p-8 border shadow-lg transition-all ${
                 calculations.riskTier === "low"
-                  ? "bg-emerald-950/10 dark:bg-emerald-950/30 border-emerald-500/40 text-emerald-900 dark:text-emerald-100"
+                  ? "bg-emerald-50/80 dark:bg-emerald-950/30 border-emerald-300 dark:border-emerald-500/40 text-emerald-950 dark:text-emerald-100"
                   : calculations.riskTier === "moderate"
-                  ? "bg-amber-950/10 dark:bg-amber-950/30 border-amber-500/40 text-amber-900 dark:text-amber-100"
-                  : "bg-rose-950/10 dark:bg-rose-950/30 border-rose-500/40 text-rose-900 dark:text-rose-100"
+                  ? "bg-amber-50/80 dark:bg-amber-950/30 border-amber-300 dark:border-amber-500/40 text-amber-950 dark:text-amber-100"
+                  : "bg-rose-50/80 dark:bg-rose-950/30 border-rose-300 dark:border-rose-500/40 text-rose-950 dark:text-rose-100"
               }`}
             >
               {/* Header Status */}
@@ -891,7 +945,21 @@ Confidential Advisor: Denisse Martinez, Principal Nearshore Advisor`;
                     {formatCurrency(calculations.penaltyMin)} – {formatCurrency(calculations.penaltyMax)}
                   </div>
                   <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">
-                    Fines of 70% to 100% on unpaid VAT + monthly surcharges (recargos y actualización) under CFF Art. 21.
+                    Fines of 70% to 100% on unpaid VAT under Ley Aduanera Article 178.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-white/70 dark:bg-slate-900/70 border border-slate-200/50 dark:border-slate-800/60">
+                  <div className="flex justify-between items-baseline mb-1">
+                    <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                      Total Potential Fiscal Exposure (Fines + CFF Art. 21):
+                    </span>
+                  </div>
+                  <div className="text-lg font-black text-rose-700 dark:text-rose-400">
+                    {formatCurrency(calculations.totalExposureMin)} – {formatCurrency(calculations.totalExposureMax)}
+                  </div>
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">
+                    Includes 16% principal clawback, fines, plus ~22.5% inflation adjustment (INPC) &amp; monthly compound surcharges.
                   </p>
                 </div>
               </div>
@@ -939,7 +1007,8 @@ Confidential Advisor: Denisse Martinez, Principal Nearshore Advisor`;
 
               <div className="space-y-3">
                 <a
-                  href="https://calendly.com/denisse-nearshorenavigator/30min"
+                  href={calendlyUrl}
+                  onClick={handleCalendlyClick}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all shadow-lg shadow-emerald-900/30"
@@ -1052,6 +1121,90 @@ Confidential Advisor: Denisse Martinez, Principal Nearshore Advisor`;
                 </p>
               </div>
 
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-xs font-bold inline-flex items-center justify-center">
+                    6
+                  </span>
+                  What Are the Financial Penalties and Director Liabilities if SAT Suspends CIVA Certification?
+                </h3>
+                <p className="mb-2">
+                  <strong>Direct Answer:</strong> If SAT or AGACE suspends or cancels CIVA certification under RGCE Rule 7.2.4, the company must immediately begin paying 16% cash VAT at customs clearance on all temporary imports, freezing millions in working capital. Furthermore, un-discharged historical balances in Anexo 30 trigger retroactive 16% VAT clawbacks, statutory fines from 70% to 100% of omitted taxes (Ley Aduanera Art. 178), inflation adjustments (actualización), and monthly compound surcharges (recargos) under CFF Art. 21. Under CFF Article 26, corporate directors and legal representatives face joint personal liability (responsabilidad solidaria).
+                </p>
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                  Under CFF Article 26, Fraction X, corporate general managers, board members, and legal representatives who executed pedimento declarations or corporate powers of attorney can have personal Mexican bank accounts frozen and assets seized to satisfy unpaid customs debts incurred during their tenure.
+                </p>
+              </div>
+
+            </div>
+
+            {/* CIVA Modalities Comparison Table */}
+            <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
+              <div className="mb-4">
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block mb-1">
+                  Statutory Comparison Matrix
+                </span>
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                  CIVA Modalities Comparison: A vs AA vs AAA vs Uncertified (2026)
+                </h3>
+              </div>
+              <div className="overflow-x-auto border border-slate-200 dark:border-slate-800 rounded-xl shadow-sm">
+                <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-800 text-xs sm:text-sm">
+                  <thead className="bg-slate-50 dark:bg-slate-800/60">
+                    <tr>
+                      <th scope="col" className="px-4 py-3 text-left font-bold text-slate-900 dark:text-white">Dimension</th>
+                      <th scope="col" className="px-4 py-3 text-left font-bold text-slate-900 dark:text-white">Modality A</th>
+                      <th scope="col" className="px-4 py-3 text-left font-bold text-slate-900 dark:text-white">Modality AA</th>
+                      <th scope="col" className="px-4 py-3 text-left font-bold text-slate-900 dark:text-white">Modality AAA</th>
+                      <th scope="col" className="px-4 py-3 text-left font-bold text-slate-900 dark:text-white">Uncertified / Suspended</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 dark:divide-slate-800 bg-white dark:bg-slate-900">
+                    <tr>
+                      <td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">Certification Validity</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">1 Year (Annual Renewal)</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">2 Years</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">3 Years (Premier Tier)</td>
+                      <td className="px-4 py-3 text-rose-600 dark:text-rose-400 font-semibold">None (Prepayment Required)</td>
+                    </tr>
+                    <tr className="bg-slate-50/50 dark:bg-slate-800/30">
+                      <td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">16% VAT Credit Benefit</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">100% Tax Credit</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">100% Tax Credit</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">100% Tax Credit</td>
+                      <td className="px-4 py-3 text-rose-600 dark:text-rose-400 font-semibold">0% (16% Cash Paid at Border)</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">Statutory Refund Window</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">20 Business Days</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">15 Business Days</td>
+                      <td className="px-4 py-3 text-emerald-600 dark:text-emerald-400 font-bold">10 Business Days</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">180+ Days (Audit Scrutiny)</td>
+                    </tr>
+                    <tr className="bg-slate-50/50 dark:bg-slate-800/30">
+                      <td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">Minimum Headcount (IMSS)</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">10+ Workers</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">50+ Workers</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">250+ Workers</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">N/A</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">Fixed Assets / Machinery</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">$10,000,000 MXN</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">$50,000,000 MXN</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">$100,000,000 MXN</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">N/A</td>
+                    </tr>
+                    <tr className="bg-slate-50/50 dark:bg-slate-800/30">
+                      <td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">AGACE Audit Frequency</td>
+                      <td className="px-4 py-3 text-amber-600 dark:text-amber-400 font-semibold">High (Annual Audit)</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">Moderate</td>
+                      <td className="px-4 py-3 text-emerald-600 dark:text-emerald-400 font-semibold">Low (Continuous AI Exception Scan)</td>
+                      <td className="px-4 py-3 text-rose-600 dark:text-rose-400 font-bold">Maximum (100% Pre-Clearance)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

@@ -87,7 +87,9 @@ ${postSummaries}
 - AI Short Context: https://nearshorenavigator.com/llms.txt
 - AI Unabbreviated Context: https://nearshorenavigator.com/llms-full.txt
 - Leadership: https://nearshorenavigator.com/en/about/denisse-martinez
-- Interactive Cost Calculator: https://nearshorenavigator.com/en/assessment
+- Interactive Cost Calculator: https://nearshorenavigator.com/en/tools/cost-calculator
+- Interactive CIVA VAT Risk & Anexo 30 Calculator: https://nearshorenavigator.com/en/tools/civa-audit-risk-calculator
+- Interactive USMCA RVC Calculator: https://nearshorenavigator.com/en/tools/usmca-rvc-calculator
 - Interactive Tijuana Industrial Park Map: https://nearshorenavigator.com/en/tools/industrial-park-map
 - Advisory Consultation: https://calendly.com/denisse-nearshorenavigator/30min
 `;
