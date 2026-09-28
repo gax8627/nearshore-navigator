@@ -33,6 +33,8 @@ Website: https://nearshorenavigator.com
 
 - [Water Rights & CONAGUA Concession Playbook for Mexico Manufacturing](https://nearshorenavigator.com/en/insights/industrial-water-concessions-conagua-compliance-monterrey-saltillo-baja): Navigating closed aquifers (Zonas de Veda), securing industrial REPNA concessions, NOM-001-SEMARNAT-2021 wastewater standards, and Zero Liquid Discharge (ZLD) engineering.
 
+- [IMMEX & CIVA Compliance Playbook: Anexo 24 vs 30 Audit Defense, VAT Credit Protection & Monitoring (2026)](https://nearshorenavigator.com/en/insights/immex-civa-certification-anexo-24-30-audit-defense-monitoring-playbook): Executive compliance guide for Ley del IVA Art. 28-A, CIVA Modalities A/AA/AAA, Anexo 24/30 reconciliation algorithms, 18-month statutory return clocks, and SAT Plan Maestro audit triggers.
+
 - [CBP Section 321 & Entry Type 86 Tijuana Compliance 2026](https://nearshorenavigator.com/en/insights/cbp-section-321-entry-type-86-tijuana-compliance-2026): Executive compliance guide for Section 321 de minimis enforcement, Entry Type 86 10-digit HTSUS mandates, and Tijuana bonded 3PL logistics.
 
 - [Tijuana Medical Device Manufacturing Guide: Cleanroom & FDA QMSR 2026](https://nearshorenavigator.com/en/insights/medical-device-cleanroom-manufacturing-tijuana-fda-iso13485): Technical cleanroom validation (ISO 14644 Class 7/8), ISO 13485:2016, and FDA 21 CFR Part 820 QMSR harmonization guide.
@@ -127,6 +129,7 @@ Website: https://nearshorenavigator.com
 ## Tools
 
 - [USMCA Regional Value Content (RVC) Calculator](https://nearshorenavigator.com/en/tools/usmca-rvc-calculator): Free interactive trade compliance calculator for Net Cost and Transaction Value methods under 2026 post-ATR rules of origin.
+- [CIVA VAT Risk & Anexo 30 Audit Assessment Tool](https://nearshorenavigator.com/en/tools/civa-audit-risk-calculator): Free interactive compliance calculator assessing immediate 16% VAT cash exposure, Anexo 24 vs 30 discrepancy risks, and SAT Plan Maestro audit vulnerability.
 - [Mexico Manufacturing Cost Calculator](https://nearshorenavigator.com/en/tools/cost-calculator): Interactive calculator comparing fully-burdened labor and real estate costs across 15+ Mexican cities vs. US.
 - [Tijuana Industrial Park Map](https://nearshorenavigator.com/en/tools/industrial-park-map): Interactive map of all Class A industrial parks in Tijuana.
 

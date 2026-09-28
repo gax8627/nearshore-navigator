@@ -174,7 +174,9 @@ export default async function ShelterServicesPage(props: { params: Promise<{ lan
             </div>
             <div className="space-y-2">
               <h3 className="text-lg font-semibold text-primary-400">Customs & Pedimentos Clearances</h3>
-              <p className="text-sm text-gray-300">Annex 24 and Annex 30 automated digital inventory tracking, virtual pedimentos (V1/V5), and USMCA documentation.</p>
+              <p className="text-sm text-gray-300">
+                Annex 24 and Annex 30 automated digital inventory tracking, virtual pedimentos (V1/V5), and USMCA documentation, including <Link href={`/${lang}/insights/immex-civa-certification-anexo-24-30-audit-defense-monitoring-playbook`} className="text-primary-400 underline hover:text-primary-300">IMMEX & CIVA VAT audit defense</Link> and our real-time <Link href={`/${lang}/tools/civa-audit-risk-calculator`} className="text-primary-400 underline hover:text-primary-300">CIVA Audit Risk Calculator</Link>.
+              </p>
             </div>
             <div className="space-y-2">
               <h3 className="text-lg font-semibold text-primary-400">Industrial Facility Leasing</h3>

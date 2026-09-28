@@ -251,6 +251,46 @@ export default function CustomsBrokerageClient() {
         </div>
       </section>
 
+      {/* 2026 SAT CIVA Compliance Alert Banner */}
+      <section className="max-w-5xl mx-auto px-4 -mt-8 mb-12 relative z-20">
+        <div className="bg-gradient-to-r from-emerald-950/80 via-gray-900 to-emerald-950/80 border border-emerald-500/40 rounded-2xl p-6 shadow-2xl backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-start gap-4">
+            <div className="p-3 bg-emerald-500/20 text-emerald-400 rounded-xl mt-1">
+              <ShieldCheck className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  2026 SAT Plan Maestro Alert
+                </span>
+                <span className="text-xs text-gray-400">Anexo 24 vs 30 SCCC-VE</span>
+              </div>
+              <h3 className="text-lg md:text-xl font-bold text-white">
+                Are You Monitoring CIVA Compliance or Waiting for a SAT Audit?
+              </h3>
+              <p className="text-sm text-gray-300 mt-1 max-w-2xl">
+                CIVA suspension immediately forfeits your 100% VAT credit, forcing an upfront 16% cash tax on all temporary imports. Reconcile Anexo 24 ERP data against SAT SCCC-VE accounts before AGACE issues a Buzón Tributario mandate.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
+            <Link
+              href={`/${language}/tools/civa-audit-risk-calculator`}
+              className="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg shadow-emerald-600/20 transition-all text-center flex items-center justify-center gap-2"
+            >
+              CIVA Risk Calculator
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href={`/${language}/insights/immex-civa-certification-anexo-24-30-audit-defense-monitoring-playbook`}
+              className="px-5 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-200 font-semibold text-sm transition-all text-center"
+            >
+              Audit Playbook
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* 4 Core Pillars Section */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

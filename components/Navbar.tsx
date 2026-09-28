@@ -58,6 +58,7 @@ export function Navbar() {
     const resourceLinks = [
         { name: t('nav.calculator') || 'Cost Calculator', href: `/${language}/tools/cost-calculator` },
         { name: t('nav.rvc_calculator') || 'USMCA RVC Calculator', href: `/${language}/tools/usmca-rvc-calculator` },
+        { name: t('nav.civa_calculator') || 'CIVA Audit Risk Calculator', href: `/${language}/tools/civa-audit-risk-calculator` },
         { name: t('nav.park_map') || 'Industrial Park Map', href: `/${language}/tools/industrial-park-map` },
         { name: t('nav.resources') || 'Resources Hub', href: `/${language}/resources/tijuana-industrial-park-map` },
     ];
