@@ -61,19 +61,19 @@ const QUESTIONNAIRE_ITEMS: QuestionnaireItem[] = [
   {
     id: "anexo30_discharge",
     number: 2,
-    question: "Anexo 30 discharge reports (informes de descargo) filed on time without rejected records?",
-    tag: "Fiscal Credit Ledger",
+    question: "Anexo 30 discharge reports (informes de descargo) formally validated in SCCC-VE without error codes?",
+    tag: "Fiscal Credit Ledger & Validation",
     citation: "Ley del IVA Art. 28-A • RGCE Rule 7.1.1 & 7.2.1",
     weight: 20,
     description:
-      "Timely submission of monthly discharge reports in SAT's SCCC-VE (System for Control of Credit and Guarantee Accounts) with zero open, rejected records (claves de rechazo).",
+      "Timely monthly discharge submissions verified with a formal Acuse de Validación showing status 'VÁLIDO' (submitting is not equal to validating), with zero open rejection codes (claves de rechazo).",
     auditTrigger:
-      "Un-discharged raw materials or uncorrected rejections are reclassified by SAT as unauthorized domestic market diversion, triggering instant VAT credit cancellation, retroactive 16% VAT clawbacks, and 70-100% fines.",
-    remediationTitle: "Purge SCCC-VE Discrepancies & File Rectified Discharges",
+      "A preliminary 'Acuse de Recepción' grants zero legal immunity. If SAT's batch algorithms flag rejections (Error 01 BOM mismatch, Error 04 lack of balance, Error 08 negative balance, Error 12 expired pedimento) and 30 days lapse without rectification, SAT automatically revokes CIVA and triggers 16% VAT clawbacks plus 70–100% fines.",
+    remediationTitle: "Purge SCCC-VE Discrepancies & Enforce 'Acuse de Validación' Review",
     remediationSteps: [
-      "Extract current 'Estado de Cuenta de Créditos y Garantías' from the SAT central SCCC-VE portal.",
-      "Identify all pedimentos flagged with rejection error codes (error de descargo) and reconcile BOM consumption factors.",
-      "Submit extemporaneous corrected discharge reports within the 30-day statutory grace window under RGCE 7.2.1."
+      "Extract current 'Estado de Cuenta de Créditos y Garantías' and confirm each discharge reflects status 'VÁLIDO' (Acuse de Validación), not merely an upload timestamp (Acuse de Recepción).",
+      "Screen for automated SCCC-VE rejection codes (Error 01 Fracción no correlativa, Error 04 Falta de saldo, Error 08 Sobredescargo, Error 12 Pedimento vencido) and reconcile root BOM causes.",
+      "Submit extemporaneous corrected discharge reports (informes rectificados) within the strict 30-day statutory grace window under RGCE Rule 7.2.1 before automated Buzón Tributario pre-liquidations trigger."
     ]
   },
   {
