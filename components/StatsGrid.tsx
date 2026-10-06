@@ -54,7 +54,9 @@ function CountUp({ value, trigger }: { value: string; trigger: boolean }) {
     const prefix = value.split(target.toString())[0] || "";
     const suffix = value.split(target.toString())[1] || "";
     
-    const [current, setCurrent] = useState(0);
+    // Start at the real value so SSR/crawlers see actual numbers (not "0+").
+    // The count-up animation restarts from 0 only once the card is in view.
+    const [current, setCurrent] = useState(target);
 
     useEffect(() => {
         if (trigger && target > 0) {

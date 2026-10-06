@@ -6,7 +6,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const { lang } = await props.params;
   return {
     title: 'Shelter Services Baja California | IMMEX & 90-Day Setup',
-    description: 'Baja California shelter services in Tijuana & Mexicali. 90-day IMMEX setup, $350/mo fee, zero corporate risk. Compare top shelter providers.',
+    description: 'Baja California shelter services in Tijuana & Mexicali. IMMEX setup in as little as 90 days (project-dependent). Compare top shelter providers and understand the risks.',
     alternates: {
       canonical: `${BASE_URL}/${lang}/services/shelter-services`,
       languages: Object.fromEntries([

@@ -95,7 +95,7 @@ export const ComparisonModule = ({ type, selection }: ComparisonModuleProps) => 
                 </div>
                 <div className="flex items-center gap-2 p-4 bg-gray-50 dark:bg-white/5 rounded-xl border border-dashed border-gray-200 dark:border-white/10 text-xs text-gray-500 dark:text-gray-400">
                     <TrendingUp className="w-4 h-4 text-primary-500" />
-                    <span>Verified data baseline as of Q1 2026. Models based on direct market observation and historical launch cycles.</span>
+                    <span>Illustrative estimates only, based on publicly available provider information (reviewed Q1 2026). Timelines and pricing vary by project, sector and facility, and are not guarantees. Competitor figures have not been verified by the providers listed.</span>
                 </div>
             </div>
         );

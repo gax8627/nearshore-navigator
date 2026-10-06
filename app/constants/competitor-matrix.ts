@@ -49,9 +49,9 @@ export const COMPETITOR_MATRIX: CompetitorEntry[] = [
         name: "Nearshore Navigator (Agile)",
         focus: "Agentic-First Hub Entry",
         model: "Managed",
-        strengths: ["0 Capex Launch", "Real-time AI monitoring", "Contract Mfg agility"],
+        strengths: ["Low-capex launch options", "Digital project tracking", "Contract Mfg agility"],
         weaknesses: ["Newer brand", "Digital-first interface"],
-        speedToMarket: "15-30 Days",
+        speedToMarket: "30-90 Days (project-dependent)",
         pricingModel: "Success-based / Subscription"
     }
 ];

@@ -21,7 +21,7 @@ export function TrustSeal() {
         </div>
         <div>
           <p className="text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-widest mb-1">
-            Verified Strategy
+            Advisory Profile
           </p>
           <h4 className="text-lg font-bold text-gray-900 dark:text-white">Denisse Martinez</h4>
           <p className="text-sm text-gray-500 dark:text-gray-400">Principal Nearshore Advisor</p>
@@ -30,17 +30,17 @@ export function TrustSeal() {
 
       <div className="space-y-4">
         <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed italic">
-          "Our advisory team has overseen 200+ facility setups in Mexico. Every strategy is reviewed for USMCA compliance and operational feasibility."
+          "Independent site-selection and manufacturing advisory. Strategies are reviewed for USMCA considerations and operational feasibility with qualified legal, customs and tax professionals."
         </p>
         
         <div className="flex flex-wrap gap-2">
           <div className="flex items-center gap-1.5 px-3 py-1 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 rounded-full text-[10px] font-bold uppercase tracking-wider">
             <ShieldCheck className="w-3 h-3" />
-            ISO 9001:2015
+            Independent Advisor
           </div>
           <div className="flex items-center gap-1.5 px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 rounded-full text-[10px] font-bold uppercase tracking-wider">
             <Award className="w-3 h-3" />
-            IMMEX Certified
+            Works With IMMEX Partners
           </div>
         </div>
       </div>
