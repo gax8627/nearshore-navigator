@@ -58,7 +58,7 @@ export default function CallCenterPage() {
                     "provider": { "@type": "Organization", "name": "Nearshore Navigator", "url": "https://nearshorenavigator.com" },
                     "serviceType": "Business Process Outsourcing",
                     "areaServed": { "@type": "City", "name": "Tijuana", "address": { "@type": "PostalAddress", "addressRegion": "Baja California", "addressCountry": "MX" } },
-                    "description": "World-class call center and BPO operations in Tijuana with 50,000+ bilingual agents, PST time-zone alignment, and 40–60% labor cost savings vs. the US.",
+                    "description": "Call center and BPO advisory in Tijuana with skilled bilingual agents, PST time-zone alignment, and competitive labor cost structures vs. the US.",
                     "offers": { "@type": "Offer", "url": "https://nearshorenavigator.com/en/services/call-center-tijuana" },
                     "speakable": {
                         "@type": "SpeakableSpecification",
@@ -80,7 +80,7 @@ export default function CallCenterPage() {
                     "@context": "https://schema.org",
                     "@type": "FAQPage",
                     "mainEntity": [
-                        { "@type": "Question", "name": "How much can I save by outsourcing to Tijuana?", "acceptedAnswer": { "@type": "Answer", "text": "You can expect to save 40-60% on fully loaded labor costs compared to the US, while maintaining similar time zones and cultural alignment." } },
+                        { "@type": "Question", "name": "How much can I save by outsourcing to Tijuana?", "acceptedAnswer": { "@type": "Answer", "text": "Many companies see substantial savings on fully loaded labor costs compared to the US, while maintaining similar time zones and cultural alignment. Actual savings depend on role complexity and team size." } },
                         { "@type": "Question", "name": "Are the agents truly bilingual?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tijuana has the largest population of English-speaking agents in Latin America, many of whom are bicultural 'pochos' spread across the border, ensuring near-native accent neutrality." } },
                         { "@type": "Question", "name": "What is the turnover rate compared to other regions?", "acceptedAnswer": { "@type": "Answer", "text": "While call centers notoriously have high turnover, Tijuana averages 5-10% monthly turnover, which is significantly lower than the 15-20% often seen in US centers." } },
                         { "@type": "Question", "name": "Do you offer omnichannel support (Chat/Email)?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our centers are equipped for voice, email, live chat, and social media moderation support." } },
@@ -186,11 +186,11 @@ export default function CallCenterPage() {
                             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">{t('callCenterPage.glanceTitle')}</h2>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                                 <div>
-                                    <p className="text-3xl font-bold text-primary-500">50K+</p>
+                                    <p className="text-3xl font-bold text-primary-500">Skilled</p>
                                     <p className="text-sm text-gray-600 dark:text-gray-400">{t('callCenterPage.bilingualAgents')}</p>
                                 </div>
                                 <div>
-                                    <p className="text-3xl font-bold text-primary-500">40-60%</p>
+                                    <p className="text-3xl font-bold text-primary-500">Competitive</p>
                                     <p className="text-sm text-gray-600 dark:text-gray-400">{t('callCenterPage.costSavings')}</p>
                                 </div>
                                 <div>
@@ -209,7 +209,7 @@ export default function CallCenterPage() {
                             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Call Center Solutions FAQ</h3>
                              <div className="space-y-4">
                                 {[
-                                    { q: "How much can I save by outsourcing to Tijuana?", a: "You can expect to save 40-60% on fully loaded labor costs compared to the US, while maintaining similar time zones and cultural alignment." },
+                                    { q: "How much can I save by outsourcing to Tijuana?", a: "Many companies see substantial savings on fully loaded labor costs compared to the US, while maintaining similar time zones and cultural alignment. Actual savings depend on role complexity and team size." },
                                     { q: "Are the agents truly bilingual?", a: "Yes. Tijuana has the largest population of English-speaking agents in Latin America, many of whom are bicultural 'pochos' spread across the border, ensuring near-native accent neutrality." },
                                     { q: "What is the turnover rate compared to other regions?", a: "While call centers notoriously have high turnover, Tijuana averages 5-10% monthly turnover, which is significantly lower than the 15-20% often seen in US centers." },
                                     { q: "Do you offer omnichannel support (Chat/Email)?", a: "Yes. Our centers are equipped for voice, email, live chat, and social media moderation support." },

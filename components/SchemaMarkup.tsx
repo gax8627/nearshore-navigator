@@ -194,7 +194,7 @@ export default function SchemaMarkup() {
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Call Center Solutions",
-                        "description": "BPO services with 50,000+ bilingual agents. 40-60% cost savings."
+                        "description": "BPO and contact center advisory connecting firms with bilingual talent and cost-effective operations."
                     }
                 }
             ]
@@ -263,7 +263,7 @@ export default function SchemaMarkup() {
                 "name": "What is nearshoring and why is Mexico the #1 destination?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Nearshoring means relocating manufacturing or business operations to a nearby country — in the case of US companies, Mexico is the #1 destination because it shares a land border, operates in the same time zones, benefits from 0% tariffs under USMCA, and offers fully burdened labor rates of $4.80–$7.84 per hour versus $18–$35 per hour in the US. Unlike Asian alternatives with 25–100% Section 301 tariffs and 30-day ocean freight, Mexico enables same-day truck delivery and face-to-face oversight."
+                    "text": "Nearshoring means relocating manufacturing or business operations to a nearby country — in the case of US companies, Mexico is the #1 destination because it shares a land border, operates in the same time zones, benefits from duty-free treatment on qualifying goods under USMCA, and offers competitive fully burdened labor rates typically ranging from $5.50–$8.50 per hour in northern border regions versus $18–$35 per hour in the US. Unlike Asian alternatives with Section 301 tariffs and weeks of ocean freight, Mexico enables same-day truck delivery and face-to-face oversight."
                 }
             },
             {
@@ -279,7 +279,7 @@ export default function SchemaMarkup() {
                 "name": "How much does manufacturing labor cost in Mexico in 2026?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The 2026 fully burdened manufacturing labor cost in Mexico varies by region: border cities (Tijuana, Juárez, Reynosa, Matamoros) average $7.84 per hour under CONASAMI border zone rates, inclusive of base wages, IMSS social security, INFONAVIT housing fund, vacation premiums, Christmas bonus, and mandatory profit-sharing. Interior cities like Guadalajara ($5.00–$6.50/hr), San Luis Potosí ($5.50–$6.50/hr), and Silao/Guanajuato ($4.80–$5.80/hr) are 15–25% less. This compares to $18–$35 per hour fully burdened in the United States."
+                    "text": "The 2026 fully burdened manufacturing labor cost in Mexico varies by region: northern border cities (Tijuana, Juárez, Reynosa, Matamoros) typically range from $5.50–$8.50 per hour for operators depending on seniority and facility under CONASAMI border zone rates (ZLFN, MXN 440.87/day statutory base with ~1.4x typical burdened overhead), inclusive of base wages, IMSS social security, INFONAVIT housing fund, vacation premiums, Christmas bonus, and profit-sharing. Interior cities like Guadalajara ($5.00–$6.50/hr), San Luis Potosí ($5.50–$6.50/hr), and Silao/Guanajuato ($4.80–$5.80/hr) are lower. This compares to $18–$35 per hour fully burdened in the United States."
                 }
             },
             {

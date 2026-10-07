@@ -13,7 +13,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     : `${dict.realEstatePage.heroTitle} ${dict.realEstatePage.heroTitleHighlight}`;
 
   const description = lang === 'en'
-    ? 'Class A industrial parks in Tijuana and Baja California: Pacifico, El Florido, Finsa, Nordika. Lease rates from $0.47–$1.10/sqft NNN. Built-to-suit available. 20 min from San Diego. Nearshore Navigator negotiates your facility — no developer commissions.'
+    ? 'Class A industrial parks in Tijuana and Baja California: Pacifico, El Florido, Finsa, Nordika. Asking rates typically $0.65–$1.05/sqft NNN depending on submarket and building class. Built-to-suit available. Nearshore Navigator provides independent site selection advisory.'
     : dict.realEstatePage.heroSubtitle || 'Find Class A industrial space and warehouse leasing in Baja California.';
 
   return {

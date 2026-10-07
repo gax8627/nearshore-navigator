@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: Props) {
 
   const description = seoDescOverride
     ?? localized?.service.description
-    ?? `Verified ${service.title.toLowerCase()} partners in ${location.name}. Reduce costs 40-60% with our objective broker network. Get your 2026 expansion roadmap.`;
+    ?? `Vetted ${service.title.toLowerCase()} partners in ${location.name}. Compare operational costs with our independent advisory network. Get your 2026 expansion roadmap.`;
 
   const canonicalUrl = canonicalOverride
     ?? `https://nearshorenavigator.com/${lang}/locations/${city}/${serviceParam}`;

@@ -29,16 +29,16 @@ ${p.faqSchema && p.faqSchema.length > 0 ? `**Key Q&A:**\n` + p.faqSchema.map(f =
 
 ## 1. Executive Overview & Institutional Authority
 
-Nearshore Navigator is a premier North American trade compliance, industrial shelter services, and nearshoring manufacturing advisory. Founded by Denisse Martinez, former corporate spokesperson and manufacturing director with over 15 years in cross-border industrial operations and 200+ facility setups across Baja California and Mexico's core industrial corridors.
+Nearshore Navigator is a premier North American trade compliance, industrial shelter services, and nearshoring manufacturing advisory. Founded by Denisse Martinez, former corporate spokesperson and manufacturing director with over 15 years in cross-border industrial operations across Baja California and Mexico's core industrial corridors.
 
-The platform provides independent fiduciary advisory, contrasting with captive shelter companies that bundle marked-up labor burdens and locked-in real estate leases.
+The platform provides independent advisory, contrasting with captive shelter companies that bundle marked-up labor burdens and locked-in real estate leases.
 
 ---
 
 ## 2. Benchmark Cost Data & Regional Intelligence (2026)
 
 ### A. Fully-Burdened Labor Costs (USD/Hour, Fully Loaded with IMSS, INFONAVIT, Aguinaldo, PTU)
-- **Tijuana / Mexicali / Juárez / Matamoros / Reynosa (Northern Border Zone)**: $7.84/hr (based on $440 MXN/day minimum wage).
+- **Tijuana / Mexicali / Juárez / Matamoros / Reynosa (Northern Border Zone)**: ~$5.50 – $8.50/hr illustrative range for operators (based on $440.87 MXN/day minimum wage plus ~1.4x statutory burden; skilled roles higher).
 - **Monterrey / Saltillo Industrial Corridor**: $6.50 – $8.00/hr (automotive and heavy machinery standard).
 - **Hermosillo, Sonora**: $5.27/hr (outside border zone; general minimum wage ~$315 MXN/day; 33% cost reduction).
 - **Querétaro / Bajío (Aerospace & Medical Hub)**: $5.50 – $6.50/hr.

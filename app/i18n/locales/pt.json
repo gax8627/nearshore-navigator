@@ -52,9 +52,13 @@
     "marketing": "Operações de Marketing",
     "marketing_desc": "Sistema de crescimento B2B. Configuração de CRM, enriquecimento de leads e geração de conteúdo LinkedIn impulsionada por IA."
   },
+  "legal": {
+    "noAdviceShort": "Apenas informações gerais; não constitui aconselhamento jurídico, fiscal ou aduaneiro."
+  },
   "footer": {
     "rights": "Todos os direitos reservados.",
-    "description": "Seu parceiro de confiança para nearshoring industrial, serviços de shelter e manufatura em Baja Califórnia, México.",
+    "description": "Consultoria e corretagem independentes para fabricantes que se expandem para Baja California, México.",
+    "roleStatement": "A Nearshore Navigator é uma empresa independente de consultoria e corretagem. Conectamos fabricantes a fornecedores terceirizados de shelter, manufatura por contrato, imóveis e serviços aduaneiros; não operamos programas shelter/IMMEX, não fabricamos nem prestamos consultoria jurídica, fiscal ou aduaneira.",
     "industrial_map": "Mapa do Parque Industrial",
     "privacy": "Política de Privacidade",
     "terms": "Termos de Serviço"
@@ -158,11 +162,11 @@
   },
   "terms": {
     "title": "Termos de Serviço",
-    "lastUpdated": "Última atualização: Janeiro 2026",
+    "lastUpdated": "Última atualização: outubro de 2026",
     "section1_title": "1. Aceitação dos Termos",
     "section1_text": "Ao acessar e usar o site e os serviços da Nearshore Navigator, você aceita e concorda em estar vinculado a estes Termos de Serviço. Se você não concordar com estes termos, não use nossos serviços.",
     "section2_title": "2. Descrição dos Serviços",
-    "section2_text": "A Nearshore Navigator fornece serviços de consultoria e assessoria relacionados a nearshoring industrial, imóveis, serviços de shelter e manufatura em Baja California, México. Atuamos como intermediários conectando clientes a prestadores de serviços e não assumimos responsabilidade por serviços de terceiros.",
+    "section2_text": "A Nearshore Navigator fornece serviços de consultoria e assessoria relacionados a nearshoring industrial, imóveis, serviços de shelter e manufatura em Baja California, México. Atuamos como intermediários conectando clientes a prestadores de serviços e não assumimos responsabilidade por serviços de terceiros. A Nearshore Navigator atua exclusivamente como intermediária e consultora que apresenta você a fornecedores terceirizados independentes; não somos parte de nenhum acordo entre você e esses fornecedores.",
     "section3_title": "3. Responsabilidades do Usuário",
     "section3_text": "Você concorda em fornecer informações precisas ao usar nossos serviços e usar nosso site apenas para fins lícitos. Você é responsável por manter a confidencialidade de quaisquer credenciais de conta.",
     "section4_title": "4. Propriedade Intelectual",
@@ -171,6 +175,10 @@
     "section5_text": "A Nearshore Navigator não será responsável por quaisquer danos indiretos, incidentais, especiais ou consequenciais decorrentes do seu uso de nossos serviços ou da confiança nas informações fornecidas neste site.",
     "section6_title": "6. Lei Aplicável",
     "section6_text": "Estes Termos de Serviço serão regidos e interpretados de acordo com as leis do Estado da Califórnia, Estados Unidos.",
+    "noAdvice_title": "Sem aconselhamento profissional",
+    "noAdvice_text": "O conteúdo deste site, incluindo calculadoras, blog e o consultor de IA, é apenas informação geral e não constitui aconselhamento jurídico, fiscal, aduaneiro ou contábil. O uso do site não cria relação advogado-cliente nem outra relação profissional. Consulte advogados licenciados no México e nos EUA, um contador (CPA) e um despachante aduaneiro licenciado (Agente Aduanal) antes de tomar decisões. As respostas da IA podem ser imprecisas ou incompletas.",
+    "thirdParty_title": "Fornecedores terceirizados",
+    "thirdParty_text": "Não somos responsáveis pelos serviços, atos ou omissões de fornecedores terceirizados. Você contrata diretamente com cada fornecedor e deve verificar suas credenciais, licenças e referências antes de contratá-lo.",
     "section7_title": "7. Contato",
     "section7_text": "Para dúvidas sobre estes Termos de Serviço, entre em contato conosco em",
     "backToHome": "← Voltar para a Home"
@@ -556,6 +564,8 @@
   "aboutPage": {
     "mainHeading": "Transformando o \"queremos o México\" em um próximo passo claro",
     "mainSub": "O Nearshore Navigator existe para facilitar as decisões: orientação fundamentada, acompanhamento constante e suporte à execução que corresponde à sua realidade.",
+    "roleTitle": "O que fazemos e o que não fazemos",
+    "roleStatement": "Avaliamos locais e modelos de entrada no mercado e apresentamos fornecedores terceirizados selecionados. Não possuímos instalações, não atuamos como empregador de registro, não mantemos programas IMMEX em seu nome, não fabricamos nem prestamos consultoria jurídica, fiscal, contábil ou de despachante aduaneiro. Declarações, custos e prazos dos fornecedores são estimativas que você deve verificar na sua própria due diligence.",
     "struggleTitle": "A Luta Comum",
     "struggleDesc": "As decisões de nearshoring geralmente travam após o entusiasmo inicial — quando as perguntas reais aparecem:",
     "struggleList1": "Onde na Baixa Califórnia devemos estar?",

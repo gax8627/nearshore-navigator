@@ -238,7 +238,7 @@ export default function CostCalculatorClient({ language }: { language: string })
                  </Button>
               </div>
               <p className="text-xs text-primary-300/70 mt-6 leading-relaxed">
-                Rates based on 2026 CONASAMI, IVEMSA, and regional market data. Contact Nearshore Navigator for a custom cost model.
+                Rates are illustrative estimates based on 2026 CONASAMI minimum wage data and regional market information. Contact Nearshore Navigator for a custom cost model.
               </p>
             </div>
 

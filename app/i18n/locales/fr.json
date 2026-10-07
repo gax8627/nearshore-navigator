@@ -49,9 +49,13 @@
     "marketing": "Services Marketing",
     "marketing_desc": "Commercialisez votre capacite de production aupres de la base industrielle nord-americaine grace a un systeme marketing automatise."
   },
+  "legal": {
+    "noAdviceShort": "Informations générales uniquement ; pas de conseil juridique, fiscal ou douanier."
+  },
   "footer": {
     "rights": "Tous droits réservés.",
-    "description": "Votre partenaire de confiance pour le nearshoring industriel, les services shelter et la fabrication à Baja California, Mexique.",
+    "description": "Conseil et courtage indépendants pour les fabricants qui s'implantent en Basse-Californie, Mexique.",
+    "roleStatement": "Nearshore Navigator est une société indépendante de conseil et de courtage. Nous mettons en relation les fabricants avec des prestataires tiers de shelter, de sous-traitance, d'immobilier et de douane ; nous n'exploitons pas de programmes shelter/IMMEX, ne fabriquons pas et ne fournissons pas de conseils juridiques, fiscaux ou douaniers.",
     "industrial_map": "Carte des Parcs Industriels",
     "privacy": "Politique de Confidentialité",
     "terms": "Conditions d'Utilisation"
@@ -151,11 +155,11 @@
   },
   "terms": {
     "title": "Conditions d'Utilisation",
-    "lastUpdated": "Dernière mise à jour : Janvier 2026",
+    "lastUpdated": "Dernière mise à jour : octobre 2026",
     "section1_title": "1. Acceptation des conditions",
     "section1_text": "En accédant au site Nearshore Navigator, vous acceptez ces conditions d'utilisation.",
     "section2_title": "2. Description des services",
-    "section2_text": "Nearshore Navigator fournit des services de conseil liés au nearshoring industriel à Baja California, Mexique.",
+    "section2_text": "Nearshore Navigator fournit des services de conseil liés au nearshoring industriel à Baja California, Mexique. Nearshore Navigator agit uniquement en tant qu'intermédiaire et conseiller qui vous présente des prestataires tiers indépendants ; nous ne sommes partie à aucun accord entre vous et ces prestataires.",
     "section3_title": "3. Responsabilités de l'utilisateur",
     "section3_text": "Vous acceptez de fournir des informations exactes lors de l'utilisation de nos services.",
     "section4_title": "4. Propriété intellectuelle",
@@ -164,6 +168,10 @@
     "section5_text": "Nearshore Navigator ne sera pas responsable des dommages indirects ou consécutifs.",
     "section6_title": "6. Loi applicable",
     "section6_text": "Ces conditions d'utilisation sont régies par les lois de l'État de Californie, États-Unis.",
+    "noAdvice_title": "Aucun conseil professionnel",
+    "noAdvice_text": "Le contenu de ce site, y compris les calculateurs, le blog et le consultant IA, est fourni à titre d'information générale uniquement et ne constitue pas un conseil juridique, fiscal, douanier ou comptable. L'utilisation du site ne crée aucune relation avocat-client ni autre relation professionnelle. Consultez des avocats agréés au Mexique et aux États-Unis, un expert-comptable (CPA) et un courtier en douane agréé (Agente Aduanal) avant de décider. Les réponses de l'IA peuvent être inexactes ou incomplètes.",
+    "thirdParty_title": "Prestataires tiers",
+    "thirdParty_text": "Nous ne sommes pas responsables des services, actes ou omissions des prestataires tiers. Vous contractez directement avec chaque prestataire et devez vérifier ses qualifications, autorisations et références avant de l'engager.",
     "section7_title": "7. Contact",
     "section7_text": "Pour toute question concernant ces conditions, contactez-nous à",
     "backToHome": "← Retour à l'accueil"
@@ -527,6 +535,8 @@
   "aboutPage": {
     "mainHeading": "Transformer 'nous voulons le Mexique' en une prochaine etape claire",
     "mainSub": "Nearshore Navigator existe pour faciliter les decisions: des conseils fondes, un suivi rigoureux et un soutien a l'execution adapte a votre realite.",
+    "roleTitle": "Ce que nous faisons et ne faisons pas",
+    "roleStatement": "Nous évaluons des sites et des modèles d'entrée sur le marché et présentons des prestataires tiers sélectionnés. Nous ne possédons pas d'installations, n'agissons pas en tant qu'employeur officiel (employer of record), ne détenons pas de programmes IMMEX en votre nom, ne fabriquons pas et ne fournissons pas de conseils juridiques, fiscaux, comptables ou de courtage en douane. Les affirmations, coûts et délais des prestataires sont des estimations que vous devez vérifier dans le cadre de votre propre diligence raisonnable.",
     "struggleTitle": "Le defi commun",
     "struggleDesc": "Les decisions de nearshoring se bloquent souvent apres l'enthousiasme initial -- quand les vraies questions surgissent:",
     "struggleList1": "Ou en Basse-Californie devrions-nous nous installer?",

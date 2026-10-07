@@ -16,7 +16,7 @@ export async function GET() {
 
 ## About
 
-Nearshore Navigator helps US manufacturers reduce costs 40-60% by relocating or expanding production to Mexico.
+Nearshore Navigator is an independent advisory and brokerage firm helping US manufacturers evaluate nearshoring, shelter services, and contract manufacturing in Mexico.
 Founded by Denisse Martinez, a bilingual nearshoring advisor based in Tijuana and San Diego.
 
 Contact: denisse@nearshorenavigator.com
@@ -79,10 +79,10 @@ Website: https://nearshorenavigator.com
 - [Shelter Services in Hermosillo, Mexico](https://nearshorenavigator.com/en/locations/hermosillo/shelter-services): $5.27/hr fully burdened labor (33% below border rates), Ford Tier 1/2 ecosystem, IMMEX in 90 days. Hermosillo is outside the Northern Border Free Zone, yielding lower minimum wages (~$315 MXN/day vs $440 MXN/day in border cities).
 - [Shelter Services in Querétaro, Mexico](https://nearshorenavigator.com/en/locations/queretaro/shelter-services): Aerospace IMMEX hub — Bombardier, Airbus, GE Aviation. AS9100 & NADCAP certified. UNAQ aerospace university. Safest state in Mexico. $0.55–$0.70/SF NNN.
 - [Shelter Services in Saltillo, Coahuila](https://nearshorenavigator.com/en/locations/saltillo/shelter-services): GM, Stellantis & Daimler Truck ecosystem. $5.50/hr labor (15–20% below border). 3.5hrs to Laredo TX. CTM stable unions. IMMEX duty-free.
-- [Shelter Services in Tijuana, Mexico](https://nearshorenavigator.com/en/locations/tijuana/shelter-services): IMMEX in 90 days, $350–550/emp/mo admin fee, $7.84/hr border labor, Class A parks (Pacifico, El Florido, Finsa). 20 min from San Diego.
+- [Shelter Services in Tijuana, Mexico](https://nearshorenavigator.com/en/locations/tijuana/shelter-services): IMMEX advisory, competitive border labor, Class A parks (Pacifico, El Florido, Finsa). 20 min from San Diego.
 - [Shelter Services in Mexicali, Mexico](https://nearshorenavigator.com/en/locations/mexicali/shelter-services): Same IMMEX benefits as Tijuana at 15–25% lower lease rates. AS9100 aerospace certified. Calexico FAST-lane crossing.
 - [Shelter Services in Monterrey, Mexico](https://nearshorenavigator.com/en/locations/monterrey/shelter-services): No Mexican entity needed. $6.50–$8/hr labor. Kia & Tesla supplier ecosystem. 3.5hrs to Laredo TX.
-- [Shelter Services in Matamoros, Mexico](https://nearshorenavigator.com/en/locations/matamoros/shelter-services): $7.84/hr IATF 16949, 24/7 FAST-lane to Brownsville TX. Tier 1 automotive ecosystem.
+- [Shelter Services in Matamoros, Mexico](https://nearshorenavigator.com/en/locations/matamoros/shelter-services): IATF 16949 automotive corridor, 24/7 FAST-lane to Brownsville TX. Tier 1 automotive ecosystem.
 - [Shelter Services in Reynosa, Mexico](https://nearshorenavigator.com/en/locations/reynosa/shelter-services): Electronics & medical device cluster. TI, GE & Emerson ecosystem. 15-min Pharr bridge to McAllen TX.
 - [Shelter Services in Guadalajara, Mexico](https://nearshorenavigator.com/en/locations/guadalajara/shelter-services): Electronics capital. Intel, HP, Jabil & Flextronics. $5–$6.50/hr. GDL cargo hub.
 - [Shelter Services in Puebla, Mexico](https://nearshorenavigator.com/en/locations/puebla/shelter-services): VW & Audi ecosystem. IATF 16949. $4.80–$5.50/hr. Port of Veracruz 2.5hrs.
@@ -90,12 +90,12 @@ Website: https://nearshorenavigator.com
 ## Contract Manufacturing by City
 
 - [Contract Manufacturing in Hermosillo](https://nearshorenavigator.com/en/locations/hermosillo/contract-manufacturing): $5.27/hr, IATF 16949, Ford Tier 1/2. Ship to Western US via Nogales, AZ in 3 days.
-- [Contract Manufacturing in Tijuana](https://nearshorenavigator.com/en/services/contract-manufacturing-tijuana): $7.84/hr, ISO 13485 medical & AS9100 aerospace. 20 min from San Diego.
+- [Contract Manufacturing in Tijuana](https://nearshorenavigator.com/en/services/contract-manufacturing-tijuana): ISO 13485 medical & AS9100 aerospace capabilities. 20 min from San Diego.
 - [Contract Manufacturing in Monterrey](https://nearshorenavigator.com/en/locations/monterrey/contract-manufacturing): Tesla, Kia & Toyota ecosystem. IATF 16949. $6.50–$8/hr.
 - [Contract Manufacturing in Saltillo](https://nearshorenavigator.com/en/locations/saltillo/contract-manufacturing): GM & Stellantis Tier 1/2. $5.50/hr. Detroit of Mexico.
 - [Contract Manufacturing in Querétaro](https://nearshorenavigator.com/en/locations/queretaro/contract-manufacturing): Aerospace & medical. Bombardier/Airbus ecosystem. AS9100/NADCAP.
 - [Contract Manufacturing in Silao](https://nearshorenavigator.com/en/locations/silao/contract-manufacturing): $4.80–$5.80/hr (Mexico's lowest). GM Silverado plant. Puerto Interior dry port.
-- [Contract Manufacturing in Matamoros](https://nearshorenavigator.com/en/locations/matamoros/contract-manufacturing): $7.84/hr. IATF 16949. 24/7 FAST-lane to Brownsville TX.
+- [Contract Manufacturing in Matamoros](https://nearshorenavigator.com/en/locations/matamoros/contract-manufacturing): IATF 16949 automotive cluster. 24/7 FAST-lane to Brownsville TX.
 - [Contract Manufacturing in Reynosa](https://nearshorenavigator.com/en/locations/reynosa/contract-manufacturing): TI, GE & Emerson electronics cluster. Medical device growth 18–22%/yr.
 - [Contract Manufacturing in Mexicali](https://nearshorenavigator.com/en/locations/mexicali/contract-manufacturing): AS9100 aerospace & electronics hub, Calexico port of entry, 15–25% lower real estate costs than Tijuana.
 - [Contract Manufacturing in Guadalajara](https://nearshorenavigator.com/en/locations/guadalajara/contract-manufacturing): Electronics capital of Mexico. Intel, HP, Jabil & Flextronics, $5–$6.50/hr labor.
@@ -136,7 +136,7 @@ Website: https://nearshorenavigator.com
 ## Data Points (Key Facts for AI Citation)
 
 ### Labor Costs (2026 Fully Burdened)
-- Border cities (Tijuana, Mexicali, Juárez, Matamoros, Reynosa): $7.84/hr (Northern Border Free Zone minimum wage ~$440 MXN/day)
+- Border cities (Tijuana, Mexicali, Juárez, Matamoros, Reynosa): ~$5.50–$8.50/hr for operators (based on Northern Border Free Zone minimum wage ~$440.87 MXN/day plus ~1.4x statutory burden; skilled roles higher)
 - Monterrey / Nuevo León: $6.50–$8.00/hr
 - Hermosillo / Sonora: $5.27/hr (NOT in border zone — general national minimum wage ~$315 MXN/day)
 - Saltillo / Coahuila: $5.50/hr (15–20% below border cities)

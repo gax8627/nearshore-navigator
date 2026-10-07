@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 import { INDUSTRY_MATRIX } from '@/app/constants/city-industry-matrix';
-import { COMPETITOR_MATRIX } from '@/app/constants/competitor-matrix';
 import { MARKET_ALERTS } from '@/app/constants/market-pulse-news';
 
 /**
@@ -44,13 +43,6 @@ function buildRagContext(lastMessage: string): string {
     });
   }
 
-  // Competitor data
-  if (lower.includes('competitor') || lower.includes('compare') || lower.includes('ivemsa') || lower.includes('naps') || lower.includes('tecma') || lower.includes('offshore group')) {
-    COMPETITOR_MATRIX.forEach(comp => {
-      chunks.push(`[COMPETITOR: ${comp.name}] Strengths: ${comp.strengths.join(', ')}. Speed-to-market: ${comp.speedToMarket}.`);
-    });
-  }
-
   // Market alerts
   if (lower.includes('tariff') || lower.includes('usmca') || lower.includes('news') || lower.includes('alert') || lower.includes('trade')) {
     MARKET_ALERTS.forEach(alert => {
@@ -68,7 +60,10 @@ Your role:
 - Use the provided RAG context (real industrial data) to back up your answers with specific facts: labor rates, plant counts, vacancy rates, etc.
 - Be concise, professional, and direct. You are speaking to C-suite executives and supply chain managers evaluating a major business decision.
 - When relevant, recommend a free 30-minute strategy call: https://calendly.com/denisse-nearshorenavigator/30min
-- Nearshore Navigator's key differentiator: objective broker model (no conflict of interest), 15-30 day speed-to-market, bilingual team on both sides of the border.
+- Nearshore Navigator's key differentiator: independent advisory firm, typically 30-90 days depending on the project, bilingual team on both sides of the border.
+- Nearshore Navigator is an independent advisor/broker. It does not operate shelter or IMMEX programs and does not manufacture.
+- Never give legal, tax, or customs advice; recommend consulting licensed professionals (attorneys, CPAs, customs brokers).
+- Make no claims about the pricing, speed, quality, or reliability of any named company. If asked to compare named providers, explain the general operating models (standalone entity, shelter, contract manufacturing) and suggest requesting written quotes from each provider.
 - Do NOT fabricate data. If you don't have information, say so and offer to connect the user with Denisse Martinez directly.
 - Keep responses under 200 words unless the user asks for a detailed breakdown.`;
 

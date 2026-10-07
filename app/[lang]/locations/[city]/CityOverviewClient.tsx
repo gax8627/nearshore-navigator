@@ -265,17 +265,6 @@ export default function CityOverviewClient({ city }: Props) {
                     </div>
                 </section>
 
-                {/* Strategy & Competitor Analysis */}
-                <section>
-                    <SectionTitle 
-                        title={t('comparison.title')}
-                        subtitle={t('comparison.subtitle')}
-                    />
-                    <div className="mt-8">
-                        <ComparisonModule type="competitor" />
-                    </div>
-                </section>
-
                 {/* Hub Performance Benchmark */}
                 <section>
                     <SectionTitle 

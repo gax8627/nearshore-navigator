@@ -590,7 +590,7 @@ export default function ShelterClient() {
               </div>
 
               <div className="p-4 rounded-xl bg-green-950/40 border border-green-800/60 text-xs text-green-200 leading-relaxed">
-                <strong>Savings Impact:</strong> Operating at $7.84/hr saves over $20.00/hr per worker compared to US assembly rates ($28.50–$35.00/hr), generating <strong>$41,600+ annual savings per operator position</strong>.
+                <strong>Illustrative Savings Impact:</strong> Operating at illustrative border rates (~$7–8/hr) compares favorably to US assembly rates ($28.50–$35.00/hr fully burdened). Actual realized savings depend on sector, skill tier, turnover, and facility scale.
               </div>
             </div>
 

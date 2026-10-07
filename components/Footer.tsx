@@ -71,6 +71,8 @@ export function Footer() {
                     </div>
                 </div>
 
+                <p className="text-xs text-gray-500 leading-relaxed mb-6 max-w-4xl">{t('footer.roleStatement')}</p>
+
                 <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
                     <p>&copy; {new Date().getFullYear()} Nearshore Navigator. {t('footer.rights')}</p>
                     <div className="flex gap-4 mt-4 md:mt-0">

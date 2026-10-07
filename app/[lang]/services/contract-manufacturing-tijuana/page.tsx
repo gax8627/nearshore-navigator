@@ -9,11 +9,11 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const dict = await getDictionary(lang as any);
 
   const title = lang === 'en'
-    ? 'Contract Manufacturing in Tijuana Mexico | ISO Certified, $7.84/hr | 2026 Guide'
+    ? 'Contract Manufacturing in Tijuana Mexico | Vetted ISO Facilities | 2026 Guide'
     : `${dict.contractPage.heroTitle} ${dict.contractPage.heroTitleHighlight} | Nearshore Navigator`;
 
   const description = lang === 'en'
-    ? 'Tijuana contract manufacturers: ISO 13485 medical, AS9100 aerospace, IATF 16949 automotive. $7.84/hr labor, 0% USMCA duty, 20 min from San Diego. 60-day startup. Nearshore Navigator vets and places you — no commissions.'
+    ? 'Tijuana contract manufacturing: network of ISO 13485 medical, AS9100 aerospace, and IATF 16949 facilities. Competitive labor rates, preferential USMCA access on qualifying goods, 20 min from San Diego.'
     : dict.contractPage.heroSubtitle;
 
   return {

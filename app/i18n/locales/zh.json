@@ -52,9 +52,13 @@
     "marketing": "离岸营销操作系统",
     "marketing_desc": "一个直接整合到您的业务中的完整 B2B 增长系统。"
   },
+  "legal": {
+    "noAdviceShort": "仅为一般性信息；不构成法律、税务或报关建议。"
+  },
   "footer": {
     "rights": "版权所有。",
-    "description": "您在墨西哥下加州工业近岸外包、代管服务和制造领域的信任伙伴。",
+    "description": "为拓展至墨西哥下加州的制造商提供独立的咨询与经纪服务。",
+    "roleStatement": "Nearshore Navigator 是一家独立的咨询与经纪公司。我们将制造商与第三方代管（shelter）、合同制造、房地产和报关服务提供商对接；我们不运营代管/IMMEX 项目，不从事制造，也不提供法律、税务或报关建议。",
     "industrial_map": "工业园区地图",
     "privacy": "隐私政策",
     "terms": "服务条款"
@@ -153,11 +157,11 @@
   },
   "terms": {
     "title": "服务条款",
-    "lastUpdated": "最后更新：2026 年 1 月",
+    "lastUpdated": "最后更新：2026 年 10 月",
     "section1_title": "1. 接受条款",
     "section1_text": "访问和使用 Nearshore Navigator 网站即表示您同意受这些条款约束。",
     "section2_title": "2. 服务描述",
-    "section2_text": "我们提供与墨西哥下加州工业近岸外包相关的咨询服务。",
+    "section2_text": "我们提供与墨西哥下加州工业近岸外包相关的咨询服务。Nearshore Navigator 仅作为中介和顾问，向您介绍独立的第三方服务提供商；我们不是您与这些提供商之间任何协议的当事方。",
     "section3_title": "3. 用户责任",
     "section3_text": "您同意在使用服务时提供准确的信息。",
     "section4_title": "4. 知识产权",
@@ -166,6 +170,10 @@
     "section5_text": "Nearshore Navigator 对任何间接损害不承担责任。",
     "section6_title": "6. 准据法",
     "section6_text": "受美国加利福尼亚州法律管辖。",
+    "noAdvice_title": "不构成专业建议",
+    "noAdvice_text": "本网站的内容（包括计算器、博客和 AI 顾问）仅为一般性信息，不构成法律、税务、报关或会计建议。使用本网站不会建立律师与委托人关系或其他专业关系。在做出决定之前，请咨询持牌的墨西哥和美国律师、注册会计师（CPA）以及持牌报关代理（Agente Aduanal）。AI 回复可能不准确或不完整。",
+    "thirdParty_title": "第三方服务提供商",
+    "thirdParty_text": "我们不对第三方服务提供商的服务、作为或不作为负责。您直接与任何提供商签约，并应在聘用前核实其资质、许可和口碑。",
     "section7_title": "7. 联系方式",
     "section7_text": "如有疑问，请联系",
     "backToHome": "← 返回首页"
@@ -538,6 +546,8 @@
   "aboutPage": {
     "mainHeading": "将“我们要去墨西哥”转化为明确的下一步",
     "mainSub": "Nearshore Navigator 旨在简化决策：提供有依据的指导、稳健的后续行动以及符合您实际情况的执行支持。",
+    "roleTitle": "我们做什么，不做什么",
+    "roleStatement": "我们评估选址和市场进入模式，并介绍经过审核的第三方服务提供商。我们不拥有设施，不担任名义雇主（Employer of Record），不代表您持有 IMMEX 项目，不从事制造，也不提供法律、税务、会计或报关代理方面的建议。服务提供商的说法、成本和时间表均为估算，您应通过自己的尽职调查加以核实。",
     "struggleTitle": "共同的挑战",
     "struggleDesc": "近岸外包决策往往在最初的兴奋之后陷入停滞——当真正的问题出现时：",
     "struggleList1": "我们应该在下加利福尼亚州的哪里？",

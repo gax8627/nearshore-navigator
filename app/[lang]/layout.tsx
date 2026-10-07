@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       default: 'Nearshore Navigator | Industrial Manufacturing in Baja California, Mexico',
       template: '%s | Nearshore Navigator'
     },
-    description: 'Your partner for industrial nearshoring, shelter services, and contract manufacturing in Baja California, Mexico. Access Class A industrial buildings, bilingual workforce, and 40-60% cost savings just 20 minutes from San Diego.',
+    description: 'Independent strategic advisory for industrial nearshoring, shelter evaluation, and contract manufacturing in Baja California, Mexico. Access Class A industrial facilities, an experienced bilingual workforce, and potential operational cost savings 20 minutes from San Diego.',
     alternates: {
       canonical: canonicalUrl,
       languages: {

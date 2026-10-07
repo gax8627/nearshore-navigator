@@ -82,6 +82,11 @@ export default function AboutClient() {
                         </p>
                     </div>
 
+                    <div className="mb-12 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+                        <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">{t('aboutPage.roleTitle')}</h3>
+                        <p className="text-gray-600 dark:text-gray-300">{t('aboutPage.roleStatement')}</p>
+                    </div>
+
                     <div className="grid gap-8 md:grid-cols-2">
                         <motion.div 
                             initial={{ opacity: 0, x: -20 }}

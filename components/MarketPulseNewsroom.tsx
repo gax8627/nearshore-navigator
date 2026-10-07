@@ -28,7 +28,7 @@ export function MarketPulseNewsroom() {
                                     <Calendar className="w-3 h-3" /> {alert.date}
                                 </span>
                                 <span className="w-1 h-1 bg-gray-300 rounded-full" />
-                                <span className="text-primary-500 font-semibold uppercase tracking-tighter">Verified Intelligence</span>
+                                <span className="text-primary-500 font-semibold uppercase tracking-tighter">Market Intelligence</span>
                             </div>
 
                             <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">

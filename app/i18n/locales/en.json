@@ -136,9 +136,13 @@
     "marketing": "Marketing Services",
     "marketing_desc": "Market your manufacturing capacity to the North American industrial base with an automated Digital SDR."
   },
+  "legal": {
+    "noAdviceShort": "General information only; not legal, tax or customs advice."
+  },
   "footer": {
     "rights": "All rights reserved.",
-    "description": "Your trusted partner for industrial nearshoring, shelter services, and manufacturing in Baja California, Mexico.",
+    "description": "Independent advisory and brokerage for manufacturers expanding to Baja California, Mexico.",
+    "roleStatement": "Nearshore Navigator is an independent advisory and brokerage firm. We connect manufacturers with third-party shelter, contract-manufacturing, real-estate and customs providers; we do not operate shelter/IMMEX programs, manufacture, or provide legal, tax or customs advice.",
     "industrial_map": "Industrial Park Map",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
@@ -242,11 +246,11 @@
   },
   "terms": {
     "title": "Terms of Service",
-    "lastUpdated": "Last updated: January 2026",
+    "lastUpdated": "Last updated: October 2026",
     "section1_title": "1. Acceptance of Terms",
     "section1_text": "By accessing and using the Nearshore Navigator website and services, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.",
     "section2_title": "2. Services Description",
-    "section2_text": "Nearshore Navigator provides consulting and advisory services related to industrial nearshoring, real estate, shelter services, and manufacturing in Baja California, Mexico. We act as intermediaries connecting clients with service providers and do not assume liability for third-party services.",
+    "section2_text": "Nearshore Navigator provides consulting and advisory services related to industrial nearshoring, real estate, shelter services, and manufacturing in Baja California, Mexico. We act as intermediaries connecting clients with service providers and do not assume liability for third-party services. Nearshore Navigator acts solely as an intermediary and advisor that introduces you to independent third-party providers; we are not a party to any agreement between you and those providers.",
     "section3_title": "3. User Responsibilities",
     "section3_text": "You agree to provide accurate information when using our services and to use our website only for lawful purposes. You are responsible for maintaining the confidentiality of any account credentials.",
     "section4_title": "4. Intellectual Property",
@@ -255,6 +259,10 @@
     "section5_text": "Nearshore Navigator shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our services or reliance on information provided on this website.",
     "section6_title": "6. Governing Law",
     "section6_text": "These Terms of Service shall be governed by and construed in accordance with the laws of the State of California, United States.",
+    "noAdvice_title": "No Professional Advice",
+    "noAdvice_text": "The content of this site, including calculators, the blog and the AI consultant, is general information only and does not constitute legal, tax, customs or accounting advice. No attorney-client or other professional relationship is created by using this site. Consult licensed Mexican and US counsel, a CPA and a licensed customs broker (Agente Aduanal) before making decisions. AI responses may be inaccurate or incomplete.",
+    "thirdParty_title": "Third-Party Providers",
+    "thirdParty_text": "We are not responsible for the services, acts or omissions of third-party providers. You contract directly with any provider and should verify their credentials, permits and references before engaging them.",
     "section7_title": "7. Contact",
     "section7_text": "For questions about these Terms of Service, please contact us at",
     "backToHome": "← Back to Home"
@@ -546,6 +554,8 @@
   "aboutPage": {
     "mainHeading": "Turning \"we want Mexico\" into a clear next step",
     "mainSub": "Nearshore Navigator exists to make decisions easier: grounded guidance, steady follow-through, and execution support that matches your reality.",
+    "roleTitle": "What we do and what we don't",
+    "roleStatement": "We evaluate sites and market-entry models and introduce vetted third-party providers. We do not own facilities, act as employer of record, hold IMMEX programs on your behalf, manufacture, or provide legal, tax, accounting or customs-brokerage advice. Provider claims, costs and timelines are estimates that you should verify in your own due diligence.",
     "struggleTitle": "The Common Struggle",
     "struggleDesc": "Nearshoring decisions often get stuck after the initial excitement—when the real questions show up:",
     "struggleList1": "Where in Baja should we be?",

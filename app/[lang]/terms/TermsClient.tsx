@@ -74,6 +74,20 @@ export default function TermsPage() {
                 </section>
 
                 <section>
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('terms.noAdvice_title')}</h2>
+                    <p className="text-gray-600 dark:text-gray-300">
+                        {t('terms.noAdvice_text')}
+                    </p>
+                </section>
+
+                <section>
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('terms.thirdParty_title')}</h2>
+                    <p className="text-gray-600 dark:text-gray-300">
+                        {t('terms.thirdParty_text')}
+                    </p>
+                </section>
+
+                <section>
                     <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('terms.section7_title')}</h2>
                     <p className="text-gray-600 dark:text-gray-300">
                         {t('terms.section7_text')}{" "}

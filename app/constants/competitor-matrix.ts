@@ -1,57 +1,56 @@
-export type CompetitorEntry = {
+export type OperatingModelEntry = {
     name: string;
-    focus: string;
-    model: "Shelter" | "Managed" | "Advisory";
-    strengths: string[];
-    weaknesses: string[];
-    speedToMarket: string;
-    pricingModel: string;
+    model: string;
+    typicalStartup: string;
+    pricingStructure: string;
+    bestFor: string;
+    tradeOffs: string;
+    reviewedAt: string;
+    isOurs?: boolean;
 };
 
-export const COMPETITOR_MATRIX: CompetitorEntry[] = [
+export const COMPETITOR_DISCLAIMER =
+    "Information is for general educational purposes only and describes common industry operating models, not any specific company. Timelines and pricing vary significantly by project, sector, facility and provider and are not guarantees or offers. Not affiliated with or endorsed by any provider.";
+
+export const OPERATING_MODEL_MATRIX: OperatingModelEntry[] = [
     {
-        name: "IVEMSA",
-        focus: "Comprehensive Shelter & IMMEX",
-        model: "Shelter",
-        strengths: ["Historical depth", "Flexibility", "Medical focus"],
-        weaknesses: ["Customization takes time", "Higher overhead"],
-        speedToMarket: "90-120 Days",
-        pricingModel: "Percentage of payroll / Fixed Fee"
+        name: "Standalone Mexican Entity",
+        model: "Own legal entity",
+        typicalStartup: "Typically 6-12 months; varies by project",
+        pricingStructure: "Custom quote",
+        bestFor: "Companies seeking full control and long-term, higher-volume operations",
+        tradeOffs: "Requires entity setup, local compliance and HR infrastructure, and more upfront capital and management attention",
+        reviewedAt: "2026-Q1",
     },
     {
-        name: "NAPS",
-        focus: "Full Admin & Compliance Management",
-        model: "Shelter",
-        strengths: ["Standardized compliance", "USMCA expertise", "Scalability"],
-        weaknesses: ["Less operational control", "Corporate rigidity"],
-        speedToMarket: "90 Days",
-        pricingModel: "All-inclusive monthly fee"
+        name: "Traditional Shelter Provider",
+        model: "Shelter / IMMEX",
+        typicalStartup: "Typically 30-90 days under a shelter model; varies by project",
+        pricingStructure: "Custom quote",
+        bestFor: "Companies that want to launch operations without forming a Mexican entity",
+        tradeOffs: "Less direct control over administration; fee structures and contract terms vary by provider",
+        reviewedAt: "2026-Q1",
     },
     {
-        name: "CPI (Collectron)",
-        focus: "Fast-track Maquiladora Setup",
-        model: "Shelter",
-        strengths: ["Speed", "Sonora/Queretaro dominance", "Government ties"],
-        weaknesses: ["Geographic concentration", "Potential hidden costs"],
-        speedToMarket: "45-60 Days",
-        pricingModel: "Hourly rate based on labor hours"
+        name: "Contract Manufacturer",
+        model: "Outsourced production",
+        typicalStartup: "Varies by project and capabilities",
+        pricingStructure: "Custom quote",
+        bestFor: "Companies that prefer to outsource production rather than run their own plant",
+        tradeOffs: "Less control over processes and capacity; intellectual property and quality arrangements need careful review",
+        reviewedAt: "2026-Q1",
     },
     {
-        name: "Tecma",
-        focus: "Large-scale Operational Stability",
-        model: "Shelter",
-        strengths: ["Low turnover", "Massive footprint", "El Paso/Juarez focus"],
-        weaknesses: ["Large corporate feel", "Communication gaps in large teams"],
-        speedToMarket: "60-90 Days",
-        pricingModel: "Fixed monthly per-employee fee"
+        name: "Nearshore Navigator",
+        model: "Advisory-led managed route",
+        typicalStartup: "Typically 30-90 days depending on the project",
+        pricingStructure: "Custom quote",
+        bestFor: "Companies that want independent guidance on choosing and structuring an entry route",
+        tradeOffs: "Advisory only: operations are delivered by third-party providers selected for the project",
+        reviewedAt: "2026-Q1",
+        isOurs: true,
     },
-    {
-        name: "Nearshore Navigator (Agile)",
-        focus: "Agentic-First Hub Entry",
-        model: "Managed",
-        strengths: ["Low-capex launch options", "Digital project tracking", "Contract Mfg agility"],
-        weaknesses: ["Newer brand", "Digital-first interface"],
-        speedToMarket: "30-90 Days (project-dependent)",
-        pricingModel: "Success-based / Subscription"
-    }
 ];
+
+// Backwards-compatible alias
+export const COMPETITOR_MATRIX = OPERATING_MODEL_MATRIX;
