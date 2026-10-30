@@ -35,7 +35,12 @@
     "darkMode": "Dark Mode",
     "lightMode": "Light Mode",
     "calculator": "Cost Calculator",
-    "park_map": "Industrial Park Map"
+    "park_map": "Industrial Park Map",
+    "home": "Home",
+    "locations": "Locations",
+    "rvc_calculator": "USMCA RVC Calculator",
+    "civa_calculator": "CIVA Audit Risk Calculator",
+    "cfe_calculator": "CFE Power Feasibility Estimator"
   },
   "questionnaire": {
     "title": "3PL Operation Questionnaire",
@@ -83,7 +88,8 @@
     "q34": "What is the period for which you require our services?",
     "q35": "Can we offer you quotes for transportation? What are the addresses?",
     "q36": "What Annex 24 system do you use?",
-    "printPdf": "Click here to Print / Save as PDF"
+    "printPdf": "Click here to Print / Save as PDF",
+    "q37": "Additional operational or timeline requirements"
   },
   "inlineForm": {
     "title": "Request a Strategy Brief",
@@ -134,7 +140,11 @@
     "call_center": "Call Center Solutions",
     "call_center_desc": "Scale your support with 50,000+ bilingual agents in the Pacific Time Zone. Save 40-60% on BPO costs.",
     "marketing": "Marketing Services",
-    "marketing_desc": "Market your manufacturing capacity to the North American industrial base with an automated Digital SDR."
+    "marketing_desc": "Market your manufacturing capacity to the North American industrial base with an automated Digital SDR.",
+    "shelter": "Shelter Services",
+    "shelter_desc": "Launch operations in Mexico without establishing a legal entity. Complete HR, payroll, legal, and IMMEX compliance.",
+    "customs": "Customs Brokerage",
+    "customs_desc": "Cross-border customs brokerage, Anexo 24/30 inventory compliance, and USMCA tariff optimization."
   },
   "legal": {
     "noAdviceShort": "General information only; not legal, tax or customs advice."
@@ -193,7 +203,8 @@
     "heroTitle3": "execution.",
     "heroSubtitle": "Built for manufacturers entering Baja California. We provide structured guidance, practical options, and the right introductions so your expansion doesn’t stall in uncertainty.",
     "shelterServicesTitle": "Strategic Soft-landing",
-    "shelterServicesDesc": "For when speed matters. We help you assess the most efficient entry route (Shelter, M&A, or standalone) and connect you with vetted options."
+    "shelterServicesDesc": "For when speed matters. We help you assess the most efficient entry route (Shelter, M&A, or standalone) and connect you with vetted options.",
+    "metaDescription": "Learn about Nearshore Navigator, our cross-border advisory team, and our mission to streamline Mexico manufacturing."
   },
   "contact": {
     "title": "Contact Us",
@@ -242,7 +253,8 @@
     "section5_text": "We use cookies and similar technologies to enhance your experience on our website, analyze site usage, and assist in our marketing efforts.",
     "section6_title": "6. Contact Us",
     "section6_text": "If you have any questions about this Privacy Policy, please contact us at",
-    "backToHome": "← Back to Home"
+    "backToHome": "← Back to Home",
+    "metaDescription": "Legal privacy policy, data security practices, and compliance protocols for Nearshore Navigator."
   },
   "terms": {
     "title": "Terms of Service",
@@ -265,7 +277,8 @@
     "thirdParty_text": "We are not responsible for the services, acts or omissions of third-party providers. You contract directly with any provider and should verify their credentials, permits and references before engaging them.",
     "section7_title": "7. Contact",
     "section7_text": "For questions about these Terms of Service, please contact us at",
-    "backToHome": "← Back to Home"
+    "backToHome": "← Back to Home",
+    "metaDescription": "Terms of service, usage guidelines, and advisory disclaimers for Nearshore Navigator."
   },
   "distributionPage": {
     "badge": "Logistics & Fulfillment",
@@ -521,7 +534,8 @@
     "ctaDownload": "View & Download",
     "ctaReadInsights": "Read Insights",
     "latestIntelligence": "Latest Intelligence",
-    "latestIntelligenceDesc": "Expert analysis and strategic guides to help you navigate the nearshoring landscape."
+    "latestIntelligenceDesc": "Expert analysis and strategic guides to help you navigate the nearshoring landscape.",
+    "metaDescription": "Explore industry guides, whitepapers, calculators, and infrastructure maps for manufacturing in Mexico."
   },
   "brochure": {
     "title": "Nearshore Navigator",
@@ -906,7 +920,14 @@
     "strategicRealEstate": "Strategic Real Estate",
     "realEstateSub": "Exploring industrial park availability for {name} in this region.",
     "activePlants": "Active Plants",
-    "specializedTalent": "Specialized Talent"
+    "specializedTalent": "Specialized Talent",
+    "clusterValidation": "Cluster Validation",
+    "industryAnalysis": "Industry Analysis",
+    "viewAllInfrastructure": "View All Infrastructure",
+    "consultAdvisor": "Consult with an Advisor",
+    "advisorSub": "Get industry-specific data for your Mexico operations.",
+    "exploreOtherIndustries": "Explore Other Industries in {location}",
+    "exploreOtherCities": "{name} in Other Cities"
   },
   "matrix": {
     "tijuana": {

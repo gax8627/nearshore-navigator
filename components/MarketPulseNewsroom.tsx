@@ -1,11 +1,14 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { MARKET_ALERTS } from "@/app/constants/market-pulse-news";
 import { motion } from "framer-motion";
 import { AlertTriangle, MapPin, Factory, Calendar, ExternalLink } from "lucide-react";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export function MarketPulseNewsroom() {
+    const { language } = useLanguage();
     return (
         <div className="space-y-6">
             {MARKET_ALERTS.map((alert, index) => (
@@ -64,12 +67,18 @@ export function MarketPulseNewsroom() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row md:flex-col gap-3 w-full md:w-48 pt-4 md:pt-8 border-t md:border-t-0 border-gray-100 dark:border-gray-800">
-                            <button className="flex items-center justify-center gap-2 py-3 px-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg text-xs font-bold hover:opacity-90 transition-opacity">
+                            <Link 
+                                href={`/${language}/insights`} 
+                                className="flex items-center justify-center gap-2 py-3 px-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg text-xs font-bold hover:opacity-90 transition-opacity text-center"
+                            >
                                 Mitigation Strategy <ExternalLink className="w-3 h-3" />
-                            </button>
-                            <button className="flex items-center justify-center gap-2 py-3 px-4 bg-primary-500 text-white rounded-lg text-xs font-bold hover:bg-primary-600 transition-colors shadow-lg shadow-primary-500/20">
+                            </Link>
+                            <Link 
+                                href={`/${language}/#contact`} 
+                                className="flex items-center justify-center gap-2 py-3 px-4 bg-primary-500 text-white rounded-lg text-xs font-bold hover:bg-primary-600 transition-colors shadow-lg shadow-primary-500/20 text-center"
+                            >
                                 Contact Response Team
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </motion.div>

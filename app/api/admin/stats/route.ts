@@ -13,6 +13,10 @@ import { leads } from '@/lib/db/schema';
 import { sql, eq } from 'drizzle-orm';
 import { auth } from '@clerk/nextjs/server';
 
+function isDbConfigured() {
+  return !!(process.env.POSTGRES_URL || process.env.POSTGRES_URL_NON_POOLING);
+}
+
 export async function GET() {
     try {
         const { userId } = await auth();
@@ -34,24 +38,37 @@ export async function GET() {
         };
 
         // 2. Real-time Intent Distribution (from DB)
-        const intentStats = await db
-          .select({ 
-            category: leads.intentCategory, 
-            count: sql<number>`count(*)` 
-          })
-          .from(leads)
-          .groupBy(leads.intentCategory);
+        let intentStats: any[] = [];
+        let panicCount = 0;
+        let recentUrgentLeads: any[] = [];
 
-        const panicResults = await db
-          .select({ panicCount: sql<number>`count(*)` })
-          .from(leads)
-          .where(eq(leads.intentCategory, 'TARIFF_PANIC'));
-        
-        console.log('[Admin Stats API] Raw Panic Results:', JSON.stringify(panicResults));
-        const panicCountRaw = panicResults[0]?.panicCount;
-        const panicCount = Number(panicCountRaw) || 0;
+        if (isDbConfigured()) {
+            intentStats = await db
+              .select({ 
+                category: leads.intentCategory, 
+                count: sql<number>`count(*)` 
+              })
+              .from(leads)
+              .groupBy(leads.intentCategory);
 
-        // 3. Agent Performance
+            const panicResults = await db
+              .select({ panicCount: sql<number>`count(*)` })
+              .from(leads)
+              .where(eq(leads.intentCategory, 'TARIFF_PANIC'));
+            
+            const panicCountRaw = panicResults[0]?.panicCount;
+            panicCount = Number(panicCountRaw) || 0;
+
+            recentUrgentLeads = await db.query.leads.findMany({
+                where: (leads, { or, eq }) => or(
+                    eq(leads.intentCategory, 'TARIFF_PANIC'),
+                    eq(leads.urgency, 'CRITICAL')
+                ),
+                limit: 5,
+                orderBy: (leads, { desc }) => [desc(leads.createdAt)]
+            });
+        }
+
         const agentStatus = {
             marketPulse: {
                 active: true,
@@ -64,16 +81,6 @@ export async function GET() {
                 conversionLift: '14%'
             }
         };
-
-        // 4. Recent High-Urgency Leads
-        const recentUrgentLeads = await db.query.leads.findMany({
-            where: (leads, { or, eq }) => or(
-                eq(leads.intentCategory, 'TARIFF_PANIC'),
-                eq(leads.urgency, 'CRITICAL')
-            ),
-            limit: 5,
-            orderBy: (leads, { desc }) => [desc(leads.createdAt)]
-        });
 
         return NextResponse.json({
             seoVelocity,

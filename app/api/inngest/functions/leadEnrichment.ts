@@ -52,7 +52,9 @@ Keep the response concise and actionable for a sales team.`,
       await db.update(leads)
         .set({
           message: `${existingNotes}--- AI Enrichment (Gemini) ---\n${enrichedData.notes}`,
-          score: enrichedData.isB2B ? 10 : 0
+          score: (currentLead.score !== null && currentLead.score !== undefined)
+            ? currentLead.score
+            : (enrichedData.isB2B ? 10 : 0)
         })
         .where(eq(leads.id, leadId));
     });

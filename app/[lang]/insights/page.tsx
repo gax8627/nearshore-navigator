@@ -3,8 +3,9 @@ import { InsightsClient } from "./InsightsClient";
 import { getDictionary } from "@/app/i18n/get-dictionary";
 import { Metadata } from "next";
 
-export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
-  const dict = await getDictionary(params.lang as any);
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const dict = await getDictionary(lang as any);
   return {
     title: `Baja California Market Insights & Nearshoring Analysis | Nearshore Navigator`,
     description: 'In-depth analysis of the Baja California industrial market: labor costs, real estate trends, tariff impacts, and nearshoring strategy for US manufacturers.',
@@ -14,7 +15,7 @@ export async function generateMetadata({ params }: { params: { lang: string } })
       images: ['https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&q=80&w=2000'],
     },
     alternates: {
-      canonical: `https://nearshorenavigator.com/${params.lang}/insights`,
+      canonical: `https://nearshorenavigator.com/${lang}/insights`,
       languages: getAlternateLanguages('/insights')
     }
   };

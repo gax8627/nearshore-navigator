@@ -13,7 +13,12 @@
     "selectLanguage": "Sprache waehlen",
     "appearance": "Erscheinungsbild",
     "darkMode": "Dunkelmodus",
-    "lightMode": "Hellmodus"
+    "lightMode": "Hellmodus",
+    "home": "Startseite",
+    "locations": "Standorte",
+    "rvc_calculator": "USMCA RVC-Rechner",
+    "civa_calculator": "CIVA-Prüfungsrisikorechner",
+    "cfe_calculator": "CFE-Energieabschätzung"
   },
   "hero": {
     "title": "Industrielles Nearshoring in Baja",
@@ -47,7 +52,9 @@
     "call_center": "Call-Center-Lösungen",
     "call_center_desc": "Skalieren Sie Ihren Support mit über 50.000 zweisprachigen Agenten in der pazifischen Zeitzone.",
     "marketing": "Marketingdienstleistungen",
-    "marketing_desc": "Vermarkten Sie Ihre Produktionskapazitaeten an die nordamerikanische Industriebasis mit einem automatisierten Marketing-OS."
+    "marketing_desc": "Vermarkten Sie Ihre Produktionskapazitaeten an die nordamerikanische Industriebasis mit einem automatisierten Marketing-OS.",
+    "customs": "Zollabfertigung & Compliance",
+    "customs_desc": "Grenzüberschreitende Zollabfertigung, Anexo 24/30 Bestandsführung und USMCA-Zolloptimierung."
   },
   "legal": {
     "noAdviceShort": "Nur allgemeine Informationen; keine Rechts-, Steuer- oder Zollberatung."
@@ -106,7 +113,8 @@
     "heroTitle3": "execution.",
     "heroSubtitle": "Built for manufacturers entering Baja California. We provide structured guidance, practical options, and the right introductions so your expansion doesn’t stall in uncertainty.",
     "shelterServicesTitle": "Strategic Soft-landing",
-    "shelterServicesDesc": "For when speed matters. We help you assess the most efficient entry route (Shelter, M&A, or standalone) and connect you with vetted options."
+    "shelterServicesDesc": "For when speed matters. We help you assess the most efficient entry route (Shelter, M&A, or standalone) and connect you with vetted options.",
+    "metaDescription": "Erfahren Sie mehr über Nearshore Navigator, unser grenzüberschreitendes Beraterteam und unsere Mission."
   },
   "contact": {
     "title": "Kontaktieren Sie uns",
@@ -151,7 +159,8 @@
     "section5_text": "Wir verwenden Cookies und ähnliche Technologien, um Ihr Erlebnis auf unserer Website zu verbessern.",
     "section6_title": "6. Kontaktieren Sie uns",
     "section6_text": "Wenn Sie Fragen zu dieser Datenschutzerklärung haben, kontaktieren Sie uns unter",
-    "backToHome": "← Zurück zur Startseite"
+    "backToHome": "← Zurück zur Startseite",
+    "metaDescription": "Datenschutzerklärung, Datensicherheitsverfahren und Compliance-Richtlinien für Nearshore Navigator."
   },
   "terms": {
     "title": "Nutzungsbedingungen",
@@ -174,7 +183,8 @@
     "thirdParty_text": "Wir sind nicht verantwortlich für Leistungen, Handlungen oder Unterlassungen externer Anbieter. Sie schließen Verträge direkt mit dem jeweiligen Anbieter und sollten dessen Nachweise, Genehmigungen und Referenzen vor der Beauftragung prüfen.",
     "section7_title": "7. Kontakt",
     "section7_text": "Bei Fragen zu diesen Nutzungsbedingungen kontaktieren Sie uns unter",
-    "backToHome": "← Zurück zur Startseite"
+    "backToHome": "← Zurück zur Startseite",
+    "metaDescription": "Nutzungsbedingungen und rechtliche Hinweise für Nearshore Navigator."
   },
   "resources": {
     "title": "Industrial Resources & Tools",
@@ -199,7 +209,8 @@
     "ctaViewMap": "Karte anzeigen",
     "ctaStartAssessment": "Bewertung starten",
     "ctaLaunchTool": "Tool starten",
-    "ctaDownload": "Anzeigen und herunterladen"
+    "ctaDownload": "Anzeigen und herunterladen",
+    "metaDescription": "Entdecken Sie Branchenleitfäden, Whitepaper, Rechner und Infrastrukturkarten für die Fertigung in Mexiko."
   },
   "brochure": {
     "title": "Nearshore Navigator",
@@ -510,7 +521,8 @@
     "q34": "What is the period for which you require our services?",
     "q35": "Can we offer you quotes for transportation? What are the addresses?",
     "q36": "What Annex 24 system do you use?",
-    "printPdf": "Click here to Print / Save as PDF"
+    "printPdf": "Click here to Print / Save as PDF",
+    "q37": "Zusätzliche betriebliche oder zeitliche Anforderungen"
   },
   "cost_calculator": {
     "metaTitle": "Baja California Fertigungskostenrechner | Nearshore Navigator",
@@ -785,7 +797,14 @@
     "strategicRealEstate": "Strategic Real Estate",
     "realEstateSub": "Exploring industrial park availability for {name} in this region.",
     "activePlants": "Active Plants",
-    "specializedTalent": "Specialized Talent"
+    "specializedTalent": "Specialized Talent",
+    "clusterValidation": "Cluster-Validierung",
+    "industryAnalysis": "Branchenanalyse",
+    "viewAllInfrastructure": "Gesamte Infrastruktur ansehen",
+    "consultAdvisor": "Berater konsultieren",
+    "advisorSub": "Erhalten Sie branchenspezifische Daten für Ihre Aktivitäten in Mexiko.",
+    "exploreOtherIndustries": "Weitere Branchen in {location} erkunden",
+    "exploreOtherCities": "{name} in anderen Städten"
   },
   "matrix": {
     "tijuana": {
@@ -2278,5 +2297,27 @@
     "ctaTitle": "Optimieren Sie Ihre Mexiko-Zollstrategie",
     "ctaSubtitle": "Vereinbaren Sie ein vertrauliches Zoll-Audit mit unseren Experten, um Ihre Pedimento- und USMCA-Einsparpotenziale zu prüfen.",
     "ctaBtn": "Zoll-Compliance-Audit anfordern"
+  },
+  "cityOverview": {
+    "home": "Startseite",
+    "locations": "Standorte",
+    "proximityAdvantage": "15-Minuten Grenznähe-Vorteil",
+    "getShortlist": "Geprüfte Auswahlliste anfordern",
+    "capacityReport": "Kapazitätsbericht 2026 enthalten",
+    "population": "Bevölkerung",
+    "laborForce": "Arbeitskräfte",
+    "proximity": "Entfernung",
+    "industryExpertise": "Branchenkompetenz",
+    "activeFacilities": "Aktive Werke",
+    "whyChoose": "Warum",
+    "keyParks": "Wichtige Industrieparks",
+    "logisticsAdvantage": "Logistikvorteil",
+    "landedCostAnalysis": "Gesamtkostenanalyse (Landed Cost)",
+    "calculateSavings": "Berechnen Sie Ihre exakten Einsparungen in",
+    "savingsDesc": "Überlassen Sie nichts dem Zufall. Unser Beratungsteam erstellt eine maßgeschneiderte Landed-Cost-Analyse im Vergleich zu",
+    "btnCalculate": "Einsparungen berechnen",
+    "zeroObligation": "Unverbindlicher Bericht",
+    "startIn": "Starten Sie in",
+    "consultationDesc": "Kostenlose Beratung und Kostenanalyse für Ihr Projekt anfordern."
   }
 }

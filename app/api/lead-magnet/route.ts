@@ -13,7 +13,7 @@ export async function POST(req: Request) {
     }
 
     // Turnstile CAPTCHA verification if token provided or required
-    const isTestToken = cfToken === '1x0000000000000000000000000000000AA' || cfToken === 'test-token' || process.env.NODE_ENV === 'test';
+    const isTestToken = (cfToken === '1x0000000000000000000000000000000AA' || cfToken === 'test-token') && process.env.NODE_ENV !== 'production';
     
     if (cfToken && !isTestToken && process.env.TURNSTILE_SECRET_KEY && process.env.TURNSTILE_SECRET_KEY !== '1x0000000000000000000000000000000AA') {
       const formData = new URLSearchParams();

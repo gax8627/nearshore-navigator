@@ -69,7 +69,14 @@ Your role:
 
 export async function POST(req: Request) {
   try {
-    const { messages } = await req.json();
+    const body = await req.json().catch(() => ({}));
+    const messages = Array.isArray(body?.messages) ? body.messages : [];
+    if (messages.length === 0) {
+      return NextResponse.json({
+        role: 'assistant',
+        content: 'Hello! I am your AI nearshoring consultant. How can I assist your manufacturing expansion to Mexico today?'
+      });
+    }
     const lastMessage = messages[messages.length - 1]?.content || '';
 
     // Build RAG context from internal datasets

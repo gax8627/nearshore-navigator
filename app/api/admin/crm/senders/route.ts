@@ -1,10 +1,18 @@
 import { NextResponse } from 'next/server';
 import { auth } from '@clerk/nextjs/server';
 
+function isDbConfigured() {
+  return !!(process.env.POSTGRES_URL || process.env.POSTGRES_URL_NON_POOLING);
+}
+
 export async function GET() {
   try {
     const { userId } = await auth();
     if (!userId) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
+    if (!isDbConfigured()) {
+      return NextResponse.json({ senders: [] });
+    }
 
     const { db } = await import('@/lib/db');
     const { senders } = await import('@/lib/db/schema');
@@ -22,6 +30,10 @@ export async function POST(req: Request) {
     const { userId } = await auth();
     if (!userId) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
+    if (!isDbConfigured()) {
+      return NextResponse.json({ error: 'Database not configured' }, { status: 503 });
+    }
+
     const body = await req.json();
     const { name, email, isDefault } = body;
 
@@ -32,8 +44,6 @@ export async function POST(req: Request) {
     const { db } = await import('@/lib/db');
     const { senders } = await import('@/lib/db/schema');
 
-    // If setting as default, unset others? (Optional logic, keep simple for now)
-    
     const [newSender] = await db.insert(senders).values({
       name,
       email,
@@ -51,16 +61,24 @@ export async function DELETE(req: Request) {
     const { userId } = await auth();
     if (!userId) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
+    if (!isDbConfigured()) {
+      return NextResponse.json({ error: 'Database not configured' }, { status: 503 });
+    }
+
     const { searchParams } = new URL(req.url);
     const id = searchParams.get('id');
 
     if (!id) return NextResponse.json({ error: 'ID required' }, { status: 400 });
+    const parsedId = parseInt(id, 10);
+    if (isNaN(parsedId)) {
+      return NextResponse.json({ error: 'Valid integer ID required' }, { status: 400 });
+    }
 
     const { db } = await import('@/lib/db');
     const { senders } = await import('@/lib/db/schema');
     const { eq } = await import('drizzle-orm');
 
-    await db.delete(senders).where(eq(senders.id, parseInt(id)));
+    await db.delete(senders).where(eq(senders.id, parsedId));
 
     return NextResponse.json({ success: true });
   } catch (error) {

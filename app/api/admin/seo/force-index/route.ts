@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { auth } from "@clerk/nextjs/server";
 import { exec } from "child_process";
 import { promisify } from "util";
 import path from "path";
@@ -7,6 +8,11 @@ const execPromise = promisify(exec);
 
 export async function POST() {
   try {
+    const { userId } = await auth();
+    if (!userId) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
     // 1. Resolve path to script
     const scriptPath = path.join(process.cwd(), "scripts/instant-index.ts");
     

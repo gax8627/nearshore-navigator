@@ -1,15 +1,24 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import defaultTranslations from '../i18n/locales/en.json';
 
-// Define the shape of our translations based on the structure we expect.
-// Using 'any' for the translations object temporarily to allow for flexibility with the loaded JSON.
-// In a stricter setup, we would infer this from the JSON schema.
 type Translations = any;
 
-// 2026-04 cleanup: only en + es are supported. The other locales were
-// 301-redirected to /en to eliminate canonical duplication in Google.
-export type Language = 'en' | 'es' | 'de' | 'ja' | 'zh' | 'ko';
+export type Language = 'en' | 'es' | 'de' | 'ja';
+
+function deepMerge(target: any, source: any): any {
+    if (!source) return target;
+    const output = { ...target };
+    for (const key of Object.keys(source)) {
+        if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+            output[key] = deepMerge(target[key] || {}, source[key]);
+        } else {
+            output[key] = source[key];
+        }
+    }
+    return output;
+}
 
 type LanguageContextType = {
     language: Language;
@@ -22,32 +31,32 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider = ({ children, lang }: { children: ReactNode, lang?: Language }) => {
     const [language, setLanguage] = useState<Language>(lang || 'en');
-    const [translations, setTranslations] = useState<Translations>({});
-    const [loading, setLoading] = useState<boolean>(true);
+    const [translations, setTranslations] = useState<Translations>(defaultTranslations);
+    const [loading, setLoading] = useState<boolean>(false);
 
-
-    // Function to load translation files dynamically
-    const loadTranslations = React.useCallback(async (lang: Language) => {
+    // Function to load translation files dynamically and deep-merge over English base
+    const loadTranslations = React.useCallback(async (targetLang: Language) => {
+        if (targetLang === 'en') {
+            setTranslations(defaultTranslations);
+            setLoading(false);
+            return;
+        }
         setLoading(true);
         try {
-            const localeData = await import(`../i18n/locales/${lang}.json`);
-            setTranslations(localeData.default || localeData);
+            const localeData = await import(`../i18n/locales/${targetLang}.json`);
+            setTranslations(deepMerge(defaultTranslations, localeData.default || localeData));
         } catch (error) {
-            console.error(`Failed to load translations for ${lang}`, error);
-            // If loading fails, fallback to English
-            if (lang !== 'en') {
-                const enData = await import(`../i18n/locales/en.json`);
-                setTranslations(enData.default || enData);
-            }
+            console.error(`Failed to load translations for ${targetLang}`, error);
+            setTranslations(defaultTranslations);
         } finally {
             setLoading(false);
         }
     }, []);
 
-    const handleSetLanguage = React.useCallback(async (lang: Language) => {
-        setLanguage(lang);
-        localStorage.setItem('app_lang', lang);
-        await loadTranslations(lang);
+    const handleSetLanguage = React.useCallback(async (newLang: Language) => {
+        setLanguage(newLang);
+        localStorage.setItem('app_lang', newLang);
+        await loadTranslations(newLang);
     }, [loadTranslations]);
 
     // Update language when lang prop changes (from URL params)
@@ -68,7 +77,7 @@ export const LanguageProvider = ({ children, lang }: { children: ReactNode, lang
             let targetLang: Language = 'en';
 
             // 1. Check localStorage first (normalize against supported locales)
-            const SUPPORTED: Language[] = ['en', 'es', 'de', 'ja', 'zh', 'ko'];
+            const SUPPORTED: Language[] = ['en', 'es', 'de', 'ja'];
             const storedLang = localStorage.getItem('app_lang') as Language;
             if (storedLang && SUPPORTED.includes(storedLang)) {
                 targetLang = storedLang;
@@ -90,19 +99,9 @@ export const LanguageProvider = ({ children, lang }: { children: ReactNode, lang
                         targetLang = 'de';
                     } else if (country === 'JP') {
                         targetLang = 'ja';
-                    } else if (['CN', 'TW', 'HK'].includes(country)) {
-                        targetLang = 'zh';
-                    } else if (country === 'KR') {
-                        targetLang = 'ko';
                     }
-                } catch (error) {
-                    console.warn('Geolocation failed, defaulting to en:', error);
-                    const browserLang = navigator.language.split('-')[0].toLowerCase();
-                    if (SUPPORTED.includes(browserLang as Language)) {
-                        targetLang = browserLang as Language;
-                    } else {
-                        targetLang = 'en';
-                    }
+                } catch (e) {
+                    // Geolocation failed or blocked; default to English
                 }
             }
 
@@ -114,20 +113,19 @@ export const LanguageProvider = ({ children, lang }: { children: ReactNode, lang
     }, [lang, loadTranslations]);
 
     const t = (path: string): string => {
-        if (loading || !translations) return ""; // Return empty or a loading placeholder
+        if (!translations) return "";
         
         const keys = path.split('.');
         let current: any = translations;
 
         for (const key of keys) {
             if (current === undefined || current[key] === undefined) {
-                // console.warn(`Translation key missing: ${path} for language ${language}`);
-                return path;
+                return "";
             }
             current = current[key];
         }
 
-        return current as string;
+        return typeof current === 'string' ? current : "";
     };
 
     return (

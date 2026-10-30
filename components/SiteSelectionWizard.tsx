@@ -60,16 +60,16 @@ export function SiteSelectionWizard() {
 
     const reset = () => setStep("industry");
 
-    // Simple Recommendation Logic
+    // Recommendation Logic based on actual industrial cluster data
     const getRecommendations = () => {
-        const matches = INDUSTRY_MATRIX.filter(m => m.industrySlug === selections.industry);
-        if (selections.priority === "technology") {
-            return matches.sort((a, b) => ((b as any).logisticsScore || 0) - ((a as any).logisticsScore || 0)).slice(0, 2);
+        const matches = [...INDUSTRY_MATRIX.filter(m => m.industrySlug === selections.industry)];
+        if (selections.priority === "technology" || selections.priority === "logistics") {
+            return matches.sort((a, b) => (parseInt(b.stats.plants) || 0) - (parseInt(a.stats.plants) || 0)).slice(0, 2);
         }
         if (selections.priority === "cost") {
-            return matches.sort((a, b) => ((a as any).energyCostKwh || 0) - ((b as any).energyCostKwh || 0)).slice(0, 2);
+            return matches.sort((a, b) => (parseInt(b.stats.workforce.replace(/,/g, '')) || 0) - (parseInt(a.stats.workforce.replace(/,/g, '')) || 0)).slice(0, 2);
         }
-        return matches.slice(0, 2); // Default
+        return matches.slice(0, 2);
     };
 
     return (

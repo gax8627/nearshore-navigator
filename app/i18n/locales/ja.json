@@ -13,7 +13,12 @@
     "lightMode": "ライトモード",
     "calculator": "コスト計算機",
     "park_map": "工業団地マップ",
-    "assessment": "アセスメント"
+    "assessment": "アセスメント",
+    "home": "ホーム",
+    "locations": "拠点",
+    "rvc_calculator": "USMCA RVC計算機",
+    "civa_calculator": "CIVA監査リスク計算機",
+    "cfe_calculator": "CFE電力妥当性評価"
   },
   "home": {
     "metaTitle": "Nearshore Navigator | バハ・カリフォルニアにおける産業製造",
@@ -50,7 +55,11 @@
     "call_center": "コールセンターソリューション",
     "call_center_desc": "太平洋時間帯で50,000人以上のバイリンガルエージェントを活用し、サポート体制を拡張します。",
     "marketing": "マーケティングサービス",
-    "marketing_desc": "自動化されたマーケティングシステムで、北米産業界に御社の製造能力をアピールします。"
+    "marketing_desc": "自動化されたマーケティングシステムで、北米産業界に御社の製造能力をアピールします。",
+    "shelter": "シェルターサービス",
+    "shelter_desc": "現地法人を設立することなくメキシコで事業を開始。人事・給与・法務・IMMEXコンプライアンスを支援。",
+    "customs": "通関ブローカー＆コンプライアンス",
+    "customs_desc": "国境通関手続き、Annex 24/30在庫コンプライアンス、USMCA関税最適化。"
   },
   "legal": {
     "noAdviceShort": "一般的な情報提供のみ。法務・税務・通関に関する助言ではありません。"
@@ -109,7 +118,8 @@
     "heroTitle3": "実行。 ",
     "heroSubtitle": "バハ・カリフォルニアに進出する製造業者のために構築されました。構造化されたガイダンス、実用的な選択肢、適切な紹介を提供し、不確実性によって拡張が停滞しないようにします。",
     "shelterServicesTitle": "戦略的ソフトランディング",
-    "shelterServicesDesc": "スピードが重要な場合に。最も効率的な参入ルート（シェルター、M&A、またはスタンドアロン）の評価をサポートし、吟味された選択肢を提示します。"
+    "shelterServicesDesc": "スピードが重要な場合に。最も効率的な参入ルート（シェルター、M&A、またはスタンドアロン）の評価をサポートし、吟味された選択肢を提示します。",
+    "metaDescription": "Nearshore Navigatorについて、国境を越えた専門アドバイザリーチームと私たちのミッション。"
   },
   "contact": {
     "title": "お問い合わせ",
@@ -153,7 +163,8 @@
     "section5_text": "ウェブサイトの体験を向上させるためにクッキーを使用します。 ",
     "section6_title": "6. お問い合わせ",
     "section6_text": "このプライバシーポリシーに関するご質問は、以下までご連絡ください",
-    "backToHome": "← ホームに戻る"
+    "backToHome": "← ホームに戻る",
+    "metaDescription": "Nearshore Navigatorのプライバシーポリシー、データ保護規約、およびコンプライアンス基準。"
   },
   "terms": {
     "title": "利用規約",
@@ -176,7 +187,8 @@
     "thirdParty_text": "当社は第三者プロバイダーのサービス、行為または不作為について責任を負いません。お客様は各プロバイダーと直接契約し、依頼前に資格、許可、実績を確認してください。",
     "section7_title": "7. お問い合わせ",
     "section7_text": "ご質問がある場合はご連絡ください",
-    "backToHome": "← ホームに戻る"
+    "backToHome": "← ホームに戻る",
+    "metaDescription": "Nearshore Navigatorの利用規約および法的通知。"
   },
   "distributionPage": {
     "badge": "物流・フルフィルメント",
@@ -432,7 +444,8 @@
     "ctaDownload": "表示とダウンロード",
     "ctaReadInsights": "インサイトを読む",
     "latestIntelligence": "最新のインテリジェンス",
-    "latestIntelligenceDesc": "ニアショアリングの状況をナビゲートするのに役立つ専門家の分析と戦略ガイド。"
+    "latestIntelligenceDesc": "ニアショアリングの状況をナビゲートするのに役立つ専門家の分析と戦略ガイド。",
+    "metaDescription": "メキシコ進出のための業界ガイド、ホワイトペーパー、コスト計算機、工業団地マップ。"
   },
   "brochure": {
     "title": "Nearshore Navigator",
@@ -513,7 +526,8 @@
     "q34": "What is the period for which you require our services?",
     "q35": "Can we offer you quotes for transportation? What are the addresses?",
     "q36": "What Annex 24 system do you use?",
-    "printPdf": "Click here to Print / Save as PDF"
+    "printPdf": "Click here to Print / Save as PDF",
+    "q37": "追加の運用またはスケジュール要件"
   },
   "aboutPage": {
     "mainHeading": "「メキシコ進出」を明確な次の一歩へ",
@@ -783,7 +797,14 @@
     "strategicRealEstate": "Strategic Real Estate",
     "realEstateSub": "Exploring industrial park availability for {name} in this region.",
     "activePlants": "Active Plants",
-    "specializedTalent": "Specialized Talent"
+    "specializedTalent": "Specialized Talent",
+    "clusterValidation": "クラスター検証",
+    "industryAnalysis": "業界分析",
+    "viewAllInfrastructure": "すべてのインフラを見る",
+    "consultAdvisor": "アドバイザーに相談",
+    "advisorSub": "メキシコでの事業展開に関する業界別データを取得。",
+    "exploreOtherIndustries": "{location}の他の業界を探す",
+    "exploreOtherCities": "他の都市における{name}"
   },
   "matrix": {
     "tijuana": {
@@ -2276,5 +2297,27 @@
     "ctaTitle": "メキシコ通関・関税戦略の最適化",
     "ctaSubtitle": "当社の貿易コンプライアンスチームによる秘密厳守の通関監査をご予約ください。Pedimento、Anexo 24、USMCA適格性を分析し、即座に関税削減を実現します。",
     "ctaBtn": "通関コンプライアンス監査を申込む"
+  },
+  "cityOverview": {
+    "home": "ホーム",
+    "locations": "拠点",
+    "proximityAdvantage": "国境まで15分の近接優位性",
+    "getShortlist": "事前審査済みパートナー一覧を取得",
+    "capacityReport": "2026年キャパシティレポート付属",
+    "population": "人口",
+    "laborForce": "労働力",
+    "proximity": "近接性",
+    "industryExpertise": "業界別専門知識",
+    "activeFacilities": "稼働中施設",
+    "whyChoose": "選定理由：",
+    "keyParks": "主要工業団地",
+    "logisticsAdvantage": "物流の優位性",
+    "landedCostAnalysis": "着地原価（Landed Cost）分析",
+    "calculateSavings": "コスト削減シミュレーション：",
+    "savingsDesc": "現状のサプライチェーンとメキシコ拠点での製造コストを比較する着地原価分析を専門チームが無料で作成します。",
+    "btnCalculate": "削減額を計算する",
+    "zeroObligation": "完全無料・義務なしレポート",
+    "startIn": "進出先：",
+    "consultationDesc": "プロジェクトに関する無料コンサルティングと費用分析をご利用いただけます。"
   }
 }

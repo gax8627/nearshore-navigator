@@ -1,11 +1,19 @@
 import { NextResponse } from 'next/server';
 import { auth } from '@clerk/nextjs/server';
 
+function isDbConfigured() {
+  return !!(process.env.POSTGRES_URL || process.env.POSTGRES_URL_NON_POOLING);
+}
+
 // GET /api/admin/crm/campaigns - List campaigns
 export async function GET() {
   try {
     const { userId } = await auth();
     if (!userId) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
+    if (!isDbConfigured()) {
+      return NextResponse.json({ campaigns: [] });
+    }
 
     const { db } = await import('@/lib/db');
     const { campaigns } = await import('@/lib/db/schema');
@@ -24,6 +32,10 @@ export async function POST(req: Request) {
     const { userId } = await auth();
     if (!userId) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
+    if (!isDbConfigured()) {
+      return NextResponse.json({ error: 'Database not configured' }, { status: 503 });
+    }
+
     const body = await req.json();
     const { name, subject, content, segment } = body;
 
@@ -34,13 +46,19 @@ export async function POST(req: Request) {
     const { db } = await import('@/lib/db');
     const { campaigns } = await import('@/lib/db/schema');
 
+    let senderId: number | null = null;
+    if (body.senderId !== undefined && body.senderId !== null && body.senderId !== '') {
+      const parsed = parseInt(body.senderId, 10);
+      senderId = isNaN(parsed) ? null : parsed;
+    }
+
     const [newCampaign] = await db.insert(campaigns).values({
       name,
       subject,
       content,
       segment: segment || 'all',
       template: body.template || 'standard',
-      senderId: body.senderId ? parseInt(body.senderId) : null,
+      senderId,
       status: 'draft',
     }).returning();
 

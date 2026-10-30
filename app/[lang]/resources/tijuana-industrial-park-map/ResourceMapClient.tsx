@@ -18,13 +18,13 @@ export default function ResourceMapClient() {
         const email = formData.get('email') as string;
 
         try {
-            await fetch('/api/contact', {
+            await fetch('/api/lead-magnet', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     name,
                     email,
-                    source: 'industrial_map_download'
+                    pdfRequested: 'tijuana-industrial-park-map-2026'
                 }),
             });
         } catch (error) {
@@ -103,11 +103,11 @@ export default function ResourceMapClient() {
                                             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{t('resourceMap.formTitle')}</h3>
                                             <div>
                                                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{t('resourceMap.formName')}</label>
-                                                <input required type="text" className="w-full px-4 py-2 text-base md:text-sm rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 outline-none transition-colors" placeholder="Jane Smith" />
+                                                <input required name="name" type="text" className="w-full px-4 py-2 text-base md:text-sm rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 outline-none transition-colors" placeholder="Jane Smith" />
                                             </div>
                                             <div>
                                                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{t('resourceMap.formEmail')}</label>
-                                                <input required type="email" className="w-full px-4 py-2 text-base md:text-sm rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 outline-none transition-colors" placeholder="jane@company.com" />
+                                                <input required name="email" type="email" className="w-full px-4 py-2 text-base md:text-sm rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 outline-none transition-colors" placeholder="jane@company.com" />
                                             </div>
                                             <Button className="w-full" size="lg">{t('resourceMap.formButton')}</Button>
                                         </form>

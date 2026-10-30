@@ -210,7 +210,9 @@ export default function CostCalculatorClient({ language }: { language: string })
                 </div>
                 <div className="flex justify-between items-center py-3">
                   <span className="text-primary-100 bg-primary-800/50 px-3 py-1 rounded-full text-sm">Estimated Payback Period</span>
-                  <span className="font-bold text-primary-300">{paybackMonths.toFixed(1)} Months</span>
+                  <span className="font-bold text-primary-300">
+                    {monthlyLaborSavings > 0 && isFinite(paybackMonths) ? `${paybackMonths.toFixed(1)} Months` : 'N/A'}
+                  </span>
                 </div>
               </div>
 

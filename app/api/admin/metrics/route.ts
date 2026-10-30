@@ -5,13 +5,30 @@ import { sql, eq } from 'drizzle-orm';
 import { brevo } from '@/lib/brevo'; // Adjust path if necessary
 import { auth } from '@clerk/nextjs/server';
 
+function isDbConfigured() {
+  return !!(process.env.POSTGRES_URL || process.env.POSTGRES_URL_NON_POOLING);
+}
+
 export async function GET() {
   try {
     const { userId } = await auth();
     if (!userId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
-    // 1. Get Leads Data (Last 30 Days)
+
+    if (!isDbConfigured()) {
+      return NextResponse.json({
+        data: {
+          totalLeads: 0,
+          estimatedPipeline: '$0.0M',
+          pendingDrafts: 0,
+          panicCount: 0,
+          intentDistribution: [],
+          emailOpenRate: '0%',
+          recentLeads: []
+        }
+      });
+    }
     const thirtyDaysAgo = new Date();
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
 

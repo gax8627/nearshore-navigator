@@ -24,7 +24,7 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
 
   // Use localized data if available, otherwise fallback to lookup
   const currentCityName = t(`locations.${city}.name`) || location.name;
-  const currentServiceTitle = t(`nav.${serviceId}`) || service.title;
+  const currentServiceTitle = service.title;
 
   // Dynamic content generation
   const title = `${currentServiceTitle} in ${currentCityName}`;
@@ -103,7 +103,7 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
       { "@type": "ListItem", "position": 1, "name": t('nav.home') || "Home", "item": `https://nearshorenavigator.com/${language}` },
       { "@type": "ListItem", "position": 2, "name": t('nav.locations') || "Locations", "item": `https://nearshorenavigator.com/${language}/locations` },
       { "@type": "ListItem", "position": 3, "name": t(`locations.${city}.name`) || city.charAt(0).toUpperCase() + city.slice(1), "item": `https://nearshorenavigator.com/${language}/locations/${city}` },
-      { "@type": "ListItem", "position": 4, "name": t(`services.${serviceId}.title`) || serviceId.charAt(0).toUpperCase() + serviceId.slice(1).replace(/-/g, ' '), "item": `https://nearshorenavigator.com/${language}/locations/${city}/${serviceId}` }
+      { "@type": "ListItem", "position": 4, "name": service.title, "item": `https://nearshorenavigator.com/${language}/locations/${city}/${serviceId}` }
     ]
   };
 

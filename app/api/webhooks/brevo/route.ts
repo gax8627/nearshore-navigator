@@ -7,6 +7,10 @@ export async function POST(req: Request) {
     // Signature verification: Brevo signs webhook payloads with a secret.
     // Set BREVO_WEBHOOK_SECRET in your environment to enable verification.
     const webhookSecret = process.env.BREVO_WEBHOOK_SECRET;
+    if (process.env.NODE_ENV === 'production' && !webhookSecret) {
+      console.error('[Brevo webhook] BREVO_WEBHOOK_SECRET is not configured in production — rejecting request.');
+      return NextResponse.json({ error: 'Webhook secret not configured' }, { status: 500 });
+    }
     if (webhookSecret) {
       const signature = req.headers.get('x-brevo-signature') || req.headers.get('x-sib-signature');
       if (!signature || signature !== webhookSecret) {

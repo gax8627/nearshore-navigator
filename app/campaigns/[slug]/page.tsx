@@ -1,6 +1,7 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import { LeadForm } from '@/components/LeadForm';
 
 // In a real implementation, this would likely come from a database or CMS.
 // For now, we use a simple configuration map.
@@ -31,8 +32,9 @@ const campaignData: Record<string, { title: string; subtitle: string; heroImage:
   }
 };
 
-export default function CampaignLandingPage({ params }: { params: { slug: string } }) {
-  const data = campaignData[params.slug];
+export default async function CampaignLandingPage(props: { params: Promise<{ slug: string }> }) {
+  const { slug } = await props.params;
+  const data = campaignData[slug];
 
   if (!data) {
     notFound();
@@ -49,64 +51,47 @@ export default function CampaignLandingPage({ params }: { params: { slug: string
             className="object-cover opacity-60"
             priority
           />
-          <div className="absolute inset-0 bg-black/40 z-10" />
+          <div className="absolute inset-0 bg-teal-950/80 mix-blend-multiply" />
         </div>
-        
-        <div className="container relative z-20 mx-auto px-4 max-w-5xl text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+
+        <div className="relative container mx-auto px-4 z-10 text-center">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
             {data.title}
           </h1>
           <p className="text-xl md:text-2xl mb-10 text-teal-50 max-w-3xl mx-auto">
             {data.subtitle}
           </p>
           
-          <div className="bg-white/10 p-8 rounded-xl backdrop-blur-sm max-w-2xl mx-auto text-left">
-            <h3 className="text-2xl font-semibold mb-4">Request a Consultation</h3>
-            <form action="/api/contact" method="POST" className="space-y-4">
-              <input type="hidden" name="source" value={`campaign_${params.slug}`} />
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm mb-1 text-teal-100">Full Name</label>
-                  <input type="text" name="name" required className="w-full px-4 py-2 text-base md:text-sm rounded-md bg-white/90 text-black border-0 focus:ring-2 focus:ring-teal-400" placeholder="John Doe" />
-                </div>
-                <div>
-                  <label className="block text-sm mb-1 text-teal-100">Work Email</label>
-                  <input type="email" name="email" required className="w-full px-4 py-2 text-base md:text-sm rounded-md bg-white/90 text-black border-0 focus:ring-2 focus:ring-teal-400" placeholder="john@company.com" />
-                </div>
-              </div>
-              
-              <div>
-                <label className="block text-sm mb-1 text-teal-100">Company</label>
-                <input type="text" name="company" className="w-full px-4 py-2 text-base md:text-sm rounded-md bg-white/90 text-black border-0 focus:ring-2 focus:ring-teal-400" placeholder="Company Name" />
-              </div>
-
-              <div>
-                <label className="block text-sm mb-1 text-teal-100">What are you looking to manufacture?</label>
-                <textarea name="message" rows={3} className="w-full px-4 py-2 text-base md:text-sm rounded-md bg-white/90 text-black border-0 focus:ring-2 focus:ring-teal-400" placeholder="Tell us about your project..."></textarea>
-              </div>
-              
-              <button type="submit" className="w-full bg-teal-500 hover:bg-teal-400 text-white font-bold py-3 px-6 rounded-md transition-colors text-lg">
-                Get Started
-              </button>
-            </form>
+          <div className="max-w-xl mx-auto text-left">
+            <LeadForm 
+              title="Request a Consultation" 
+              subtitle="Connect directly with our manufacturing advisory team." 
+              source={`campaign_${slug}`} 
+            />
           </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gray-50 flex-grow">
+      <section className="py-20 bg-gray-50 dark:bg-gray-900 flex-grow">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">Why Nearshore with Us?</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Why Nearshore with Us?</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {data.features.map((feature, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-lg shadow-sm flex items-start space-x-4">
-                <div className="bg-teal-100 p-2 rounded-full text-teal-600">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+              <div key={idx} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-start space-x-4">
+                <div className="flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900/50 flex items-center justify-center text-teal-600 dark:text-teal-400 font-bold">
+                    ✓
+                  </div>
                 </div>
-                <p className="text-gray-700 font-medium text-lg leading-tight pt-1">{feature}</p>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">{feature}</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Leverage vetted regional industrial infrastructure and direct advisory access.
+                  </p>
+                </div>
               </div>
             ))}
           </div>

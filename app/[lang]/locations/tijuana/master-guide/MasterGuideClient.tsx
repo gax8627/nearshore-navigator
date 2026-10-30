@@ -244,7 +244,7 @@ export default function MasterGuideClient() {
               <p className="text-slate-600 mb-10 leading-relaxed text-lg font-light">
                 {t('tijuanaMasterGuide.models.shelter_desc')}
               </p>
-              <Link href={`/${lang}/services/shelter-services-tijuana`} className="inline-flex items-center gap-2 text-sky-700 font-bold group-hover:gap-4 transition-all uppercase tracking-widest text-xs">
+              <Link href={`/${lang}/services/shelter-services`} className="inline-flex items-center gap-2 text-sky-700 font-bold group-hover:gap-4 transition-all uppercase tracking-widest text-xs">
                 {t('tijuanaMasterGuide.models.cta_shelter')} 
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
               </Link>

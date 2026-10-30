@@ -234,14 +234,13 @@ export default function CityOverviewClient({ city }: Props) {
                                 href = serviceConfig.canonicalOverride.replace("https://nearshorenavigator.com", "");
                             }
                             return (
-                                <div className="relative group">
+                                <div key={service.slug} className="relative group">
                                     {(city === 'tijuana' && (service.slug === 'contract-manufacturing-tijuana' || service.slug === 'industrial-real-estate-baja')) && (
                                         <div className="absolute -top-2 -right-2 z-10 bg-primary-500 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-lg animate-bounce">
                                             Most Popular
                                         </div>
                                     )}
                                     <ServiceCard
-                                        key={service.slug}
                                         title={service.title}
                                         description={service.description}
                                         href={href}

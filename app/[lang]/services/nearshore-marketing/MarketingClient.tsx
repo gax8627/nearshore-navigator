@@ -81,7 +81,7 @@ export default function MarketingClient() {
                     "itemListElement": [
                         { "@type": "ListItem", "position": 1, "name": t('nav.home') || "Home", "item": `https://nearshorenavigator.com/${language}` },
                         { "@type": "ListItem", "position": 2, "name": t('nav.services') || "Services", "item": `https://nearshorenavigator.com/${language}#services` },
-                        { "@type": "ListItem", "position": 3, "name": t('services.marketing.title') || "Nearshore Marketing", "item": `https://nearshorenavigator.com/${language}/services/nearshore-marketing` }
+                        { "@type": "ListItem", "position": 3, "name": t('services.marketing') || "Nearshore Marketing", "item": `https://nearshorenavigator.com/${language}/services/nearshore-marketing` }
                     ]
                 }) }}
             />

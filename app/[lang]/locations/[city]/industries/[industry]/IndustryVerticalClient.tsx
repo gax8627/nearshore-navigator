@@ -377,7 +377,7 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
         {/* Same Industry in Other Cities */}
         <section>
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-            {t(`industries.${industry}.exploreOtherCities`) ||
+            {(t('industries.exploreOtherCities')?.replace('{name}', t(`industries.${industry}.name`) || industry.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()))) ||
               `${t(`industries.${industry}.name`) || industry.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} in Other Cities`}
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">

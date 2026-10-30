@@ -18,21 +18,38 @@ export async function getLocalizedSeoContent(lang: string, city: string, service
     console.error(`Error loading locale data for ${lang}:`, error);
   }
 
-  // Extract translations from the matrix or industries
-  const localizedService = localeData.industries?.[serviceParam] || {};
+  // Map service parameter to localized services dictionary or industries
+  const serviceKeyMap: Record<string, string> = {
+    'contract-manufacturing': 'contract',
+    'shelter-services': 'shelter',
+    'customs-brokerage': 'customs',
+    'distribution-centers': 'logistics',
+    'industrial-real-estate': 'real_estate',
+  };
+
+  const mappedKey = serviceKeyMap[serviceParam] || serviceParam;
+  const localizedService = localeData.services?.[mappedKey] || localeData.industries?.[serviceParam] || {};
   const localizedMatrix = localeData.matrix?.[city]?.[serviceParam] || "";
+
+  const localizedTitle = typeof localizedService === 'string'
+    ? localizedService
+    : (localizedService.name || localizedService.title || service.title);
+
+  const localizedDesc = typeof localizedService === 'object' && localizedService.description
+    ? localizedService.description
+    : (localeData.services?.[`${mappedKey}_desc`] || service.description);
 
   // Return a merged object
   return {
     location: {
       ...location,
-      name: location.name, // Usually city names don't change, but could be localized
+      name: location.name,
       state: location.state,
     },
     service: {
       ...service,
-      title: localizedService.name || service.title,
-      description: localizedService.description || service.description,
+      title: localizedTitle,
+      description: localizedDesc,
     },
     matrixContent: localizedMatrix || "",
     marketOpportunity: localizedService.marketOpportunity || "",

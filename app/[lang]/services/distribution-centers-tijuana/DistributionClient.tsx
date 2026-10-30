@@ -54,7 +54,7 @@ export default function DistributionPage() {
                     "itemListElement": [
                         { "@type": "ListItem", "position": 1, "name": t('nav.home') || "Home", "item": `https://nearshorenavigator.com/${language}` },
                         { "@type": "ListItem", "position": 2, "name": t('nav.services') || "Services", "item": `https://nearshorenavigator.com/${language}#services` },
-                        { "@type": "ListItem", "position": 3, "name": t('services.distribution.title') || "Distribution Centers", "item": `https://nearshorenavigator.com/${language}/services/distribution-centers-tijuana` }
+                        { "@type": "ListItem", "position": 3, "name": t('services.logistics') || "Distribution Centers", "item": `https://nearshorenavigator.com/${language}/services/distribution-centers-tijuana` }
                     ]
                 }) }}
             />

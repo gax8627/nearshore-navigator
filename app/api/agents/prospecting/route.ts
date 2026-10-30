@@ -10,7 +10,12 @@ export async function POST(req: Request) {
       process.env.CLERK_SECRET_KEY
     );
 
-    if (isClerkConfigured) {
+    if (!isClerkConfigured) {
+      if (process.env.NODE_ENV === 'production') {
+        console.error('[Prospecting API] Clerk auth keys missing in production');
+        return NextResponse.json({ error: 'Authentication configuration error' }, { status: 500 });
+      }
+    } else {
       const { userId } = await auth();
       if (!userId) {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });

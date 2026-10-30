@@ -1,6 +1,18 @@
-
 interface Dictionary {
   [key: string]: any;
+}
+
+function deepMerge(target: any, source: any): any {
+  if (!source) return target;
+  const output = { ...target };
+  for (const key of Object.keys(source)) {
+    if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+      output[key] = deepMerge(target[key] || {}, source[key]);
+    } else {
+      output[key] = source[key];
+    }
+  }
+  return output;
 }
 
 const dictionaries: { [key: string]: () => Promise<Dictionary> } = {
@@ -14,9 +26,13 @@ const dictionaries: { [key: string]: () => Promise<Dictionary> } = {
   pt: () => import('./locales/pt.json').then((module) => module.default),
   it: () => import('./locales/it.json').then((module) => module.default),
   ru: () => import('./locales/ru.json').then((module) => module.default),
-}
+};
 
-export const getDictionary = async (locale: string) => {
-  const dictionaryLoader = dictionaries[locale] || dictionaries.en;
-  return dictionaryLoader();
-}
+export const getDictionary = async (locale: string): Promise<Dictionary> => {
+  const enDict = await dictionaries.en();
+  if (!locale || locale === 'en' || !dictionaries[locale]) {
+    return enDict;
+  }
+  const localeDict = await dictionaries[locale]();
+  return deepMerge(enDict, localeDict);
+};

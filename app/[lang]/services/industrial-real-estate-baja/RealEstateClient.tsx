@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { LeadForm } from "@/components/LeadForm";
@@ -9,7 +10,7 @@ import { FounderBlock } from "@/components/FounderBlock";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function IndustrialRealEstatePage() {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -137,13 +138,13 @@ export default function IndustrialRealEstatePage() {
                         <div className="max-w-3xl mb-12">
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('realEstatePage.strategyTitle')}</h2>
                             <p className="text-xl text-gray-300 mb-6">{t('realEstatePage.strategySubtitle')}</p>
-                            <a 
-                                href={`/${t('language')}/services/distribution-centers-tijuana/section-321-guide`} 
+                            <Link 
+                                href={`/${language}/services/distribution-centers-tijuana/section-321-guide`} 
                                 className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 font-bold transition-colors group"
                             >
                                 {t('realEstatePage.linkB2C')}
                                 <span className="group-hover:translate-x-1 transition-transform">→</span>
-                            </a>
+                            </Link>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

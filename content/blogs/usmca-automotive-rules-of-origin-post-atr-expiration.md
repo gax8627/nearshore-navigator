@@ -340,7 +340,7 @@ The expiration of the ATR represents a structural watershed for supply chain arc
 
 During the ATR staging period, OEMs possessing approved staging plans were permitted to average non-originating materials across vehicle lines and defer strict core part sub-assembly audits. With ATR expired, customs authorities have automated their verification procedures. 
 
-According to joint trade enforcement data from **U.S. Customs and Border Protection (CBP)** and Mexico’s **Servicio de Administración Tributaria (SAT)**, automotive origin verifications under **USMCA Article 5.9** have intensified by over 300% since full enforcement took effect. Companies operating in Northern Mexico manufacturing hubs must ensure their enterprise resource planning (**ERP**) and customs inventory platforms ([Anexo 24 / Anexo 30](/en/blogs/immex-4-0-customs-law-reform-2026-optimized)) maintain immutable, digitally auditable traceability down to raw material sub-tier suppliers.
+According to joint trade enforcement data from **U.S. Customs and Border Protection (CBP)** and Mexico’s **Servicio de Administración Tributaria (SAT)**, automotive origin verifications under **USMCA Article 5.9** have intensified by over 300% since full enforcement took effect. Companies operating in Northern Mexico manufacturing hubs must ensure their enterprise resource planning (**ERP**) and customs inventory platforms ([Anexo 24 / Anexo 30](/en/insights/immex-4-0-customs-law-reform-2026)) maintain immutable, digitally auditable traceability down to raw material sub-tier suppliers.
 
 ---
 
@@ -595,7 +595,7 @@ Because an OEM's final USMCA certification is legally dependent on data generate
 - For intermediate Core Parts, verify whether the sub-assembly achieves 75% Net Cost RVC. Once proven, apply the **December 14, 2022 dispute panel ruling** to record the intermediate sub-assembly as **100% Originating (VOM)** for downstream higher-tier assembly roll-up.
 
 ### Step 5: Implement Automated ERP Reconciliations & Contractual Indemnity Clauses
-- Integrate origin determinations with your ERP system (SAP GTS, Oracle Global Trade Management) and Mexican customs inventory software ([Anexo 24 / Anexo 30](/en/blogs/immex-4-0-customs-law-reform-2026-optimized)).
+- Integrate origin determinations with your ERP system (SAP GTS, Oracle Global Trade Management) and Mexican customs inventory software ([Anexo 24 / Anexo 30](/en/insights/immex-4-0-customs-law-reform-2026)).
 - Update Master Services Agreements (MSAs) and Purchase Orders to include mandatory **Trade Compliance Flow-Down Clauses**:
   - Unrestricted OEM access to supplier origin cost accounting records during customs audits.
   - Mandatory 30-day notification of any engineering BOM change, country of origin shift, or tier-supplier substitution.

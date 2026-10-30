@@ -8,7 +8,8 @@ export const metadata: Metadata = {
   description: "Autonomous geopolitical trade alerts and manufacturing impact analysis for Mexico operations.",
 };
 
-export default async function MarketPulsePage({ params: { lang } }: { params: { lang: string } }) {
+export default async function MarketPulsePage(props: { params: Promise<{ lang: string }> }) {
+  const { lang } = await props.params;
   return (
     <main className="min-h-screen pt-32 pb-20 bg-gray-50 dark:bg-[#0B0F1A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
