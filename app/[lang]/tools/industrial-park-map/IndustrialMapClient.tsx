@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { Button } from "@/components/Button";
 import { BAJA_INDUSTRIAL_PARKS } from "@/app/constants/industrial-parks-data";
@@ -7,6 +8,7 @@ import { MapPin, Building2, TrendingUp, Users } from "lucide-react";
 
 export default function IndustrialMapClient({ language }: { language: string }) {
   const { t } = useLanguage();
+  const [mapInteractive, setMapInteractive] = useState(false);
 
   return (
     <div className="pb-20 pt-32 bg-gray-50 dark:bg-gray-900/40 min-h-screen">
@@ -33,9 +35,23 @@ export default function IndustrialMapClient({ language }: { language: string }) 
                 allowFullScreen={true}
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
-                className="absolute inset-0 grayscale contrast-125 dark:invert dark:hue-rotate-180 dark:contrast-100"
+                className={`absolute inset-0 grayscale contrast-125 dark:invert dark:hue-rotate-180 dark:contrast-100 ${
+                  mapInteractive ? "pointer-events-auto" : "pointer-events-none md:pointer-events-auto"
+                }`}
                 title="Baja California Industrial Infrastructure Map"
              ></iframe>
+             {!mapInteractive && (
+               <button
+                 type="button"
+                 onClick={() => setMapInteractive(true)}
+                 className="md:hidden absolute inset-0 bg-black/20 backdrop-blur-[1px] flex items-center justify-center cursor-pointer z-10 p-4 transition-opacity"
+                 aria-label="Tap to interact with map"
+               >
+                 <span className="px-4 py-2.5 bg-gray-900/90 text-white text-xs font-semibold rounded-full shadow-lg border border-white/20">
+                   Tap to interact with map
+                 </span>
+               </button>
+             )}
            </div>
         </div>
 
@@ -55,37 +71,37 @@ export default function IndustrialMapClient({ language }: { language: string }) 
             </div>
 
             <div className="overflow-x-auto">
-              <table itemScope itemType="https://schema.org/Table" className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="bg-gray-50 dark:bg-gray-900/50 text-gray-600 dark:text-gray-400 text-sm uppercase tracking-wider">
-                    <th className="p-6 font-semibold">Park Name</th>
-                    <th className="p-6 font-semibold">City</th>
-                    <th className="p-6 font-semibold">Class</th>
-                    <th className="p-6 font-semibold">Vacancy Status</th>
-                    <th className="p-6 font-semibold">Lease Rate (NNN)</th>
-                    <th className="p-6 font-semibold">Key Tenants</th>
+              <table itemScope itemType="https://schema.org/Table" className="w-full text-left border-collapse text-xs sm:text-sm">
+                <thead className="sticky top-0 z-20">
+                  <tr className="bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-400 text-xs sm:text-sm uppercase tracking-wider">
+                    <th className="sticky left-0 z-20 bg-gray-50 dark:bg-gray-900 p-3 sm:p-6 font-semibold">Park Name</th>
+                    <th className="p-3 sm:p-6 font-semibold">City</th>
+                    <th className="p-3 sm:p-6 font-semibold">Class</th>
+                    <th className="p-3 sm:p-6 font-semibold">Vacancy Status</th>
+                    <th className="p-3 sm:p-6 font-semibold">Lease Rate (NNN)</th>
+                    <th className="p-3 sm:p-6 font-semibold">Key Tenants</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
                   {BAJA_INDUSTRIAL_PARKS.map((park, index) => (
                     <tr key={park.id} className="hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-colors group">
-                      <td className="p-6 font-medium text-gray-900 dark:text-white">
+                      <td className="sticky left-0 z-10 bg-white dark:bg-gray-800 p-3 sm:p-6 font-medium text-gray-900 dark:text-white">
                         <div className="flex items-center gap-2">
                            {park.name}
                         </div>
                       </td>
-                      <td className="p-6 text-gray-600 dark:text-gray-300">
+                      <td className="p-3 sm:p-6 text-gray-600 dark:text-gray-300">
                         <span className="flex items-center gap-1">
                           <MapPin className="w-3 h-3 text-gray-400" />
                           {park.city}
                         </span>
                       </td>
-                      <td className="p-6">
+                      <td className="p-3 sm:p-6">
                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
                           {park.classification}
                         </span>
                       </td>
-                      <td className="p-6">
+                      <td className="p-3 sm:p-6">
                         <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                             park.vacancyStatus.includes('Very Low') ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' :
                             park.vacancyStatus.includes('Moderate') || park.vacancyStatus.includes('Stable') ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200' :
@@ -94,10 +110,10 @@ export default function IndustrialMapClient({ language }: { language: string }) 
                           {park.vacancyStatus}
                         </span>
                       </td>
-                      <td className="p-6 font-medium text-gray-900 dark:text-white">
+                      <td className="p-3 sm:p-6 font-medium text-gray-900 dark:text-white">
                         {park.leaseRate}
                       </td>
-                      <td className="p-6 text-sm text-gray-600 dark:text-gray-400 max-w-xs truncate" title={park.keyTenants.join(', ')}>
+                      <td className="p-3 sm:p-6 text-gray-600 dark:text-gray-400 max-w-xs truncate" title={park.keyTenants.join(', ')}>
                         {park.keyTenants.join(', ')}
                       </td>
                     </tr>

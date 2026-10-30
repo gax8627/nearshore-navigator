@@ -151,7 +151,7 @@ export const HeroScanner = ({ src, alt, active = true }: HeroScannerProps) => {
                 repeat: Infinity,
                 ease: "linear" 
             }}
-            className="relative w-full h-screen"
+            className="relative w-full h-[90vh] min-h-screen md:min-h-0"
         >
             <Image
                 src={src}
@@ -193,11 +193,11 @@ export const HeroScanner = ({ src, alt, active = true }: HeroScannerProps) => {
       )}
 
       {/* Corner UI Elements */}
-      <div className="absolute top-24 left-8 z-40 flex flex-col gap-1 pointer-events-none opacity-50">
+      <div className="absolute top-24 left-8 z-40 hidden sm:flex flex-col gap-1 pointer-events-none opacity-50">
           <div className="h-0.5 w-12 bg-primary-500/50" />
           <div className="h-12 w-0.5 bg-primary-500/50" />
       </div>
-      <div className="absolute bottom-12 right-8 z-40 flex flex-col items-end gap-1 pointer-events-none opacity-50">
+      <div className="absolute bottom-12 right-8 z-40 hidden sm:flex flex-col items-end gap-1 pointer-events-none opacity-50">
           <div className="h-12 w-0.5 bg-primary-500/50" />
           <div className="h-0.5 w-12 bg-primary-500/50" />
       </div>

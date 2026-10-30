@@ -30,7 +30,7 @@ function AdminShell({ children }: { children: React.ReactNode }) {
         <AdminSidenav />
 
         {/* Scrollable Content Area */}
-        <main className="flex-1 ml-72 min-h-screen relative">
+        <main className="flex-1 ml-0 lg:ml-72 min-h-screen relative w-full overflow-x-hidden">
             {/* Top Glass Header */}
             <header className="sticky top-0 z-40 px-8 py-4 backdrop-blur-md bg-white/50 dark:bg-slate-950/50 border-b border-gray-200 dark:border-white/5 flex items-center justify-between">
                 <h2 className="text-sm font-medium text-slate-500 dark:text-slate-400">Back Office Control Center</h2>

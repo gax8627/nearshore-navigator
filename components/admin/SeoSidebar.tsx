@@ -61,7 +61,7 @@ export function SeoSidebar({ title, excerpt, content, slug }: SeoSidebarProps) {
   };
 
   return (
-    <div className="glass-card p-6 w-80 sticky top-24 h-fit border-l border-white/5">
+    <div className="glass-card p-6 w-full lg:w-80 sticky top-24 h-fit border-l border-white/5">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
             <Search className="w-4 h-4 text-emerald-400" />

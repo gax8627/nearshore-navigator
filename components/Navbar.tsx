@@ -103,6 +103,17 @@ export function Navbar() {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
+    // Lock body scroll when mobile menu is open
+    useEffect(() => {
+        if (isMobileMenuOpen) {
+            const originalOverflow = document.body.style.overflow;
+            document.body.style.overflow = 'hidden';
+            return () => {
+                document.body.style.overflow = originalOverflow;
+            };
+        }
+    }, [isMobileMenuOpen]);
+
     const isServiceActive = pathname.startsWith("/services");
     const isResourceActive = pathname.includes("/tools/") || pathname.includes("/resources/");
 
@@ -278,7 +289,7 @@ export function Navbar() {
                         {/* Theme Toggle */}
                         <button
                             onClick={toggleTheme}
-                            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300 transition-colors"
+                            className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300 transition-colors"
                             aria-label="Toggle Dark Mode"
                         >
                             <motion.div
@@ -309,7 +320,7 @@ export function Navbar() {
 
                     {/* Mobile Toggle */}
                     <button
-                        className="lg:hidden p-2 text-gray-600 dark:text-gray-300"
+                        className="lg:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         aria-expanded={isMobileMenuOpen}
                         aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -332,14 +343,14 @@ export function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="fixed top-[70px] left-0 right-0 bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 z-40 lg:hidden overflow-hidden"
+                        className="fixed top-[70px] left-0 right-0 bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 z-40 lg:hidden max-h-[calc(100dvh-70px)] overflow-y-auto overscroll-contain pb-8"
                     >
                         <div className="flex flex-col p-6 gap-4">
                             {/* Services Accordion */}
                             <div className="border-b border-gray-100 dark:border-gray-800 pb-4">
                                 <button
                                     onClick={() => setIsServicesOpen(!isServicesOpen)}
-                                    className="flex items-center justify-between w-full text-lg font-medium text-gray-800 dark:text-gray-100 py-2"
+                                    className="flex items-center justify-between w-full text-lg font-medium text-gray-800 dark:text-gray-100 py-2.5 min-h-[44px]"
                                 >
                                     {t('nav.services')}
                                     <ChevronDown className={cn("w-5 h-5 transition-transform", isServicesOpen && "rotate-180")} />
@@ -352,13 +363,13 @@ export function Navbar() {
                                             exit={{ height: 0, opacity: 0 }}
                                             className="overflow-hidden"
                                         >
-                                            <div className="pl-4 pt-2 space-y-2">
+                                            <div className="pl-4 pt-2 space-y-1">
                                                 {serviceLinks.map((link) => (
                                                     <Link
                                                         key={link.href}
                                                         href={link.href}
                                                         onClick={() => setIsMobileMenuOpen(false)}
-                                                        className="block py-2 text-gray-600 dark:text-gray-400 hover:text-primary-500"
+                                                        className="flex items-center min-h-[44px] py-2 px-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
                                                     >
                                                         {link.name}
                                                     </Link>
@@ -373,7 +384,7 @@ export function Navbar() {
                             <div className="border-b border-gray-100 dark:border-gray-800 pb-4">
                                 <button
                                     onClick={() => setIsResourcesOpen(!isResourcesOpen)}
-                                    className="flex items-center justify-between w-full text-lg font-medium text-gray-800 dark:text-gray-100 py-2"
+                                    className="flex items-center justify-between w-full text-lg font-medium text-gray-800 dark:text-gray-100 py-2.5 min-h-[44px]"
                                 >
                                     {t('nav.resources')}
                                     <ChevronDown className={cn("w-5 h-5 transition-transform", isResourcesOpen && "rotate-180")} />
@@ -386,13 +397,13 @@ export function Navbar() {
                                             exit={{ height: 0, opacity: 0 }}
                                             className="overflow-hidden"
                                         >
-                                            <div className="pl-4 pt-2 space-y-2">
+                                            <div className="pl-4 pt-2 space-y-1">
                                                 {resourceLinks.map((link) => (
                                                     <Link
                                                         key={link.href}
                                                         href={link.href}
                                                         onClick={() => setIsMobileMenuOpen(false)}
-                                                        className="block py-2 text-gray-600 dark:text-gray-400 hover:text-primary-500"
+                                                        className="flex items-center min-h-[44px] py-2 px-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
                                                     >
                                                         {link.name}
                                                     </Link>
@@ -408,7 +419,7 @@ export function Navbar() {
                                     key={link.href}
                                     href={link.href}
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="text-lg font-medium text-gray-800 dark:text-gray-100 py-2 border-b border-gray-100 dark:border-gray-800"
+                                    className="text-lg font-medium text-gray-800 dark:text-gray-100 min-h-[44px] flex items-center py-2 border-b border-gray-100 dark:border-gray-800"
                                 >
                                     {link.name}
                                 </Link>
@@ -422,7 +433,7 @@ export function Navbar() {
                                             key={lang.code}
                                             onClick={() => handleLanguageChange(lang.code)}
                                             className={cn(
-                                                "px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-2 border transition-colors",
+                                                "px-3 py-2.5 min-h-[44px] rounded-lg text-sm font-medium flex items-center gap-2 border transition-colors",
                                                 language === lang.code 
                                                     ? "bg-primary-50 dark:bg-primary-900/20 border-primary-200 dark:border-primary-800 text-primary-700 dark:text-primary-300" 
                                                     : "border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
@@ -439,7 +450,7 @@ export function Navbar() {
                                 <span className="text-gray-600 dark:text-gray-400">{t('nav.appearance') || 'Appearance'}</span>
                                 <button
                                     onClick={toggleTheme}
-                                    className="flex items-center gap-2 text-sm font-medium text-gray-800 dark:text-gray-200"
+                                    className="flex items-center gap-2 text-sm font-medium text-gray-800 dark:text-gray-200 min-h-[44px] min-w-[44px] px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                                 >
                                     {theme === 'light' ? (
                                         <>{t('nav.darkMode') || 'Dark Mode'} <Moon className="w-4 h-4" /></>

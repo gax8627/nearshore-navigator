@@ -35,7 +35,7 @@ export function NewsletterBanner() {
               <input 
                 type="email" 
                 placeholder="Enter your email" 
-                className="px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500/50 w-full sm:w-80 backdrop-blur-sm"
+                className="px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-base md:text-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500/50 w-full sm:w-80 backdrop-blur-sm"
               />
               <Button size="lg" className="w-full sm:w-auto shadow-lg shadow-primary-500/20">
                 Subscribe

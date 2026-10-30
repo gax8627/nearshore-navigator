@@ -11,7 +11,7 @@ export default function ContactPage() {
     return (
         <div className="pb-20 overflow-hidden">
             {/* Hero Section */}
-            <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+            <section className="relative min-h-[40vh] py-20 md:py-0 md:h-[50vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2000"
@@ -67,6 +67,46 @@ export default function ContactPage() {
                                     <h3 className="font-bold text-gray-900 dark:text-white">{t('contact.offices')}</h3>
                                     <p className="text-gray-600 dark:text-gray-300">{t('contact.office_sd')}</p>
                                     <p className="text-gray-600 dark:text-gray-300">{t('contact.office_tj')}</p>
+                                </div>
+                            </div>
+
+                            {/* APAC & WhatsApp Direct Desk */}
+                            <div className="p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/40 dark:to-slate-900 border border-emerald-200 dark:border-emerald-800 space-y-3">
+                                <div className="flex items-center gap-2 text-xs font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
+                                    <span>🌏</span>
+                                    <span>Global & APAC Inquiries</span>
+                                </div>
+                                <h4 className="font-bold text-gray-900 dark:text-white text-base">
+                                    Discreet &amp; Timezone-Flexible Consultation
+                                </h4>
+                                <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                                    Operating out of Singapore, China, Japan, or Europe? We accommodate SGT, CST, and JST hours. Chat asynchronously on WhatsApp or request a mutual NDA before disclosing your project specifications.
+                                </p>
+                                <div className="pt-1 flex flex-col sm:flex-row gap-2.5">
+                                    <a
+                                        href="https://wa.me/526641237199?text=Hello%20Denisse,%20I%20am%20inquiring%20about%20industrial%20nearshoring%20in%20Mexico."
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#1fa851] text-white text-xs font-bold shadow-md transition-all"
+                                        onClick={() => {
+                                            if (typeof window !== 'undefined' && (window as any).gtag) {
+                                                (window as any).gtag('event', 'click_whatsapp', {
+                                                    event_category: 'lead_generation',
+                                                    event_label: 'contact_page_apac_desk'
+                                                });
+                                            }
+                                        }}
+                                    >
+                                        <span>Chat on WhatsApp</span>
+                                    </a>
+                                    <a
+                                        href="https://calendly.com/denisse-nearshorenavigator/30min?utm_source=contact_page&utm_campaign=apac_desk"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 text-xs font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition-all"
+                                    >
+                                        <span>Pick a Calendar Slot</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>

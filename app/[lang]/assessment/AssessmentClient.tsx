@@ -46,7 +46,7 @@ export default function AssessmentPage() {
     return (
         <div className="pb-20 overflow-hidden">
             {/* Hero Section */}
-            <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+            <section className="relative min-h-[50vh] py-24 md:py-0 md:h-[60vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2000"
@@ -79,7 +79,7 @@ export default function AssessmentPage() {
                 </div>
             </section>
 
-            <div className="container mx-auto px-4 -mt-20 relative z-20">
+            <div className="container mx-auto px-4 -mt-10 md:-mt-20 relative z-20">
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
                     <motion.div

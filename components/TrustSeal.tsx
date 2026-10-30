@@ -11,7 +11,7 @@ export function TrustSeal() {
   return (
     <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 border border-gray-100 dark:border-gray-800 shadow-glass space-y-6">
       <div className="flex items-center gap-4 border-b border-gray-100 dark:border-gray-800 pb-6">
-        <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-primary-500/20">
+        <div className="relative w-16 h-16 shrink-0 rounded-full overflow-hidden border-2 border-primary-500/20">
           <Image
             src="/images/denisse-1.jpg"
             alt="Denisse Martinez"

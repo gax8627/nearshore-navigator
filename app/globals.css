@@ -16,6 +16,10 @@
   }
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -25,6 +29,20 @@ body {
     )
     rgb(var(--background-start-rgb));
   min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: clip;
+}
+
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.prose pre {
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 @layer utilities {

@@ -31,43 +31,52 @@ const showSources = args.includes('--sources');
 const showCountries = args.includes('--countries');
 const showAll = !showPages && !showSources && !showCountries;
 
-// Auth — checks google-token.json first, then .gcloud-adc.json, otherwise falls back to ADC
+// Auth setup with automatic fallback
 const tokenPath = resolve(__dirname, '../google-token.json');
 const localCreds = resolve(__dirname, '../.gcloud-adc.json');
-let auth;
 
-if (existsSync(tokenPath)) {
-  try {
-    const tokens = JSON.parse(readFileSync(tokenPath, 'utf8'));
-    const oauth2Client = new google.auth.OAuth2(
-      process.env.GOOGLE_CLIENT_ID,
-      process.env.GOOGLE_CLIENT_SECRET,
-      'http://localhost:3000'
-    );
-    oauth2Client.setCredentials(tokens);
-    auth = oauth2Client;
-  } catch (e) {
-    // fallback
+async function getAnalyticsClient() {
+  // 1. Try OAuth token if exists
+  if (existsSync(tokenPath)) {
+    try {
+      const tokens = JSON.parse(readFileSync(tokenPath, 'utf8'));
+      const oauth2Client = new google.auth.OAuth2(
+        process.env.GOOGLE_CLIENT_ID,
+        process.env.GOOGLE_CLIENT_SECRET,
+        'http://localhost:3000'
+      );
+      oauth2Client.setCredentials(tokens);
+      // Validate by attempting to get access token
+      await oauth2Client.getAccessToken();
+      return google.analyticsdata({ version: 'v1beta', auth: oauth2Client });
+    } catch (e) {
+      // Token expired or invalid, fall through to service account
+    }
   }
-}
 
-if (!auth) {
+  // 2. Try Service Account credentials
   if (existsSync(localCreds)) {
-    const keyFile = JSON.parse(readFileSync(localCreds, 'utf8'));
-    auth = new google.auth.GoogleAuth({
-      credentials: keyFile,
-      scopes: ['https://www.googleapis.com/auth/analytics.readonly'],
-    });
-  } else {
-    auth = new google.auth.GoogleAuth({
-      scopes: ['https://www.googleapis.com/auth/analytics.readonly'],
-    });
+    try {
+      const keyFile = JSON.parse(readFileSync(localCreds, 'utf8'));
+      const saAuth = new google.auth.GoogleAuth({
+        credentials: keyFile,
+        scopes: ['https://www.googleapis.com/auth/analytics.readonly'],
+      });
+      return google.analyticsdata({ version: 'v1beta', auth: saAuth });
+    } catch (e) {
+      // fallback
+    }
   }
-}
 
-const analyticsdata = google.analyticsdata({ version: 'v1beta', auth });
+  // 3. ADC fallback
+  const defaultAuth = new google.auth.GoogleAuth({
+    scopes: ['https://www.googleapis.com/auth/analytics.readonly'],
+  });
+  return google.analyticsdata({ version: 'v1beta', auth: defaultAuth });
+}
 
 async function runReport(body) {
+  const analyticsdata = await getAnalyticsClient();
   const res = await analyticsdata.properties.runReport({
     property: `properties/${PROPERTY_ID}`,
     requestBody: body,

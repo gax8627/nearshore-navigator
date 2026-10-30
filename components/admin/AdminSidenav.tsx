@@ -21,7 +21,7 @@ export function AdminSidenav() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <aside className="w-72 h-screen fixed left-0 top-0 border-r border-gray-200 dark:border-white/10 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl flex flex-col z-50">
+    <aside className="w-72 h-screen fixed left-0 top-0 border-r border-gray-200 dark:border-white/10 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl hidden lg:flex flex-col z-50">
       {/* Liquid Logo Area */}
       <div className="p-8 relative overflow-hidden group">
         <Link href="/admin" className="relative z-10 block">

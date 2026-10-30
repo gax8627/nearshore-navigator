@@ -42,7 +42,7 @@ export function MarketPulseNewsroom() {
                             <div className="flex flex-wrap gap-4 pt-2">
                                 <div className="space-y-1.5">
                                     <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block">Affected Sectors</span>
-                                    <div className="flex gap-2">
+                                    <div className="flex flex-wrap gap-2">
                                         {alert.affectedSectors.map(s => (
                                             <span key={s} className="flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 bg-gray-50 dark:bg-white/5 rounded border border-gray-100 dark:border-white/10 uppercase">
                                                 <Factory className="w-2.5 h-2.5" /> {s}
@@ -52,7 +52,7 @@ export function MarketPulseNewsroom() {
                                 </div>
                                 <div className="space-y-1.5">
                                     <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block">Regional Impact</span>
-                                    <div className="flex gap-2">
+                                    <div className="flex flex-wrap gap-2">
                                         {alert.affectedCities.map(c => (
                                             <span key={c} className="flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 bg-primary-50 dark:bg-primary-900/10 text-primary-600 dark:text-primary-400 rounded border border-primary-100 dark:border-primary-800/50 uppercase">
                                                 <MapPin className="w-2.5 h-2.5" /> {c}
@@ -63,7 +63,7 @@ export function MarketPulseNewsroom() {
                             </div>
                         </div>
 
-                        <div className="hidden md:flex flex-col gap-3 w-48 pt-8">
+                        <div className="flex flex-col sm:flex-row md:flex-col gap-3 w-full md:w-48 pt-4 md:pt-8 border-t md:border-t-0 border-gray-100 dark:border-gray-800">
                             <button className="flex items-center justify-center gap-2 py-3 px-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg text-xs font-bold hover:opacity-90 transition-opacity">
                                 Mitigation Strategy <ExternalLink className="w-3 h-3" />
                             </button>

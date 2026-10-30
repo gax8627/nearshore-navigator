@@ -8,7 +8,7 @@ import { useLanguage } from "@/app/context/LanguageContext"
 export function FounderBlock() {
   const { t, language } = useLanguage();
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-24 bg-gray-50/50 dark:bg-gray-900/40 overflow-hidden">
       <div className="container px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           <div className="relative order-last lg:order-first">
@@ -28,20 +28,20 @@ export function FounderBlock() {
               </div>
             </div>
             {/* Decorative element */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl -z-10" />
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary-500/10 rounded-full blur-2xl -z-10" />
             <div className="absolute -top-6 -left-6 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl -z-10" />
           </div>
 
           <div className="space-y-8">
-            <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80">
+            <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 border-transparent bg-primary-600 text-white shadow hover:bg-primary-700">
               {t('about.founderBadge')}
             </div>
             
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-900 dark:text-white">
               {t('about.founderTitle')}
             </h2>
             
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
               {t('about.founderDescription')}
             </p>
 
@@ -51,7 +51,7 @@ export function FounderBlock() {
                   <Check className="h-4 w-4 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">{t('about.founderStat1')}</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-white">{t('about.founderStat1')}</h3>
                 </div>
               </div>
               
@@ -60,7 +60,7 @@ export function FounderBlock() {
                   <Check className="h-4 w-4 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">{t('about.founderStat2')}</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-white">{t('about.founderStat2')}</h3>
                 </div>
               </div>
               
@@ -69,7 +69,7 @@ export function FounderBlock() {
                   <Check className="h-4 w-4 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">{t('about.founderStat3')}</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-white">{t('about.founderStat3')}</h3>
                 </div>
               </div>
             </div>
@@ -77,22 +77,22 @@ export function FounderBlock() {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
                 href={`/${language}/contact`}
-                className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                className="inline-flex h-12 min-h-[44px] items-center justify-center rounded-md bg-primary-600 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 disabled:pointer-events-none disabled:opacity-50"
               >
                 <Calendar className="mr-2 h-4 w-4" />
                 {t('about.ctaDiscovery')}
               </Link>
               <Link
                 href={`/${language}/assessment`}
-                className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                className="inline-flex h-12 min-h-[44px] items-center justify-center rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-50 dark:hover:bg-gray-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 disabled:pointer-events-none disabled:opacity-50"
               >
                 <MapPin className="mr-2 h-4 w-4" />
                 {t('about.ctaAssessment')}
               </Link>
             </div>
             
-            <div className="pt-6 border-t font-medium italic text-muted-foreground relative pl-12">
-              <div className="absolute left-0 top-4 text-7xl text-primary/10 select-none leading-none">&quot;</div>
+            <div className="pt-6 border-t border-gray-200 dark:border-gray-800 font-medium italic text-gray-600 dark:text-gray-300 relative pl-12">
+              <div className="absolute left-0 top-4 text-7xl text-primary-500/10 select-none leading-none">&quot;</div>
               <p className="relative z-10">{t('about.founderQuote')}</p>
             </div>
           </div>

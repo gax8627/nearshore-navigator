@@ -10,6 +10,24 @@ import { CheckCircle2, MapPin, Factory, Users, ArrowRight, AlertCircle } from "l
 import { useLanguage } from "@/app/context/LanguageContext";
 import { CaseStudies } from "@/components/CaseStudies";
 
+const cardThemeMap: Record<string, { bg: string; text: string; link: string }> = {
+  blue: {
+    bg: "bg-blue-100 dark:bg-blue-900/30",
+    text: "text-blue-600 dark:text-blue-400",
+    link: "text-blue-600 hover:text-blue-700",
+  },
+  green: {
+    bg: "bg-green-100 dark:bg-green-900/30",
+    text: "text-green-600 dark:text-green-400",
+    link: "text-green-600 hover:text-green-700",
+  },
+  purple: {
+    bg: "bg-purple-100 dark:bg-purple-900/30",
+    text: "text-purple-600 dark:text-purple-400",
+    link: "text-purple-600 hover:text-purple-700",
+  },
+};
+
 export default function AboutClient() {
   const { t, language } = useLanguage();
   const containerRef = useRef(null);
@@ -52,7 +70,7 @@ export default function AboutClient() {
                     <span className="inline-block py-1.5 px-4 rounded-full bg-primary-500/20 backdrop-blur-md text-primary-200 border border-primary-500/30 text-sm font-bold tracking-wider uppercase mb-8">
                         {t('broker.advisorTitle')} | Nearshore Navigator
                     </span>
-                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
+                    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
                         {t('about.heroTitle1')}<br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">{t('about.heroTitle2')}</span> {t('about.heroTitle3')}
                     </h1>
@@ -197,7 +215,7 @@ export default function AboutClient() {
                         viewport={{ once: true }}
                         className="w-full md:w-2/3"
                     >
-                        <div className="inline-flex items-center gap-2 bg-primary-5 dark:bg-primary-900/10 text-primary-700 dark:text-primary-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                        <div className="inline-flex items-center gap-2 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
                              {t('aboutPage.leadershipBadge')}
                         </div>
                         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
@@ -217,11 +235,11 @@ export default function AboutClient() {
                                 {t('aboutPage.denisseBio3')}
                             </p>
                         </div>
-                        <div className="mt-8 flex gap-4">
-                            <a href="https://www.linkedin.com/in/denissemartinez" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors" aria-label="LinkedIn Profile">
+                        <div className="mt-8 flex gap-4 items-center">
+                            <a href="https://www.linkedin.com/in/denissemartinez" target="_blank" rel="noopener noreferrer" className="p-2.5 -m-2.5 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-gray-400 hover:text-blue-600 transition-colors" aria-label="LinkedIn Profile">
                                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                             </a>
-                            <a href={`/${language}/contact`} className="text-primary-600 font-semibold hover:underline">
+                            <a href={`/${language}/contact`} className="inline-flex items-center min-h-[44px] text-primary-600 font-semibold hover:underline">
                                 {t('aboutPage.connect')} &rarr;
                             </a>
                         </div>
@@ -273,27 +291,34 @@ export default function AboutClient() {
                             cta: t('aboutPage.cardCtaRequest'),
                             color: "purple"
                         }
-                    ].map((item, index) => (
-                        <motion.div 
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition-transform duration-300"
-                        >
-                            <div className={`w-14 h-14 bg-${item.color}-100 dark:bg-${item.color}-900/30 rounded-xl flex items-center justify-center text-${item.color}-600 dark:text-${item.color}-400 mb-6`}>
-                                {item.icon}
-                            </div>
-                            <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">{item.title}</h3>
-                            <p className="text-gray-600 dark:text-gray-300 mb-6">
-                                {item.desc}
-                            </p>
-                            <Link href={item.link} className={`text-${item.color}-600 font-semibold hover:underline flex items-center gap-2`}>
-                                {item.cta} <ArrowRight className="w-4 h-4" />
-                            </Link>
-                        </motion.div>
-                    ))}
+                    ].map((item, index) => {
+                        const theme = cardThemeMap[item.color] || {
+                            bg: "bg-gray-100 dark:bg-gray-800",
+                            text: "text-gray-600 dark:text-gray-300",
+                            link: "text-gray-600 hover:underline",
+                        };
+                        return (
+                            <motion.div 
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition-transform duration-300"
+                            >
+                                <div className={`w-14 h-14 ${theme.bg} rounded-xl flex items-center justify-center ${theme.text} mb-6`}>
+                                    {item.icon}
+                                </div>
+                                <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">{item.title}</h3>
+                                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                                    {item.desc}
+                                </p>
+                                <Link href={item.link} className={`${theme.link} font-semibold hover:underline flex items-center gap-2`}>
+                                    {item.cta} <ArrowRight className="w-4 h-4" />
+                                </Link>
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </div>
         </section>

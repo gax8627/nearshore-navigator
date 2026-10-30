@@ -571,7 +571,7 @@ export default function CustomsBrokerageClient() {
             </div>
           </div>
 
-          <div className="bg-gray-900 p-8 rounded-2xl border border-gray-800 shadow-2xl">
+          <div>
             <LeadForm
               title="Request Customs Compliance Audit"
               subtitle="Get an expert analysis of your Pedimentos, Annex 24 software setup, and USMCA duty elimination."

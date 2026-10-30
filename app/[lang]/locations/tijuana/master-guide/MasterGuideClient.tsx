@@ -101,9 +101,9 @@ export default function MasterGuideClient() {
           <div className="grid lg:grid-cols-3 gap-10 mt-20">
             <motion.div 
               whileHover={{ y: -5 }}
-              className="p-10 rounded-3xl bg-slate-50 border border-slate-100 group transition-all duration-300"
+              className="p-6 sm:p-10 rounded-3xl bg-slate-50 border border-slate-100 group transition-all duration-300"
             >
-              <div className="text-6xl font-black text-slate-900 mb-4 tracking-tighter">
+              <div className="text-4xl sm:text-6xl font-black break-words text-slate-900 mb-4 tracking-tighter">
                 {t('tijuanaMasterGuide.cost_advantage.labor_val')}<span className="text-2xl text-slate-400 font-medium">/hr</span>
               </div>
               <h3 className="text-xl font-bold text-sky-900 mb-4">{t('tijuanaMasterGuide.cost_advantage.labor_label')}</h3>
@@ -114,9 +114,9 @@ export default function MasterGuideClient() {
 
             <motion.div 
               whileHover={{ y: -5 }}
-              className="p-10 rounded-3xl bg-slate-50 border border-slate-100 group transition-all duration-300"
+              className="p-6 sm:p-10 rounded-3xl bg-slate-50 border border-slate-100 group transition-all duration-300"
             >
-              <div className="text-6xl font-black text-slate-900 mb-4 tracking-tighter">
+              <div className="text-4xl sm:text-6xl font-black break-words text-slate-900 mb-4 tracking-tighter">
                 {t('tijuanaMasterGuide.cost_advantage.real_estate_val')}<span className="text-2xl text-slate-400 font-medium">/SF</span>
               </div>
               <h3 className="text-xl font-bold text-sky-900 mb-4">{t('tijuanaMasterGuide.cost_advantage.real_estate_label')}</h3>
@@ -127,9 +127,9 @@ export default function MasterGuideClient() {
 
             <motion.div 
               whileHover={{ y: -5 }}
-              className="p-10 rounded-3xl bg-sky-900 border border-sky-800 text-white shadow-2xl shadow-sky-900/20"
+              className="p-6 sm:p-10 rounded-3xl bg-sky-900 border border-sky-800 text-white shadow-2xl shadow-sky-900/20"
             >
-              <div className="text-6xl font-black text-white mb-4 tracking-tighter">
+              <div className="text-4xl sm:text-6xl font-black break-words text-white mb-4 tracking-tighter">
                 {t('tijuanaMasterGuide.cost_advantage.tariffs_val')}
               </div>
               <h3 className="text-xl font-bold text-sky-200 mb-4">{t('tijuanaMasterGuide.cost_advantage.tariffs_label')}</h3>

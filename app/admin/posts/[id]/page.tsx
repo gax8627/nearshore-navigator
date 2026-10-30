@@ -79,10 +79,10 @@ export default function EditPostPage() {
   if (error) return <div className="p-12 text-center text-red-500">Error: {error}</div>;
 
   return (
-    <div className="flex gap-8 items-start">
+    <div className="flex flex-col lg:flex-row gap-8 items-start">
       {/* Main Content */}
-      <div className="flex-1 max-w-4xl">
-        <div className="flex items-center justify-between mb-8">
+      <div className="flex-1 w-full max-w-4xl">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <div>
                 <button 
                   onClick={() => router.push('/admin/posts')}
@@ -93,7 +93,7 @@ export default function EditPostPage() {
                 </button>
                 <h1 className="text-3xl font-bold text-white mb-2">Edit Post</h1>
             </div>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
                 <button
                     onClick={() => router.push("/admin/posts")}
                     className="px-4 py-2 bg-slate-800 text-slate-300 rounded-lg hover:bg-slate-700 transition-colors"
@@ -123,7 +123,7 @@ export default function EditPostPage() {
                 />
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Slug */}
                 <div>
                     <label className="block text-sm font-medium text-slate-300 mb-2">Slug</label>
@@ -190,7 +190,7 @@ export default function EditPostPage() {
       </div>
 
       {/* SEO Sidebar */}
-      <div className="w-80 shrink-0">
+      <div className="w-full lg:w-80 shrink-0">
          <SeoSidebar title={post.title} excerpt={post.excerpt} content={post.content} slug={post.slug} />
       </div>
     </div>

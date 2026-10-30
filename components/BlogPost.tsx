@@ -55,11 +55,11 @@ export function BlogPost({ post }: { post: BlogPostType }) {
                 ))}
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight tracking-tight max-w-4xl drop-shadow-lg">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight tracking-tight max-w-4xl drop-shadow-lg">
               {currentTitle}
             </h1>
 
-            <div className="flex items-center gap-6 text-sm text-gray-300 font-medium">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm text-gray-300 font-medium">
               <span className="flex items-center gap-2"><Calendar className="w-4 h-4 text-primary-400" /> {post.date}</span>
               <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-primary-400" /> {readTime} Min Read</span>
               <span className="text-gray-400">|</span>
@@ -73,13 +73,49 @@ export function BlogPost({ post }: { post: BlogPostType }) {
             
             {/* Main Content Area */}
             <div className="lg:w-2/3">
-                <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 dark:border-gray-700">
-                    <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-light leading-relaxed mb-12 border-l-4 border-primary-500 pl-6 italic speakable-summary speakable-direct-answer direct-answer-capsule">
+                <div className="bg-white dark:bg-gray-800 rounded-3xl p-5 sm:p-8 md:p-12 shadow-xl border border-gray-100 dark:border-gray-700">
+                    <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-light leading-relaxed mb-8 border-l-4 border-primary-500 pl-6 italic speakable-summary speakable-direct-answer direct-answer-capsule">
                         {currentExcerpt}
                     </p>
 
+                    {/* Above-the-fold Executive Consultation Hook (Visible in first 20s) */}
+                    <div className="mb-10 p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-primary-950 via-slate-900 to-primary-900 text-white border border-primary-500/30 shadow-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                      <div className="flex items-center gap-3.5">
+                        <div className="w-11 h-11 rounded-full bg-primary-500/20 text-primary-300 font-bold flex items-center justify-center shrink-0 text-sm border border-primary-400/30">
+                          DM
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-bold text-white leading-tight">
+                            Evaluate Your Nearshore Strategy
+                          </h4>
+                          <p className="text-xs text-slate-300 mt-1">
+                            Speak directly with Denisse Martinez (Principal Advisor) — 15-min confidential briefing.
+                          </p>
+                        </div>
+                      </div>
+                      <a
+                        href="https://calendly.com/denisse-nearshorenavigator/30min?utm_source=blog_inline_hero&utm_campaign=executive_briefing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full sm:w-auto shrink-0"
+                        onClick={() => {
+                          if (typeof window !== 'undefined' && (window as any).gtag) {
+                            (window as any).gtag('event', 'click_calendly', {
+                              event_category: 'lead_generation',
+                              event_label: 'blog_inline_hero',
+                            });
+                          }
+                        }}
+                      >
+                        <Button size="sm" className="w-full sm:w-auto bg-primary-500 hover:bg-primary-400 text-slate-950 font-bold px-4 py-2.5 text-xs flex items-center justify-center gap-1.5 shadow-md transition-all">
+                          <span>Book Strategy Call</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Button>
+                      </a>
+                    </div>
+
                     <div 
-                      className="prose prose-lg md:prose-xl dark:prose-invert max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-a:no-underline hover:prose-a:underline prose-img:rounded-2xl prose-img:shadow-lg prose-hr:border-gray-200 dark:prose-hr:border-gray-800"
+                      className="prose prose-lg md:prose-xl dark:prose-invert max-w-none break-words overflow-hidden prose-headings:font-bold prose-headings:tracking-tight prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-a:no-underline hover:prose-a:underline prose-img:rounded-2xl prose-img:shadow-lg prose-hr:border-gray-200 dark:prose-hr:border-gray-800"
                       dangerouslySetInnerHTML={{ __html: currentContent }}
                     />
 

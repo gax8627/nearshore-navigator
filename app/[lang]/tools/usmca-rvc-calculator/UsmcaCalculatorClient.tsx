@@ -195,7 +195,7 @@ export default function UsmcaCalculatorClient({ language }: { language: string }
                 <button
                   type="button"
                   onClick={() => setMethod("net_cost")}
-                  className={`py-2.5 px-4 rounded-lg text-sm font-semibold transition-all ${
+                  className={`px-2 sm:px-4 py-2.5 text-xs sm:text-sm text-center rounded-lg font-semibold transition-all ${
                     method === "net_cost"
                       ? "bg-white dark:bg-blue-600 text-slate-900 dark:text-white shadow-sm"
                       : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
@@ -206,7 +206,7 @@ export default function UsmcaCalculatorClient({ language }: { language: string }
                 <button
                   type="button"
                   onClick={() => setMethod("tx_value")}
-                  className={`py-2.5 px-4 rounded-lg text-sm font-semibold transition-all ${
+                  className={`px-2 sm:px-4 py-2.5 text-xs sm:text-sm text-center rounded-lg font-semibold transition-all ${
                     method === "tx_value"
                       ? "bg-white dark:bg-blue-600 text-slate-900 dark:text-white shadow-sm"
                       : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"

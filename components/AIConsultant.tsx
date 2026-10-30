@@ -64,7 +64,7 @@ export function AIConsultant() {
     };
 
     return (
-        <div className="fixed bottom-6 right-6 z-[9999]">
+        <div className="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom))] right-[calc(1.5rem+env(safe-area-inset-right))] z-50">
             {/* Toggle Button */}
             {!isOpen && (
                 <motion.button
@@ -89,7 +89,7 @@ export function AIConsultant() {
                         initial={{ opacity: 0, scale: 0.8, y: 100 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.8, y: 100 }}
-                        className="w-[380px] h-[550px] bg-gray-900/95 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-[0_32px_128px_-16px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col"
+                        className="w-[calc(100vw-2rem)] sm:w-[380px] max-w-[380px] h-[min(550px,calc(100dvh-6rem))] max-h-[85dvh] right-0 sm:right-auto bg-gray-900/95 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-[0_32px_128px_-16px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col"
                     >
                         <div className="p-6 bg-gradient-to-r from-primary-900/40 to-gray-900/40 border-b border-white/5 flex items-center justify-between">
                             <div className="flex items-center gap-3">
@@ -109,7 +109,7 @@ export function AIConsultant() {
                                     href="https://wa.me/526643640203" 
                                     target="_blank" 
                                     rel="noopener noreferrer"
-                                    className="p-2 bg-green-600/20 text-green-400 rounded-lg hover:bg-green-600/30 transition-colors group relative"
+                                    className="p-2 min-w-[36px] min-h-[36px] flex items-center justify-center bg-green-600/20 text-green-400 rounded-lg hover:bg-green-600/30 transition-colors group relative"
                                     aria-label="Talk to an expert on WhatsApp"
                                 >
                                     <Phone size={18} />
@@ -118,7 +118,7 @@ export function AIConsultant() {
                                 <button
                                     onClick={() => setIsOpen(false)}
                                     aria-label="Close AI Manufacturing Consultant"
-                                    className="text-gray-400 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/10"
+                                    className="text-gray-400 hover:text-white transition-colors p-2 min-w-[36px] min-h-[36px] flex items-center justify-center rounded-lg hover:bg-white/10"
                                 >
                                     <X size={20} aria-hidden="true" />
                                 </button>
@@ -172,14 +172,14 @@ export function AIConsultant() {
                                     onChange={(e) => setInput(e.target.value)}
                                     onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                                     placeholder="Ask about tariffs, hubs, or costs..."
-                                    className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 transition-colors"
+                                    className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-base md:text-sm text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 transition-colors"
                                     disabled={isLoading}
                                 />
                                 <button
                                     onClick={handleSend}
                                     disabled={isLoading || !input.trim()}
                                     aria-label="Send message"
-                                    className="w-10 h-10 bg-primary-600 text-white rounded-xl flex items-center justify-center hover:bg-primary-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-11 h-11 min-w-[44px] min-h-[44px] bg-primary-600 text-white rounded-xl flex items-center justify-center hover:bg-primary-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shrink-0"
                                 >
                                     <Send size={18} aria-hidden="true" />
                                 </button>

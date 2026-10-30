@@ -77,13 +77,13 @@ export default function AdminCommandCenter() {
 
             <div className="p-8 max-w-[1600px] mx-auto">
                 {/* Header Section */}
-                <header className="mb-12 flex justify-between items-start">
+                <header className="mb-12 flex flex-col md:flex-row justify-between items-start gap-6">
                     <div className="relative">
                         <div className="flex items-center gap-2 text-primary-500 mb-2">
                             <ShieldCheck size={16} />
                             <span className="text-xs font-black uppercase tracking-[0.2em] opacity-70">Authenticated Access: CEO NODE</span>
                         </div>
-                        <h1 className="text-5xl font-black tracking-tighter italic">COMMAND CENTER</h1>
+                        <h1 className="text-3xl sm:text-5xl font-black tracking-tighter italic">COMMAND CENTER</h1>
                         <div className="flex items-center gap-4 mt-4">
                             <div className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full">
                                 <Activity size={12} className="text-green-500" />
@@ -123,13 +123,13 @@ export default function AdminCommandCenter() {
                     </div>
                 </header>
 
-                <div className="grid grid-cols-12 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
                     
                     {/* LEFT COLUMN: PRIMARY STATS & INTENT */}
-                    <div className="col-span-8 space-y-8">
+                    <div className="lg:col-span-8 space-y-8">
                         
                         {/* SEO MATIX VELOCITY */}
-                        <div className="bg-gradient-to-br from-gray-900 to-black border border-white/10 rounded-[2.5rem] p-10 relative overflow-hidden group">
+                        <div className="bg-gradient-to-br from-gray-900 to-black border border-white/10 rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-10 relative overflow-hidden group">
                            <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary-500/10 blur-[100px] border border-primary-500 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
                            
                            <div className="flex items-center justify-between mb-10">
@@ -140,7 +140,7 @@ export default function AdminCommandCenter() {
                                 <BarChart3 className="text-gray-600" size={24} />
                            </div>
 
-                           <div className="grid grid-cols-3 gap-10">
+                           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 <div>
                                     <p className="text-[10px] uppercase font-black tracking-widest text-gray-500 mb-2">Total Doors</p>
                                     <h3 className="text-4xl font-black">{stats?.seoVelocity.totalDoors}</h3>
@@ -218,7 +218,7 @@ export default function AdminCommandCenter() {
                     </div>
 
                     {/* RIGHT COLUMN: RECENT PULSE & ALERTS */}
-                    <div className="col-span-4 space-y-8">
+                    <div className="lg:col-span-4 space-y-8">
                         
                         {/* THE PULSE (LIVE FEED) */}
                         <div className="bg-gray-900/40 border border-white/5 rounded-[2.5rem] p-8 h-full flex flex-col">

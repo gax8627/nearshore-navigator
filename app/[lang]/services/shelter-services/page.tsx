@@ -118,7 +118,7 @@ export default async function ShelterServicesPage(props: { params: Promise<{ lan
           </p>
 
           <div className="overflow-x-auto my-6">
-            <table itemScope itemType="https://schema.org/Table" className="w-full text-left border-collapse border border-gray-800 bg-gray-900 rounded-xl">
+            <table itemScope itemType="https://schema.org/Table" className="w-full min-w-[550px] text-left border-collapse border border-gray-800 bg-gray-900 rounded-xl">
               <thead>
                 <tr className="bg-gray-800 text-primary-400 text-sm">
                   <th className="p-4 border-b border-gray-700">Feature / Metric</th>
@@ -197,13 +197,13 @@ export default async function ShelterServicesPage(props: { params: Promise<{ lan
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href={`/${lang}/tools/cost-calculator`}
-              className="px-8 py-3.5 bg-primary-600 hover:bg-primary-500 text-white font-bold rounded-lg transition-all shadow-lg shadow-primary-600/20"
+              className="w-full sm:w-auto text-center px-8 py-3.5 bg-primary-600 hover:bg-primary-500 text-white font-bold rounded-lg transition-all shadow-lg shadow-primary-600/20"
             >
               Launch Landed Cost Calculator
             </Link>
             <Link
               href={`/${lang}/locations/tijuana`}
-              className="px-8 py-3.5 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg border border-gray-700 transition-all"
+              className="w-full sm:w-auto text-center px-8 py-3.5 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg border border-gray-700 transition-all"
             >
               Explore Tijuana Location Guide
             </Link>

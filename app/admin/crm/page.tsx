@@ -126,12 +126,12 @@ export default function CrmPage() {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
         <div>
            <h1 className="text-2xl font-bold text-white">CRM & Marketing</h1>
            <p className="text-gray-400 mt-1">Manage leads and email campaigns</p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
             <button 
                 onClick={() => setActiveTab("senders")}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeTab === "senders" ? "bg-primary-500 text-white" : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`}
@@ -250,7 +250,8 @@ export default function CrmPage() {
                     </button>
                 </div>
             ) : (
-                <table itemScope itemType="https://schema.org/Table" className="w-full">
+                <div className="overflow-x-auto w-full">
+                  <table itemScope itemType="https://schema.org/Table" className="w-full min-w-[550px]">
                     <thead>
                         <tr className="border-b border-gray-800 text-left">
                             <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Name</th>
@@ -286,7 +287,8 @@ export default function CrmPage() {
                             </tr>
                         ))}
                     </tbody>
-                </table>
+                  </table>
+                </div>
             )}
         </div>
       )}

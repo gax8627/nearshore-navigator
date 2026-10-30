@@ -164,7 +164,7 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
         />
       )}
       {/* Hero */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] py-24 md:py-0 md:h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src={location.image}

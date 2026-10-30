@@ -98,7 +98,7 @@ export default function CostCalculatorClient({ language }: { language: string })
         <div className="flex flex-col lg:flex-row gap-8 items-start">
           
           {/* Inputs Panel */}
-          <div className="w-full lg:w-1/2 bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
+          <div className="w-full lg:w-1/2 bg-white dark:bg-gray-800 rounded-3xl p-5 sm:p-8 shadow-xl border border-gray-100 dark:border-gray-700">
             <div className="flex items-center gap-3 mb-8 pb-4 border-b border-gray-100 dark:border-gray-700">
               <Calculator className="w-6 h-6 text-primary-500" />
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Cost Variables</h2>
@@ -126,7 +126,7 @@ export default function CostCalculatorClient({ language }: { language: string })
               <div>
                 <label className="block font-semibold text-gray-700 dark:text-gray-200 mb-2">Mexico Skill Level (Fully Burdened $/hr)</label>
                 <select 
-                  className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500"
+                  className="w-full p-3 text-base md:text-sm rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500"
                   value={skillLevel}
                   onChange={(e) => setSkillLevel(Number(e.target.value))}
                 >
@@ -145,7 +145,7 @@ export default function CostCalculatorClient({ language }: { language: string })
                     type="number" 
                     value={usRate} 
                     onChange={(e) => setUsRate(Number(e.target.value))}
-                    className="w-full p-3 rounded-r-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500"
+                    className="w-full p-3 text-base md:text-sm rounded-r-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500"
                   />
                 </div>
               </div>
@@ -171,7 +171,7 @@ export default function CostCalculatorClient({ language }: { language: string })
               <div>
                 <label className="block font-semibold text-gray-700 dark:text-gray-200 mb-2">Industrial Region Lease Rate (NNN $/sqft)</label>
                 <select 
-                  className="w-full p-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500"
+                  className="w-full p-3 text-base md:text-sm rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500"
                   value={leaseRate}
                   onChange={(e) => setLeaseRate(Number(e.target.value))}
                 >
@@ -187,11 +187,11 @@ export default function CostCalculatorClient({ language }: { language: string })
 
           {/* Results Panel */}
           <div className="w-full lg:w-1/2 flex flex-col gap-6">
-            <div className="bg-primary-900 text-white rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+            <div className="bg-primary-900 text-white rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500 rounded-full blur-[80px] opacity-20 pointer-events-none -mx-24 -mt-24"></div>
               
               <h3 className="text-lg font-medium text-primary-200 mb-2">Estimated Annual Deficit / Savings</h3>
-              <div className="text-5xl font-black text-white mb-8 tracking-tight">
+              <div className="text-3xl sm:text-5xl font-black text-white mb-8 tracking-tight break-words">
                 {formatCurrency(annualTotalSavings)}
               </div>
 

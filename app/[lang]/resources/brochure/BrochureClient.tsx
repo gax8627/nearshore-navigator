@@ -74,7 +74,7 @@ export default function BrochureClient() {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
                                 <MapPin className="w-6 h-6 text-blue-600 mb-3" />
                                 <h4 className="font-bold text-sm mb-1">{t('brochure.proximity')}</h4>
@@ -124,7 +124,7 @@ export default function BrochureClient() {
                     </section>
 
                     {/* Team Spotlight */}
-                    <div className="bg-blue-900 text-white rounded-xl p-8 flex items-center justify-between">
+                    <div className="bg-blue-900 text-white rounded-xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
                          <div>
                             <span className="text-blue-300 text-xs font-bold uppercase tracking-wider mb-2 block">{t('brochure.leadershipTitle')}</span>
                             <h3 className="text-2xl font-bold mb-1">Denisse Martinez</h3>
@@ -146,7 +146,7 @@ export default function BrochureClient() {
 
                 {/* Footer */}
                 <div className="bg-gray-50 p-8 border-t border-gray-200 mt-auto">
-                     <div className="grid grid-cols-2 gap-8 text-sm">
+                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
                         <div>
                              <h5 className="font-bold text-gray-900 mb-2">{t('brochure.contact')}</h5>
                              <div className="flex items-center gap-2 text-gray-600 mb-1">

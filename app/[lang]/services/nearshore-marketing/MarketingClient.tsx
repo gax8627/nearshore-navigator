@@ -305,7 +305,7 @@ export default function MarketingClient() {
                         </p>
                     </div>
                     
-                    <div className="bg-gray-50 dark:bg-gray-800/30 p-8 md:p-10 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm">
+                    <div>
                         <LeadForm source="marketing_consultant_page" className="" />
                     </div>
                 </div>

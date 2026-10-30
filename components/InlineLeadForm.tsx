@@ -47,7 +47,7 @@ export const InlineLeadForm = () => {
     };
 
     return (
-        <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-100 dark:border-gray-700 relative overflow-hidden">
+        <div className="bg-white dark:bg-gray-800 rounded-3xl p-5 sm:p-8 md:p-12 shadow-2xl border border-gray-100 dark:border-gray-700 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary-500/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
             
             <AnimatePresence mode="wait">
@@ -83,7 +83,7 @@ export const InlineLeadForm = () => {
                                     placeholder={t('inlineForm.name')}
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
-                                    className="w-full pl-12 pr-4 py-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary-500 outline-none transition-all dark:text-white"
+                                    className="w-full pl-12 pr-4 py-4 text-base md:text-sm bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary-500 outline-none transition-all dark:text-white"
                                 />
                             </div>
                             <div className="relative">
@@ -94,7 +94,7 @@ export const InlineLeadForm = () => {
                                     placeholder={t('inlineForm.email')}
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="w-full pl-12 pr-4 py-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary-500 outline-none transition-all dark:text-white"
+                                    className="w-full pl-12 pr-4 py-4 text-base md:text-sm bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary-500 outline-none transition-all dark:text-white"
                                 />
                             </div>
                             <Button 
@@ -111,7 +111,7 @@ export const InlineLeadForm = () => {
                             <p className="text-red-500 text-sm mt-4 text-center">{t('inlineForm.error')}</p>
                         )}
                         
-                        <div className="mt-6 flex items-center justify-center gap-6 text-[10px] uppercase tracking-widest text-gray-400 font-bold">
+                        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[10px] uppercase tracking-widest text-gray-400 font-bold">
                             <div className="flex items-center gap-1.5">
                                 <div className="w-1 h-1 bg-green-500 rounded-full" />
                                 {t('inlineForm.nda')}

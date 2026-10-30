@@ -663,7 +663,7 @@ Confidential Advisor: Denisse Martinez, Principal Nearshore Advisor`;
                           : "bg-rose-50/50 dark:bg-rose-950/20 border-rose-300/70 dark:border-rose-900/60"
                       }`}
                     >
-                      <div className="flex items-start justify-between gap-4">
+                      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4">
                         <div className="space-y-1.5 flex-1">
                           <div className="flex flex-wrap items-center gap-2">
                             <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
@@ -1152,7 +1152,7 @@ Confidential Advisor: Denisse Martinez, Principal Nearshore Advisor`;
                 <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-800 text-xs sm:text-sm">
                   <thead className="bg-slate-50 dark:bg-slate-800/60">
                     <tr>
-                      <th scope="col" className="px-4 py-3 text-left font-bold text-slate-900 dark:text-white">Dimension</th>
+                      <th scope="col" className="sticky left-0 bg-slate-50 dark:bg-slate-800 z-20 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] px-4 py-3 text-left font-bold text-slate-900 dark:text-white">Dimension</th>
                       <th scope="col" className="px-4 py-3 text-left font-bold text-slate-900 dark:text-white">Modality A</th>
                       <th scope="col" className="px-4 py-3 text-left font-bold text-slate-900 dark:text-white">Modality AA</th>
                       <th scope="col" className="px-4 py-3 text-left font-bold text-slate-900 dark:text-white">Modality AAA</th>
@@ -1161,42 +1161,42 @@ Confidential Advisor: Denisse Martinez, Principal Nearshore Advisor`;
                   </thead>
                   <tbody className="divide-y divide-slate-200 dark:divide-slate-800 bg-white dark:bg-slate-900">
                     <tr>
-                      <td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">Certification Validity</td>
+                      <td className="sticky left-0 bg-white dark:bg-slate-900 z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] px-4 py-3 font-semibold text-slate-900 dark:text-white">Certification Validity</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">1 Year (Annual Renewal)</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">2 Years</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">3 Years (Premier Tier)</td>
                       <td className="px-4 py-3 text-rose-600 dark:text-rose-400 font-semibold">None (Prepayment Required)</td>
                     </tr>
                     <tr className="bg-slate-50/50 dark:bg-slate-800/30">
-                      <td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">16% VAT Credit Benefit</td>
+                      <td className="sticky left-0 bg-slate-50 dark:bg-slate-800 z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] px-4 py-3 font-semibold text-slate-900 dark:text-white">16% VAT Credit Benefit</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">100% Tax Credit</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">100% Tax Credit</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">100% Tax Credit</td>
                       <td className="px-4 py-3 text-rose-600 dark:text-rose-400 font-semibold">0% (16% Cash Paid at Border)</td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">Statutory Refund Window</td>
+                      <td className="sticky left-0 bg-white dark:bg-slate-900 z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] px-4 py-3 font-semibold text-slate-900 dark:text-white">Statutory Refund Window</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">20 Business Days</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">15 Business Days</td>
                       <td className="px-4 py-3 text-emerald-600 dark:text-emerald-400 font-bold">10 Business Days</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">180+ Days (Audit Scrutiny)</td>
                     </tr>
                     <tr className="bg-slate-50/50 dark:bg-slate-800/30">
-                      <td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">Minimum Headcount (IMSS)</td>
+                      <td className="sticky left-0 bg-slate-50 dark:bg-slate-800 z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] px-4 py-3 font-semibold text-slate-900 dark:text-white">Minimum Headcount (IMSS)</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">10+ Workers</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">50+ Workers</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">250+ Workers</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">N/A</td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">Fixed Assets / Machinery</td>
+                      <td className="sticky left-0 bg-white dark:bg-slate-900 z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] px-4 py-3 font-semibold text-slate-900 dark:text-white">Fixed Assets / Machinery</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">$10,000,000 MXN</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">$50,000,000 MXN</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">$100,000,000 MXN</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">N/A</td>
                     </tr>
                     <tr className="bg-slate-50/50 dark:bg-slate-800/30">
-                      <td className="px-4 py-3 font-semibold text-slate-900 dark:text-white">AGACE Audit Frequency</td>
+                      <td className="sticky left-0 bg-slate-50 dark:bg-slate-800 z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] px-4 py-3 font-semibold text-slate-900 dark:text-white">AGACE Audit Frequency</td>
                       <td className="px-4 py-3 text-amber-600 dark:text-amber-400 font-semibold">High (Annual Audit)</td>
                       <td className="px-4 py-3 text-slate-600 dark:text-slate-300">Moderate</td>
                       <td className="px-4 py-3 text-emerald-600 dark:text-emerald-400 font-semibold">Low (Continuous AI Exception Scan)</td>

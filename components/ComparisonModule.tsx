@@ -78,7 +78,7 @@ export const ComparisonModule = ({ type, selection }: ComparisonModuleProps) => 
                         <button
                             key={slug}
                             onClick={() => toggleHub(slug)}
-                            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${activeHubs.includes(slug) ? "bg-primary-500 text-white border-primary-400 shadow-lg shadow-primary-500/20" : "bg-gray-50 dark:bg-white/5 text-gray-500 border-gray-100 dark:border-white/10 hover:border-primary-500/50"}`}
+                            className={`px-3.5 py-2.5 min-h-[44px] inline-flex items-center rounded-lg text-xs sm:text-sm font-medium transition-all border ${activeHubs.includes(slug) ? "bg-primary-500 text-white border-primary-400 shadow-lg shadow-primary-500/20" : "bg-gray-50 dark:bg-white/5 text-gray-500 border-gray-100 dark:border-white/10 hover:border-primary-500/50"}`}
                         >
                             {slug.charAt(0).toUpperCase() + slug.slice(1)}
                         </button>
@@ -89,7 +89,7 @@ export const ComparisonModule = ({ type, selection }: ComparisonModuleProps) => 
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <AnimatePresence mode="popLayout">
                         {hubs.map((hub) => (
                             <motion.div 

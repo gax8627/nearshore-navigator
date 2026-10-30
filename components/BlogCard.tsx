@@ -43,7 +43,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-60 group-hover/card:opacity-40 transition-opacity duration-500" />
                 </div>
 
-                <div className="p-8 flex flex-col flex-grow">
+                <div className="p-5 sm:p-8 flex flex-col flex-grow">
                     <div className="flex flex-wrap gap-2 mb-4">
                         {tags.slice(0, 3).map((tag) => (
                             <span key={tag} className="text-[10px] uppercase tracking-wider font-bold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/40 px-3 py-1.5 rounded-full border border-primary-100/50 dark:border-primary-800/30">
@@ -60,7 +60,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
                         {excerpt}
                     </p>
 
-                    <div className="mt-auto pt-6 border-t border-gray-100 dark:border-gray-800/50 flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
+                    <div className="mt-auto pt-6 border-t border-gray-100 dark:border-gray-800/50 flex flex-wrap justify-between items-center gap-2 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                         <span className="flex items-center gap-2 font-medium">
                             <span>{post.date}</span>
                             <span className="text-gray-300 dark:text-gray-600">&bull;</span>

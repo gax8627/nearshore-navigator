@@ -32,17 +32,57 @@ export default function DenisseBioClient() {
               />
             </div>
             
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3">
+              <a 
+                href="https://calendly.com/denisse-nearshorenavigator/30min?utm_source=denisse_bio&utm_campaign=direct_profile" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'click_calendly', {
+                      event_category: 'lead_generation',
+                      event_label: 'denisse_bio_primary',
+                    });
+                  }
+                }}
+              >
+                <Button className="w-full text-center py-4 bg-primary-600 hover:bg-primary-500 text-white font-bold shadow-lg shadow-primary-900/30">
+                  Schedule Strategy Session
+                </Button>
+              </a>
+
+              <a 
+                href="https://wa.me/526641237199?text=Hello%20Denisse,%20I%20am%20inquiring%20about%20industrial%20nearshoring%20in%20Mexico." 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'click_whatsapp', {
+                      event_category: 'lead_generation',
+                      event_label: 'denisse_bio_whatsapp',
+                    });
+                  }
+                }}
+              >
+                <Button variant="outline" className="w-full text-center py-3.5 border-emerald-500 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/20 font-semibold text-sm flex items-center justify-center gap-2">
+                  <span>Chat on WhatsApp</span>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 font-bold">Discreet</span>
+                </Button>
+              </a>
+
               <a href="https://www.linkedin.com/in/denissemartinez" target="_blank" rel="noopener noreferrer">
-                <Button className="w-full text-center py-4 bg-[#0077b5] hover:bg-[#005582] text-white">
+                <Button className="w-full text-center py-3 bg-[#0077b5] hover:bg-[#005582] text-white text-xs font-semibold">
                   {t('bio_denisse.linkedin_cta')}
                 </Button>
               </a>
-              <a href="https://wa.me/526641237199" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="w-full text-center py-4 border-primary-500 text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20">
-                  {t('bio_denisse.whatsapp_cta')}
-                </Button>
-              </a>
+            </div>
+
+            {/* APAC & Global Timezone Note */}
+            <div className="bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 text-center text-xs text-slate-600 dark:text-slate-300">
+              <span className="font-bold text-slate-900 dark:text-white flex items-center justify-center gap-1.5 mb-1">
+                <span>🌏</span> Global & APAC Friendly
+              </span>
+              <span>Evening video briefings and asynchronous WhatsApp consultations available for Singapore (SGT), China (CST), Japan (JST) & Europe.</span>
             </div>
 
             {/* Reviewed-By Trust Badge */}
@@ -71,7 +111,7 @@ export default function DenisseBioClient() {
             </blockquote>
 
             {/* Credentials Grid */}
-            <section className="grid grid-cols-2 gap-4">
+            <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {credentials.map((cred, i) => (
                 <div key={i} className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl p-4 flex items-start gap-3 shadow-sm hover:shadow-md transition-shadow">
                   <div className="bg-primary-50 dark:bg-primary-900/30 rounded-lg p-2 flex-shrink-0">

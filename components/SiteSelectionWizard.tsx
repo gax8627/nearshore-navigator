@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
     Factory, 
@@ -8,16 +9,19 @@ import {
     Navigation, 
     Users, 
     ChevronRight, 
+    ArrowLeft,
     RotateCcw,
     CheckCircle2,
     ShieldCheck
 } from "lucide-react";
 import { INDUSTRY_MATRIX } from "@/app/constants/city-industry-matrix";
 import { INDUSTRY_VERTICALS } from "@/app/constants/industry-taxonomy";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 type Step = "industry" | "priority" | "scale" | "result";
 
 export function SiteSelectionWizard() {
+    const { language } = useLanguage();
     const [step, setStep] = useState<Step>("industry");
     const [selections, setSelections] = useState({
         industry: "",
@@ -48,6 +52,12 @@ export function SiteSelectionWizard() {
         setStep("result");
     };
 
+    const handleBack = () => {
+        if (step === "priority") setStep("industry");
+        else if (step === "scale") setStep("priority");
+        else if (step === "result") setStep("scale");
+    };
+
     const reset = () => setStep("industry");
 
     // Simple Recommendation Logic
@@ -63,7 +73,17 @@ export function SiteSelectionWizard() {
     };
 
     return (
-        <div className="relative w-full max-w-4xl mx-auto p-8 rounded-2xl bg-white/5 dark:bg-gray-900/50 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden">
+        <div className="relative w-full max-w-4xl mx-auto p-5 sm:p-8 rounded-2xl bg-white/5 dark:bg-gray-900/50 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden">
+            {step !== "industry" && (
+                <button
+                    onClick={handleBack}
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-gray-400 hover:text-white transition-colors mb-4 group cursor-pointer"
+                    aria-label="Back to previous step"
+                >
+                    <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                    <span>Back</span>
+                </button>
+            )}
             <AnimatePresence mode="wait">
                 {step === "industry" && (
                     <motion.div 
@@ -115,7 +135,7 @@ export function SiteSelectionWizard() {
                                     onClick={() => handleSelectPriority(p.id)}
                                     className="flex items-center p-6 text-left rounded-xl bg-white/5 border border-white/10 hover:border-primary-500 hover:bg-primary-500/10 transition-all group"
                                 >
-                                    <div className="p-4 bg-primary-500/20 rounded-lg text-primary-400 mr-6">
+                                    <div className="p-4 bg-primary-500/20 rounded-lg text-primary-400 mr-3 sm:mr-6">
                                         <p.icon className="w-6 h-6" />
                                     </div>
                                     <div>
@@ -191,9 +211,12 @@ export function SiteSelectionWizard() {
                                             <span className="text-white font-mono">{(rec as any).vacancyRate}%</span>
                                         </div>
                                     </div>
-                                    <button className="w-full mt-6 py-3 px-4 bg-primary-600 hover:bg-primary-500 text-white font-bold rounded-lg transition-colors text-sm uppercase tracking-wider">
+                                    <Link 
+                                        href={`/${language}/locations/${rec.citySlug}`}
+                                        className="block text-center w-full mt-6 py-3 px-4 bg-primary-600 hover:bg-primary-500 text-white font-bold rounded-lg transition-colors text-sm uppercase tracking-wider"
+                                    >
                                         View Hub Blueprint
-                                    </button>
+                                    </Link>
                                 </div>
                             ))}
                         </div>

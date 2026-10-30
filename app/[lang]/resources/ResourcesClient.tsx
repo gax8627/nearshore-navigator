@@ -67,7 +67,7 @@ export default function ResourcesClient() {
     return (
         <div className="pb-20">
             {/* Hero */}
-            <section className="relative h-[40vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-gray-900 text-white">
+            <section className="relative min-h-[400px] py-20 md:py-0 md:h-[40vh] flex items-center justify-center overflow-hidden bg-gray-900 text-white">
                  <div className="absolute inset-0 z-0 opacity-100">
                     <Image
                         src="/images/industrial-park-hero.jpg"
@@ -97,7 +97,7 @@ export default function ResourcesClient() {
             </section>
 
             {/* Resources Grid */}
-            <div className="container mx-auto px-4 -mt-24 relative z-20">
+            <div className="container mx-auto px-4 -mt-12 md:-mt-24 relative z-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {resources.map((resource, index) => (
                         <motion.div

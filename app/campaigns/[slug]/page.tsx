@@ -68,22 +68,22 @@ export default function CampaignLandingPage({ params }: { params: { slug: string
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm mb-1 text-teal-100">Full Name</label>
-                  <input type="text" name="name" required className="w-full px-4 py-2 rounded-md bg-white/90 text-black border-0 focus:ring-2 focus:ring-teal-400" placeholder="John Doe" />
+                  <input type="text" name="name" required className="w-full px-4 py-2 text-base md:text-sm rounded-md bg-white/90 text-black border-0 focus:ring-2 focus:ring-teal-400" placeholder="John Doe" />
                 </div>
                 <div>
                   <label className="block text-sm mb-1 text-teal-100">Work Email</label>
-                  <input type="email" name="email" required className="w-full px-4 py-2 rounded-md bg-white/90 text-black border-0 focus:ring-2 focus:ring-teal-400" placeholder="john@company.com" />
+                  <input type="email" name="email" required className="w-full px-4 py-2 text-base md:text-sm rounded-md bg-white/90 text-black border-0 focus:ring-2 focus:ring-teal-400" placeholder="john@company.com" />
                 </div>
               </div>
               
               <div>
                 <label className="block text-sm mb-1 text-teal-100">Company</label>
-                <input type="text" name="company" className="w-full px-4 py-2 rounded-md bg-white/90 text-black border-0 focus:ring-2 focus:ring-teal-400" placeholder="Company Name" />
+                <input type="text" name="company" className="w-full px-4 py-2 text-base md:text-sm rounded-md bg-white/90 text-black border-0 focus:ring-2 focus:ring-teal-400" placeholder="Company Name" />
               </div>
 
               <div>
                 <label className="block text-sm mb-1 text-teal-100">What are you looking to manufacture?</label>
-                <textarea name="message" rows={3} className="w-full px-4 py-2 rounded-md bg-white/90 text-black border-0 focus:ring-2 focus:ring-teal-400" placeholder="Tell us about your project..."></textarea>
+                <textarea name="message" rows={3} className="w-full px-4 py-2 text-base md:text-sm rounded-md bg-white/90 text-black border-0 focus:ring-2 focus:ring-teal-400" placeholder="Tell us about your project..."></textarea>
               </div>
               
               <button type="submit" className="w-full bg-teal-500 hover:bg-teal-400 text-white font-bold py-3 px-6 rounded-md transition-colors text-lg">

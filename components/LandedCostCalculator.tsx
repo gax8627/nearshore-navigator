@@ -18,10 +18,10 @@ export function LandedCostCalculator() {
   const savingsPercent = (savings / usAnnual) * 100;
 
   return (
-    <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-200">
+    <div className="bg-white rounded-3xl sm:rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-200">
       <div className="grid lg:grid-cols-2">
         {/* Left: Inputs */}
-        <div className="p-12 lg:p-16 bg-slate-50 border-r border-slate-200">
+        <div className="p-6 sm:p-8 lg:p-16 bg-slate-50 border-r border-slate-200">
           <h2 className="text-3xl font-bold text-slate-900 mb-2">{t('tijuanaMasterGuide.calculator.title')}</h2>
           <p className="text-slate-500 mb-10 font-light italic">{t('tijuanaMasterGuide.calculator.subtitle')}</p>
           
@@ -71,7 +71,7 @@ export function LandedCostCalculator() {
         </div>
 
         {/* Right: Results */}
-        <div className="p-12 lg:p-16 bg-white flex flex-col justify-center">
+        <div className="p-6 sm:p-8 lg:p-16 bg-white flex flex-col justify-center">
           <div className="space-y-12">
             <div>
               <p className="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-4">{t('tijuanaMasterGuide.calculator.label_savings')}</p>
@@ -79,13 +79,13 @@ export function LandedCostCalculator() {
                 key={savings}
                 initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                className="text-6xl lg:text-7xl font-black text-sky-600 tracking-tighter"
+                className="text-4xl sm:text-5xl lg:text-7xl break-words font-black text-sky-600 tracking-tighter"
               >
                 ${(savings / 1000000).toFixed(2)}M
               </motion.div>
             </div>
 
-            <div className="grid grid-cols-2 gap-8 pt-12 border-t border-slate-100">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-8 sm:pt-12 border-t border-slate-100">
               <div>
                 <p className="text-xs font-bold text-slate-400 uppercase mb-2">{t('tijuanaMasterGuide.calculator.label_reduction')}</p>
                 <p className="text-3xl font-bold text-slate-900">{savingsPercent.toFixed(0)}%</p>

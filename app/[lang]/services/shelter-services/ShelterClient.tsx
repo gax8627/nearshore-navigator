@@ -871,13 +871,11 @@ export default function ShelterClient() {
 
         {/* Section 8: Lead Intake Form Section */}
         <section className="max-w-4xl mx-auto pt-4">
-          <div className="bg-gradient-to-b from-gray-900 to-gray-950 border border-gray-800 rounded-3xl p-6 md:p-10 shadow-2xl">
-            <LeadForm
-              title="Schedule Your Shelter Feasibility Assessment"
-              subtitle="Get an unbundled cost breakdown, facility shortlist, and IMMEX roadmap for your manufacturing project."
-              source="shelter-services-landing-page"
-            />
-          </div>
+          <LeadForm
+            title="Schedule Your Shelter Feasibility Assessment"
+            subtitle="Get an unbundled cost breakdown, facility shortlist, and IMMEX roadmap for your manufacturing project."
+            source="shelter-services-landing-page"
+          />
         </section>
 
         {/* Founder Advisory Credential Block */}

@@ -1,4 +1,5 @@
 import { Inter, Space_Grotesk } from 'next/font/google';
+import type { Viewport } from 'next';
 import './globals.css';
 import { Providers } from '@/components/providers';
 import Script from 'next/script';
@@ -7,6 +8,12 @@ import { AnalyticsTracker } from '@/components/AnalyticsTracker';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' });
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+};
 
 export const metadata = {
   title: 'Nearshore Navigator',

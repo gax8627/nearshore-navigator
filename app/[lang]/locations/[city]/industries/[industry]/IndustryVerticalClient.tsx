@@ -151,29 +151,29 @@ export default function IndustryVerticalClient({ city, industry }: Props) {
 
       {/* Industrial Intelligence Grid */}
       <section className="container mx-auto px-4 -mt-16 relative z-20 mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6 border border-gray-100 dark:border-gray-700">
                 <div className="flex items-center gap-3 mb-4">
                     <Building2 className="w-5 h-5 text-primary-500" />
                     <span className="text-xs font-bold uppercase text-gray-400">{t('industries.activePlants')}</span>
                 </div>
                 <div className="text-3xl font-bold text-gray-900 dark:text-white">{matrixEntry.stats.plants}</div>
             </div>
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6 border border-gray-100 dark:border-gray-700">
                 <div className="flex items-center gap-3 mb-4">
                     <Users2 className="w-5 h-5 text-primary-500" />
                     <span className="text-xs font-bold uppercase text-gray-400">{t('industries.specializedTalent')}</span>
                 </div>
                 <div className="text-3xl font-bold text-gray-900 dark:text-white">{matrixEntry.stats.workforce}</div>
             </div>
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6 border border-gray-100 dark:border-gray-700">
                 <div className="flex items-center gap-3 mb-4">
                     <TrendingUp className="w-5 h-5 text-primary-500" />
                     <span className="text-xs font-bold uppercase text-gray-400">{t(`industries.${industry}.avgLaborRate`)}</span>
                 </div>
                 <div className="text-2xl font-bold text-gray-900 dark:text-white">{vertical.metrics.avgLaborRate}</div>
             </div>
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6 border border-gray-100 dark:border-gray-700">
                 <div className="flex items-center gap-3 mb-4">
                     <Award className="w-5 h-5 text-primary-500" />
                     <span className="text-xs font-bold uppercase text-gray-400">{t(`industries.${industry}.certEase`)}</span>

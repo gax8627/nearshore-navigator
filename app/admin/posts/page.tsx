@@ -109,67 +109,69 @@ export default function PostsListPage() {
             </Link>
           </div>
         ) : (
-          <table itemScope itemType="https://schema.org/Table" className="w-full">
-            <thead>
-              <tr className="border-b border-gray-800 text-left">
-                <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Title</th>
-                <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Category</th>
-                <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Status</th>
-                <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Date</th>
-                <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-right">Actions</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-800">
-              {posts.map((post) => (
-                <tr key={post.id} className="hover:bg-gray-800/50 transition-colors">
-                  <td className="px-6 py-4">
-                    <p className="text-sm font-medium text-white">{post.title}</p>
-                    <p className="text-xs text-gray-500 mt-1 truncate max-w-xs">{post.excerpt}</p>
-                  </td>
-                  <td className="px-6 py-4">
-                    <span className="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded-full">
-                      {post.category}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4">
-                    <button
-                      onClick={() => togglePublish(post.id, post.published)}
-                      className={`flex items-center gap-1.5 text-xs px-2 py-1 rounded-full transition-colors ${
-                        post.published
-                          ? "bg-green-500/20 text-green-400 hover:bg-green-500/30"
-                          : "bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30"
-                      }`}
-                    >
-                      {post.published ? (
-                        <><Eye className="w-3 h-3" /> Published</>
-                      ) : (
-                        <><EyeOff className="w-3 h-3" /> Draft</>
-                      )}
-                    </button>
-                  </td>
-                  <td className="px-6 py-4 text-xs text-gray-500">
-                    {new Date(post.createdAt).toLocaleDateString()}
-                  </td>
-                  <td className="px-6 py-4 text-right">
-                    <div className="flex items-center justify-end gap-2">
-                      <Link
-                        href={`/admin/posts/${post.id}`}
-                        className="p-1.5 text-gray-500 hover:text-white rounded transition-colors"
-                      >
-                        <Edit className="w-4 h-4" />
-                      </Link>
-                      <button
-                        onClick={() => handleDelete(post.id)}
-                        className="p-1.5 text-gray-500 hover:text-red-400 rounded transition-colors"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </td>
+          <div className="overflow-x-auto w-full">
+            <table itemScope itemType="https://schema.org/Table" className="w-full min-w-[600px]">
+              <thead>
+                <tr className="border-b border-gray-800 text-left">
+                  <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Title</th>
+                  <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Category</th>
+                  <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Status</th>
+                  <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase">Date</th>
+                  <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-right">Actions</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="divide-y divide-gray-800">
+                {posts.map((post) => (
+                  <tr key={post.id} className="hover:bg-gray-800/50 transition-colors">
+                    <td className="px-6 py-4">
+                      <p className="text-sm font-medium text-white">{post.title}</p>
+                      <p className="text-xs text-gray-500 mt-1 truncate max-w-xs">{post.excerpt}</p>
+                    </td>
+                    <td className="px-6 py-4">
+                      <span className="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded-full">
+                        {post.category}
+                      </span>
+                    </td>
+                    <td className="px-6 py-4">
+                      <button
+                        onClick={() => togglePublish(post.id, post.published)}
+                        className={`flex items-center gap-1.5 text-xs px-2 py-1 rounded-full transition-colors ${
+                          post.published
+                            ? "bg-green-500/20 text-green-400 hover:bg-green-500/30"
+                            : "bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30"
+                        }`}
+                      >
+                        {post.published ? (
+                          <><Eye className="w-3 h-3" /> Published</>
+                        ) : (
+                          <><EyeOff className="w-3 h-3" /> Draft</>
+                        )}
+                      </button>
+                    </td>
+                    <td className="px-6 py-4 text-xs text-gray-500">
+                      {new Date(post.createdAt).toLocaleDateString()}
+                    </td>
+                    <td className="px-6 py-4 text-right">
+                      <div className="flex items-center justify-end gap-2">
+                        <Link
+                          href={`/admin/posts/${post.id}`}
+                          className="p-1.5 text-gray-500 hover:text-white rounded transition-colors"
+                        >
+                          <Edit className="w-4 h-4" />
+                        </Link>
+                        <button
+                          onClick={() => handleDelete(post.id)}
+                          className="p-1.5 text-gray-500 hover:text-red-400 rounded transition-colors"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
       </div>
     </div>

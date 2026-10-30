@@ -116,7 +116,7 @@ export default function Section321Client() {
                     </div>
 
                     <aside className="lg:col-span-1">
-                        <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 sticky top-24">
+                        <div className="sticky top-24">
                             <LeadForm 
                                 title={t('s321.formTitle')} 
                                 subtitle={t('s321.formSubtitle')} 

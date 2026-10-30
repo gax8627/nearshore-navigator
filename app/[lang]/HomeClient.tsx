@@ -265,7 +265,7 @@ export default function HomeClient() {
       </section>
 
       {/* Vetted Partners Certifications */}
-      <section className="bg-gray-50/50 dark:bg-gray-900/40 py-16 rounded-3xl border border-gray-100 dark:border-gray-800 mx-4 md:mx-auto container mt-12 mb-12 shadow-sm">
+      <section className="bg-gray-50/50 dark:bg-gray-900/40 py-16 rounded-3xl border border-gray-100 dark:border-gray-800 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 mb-12 shadow-sm">
         <div className="px-4 text-center">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
             {t('partners.title')}
@@ -328,41 +328,32 @@ export default function HomeClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, staggerChildren: 0.1 }}
-            className="flex flex-wrap justify-center gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          <div className="w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] xl:w-[calc(20%-1.5rem)] min-w-[300px] flex-grow xl:flex-grow-0">
-            <ServiceCard
-              title={t('services.real_estate')}
-              description={t('services.real_estate_desc')}
-              href={`/${language}/services/industrial-real-estate-baja`}
-              icon={<Warehouse className="w-6 h-6" />}
-            />
-          </div>
-
-          <div className="w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] xl:w-[calc(20%-1.5rem)] min-w-[300px] flex-grow xl:flex-grow-0">
-            <ServiceCard
-              title={t('services.contract')}
-              description={t('services.contract_desc')}
-              href={`/${language}/services/contract-manufacturing-tijuana`}
-              icon={<Cog className="w-6 h-6" />}
-            />
-          </div>
-          <div className="w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] xl:w-[calc(20%-1.5rem)] min-w-[300px] flex-grow xl:flex-grow-0">
-            <ServiceCard
-              title={t('services.logistics')}
-              description={t('services.logistics_desc')}
-              href={`/${language}/services/distribution-centers-tijuana`}
-              icon={<Truck className="w-6 h-6" />}
-            />
-          </div>
-          <div className="w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] xl:w-[calc(20%-1.5rem)] min-w-[300px] flex-grow xl:flex-grow-0">
-            <ServiceCard
-              title={t('services.call_center')}
-              description={t('services.call_center_desc')}
-              href={`/${language}/services/call-center-tijuana`}
-              icon={<Headset className="w-6 h-6" />}
-            />
-          </div>
+          <ServiceCard
+            title={t('services.real_estate')}
+            description={t('services.real_estate_desc')}
+            href={`/${language}/services/industrial-real-estate-baja`}
+            icon={<Warehouse className="w-6 h-6" />}
+          />
+          <ServiceCard
+            title={t('services.contract')}
+            description={t('services.contract_desc')}
+            href={`/${language}/services/contract-manufacturing-tijuana`}
+            icon={<Cog className="w-6 h-6" />}
+          />
+          <ServiceCard
+            title={t('services.logistics')}
+            description={t('services.logistics_desc')}
+            href={`/${language}/services/distribution-centers-tijuana`}
+            icon={<Truck className="w-6 h-6" />}
+          />
+          <ServiceCard
+            title={t('services.call_center')}
+            description={t('services.call_center_desc')}
+            href={`/${language}/services/call-center-tijuana`}
+            icon={<Headset className="w-6 h-6" />}
+          />
         </motion.div>
       </section>
 
@@ -373,7 +364,7 @@ export default function HomeClient() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7 }}
-          className="bg-gradient-to-br from-gray-50 to-blue-50/50 dark:from-gray-900/80 dark:to-blue-900/20 rounded-3xl p-10 md:p-14 border border-gray-100 dark:border-gray-800 shadow-sm"
+          className="bg-gradient-to-br from-gray-50 to-blue-50/50 dark:from-gray-900/80 dark:to-blue-900/20 rounded-3xl p-5 sm:p-8 md:p-14 border border-gray-100 dark:border-gray-800 shadow-sm"
         >
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
@@ -384,7 +375,7 @@ export default function HomeClient() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
             {[
               { cert: "ISO 9001", label: t('partners.iso9001') },
               { cert: "ISO 13485", label: t('partners.iso13485') },
@@ -397,7 +388,7 @@ export default function HomeClient() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.4 }}
-                className="bg-white dark:bg-gray-800 rounded-2xl p-6 text-center border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg hover:border-primary-300 dark:hover:border-primary-700 transition-all duration-300"
+                className="bg-white dark:bg-gray-800 rounded-2xl p-3 sm:p-6 text-center border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg hover:border-primary-300 dark:hover:border-primary-700 transition-all duration-300"
               >
                 <p className="font-bold text-lg text-primary-700 dark:text-primary-400">{item.cert}</p>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">{item.label}</p>

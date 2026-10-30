@@ -48,7 +48,7 @@ export default function ResourceMapClient() {
     return (
         <div className="pb-20 overflow-hidden">
             {/* Hero Section */}
-            <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+            <section className="relative min-h-[50vh] py-20 md:py-0 md:h-[60vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&q=80&w=2500"
@@ -71,7 +71,7 @@ export default function ResourceMapClient() {
                 </div>
             </section>
 
-            <div className="container mx-auto px-4 -mt-24 relative z-20">
+            <div className="container mx-auto px-4 -mt-12 md:-mt-24 relative z-20">
                 <div className="max-w-5xl mx-auto">
                     <div className="glass-card overflow-hidden border border-gray-100 dark:border-gray-800 shadow-2xl">
                         <div className="grid grid-cols-1 md:grid-cols-2">
@@ -103,11 +103,11 @@ export default function ResourceMapClient() {
                                             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{t('resourceMap.formTitle')}</h3>
                                             <div>
                                                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{t('resourceMap.formName')}</label>
-                                                <input required type="text" className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 outline-none transition-colors" placeholder="Jane Smith" />
+                                                <input required type="text" className="w-full px-4 py-2 text-base md:text-sm rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 outline-none transition-colors" placeholder="Jane Smith" />
                                             </div>
                                             <div>
                                                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{t('resourceMap.formEmail')}</label>
-                                                <input required type="email" className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 outline-none transition-colors" placeholder="jane@company.com" />
+                                                <input required type="email" className="w-full px-4 py-2 text-base md:text-sm rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 outline-none transition-colors" placeholder="jane@company.com" />
                                             </div>
                                             <Button className="w-full" size="lg">{t('resourceMap.formButton')}</Button>
                                         </form>

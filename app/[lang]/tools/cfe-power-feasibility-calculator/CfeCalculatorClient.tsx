@@ -338,7 +338,7 @@ export default function CfeCalculatorClient({ lang }: { lang: string }) {
                   const m = SUBMARKETS.find((sub) => sub.id === e.target.value);
                   if (m) setRentInput(m.avgRent);
                 }}
-                className="w-full bg-slate-50 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-3 text-sm font-medium text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:outline-none"
+                className="w-full bg-slate-50 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-3 text-base md:text-sm font-medium text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:outline-none"
               >
                 {SUBMARKETS.map((m) => (
                   <option key={m.id} value={m.id}>
@@ -534,7 +534,7 @@ export default function CfeCalculatorClient({ lang }: { lang: string }) {
                   {targetCommissioningMonths} Months
                 </span>
               </div>
-              <div className="grid grid-cols-6 gap-2">
+              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
                 {[3, 6, 9, 12, 18, 24].map((mo) => (
                   <button
                     key={mo}

@@ -6,10 +6,12 @@ import { LanguageProvider } from '@/app/context/LanguageContext'
 import { ThemeProvider } from '@/app/context/ThemeContext'
 import { SchemaMarkup } from '@/components/SchemaMarkup'
 import { AIConsultant } from '@/components/AIConsultant'
+import WhatsAppButton from '@/app/components/WhatsAppButton'
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  viewportFit: 'cover',
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
     { media: '(prefers-color-scheme: dark)', color: '#030712' },
@@ -82,6 +84,7 @@ export default async function LangLayout({
           </main>
           <Footer />
           <AIConsultant />
+          <WhatsAppButton />
         </div>
       </ThemeProvider>
     </LanguageProvider>

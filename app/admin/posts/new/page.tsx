@@ -88,15 +88,15 @@ export default function NewPostPage() {
   };
 
   return (
-    <div className="flex gap-8 items-start">
+    <div className="flex flex-col lg:flex-row gap-8 items-start">
       {/* Main Content */}
-      <div className="flex-1 max-w-4xl">
-        <div className="flex items-center justify-between mb-8">
+      <div className="flex-1 w-full max-w-4xl">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <div>
                 <h1 className="text-3xl font-bold text-white mb-2">New Blog Post</h1>
                 <p className="text-slate-400">Create compelling content for your audience</p>
             </div>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
                 <button
                     type="button"
                     onClick={() => setShowAiModal(true)}
@@ -134,7 +134,7 @@ export default function NewPostPage() {
                 />
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Slug */}
                 <div>
                     <label className="block text-sm font-medium text-slate-300 mb-2">Slug</label>
@@ -188,7 +188,7 @@ export default function NewPostPage() {
       </div>
 
       {/* SEO Sidebar */}
-      <div className="w-80 shrink-0">
+      <div className="w-full lg:w-80 shrink-0">
          <SeoSidebar title={post.title} excerpt={post.excerpt} content={post.content} slug={post.slug} />
       </div>
 

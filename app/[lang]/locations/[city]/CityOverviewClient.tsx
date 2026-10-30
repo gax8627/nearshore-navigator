@@ -96,7 +96,7 @@ export default function CityOverviewClient({ city }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] py-24 md:py-0 md:h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src={location.image}
@@ -149,25 +149,48 @@ export default function CityOverviewClient({ city }: Props) {
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 Manufacturing in <span className="text-primary-500">{t(`locations.${city}.name`) || location.name}</span>
             </h1>
-            <p className="text-xl text-gray-200 max-w-2xl mx-auto mb-10">
+            <p className="text-xl text-gray-200 max-w-2xl mx-auto mb-8">
                 {t(`locations.${city}.description`) || location.description}
             </p>
-            {city === 'tijuana' && (
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Link href={`/${language}/contact?source=tijuana_shortlist`}>
-                        <Button 
-                            size="lg" 
-                            className="bg-primary-600 hover:bg-primary-500 text-white shadow-xl shadow-primary-900/20 px-8"
-                        >
-                            {t('cityOverview.getShortlist')}
-                        </Button>
-                    </Link>
-                    <div className="flex items-center gap-2 text-white/60 text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-primary-500" />
-                        {t('cityOverview.capacityReport')}
-                    </div>
-                </div>
-            )}
+
+            {/* Universal Hero Call to Action Bar */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-lg mx-auto">
+                <a
+                    href={`https://calendly.com/denisse-nearshorenavigator/30min?utm_source=city_hero&utm_campaign=${city}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto inline-block"
+                    onClick={() => {
+                        if (typeof window !== 'undefined' && (window as any).gtag) {
+                            (window as any).gtag('event', 'click_calendly', {
+                                event_category: 'lead_generation',
+                                event_label: `city_hero_${city}`,
+                            });
+                        }
+                    }}
+                >
+                    <Button 
+                        size="lg" 
+                        className="w-full sm:w-auto bg-primary-600 hover:bg-primary-500 text-white shadow-xl shadow-primary-900/30 px-8 py-3.5 font-bold text-base flex items-center justify-center gap-2 group transition-all"
+                    >
+                        <span>{t('cityOverview.getShortlist') || "Get Vetted Shortlist"}</span>
+                        <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                </a>
+                <Link href={`/${language}/tools/cost-calculator`} className="w-full sm:w-auto">
+                    <Button
+                        size="lg"
+                        variant="secondary"
+                        className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/25 px-6 py-3.5 backdrop-blur-md font-semibold text-sm transition-all"
+                    >
+                        {t('cityOverview.btnCalculate') || "Calculate Landed Cost"}
+                    </Button>
+                </Link>
+            </div>
+            <div className="flex items-center justify-center gap-2 text-white/70 text-xs sm:text-sm mt-4">
+                <CheckCircle2 className="w-4 h-4 text-primary-400" />
+                <span>{t('cityOverview.capacityReport') || "2026 Capacity & Labor Report Included"} • 100% Confidential</span>
+            </div>
         </div>
       </section>
 
@@ -354,12 +377,22 @@ export default function CityOverviewClient({ city }: Props) {
                       {t('cityOverview.savingsDesc')} {location.name}.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 items-center">
-                      <Link 
-                        href={`/${language}/contact`}
+                      <a 
+                        href={`https://calendly.com/denisse-nearshorenavigator/30min?utm_source=city_bottom_cta&utm_campaign=${city}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="w-full sm:w-auto px-8 py-4 rounded-md bg-white text-sky-900 font-bold hover:bg-sky-50 transition-colors shadow-lg text-center"
+                        onClick={() => {
+                            if (typeof window !== 'undefined' && (window as any).gtag) {
+                                (window as any).gtag('event', 'click_calendly', {
+                                    event_category: 'lead_generation',
+                                    event_label: `city_bottom_cta_${city}`,
+                                });
+                            }
+                        }}
                       >
-                        {t('cityOverview.btnCalculate')}
-                      </Link>
+                        {t('cityOverview.btnCalculate') || "Book 1-on-1 Strategy Session"}
+                      </a>
                       <p className="text-sm text-sky-200 flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-sky-400" />
                         {t('cityOverview.zeroObligation')}

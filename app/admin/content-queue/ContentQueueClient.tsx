@@ -42,7 +42,7 @@ export default function ContentQueueClient({ initialDrafts }: { initialDrafts: a
                     {draft.content}
                   </div>
 
-                  <div className="flex items-center space-x-3">
+                  <div className="flex flex-wrap items-center gap-3">
                     {draft.status === 'pending' ? (
                         <>
                             <button className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded font-medium transition-colors text-sm flex items-center">
