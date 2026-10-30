@@ -480,4 +480,4 @@ Whether your executive team is shortlisting industrial parks across Monterrey, S
 * **Model Your Electrical Exposure:** Calculate substation CapEx and grid lead times with our [CFE Power Feasibility & KVA Cost Estimator](/en/tools/cfe-power-feasibility-calculator).
 * **Corporate Shelter Due Diligence:** Avoid shared compliance liabilities by reviewing our [CFO Due Diligence Guide for Mexico Shelter Companies](/insights/cfo-mexico-shelter-company-due-diligence-audit-markups-liability).
 * **Customs & Trade Architecture:** Verify duty-free import parameters with our [IMMEX & CIVA Compliance Playbook](/insights/immex-civa-certification-anexo-24-30-audit-defense-monitoring-playbook).
-* **Schedule an Executive Consultation:** Connect directly with [Denisse Martinez](/about/denisse-martinez) and our site selection engineering practice to audit your target industrial park shortlist.
+* **Schedule an Executive Consultation:** Connect directly with [Denisse Martinez](https://calendly.com/denisse-nearshorenavigator/30min) and our site selection engineering practice to audit your target industrial park shortlist.

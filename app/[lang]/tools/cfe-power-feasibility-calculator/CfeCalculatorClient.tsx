@@ -659,7 +659,7 @@ export default function CfeCalculatorClient({ lang }: { lang: string }) {
               {/* CTA Booking Form Hook */}
               <div className="pt-2">
                 <a
-                  href={`https://calendly.com/nearshorenavigator/30min?utm_source=cfe_calculator&utm_campaign=power_feasibility_risk&submarket=${selectedMarket.id}&kva=${kvaDemand}&sqft=${facilitySqFt}`}
+                  href={`https://calendly.com/denisse-nearshorenavigator/30min?utm_source=cfe_calculator&utm_campaign=power_feasibility_risk&submarket=${selectedMarket.id}&kva=${kvaDemand}&sqft=${facilitySqFt}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-bold text-sm bg-primary-600 hover:bg-primary-700 text-white shadow-md transition-all"
