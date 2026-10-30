@@ -128,6 +128,7 @@ Website: https://nearshorenavigator.com
 
 ## Tools
 
+- [CFE Industrial Power Feasibility & KVA Cost Estimator](https://nearshorenavigator.com/en/tools/cfe-power-feasibility-calculator): Free interactive electrical engineering and financial tool modeling substation CapEx ($150–$350/kVA), CFE/CENACE energization lead times, dead rent carrying cost risk, and phantom power lease detection across 10 Mexican markets.
 - [USMCA Regional Value Content (RVC) Calculator](https://nearshorenavigator.com/en/tools/usmca-rvc-calculator): Free interactive trade compliance calculator for Net Cost and Transaction Value methods under 2026 post-ATR rules of origin.
 - [CIVA VAT Risk & Anexo 30 Audit Assessment Tool](https://nearshorenavigator.com/en/tools/civa-audit-risk-calculator): Free interactive compliance calculator assessing immediate 16% VAT cash exposure, Anexo 24 vs 30 discrepancy risks, and SAT Plan Maestro audit vulnerability.
 - [Mexico Manufacturing Cost Calculator](https://nearshorenavigator.com/en/tools/cost-calculator): Interactive calculator comparing fully-burdened labor and real estate costs across 15+ Mexican cities vs. US.

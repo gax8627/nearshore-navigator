@@ -40,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/tools/cost-calculator',
         '/tools/usmca-rvc-calculator',
         '/tools/civa-audit-risk-calculator',
+        '/tools/cfe-power-feasibility-calculator',
         '/resources',
         '/resources/questionnaire',
         '/resources/brochure',
