@@ -39,15 +39,26 @@ export default function RootLayout({
       <head>
         <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Knowledge Base" />
         <link rel="alternate" type="text/markdown" href="/llms-full.txt" title="Full LLM Codex" />
+        {/* Google Tag Manager */}
+        <Script
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-TRCNLWSD"
+          strategy="afterInteractive"
+        />
+        {/* Google Analytics (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-7RHTT5QR43"
           strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics-and-gtm" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+
+            window.dataLayer.push({
+              'gtm.start': new Date().getTime(),
+              event: 'gtm.js'
+            });
 
             var isBot = Boolean(
               (window.navigator && window.navigator.webdriver) ||
@@ -63,6 +74,15 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`} suppressHydrationWarning={true}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TRCNLWSD"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <Providers>
           <Suspense fallback={null}>
             <AnalyticsTracker />
