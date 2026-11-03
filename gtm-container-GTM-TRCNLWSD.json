@@ -1,6 +1,6 @@
 {
   "exportFormatVersion": 2,
-  "exportTime": "2026-11-03 20:55:00",
+  "exportTime": "2026-11-03 21:00:00",
   "containerVersion": {
     "path": "accounts/6000000000/containers/70000000/versions/0",
     "accountId": "6000000000",
@@ -33,10 +33,7 @@
         "firingTriggerId": [
           "1"
         ],
-        "tagFiringOption": "ONCE_PER_EVENT",
-        "monitoringMetadata": {
-          "type": "MAP"
-        }
+        "tagFiringOption": "ONCE_PER_EVENT"
       },
       {
         "accountId": "6000000000",
@@ -65,29 +62,39 @@
         "parameter": [
           {
             "type": "TEMPLATE",
-            "key": "measurementId",
-            "value": "{{Const - GA4 Measurement ID}}"
-          },
-          {
-            "type": "TEMPLATE",
             "key": "eventName",
             "value": "generate_lead"
           },
           {
+            "type": "TEMPLATE",
+            "key": "measurementIdOverride",
+            "value": "{{Const - GA4 Measurement ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "sendEcommerceData",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enhancedUserId",
+            "value": "false"
+          },
+          {
             "type": "LIST",
-            "key": "eventParameters",
+            "key": "eventSettingsTable",
             "list": [
               {
                 "type": "MAP",
                 "map": [
                   {
                     "type": "TEMPLATE",
-                    "key": "name",
+                    "key": "parameter",
                     "value": "event_category"
                   },
                   {
                     "type": "TEMPLATE",
-                    "key": "value",
+                    "key": "parameterValue",
                     "value": "{{DLV - event_category}}"
                   }
                 ]
@@ -97,12 +104,12 @@
                 "map": [
                   {
                     "type": "TEMPLATE",
-                    "key": "name",
+                    "key": "parameter",
                     "value": "event_label"
                   },
                   {
                     "type": "TEMPLATE",
-                    "key": "value",
+                    "key": "parameterValue",
                     "value": "{{DLV - event_label}}"
                   }
                 ]
@@ -112,12 +119,12 @@
                 "map": [
                   {
                     "type": "TEMPLATE",
-                    "key": "name",
+                    "key": "parameter",
                     "value": "value"
                   },
                   {
                     "type": "TEMPLATE",
-                    "key": "value",
+                    "key": "parameterValue",
                     "value": "{{DLV - value}}"
                   }
                 ]
@@ -127,12 +134,12 @@
                 "map": [
                   {
                     "type": "TEMPLATE",
-                    "key": "name",
+                    "key": "parameter",
                     "value": "city"
                   },
                   {
                     "type": "TEMPLATE",
-                    "key": "value",
+                    "key": "parameterValue",
                     "value": "{{DLV - city}}"
                   }
                 ]
@@ -142,12 +149,12 @@
                 "map": [
                   {
                     "type": "TEMPLATE",
-                    "key": "name",
+                    "key": "parameter",
                     "value": "industry"
                   },
                   {
                     "type": "TEMPLATE",
-                    "key": "value",
+                    "key": "parameterValue",
                     "value": "{{DLV - industry}}"
                   }
                 ]
@@ -169,29 +176,39 @@
         "parameter": [
           {
             "type": "TEMPLATE",
-            "key": "measurementId",
-            "value": "{{Const - GA4 Measurement ID}}"
-          },
-          {
-            "type": "TEMPLATE",
             "key": "eventName",
             "value": "click_calendly"
           },
           {
+            "type": "TEMPLATE",
+            "key": "measurementIdOverride",
+            "value": "{{Const - GA4 Measurement ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "sendEcommerceData",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enhancedUserId",
+            "value": "false"
+          },
+          {
             "type": "LIST",
-            "key": "eventParameters",
+            "key": "eventSettingsTable",
             "list": [
               {
                 "type": "MAP",
                 "map": [
                   {
                     "type": "TEMPLATE",
-                    "key": "name",
+                    "key": "parameter",
                     "value": "event_category"
                   },
                   {
                     "type": "TEMPLATE",
-                    "key": "value",
+                    "key": "parameterValue",
                     "value": "{{DLV - event_category}}"
                   }
                 ]
@@ -201,12 +218,12 @@
                 "map": [
                   {
                     "type": "TEMPLATE",
-                    "key": "name",
+                    "key": "parameter",
                     "value": "event_label"
                   },
                   {
                     "type": "TEMPLATE",
-                    "key": "value",
+                    "key": "parameterValue",
                     "value": "{{DLV - event_label}}"
                   }
                 ]
@@ -216,12 +233,12 @@
                 "map": [
                   {
                     "type": "TEMPLATE",
-                    "key": "name",
+                    "key": "parameter",
                     "value": "page_location"
                   },
                   {
                     "type": "TEMPLATE",
-                    "key": "value",
+                    "key": "parameterValue",
                     "value": "{{Page URL}}"
                   }
                 ]
@@ -243,29 +260,39 @@
         "parameter": [
           {
             "type": "TEMPLATE",
-            "key": "measurementId",
-            "value": "{{Const - GA4 Measurement ID}}"
-          },
-          {
-            "type": "TEMPLATE",
             "key": "eventName",
             "value": "click_whatsapp"
           },
           {
+            "type": "TEMPLATE",
+            "key": "measurementIdOverride",
+            "value": "{{Const - GA4 Measurement ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "sendEcommerceData",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enhancedUserId",
+            "value": "false"
+          },
+          {
             "type": "LIST",
-            "key": "eventParameters",
+            "key": "eventSettingsTable",
             "list": [
               {
                 "type": "MAP",
                 "map": [
                   {
                     "type": "TEMPLATE",
-                    "key": "name",
+                    "key": "parameter",
                     "value": "event_category"
                   },
                   {
                     "type": "TEMPLATE",
-                    "key": "value",
+                    "key": "parameterValue",
                     "value": "{{DLV - event_category}}"
                   }
                 ]
@@ -275,12 +302,12 @@
                 "map": [
                   {
                     "type": "TEMPLATE",
-                    "key": "name",
+                    "key": "parameter",
                     "value": "event_label"
                   },
                   {
                     "type": "TEMPLATE",
-                    "key": "value",
+                    "key": "parameterValue",
                     "value": "{{DLV - event_label}}"
                   }
                 ]
@@ -290,12 +317,12 @@
                 "map": [
                   {
                     "type": "TEMPLATE",
-                    "key": "name",
+                    "key": "parameter",
                     "value": "page_location"
                   },
                   {
                     "type": "TEMPLATE",
-                    "key": "value",
+                    "key": "parameterValue",
                     "value": "{{Page URL}}"
                   }
                 ]
@@ -317,29 +344,39 @@
         "parameter": [
           {
             "type": "TEMPLATE",
-            "key": "measurementId",
-            "value": "{{Const - GA4 Measurement ID}}"
-          },
-          {
-            "type": "TEMPLATE",
             "key": "eventName",
             "value": "enterprise_dark_social_visit"
           },
           {
+            "type": "TEMPLATE",
+            "key": "measurementIdOverride",
+            "value": "{{Const - GA4 Measurement ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "sendEcommerceData",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enhancedUserId",
+            "value": "false"
+          },
+          {
             "type": "LIST",
-            "key": "eventParameters",
+            "key": "eventSettingsTable",
             "list": [
               {
                 "type": "MAP",
                 "map": [
                   {
                     "type": "TEMPLATE",
-                    "key": "name",
+                    "key": "parameter",
                     "value": "referral_type"
                   },
                   {
                     "type": "TEMPLATE",
-                    "key": "value",
+                    "key": "parameterValue",
                     "value": "{{DLV - referral_type}}"
                   }
                 ]
@@ -349,12 +386,12 @@
                 "map": [
                   {
                     "type": "TEMPLATE",
-                    "key": "name",
+                    "key": "parameter",
                     "value": "page_location"
                   },
                   {
                     "type": "TEMPLATE",
-                    "key": "value",
+                    "key": "parameterValue",
                     "value": "{{Page URL}}"
                   }
                 ]
@@ -376,29 +413,39 @@
         "parameter": [
           {
             "type": "TEMPLATE",
-            "key": "measurementId",
-            "value": "{{Const - GA4 Measurement ID}}"
-          },
-          {
-            "type": "TEMPLATE",
             "key": "eventName",
             "value": "ai_search_referral"
           },
           {
+            "type": "TEMPLATE",
+            "key": "measurementIdOverride",
+            "value": "{{Const - GA4 Measurement ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "sendEcommerceData",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enhancedUserId",
+            "value": "false"
+          },
+          {
             "type": "LIST",
-            "key": "eventParameters",
+            "key": "eventSettingsTable",
             "list": [
               {
                 "type": "MAP",
                 "map": [
                   {
                     "type": "TEMPLATE",
-                    "key": "name",
+                    "key": "parameter",
                     "value": "engine"
                   },
                   {
                     "type": "TEMPLATE",
-                    "key": "value",
+                    "key": "parameterValue",
                     "value": "{{DLV - engine}}"
                   }
                 ]
@@ -408,12 +455,12 @@
                 "map": [
                   {
                     "type": "TEMPLATE",
-                    "key": "name",
+                    "key": "parameter",
                     "value": "page_location"
                   },
                   {
                     "type": "TEMPLATE",
-                    "key": "value",
+                    "key": "parameterValue",
                     "value": "{{Page URL}}"
                   }
                 ]
