@@ -430,6 +430,26 @@ export default function CustomsBrokerageClient() {
             </tbody>
           </table>
         </div>
+
+        <div className="mt-10 p-6 sm:p-8 rounded-2xl border border-blue-900/50 bg-blue-950/20 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="space-y-2 max-w-2xl">
+            <div className="text-xs font-bold uppercase tracking-wider text-blue-400">
+              Trade-Program Benchmark
+            </div>
+            <h3 className="text-xl font-bold text-white">
+              Evaluating a &ldquo;Your Own Factory, Our Trade Programs&rdquo; Campus Pitch?
+            </h3>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              Before bundling your IMMEX trade compliance into a proprietary industrial park lease, verify real-estate cross-default clauses, entity-level CIVA ring-fencing, CFDI 4.0/SUA payroll pass-through, and LFT Art. 41 exit portability.
+            </p>
+          </div>
+          <a
+            href="#contact-form"
+            className="flex-shrink-0 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold transition-all shadow-lg shadow-blue-600/20"
+          >
+            Request 48-Hour Benchmark
+          </a>
+        </div>
       </section>
 
       {/* Interactive FAQ Section */}
@@ -573,8 +593,8 @@ export default function CustomsBrokerageClient() {
 
           <div>
             <LeadForm
-              title="Request Customs Compliance Audit"
-              subtitle="Get an expert analysis of your Pedimentos, Annex 24 software setup, and USMCA duty elimination."
+              title="Request Customs Audit & 48-Hour Benchmark"
+              subtitle="Get a confidential review of your Pedimentos, Annex 24/30 workflows, and how unbundled customs brokerage benchmarks against bundled campus trade-program quotes."
               source="customs_brokerage_landing_page"
             />
           </div>

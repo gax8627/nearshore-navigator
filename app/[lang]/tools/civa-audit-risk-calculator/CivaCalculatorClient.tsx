@@ -1111,13 +1111,13 @@ Confidential Advisor: Denisse Martinez, Principal Nearshore Advisor`;
                   <span className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-xs font-bold inline-flex items-center justify-center">
                     5
                   </span>
-                  How Do Mexican Shelter Services Completely Eliminate CIVA Audit Liability?
+                  How Do Mexican Shelter Services Mitigate CIVA Audit Liability?
                 </h3>
                 <p className="mb-2">
                   <strong>Direct Answer:</strong> In a Shelter Manufacturing model, foreign manufacturers operate as a dedicated production division under the shelter company&apos;s established Mexican legal entity, pre-approved IMMEX program, and active <strong>Modality AAA CIVA VAT certification</strong>.
                 </p>
                 <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-                  The shelter entity acts as the legal Importer of Record and assumes 100% of the statutory liability under CFF Article 26 (Responsabilidad Solidaria). The foreign client avoids the 6–12 month application lag for government certification, escapes 16% cash prepayment on day one, and insulates corporate officers from personal Mexican tax liability.
+                  The shelter entity serves as the legal Importer of Record and manages primary Anexo 24/30 statutory compliance, allowing foreign clients to avoid the 6–12 month certification lag and 16% cash VAT prepayments from day one. CFOs should still verify entity-level ring-fencing, reconciliation SLAs, and joint-liability (CFF Art. 26) protections in their MSA.
                 </p>
               </div>
 

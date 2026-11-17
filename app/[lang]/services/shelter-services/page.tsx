@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { LeadForm } from '@/components/LeadForm';
 import { BASE_URL, INDEXABLE_LOCALES } from '@/app/constants/seo-config';
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -187,6 +188,45 @@ export default async function ShelterServicesPage(props: { params: Promise<{ lan
           </div>
         </section>
 
+        <section className="p-8 bg-gray-900/60 rounded-2xl border border-gray-800 space-y-6">
+          <h2 className="text-2xl font-bold text-white">
+            Bundled Campus Trade Programs vs. Unbundled Control: 5 CFO Due-Diligence Questions
+          </h2>
+          <p className="text-gray-300 text-sm leading-relaxed">
+            Bundled manufacturing campuses (in hubs like Sonora, Saltillo, or Querétaro) can fit 150+ headcount operations seeking turnkey park infrastructure. Before signing a bundled IMMEX trade-program and lease agreement, benchmark these five structural terms against unbundled shelter operators and direct institutional REIT leases:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300">
+            <div className="p-4 bg-gray-950/60 rounded-xl border border-gray-800">
+              <strong className="text-white block mb-1">1. Real Estate Tying &amp; Cross-Default</strong>
+              Can you change shelter or trade-program administrators without losing your building lease or relocating machinery?
+            </div>
+            <div className="p-4 bg-gray-950/60 rounded-xl border border-gray-800">
+              <strong className="text-white block mb-1">2. Entity-Level CIVA Ring-Fencing</strong>
+              Which legal RFC holds the IMMEX and CIVA certification, and how are <Link href={`/${lang}/services/customs-brokerage`} className="text-primary-400 underline hover:text-primary-300">Anexo 24/30 reconciliations</Link> audited across co-tenants?
+            </div>
+            <div className="p-4 bg-gray-950/60 rounded-xl border border-gray-800">
+              <strong className="text-white block mb-1">3. Open-Book Payroll Pass-Through</strong>
+              Are IMSS, INFONAVIT, and statutory labor burdens billed strictly at verified CFDI 4.0 and SUA receipts rather than composite markups?
+            </div>
+            <div className="p-4 bg-gray-950/60 rounded-xl border border-gray-800">
+              <strong className="text-white block mb-1">4. LFT Art. 41 Exit Portability</strong>
+              Does your MSA guarantee in-place employer substitution (<em>patrono sustituto</em>) so you can graduate to a standalone S.A. de C.V. without severance resets?
+            </div>
+            <div className="p-4 bg-gray-950/60 rounded-xl border border-gray-800 md:col-span-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <strong className="text-white block mb-1">5. Corridor Fit vs. Landlord Footprint</strong>
+                Ensure your site is selected for freight, labor, and customer proximity—across Baja California, Monterrey, Juárez, Guadalajara, or the Bajío—rather than a provider&apos;s owned land bank.
+              </div>
+              <a
+                href="#proposal-benchmark"
+                className="flex-shrink-0 px-5 py-2.5 rounded-lg bg-primary-600 hover:bg-primary-500 text-white font-semibold text-xs sm:text-sm transition-all text-center"
+              >
+                Benchmark Your Quote
+              </a>
+            </div>
+          </div>
+        </section>
+
         <section className="bg-primary-950/40 border border-primary-500/30 rounded-2xl p-8 text-center space-y-6">
           <h2 className="text-3xl font-bold text-white">
             Calculate Your Baja California Shelter Savings
@@ -208,6 +248,14 @@ export default async function ShelterServicesPage(props: { params: Promise<{ lan
               Explore Tijuana Location Guide
             </Link>
           </div>
+        </section>
+
+        <section id="proposal-benchmark" className="pt-4">
+          <LeadForm
+            source="shelter_services_benchmark"
+            title="Request a Free 48-Hour Shelter & Trade-Program Proposal Benchmark"
+            subtitle="Evaluating a bundled campus or trade-program quote? Share your target headcount, sq. ft., and timeline (NDA-protected) to benchmark Trade-Program-only vs. Unbundled Shelter vs. Standalone 3-year TCO across 3–5 vetted operators."
+          />
         </section>
       </div>
     </main>
