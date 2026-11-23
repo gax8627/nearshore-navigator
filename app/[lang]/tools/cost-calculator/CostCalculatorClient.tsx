@@ -244,6 +244,24 @@ export default function CostCalculatorClient({ language }: { language: string })
               </p>
             </div>
 
+            {/* 2027 40-Hour Workweek Callout */}
+            <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-500/30 rounded-3xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <div className="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-1">
+                  Jan 1, 2027 Mandate
+                </div>
+                <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                  Budgeting for Mexico&apos;s 48-to-40 hour workweek phase-in &amp; STPS electronic timekeeping fines?
+                </p>
+              </div>
+              <Link
+                href={`/${language}/tools/mexico-40-hour-workweek-calculator`}
+                className="flex-shrink-0 px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold text-center transition-all"
+              >
+                Model 2027–2030 Costs &rarr;
+              </Link>
+            </div>
+
             {/* Internal Resources */}
             <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
               <h4 className="font-bold text-gray-900 dark:text-white mb-4">Related Insights</h4>

@@ -41,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/tools/usmca-rvc-calculator',
         '/tools/civa-audit-risk-calculator',
         '/tools/cfe-power-feasibility-calculator',
+        '/tools/mexico-40-hour-workweek-calculator',
         '/resources',
         '/resources/tijuana-industrial-park-map',
         '/resources/questionnaire',

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/Button";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/app/context/LanguageContext";
@@ -11,14 +11,24 @@ interface LeadFormProps {
     subtitle?: string;
     source?: string;
     className?: string;
+    defaultMessage?: string;
 }
 
-export function LeadForm({ title, subtitle, source, className }: LeadFormProps) {
+export function LeadForm({ title, subtitle, source, className, defaultMessage }: LeadFormProps) {
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [cfToken, setCfToken] = useState<string>("");
+    const [turnstileFailed, setTurnstileFailed] = useState(false);
+    const [message, setMessage] = useState<string>(defaultMessage || "");
+    const [messageTouched, setMessageTouched] = useState(false);
     const { t } = useLanguage();
+
+    useEffect(() => {
+        if (!messageTouched && defaultMessage !== undefined) {
+            setMessage(defaultMessage);
+        }
+    }, [defaultMessage, messageTouched]);
 
     const formTitle = title || t('form.title');
     const formSubtitle = subtitle || t('form.subtitle');
@@ -82,13 +92,32 @@ export function LeadForm({ title, subtitle, source, className }: LeadFormProps) 
             <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="glass-card p-8 text-center bg-green-50/50 dark:bg-green-900/20 border-primary-200 dark:border-primary-800"
+                className="glass-card p-8 text-center bg-green-50/50 dark:bg-green-900/20 border-primary-200 dark:border-primary-800 space-y-4"
             >
-                <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-primary-600 dark:text-primary-400 text-2xl">
+                <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center mx-auto text-primary-600 dark:text-primary-400 text-2xl">
                     ✓
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('form.success_title')}</h3>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{t('form.success_title')}</h3>
                 <p className="text-gray-600 dark:text-gray-300">{t('form.success_message')}</p>
+                <div className="pt-2">
+                    <a
+                        href={`https://calendly.com/denisse-nearshorenavigator/30min?utm_source=${encodeURIComponent(source || 'lead_form_success')}&utm_campaign=post_submit_booking`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => {
+                            if (typeof window !== 'undefined' && (window as any).gtag) {
+                                (window as any).gtag('event', 'click_calendly', {
+                                    event_category: 'lead_generation',
+                                    event_label: `${source || 'lead_form'}_post_submit`
+                                });
+                            }
+                        }}
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-semibold text-sm transition-all shadow-lg shadow-primary-600/20"
+                    >
+                        <span>Skip the wait — Pick a 30-Min Time with Denisse</span>
+                        <span>&rarr;</span>
+                    </a>
+                </div>
             </motion.div>
         );
     }
@@ -130,7 +159,6 @@ export function LeadForm({ title, subtitle, source, className }: LeadFormProps) 
                         type="text"
                         id="company"
                         name="company"
-                        required
                         className="w-full px-4 py-3 text-base md:text-sm rounded-lg bg-white/50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-800 outline-none transition-all"
                         placeholder={t('form.company_placeholder')}
                     />
@@ -165,7 +193,11 @@ export function LeadForm({ title, subtitle, source, className }: LeadFormProps) 
                         id="message"
                         name="message"
                         rows={3}
-                        required
+                        value={message}
+                        onChange={(e) => {
+                            setMessageTouched(true);
+                            setMessage(e.target.value);
+                        }}
                         className="w-full px-4 py-3 text-base md:text-sm rounded-lg bg-white/50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-800 outline-none transition-all"
                         placeholder={t('form.message_placeholder')}
                     ></textarea>
@@ -184,11 +216,34 @@ export function LeadForm({ title, subtitle, source, className }: LeadFormProps) 
                     </motion.div>
                 )}
 
-                <div className="flex justify-center my-4 max-w-full overflow-hidden scale-90 sm:scale-100">
-                    <Turnstile 
-                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'} 
-                        onSuccess={setCfToken}
-                    />
+                <div className="flex flex-col items-center my-4 max-w-full overflow-hidden">
+                    <div className="scale-90 sm:scale-100">
+                        <Turnstile 
+                            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'} 
+                            onSuccess={(token) => {
+                                setCfToken(token);
+                                setTurnstileFailed(false);
+                            }}
+                            onExpire={() => setCfToken("")}
+                            onError={() => {
+                                setCfToken("");
+                                setTurnstileFailed(true);
+                            }}
+                        />
+                    </div>
+                    {turnstileFailed && (
+                        <p className="text-xs text-amber-600 dark:text-amber-400 mt-2 text-center">
+                            Security widget blocked by VPN or privacy browser?{' '}
+                            <a
+                                href={`https://calendly.com/denisse-nearshorenavigator/30min?utm_source=${encodeURIComponent(source || 'lead_form_fallback')}&utm_campaign=turnstile_fallback`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="underline font-bold"
+                            >
+                                Book directly on Calendly &rarr;
+                            </a>
+                        </p>
+                    )}
                 </div>
 
                 <Button 
@@ -215,7 +270,7 @@ export function LeadForm({ title, subtitle, source, className }: LeadFormProps) 
 
                 <div className="pt-2 text-center border-t border-gray-100 dark:border-gray-800">
                     <a
-                        href="https://calendly.com/denisse-nearshorenavigator/30min?utm_source=lead_form_footer&utm_campaign=direct_booking"
+                        href={`https://calendly.com/denisse-nearshorenavigator/30min?utm_source=${encodeURIComponent(source || 'lead_form_footer')}&utm_campaign=direct_booking`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-xs font-semibold text-primary-600 dark:text-primary-400 hover:underline inline-flex items-center gap-1"
@@ -223,7 +278,7 @@ export function LeadForm({ title, subtitle, source, className }: LeadFormProps) 
                             if (typeof window !== 'undefined' && (window as any).gtag) {
                                 (window as any).gtag('event', 'click_calendly', {
                                     event_category: 'lead_generation',
-                                    event_label: 'lead_form_alternative_booking'
+                                    event_label: `${source || 'lead_form'}_alternative_booking`
                                 });
                             }
                         }}

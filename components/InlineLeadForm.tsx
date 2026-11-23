@@ -61,7 +61,24 @@ export const InlineLeadForm = () => {
                             <CheckCircle2 className="w-8 h-8 text-green-600 dark:text-green-400" />
                         </div>
                         <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{t('inlineForm.success')}</h3>
-                        <p className="text-gray-600 dark:text-gray-400">{t('inlineForm.successDesc')}</p>
+                        <p className="text-gray-600 dark:text-gray-400 mb-6">{t('inlineForm.successDesc')}</p>
+                        <a
+                            href="https://calendly.com/denisse-nearshorenavigator/30min?utm_source=homepage_inline_success&utm_campaign=post_submit_booking"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => {
+                                if (typeof window !== 'undefined' && (window as any).gtag) {
+                                    (window as any).gtag('event', 'click_calendly', {
+                                        event_category: 'lead_generation',
+                                        event_label: 'homepage_inline_post_submit'
+                                    });
+                                }
+                            }}
+                            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-semibold text-sm transition-all shadow-lg shadow-primary-600/20"
+                        >
+                            <span>Book a 30-Min Consultation Now</span>
+                            <span>&rarr;</span>
+                        </a>
                     </motion.div>
                 ) : (
                     <motion.div 

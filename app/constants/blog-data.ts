@@ -8367,6 +8367,128 @@ Unit Capital Cost:                                           $486 USD / kVA</cod
 <li class="ml-4 list-disc text-gray-700 dark:text-gray-300 mb-2"><strong>Customs &amp; Trade Architecture:</strong> Verify duty-free import parameters with our <a href="/insights/immex-civa-certification-anexo-24-30-audit-defense-monitoring-playbook" class="text-primary-600 dark:text-primary-400 font-medium hover:underline">IMMEX &amp; CIVA Compliance Playbook</a>.</li>
 <li class="ml-4 list-disc text-gray-700 dark:text-gray-300 mb-2"><strong>Executive Consultation:</strong> Connect directly with <a href="https://calendly.com/denisse-nearshorenavigator/30min" target="_blank" rel="noopener noreferrer" class="text-primary-600 dark:text-primary-400 font-medium hover:underline">Denisse Martinez</a> and our site selection engineering practice to audit your target industrial park shortlist.</li>`
   },
+  {
+    title: "Mexico's 40-Hour Workweek Reform (2027–2030): Manufacturing Shift Costs, Overtime Caps & MXN $586,550 STPS Fine Guide",
+    metaTitle: "Mexico 40-Hour Workweek 2027: Costs, Fines & Shift Guide",
+    excerpt: "Mexico's workweek shrinks from 48 to 40 hours starting Jan 1, 2027, with STPS electronic timekeeping fines up to MXN $586,550 per employee. Model your plant's transition.",
+    metaDescription: "Mexico's 48-to-40 hour workweek starts Jan 1, 2027 with STPS fines up to MXN $586,550/employee. Model 2027-2030 shift costs and electronic timekeeping.",
+    date: "Nov 23, 2026",
+    slug: "mexico-40-hour-workweek-2027-manufacturing-compliance-cost-guide",
+    imageUrl: "/images/blogs/cfo-mexico-shelter-company-due-diligence-audit-markups-liability.jpg",
+    tags: ["Mexico 40-Hour Workweek", "Mexico Labor Reform 2027", "STPS Electronic Timekeeping", "MXN 586550 Fine", "LFT Art 132", "Manufacturing Shift Design", "Nearshore Labor Costs"],
+    author: "Denisse Martinez",
+    readTime: "12 min read",
+    faqSchema: [
+      {
+        q: "When does Mexico's 48-to-40 hour workweek reduction begin?",
+        a: "Following the March 3, 2026 Art. 123 constitutional reform and May 1, 2026 LFT amendments, Mexico's maximum weekly ordinary workweek phases down by 2 hours every January 1 with no reduction in pay or benefits: 46 hours in 2027, 44 hours in 2028, 42 hours in 2029, and 40 hours in 2030."
+      },
+      {
+        q: "Why will real 2027 STPS electronic timekeeping fines exceed MXN $586,550 per employee?",
+        a: "Under LFT Articles 132 (Frac. XXXIV), 994 (Frac. IV Bis), 1000, and 992, missing verifiable electronic clock-in/out records starting January 1, 2027 carries fines of 250 to 5,000 UMA multiplied per affected employee. MXN $586,550 reflects 5,000 UMA at the 2026 INEGI UMA value ($117.31 MXN), but INEGI updates the UMA every February 1—raising real 2027 enforcement penalties above $586,550 MXN per worker."
+      },
+      {
+        q: "How do Mexican overtime limits change between 2027 and 2030?",
+        a: "Double-pay (+100%) weekly overtime caps expand as base hours decline: 9 hours/week in 2026–2027, 10 hours in 2028, 11 hours in 2029, and 12 hours in 2030+, subject to a maximum of 4 hours/day across up to 4 days/week. Triple-pay (+200%) overtime is capped at 4 supplementary hours/week, and total daily hours (regular plus overtime) cannot exceed 12 hours."
+      },
+      {
+        q: "Can a factory in Mexico switch directly to 4x10 or 3x12 shifts to absorb the 40-hour reform?",
+        a: "Not automatically. Daily ordinary caps remain 8 hours (day), 7.5 hours (mixed), and 7 hours (night) under LFT Article 61. Extending daily shifts beyond 8 hours requires written mutual agreements under Articles 58–59, updated Internal Work Regulations (Reglamento Interior), and union CBA alignment—and 3x12 leaves zero compliance buffer under the hard 12-hour daily ceiling."
+      },
+      {
+        q: "How can manufacturers keep plant output steady without proportionally adding headcount?",
+        a: "High-performing plants combine 4-shift overlapping rotations with trained relief pools (grupos de relevo), SMED changeover and OEE uptime gains, staggered shift handoffs, and targeted cell automation—rather than relying solely on blanket double-pay overtime."
+      }
+    ],
+    content: `<div class="my-6 p-5 border-l-4 border-primary-500 bg-emerald-50/50 dark:bg-emerald-950/20 rounded-r-xl text-gray-800 dark:text-gray-200"><strong>Executive Summary &amp; 2027 Compliance Mandate:</strong><br/>- <strong>Statutory Phase-In:</strong> Mexico's workweek shrinks by 2 hours every January 1—<strong>46h (2027) &rarr; 44h (2028) &rarr; 42h (2029) &rarr; 40h (2030)</strong>—with zero wage or benefit reductions.<br/>- <strong>Electronic Timekeeping Enforcement:</strong> Starting January 1, 2027 (LFT Art. 132 Frac. XXXIV), missing verifiable electronic clock-in/out records triggers STPS fines of <strong>250–5,000 UMA per affected employee</strong> (up to <strong>MXN $586,550</strong> at 2026 UMA, rising automatically on Feb 1, 2027).<br/>- <strong>Interactive Modeler:</strong> Quantify your plant's 2027–2030 headcount, overtime, and STPS fine exposure immediately with our free <a href="/en/tools/mexico-40-hour-workweek-calculator" class="text-primary-600 dark:text-primary-400 font-semibold hover:underline">Mexico 40-Hour Workweek Cost &amp; STPS Fine Calculator</a>.</div>
+
+<h2 class="text-2xl md:text-3xl font-bold mt-10 mb-4 text-gray-900 dark:text-white border-b pb-2 border-gray-200 dark:border-gray-700">1. The 2027–2030 Statutory Phase-In &amp; Overtime Schedule</h2>
+
+<div class="speakable-direct-answer" id="direct-answer-phase-in" style="background-color: #f8fafc; border-left: 4px solid #0284c7; padding: 1.25rem; margin-bottom: 1.5rem; border-radius: 0.375rem;">
+  <p style="font-size: 1.05rem; line-height: 1.6; color: #0f172a; margin: 0;">
+    <strong>Direct Answer:</strong> Under Mexico's March 2026 constitutional reform (Art. 123) and May 2026 Federal Labor Law amendments, the statutory workweek drops 2 hours each January 1 from 48 hours to 46 (2027), 44 (2028), 42 (2029), and 40 hours (2030) without reducing worker pay, while weekly double-pay overtime caps expand from 9 to 12 hours.
+  </p>
+</div>
+
+<p class="my-4 text-base md:text-lg leading-relaxed text-gray-700 dark:text-gray-300">For U.S. and European manufacturers operating in Mexico, the transition period ends December 31, 2026. Unlike abrupt single-step labor mandates, Mexico structured a four-year glide path that pairs gradual base-hour reductions with expanded double-pay (+100%) overtime headroom—while keeping mandatory rest at one day per six worked (not an automatic two-day weekend) and preserving daily ordinary limits of 8 hours (day), 7.5 hours (mixed), and 7 hours (night) under LFT Article 61.</p>
+
+<div class="overflow-x-auto my-8 shadow-sm rounded-lg">
+  <table itemscope itemType="https://schema.org/Table" class="w-full text-sm border-collapse border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+    <thead class="bg-gray-100 dark:bg-gray-700">
+      <tr>
+        <th class="p-3 text-left font-bold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-600">Effective Date</th>
+        <th class="p-3 text-left font-bold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-600">Max Ordinary Workweek</th>
+        <th class="p-3 text-left font-bold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-600">Double-Pay OT Cap (+100%)</th>
+        <th class="p-3 text-left font-bold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-600">Triple-Pay OT Cap (+200%)</th>
+        <th class="p-3 text-left font-bold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-600">Effective Hourly Wage Inflation (No Pay Cut)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="border-b border-gray-200 dark:border-gray-700">
+        <td class="p-3 font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-600">Jan 1, 2027</td>
+        <td class="p-3 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600">46 hours / week</td>
+        <td class="p-3 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600">9 hrs/wk (max 4h/day, 4 days)</td>
+        <td class="p-3 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600">4 supplementary hrs/wk</td>
+        <td class="p-3 text-amber-600 dark:text-amber-400 font-semibold border border-gray-200 dark:border-gray-600">+4.3%</td>
+      </tr>
+      <tr class="border-b border-gray-200 dark:border-gray-700">
+        <td class="p-3 font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-600">Jan 1, 2028</td>
+        <td class="p-3 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600">44 hours / week</td>
+        <td class="p-3 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600">10 hrs/wk (max 4h/day, 4 days)</td>
+        <td class="p-3 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600">4 supplementary hrs/wk</td>
+        <td class="p-3 text-amber-600 dark:text-amber-400 font-semibold border border-gray-200 dark:border-gray-600">+9.1%</td>
+      </tr>
+      <tr class="border-b border-gray-200 dark:border-gray-700">
+        <td class="p-3 font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-600">Jan 1, 2029</td>
+        <td class="p-3 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600">42 hours / week</td>
+        <td class="p-3 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600">11 hrs/wk (max 4h/day, 4 days)</td>
+        <td class="p-3 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600">4 supplementary hrs/wk</td>
+        <td class="p-3 text-amber-600 dark:text-amber-400 font-semibold border border-gray-200 dark:border-gray-600">+14.3%</td>
+      </tr>
+      <tr>
+        <td class="p-3 font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-600">Jan 1, 2030</td>
+        <td class="p-3 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600">40 hours / week</td>
+        <td class="p-3 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600">12 hrs/wk (max 4h/day, 4 days)</td>
+        <td class="p-3 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600">4 supplementary hrs/wk</td>
+        <td class="p-3 text-rose-600 dark:text-rose-400 font-semibold border border-gray-200 dark:border-gray-600">+20.0%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-bold mt-10 mb-4 text-gray-900 dark:text-white border-b pb-2 border-gray-200 dark:border-gray-700">2. Electronic Timekeeping &amp; Why Real 2027 Fines Exceed MXN $586,550</h2>
+
+<div class="speakable-direct-answer" id="direct-answer-fines" style="background-color: #f8fafc; border-left: 4px solid #0284c7; padding: 1.25rem; margin-bottom: 1.5rem; border-radius: 0.375rem;">
+  <p style="font-size: 1.05rem; line-height: 1.6; color: #0f172a; margin: 0;">
+    <strong>Direct Answer:</strong> Starting January 1, 2027, LFT Article 132 Frac. XXXIV requires verifiable electronic clock-in/out records. Under Articles 994 Frac. IV Bis, 1000, and 992, STPS fines range from 250 to 5,000 UMA per affected employee—MXN $586,550 at 2026 UMA ($117.31), rising automatically when INEGI updates UMA on February 1, 2027.
+  </p>
+</div>
+
+<p class="my-4 text-base md:text-lg leading-relaxed text-gray-700 dark:text-gray-300">Many executive summaries quote <strong>MXN $586,550 per employee</strong> as a static ceiling. CFOs must note two compounding risk factors: first, <strong>UMA inflation drift</strong>—because INEGI indexes the UMA every February 1, inspections conducted from February 2027 onward will assess fines above $586,550 MXN per worker. Second, <strong>per-worker multiplication and recidivism</strong>—under LFT Article 992, STPS multiplies penalties by every affected operator and doubles them for repeat violations within two years. Missing electronic logs also trigger adverse overtime presumptions in labor court under Articles 784 and 804.</p>
+
+<h2 class="text-2xl md:text-3xl font-bold mt-10 mb-4 text-gray-900 dark:text-white border-b pb-2 border-gray-200 dark:border-gray-700">3. The Compressed-Shift Trap (4&times;10 / 3&times;12) vs. Defensible Plant Levers</h2>
+
+<div class="speakable-direct-answer" id="direct-answer-shifts" style="background-color: #f8fafc; border-left: 4px solid #0284c7; padding: 1.25rem; margin-bottom: 1.5rem; border-radius: 0.375rem;">
+  <p style="font-size: 1.05rem; line-height: 1.6; color: #0f172a; margin: 0;">
+    <strong>Direct Answer:</strong> Switching unilaterally to 4x10 or 3x12 shifts conflicts with LFT Article 61 daily caps unless backed by written Articles 58–59 agreements, updated Internal Work Regulations, and union CBA alignment. Defensible output-preservation levers include 4-shift relief pools (grupos de relevo), SMED/OEE gains, staggered handoffs, and targeted cell automation.
+  </p>
+</div>
+
+<p class="my-4 text-base md:text-lg leading-relaxed text-gray-700 dark:text-gray-300">Operations teams often assume a 40-hour week can be solved by moving straight to four 10-hour days or three 12-hour shifts. In Mexico, daily ordinary caps remain 8 hours (day), 7.5 hours (mixed), and 7 hours (night), with an absolute daily ceiling of 12 hours (ordinary plus overtime) and a complete ban on overtime for minors under 18. A 3&times;12 schedule leaves zero buffer under the 12-hour hard cap—any late handoff creates an immediate statutory breach.</p>
+
+<ul class="list-disc pl-6 my-4 space-y-2 text-gray-700 dark:text-gray-300">
+  <li><strong>4-Shift Overlapping Rotations &amp; Relief Pools (<em>Grupos de Relevo</em>):</strong> Cross-trained floating operators cover the 2-to-8 hour weekly reduction across continuous lines at straight-time rates instead of 2x/3x overtime.</li>
+  <li><strong>SMED Changeover &amp; OEE Recovery:</strong> Recovering 8–15% of lost spindle or line uptime via faster die/mold changeovers and preventative maintenance offsets the initial 2027 (46h) and 2028 (44h) reductions without adding headcount.</li>
+  <li><strong>Staggered Shift Handoffs:</strong> Eliminating 15–20 minutes of idle line-changeover loss per shift recovers 2.5–4.0 productive hours per week per line.</li>
+  <li><strong>Targeted Bottleneck Automation:</strong> Deploying cobots, vision inspection, or automated palletizing on constraint stations lowers direct-labor sensitivity before the 2030 40-hour step.</li>
+</ul>
+
+<h2 class="text-2xl md:text-3xl font-bold mt-10 mb-4 text-gray-900 dark:text-white border-b pb-2 border-gray-200 dark:border-gray-700">4. Next Steps: Model Your 2027–2030 Exposure &amp; Benchmark Shelter Readiness</h2>
+
+<p class="my-4 text-base md:text-lg leading-relaxed text-gray-700 dark:text-gray-300">Before finalizing your 2027 Mexican plant budget or renewing a shelter Master Services Agreement, run your exact headcount through our <a href="/en/tools/mexico-40-hour-workweek-calculator" class="text-primary-600 dark:text-primary-400 font-semibold hover:underline">Mexico 40-Hour Workweek Cost &amp; STPS Fine Calculator</a>, compare full regional economics in our <a href="/en/tools/cost-calculator" class="text-primary-600 dark:text-primary-400 font-semibold hover:underline">Nearshore Landed Cost Calculator</a>, or request a neutral 48-hour benchmark across vetted operators via our <a href="/en/services/shelter-services" class="text-primary-600 dark:text-primary-400 font-semibold hover:underline">Mexico Shelter Services Framework</a>.</p>
+
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-6"><em>Advisory Notice: Nearshore Navigator evaluates sites and market-entry models and introduces vetted third-party shelter, HR-compliance, and real estate providers. We do not provide legal, tax, accounting, or labor-law counsel; confirm all shift agreements and LFT compliance filings with qualified Mexican labor counsel.</em></p>`
+  },
 ];
 
 export const BLOG_POSTS: BlogPost[] = (BLOG_POSTS_RAW.filter(Boolean) as unknown) as BlogPost[];

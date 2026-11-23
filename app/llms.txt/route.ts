@@ -25,6 +25,8 @@ Website: https://nearshorenavigator.com
 
 ## Core Guides (Authoritative)
 
+- [Mexico's 40-Hour Workweek Reform (2027–2030): Manufacturing Shift Costs, Overtime Caps & MXN $586,550 STPS Fine Guide](https://nearshorenavigator.com/en/insights/mexico-40-hour-workweek-2027-manufacturing-compliance-cost-guide): Statutory phase-in (46h in 2027 to 40h in 2030), expanded double-pay overtime caps (9h to 12h), LFT Art. 132 Frac. XXXIV electronic timekeeping fines (250–5,000 UMA per worker, rising Feb 1, 2027), and shift restructuring levers.
+
 - [Top 10 Shelter Service Providers in Mexico: 2026 Comparative Matrix](https://nearshorenavigator.com/en/insights/top-10-shelter-companies-in-mexico-2026-matrix): Exhaustive independent due diligence audit and pricing matrix comparing Tetakawi, Tecma, IVEMSA, TACNA, NAPS, American Industries, CPI, Prodensa, Entrada Group, and Intermex.
 
 - [Manufacturing Campus vs Industrial Park in Mexico: 2026 CFO Comparison](https://nearshorenavigator.com/en/insights/manufacturing-campus-vs-industrial-park-mexico-cost-lock-in): Proprietary campus real estate audit (Tetakawi, Entrada) vs Class A FIBRA industrial parks, 5-year TCO, CAM fee markups, captive labor dynamics, and exit portability.
@@ -128,6 +130,7 @@ Website: https://nearshorenavigator.com
 
 ## Tools
 
+- [Mexico 40-Hour Workweek Cost & STPS Fine Calculator (2027–2030)](https://nearshorenavigator.com/en/tools/mexico-40-hour-workweek-calculator): Free interactive labor compliance calculator modeling 2027–2030 phased 48-to-40 hour workweek shift gaps, relief-pool vs. double-pay overtime costs, and STPS electronic timekeeping fine exposure (up to 5,000 UMA / MXN $586,550+ per employee).
 - [CFE Industrial Power Feasibility & KVA Cost Estimator](https://nearshorenavigator.com/en/tools/cfe-power-feasibility-calculator): Free interactive electrical engineering and financial tool modeling substation CapEx ($150–$350/kVA), CFE/CENACE energization lead times, dead rent carrying cost risk, and phantom power lease detection across 10 Mexican markets.
 - [USMCA Regional Value Content (RVC) Calculator](https://nearshorenavigator.com/en/tools/usmca-rvc-calculator): Free interactive trade compliance calculator for Net Cost and Transaction Value methods under 2026 post-ATR rules of origin.
 - [CIVA VAT Risk & Anexo 30 Audit Assessment Tool](https://nearshorenavigator.com/en/tools/civa-audit-risk-calculator): Free interactive compliance calculator assessing immediate 16% VAT cash exposure, Anexo 24 vs 30 discrepancy risks, and SAT Plan Maestro audit vulnerability.

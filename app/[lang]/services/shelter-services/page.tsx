@@ -170,7 +170,7 @@ export default async function ShelterServicesPage(props: { params: Promise<{ lan
             <div className="space-y-2">
               <h3 className="text-lg font-semibold text-primary-400">Payroll & Labor Compliance</h3>
               <p className="text-sm text-gray-300">
-                Management of IMSS social security, INFONAVIT housing tax, Aguinaldo bonuses, and Ley Federal del Trabajo compliance, including <Link href={`/${lang}/insights/usmca-rapid-response-labor-mechanism-mexico-union-compliance`} className="text-primary-400 underline hover:text-primary-300">USMCA union compliance and RRLM audit defense</Link> to eliminate export tariff risks.
+                Management of IMSS social security, INFONAVIT housing tax, Aguinaldo bonuses, and Ley Federal del Trabajo compliance—including <Link href={`/${lang}/insights/usmca-rapid-response-labor-mechanism-mexico-union-compliance`} className="text-primary-400 underline hover:text-primary-300">USMCA union compliance and RRLM audit defense</Link>, plus <Link href={`/${lang}/insights/mexico-40-hour-workweek-2027-manufacturing-compliance-cost-guide`} className="text-primary-400 underline hover:text-primary-300">2027 40-hour workweek readiness</Link> via our <Link href={`/${lang}/tools/mexico-40-hour-workweek-calculator`} className="text-primary-400 underline hover:text-primary-300">40-Hour Workweek Cost &amp; STPS Fine Calculator</Link>.
               </p>
             </div>
             <div className="space-y-2">
