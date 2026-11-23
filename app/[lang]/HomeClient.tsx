@@ -202,6 +202,25 @@ export default function HomeClient() {
                 </Button>
               </Link>
             </motion.div>
+            <div className="mt-5">
+              <a
+                href="https://calendly.com/denisse-nearshorenavigator/30min?utm_source=homepage_hero&utm_campaign=direct_booking"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'click_calendly', {
+                      event_category: 'lead_generation',
+                      event_label: 'homepage_hero_direct_booking',
+                    });
+                  }
+                }}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-primary-300 hover:text-white underline underline-offset-4 transition-colors"
+              >
+                <span>Or book a 30-min strategy call directly with Denisse Martinez</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
           </motion.div>
         </div>
 

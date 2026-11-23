@@ -3,8 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FileText, X, ArrowRight, Zap } from 'lucide-react';
-import Link from 'next/link';
+import { Calendar, X, ArrowRight } from 'lucide-react';
 
 interface FloatingLeadDockProps {
   city: string;
@@ -43,18 +42,18 @@ export const FloatingLeadDock: React.FC<FloatingLeadDockProps> = ({ city, langua
         >
           <div className="bg-slate-900/90 backdrop-blur-xl border border-emerald-500/30 rounded-2xl shadow-2xl shadow-emerald-500/10 p-4 md:p-6 flex items-center gap-4 md:gap-6">
             <div className="hidden md:flex h-12 w-12 rounded-xl bg-emerald-500/20 items-center justify-center text-emerald-400 shrink-0">
-              <FileText className="w-6 h-6" />
+              <Calendar className="w-6 h-6" />
             </div>
             
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-1">
                 <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-[10px] font-bold text-emerald-500 uppercase tracking-widest">Limited Availability</span>
+                <span className="text-[10px] font-bold text-emerald-500 uppercase tracking-widest">Direct Executive Briefing</span>
               </div>
               <h4 className="text-white font-bold text-sm md:text-base leading-tight">
-                Download the 2026 {city.charAt(0).toUpperCase() + city.slice(1)} Industrial Cost Report
+                Book a 30-Min {city.charAt(0).toUpperCase() + city.slice(1)} Cost &amp; Risk Briefing
               </h4>
-              <p className="text-slate-400 text-xs mt-1">Includes labor rates, utility data, and vacant park map.</p>
+              <p className="text-slate-400 text-xs mt-1">Review 2027 labor rates, shelter quotes, and site options with Denisse Martinez.</p>
             </div>
 
             <div className="flex flex-col gap-2">
@@ -78,11 +77,10 @@ export const FloatingLeadDock: React.FC<FloatingLeadDockProps> = ({ city, langua
                     });
                   }
                 }}
+                className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs px-4 py-2.5 min-h-[44px] rounded-lg flex items-center gap-2 transition-all whitespace-nowrap shadow-md"
               >
-                <button className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs px-4 py-2.5 min-h-[44px] rounded-lg flex items-center gap-2 transition-all whitespace-nowrap shadow-md">
-                  Book 15-Min Briefing
-                  <ArrowRight className="w-3 h-3" />
-                </button>
+                <span>Book 30-Min Call</span>
+                <ArrowRight className="w-3 h-3" />
               </a>
             </div>
           </div>

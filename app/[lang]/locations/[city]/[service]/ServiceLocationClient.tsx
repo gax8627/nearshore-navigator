@@ -450,7 +450,7 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
                 <p className="text-sky-100 mb-8 max-w-lg leading-relaxed">
                   Stop guessing. Let our advisory team run a custom total landed cost analysis comparing your current supply chain directly to {location.name}.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 items-center">
+                <div className="flex flex-col sm:flex-row flex-wrap gap-4 items-center">
                   <Link 
                     href={`/${language}/contact?source=service_location_${city}_conversion`}
                     className="w-full sm:w-auto px-8 py-4 rounded-md bg-white text-sky-900 font-bold hover:bg-sky-50 transition-colors shadow-lg text-center"
@@ -459,6 +459,22 @@ export default function ServiceLocationClient({ city, serviceId, localizedData }
                       ? "Get Vetted Tijuana Partner Shortlist" 
                       : "Calculate Your Savings"}
                   </Link>
+                  <a
+                    href={`https://calendly.com/denisse-nearshorenavigator/30min?utm_source=service_location_${encodeURIComponent(city)}_${encodeURIComponent(serviceId)}&utm_campaign=direct_booking`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => {
+                      if (typeof window !== 'undefined' && (window as any).gtag) {
+                        (window as any).gtag('event', 'click_calendly', {
+                          event_category: 'lead_generation',
+                          event_label: `service_location_${city}_${serviceId}`,
+                        });
+                      }
+                    }}
+                    className="w-full sm:w-auto px-7 py-4 rounded-md bg-sky-800/80 hover:bg-sky-700 border border-sky-400/40 text-white font-semibold transition-colors text-center"
+                  >
+                    Book 30-Min Call Directly &rarr;
+                  </a>
                   <p className="text-sm text-sky-200 flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-sky-400" />
                     Zero obligation report
